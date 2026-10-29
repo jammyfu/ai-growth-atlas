@@ -1,0 +1,62 @@
+[
+  {
+    "id": "coding-agents",
+    "name": "编程助手",
+    "name_en": "Coding Agents",
+    "desc": "让 AI 帮你写代码、改代码、跑命令"
+  },
+  {
+    "id": "skills-harness",
+    "name": "技能与运行时",
+    "name_en": "Skills & Harness",
+    "desc": "给编程助手加技能包、记忆、审计、安全"
+  },
+  {
+    "id": "memory-knowledge",
+    "name": "记忆与知识",
+    "name_en": "Memory & Knowledge",
+    "desc": "让 Agent 记住上下文、代码库、文档"
+  },
+  {
+    "id": "browser-computer",
+    "name": "浏览器与电脑控制",
+    "name_en": "Browser & Computer Use",
+    "desc": "让 Agent 操作浏览器或桌面"
+  },
+  {
+    "id": "document-content",
+    "name": "文档与内容",
+    "name_en": "Document & Content",
+    "desc": "把 PDF/PPT/视频等转成可给 LLM 用的格式"
+  },
+  {
+    "id": "video-media",
+    "name": "视频与媒体",
+    "name_en": "Video & Media",
+    "desc": "AI 生成或处理视频"
+  },
+  {
+    "id": "security-audit",
+    "name": "安全与审计",
+    "name_en": "Security & Audit",
+    "desc": "检查代码或 Agent 行为的风险"
+  },
+  {
+    "id": "local-inference",
+    "name": "本地模型与推理",
+    "name_en": "Local Models & Inference",
+    "desc": "在自己机器上跑模型"
+  },
+  {
+    "id": "workflow",
+    "name": "工作流自动化",
+    "name_en": "Workflow & Automation",
+    "desc": "把多个工具串成流程"
+  },
+  {
+    "id": "other",
+    "name": "其他 AI 工具",
+    "name_en": "Other AI Tools",
+    "desc": "不属于上面类别但在涨的 AI 项目"
+  }
+]
