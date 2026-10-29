@@ -77,6 +77,19 @@ class ReadmeTests(unittest.TestCase):
             for p in projects:
                 self.assertIn(core.star_history_svg(p["name"]), text, f"{fname} {p['name']}")
 
+    def test_at_least_20_projects_and_each_ranking_shows_top_20(self):
+        self.assertGreaterEqual(len(projects), 20)
+        ok = sum(1 for p in stats["projects"] if p["ok"])
+        expect = min(20, ok)
+        self.assertEqual(expect, 20)
+        for code, (fname, _l) in LANGS.items():
+            text = (ROOT / fname).read_text("utf-8")
+            s = render_readme.S[code]
+            for key in ("week", "month", "year", "total"):
+                section = text.split(f"## {s[key]}\n", 1)[1].split("\n## ", 1)[0]
+                rows = re.findall(r"^\| \d+ \|", section, flags=re.M)
+                self.assertEqual(len(rows), expect, f"{fname} {key}")
+
     def test_english_is_default_readme(self):
         self.assertEqual(LANGS["en"][0], "README.md")
         self.assertIn("ranked by how fast", (ROOT / "README.md").read_text("utf-8"))
@@ -96,7 +109,7 @@ class ZeroTelemetryTests(unittest.TestCase):
 class WorkflowTests(unittest.TestCase):
     def test_daily_workflow_has_schedule_and_least_privilege(self):
         wf = (ROOT / ".github/workflows/daily-update.yml").read_text("utf-8")
-        self.assertRegex(wf, r"cron: '\d+ \d+ \* \* \*'")
+        self.assertRegex(wf, r"cron: '\d+ \d+ \* \* \*'")  # exact crons are checked in test_schedule.py
         self.assertIn("workflow_dispatch", wf)
         self.assertIn("contents: write", wf)
         self.assertIn("tools/update_stars.py", wf)

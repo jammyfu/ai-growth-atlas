@@ -19,3 +19,13 @@
 ### Generated files
 
 - `README*.md` and `data/stats.json` are generated; `tests/test_repo.py` fails if READMEs are stale.
+
+## 2026-10-30
+
+### Two LA crons plus a time-zone guard
+
+- GitHub cron is UTC-only and LA midnight moves between 07:00 and 08:00 UTC with DST, so both are scheduled and `tools/schedule_guard.py` lets exactly one pass.
+
+### Top 20 per ranking, 20+ tracked projects
+
+- New projects follow the existing topic line (fast-rising AI agent / coding-agent related repos), chosen by measured 7-day growth from the API, not by total stars.

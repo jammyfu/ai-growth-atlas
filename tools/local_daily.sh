@@ -1,16 +1,37 @@
 #!/usr/bin/env bash
 # Local daily update: fetch real star data, regenerate READMEs, verify, commit and push.
+# Slots (match the Actions schedule): --slot beijing runs only at 00:xx Asia/Shanghai,
+# --slot la runs only at 00:xx America/Los_Angeles (DST-aware), no --slot runs always.
 # Use this when GitHub Actions cannot run (billing, quota, outage). Reads GITHUB_TOKEN;
 # if unset it falls back to `gh auth token`. Safe for cron/launchd (sets its own PATH).
 #
 #   tools/local_daily.sh            # update, verify, commit, push to origin/main
 #   tools/local_daily.sh --no-push  # update, verify, commit locally only
+#   tools/local_daily.sh --slot la  # only proceed if it is currently 00:xx in Los Angeles
 set -euo pipefail
 export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:${PATH:-}"
 cd "$(dirname "$0")/.."
 
 PUSH=1
-[ "${1:-}" = "--no-push" ] && PUSH=0
+SLOT=""
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --no-push) PUSH=0 ;;
+    --slot) SLOT="${2:-}"; shift ;;
+    *) echo "error: unknown argument $1" >&2; exit 2 ;;
+  esac
+  shift
+done
+
+PY="$(command -v python3)"
+
+# Time-slot guard first: cheap, needs no token and touches nothing. ATLAS_NOW_UTC overrides the clock for tests.
+case "$SLOT" in
+  "") ;;
+  beijing) "$PY" tools/schedule_guard.py --tz Asia/Shanghai --hour 0 || exit 0 ;;
+  la) "$PY" tools/schedule_guard.py --tz America/Los_Angeles --hour 0 || exit 0 ;;
+  *) echo "error: --slot must be beijing or la" >&2; exit 2 ;;
+esac
 
 if [ -z "${GITHUB_TOKEN:-}" ]; then
   if command -v gh >/dev/null 2>&1; then
@@ -21,8 +42,6 @@ if [ -z "${GITHUB_TOKEN:-}" ]; then
     exit 2
   fi
 fi
-
-PY="$(command -v python3)"
 
 branch="$(git rev-parse --abbrev-ref HEAD)"
 if [ "$branch" != "main" ]; then

@@ -25,7 +25,9 @@ Ship growth rankings, five-language READMEs and daily update automation, with al
 - [x] Render five READMEs (`tools/render_readme.py`)
 - [x] Daily workflow, CI workflow, local script, docs
 - [x] Tests and `tools/verify.py` green; real run committed
-- [ ] Owner reviews and merges the PR
+- [x] Owner reviews and merges the PR (#1)
+- [x] Dual-midnight schedule (Beijing + LA), top 20, 20+ projects (PLAN-001 follow-up)
+- [ ] Owner reviews and merges the follow-up PR
 
 ## Verification
 

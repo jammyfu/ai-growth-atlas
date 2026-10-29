@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.jammyfu.ai-growth-atlas.beijing</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/PATH/TO/ai-growth-atlas/tools/local_daily.sh</string>
+    <string>--slot</string>
+    <string>beijing</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Hour</key><integer>0</integer><key>Minute</key><integer>0</integer></dict>
+  </array>
+  <key>StandardOutPath</key>
+  <string>/tmp/com.jammyfu.ai-growth-atlas.beijing.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/com.jammyfu.ai-growth-atlas.beijing.err.log</string>
+</dict>
+</plist>

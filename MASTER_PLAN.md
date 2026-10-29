@@ -6,7 +6,7 @@ A trustworthy, daily-refreshed ranking of fast-rising AI projects, readable in f
 
 ## Current phase
 
-Phase 2: growth rankings, i18n, daily automation.
+Phase 2: growth rankings, i18n, daily automation (done); Phase 2b: top-20 rankings, 20+ projects, dual-midnight schedule.
 
 ## Phases
 
@@ -25,7 +25,7 @@ Phase 2: growth rankings, i18n, daily automation.
 ## Definition of done for Phase 2
 
 - `python3 tools/verify.py` passes; data in `data/stats.json` came from a real run
-- A daily update has run unattended at least once (Actions or local)
+- A daily update has run unattended at least once (Actions or local), at both the Beijing and Los Angeles slots
 
 ## Questions for next review
 
