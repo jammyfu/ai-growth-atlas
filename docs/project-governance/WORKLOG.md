@@ -14,3 +14,5 @@
 - `tools/local_daily.sh --slot beijing|la`, two launchd agents and docs synced.
 - Rankings show the top 20; tracked projects grew from 8 to 22 (14 added, all fetched OK from the API).
 - Verification: `python3 tools/verify.py` green (32 tests).
+- Added per-slot history `rankings/<date>/<slot>/`, `latest/`, history index `rankings/README.md`; first real snapshot `cn-0000` for 2026-10-30. The `pt-0000` folder appears with the first real Los Angeles run (not back-filled).
+- Verification: `python3 tools/verify.py` green (43 tests).

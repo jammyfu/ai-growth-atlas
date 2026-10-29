@@ -102,7 +102,11 @@ class WorkflowScheduleTests(unittest.TestCase):
         self.assertIn("tools/schedule_guard.py --tz America/Los_Angeles --hour 0", self.wf)
         self.assertEqual(self.wf.count("if: steps.gate.outputs.run == 'true'"), 3)
         # Beijing cron is the only unguarded schedule
-        self.assertIn('"$CRON" != "0 16 * * *"', self.wf)
+        self.assertIn('"$CRON" = "0 16 * * *"', self.wf)
+        self.assertIn("slot=cn", self.wf)
+        self.assertIn("slot=pt", self.wf)
+        self.assertIn('--slot "$SLOT"', self.wf)
+        self.assertIn("git add data rankings latest README*.md", self.wf)
 
 
 if __name__ == "__main__":

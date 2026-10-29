@@ -1,5 +1,6 @@
 name: daily-update
 
+# Each run also stores its result under rankings/<date>/<slot>/ (history) and latest/.
 # Runs at Beijing 00:00 and America/Los_Angeles 00:00 every day.
 #   Beijing (UTC+8, no DST):   16:00 UTC                       -> '0 16 * * *'
 #   Los Angeles midnight:      07:00 UTC in PDT, 08:00 UTC in PST -> '0 7 * * *' and '0 8 * * *'
@@ -36,20 +37,28 @@ jobs:
           CRON: ${{ github.event.schedule }}
         run: |
           # Beijing slot and manual runs always proceed. The two LA slots proceed only at LA midnight.
-          if [ "$EVENT" = "schedule" ] && [ "$CRON" != "0 16 * * *" ]; then
+          # Output "slot" names the history folder: cn -> rankings/<date>/cn-0000, pt -> pt-0000,
+          # auto (manual dispatch) -> cn/pt if the clock happens to be at a slot, else manual-HHMM.
+          if [ "$EVENT" = "schedule" ] && [ "$CRON" = "0 16 * * *" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "slot=cn" >> "$GITHUB_OUTPUT"
+          elif [ "$EVENT" = "schedule" ]; then
             if python3 tools/schedule_guard.py --tz America/Los_Angeles --hour 0; then
               echo "run=true" >> "$GITHUB_OUTPUT"
+              echo "slot=pt" >> "$GITHUB_OUTPUT"
             else
               echo "run=false" >> "$GITHUB_OUTPUT"
             fi
           else
             echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "slot=auto" >> "$GITHUB_OUTPUT"
           fi
       - name: Fetch star data from the GitHub API and regenerate READMEs
         if: steps.gate.outputs.run == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 tools/update_stars.py
+          SLOT: ${{ steps.gate.outputs.slot }}
+        run: python3 tools/update_stars.py --slot "$SLOT"
       - name: Verify
         if: steps.gate.outputs.run == 'true'
         run: python3 tools/verify.py
@@ -62,6 +71,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data README*.md
+          git add data rankings latest README*.md
           git commit -m "chore(data): daily star update $(date -u +%F)"
           git push origin HEAD:main

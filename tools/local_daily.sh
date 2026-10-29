@@ -2,6 +2,7 @@
 # Local daily update: fetch real star data, regenerate READMEs, verify, commit and push.
 # Slots (match the Actions schedule): --slot beijing runs only at 00:xx Asia/Shanghai,
 # --slot la runs only at 00:xx America/Los_Angeles (DST-aware), no --slot runs always.
+# Each run is also archived under rankings/<date>/<cn-0000|pt-0000|manual-HHMM>/ and copied to latest/.
 # Use this when GitHub Actions cannot run (billing, quota, outage). Reads GITHUB_TOKEN;
 # if unset it falls back to `gh auth token`. Safe for cron/launchd (sets its own PATH).
 #
@@ -14,6 +15,7 @@ cd "$(dirname "$0")/.."
 
 PUSH=1
 SLOT=""
+UPDATE_SLOT=auto
 while [ $# -gt 0 ]; do
   case "$1" in
     --no-push) PUSH=0 ;;
@@ -27,9 +29,9 @@ PY="$(command -v python3)"
 
 # Time-slot guard first: cheap, needs no token and touches nothing. ATLAS_NOW_UTC overrides the clock for tests.
 case "$SLOT" in
-  "") ;;
-  beijing) "$PY" tools/schedule_guard.py --tz Asia/Shanghai --hour 0 || exit 0 ;;
-  la) "$PY" tools/schedule_guard.py --tz America/Los_Angeles --hour 0 || exit 0 ;;
+  "") UPDATE_SLOT=auto ;;
+  beijing) "$PY" tools/schedule_guard.py --tz Asia/Shanghai --hour 0 || exit 0; UPDATE_SLOT=cn ;;
+  la) "$PY" tools/schedule_guard.py --tz America/Los_Angeles --hour 0 || exit 0; UPDATE_SLOT=pt ;;
   *) echo "error: --slot must be beijing or la" >&2; exit 2 ;;
 esac
 
@@ -54,14 +56,14 @@ if [ -n "$(git status --porcelain)" ]; then
 fi
 git pull --ff-only
 
-"$PY" tools/update_stars.py
+"$PY" tools/update_stars.py --slot "$UPDATE_SLOT"
 "$PY" tools/verify.py
 
 if [ -z "$(git status --porcelain)" ]; then
   echo "No changes."
   exit 0
 fi
-git add data README*.md
+git add data rankings latest README*.md
 git commit -m "chore(data): daily star update $(date -u +%F)"
 if [ "$PUSH" = 1 ]; then
   git push origin main

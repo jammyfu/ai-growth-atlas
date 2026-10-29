@@ -29,3 +29,7 @@
 ### Top 20 per ranking, 20+ tracked projects
 
 - New projects follow the existing topic line (fast-rising AI agent / coding-agent related repos), chosen by measured 7-day growth from the API, not by total stars.
+
+### History snapshots are real runs only
+
+- A snapshot folder is written only by an actual run at that slot. Past slots are not back-filled, because the star count at that moment cannot be recovered from the API.

@@ -20,7 +20,8 @@ python3 tools/next_plan.py
 
 ```bash
 GITHUB_TOKEN=$(gh auth token) python3 tools/update_stars.py
-python3 tools/render_readme.py          # re-render only
+python3 tools/update_stars.py --slot cn   # cn|pt|manual|auto; archives to rankings/<date>/<slot>/ and latest/
+python3 tools/render_readme.py          # re-render only (READMEs, latest/, rankings/README.md)
 tools/local_daily.sh --no-push          # full local daily cycle, commit but do not push
 ```
 

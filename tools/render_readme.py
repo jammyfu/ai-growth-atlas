@@ -13,11 +13,12 @@ from pathlib import Path
 from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import archive  # noqa: E402
 import atlas_core as core  # noqa: E402
 from i18n import LANGS, S  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
-TOP_N = 20
+TOP_N = archive.TOP_N
 
 
 def switcher(lang: str) -> str:
@@ -92,6 +93,7 @@ def render(lang: str, projects: list[dict], stats: dict, cats: dict) -> str:
         s["intro"], "",
         s["updated"].format(ts=stats["generated_at"].replace("T", " ").replace("Z", "")),
         s["shown"].format(n=TOP_N, total=len(projects)), "",
+        s["history"], "",
         f"<details><summary>{s['cat_title']}</summary>", "",
         "| | |", "|---|---|",
     ]
@@ -145,6 +147,10 @@ def main(argv: list[str] | None = None) -> int:
             if fname == "README.md":
                 (ROOT / "README.zh-Hans.md").write_text(text, "utf-8")
             print(f"wrote {fname}")
+    if args.check:
+        stale += archive.stale_latest_and_index(ROOT)
+    else:
+        archive.refresh_latest_and_index(ROOT)
     if stale:
         print("stale (run python tools/render_readme.py): " + ", ".join(stale), file=sys.stderr)
         return 1

@@ -7,7 +7,7 @@ project that cannot be fetched is listed under "Missing data" in the README.
 
 1. `GET /repos/{owner}/{repo}` → `stargazers_count`, `created_at`.
 2. `GET /repos/{owner}/{repo}/stargazers/history` (newest week first, 30 weeks per page) until one year is covered.
-3. Writes `data/stats.json` (growth per project), appends today's star count to `data/stars.json`
+3. Writes `data/stats.json` (growth per project), archives it under `rankings/<date>/<slot>/` and `latest/`, appends today's star count to `data/stars.json`
    (snapshots, used for cross-checks over time), then regenerates the five READMEs.
 
 Why `stargazers/history` and not `stargazers` + `starred_at`: since July 2026 GitHub returns 404 for
@@ -16,6 +16,26 @@ Why `stargazers/history` and not `stargazers` + `starred_at`: since July 2026 Gi
 The privacy-safe replacement is `stargazers/history`, which returns daily counts without user identities
 ([changelog](https://github.blog/changelog/2026-09-04-new-api-endpoint-provides-privacy-safe-star-history-data/)).
 Cross-check built into the tests: for every repo whose full history was read, the sum of the history equals `stargazers_count`.
+
+## Where results go: history per time slot
+
+Every run stores its result in its own folder and keeps it (nothing is overwritten except a re-run of the same slot):
+
+```
+rankings/<date>/cn-0000/   Beijing 00:00 run      (date = Asia/Shanghai date)
+rankings/<date>/pt-0000/   Los Angeles 00:00 run  (date = America/Los_Angeles date)
+rankings/<date>/manual-HHMM/   any other run, e.g. manual dispatch (date/time = UTC)
+    stats.json     full API-derived data of that run, plus a "slot" block
+    rankings.md    top-20 tables for that run (English, compact)
+rankings/README.md   history index linking every snapshot, newest first
+latest/stats.json, latest/rankings.md   copy of the newest run
+data/stats.json      what the READMEs are rendered from (same as the newest run)
+```
+
+The five READMEs show the latest ranking and link to the history index and `latest/rankings.md`.
+`tools/update_stars.py --slot cn|pt|manual|auto` picks the folder (`auto`, the default, uses cn if it is 00:xx in
+Beijing, pt if 00:xx in Los Angeles, otherwise manual). The workflow and `tools/local_daily.sh` pass the slot themselves.
+`tools/verify.py` checks that `latest/`, the index and every snapshot's `rankings.md` match their data.
 
 ## Schedule: Beijing 00:00 and Los Angeles 00:00
 

@@ -12,6 +12,7 @@ LANGS: dict[str, tuple[str, str]] = {
 
 S: dict[str, dict[str, str]] = {
     "en": {
+        "history": "These tables are the latest ranking. Every update is also saved per time slot: [ranking history](rankings/README.md) · [latest/rankings.md](latest/rankings.md).",
         "shown": "Each ranking shows the top {n} of {total} tracked projects.",
         "title": "AI Growth Atlas",
         "tagline": "AI projects ranked by how fast they are gaining stars, not by total stars.",
@@ -41,6 +42,7 @@ S: dict[str, dict[str, str]] = {
         "none": "n/a",
     },
     "zh-Hans": {
+        "history": "下面就是最新排名。每次更新还会按时段另存一份：[历史排名索引](rankings/README.md) · [latest/rankings.md](latest/rankings.md)。",
         "shown": "每个榜单只展示前 {n} 名，目前一共收录了 {total} 个项目。",
         "title": "谁在真正变火：AI 开源黑马榜 (AI Growth Atlas)",
         "tagline": "专治老项目霸榜！不比谁十年前攒了多少老本，只比这几天谁涨赞最猛。带你一眼看清：全世界程序员现在都在偷偷用什么新神仙 AI！",
@@ -70,6 +72,7 @@ S: dict[str, dict[str, str]] = {
         "none": "暂无",
     },
     "zh-Hant": {
+        "history": "下面就是最新排名。每次更新還會依時段另存一份：[歷史排名索引](rankings/README.md) · [latest/rankings.md](latest/rankings.md)。",
         "shown": "每個榜單只展示前 {n} 名，目前一共收錄了 {total} 個專案。",
         "title": "誰在真正變火：AI 開源黑馬榜 (AI Growth Atlas)",
         "tagline": "專治老專案霸榜！不比誰十年前攢了多少老本，只比這幾天誰按讚漲最猛。帶你一眼看清：全世界工程師現在都在偷偷用什麼新神仙 AI！",
@@ -99,6 +102,7 @@ S: dict[str, dict[str, str]] = {
         "none": "暫無",
     },
     "ja": {
+        "history": "以下が最新のランキングです。更新のたびに時間帯ごとにも保存しています：[ランキング履歴](rankings/README.md) · [latest/rankings.md](latest/rankings.md)。",
         "shown": "各ランキングは、収録 {total} プロジェクトのうち上位 {n} 件を表示します。",
         "title": "AI Growth Atlas",
         "tagline": "AI プロジェクトを、総スター数ではなく「スターの増える速さ」で並べたランキング。",
@@ -128,6 +132,7 @@ S: dict[str, dict[str, str]] = {
         "none": "なし",
     },
     "ko": {
+        "history": "아래가 최신 순위입니다. 업데이트할 때마다 시간대별로도 저장합니다: [순위 기록](rankings/README.md) · [latest/rankings.md](latest/rankings.md).",
         "shown": "각 랭킹은 수록된 {total}개 프로젝트 중 상위 {n}개만 보여 줍니다.",
         "title": "AI Growth Atlas",
         "tagline": "AI 프로젝트를 총 스타 수가 아니라 '스타가 늘어나는 속도'로 줄 세운 랭킹.",
