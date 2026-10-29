@@ -93,4 +93,4 @@ GitHub API에서 가져온 시각: 2026-10-29 14:35:00 (UTC).
 
 ## 기여하기
 
-`data/projects.json`에 항목을 추가하고(`desc`는 5개 언어 모두 작성) `python tools/update_stars.py`를 실행하세요. 일일 업데이트는 [docs/DAILY_UPDATE.md](docs/DAILY_UPDATE.md)를 참고하세요.
+`data/projects.json`에 항목을 추가하고(`desc`는 5개 언어 모두 작성) `python tools/update_stars.py`를 실행하세요. 일일 업데이트는 [docs/DAILY_UPDATE.md](docs/DAILY_UPDATE.md).

@@ -3,15 +3,15 @@
     "id": "coding-agents",
     "name": {
       "en": "Coding Agents",
-      "zh-Hans": "编程助手",
-      "zh-Hant": "編程助手",
+      "zh-Hans": "AI 帮你写代码",
+      "zh-Hant": "AI 幫你寫程式",
       "ja": "コーディングエージェント",
       "ko": "코딩 에이전트"
     },
     "desc": {
       "en": "Let AI write, edit and run code for you",
-      "zh-Hans": "让 AI 帮你写代码、改代码、跑命令",
-      "zh-Hant": "讓 AI 幫你寫程式、改程式、跑指令",
+      "zh-Hans": "动嘴不动手：你用大白话提要求，AI 自动帮你写代码、改 Bug、跑程序",
+      "zh-Hant": "動嘴不動手：你用白話提需求，AI 自動幫你寫程式、修 Bug、跑程式",
       "ja": "AI にコードを書かせ、直させ、コマンドまで実行させる",
       "ko": "AI가 코드를 쓰고, 고치고, 명령까지 실행하게 한다"
     }
@@ -20,15 +20,15 @@
     "id": "skills-harness",
     "name": {
       "en": "Skills & Harness",
-      "zh-Hans": "技能与运行时",
-      "zh-Hant": "技能與執行環境",
+      "zh-Hans": "AI 新绝招与防翻车",
+      "zh-Hant": "AI 新絕招與防翻車",
       "ja": "スキルとハーネス",
       "ko": "스킬 & 하네스"
     },
     "desc": {
       "en": "Skill packs, memory, audit and safety for coding agents",
-      "zh-Hans": "给编程助手加技能包、记忆、审计、安全",
-      "zh-Hant": "替編程助手加技能包、記憶、稽核、安全",
+      "zh-Hans": "给 AI 助手加装各种实用外挂：长记性、能自己查漏洞、防止瞎改乱跑",
+      "zh-Hant": "替 AI 助手加裝各種實用外掛：長記性、能自己查漏洞、防止瞎改亂跑",
       "ja": "コーディングエージェントにスキル・記憶・監査・安全性を足す",
       "ko": "코딩 에이전트에 스킬·메모리·감사·안전 기능을 더한다"
     }
@@ -37,15 +37,15 @@
     "id": "memory-knowledge",
     "name": {
       "en": "Memory & Knowledge",
-      "zh-Hans": "记忆与知识",
-      "zh-Hant": "記憶與知識",
+      "zh-Hans": "AI 记性与代码地图",
+      "zh-Hant": "AI 記憶與程式地圖",
       "ja": "記憶とナレッジ",
       "ko": "메모리 & 지식"
     },
     "desc": {
       "en": "Help agents remember context, codebases and docs",
-      "zh-Hans": "让 Agent 记住上下文、代码库、文档",
-      "zh-Hant": "讓 Agent 記住上下文、程式碼庫、文件",
+      "zh-Hans": "让 AI 一秒记住你的整个大项目和文档，问它什么都能秒答，不再忘东忘西",
+      "zh-Hant": "讓 AI 一秒記住你的整個大專案和文件，問它什麼都能秒答，不再忘東忘西",
       "ja": "エージェントに文脈・コードベース・ドキュメントを覚えさせる",
       "ko": "에이전트가 맥락·코드베이스·문서를 기억하게 한다"
     }
@@ -54,15 +54,15 @@
     "id": "browser-computer",
     "name": {
       "en": "Browser & Computer Use",
-      "zh-Hans": "浏览器与电脑控制",
-      "zh-Hant": "瀏覽器與電腦控制",
+      "zh-Hans": "代点电脑与网页",
+      "zh-Hant": "代點電腦與網頁",
       "ja": "ブラウザ・PC 操作",
       "ko": "브라우저 & 컴퓨터 제어"
     },
     "desc": {
       "en": "Let agents operate a browser or a desktop",
-      "zh-Hans": "让 Agent 操作浏览器或桌面",
-      "zh-Hant": "讓 Agent 操作瀏覽器或桌面",
+      "zh-Hans": "让 AI 像真人一样帮你点鼠标、点网页表单、操作桌面软件，替你跑腿",
+      "zh-Hant": "讓 AI 像真人一樣幫你點滑鼠、點網頁表單、操作桌面軟體，替你跑腿",
       "ja": "エージェントにブラウザやデスクトップを操作させる",
       "ko": "에이전트가 브라우저나 데스크톱을 조작하게 한다"
     }
@@ -71,15 +71,15 @@
     "id": "document-content",
     "name": {
       "en": "Document & Content",
-      "zh-Hans": "文档与内容",
-      "zh-Hant": "文件與內容",
+      "zh-Hans": "文档视频变粮食",
+      "zh-Hant": "文件影片變糧食",
       "ja": "ドキュメントとコンテンツ",
       "ko": "문서 & 콘텐츠"
     },
     "desc": {
       "en": "Turn PDFs, slides and videos into LLM-ready formats",
-      "zh-Hans": "把 PDF/PPT/视频等转成可给 LLM 用的格式",
-      "zh-Hant": "把 PDF/PPT/影片等轉成可餵給 LLM 的格式",
+      "zh-Hans": "把厚厚的 PDF、长视频、PPT 一秒拆碎，变成 AI 一口就能吃掉的纯文本",
+      "zh-Hant": "把厚厚的 PDF、長影片、PPT 一秒拆碎，變成 AI 一口就能吃掉的純文字",
       "ja": "PDF・スライド・動画を LLM が使える形式に変換する",
       "ko": "PDF·슬라이드·영상을 LLM이 쓸 수 있는 형식으로 변환한다"
     }
@@ -88,15 +88,15 @@
     "id": "video-media",
     "name": {
       "en": "Video & Media",
-      "zh-Hans": "视频与媒体",
-      "zh-Hant": "影片與媒體",
+      "zh-Hans": "AI 做视频与画面",
+      "zh-Hant": "AI 做影片與畫面",
       "ja": "動画・メディア",
       "ko": "영상 & 미디어"
     },
     "desc": {
       "en": "AI that generates or processes video",
-      "zh-Hans": "AI 生成或处理视频",
-      "zh-Hant": "AI 生成或處理影片",
+      "zh-Hans": "像打字一样做视频，写几句说明，AI 直接把成片和特效做给你",
+      "zh-Hant": "像打字一樣做影片，寫幾句說明，AI 直接把成片和特效做給你",
       "ja": "AI で動画を生成・処理する",
       "ko": "AI로 영상을 생성하거나 처리한다"
     }
@@ -105,15 +105,15 @@
     "id": "security-audit",
     "name": {
       "en": "Security & Audit",
-      "zh-Hans": "安全与审计",
-      "zh-Hant": "安全與稽核",
+      "zh-Hans": "安全体检与防翻车",
+      "zh-Hant": "安全體檢與防翻車",
       "ja": "セキュリティと監査",
       "ko": "보안 & 감사"
     },
     "desc": {
       "en": "Check code or agent behavior for risks",
-      "zh-Hans": "检查代码或 Agent 行为的风险",
-      "zh-Hant": "檢查程式碼或 Agent 行為的風險",
+      "zh-Hans": "专门检查 AI 写的代码里有没有漏洞和暗坑，防止系统被搞瘫痪",
+      "zh-Hant": "專門檢查 AI 寫的程式裡有沒有漏洞和暗坑，防止系統被搞癱瘓",
       "ja": "コードやエージェントの挙動のリスクを検査する",
       "ko": "코드나 에이전트 동작의 위험을 점검한다"
     }
@@ -122,15 +122,15 @@
     "id": "local-inference",
     "name": {
       "en": "Local Models & Inference",
-      "zh-Hans": "本地模型与推理",
-      "zh-Hant": "本地模型與推論",
+      "zh-Hans": "断网也能跑的本地 AI",
+      "zh-Hant": "斷網也能跑的本機 AI",
       "ja": "ローカルモデルと推論",
       "ko": "로컬 모델 & 추론"
     },
     "desc": {
       "en": "Run models on your own machine",
-      "zh-Hans": "在自己机器上跑模型",
-      "zh-Hant": "在自己的機器上跑模型",
+      "zh-Hans": "直接在自己电脑上运行，不花一分钱接口费，断网也能用，隐私 100% 安全",
+      "zh-Hant": "直接在自己電腦上執行，不花一毛錢介面費，斷網也能用，隱私 100% 安全",
       "ja": "自分のマシンでモデルを動かす",
       "ko": "내 기기에서 모델을 실행한다"
     }
@@ -139,15 +139,15 @@
     "id": "workflow",
     "name": {
       "en": "Workflow & Automation",
-      "zh-Hans": "工作流自动化",
-      "zh-Hant": "工作流程自動化",
+      "zh-Hans": "全自动流水线",
+      "zh-Hant": "全自動工作流",
       "ja": "ワークフロー自動化",
       "ko": "워크플로 자동화"
     },
     "desc": {
       "en": "Chain several tools into one flow",
-      "zh-Hans": "把多个工具串成流程",
-      "zh-Hant": "把多個工具串成流程",
+      "zh-Hans": "把好几个零碎的小工具串成一条龙，点一下开关，全流程自动干完",
+      "zh-Hant": "把好幾個零碎的小工具串成一條龍，點一下開關，全流程自動幹完",
       "ja": "複数のツールをつないで一つの流れにする",
       "ko": "여러 도구를 하나의 흐름으로 잇는다"
     }
@@ -156,15 +156,15 @@
     "id": "other",
     "name": {
       "en": "Other AI Tools",
-      "zh-Hans": "其他 AI 工具",
-      "zh-Hant": "其他 AI 工具",
+      "zh-Hans": "其他宝藏黑马",
+      "zh-Hant": "其他寶藏黑馬",
       "ja": "その他の AI ツール",
       "ko": "기타 AI 도구"
     },
     "desc": {
       "en": "Rising AI projects that fit none of the above",
-      "zh-Hans": "不属于上面类别但在涨的 AI 项目",
-      "zh-Hant": "不屬於上面類別但正在漲的 AI 專案",
+      "zh-Hans": "上面分类装不下、但最近天天被程序员疯狂点赞的新奇好玩 AI 工具",
+      "zh-Hant": "上面分類裝不下、但最近天天被工程師瘋狂按讚的新奇好玩 AI 工具",
       "ja": "上のどれにも当てはまらないが伸びている AI プロジェクト",
       "ko": "위 분류에 속하지 않지만 뜨고 있는 AI 프로젝트"
     }

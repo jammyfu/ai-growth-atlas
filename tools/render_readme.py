@@ -82,7 +82,11 @@ def render(lang: str, projects: list[dict], stats: dict, cats: dict) -> str:
     st = stats["projects"]
     out: list[str] = [
         switcher(lang), "",
-        "# AI Growth Atlas", "",
+    ]
+    if lang == "en":
+        out += ["> 💡 **中文读者点这里**：[切换到简体中文（大白话通俗说明）👉](README.zh-Hans.md)", ""]
+    out += [
+        f"# {s.get('title', 'AI Growth Atlas')}", "",
         f"> {s['tagline']}", "",
         s["intro"], "",
         s["updated"].format(ts=stats["generated_at"].replace("T", " ").replace("Z", "")), "",
@@ -136,6 +140,8 @@ def main(argv: list[str] | None = None) -> int:
                 stale.append(fname)
         else:
             path.write_text(text, "utf-8")
+            if fname == "README.md":
+                (ROOT / "README.zh-Hans.md").write_text(text, "utf-8")
             print(f"wrote {fname}")
     if stale:
         print("stale (run python tools/render_readme.py): " + ", ".join(stale), file=sys.stderr)
