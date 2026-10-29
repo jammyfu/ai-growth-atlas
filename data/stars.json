@@ -1,8 +1,27 @@
 {
-  "_comment": "每日快照存在这里。格式：{ \"owner/repo\": { \"2026-10-29\": 12345, ... } }",
-  "example": {
-    "morluto/rea": {
-      "2026-10-29": 0
-    }
+  "_comment": "Daily snapshots of stargazers_count from the GitHub API. Format: { \"owner/repo\": { \"YYYY-MM-DD\": stars } }. Appended by tools/update_stars.py.",
+  "DietrichGebert/ponytail": {
+    "2026-10-29": 179791
+  },
+  "Graphify-Labs/graphify": {
+    "2026-10-29": 138349
+  },
+  "anomalyco/opencode": {
+    "2026-10-29": 222962
+  },
+  "cloudflare/security-audit-skill": {
+    "2026-10-29": 52404
+  },
+  "heygen-com/hyperframes": {
+    "2026-10-29": 75233
+  },
+  "morluto/rea": {
+    "2026-10-29": 405995
+  },
+  "openclaw/openclaw": {
+    "2026-10-29": 393350
+  },
+  "stablyai/orca": {
+    "2026-10-29": 109805
   }
 }

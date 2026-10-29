@@ -1,0 +1,42 @@
+name: daily-update
+
+# Refreshes data/stats.json, data/stars.json and the five READMEs from the GitHub API.
+# Scheduled workflows only run from the default branch, so this starts working after merge.
+# If Actions is unavailable for the account, use tools/local_daily.sh (see docs/DAILY_UPDATE.md).
+on:
+  schedule:
+    - cron: '17 2 * * *'   # 02:17 UTC daily (10:17 Asia/Taipei)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Fetch star data from the GitHub API and regenerate READMEs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 tools/update_stars.py
+      - name: Verify
+        run: python3 tools/verify.py
+      - name: Commit and push if anything changed
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data README*.md
+          git commit -m "chore(data): daily star update $(date -u +%F)"
+          git push origin HEAD:main

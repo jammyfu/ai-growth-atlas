@@ -3,56 +3,96 @@
     "name": "morluto/rea",
     "url": "https://github.com/morluto/rea",
     "category": "coding-agents",
-    "desc": "别人逆向要盯几天汇编，这个让 AI 直接告诉你程序在干什么。接 Ghidra，原来看不懂的二进制一句话讲清楚。",
-    "stars_note": "近期涨星极快的 AI 逆向工具"
+    "desc": {
+      "en": "Reverse engineers stare at assembly for days; this lets AI just tell you what a program does. Hooks into Ghidra so an unreadable binary gets explained in one sentence.",
+      "zh-Hans": "别人逆向要盯几天汇编，这个让 AI 直接告诉你程序在干什么。接 Ghidra，原来看不懂的二进制一句话讲清楚。",
+      "zh-Hant": "別人逆向要盯幾天組語，這個讓 AI 直接告訴你程式在做什麼。接 Ghidra，原本看不懂的二進位檔一句話講清楚。",
+      "ja": "リバースエンジニアが何日もアセンブリを睨む代わりに、AI がプログラムの動作をそのまま教えてくれる。Ghidra と連携し、読めなかったバイナリを一言で説明する。",
+      "ko": "리버서가 며칠씩 어셈블리를 노려보던 일을, AI가 프로그램이 무슨 일을 하는지 바로 알려준다. Ghidra와 연결되어 읽을 수 없던 바이너리를 한 문장으로 설명한다."
+    }
   },
   {
     "name": "anomalyco/opencode",
     "url": "https://github.com/anomalyco/opencode",
     "category": "coding-agents",
-    "desc": "终端里直接用 AI 写代码，不用开网页。支持多种模型，对标 Claude Code 和 Codex，免费开源。",
-    "stars_note": "终端编程助手里涨星最稳的之一"
+    "desc": {
+      "en": "Write code with AI right in your terminal, no browser tab needed. Supports many models, rivals Claude Code and Codex, free and open source.",
+      "zh-Hans": "终端里直接用 AI 写代码，不用开网页。支持多种模型，对标 Claude Code 和 Codex，免费开源。",
+      "zh-Hant": "終端機裡直接用 AI 寫程式，不用開網頁。支援多種模型，對標 Claude Code 和 Codex，免費開源。",
+      "ja": "ブラウザを開かず、ターミナルのまま AI でコーディング。多数のモデルに対応し、Claude Code や Codex に対抗する無料のオープンソース。",
+      "ko": "웹 페이지 없이 터미널에서 바로 AI로 코딩한다. 여러 모델을 지원하고 Claude Code·Codex에 맞서는 무료 오픈소스."
+    }
   },
   {
     "name": "stablyai/orca",
     "url": "https://github.com/stablyai/orca",
     "category": "coding-agents",
-    "desc": "一个桌面同时跑好几个 AI 编程助手，比看谁写得好。每个助手独立工作区，不互相干扰。",
-    "stars_note": "多 Agent 并行的实用工具"
+    "desc": {
+      "en": "Run several AI coding agents on one desktop and compare who writes better. Each agent gets its own workspace, so they never step on each other.",
+      "zh-Hans": "一个桌面同时跑好几个 AI 编程助手，比看谁写得好。每个助手独立工作区，不互相干扰。",
+      "zh-Hant": "一個桌面同時跑好幾個 AI 編程助手，比比看誰寫得好。每個助手獨立工作區，互不干擾。",
+      "ja": "一つのデスクトップで複数の AI コーディングエージェントを同時に走らせ、誰の出来が良いか比べられる。各エージェントは独立したワークスペースで互いに干渉しない。",
+      "ko": "한 데스크톱에서 여러 AI 코딩 에이전트를 동시에 돌려 누가 더 잘 짜는지 비교한다. 에이전트마다 작업 공간이 따로라 서로 방해하지 않는다."
+    }
   },
   {
     "name": "cloudflare/security-audit-skill",
     "url": "https://github.com/cloudflare/security-audit-skill",
     "category": "security-audit",
-    "desc": "让 AI 自己查自己的代码漏洞，还要再叫另一个 AI 来打脸。专治编程助手写出来的代码不安全。",
-    "stars_note": "近期周涨星常居前列"
+    "desc": {
+      "en": "Have AI audit its own code for vulnerabilities, then call in a second AI to challenge the findings. Built for the insecure code coding agents tend to write.",
+      "zh-Hans": "让 AI 自己查自己的代码漏洞，还要再叫另一个 AI 来打脸。专治编程助手写出来的代码不安全。",
+      "zh-Hant": "讓 AI 自己查自己的程式碼漏洞，還要再叫另一個 AI 來打臉。專治編程助手寫出來的程式碼不安全。",
+      "ja": "AI に自分のコードの脆弱性を調べさせ、さらに別の AI に反論させる。コーディングエージェントが書きがちな安全でないコード対策。",
+      "ko": "AI가 자기 코드의 취약점을 직접 찾게 하고, 다른 AI를 불러 반박까지 시킨다. 코딩 에이전트가 쓰는 불안전한 코드를 잡아낸다."
+    }
   },
   {
     "name": "heygen-com/hyperframes",
     "url": "https://github.com/heygen-com/hyperframes",
     "category": "video-media",
-    "desc": "用写网页的方式写视频，AI 直接渲染出来。编程助手也能用，不用再学剪辑软件。",
-    "stars_note": "AI 视频生成方向涨得快"
+    "desc": {
+      "en": "Write video the way you write a web page and let AI render it. Coding agents can use it too, no editing software to learn.",
+      "zh-Hans": "用写网页的方式写视频，AI 直接渲染出来。编程助手也能用，不用再学剪辑软件。",
+      "zh-Hant": "用寫網頁的方式寫影片，AI 直接算繪出來。編程助手也能用，不用再學剪輯軟體。",
+      "ja": "Web ページを書く感覚で動画を書けば、AI がそのままレンダリングする。コーディングエージェントからも使え、編集ソフトを覚える必要はない。",
+      "ko": "웹 페이지를 쓰듯 영상을 쓰면 AI가 바로 렌더링한다. 코딩 에이전트도 쓸 수 있어 편집 소프트웨어를 따로 배울 필요가 없다."
+    }
   },
   {
     "name": "DietrichGebert/ponytail",
     "url": "https://github.com/DietrichGebert/ponytail",
     "category": "skills-harness",
-    "desc": "专治 AI 写代码加一堆废话。让它学会像懒惰老手一样：能不写就不写，写就写对。",
-    "stars_note": "反 AI-slop 方向代表项目"
+    "desc": {
+      "en": "A cure for AI padding its code with filler. Teaches it to act like a lazy veteran: skip what you can, get right what you must write.",
+      "zh-Hans": "专治 AI 写代码加一堆废话。让它学会像懒惰老手一样：能不写就不写，写就写对。",
+      "zh-Hant": "專治 AI 寫程式碼加一堆廢話。讓它學會像懶惰老手一樣：能不寫就不寫，寫就寫對。",
+      "ja": "AI がコードに余計なものを盛りすぎる問題の特効薬。怠け者のベテランのように、書かずに済むなら書かず、書くなら正しく書くことを教える。",
+      "ko": "AI가 코드에 군더더기를 잔뜩 붙이는 버릇을 고친다. 게으른 베테랑처럼 안 써도 되면 쓰지 않고, 쓸 거면 제대로 쓰게 가르친다."
+    }
   },
   {
     "name": "Graphify-Labs/graphify",
     "url": "https://github.com/Graphify-Labs/graphify",
     "category": "memory-knowledge",
-    "desc": "把整个代码库变成一张地图，AI 一眼就看懂哪些文件互相调用。大项目再也不用从头看到尾。",
-    "stars_note": "代码库记忆/知识图谱方向热门"
+    "desc": {
+      "en": "Turns a whole codebase into a map so AI sees at a glance which files call which. Big projects no longer need reading top to bottom.",
+      "zh-Hans": "把整个代码库变成一张地图，AI 一眼就看懂哪些文件互相调用。大项目再也不用从头看到尾。",
+      "zh-Hant": "把整個程式碼庫變成一張地圖，AI 一眼就看懂哪些檔案互相呼叫。大專案再也不用從頭看到尾。",
+      "ja": "コードベース全体を一枚の地図にして、どのファイルが互いに呼び合うか AI が一目で把握できる。大規模プロジェクトを頭から読む必要がなくなる。",
+      "ko": "코드베이스 전체를 한 장의 지도로 만들어 어떤 파일이 서로 호출하는지 AI가 한눈에 파악한다. 큰 프로젝트를 처음부터 끝까지 읽을 필요가 없다."
+    }
   },
   {
     "name": "openclaw/openclaw",
     "url": "https://github.com/openclaw/openclaw",
     "category": "coding-agents",
-    "desc": "不是聊天机器人，是真能帮你干活的 AI。跨系统跑，本地部署，数据不出你电脑。",
-    "stars_note": "总星极高的个人 AI 助手"
+    "desc": {
+      "en": "Not a chatbot, an AI that actually gets work done. Runs across systems, deploys locally, and your data never leaves your computer.",
+      "zh-Hans": "不是聊天机器人，是真能帮你干活的 AI。跨系统跑，本地部署，数据不出你电脑。",
+      "zh-Hant": "不是聊天機器人，是真能幫你幹活的 AI。跨系統執行，本地部署，資料不出你的電腦。",
+      "ja": "チャットボットではなく、本当に仕事をこなす AI。システムをまたいで動き、ローカルにデプロイでき、データは PC の外に出ない。",
+      "ko": "챗봇이 아니라 실제로 일을 해주는 AI. 시스템을 가로질러 동작하고 로컬에 배포하며 데이터가 내 컴퓨터를 떠나지 않는다."
+    }
   }
 ]

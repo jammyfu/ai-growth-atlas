@@ -1,0 +1,108 @@
+"""Repo-level checks: data schema, generated READMEs, zero telemetry, workflow sanity."""
+import json
+import re
+import sys
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "tools"))
+import atlas_core as core  # noqa: E402
+import render_readme  # noqa: E402
+from i18n import LANGS  # noqa: E402
+
+LANG_CODES = list(LANGS)
+projects = json.loads((ROOT / "data/projects.json").read_text("utf-8"))
+cats = json.loads((ROOT / "data/categories.json").read_text("utf-8"))
+stats = json.loads((ROOT / "data/stats.json").read_text("utf-8"))
+TRACKERS = ("googletagmanager", "google-analytics", "gtag(", "clarity.ms", "plausible", "umami",
+            "matomo", "hotjar", "mixpanel", "segment.com", "<script")
+
+
+class DataTests(unittest.TestCase):
+    def test_projects_have_all_languages_and_valid_category(self):
+        ids = {c["id"] for c in cats}
+        for p in projects:
+            self.assertIn(p["category"], ids, p["name"])
+            self.assertEqual(sorted(p["desc"]), sorted(LANG_CODES), p["name"])
+            self.assertTrue(all(p["desc"][l].strip() for l in LANG_CODES))
+            self.assertNotIn("stars_note", p)  # unverifiable claims are not allowed
+
+    def test_categories_have_all_languages(self):
+        for c in cats:
+            self.assertEqual(sorted(c["name"]), sorted(LANG_CODES))
+            self.assertEqual(sorted(c["desc"]), sorted(LANG_CODES))
+
+    def test_stats_cover_every_project_and_are_consistent(self):
+        self.assertEqual([p["name"] for p in stats["projects"]], [p["name"] for p in projects])
+        for p in stats["projects"]:
+            if not p["ok"]:
+                self.assertIn("error", p)
+                continue
+            for key, days in core.WINDOWS.items():
+                g = p["growth"][key]
+                self.assertEqual(g["window_days"], days)
+                self.assertGreaterEqual(g["gained"], 0)
+                self.assertLessEqual(g["effective_days"], days)
+                self.assertAlmostEqual(g["per_day"], g["gained"] / g["effective_days"], places=2)
+            if p["history_complete"]:
+                # full history from the API must add up to the current star count
+                self.assertEqual(p["history_total"], p["stars"], p["name"])
+
+    def test_snapshots_have_today(self):
+        snaps = json.loads((ROOT / "data/stars.json").read_text("utf-8"))
+        for p in stats["projects"]:
+            if p["ok"]:
+                self.assertEqual(snaps[p["name"]][stats["today_utc"]], p["stars"])
+
+
+class ReadmeTests(unittest.TestCase):
+    def test_generated_readmes_are_current(self):
+        self.assertEqual(render_readme.main(["--check"]), 0)
+
+    def test_language_switcher_on_top_of_every_readme(self):
+        for code, (fname, label) in LANGS.items():
+            head = (ROOT / fname).read_text("utf-8").split("\n", 1)[0]
+            for c2, (f2, l2) in LANGS.items():
+                self.assertIn(f"**{l2}**" if c2 == code else f"[{l2}]({f2})", head, fname)
+
+    def test_sections_order_total_last_and_curves_everywhere(self):
+        for code, (fname, _l) in LANGS.items():
+            text = (ROOT / fname).read_text("utf-8")
+            heads = re.findall(r"^## (.+)$", text, flags=re.M)
+            s = render_readme.S[code]
+            order = [heads.index(s[k]) for k in ("week", "month", "year", "total")]
+            self.assertEqual(order, sorted(order), fname)
+            self.assertLess(heads.index(s["total"]), heads.index(s["missing_title"]))
+            for p in projects:
+                self.assertIn(core.star_history_svg(p["name"]), text, f"{fname} {p['name']}")
+
+    def test_english_is_default_readme(self):
+        self.assertEqual(LANGS["en"][0], "README.md")
+        self.assertIn("ranked by how fast", (ROOT / "README.md").read_text("utf-8"))
+
+
+class ZeroTelemetryTests(unittest.TestCase):
+    def test_no_trackers_in_repo_text(self):
+        files = [p for p in ROOT.rglob("*")
+                 if p.is_file() and ".git" not in p.parts and p.suffix in {".md", ".py", ".yml", ".yaml", ".json", ".sh", ".html", ".js"}
+                 and p.name not in {"test_repo.py"}]
+        for f in files:
+            body = f.read_text("utf-8", "replace").lower()
+            for t in TRACKERS:
+                self.assertNotIn(t, body, f"{f.relative_to(ROOT)} contains {t}")
+
+
+class WorkflowTests(unittest.TestCase):
+    def test_daily_workflow_has_schedule_and_least_privilege(self):
+        wf = (ROOT / ".github/workflows/daily-update.yml").read_text("utf-8")
+        self.assertRegex(wf, r"cron: '\d+ \d+ \* \* \*'")
+        self.assertIn("workflow_dispatch", wf)
+        self.assertIn("contents: write", wf)
+        self.assertIn("tools/update_stars.py", wf)
+        for line in re.findall(r"uses: (\S+)", wf):
+            self.assertTrue(line.startswith("actions/"), line)  # first-party actions only
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,0 +1,316 @@
+{
+  "generated_at": "2026-10-29T14:35:00Z",
+  "today_utc": "2026-10-29",
+  "windows_days": {
+    "week": 7,
+    "month": 30,
+    "year": 365
+  },
+  "method": "stars = GET /repos/{r}.stargazers_count; gained = sum of daily buckets from GET /repos/{r}/stargazers/history over the N complete UTC days before today",
+  "projects": [
+    {
+      "name": "morluto/rea",
+      "ok": true,
+      "stars": 405995,
+      "created_at": "2026-04-14T00:51:32Z",
+      "archived": false,
+      "github_description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 44699,
+          "effective_days": 7,
+          "per_day": 6385.571,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 403620,
+          "effective_days": 30,
+          "per_day": 13454.0,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 404018,
+          "effective_days": 198,
+          "per_day": 2040.495,
+          "young": true
+        }
+      },
+      "history_complete": true,
+      "history_total": 405995,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "anomalyco/opencode",
+      "ok": true,
+      "stars": 222962,
+      "created_at": "2025-04-30T20:08:00Z",
+      "archived": false,
+      "github_description": "The open source coding agent.",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 3319,
+          "effective_days": 7,
+          "per_day": 474.143,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 13395,
+          "effective_days": 30,
+          "per_day": 446.5,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 194683,
+          "effective_days": 365,
+          "per_day": 533.378,
+          "young": false
+        }
+      },
+      "history_complete": false,
+      "history_total": null,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "stablyai/orca",
+      "ok": true,
+      "stars": 109805,
+      "created_at": "2026-03-17T03:28:57Z",
+      "archived": false,
+      "github_description": "Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 7816,
+          "effective_days": 7,
+          "per_day": 1116.571,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 29045,
+          "effective_days": 30,
+          "per_day": 968.167,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 109358,
+          "effective_days": 226,
+          "per_day": 483.885,
+          "young": true
+        }
+      },
+      "history_complete": true,
+      "history_total": 109805,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "cloudflare/security-audit-skill",
+      "ok": true,
+      "stars": 52404,
+      "created_at": "2026-06-18T14:08:44Z",
+      "archived": false,
+      "github_description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 14697,
+          "effective_days": 7,
+          "per_day": 2099.571,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 29312,
+          "effective_days": 30,
+          "per_day": 977.067,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 51969,
+          "effective_days": 133,
+          "per_day": 390.744,
+          "young": true
+        }
+      },
+      "history_complete": true,
+      "history_total": 52404,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "heygen-com/hyperframes",
+      "ok": true,
+      "stars": 75233,
+      "created_at": "2026-03-10T01:51:06Z",
+      "archived": false,
+      "github_description": "Write HTML. Render video. Built for agents.",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 5649,
+          "effective_days": 7,
+          "per_day": 807.0,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 21302,
+          "effective_days": 30,
+          "per_day": 710.067,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 74939,
+          "effective_days": 233,
+          "per_day": 321.627,
+          "young": true
+        }
+      },
+      "history_complete": true,
+      "history_total": 75233,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "DietrichGebert/ponytail",
+      "ok": true,
+      "stars": 179791,
+      "created_at": "2026-06-12T00:52:37Z",
+      "archived": false,
+      "github_description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 7531,
+          "effective_days": 7,
+          "per_day": 1075.857,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 32832,
+          "effective_days": 30,
+          "per_day": 1094.4,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 179422,
+          "effective_days": 139,
+          "per_day": 1290.806,
+          "young": true
+        }
+      },
+      "history_complete": true,
+      "history_total": 179791,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "Graphify-Labs/graphify",
+      "ok": true,
+      "stars": 138349,
+      "created_at": "2026-04-03T15:49:07Z",
+      "archived": false,
+      "github_description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 6253,
+          "effective_days": 7,
+          "per_day": 893.286,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 16655,
+          "effective_days": 30,
+          "per_day": 555.167,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 138066,
+          "effective_days": 209,
+          "per_day": 660.603,
+          "young": true
+        }
+      },
+      "history_complete": true,
+      "history_total": 138349,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "openclaw/openclaw",
+      "ok": true,
+      "stars": 393350,
+      "created_at": "2025-11-24T10:16:47Z",
+      "archived": false,
+      "github_description": "The AI that really does things. Any OS. Any Platform. The lobster way. 🦞 ",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 1061,
+          "effective_days": 7,
+          "per_day": 151.571,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 4678,
+          "effective_days": 30,
+          "per_day": 155.933,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 393287,
+          "effective_days": 339,
+          "per_day": 1160.139,
+          "young": true
+        }
+      },
+      "history_complete": true,
+      "history_total": 393350,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    }
+  ]
+}
