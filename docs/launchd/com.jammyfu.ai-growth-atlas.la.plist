@@ -3,22 +3,22 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>com.jammyfu.ai-growth-atlas.daily</string>
+  <string>com.jammyfu.ai-growth-atlas.la</string>
   <key>ProgramArguments</key>
   <array>
     <string>/bin/bash</string>
     <string>/PATH/TO/ai-growth-atlas/tools/local_daily.sh</string>
+    <string>--slot</string>
+    <string>la</string>
   </array>
   <key>StartCalendarInterval</key>
-  <dict>
-    <key>Hour</key>
-    <integer>10</integer>
-    <key>Minute</key>
-    <integer>17</integer>
-  </dict>
+  <array>
+    <dict><key>Hour</key><integer>15</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>16</integer><key>Minute</key><integer>0</integer></dict>
+  </array>
   <key>StandardOutPath</key>
-  <string>/tmp/ai-growth-atlas-daily.log</string>
+  <string>/tmp/com.jammyfu.ai-growth-atlas.la.log</string>
   <key>StandardErrorPath</key>
-  <string>/tmp/ai-growth-atlas-daily.err.log</string>
+  <string>/tmp/com.jammyfu.ai-growth-atlas.la.err.log</string>
 </dict>
 </plist>

@@ -12,6 +12,8 @@ LANGS: dict[str, tuple[str, str]] = {
 
 S: dict[str, dict[str, str]] = {
     "en": {
+        "history": "These tables are the latest ranking. Every update is also saved per time slot: [ranking history](rankings/README.md) · [latest/rankings.md](latest/rankings.md).",
+        "shown": "Each ranking shows the top {n} of {total} tracked projects.",
         "title": "AI Growth Atlas",
         "tagline": "AI projects ranked by how fast they are gaining stars, not by total stars.",
         "intro": "Most lists sort by total stars, so old projects sit on top forever and newly rising ones get buried. Here every project gets a stars-per-day figure over the last 7, 30 and 365 days, and the rankings are ordered by that growth. The all-time star ranking comes last.",
@@ -40,6 +42,8 @@ S: dict[str, dict[str, str]] = {
         "none": "n/a",
     },
     "zh-Hans": {
+        "history": "下面就是最新排名。每次更新还会按时段另存一份：[历史排名索引](rankings/README.md) · [latest/rankings.md](latest/rankings.md)。",
+        "shown": "每个榜单只展示前 {n} 名，目前一共收录了 {total} 个项目。",
         "title": "谁在真正变火：AI 开源黑马榜 (AI Growth Atlas)",
         "tagline": "专治老项目霸榜！不比谁十年前攒了多少老本，只比这几天谁涨赞最猛。带你一眼看清：全世界程序员现在都在偷偷用什么新神仙 AI！",
         "intro": "网上几乎所有的开源榜单，全都在按“累计总点赞数”排。结果排在前面的全是几年前的大厂老古董，好多早就没人维护了；而最近几天真正好用、天天被程序员狂赞的宝藏黑马，全被埋在底下根本看不到。\n\n**这个榜单就干一件事：只比谁最近跑得最快！**\n我们每天计算每个项目最近 7 天、30 天平均每天能涨多少个赞。谁涨得最凶，谁就排第一名！让你花 30 秒，一眼看清最新的神仙工具到底是谁。",
@@ -68,6 +72,8 @@ S: dict[str, dict[str, str]] = {
         "none": "暂无",
     },
     "zh-Hant": {
+        "history": "下面就是最新排名。每次更新還會依時段另存一份：[歷史排名索引](rankings/README.md) · [latest/rankings.md](latest/rankings.md)。",
+        "shown": "每個榜單只展示前 {n} 名，目前一共收錄了 {total} 個專案。",
         "title": "誰在真正變火：AI 開源黑馬榜 (AI Growth Atlas)",
         "tagline": "專治老專案霸榜！不比誰十年前攢了多少老本，只比這幾天誰按讚漲最猛。帶你一眼看清：全世界工程師現在都在偷偷用什麼新神仙 AI！",
         "intro": "網上幾乎所有的開源榜單，全都在按「累計總點讚數」排。結果排在前面的全是幾年前的大廠老古董，好多早就沒人維護了；而最近幾天真正好用、天天被工程師狂讚的寶藏黑馬，全被埋在底下根本看不到。\n\n**這個榜單就幹一件事：只比誰最近跑得最快！**\n我們每天計算每個專案最近 7 天、30 天平均每天能漲多少個讚。誰漲得最兇，誰就排第一名！讓你花 30 秒，一眼看清最新的神仙工具到底是誰。",
@@ -96,6 +102,8 @@ S: dict[str, dict[str, str]] = {
         "none": "暫無",
     },
     "ja": {
+        "history": "以下が最新のランキングです。更新のたびに時間帯ごとにも保存しています：[ランキング履歴](rankings/README.md) · [latest/rankings.md](latest/rankings.md)。",
+        "shown": "各ランキングは、収録 {total} プロジェクトのうち上位 {n} 件を表示します。",
         "title": "AI Growth Atlas",
         "tagline": "AI プロジェクトを、総スター数ではなく「スターの増える速さ」で並べたランキング。",
         "intro": "多くのリストは総スター数順なので、古いプロジェクトが居座り、新しく伸びているものが埋もれます。ここでは各プロジェクトについて直近 7 日・30 日・365 日の 1 日あたり増加スター数を算出し、その増加速度で順位を付けます。総スター数ランキングは最後です。",
@@ -124,6 +132,8 @@ S: dict[str, dict[str, str]] = {
         "none": "なし",
     },
     "ko": {
+        "history": "아래가 최신 순위입니다. 업데이트할 때마다 시간대별로도 저장합니다: [순위 기록](rankings/README.md) · [latest/rankings.md](latest/rankings.md).",
+        "shown": "각 랭킹은 수록된 {total}개 프로젝트 중 상위 {n}개만 보여 줍니다.",
         "title": "AI Growth Atlas",
         "tagline": "AI 프로젝트를 총 스타 수가 아니라 '스타가 늘어나는 속도'로 줄 세운 랭킹.",
         "intro": "대부분의 목록은 총 스타 순이라 오래된 프로젝트가 계속 상위를 차지하고, 새로 뜨는 프로젝트는 묻힙니다. 여기서는 프로젝트마다 최근 7일·30일·365일의 하루 평균 증가 스타 수를 계산해 증가 속도 순으로 순위를 매기고, 총 스타 순위는 맨 마지막에 둡니다.",

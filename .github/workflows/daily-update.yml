@@ -1,11 +1,18 @@
 name: daily-update
 
-# Refreshes data/stats.json, data/stars.json and the five READMEs from the GitHub API.
-# Scheduled workflows only run from the default branch, so this starts working after merge.
+# Each run also stores its result under rankings/<date>/<slot>/ (history) and latest/.
+# Runs at Beijing 00:00 and America/Los_Angeles 00:00 every day.
+#   Beijing (UTC+8, no DST):   16:00 UTC                       -> '0 16 * * *'
+#   Los Angeles midnight:      07:00 UTC in PDT, 08:00 UTC in PST -> '0 7 * * *' and '0 8 * * *'
+# GitHub cron is UTC-only, so the two LA entries both fire and tools/schedule_guard.py lets only the
+# one that is actually 00:xx in America/Los_Angeles continue; the other one skips.
+# Scheduled workflows run from the default branch only. Runs can start a few minutes late.
 # If Actions is unavailable for the account, use tools/local_daily.sh (see docs/DAILY_UPDATE.md).
 on:
   schedule:
-    - cron: '17 2 * * *'   # 02:17 UTC daily (10:17 Asia/Taipei)
+    - cron: '0 16 * * *'
+    - cron: '0 7 * * *'
+    - cron: '0 8 * * *'
   workflow_dispatch:
 
 permissions:
@@ -23,13 +30,40 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
+      - name: Decide whether this trigger should run
+        id: gate
+        env:
+          EVENT: ${{ github.event_name }}
+          CRON: ${{ github.event.schedule }}
+        run: |
+          # Beijing slot and manual runs always proceed. The two LA slots proceed only at LA midnight.
+          # Output "slot" names the history folder: cn -> rankings/<date>/cn-0000, pt -> pt-0000,
+          # auto (manual dispatch) -> cn/pt if the clock happens to be at a slot, else manual-HHMM.
+          if [ "$EVENT" = "schedule" ] && [ "$CRON" = "0 16 * * *" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "slot=cn" >> "$GITHUB_OUTPUT"
+          elif [ "$EVENT" = "schedule" ]; then
+            if python3 tools/schedule_guard.py --tz America/Los_Angeles --hour 0; then
+              echo "run=true" >> "$GITHUB_OUTPUT"
+              echo "slot=pt" >> "$GITHUB_OUTPUT"
+            else
+              echo "run=false" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "slot=auto" >> "$GITHUB_OUTPUT"
+          fi
       - name: Fetch star data from the GitHub API and regenerate READMEs
+        if: steps.gate.outputs.run == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 tools/update_stars.py
+          SLOT: ${{ steps.gate.outputs.slot }}
+        run: python3 tools/update_stars.py --slot "$SLOT"
       - name: Verify
+        if: steps.gate.outputs.run == 'true'
         run: python3 tools/verify.py
       - name: Commit and push if anything changed
+        if: steps.gate.outputs.run == 'true'
         run: |
           if [ -z "$(git status --porcelain)" ]; then
             echo "No changes."
@@ -37,6 +71,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data README*.md
+          git add data rankings latest README*.md
           git commit -m "chore(data): daily star update $(date -u +%F)"
           git push origin HEAD:main

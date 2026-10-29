@@ -1,6 +1,13 @@
 {
-  "generated_at": "2026-10-29T14:35:00Z",
+  "generated_at": "2026-10-29T16:21:04Z",
   "today_utc": "2026-10-29",
+  "slot": {
+    "name": "cn",
+    "id": "cn-0000",
+    "date": "2026-10-30",
+    "label": "Beijing 00:00",
+    "tz": "Asia/Shanghai"
+  },
   "windows_days": {
     "week": 7,
     "month": 30,
@@ -11,35 +18,35 @@
     {
       "name": "morluto/rea",
       "ok": true,
-      "stars": 405995,
+      "stars": 406443,
       "created_at": "2026-04-14T00:51:32Z",
       "archived": false,
       "github_description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
       "growth": {
         "week": {
           "window_days": 7,
-          "gained": 44699,
+          "gained": 44697,
           "effective_days": 7,
-          "per_day": 6385.571,
+          "per_day": 6385.286,
           "young": false
         },
         "month": {
           "window_days": 30,
-          "gained": 403620,
+          "gained": 403608,
           "effective_days": 30,
-          "per_day": 13454.0,
+          "per_day": 13453.6,
           "young": false
         },
         "year": {
           "window_days": 365,
-          "gained": 404018,
+          "gained": 404006,
           "effective_days": 198,
-          "per_day": 2040.495,
+          "per_day": 2040.434,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 405995,
+      "history_total": 406443,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -49,7 +56,7 @@
     {
       "name": "anomalyco/opencode",
       "ok": true,
-      "stars": 222962,
+      "stars": 222979,
       "created_at": "2025-04-30T20:08:00Z",
       "archived": false,
       "github_description": "The open source coding agent.",
@@ -70,9 +77,9 @@
         },
         "year": {
           "window_days": 365,
-          "gained": 194683,
+          "gained": 194679,
           "effective_days": 365,
-          "per_day": 533.378,
+          "per_day": 533.367,
           "young": false
         }
       },
@@ -87,35 +94,35 @@
     {
       "name": "stablyai/orca",
       "ok": true,
-      "stars": 109805,
+      "stars": 109903,
       "created_at": "2026-03-17T03:28:57Z",
       "archived": false,
       "github_description": "Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
       "growth": {
         "week": {
           "window_days": 7,
-          "gained": 7816,
+          "gained": 7815,
           "effective_days": 7,
-          "per_day": 1116.571,
+          "per_day": 1116.429,
           "young": false
         },
         "month": {
           "window_days": 30,
-          "gained": 29045,
+          "gained": 29041,
           "effective_days": 30,
-          "per_day": 968.167,
+          "per_day": 968.033,
           "young": false
         },
         "year": {
           "window_days": 365,
-          "gained": 109358,
+          "gained": 109351,
           "effective_days": 226,
-          "per_day": 483.885,
+          "per_day": 483.854,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 109805,
+      "history_total": 109903,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -125,7 +132,7 @@
     {
       "name": "cloudflare/security-audit-skill",
       "ok": true,
-      "stars": 52404,
+      "stars": 52499,
       "created_at": "2026-06-18T14:08:44Z",
       "archived": false,
       "github_description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
@@ -153,7 +160,7 @@
         }
       },
       "history_complete": true,
-      "history_total": 52404,
+      "history_total": 52499,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -163,35 +170,35 @@
     {
       "name": "heygen-com/hyperframes",
       "ok": true,
-      "stars": 75233,
+      "stars": 75286,
       "created_at": "2026-03-10T01:51:06Z",
       "archived": false,
       "github_description": "Write HTML. Render video. Built for agents.",
       "growth": {
         "week": {
           "window_days": 7,
-          "gained": 5649,
+          "gained": 5648,
           "effective_days": 7,
-          "per_day": 807.0,
+          "per_day": 806.857,
           "young": false
         },
         "month": {
           "window_days": 30,
-          "gained": 21302,
+          "gained": 21301,
           "effective_days": 30,
-          "per_day": 710.067,
+          "per_day": 710.033,
           "young": false
         },
         "year": {
           "window_days": 365,
-          "gained": 74939,
+          "gained": 74938,
           "effective_days": 233,
-          "per_day": 321.627,
+          "per_day": 321.622,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 75233,
+      "history_total": 75286,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -201,35 +208,35 @@
     {
       "name": "DietrichGebert/ponytail",
       "ok": true,
-      "stars": 179791,
+      "stars": 179871,
       "created_at": "2026-06-12T00:52:37Z",
       "archived": false,
       "github_description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
       "growth": {
         "week": {
           "window_days": 7,
-          "gained": 7531,
+          "gained": 7530,
           "effective_days": 7,
-          "per_day": 1075.857,
+          "per_day": 1075.714,
           "young": false
         },
         "month": {
           "window_days": 30,
-          "gained": 32832,
+          "gained": 32831,
           "effective_days": 30,
-          "per_day": 1094.4,
+          "per_day": 1094.367,
           "young": false
         },
         "year": {
           "window_days": 365,
-          "gained": 179422,
+          "gained": 179421,
           "effective_days": 139,
-          "per_day": 1290.806,
+          "per_day": 1290.799,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 179791,
+      "history_total": 179871,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -239,7 +246,7 @@
     {
       "name": "Graphify-Labs/graphify",
       "ok": true,
-      "stars": 138349,
+      "stars": 138413,
       "created_at": "2026-04-03T15:49:07Z",
       "archived": false,
       "github_description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
@@ -260,14 +267,14 @@
         },
         "year": {
           "window_days": 365,
-          "gained": 138066,
+          "gained": 138063,
           "effective_days": 209,
-          "per_day": 660.603,
+          "per_day": 660.589,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 138349,
+      "history_total": 138413,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -277,7 +284,7 @@
     {
       "name": "openclaw/openclaw",
       "ok": true,
-      "stars": 393350,
+      "stars": 393355,
       "created_at": "2025-11-24T10:16:47Z",
       "archived": false,
       "github_description": "The AI that really does things. Any OS. Any Platform. The lobster way. 🦞 ",
@@ -298,14 +305,546 @@
         },
         "year": {
           "window_days": 365,
-          "gained": 393287,
+          "gained": 393282,
           "effective_days": 339,
-          "per_day": 1160.139,
+          "per_day": 1160.124,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 393350,
+      "history_total": 393355,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "deepseek-ai/deepseek-harness",
+      "ok": true,
+      "stars": 265637,
+      "created_at": "2026-08-13T11:56:32Z",
+      "archived": false,
+      "github_description": "DeepSeek Harness: Everything is a Plugin.",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 8170,
+          "effective_days": 7,
+          "per_day": 1167.143,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 27586,
+          "effective_days": 30,
+          "per_day": 919.533,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 265181,
+          "effective_days": 77,
+          "per_day": 3443.909,
+          "young": true
+        }
+      },
+      "history_complete": true,
+      "history_total": 265637,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "affaan-m/ECC",
+      "ok": true,
+      "stars": 292434,
+      "created_at": "2026-01-18T00:51:51Z",
+      "archived": false,
+      "github_description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 6466,
+          "effective_days": 7,
+          "per_day": 923.714,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 24481,
+          "effective_days": 30,
+          "per_day": 816.033,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 291978,
+          "effective_days": 284,
+          "per_day": 1028.092,
+          "young": true
+        }
+      },
+      "history_complete": true,
+      "history_total": 292434,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "yetone/magpie",
+      "ok": true,
+      "stars": 25293,
+      "created_at": "2026-09-23T16:22:35Z",
+      "archived": false,
+      "github_description": "Every agent's model. One place. Codex on DeepSeek, Claude Code on Kimi, from the menu bar.",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 5943,
+          "effective_days": 7,
+          "per_day": 849.0,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 23177,
+          "effective_days": 30,
+          "per_day": 772.567,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 24872,
+          "effective_days": 36,
+          "per_day": 690.889,
+          "young": true
+        }
+      },
+      "history_complete": true,
+      "history_total": 25293,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "Panniantong/Agent-Reach",
+      "ok": true,
+      "stars": 106123,
+      "created_at": "2026-02-24T02:10:24Z",
+      "archived": false,
+      "github_description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 5212,
+          "effective_days": 7,
+          "per_day": 744.571,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 20321,
+          "effective_days": 30,
+          "per_day": 677.367,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 105809,
+          "effective_days": 247,
+          "per_day": 428.377,
+          "young": true
+        }
+      },
+      "history_complete": true,
+      "history_total": 106123,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "Leonxlnx/taste-skill",
+      "ok": true,
+      "stars": 105258,
+      "created_at": "2026-02-19T21:44:05Z",
+      "archived": false,
+      "github_description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 4200,
+          "effective_days": 7,
+          "per_day": 600.0,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 14312,
+          "effective_days": 30,
+          "per_day": 477.067,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 104800,
+          "effective_days": 252,
+          "per_day": 415.873,
+          "young": true
+        }
+      },
+      "history_complete": true,
+      "history_total": 105258,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "ok": true,
+      "stars": 142419,
+      "created_at": "2025-11-30T11:36:31Z",
+      "archived": false,
+      "github_description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 3715,
+          "effective_days": 7,
+          "per_day": 530.714,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 11568,
+          "effective_days": 30,
+          "per_day": 385.6,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 142192,
+          "effective_days": 333,
+          "per_day": 427.003,
+          "young": true
+        }
+      },
+      "history_complete": true,
+      "history_total": 142419,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "cheaper-inference/OmniRoute",
+      "ok": true,
+      "stars": 82482,
+      "created_at": "2026-02-13T12:38:31Z",
+      "archived": false,
+      "github_description": "Never stop coding. Free MIT AI gateway: one endpoint, 375 providers (150+ free), 1,400+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 900+ contributors",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 2930,
+          "effective_days": 7,
+          "per_day": 418.571,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 11755,
+          "effective_days": 30,
+          "per_day": 391.833,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 82326,
+          "effective_days": 258,
+          "per_day": 319.093,
+          "young": true
+        }
+      },
+      "history_complete": true,
+      "history_total": 82482,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "paperclipai/paperclip",
+      "ok": true,
+      "stars": 108529,
+      "created_at": "2026-03-02T15:01:51Z",
+      "archived": false,
+      "github_description": "The open-source app everyone uses to manage agents at work",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 2680,
+          "effective_days": 7,
+          "per_day": 382.857,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 15415,
+          "effective_days": 30,
+          "per_day": 513.833,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 108373,
+          "effective_days": 241,
+          "per_day": 449.68,
+          "young": true
+        }
+      },
+      "history_complete": true,
+      "history_total": 108529,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "farion1231/cc-switch",
+      "ok": true,
+      "stars": 150034,
+      "created_at": "2025-08-04T14:16:16Z",
+      "archived": false,
+      "github_description": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Grok Build & Hermes Agent. Only official website: ccswitch.io",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 2666,
+          "effective_days": 7,
+          "per_day": 380.857,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 12511,
+          "effective_days": 30,
+          "per_day": 417.033,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 147207,
+          "effective_days": 365,
+          "per_day": 403.307,
+          "young": false
+        }
+      },
+      "history_complete": false,
+      "history_total": null,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "NousResearch/hermes-agent",
+      "ok": true,
+      "stars": 258420,
+      "created_at": "2025-07-22T22:22:28Z",
+      "archived": false,
+      "github_description": "The agent that grows with you",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 2523,
+          "effective_days": 7,
+          "per_day": 360.429,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 9698,
+          "effective_days": 30,
+          "per_day": 323.267,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 258256,
+          "effective_days": 365,
+          "per_day": 707.551,
+          "young": false
+        }
+      },
+      "history_complete": false,
+      "history_total": null,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "NVIDIA/SkillSpector",
+      "ok": true,
+      "stars": 23302,
+      "created_at": "2026-03-21T00:28:43Z",
+      "archived": false,
+      "github_description": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and supply-chain risks in Claude Code, Codex, and MCP skills before you install them.",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 2345,
+          "effective_days": 7,
+          "per_day": 335.0,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 4722,
+          "effective_days": 30,
+          "per_day": 157.4,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 23173,
+          "effective_days": 222,
+          "per_day": 104.383,
+          "young": true
+        }
+      },
+      "history_complete": true,
+      "history_total": 23302,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "addyosmani/agent-skills",
+      "ok": true,
+      "stars": 111655,
+      "created_at": "2026-02-15T20:20:26Z",
+      "archived": false,
+      "github_description": "Production-grade engineering skills for AI coding agents.",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 2248,
+          "effective_days": 7,
+          "per_day": 321.143,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 12253,
+          "effective_days": 30,
+          "per_day": 408.433,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 111524,
+          "effective_days": 256,
+          "per_day": 435.641,
+          "young": true
+        }
+      },
+      "history_complete": true,
+      "history_total": 111655,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "thedotmack/claude-mem",
+      "ok": true,
+      "stars": 104417,
+      "created_at": "2025-08-31T20:50:03Z",
+      "archived": false,
+      "github_description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 2038,
+          "effective_days": 7,
+          "per_day": 291.143,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 9724,
+          "effective_days": 30,
+          "per_day": 324.133,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 103820,
+          "effective_days": 365,
+          "per_day": 284.438,
+          "young": false
+        }
+      },
+      "history_complete": false,
+      "history_total": null,
+      "snapshot_check": {
+        "week": null,
+        "month": null,
+        "year": null
+      }
+    },
+    {
+      "name": "anthropics/skills",
+      "ok": true,
+      "stars": 184702,
+      "created_at": "2025-09-22T15:53:31Z",
+      "archived": false,
+      "github_description": "Public repository for Agent Skills",
+      "growth": {
+        "week": {
+          "window_days": 7,
+          "gained": 1870,
+          "effective_days": 7,
+          "per_day": 267.143,
+          "young": false
+        },
+        "month": {
+          "window_days": 30,
+          "gained": 6436,
+          "effective_days": 30,
+          "per_day": 214.533,
+          "young": false
+        },
+        "year": {
+          "window_days": 365,
+          "gained": 170695,
+          "effective_days": 365,
+          "per_day": 467.658,
+          "young": false
+        }
+      },
+      "history_complete": true,
+      "history_total": 184702,
       "snapshot_check": {
         "week": null,
         "month": null,

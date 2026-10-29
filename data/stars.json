@@ -1,27 +1,69 @@
 {
   "_comment": "Daily snapshots of stargazers_count from the GitHub API. Format: { \"owner/repo\": { \"YYYY-MM-DD\": stars } }. Appended by tools/update_stars.py.",
   "DietrichGebert/ponytail": {
-    "2026-10-29": 179791
+    "2026-10-29": 179871
   },
   "Graphify-Labs/graphify": {
-    "2026-10-29": 138349
+    "2026-10-29": 138413
+  },
+  "Leonxlnx/taste-skill": {
+    "2026-10-29": 105258
+  },
+  "NVIDIA/SkillSpector": {
+    "2026-10-29": 23302
+  },
+  "NousResearch/hermes-agent": {
+    "2026-10-29": 258420
+  },
+  "Panniantong/Agent-Reach": {
+    "2026-10-29": 106123
+  },
+  "addyosmani/agent-skills": {
+    "2026-10-29": 111655
+  },
+  "affaan-m/ECC": {
+    "2026-10-29": 292434
   },
   "anomalyco/opencode": {
-    "2026-10-29": 222962
+    "2026-10-29": 222979
+  },
+  "anthropics/skills": {
+    "2026-10-29": 184702
+  },
+  "cheaper-inference/OmniRoute": {
+    "2026-10-29": 82482
   },
   "cloudflare/security-audit-skill": {
-    "2026-10-29": 52404
+    "2026-10-29": 52499
+  },
+  "deepseek-ai/deepseek-harness": {
+    "2026-10-29": 265637
+  },
+  "farion1231/cc-switch": {
+    "2026-10-29": 150034
   },
   "heygen-com/hyperframes": {
-    "2026-10-29": 75233
+    "2026-10-29": 75286
   },
   "morluto/rea": {
-    "2026-10-29": 405995
+    "2026-10-29": 406443
+  },
+  "nextlevelbuilder/ui-ux-pro-max-skill": {
+    "2026-10-29": 142419
   },
   "openclaw/openclaw": {
-    "2026-10-29": 393350
+    "2026-10-29": 393355
+  },
+  "paperclipai/paperclip": {
+    "2026-10-29": 108529
   },
   "stablyai/orca": {
-    "2026-10-29": 109805
+    "2026-10-29": 109903
+  },
+  "thedotmack/claude-mem": {
+    "2026-10-29": 104417
+  },
+  "yetone/magpie": {
+    "2026-10-29": 25293
   }
 }

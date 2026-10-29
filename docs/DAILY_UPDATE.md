@@ -7,7 +7,7 @@ project that cannot be fetched is listed under "Missing data" in the README.
 
 1. `GET /repos/{owner}/{repo}` → `stargazers_count`, `created_at`.
 2. `GET /repos/{owner}/{repo}/stargazers/history` (newest week first, 30 weeks per page) until one year is covered.
-3. Writes `data/stats.json` (growth per project), appends today's star count to `data/stars.json`
+3. Writes `data/stats.json` (growth per project), archives it under `rankings/<date>/<slot>/` and `latest/`, appends today's star count to `data/stars.json`
    (snapshots, used for cross-checks over time), then regenerates the five READMEs.
 
 Why `stargazers/history` and not `stargazers` + `starred_at`: since July 2026 GitHub returns 404 for
@@ -17,16 +17,52 @@ The privacy-safe replacement is `stargazers/history`, which returns daily counts
 ([changelog](https://github.blog/changelog/2026-09-04-new-api-endpoint-provides-privacy-safe-star-history-data/)).
 Cross-check built into the tests: for every repo whose full history was read, the sum of the history equals `stargazers_count`.
 
+## Where results go: history per time slot
+
+Every run stores its result in its own folder and keeps it (nothing is overwritten except a re-run of the same slot):
+
+```
+rankings/<date>/cn-0000/   Beijing 00:00 run      (date = Asia/Shanghai date)
+rankings/<date>/pt-0000/   Los Angeles 00:00 run  (date = America/Los_Angeles date)
+rankings/<date>/manual-HHMM/   any other run, e.g. manual dispatch (date/time = UTC)
+    stats.json     full API-derived data of that run, plus a "slot" block
+    rankings.md    top-20 tables for that run (English, compact)
+rankings/README.md   history index linking every snapshot, newest first
+latest/stats.json, latest/rankings.md   copy of the newest run
+data/stats.json      what the READMEs are rendered from (same as the newest run)
+```
+
+The five READMEs show the latest ranking and link to the history index and `latest/rankings.md`.
+`tools/update_stars.py --slot cn|pt|manual|auto` picks the folder (`auto`, the default, uses cn if it is 00:xx in
+Beijing, pt if 00:xx in Los Angeles, otherwise manual). The workflow and `tools/local_daily.sh` pass the slot themselves.
+`tools/verify.py` checks that `latest/`, the index and every snapshot's `rankings.md` match their data.
+
+## Schedule: Beijing 00:00 and Los Angeles 00:00
+
+| Slot | When | cron (UTC) |
+|---|---|---|
+| Beijing 00:00 (UTC+8, no DST) | 16:00 UTC | `0 16 * * *` |
+| America/Los_Angeles 00:00, PDT (UTC-7) | 07:00 UTC | `0 7 * * *` |
+| America/Los_Angeles 00:00, PST (UTC-8) | 08:00 UTC | `0 8 * * *` |
+
+GitHub cron only knows UTC, so both LA entries fire every day. `tools/schedule_guard.py --tz America/Los_Angeles --hour 0`
+checks the real Los Angeles clock and lets only the one that is actually 00:xx there continue; the other run skips
+(you will see a green run whose steps are skipped). Tests cover PDT, PST, both 2026 DST changes (Mar 8, Nov 1) and
+assert that exactly one of the two LA slots passes on every day of the year (`tests/test_schedule.py`).
+The Beijing entry is unguarded. Manual `workflow_dispatch` always runs.
+
+Caveat: GitHub may start scheduled runs several minutes late. A run delayed past the end of the 00:xx hour in Los Angeles
+would skip. The Beijing slot and the next day's runs still refresh the data, so a delay never leaves it stale for more than a day.
+
 ## Option A: GitHub Actions (preferred when it runs)
 
-`.github/workflows/daily-update.yml` runs at 02:17 UTC every day (and on manual dispatch), regenerates the
-data, runs `tools/verify.py`, and commits to `main` if anything changed. It uses only first-party
-`actions/*` and the built-in `GITHUB_TOKEN`.
-`.github/workflows/ci.yml` runs `tools/verify.py` on every pull request (no network).
+`.github/workflows/daily-update.yml` regenerates the data, runs `tools/verify.py`, and commits to `main` if anything changed.
+It uses only first-party `actions/*` and the built-in `GITHUB_TOKEN`.
+`.github/workflows/ci.yml` runs `tools/verify.py` on every pull request and push to `main` (no network).
 
-Scheduled workflows run from the default branch only, so the schedule starts after this is merged.
+Scheduled workflows run from the default branch only.
 
-### Can Actions run for this account? (checked 2026-10-29)
+### Can Actions run for this account? (checked 2026-10-29, re-checked 2026-10-30)
 
 The account has a billing problem, but it only affects private repos:
 
@@ -50,32 +86,41 @@ gh api repos/jammyfu/ai-growth-atlas/check-runs/<job_id>/annotations --jq '.[].m
 
 ```bash
 GITHUB_TOKEN=$(gh auth token) python3 tools/update_stars.py   # fetch + render only
-tools/local_daily.sh              # update, verify, commit, push to main
-tools/local_daily.sh --no-push    # update, verify, commit locally
+tools/local_daily.sh                  # update, verify, commit, push to main (any time)
+tools/local_daily.sh --no-push        # update, verify, commit locally
+tools/local_daily.sh --slot beijing   # only proceeds if it is 00:xx in Asia/Shanghai
+tools/local_daily.sh --slot la        # only proceeds if it is 00:xx in America/Los_Angeles (DST-aware)
 ```
 
 `tools/local_daily.sh` reads `GITHUB_TOKEN` (falls back to `gh auth token`), refuses to run off `main` or
-with a dirty tree, and sets its own `PATH` so it works from cron/launchd.
+with a dirty tree, and sets its own `PATH` so it works from cron/launchd. The `--slot` check runs first and exits 0
+with `skip: ...` without touching anything. `ATLAS_NOW_UTC=2026-10-29T08:30:00Z` overrides the clock for testing.
 
-### cron (Linux / macOS)
+### cron (Linux / macOS, machine clock in Beijing time)
 
 ```cron
-17 10 * * *  cd /path/to/ai-growth-atlas && GITHUB_TOKEN=ghp_xxx tools/local_daily.sh >> /tmp/atlas-daily.log 2>&1
+0 0 * * *       cd /path/to/ai-growth-atlas && tools/local_daily.sh --slot beijing >> /tmp/atlas-daily.log 2>&1
+0 15,16 * * *   cd /path/to/ai-growth-atlas && tools/local_daily.sh --slot la      >> /tmp/atlas-daily.log 2>&1
 ```
 
-Do not commit the token. Keep it in the crontab line, or leave `GITHUB_TOKEN` unset and rely on `gh auth login`.
+Los Angeles midnight is 15:00 Beijing time in PDT and 16:00 in PST; the `la` slot fires at both and the guard picks the right one.
+If the machine uses another time zone, run the `la` line hourly (`0 * * * *`) and the guard does the rest; for Beijing use
+`CRON_TZ=Asia/Shanghai` where your cron supports it, or hourly with `--slot beijing`.
+Do not commit a token. Put `GITHUB_TOKEN=...` at the top of the crontab, or leave it unset and rely on `gh auth login`.
 
-### launchd (macOS)
+### launchd (macOS, machine clock in Beijing time)
 
-Copy `docs/launchd/com.jammyfu.ai-growth-atlas.daily.plist`, replace `/PATH/TO` with the clone path, then:
+Two agents: `docs/launchd/com.jammyfu.ai-growth-atlas.beijing.plist` (00:00) and
+`docs/launchd/com.jammyfu.ai-growth-atlas.la.plist` (15:00 and 16:00, guarded). Replace `/PATH/TO` with the clone path, then:
 
 ```bash
-cp docs/launchd/com.jammyfu.ai-growth-atlas.daily.plist ~/Library/LaunchAgents/
-launchctl load ~/Library/LaunchAgents/com.jammyfu.ai-growth-atlas.daily.plist
-launchctl start com.jammyfu.ai-growth-atlas.daily   # test run
+cp docs/launchd/com.jammyfu.ai-growth-atlas.*.plist ~/Library/LaunchAgents/
+launchctl load ~/Library/LaunchAgents/com.jammyfu.ai-growth-atlas.beijing.plist
+launchctl load ~/Library/LaunchAgents/com.jammyfu.ai-growth-atlas.la.plist
+launchctl start com.jammyfu.ai-growth-atlas.la     # test: prints "skip: ..." unless it is LA midnight
 ```
 
-The plist runs at 10:17 local time. It relies on `gh auth login` for the token (launchd has no shell profile).
+They rely on `gh auth login` for the token (launchd has no shell profile).
 
 ## Verify
 

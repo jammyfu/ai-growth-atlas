@@ -22,6 +22,7 @@ from pathlib import Path
 from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import archive  # noqa: E402
 import atlas_core as core  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -111,18 +112,23 @@ def fetch_project(name: str, token: str, today: dt.date, snaps: dict[str, int]) 
     return entry
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--today", help="override UTC date (YYYY-MM-DD), for tests/back-fills")
+    ap.add_argument("--slot", choices=archive.SLOT_CHOICES, default="auto",
+                    help="cn = Beijing 00:00, pt = Los Angeles 00:00, manual, or auto-detect from the clock")
+    ap.add_argument("--now", default=os.environ.get("ATLAS_NOW_UTC"),
+                    help="override the current time (ISO 8601 UTC), for tests/back-fills")
     ap.add_argument("--no-render", action="store_true", help="skip README generation")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
     if not token:
         print("error: set GITHUB_TOKEN (e.g. GITHUB_TOKEN=$(gh auth token))", file=sys.stderr)
         return 2
 
-    now = dt.datetime.now(dt.timezone.utc)
+    now = (dt.datetime.fromisoformat(args.now.replace("Z", "+00:00")).astimezone(dt.timezone.utc)
+           if args.now else dt.datetime.now(dt.timezone.utc))
     today = dt.date.fromisoformat(args.today) if args.today else now.date()
     projects = json.loads((ROOT / "data/projects.json").read_text("utf-8"))
     snap_path = ROOT / "data/stars.json"
@@ -149,6 +155,7 @@ def main() -> int:
     stats = {
         "generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
         "today_utc": today.isoformat(),
+        "slot": archive.make_slot(now, args.slot),
         "windows_days": core.WINDOWS,
         "method": (
             "stars = GET /repos/{r}.stargazers_count; gained = sum of daily buckets from "
@@ -165,6 +172,10 @@ def main() -> int:
     snap_path.write_text(
         json.dumps({**header, **{k: dict(sorted(v.items())) for k, v in sorted(snapshots.items())}},
                    ensure_ascii=False, indent=2) + "\n", "utf-8")
+
+    snap_dir = archive.write_snapshot(ROOT, stats)
+    archive.refresh_latest_and_index(ROOT)
+    print(f"snapshot: {snap_dir.relative_to(ROOT)}  (latest/ and rankings/README.md refreshed)")
 
     if not args.no_render:
         import render_readme
