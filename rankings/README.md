@@ -4,6 +4,7 @@ Every update stores its full result in its own folder, `rankings/<date>/<slot>/`
 
 Latest: [`latest/rankings.md`](../latest/rankings.md) · [`latest/stats.json`](../latest/stats.json) · [README](../README.md)
 
-| Date | Slot | Fetched (UTC) | #1 this week | #1 this month | #1 this year | Snapshot |
-|---|---|---|---|---|---|---|
-| 2026-10-30 | Beijing 00:00 (`cn-0000`) | 2026-10-29T16:21:04Z | morluto/rea (6,385/day) | morluto/rea (13,454/day) | deepseek-ai/deepseek-harness (3,444/day) | [2026-10-30/cn-0000](2026-10-30/cn-0000/rankings.md) · [json](2026-10-30/cn-0000/stats.json) |
+| Date | Slot | Fetched (UTC) | #1 new (7 days) | #1 this week | #1 this month | #1 this year | Snapshot |
+|---|---|---|---|---|---|---|---|
+| 2026-10-29 | Manual 18:03 UTC (`manual-1803`) | 2026-10-29T18:03:07Z | rddmwmddr/android-ad-cleaner (851/day) | morluto/rea (6,385/day) | morluto/rea (13,453/day) | deepseek-ai/deepseek-harness (3,444/day) | [2026-10-29/manual-1803](2026-10-29/manual-1803/rankings.md) · [json](2026-10-29/manual-1803/stats.json) |
+| 2026-10-30 | Beijing 00:00 (`cn-0000`) | 2026-10-29T16:21:04Z | n/a | morluto/rea (6,385/day) | morluto/rea (13,454/day) | deepseek-ai/deepseek-harness (3,444/day) | [2026-10-30/cn-0000](2026-10-30/cn-0000/rankings.md) · [json](2026-10-30/cn-0000/stats.json) |

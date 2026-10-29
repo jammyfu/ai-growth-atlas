@@ -78,6 +78,20 @@ def total_table(ranked: list[dict], metas: dict, cats: dict, lang: str) -> str:
     return "\n".join(lines)
 
 
+def new_table(items: list[dict], lang: str) -> str:
+    s = S[lang]
+    lines = [
+        f"| {s['h_rank']} | {s['h_project']} | {s['h_created']} | {s['h_stars']} | {s['h_perday']} | {s['h_curve']} |",
+        "|---|---|---|---:|---:|---|",
+    ]
+    for i, it in enumerate(items, 1):
+        desc = f"<br>{it['description']}" if it["description"] else ""
+        lines.append(
+            f"| {i} | [{it['name']}]({it['url']}){desc} | {it['created_at'][:10]}<br><sub>{it['age_days']:.1f} d</sub> | "
+            f"{fmt_int(it['stars'])} | {fmt_rate(it['per_day'])} | {curve_cell(it['name'])} |")
+    return "\n".join(lines)
+
+
 def render(lang: str, projects: list[dict], stats: dict, cats: dict) -> str:
     s = S[lang]
     metas = {p["name"]: p for p in projects}
@@ -100,6 +114,19 @@ def render(lang: str, projects: list[dict], stats: dict, cats: dict) -> str:
     for c in cats.values():
         out.append(f"| {c['name'][lang]} | {c['desc'][lang]} |")
     out += ["", "</details>", ""]
+
+    new = stats.get("newcomers")
+    if new is not None:
+        out += [f"## {s['new']}", "", s["new_intro"], ""]
+        if not new["ok"]:
+            out += [s["new_failed"].format(error=new["error"]), ""]
+        elif not new["items"]:
+            out += [s["new_none"], ""]
+        else:
+            out += [new_table(new["items"][:TOP_N], lang), ""]
+        if new["ok"] and any(not q["ok"] for q in new["queries"]):
+            bad = sum(1 for q in new["queries"] if not q["ok"])
+            out += [s["new_partial"].format(failed=bad, total=len(new["queries"])), ""]
 
     for key in ("week", "month", "year"):
         ranked = core.rank(st, key)[:TOP_N]

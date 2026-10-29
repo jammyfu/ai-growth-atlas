@@ -16,3 +16,9 @@
 - Verification: `python3 tools/verify.py` green (32 tests).
 - Added per-slot history `rankings/<date>/<slot>/`, `latest/`, history index `rankings/README.md`; first real snapshot `cn-0000` for 2026-10-30. The `pt-0000` folder appears with the first real Los Angeles run (not back-filled).
 - Verification: `python3 tools/verify.py` green (43 tests).
+
+## 2026-10-30 (new arrivals)
+
+- Added the "hottest new repos (last 7 days)" ranking (`tools/newcomers.py`, `docs/NEW_ARRIVALS.md`), rediscovered on every slot run, stored in each snapshot (`newcomers`), `latest/` and all five READMEs.
+- Dedup: excludes tracked projects and anything in the week/month/year/total top 20; enforced by tests on committed data and every snapshot.
+- Verification: `python3 tools/verify.py` green (59 tests).

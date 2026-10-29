@@ -12,3 +12,4 @@
 - Daily update at Beijing 00:00 and Los Angeles 00:00 (DST-aware).
 - Every ranking shows the top 20; 22 projects tracked.
 - Ranking history per time slot, `latest/`, and a history index linked from every README.
+- New ranking: hottest new repos created in the last 7 days (search API, deduplicated against all other rankings).

@@ -33,4 +33,6 @@ tools/local_daily.sh --no-push          # full local daily cycle, commit but do 
 4. Update the record files
 5. If the plan is complete, `python3 tools/next_plan.py`
 
+`update_stars.py` also re-discovers the 7-day new-repo ranking (about 2 minutes; rules in [NEW_ARRIVALS.md](NEW_ARRIVALS.md)).
+
 Details of the daily job and fallbacks: [DAILY_UPDATE.md](DAILY_UPDATE.md).

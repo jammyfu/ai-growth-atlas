@@ -24,6 +24,7 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import archive  # noqa: E402
 import atlas_core as core  # noqa: E402
+import newcomers  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 API = "https://api.github.com"
@@ -152,6 +153,15 @@ def main(argv: list[str] | None = None) -> int:
         print("error: no project could be fetched; files left untouched", file=sys.stderr)
         return 1
 
+    tracked = {p["name"] for p in projects}
+    excluded = tracked | newcomers.displayed_names(results, archive.TOP_N, core.rank)
+    print("discovering new repos (GitHub search API, ~1.5 min) ...", flush=True)
+    new = newcomers.discover(lambda path: api_get(path, token), now, excluded)
+    if new["ok"]:
+        print(f"new: {len(new['items'])} ranked from {new['candidates_seen']} candidates")
+    else:
+        print(f"MISS new-arrivals: {new['error']}", file=sys.stderr)
+
     stats = {
         "generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
         "today_utc": today.isoformat(),
@@ -162,6 +172,7 @@ def main(argv: list[str] | None = None) -> int:
             "GET /repos/{r}/stargazers/history over the N complete UTC days before today"
         ),
         "projects": results,
+        "newcomers": new,
     }
     (ROOT / "data/stats.json").write_text(
         json.dumps(stats, ensure_ascii=False, indent=2) + "\n", "utf-8")

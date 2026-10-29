@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-29T16:21:04Z",
+  "generated_at": "2026-10-29T18:03:07Z",
   "today_utc": "2026-10-29",
   "slot": {
-    "name": "cn",
-    "id": "cn-0000",
-    "date": "2026-10-30",
-    "label": "Beijing 00:00",
-    "tz": "Asia/Shanghai"
+    "name": "manual",
+    "id": "manual-1803",
+    "date": "2026-10-29",
+    "label": "Manual 18:03 UTC",
+    "tz": "UTC"
   },
   "windows_days": {
     "week": 7,
@@ -18,35 +18,35 @@
     {
       "name": "morluto/rea",
       "ok": true,
-      "stars": 406443,
+      "stars": 406776,
       "created_at": "2026-04-14T00:51:32Z",
       "archived": false,
       "github_description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
       "growth": {
         "week": {
           "window_days": 7,
-          "gained": 44697,
+          "gained": 44696,
           "effective_days": 7,
-          "per_day": 6385.286,
+          "per_day": 6385.143,
           "young": false
         },
         "month": {
           "window_days": 30,
-          "gained": 403608,
+          "gained": 403599,
           "effective_days": 30,
-          "per_day": 13453.6,
+          "per_day": 13453.3,
           "young": false
         },
         "year": {
           "window_days": 365,
-          "gained": 404006,
+          "gained": 403997,
           "effective_days": 198,
-          "per_day": 2040.434,
+          "per_day": 2040.389,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 406443,
+      "history_total": 406776,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -56,30 +56,30 @@
     {
       "name": "anomalyco/opencode",
       "ok": true,
-      "stars": 222979,
+      "stars": 222992,
       "created_at": "2025-04-30T20:08:00Z",
       "archived": false,
       "github_description": "The open source coding agent.",
       "growth": {
         "week": {
           "window_days": 7,
-          "gained": 3319,
+          "gained": 3318,
           "effective_days": 7,
-          "per_day": 474.143,
+          "per_day": 474.0,
           "young": false
         },
         "month": {
           "window_days": 30,
-          "gained": 13395,
+          "gained": 13394,
           "effective_days": 30,
-          "per_day": 446.5,
+          "per_day": 446.467,
           "young": false
         },
         "year": {
           "window_days": 365,
-          "gained": 194679,
+          "gained": 194671,
           "effective_days": 365,
-          "per_day": 533.367,
+          "per_day": 533.345,
           "young": false
         }
       },
@@ -94,7 +94,7 @@
     {
       "name": "stablyai/orca",
       "ok": true,
-      "stars": 109903,
+      "stars": 109983,
       "created_at": "2026-03-17T03:28:57Z",
       "archived": false,
       "github_description": "Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
@@ -122,7 +122,7 @@
         }
       },
       "history_complete": true,
-      "history_total": 109903,
+      "history_total": 109983,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -132,7 +132,7 @@
     {
       "name": "cloudflare/security-audit-skill",
       "ok": true,
-      "stars": 52499,
+      "stars": 52589,
       "created_at": "2026-06-18T14:08:44Z",
       "archived": false,
       "github_description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
@@ -146,21 +146,21 @@
         },
         "month": {
           "window_days": 30,
-          "gained": 29312,
+          "gained": 29311,
           "effective_days": 30,
-          "per_day": 977.067,
+          "per_day": 977.033,
           "young": false
         },
         "year": {
           "window_days": 365,
-          "gained": 51969,
+          "gained": 51968,
           "effective_days": 133,
-          "per_day": 390.744,
+          "per_day": 390.737,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 52499,
+      "history_total": 52589,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -170,7 +170,7 @@
     {
       "name": "heygen-com/hyperframes",
       "ok": true,
-      "stars": 75286,
+      "stars": 75326,
       "created_at": "2026-03-10T01:51:06Z",
       "archived": false,
       "github_description": "Write HTML. Render video. Built for agents.",
@@ -184,21 +184,21 @@
         },
         "month": {
           "window_days": 30,
-          "gained": 21301,
+          "gained": 21300,
           "effective_days": 30,
-          "per_day": 710.033,
+          "per_day": 710.0,
           "young": false
         },
         "year": {
           "window_days": 365,
-          "gained": 74938,
+          "gained": 74935,
           "effective_days": 233,
-          "per_day": 321.622,
+          "per_day": 321.609,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 75286,
+      "history_total": 75326,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -208,7 +208,7 @@
     {
       "name": "DietrichGebert/ponytail",
       "ok": true,
-      "stars": 179871,
+      "stars": 179948,
       "created_at": "2026-06-12T00:52:37Z",
       "archived": false,
       "github_description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
@@ -229,14 +229,14 @@
         },
         "year": {
           "window_days": 365,
-          "gained": 179421,
+          "gained": 179417,
           "effective_days": 139,
-          "per_day": 1290.799,
+          "per_day": 1290.77,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 179871,
+      "history_total": 179948,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -246,7 +246,7 @@
     {
       "name": "Graphify-Labs/graphify",
       "ok": true,
-      "stars": 138413,
+      "stars": 138481,
       "created_at": "2026-04-03T15:49:07Z",
       "archived": false,
       "github_description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
@@ -267,14 +267,14 @@
         },
         "year": {
           "window_days": 365,
-          "gained": 138063,
+          "gained": 138061,
           "effective_days": 209,
-          "per_day": 660.589,
+          "per_day": 660.579,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 138413,
+      "history_total": 138481,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -284,7 +284,7 @@
     {
       "name": "openclaw/openclaw",
       "ok": true,
-      "stars": 393355,
+      "stars": 393358,
       "created_at": "2025-11-24T10:16:47Z",
       "archived": false,
       "github_description": "The AI that really does things. Any OS. Any Platform. The lobster way. 🦞 ",
@@ -305,14 +305,14 @@
         },
         "year": {
           "window_days": 365,
-          "gained": 393282,
+          "gained": 393275,
           "effective_days": 339,
-          "per_day": 1160.124,
+          "per_day": 1160.103,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 393355,
+      "history_total": 393358,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -322,7 +322,7 @@
     {
       "name": "deepseek-ai/deepseek-harness",
       "ok": true,
-      "stars": 265637,
+      "stars": 265682,
       "created_at": "2026-08-13T11:56:32Z",
       "archived": false,
       "github_description": "DeepSeek Harness: Everything is a Plugin.",
@@ -336,21 +336,21 @@
         },
         "month": {
           "window_days": 30,
-          "gained": 27586,
+          "gained": 27585,
           "effective_days": 30,
-          "per_day": 919.533,
+          "per_day": 919.5,
           "young": false
         },
         "year": {
           "window_days": 365,
-          "gained": 265181,
+          "gained": 265179,
           "effective_days": 77,
-          "per_day": 3443.909,
+          "per_day": 3443.883,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 265637,
+      "history_total": 265682,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -360,7 +360,7 @@
     {
       "name": "affaan-m/ECC",
       "ok": true,
-      "stars": 292434,
+      "stars": 292500,
       "created_at": "2026-01-18T00:51:51Z",
       "archived": false,
       "github_description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
@@ -381,14 +381,14 @@
         },
         "year": {
           "window_days": 365,
-          "gained": 291978,
+          "gained": 291974,
           "effective_days": 284,
-          "per_day": 1028.092,
+          "per_day": 1028.077,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 292434,
+      "history_total": 292500,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -398,35 +398,35 @@
     {
       "name": "yetone/magpie",
       "ok": true,
-      "stars": 25293,
+      "stars": 25326,
       "created_at": "2026-09-23T16:22:35Z",
       "archived": false,
       "github_description": "Every agent's model. One place. Codex on DeepSeek, Claude Code on Kimi, from the menu bar.",
       "growth": {
         "week": {
           "window_days": 7,
-          "gained": 5943,
+          "gained": 5942,
           "effective_days": 7,
-          "per_day": 849.0,
+          "per_day": 848.857,
           "young": false
         },
         "month": {
           "window_days": 30,
-          "gained": 23177,
+          "gained": 23176,
           "effective_days": 30,
-          "per_day": 772.567,
+          "per_day": 772.533,
           "young": false
         },
         "year": {
           "window_days": 365,
-          "gained": 24872,
+          "gained": 24871,
           "effective_days": 36,
-          "per_day": 690.889,
+          "per_day": 690.861,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 25293,
+      "history_total": 25326,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -436,7 +436,7 @@
     {
       "name": "Panniantong/Agent-Reach",
       "ok": true,
-      "stars": 106123,
+      "stars": 106165,
       "created_at": "2026-02-24T02:10:24Z",
       "archived": false,
       "github_description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
@@ -457,14 +457,14 @@
         },
         "year": {
           "window_days": 365,
-          "gained": 105809,
+          "gained": 105807,
           "effective_days": 247,
-          "per_day": 428.377,
+          "per_day": 428.368,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 106123,
+      "history_total": 106165,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -474,7 +474,7 @@
     {
       "name": "Leonxlnx/taste-skill",
       "ok": true,
-      "stars": 105258,
+      "stars": 105322,
       "created_at": "2026-02-19T21:44:05Z",
       "archived": false,
       "github_description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
@@ -488,21 +488,21 @@
         },
         "month": {
           "window_days": 30,
-          "gained": 14312,
+          "gained": 14311,
           "effective_days": 30,
-          "per_day": 477.067,
+          "per_day": 477.033,
           "young": false
         },
         "year": {
           "window_days": 365,
-          "gained": 104800,
+          "gained": 104798,
           "effective_days": 252,
-          "per_day": 415.873,
+          "per_day": 415.865,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 105258,
+      "history_total": 105322,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -512,7 +512,7 @@
     {
       "name": "nextlevelbuilder/ui-ux-pro-max-skill",
       "ok": true,
-      "stars": 142419,
+      "stars": 142450,
       "created_at": "2025-11-30T11:36:31Z",
       "archived": false,
       "github_description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
@@ -526,21 +526,21 @@
         },
         "month": {
           "window_days": 30,
-          "gained": 11568,
+          "gained": 11567,
           "effective_days": 30,
-          "per_day": 385.6,
+          "per_day": 385.567,
           "young": false
         },
         "year": {
           "window_days": 365,
-          "gained": 142192,
+          "gained": 142189,
           "effective_days": 333,
-          "per_day": 427.003,
+          "per_day": 426.994,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 142419,
+      "history_total": 142450,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -550,7 +550,7 @@
     {
       "name": "cheaper-inference/OmniRoute",
       "ok": true,
-      "stars": 82482,
+      "stars": 82507,
       "created_at": "2026-02-13T12:38:31Z",
       "archived": false,
       "github_description": "Never stop coding. Free MIT AI gateway: one endpoint, 375 providers (150+ free), 1,400+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 900+ contributors",
@@ -578,7 +578,7 @@
         }
       },
       "history_complete": true,
-      "history_total": 82482,
+      "history_total": 82507,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -588,7 +588,7 @@
     {
       "name": "paperclipai/paperclip",
       "ok": true,
-      "stars": 108529,
+      "stars": 108550,
       "created_at": "2026-03-02T15:01:51Z",
       "archived": false,
       "github_description": "The open-source app everyone uses to manage agents at work",
@@ -609,14 +609,14 @@
         },
         "year": {
           "window_days": 365,
-          "gained": 108373,
+          "gained": 108372,
           "effective_days": 241,
-          "per_day": 449.68,
+          "per_day": 449.676,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 108529,
+      "history_total": 108550,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -626,7 +626,7 @@
     {
       "name": "farion1231/cc-switch",
       "ok": true,
-      "stars": 150034,
+      "stars": 150045,
       "created_at": "2025-08-04T14:16:16Z",
       "archived": false,
       "github_description": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Grok Build & Hermes Agent. Only official website: ccswitch.io",
@@ -664,7 +664,7 @@
     {
       "name": "NousResearch/hermes-agent",
       "ok": true,
-      "stars": 258420,
+      "stars": 258439,
       "created_at": "2025-07-22T22:22:28Z",
       "archived": false,
       "github_description": "The agent that grows with you",
@@ -685,9 +685,9 @@
         },
         "year": {
           "window_days": 365,
-          "gained": 258256,
+          "gained": 258251,
           "effective_days": 365,
-          "per_day": 707.551,
+          "per_day": 707.537,
           "young": false
         }
       },
@@ -702,7 +702,7 @@
     {
       "name": "NVIDIA/SkillSpector",
       "ok": true,
-      "stars": 23302,
+      "stars": 23318,
       "created_at": "2026-03-21T00:28:43Z",
       "archived": false,
       "github_description": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and supply-chain risks in Claude Code, Codex, and MCP skills before you install them.",
@@ -723,14 +723,14 @@
         },
         "year": {
           "window_days": 365,
-          "gained": 23173,
+          "gained": 23172,
           "effective_days": 222,
-          "per_day": 104.383,
+          "per_day": 104.378,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 23302,
+      "history_total": 23318,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -740,7 +740,7 @@
     {
       "name": "addyosmani/agent-skills",
       "ok": true,
-      "stars": 111655,
+      "stars": 111682,
       "created_at": "2026-02-15T20:20:26Z",
       "archived": false,
       "github_description": "Production-grade engineering skills for AI coding agents.",
@@ -768,7 +768,7 @@
         }
       },
       "history_complete": true,
-      "history_total": 111655,
+      "history_total": 111682,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -778,7 +778,7 @@
     {
       "name": "thedotmack/claude-mem",
       "ok": true,
-      "stars": 104417,
+      "stars": 104488,
       "created_at": "2025-08-31T20:50:03Z",
       "archived": false,
       "github_description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
@@ -792,16 +792,16 @@
         },
         "month": {
           "window_days": 30,
-          "gained": 9724,
+          "gained": 9723,
           "effective_days": 30,
-          "per_day": 324.133,
+          "per_day": 324.1,
           "young": false
         },
         "year": {
           "window_days": 365,
-          "gained": 103820,
+          "gained": 103816,
           "effective_days": 365,
-          "per_day": 284.438,
+          "per_day": 284.427,
           "young": false
         }
       },
@@ -816,7 +816,7 @@
     {
       "name": "anthropics/skills",
       "ok": true,
-      "stars": 184702,
+      "stars": 184737,
       "created_at": "2025-09-22T15:53:31Z",
       "archived": false,
       "github_description": "Public repository for Agent Skills",
@@ -844,12 +844,425 @@
         }
       },
       "history_complete": true,
-      "history_total": 184702,
+      "history_total": 184737,
       "snapshot_check": {
         "week": null,
         "month": null,
         "year": null
       }
     }
-  ]
+  ],
+  "newcomers": {
+    "window_days": 7,
+    "since": "2026-10-22T18:03:07Z",
+    "min_stars": 100,
+    "top_n": 20,
+    "queries": [
+      {
+        "label": "topic:ai",
+        "q": "topic:ai created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 7
+      },
+      {
+        "label": "topic:artificial-intelligence",
+        "q": "topic:artificial-intelligence created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 0
+      },
+      {
+        "label": "topic:llm",
+        "q": "topic:llm created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 10
+      },
+      {
+        "label": "topic:large-language-models",
+        "q": "topic:large-language-models created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 1
+      },
+      {
+        "label": "topic:llm-agent",
+        "q": "topic:llm-agent created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 1
+      },
+      {
+        "label": "topic:ai-agents",
+        "q": "topic:ai-agents created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 14
+      },
+      {
+        "label": "topic:ai-agent",
+        "q": "topic:ai-agent created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 8
+      },
+      {
+        "label": "topic:mcp",
+        "q": "topic:mcp created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 16
+      },
+      {
+        "label": "topic:mcp-server",
+        "q": "topic:mcp-server created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 9
+      },
+      {
+        "label": "topic:claude-code",
+        "q": "topic:claude-code created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 23
+      },
+      {
+        "label": "topic:claude",
+        "q": "topic:claude created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 7
+      },
+      {
+        "label": "topic:codex",
+        "q": "topic:codex created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 14
+      },
+      {
+        "label": "topic:agent-skills",
+        "q": "topic:agent-skills created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 10
+      },
+      {
+        "label": "topic:generative-ai",
+        "q": "topic:generative-ai created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 2
+      },
+      {
+        "label": "topic:chatgpt",
+        "q": "topic:chatgpt created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 1
+      },
+      {
+        "label": "topic:openai",
+        "q": "topic:openai created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 3
+      },
+      {
+        "label": "topic:anthropic",
+        "q": "topic:anthropic created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 1
+      },
+      {
+        "label": "topic:gemini",
+        "q": "topic:gemini created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 0
+      },
+      {
+        "label": "topic:rag",
+        "q": "topic:rag created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 0
+      },
+      {
+        "label": "topic:machine-learning",
+        "q": "topic:machine-learning created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 0
+      },
+      {
+        "label": "topic:deep-learning",
+        "q": "topic:deep-learning created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 1
+      },
+      {
+        "label": "topic:vibe-coding",
+        "q": "topic:vibe-coding created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 1
+      },
+      {
+        "label": "topic:ai-coding",
+        "q": "topic:ai-coding created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 2
+      },
+      {
+        "label": "topic:cursor",
+        "q": "topic:cursor created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 5
+      },
+      {
+        "label": "keyword:AI agent",
+        "q": "\"AI agent\" in:name,description created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 5
+      },
+      {
+        "label": "keyword:LLM",
+        "q": "LLM in:name,description created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 4
+      },
+      {
+        "label": "keyword:Claude Code",
+        "q": "\"Claude Code\" in:name,description created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 14
+      },
+      {
+        "label": "keyword:Codex",
+        "q": "Codex in:name,description created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 16
+      },
+      {
+        "label": "keyword:MCP server",
+        "q": "\"MCP server\" in:name,description created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 3
+      },
+      {
+        "label": "keyword:agent skills",
+        "q": "\"agent skills\" in:name,description created:>=2026-10-22T18:03:07Z stars:>=100 fork:false archived:false",
+        "ok": true,
+        "total": 13
+      }
+    ],
+    "candidates_seen": 70,
+    "ok": true,
+    "excluded_duplicates": [],
+    "items": [
+      {
+        "name": "rddmwmddr/android-ad-cleaner",
+        "repo_id": 1431851693,
+        "url": "https://github.com/rddmwmddr/android-ad-cleaner",
+        "description": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
+        "language": "Python",
+        "stars": 4696,
+        "created_at": "2026-10-24T05:35:47Z",
+        "age_days": 5.52,
+        "per_day": 850.9
+      },
+      {
+        "name": "t3dotgg/tstack",
+        "repo_id": 1431830406,
+        "url": "https://github.com/t3dotgg/tstack",
+        "description": "The agent skills I use every day. Works with Claude Code and Codex.",
+        "language": "Python",
+        "stars": 2362,
+        "created_at": "2026-10-24T05:00:20Z",
+        "age_days": 5.54,
+        "per_day": 426.1
+      },
+      {
+        "name": "andyhuo520/digital-human-koubo",
+        "repo_id": 1433904617,
+        "url": "https://github.com/andyhuo520/digital-human-koubo",
+        "description": "AI digital-human talking-head videos from one photo: Renoise MCP generation + 5 editing styles + 48 creator-grade packaging components. Agent skill for Claude…",
+        "language": "TypeScript",
+        "stars": 1450,
+        "created_at": "2026-10-26T04:34:09Z",
+        "age_days": 3.56,
+        "per_day": 407.1
+      },
+      {
+        "name": "DenisSergeevitch/ex-ussr-kinship-research",
+        "repo_id": 1433057196,
+        "url": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+        "description": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Re…",
+        "language": "Python",
+        "stars": 1243,
+        "created_at": "2026-10-25T10:05:56Z",
+        "age_days": 4.33,
+        "per_day": 287.0
+      },
+      {
+        "name": "MiniMax-AI/mcode-stack",
+        "repo_id": 1436502942,
+        "url": "https://github.com/MiniMax-AI/mcode-stack",
+        "description": "The workflows and skills the MiniMax Code team uses to build MiniMax Code. Open source, install and use.",
+        "language": "Python",
+        "stars": 404,
+        "created_at": "2026-10-28T02:17:41Z",
+        "age_days": 1.66,
+        "per_day": 243.9
+      },
+      {
+        "name": "morganlinton/BeautifulRust",
+        "repo_id": 1430513158,
+        "url": "https://github.com/morganlinton/BeautifulRust",
+        "description": "Agent Skills that teach coding agents to write, review, and port idiomatic Rust, plus a tested clippy config. Works with Claude Code, Codex, Copilot, Cursor, a…",
+        "language": "Python",
+        "stars": 1407,
+        "created_at": "2026-10-23T03:01:11Z",
+        "age_days": 6.63,
+        "per_day": 212.3
+      },
+      {
+        "name": "ChannelCooperStart/capri-ai",
+        "repo_id": 1436323783,
+        "url": "https://github.com/ChannelCooperStart/capri-ai",
+        "description": "🌃 Capri — Edgerunners-inspired AI agent for your desktop. Works with Claude Code, Codex, Antigravity &amp; more.",
+        "language": null,
+        "stars": 371,
+        "created_at": "2026-10-27T22:00:47Z",
+        "age_days": 1.83,
+        "per_day": 202.2
+      },
+      {
+        "name": "ZiChuanLan/agent-purge",
+        "repo_id": 1432883796,
+        "url": "https://github.com/ZiChuanLan/agent-purge",
+        "description": "One persona, many coding agents. Replace or inject system prompts across codex, claude, opencode, grok, omp, hermes, pi, zcode - with a local web console.",
+        "language": "JavaScript",
+        "stars": 874,
+        "created_at": "2026-10-25T06:06:02Z",
+        "age_days": 4.5,
+        "per_day": 194.3
+      },
+      {
+        "name": "shipwords-dev/shipwords",
+        "repo_id": 1436698875,
+        "url": "https://github.com/shipwords-dev/shipwords",
+        "description": "Ship a money-making AI site for every new keyword. Cloudflare-native starter with auth, credits, payments and AI generation. / 新词站群框架：一个新词一个站，一个下午上线。起量的继续迭代，没起…",
+        "language": "TypeScript",
+        "stars": 269,
+        "created_at": "2026-10-28T06:35:51Z",
+        "age_days": 1.48,
+        "per_day": 182.1
+      },
+      {
+        "name": "patch-gg/anymove",
+        "repo_id": 1435425970,
+        "url": "https://github.com/patch-gg/anymove",
+        "description": "Motion capture for any creature from one AI video: two cameras in one frame, a DINOv2 joint reader, the rig fitted in both views, a GLB out.",
+        "language": "Python",
+        "stars": 415,
+        "created_at": "2026-10-27T08:00:42Z",
+        "age_days": 2.42,
+        "per_day": 171.6
+      },
+      {
+        "name": "haydenschmitty/floorplan",
+        "repo_id": 1435672472,
+        "url": "https://github.com/haydenschmitty/floorplan",
+        "description": "See how your app actually fits together. An interactive, plain-English map of your codebase, drawn by Claude or Codex.",
+        "language": "JavaScript",
+        "stars": 354,
+        "created_at": "2026-10-27T12:03:01Z",
+        "age_days": 2.25,
+        "per_day": 157.3
+      },
+      {
+        "name": "anonnerdfrenzy/survival-llm",
+        "repo_id": 1432512301,
+        "url": "https://github.com/anonnerdfrenzy/survival-llm",
+        "description": "A free AI assistant and survival library that runs on your own computer, with no internet needed. Shows the source of every answer.",
+        "language": "Python",
+        "stars": 736,
+        "created_at": "2026-10-24T19:12:41Z",
+        "age_days": 4.95,
+        "per_day": 148.6
+      },
+      {
+        "name": "konlu/story-studio",
+        "repo_id": 1434156379,
+        "url": "https://github.com/konlu/story-studio",
+        "description": "从选题到剪映草稿的一站式 AI 短视频内容创作 Agent Skill",
+        "language": "Python",
+        "stars": 482,
+        "created_at": "2026-10-26T09:20:06Z",
+        "age_days": 3.36,
+        "per_day": 143.3
+      },
+      {
+        "name": "daveebbelaar/bama",
+        "repo_id": 1431986839,
+        "url": "https://github.com/daveebbelaar/bama",
+        "description": "BAMA: Build Any Mac App. Agent skills to research, clone, design, build, optimize, and test native macOS apps with Swift and SwiftUI.",
+        "language": "Swift",
+        "stars": 734,
+        "created_at": "2026-10-24T08:44:36Z",
+        "age_days": 5.39,
+        "per_day": 136.2
+      },
+      {
+        "name": "qybaihe/bla",
+        "repo_id": 1432859403,
+        "url": "https://github.com/qybaihe/bla",
+        "description": "🛡️ BLA (Blind LLM Agents) — Adversarial defense shield that protects binaries, Electron apps, JS bundles, Python, and WebAssembly against AI reverse-engineerin…",
+        "language": "TypeScript",
+        "stars": 568,
+        "created_at": "2026-10-25T05:25:45Z",
+        "age_days": 4.53,
+        "per_day": 125.5
+      },
+      {
+        "name": "andyhuo520/vibe-knowledge",
+        "repo_id": 1436875616,
+        "url": "https://github.com/andyhuo520/vibe-knowledge",
+        "description": "Vibe 知识大赏：一个知识点 → 一条有旁白、每句有出处的精品知识短片（Claude Code skill · 44 套风格 · 代码逐帧成片）",
+        "language": "JavaScript",
+        "stars": 159,
+        "created_at": "2026-10-28T09:37:45Z",
+        "age_days": 1.35,
+        "per_day": 117.7
+      },
+      {
+        "name": "davemessew/AgentFlux",
+        "repo_id": 1435861325,
+        "url": "https://github.com/davemessew/AgentFlux",
+        "description": "Agentic AI platform for visual workflows and autonomous agents. Run it with Docker on your own computer or server.",
+        "language": "JavaScript",
+        "stars": 235,
+        "created_at": "2026-10-27T14:43:07Z",
+        "age_days": 2.14,
+        "per_day": 109.9
+      },
+      {
+        "name": "wangrongding/tv-fresh",
+        "repo_id": 1432400572,
+        "url": "https://github.com/wangrongding/tv-fresh",
+        "description": "tv-fresh 电视焕新：小米电视(MIUI TV)去广告/清理预装/换桌面/装代理与影视仓的 Agent Skill——免root可逆，含固件逆向实录与一键脚本",
+        "language": "Shell",
+        "stars": 526,
+        "created_at": "2026-10-24T16:58:15Z",
+        "age_days": 5.05,
+        "per_day": 104.3
+      },
+      {
+        "name": "hevnsnt/CVEngine",
+        "repo_id": 1432649361,
+        "url": "https://github.com/hevnsnt/CVEngine",
+        "description": "AI-first external attack surface assessment with continuous discovery, evidence-based vulnerability validation, and developer-agent MCP integration.",
+        "language": "Python",
+        "stars": 462,
+        "created_at": "2026-10-24T22:34:43Z",
+        "age_days": 4.81,
+        "per_day": 96.0
+      },
+      {
+        "name": "mochiiwuff/capri-desktop",
+        "repo_id": 1433010899,
+        "url": "https://github.com/mochiiwuff/capri-desktop",
+        "description": "Capri, the Project Capricorn construct from Cyberpunk: Edgerunners 2, living on your desktop and narrating what Claude Code is doing.",
+        "language": "JavaScript",
+        "stars": 397,
+        "created_at": "2026-10-25T09:07:06Z",
+        "age_days": 4.37,
+        "per_day": 90.8
+      }
+    ]
+  }
 }
