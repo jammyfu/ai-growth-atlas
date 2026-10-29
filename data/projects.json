@@ -3,56 +3,56 @@
     "name": "morluto/rea",
     "url": "https://github.com/morluto/rea",
     "category": "coding-agents",
-    "desc": "用 AI Agent 逆向工程任意东西：从应用行为一直到二进制。接 Ghidra/Hopper，让代码助手能看懂原来看不懂的程序。",
+    "desc": "别人逆向要盯几天汇编，这个让 AI 直接告诉你程序在干什么。接 Ghidra，原来看不懂的二进制一句话讲清楚。",
     "stars_note": "近期涨星极快的 AI 逆向工具"
   },
   {
     "name": "anomalyco/opencode",
     "url": "https://github.com/anomalyco/opencode",
     "category": "coding-agents",
-    "desc": "开源的 AI 编程助手，在终端里用。支持多种模型，有桌面版正在测试。对标 Claude Code / Codex。",
+    "desc": "终端里直接用 AI 写代码，不用开网页。支持多种模型，对标 Claude Code 和 Codex，免费开源。",
     "stars_note": "终端编程助手里涨星最稳的之一"
   },
   {
     "name": "stablyai/orca",
     "url": "https://github.com/stablyai/orca",
     "category": "coding-agents",
-    "desc": "桌面端同时跑多个编程助手（Claude Code、Codex、OpenCode等），每个在独立的 git 工作区。适合对比不同 Agent 的结果。",
+    "desc": "一个桌面同时跑好几个 AI 编程助手，比看谁写得好。每个助手独立工作区，不互相干扰。",
     "stars_note": "多 Agent 并行的实用工具"
   },
   {
     "name": "cloudflare/security-audit-skill",
     "url": "https://github.com/cloudflare/security-audit-skill",
     "category": "security-audit",
-    "desc": "给编程 Agent 加一个安全审计技能：多阶段扫描代码漏洞，再用另一个 Agent 尝试证伪每个发现。输出可机器读的结构化报告。",
+    "desc": "让 AI 自己查自己的代码漏洞，还要再叫另一个 AI 来打脸。专治编程助手写出来的代码不安全。",
     "stars_note": "近期周涨星常居前列"
   },
   {
     "name": "heygen-com/hyperframes",
     "url": "https://github.com/heygen-com/hyperframes",
     "category": "video-media",
-    "desc": "用 HTML 写视频，再渲染出来。为 Agent 设计，可以让编程助手直接生成视频。",
+    "desc": "用写网页的方式写视频，AI 直接渲染出来。编程助手也能用，不用再学剪辑软件。",
     "stars_note": "AI 视频生成方向涨得快"
   },
   {
     "name": "DietrichGebert/ponytail",
     "url": "https://github.com/DietrichGebert/ponytail",
     "category": "skills-harness",
-    "desc": "让 AI Agent 像懒惰的资深开发一样思考：能不写就不写。一个反「AI 水」的技能包。",
+    "desc": "专治 AI 写代码加一堆废话。让它学会像懒惰老手一样：能不写就不写，写就写对。",
     "stars_note": "反 AI-slop 方向代表项目"
   },
   {
     "name": "Graphify-Labs/graphify",
     "url": "https://github.com/Graphify-Labs/graphify",
     "category": "memory-knowledge",
-    "desc": "把代码库、文档、SQL、配置转成可查询的知识图谱。让 Agent 能快速理解大项目结构。",
+    "desc": "把整个代码库变成一张地图，AI 一眼就看懂哪些文件互相调用。大项目再也不用从头看到尾。",
     "stars_note": "代码库记忆/知识图谱方向热门"
   },
   {
     "name": "openclaw/openclaw",
     "url": "https://github.com/openclaw/openclaw",
     "category": "coding-agents",
-    "desc": "可以真正干活的 AI：跨系统、跨平台的个人助手。支持本地部署。",
+    "desc": "不是聊天机器人，是真能帮你干活的 AI。跨系统跑，本地部署，数据不出你电脑。",
     "stars_note": "总星极高的个人 AI 助手"
   }
 ]
