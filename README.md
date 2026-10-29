@@ -1,90 +1,96 @@
+**English** | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | [日本語](README.ja.md) | [한국어](README.ko.md)
+
 # AI Growth Atlas
 
-AI 相关项目按「近期涨星速度」排序，而不是总星数。
+> AI projects ranked by how fast they are gaining stars, not by total stars.
 
-按「解决什么问题」清晰分类，每个项目用短视频风格的人话解释：对比强、有钩子、一眼明白。
+Most lists sort by total stars, so old projects sit on top forever and newly rising ones get buried. Here every project gets a stars-per-day figure over the last 7, 30 and 365 days, and the rankings are ordered by that growth. The all-time star ranking comes last.
 
-## 为什么这个项目存在
+Data fetched from the GitHub API on 2026-10-29 14:35:00 (UTC).
 
-现有列表几乎都按总星排，老项目长期霸榜，新涨起来的项目被淹没。  
-这里只看近 7 天 / 30 天的星数增长和加速度，让人快速看到「最近在涨什么」。
+<details><summary>Categories</summary>
 
-数据在 `data/` 目录，可以自己拉去做网站或周报。星数快照会逐清补充。
+| | |
+|---|---|
+| Coding Agents | Let AI write, edit and run code for you |
+| Skills & Harness | Skill packs, memory, audit and safety for coding agents |
+| Memory & Knowledge | Help agents remember context, codebases and docs |
+| Browser & Computer Use | Let agents operate a browser or a desktop |
+| Document & Content | Turn PDFs, slides and videos into LLM-ready formats |
+| Video & Media | AI that generates or processes video |
+| Security & Audit | Check code or agent behavior for risks |
+| Local Models & Inference | Run models on your own machine |
+| Workflow & Automation | Chain several tools into one flow |
+| Other AI Tools | Rising AI projects that fit none of the above |
 
----
+</details>
 
-## 编程助手
+## Fastest rising this week (last 7 days)
 
-让 AI 帮你写代码、改代码、跑命令。
+| # | Project | Stars gained | Stars/day | Total stars | Star history |
+|---|---|---:|---:|---:|---|
+| 1 | [morluto/rea](https://github.com/morluto/rea)<br>Reverse engineers stare at assembly for days; this lets AI just tell you what a program does. Hooks into Ghidra so an unreadable binary gets explained in one sentence.<br>`Coding Agents` | +44,699 | 6,385.6 | 405,995 | <a href="https://www.star-history.com/#morluto/rea&Date"><img src="https://api.star-history.com/svg?repos=morluto/rea&type=Date" width="260" alt="star history morluto/rea"></a> |
+| 2 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill)<br>Have AI audit its own code for vulnerabilities, then call in a second AI to challenge the findings. Built for the insecure code coding agents tend to write.<br>`Security & Audit` | +14,697 | 2,099.6 | 52,404 | <a href="https://www.star-history.com/#cloudflare/security-audit-skill&Date"><img src="https://api.star-history.com/svg?repos=cloudflare/security-audit-skill&type=Date" width="260" alt="star history cloudflare/security-audit-skill"></a> |
+| 3 | [stablyai/orca](https://github.com/stablyai/orca)<br>Run several AI coding agents on one desktop and compare who writes better. Each agent gets its own workspace, so they never step on each other.<br>`Coding Agents` | +7,816 | 1,116.6 | 109,805 | <a href="https://www.star-history.com/#stablyai/orca&Date"><img src="https://api.star-history.com/svg?repos=stablyai/orca&type=Date" width="260" alt="star history stablyai/orca"></a> |
+| 4 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)<br>A cure for AI padding its code with filler. Teaches it to act like a lazy veteran: skip what you can, get right what you must write.<br>`Skills & Harness` | +7,531 | 1,075.9 | 179,791 | <a href="https://www.star-history.com/#DietrichGebert/ponytail&Date"><img src="https://api.star-history.com/svg?repos=DietrichGebert/ponytail&type=Date" width="260" alt="star history DietrichGebert/ponytail"></a> |
+| 5 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)<br>Turns a whole codebase into a map so AI sees at a glance which files call which. Big projects no longer need reading top to bottom.<br>`Memory & Knowledge` | +6,253 | 893.3 | 138,349 | <a href="https://www.star-history.com/#Graphify-Labs/graphify&Date"><img src="https://api.star-history.com/svg?repos=Graphify-Labs/graphify&type=Date" width="260" alt="star history Graphify-Labs/graphify"></a> |
+| 6 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)<br>Write video the way you write a web page and let AI render it. Coding agents can use it too, no editing software to learn.<br>`Video & Media` | +5,649 | 807.0 | 75,233 | <a href="https://www.star-history.com/#heygen-com/hyperframes&Date"><img src="https://api.star-history.com/svg?repos=heygen-com/hyperframes&type=Date" width="260" alt="star history heygen-com/hyperframes"></a> |
+| 7 | [anomalyco/opencode](https://github.com/anomalyco/opencode)<br>Write code with AI right in your terminal, no browser tab needed. Supports many models, rivals Claude Code and Codex, free and open source.<br>`Coding Agents` | +3,319 | 474.1 | 222,962 | <a href="https://www.star-history.com/#anomalyco/opencode&Date"><img src="https://api.star-history.com/svg?repos=anomalyco/opencode&type=Date" width="260" alt="star history anomalyco/opencode"></a> |
+| 8 | [openclaw/openclaw](https://github.com/openclaw/openclaw)<br>Not a chatbot, an AI that actually gets work done. Runs across systems, deploys locally, and your data never leaves your computer.<br>`Coding Agents` | +1,061 | 151.6 | 393,350 | <a href="https://www.star-history.com/#openclaw/openclaw&Date"><img src="https://api.star-history.com/svg?repos=openclaw/openclaw&type=Date" width="260" alt="star history openclaw/openclaw"></a> |
 
-| 项目 | 一句话解释 | 备注 |
-|------|------------|------|
-| [morluto/rea](https://github.com/morluto/rea) | 别人逆向要盯几天汇编，这个让 AI 直接告诉你程序在干什么。接 Ghidra，原来看不懂的二进制一句话讲清楚。 | 近期涨星极快的 AI 逆向工具 |
-| [anomalyco/opencode](https://github.com/anomalyco/opencode) | 终端里直接用 AI 写代码，不用开网页。支持多种模型，对标 Claude Code 和 Codex，免费开源。 | 终端编程助手里涨星最稳的之一 |
-| [stablyai/orca](https://github.com/stablyai/orca) | 一个桌面同时跑好几个 AI 编程助手，比看谁写得好。每个助手独立工作区，不互相干扰。 | 多 Agent 并行的实用工具 |
-| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 不是聊天机器人，是真能帮你干活的 AI。跨系统跑，本地部署，数据不出你电脑。 | 总星极高的个人 AI 助手 |
+## Fastest rising this month (last 30 days)
 
-## 技能与运行时
+| # | Project | Stars gained | Stars/day | Total stars | Star history |
+|---|---|---:|---:|---:|---|
+| 1 | [morluto/rea](https://github.com/morluto/rea)<br>Reverse engineers stare at assembly for days; this lets AI just tell you what a program does. Hooks into Ghidra so an unreadable binary gets explained in one sentence.<br>`Coding Agents` | +403,620 | 13,454.0 | 405,995 | <a href="https://www.star-history.com/#morluto/rea&Date"><img src="https://api.star-history.com/svg?repos=morluto/rea&type=Date" width="260" alt="star history morluto/rea"></a> |
+| 2 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)<br>A cure for AI padding its code with filler. Teaches it to act like a lazy veteran: skip what you can, get right what you must write.<br>`Skills & Harness` | +32,832 | 1,094.4 | 179,791 | <a href="https://www.star-history.com/#DietrichGebert/ponytail&Date"><img src="https://api.star-history.com/svg?repos=DietrichGebert/ponytail&type=Date" width="260" alt="star history DietrichGebert/ponytail"></a> |
+| 3 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill)<br>Have AI audit its own code for vulnerabilities, then call in a second AI to challenge the findings. Built for the insecure code coding agents tend to write.<br>`Security & Audit` | +29,312 | 977.1 | 52,404 | <a href="https://www.star-history.com/#cloudflare/security-audit-skill&Date"><img src="https://api.star-history.com/svg?repos=cloudflare/security-audit-skill&type=Date" width="260" alt="star history cloudflare/security-audit-skill"></a> |
+| 4 | [stablyai/orca](https://github.com/stablyai/orca)<br>Run several AI coding agents on one desktop and compare who writes better. Each agent gets its own workspace, so they never step on each other.<br>`Coding Agents` | +29,045 | 968.2 | 109,805 | <a href="https://www.star-history.com/#stablyai/orca&Date"><img src="https://api.star-history.com/svg?repos=stablyai/orca&type=Date" width="260" alt="star history stablyai/orca"></a> |
+| 5 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)<br>Write video the way you write a web page and let AI render it. Coding agents can use it too, no editing software to learn.<br>`Video & Media` | +21,302 | 710.1 | 75,233 | <a href="https://www.star-history.com/#heygen-com/hyperframes&Date"><img src="https://api.star-history.com/svg?repos=heygen-com/hyperframes&type=Date" width="260" alt="star history heygen-com/hyperframes"></a> |
+| 6 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)<br>Turns a whole codebase into a map so AI sees at a glance which files call which. Big projects no longer need reading top to bottom.<br>`Memory & Knowledge` | +16,655 | 555.2 | 138,349 | <a href="https://www.star-history.com/#Graphify-Labs/graphify&Date"><img src="https://api.star-history.com/svg?repos=Graphify-Labs/graphify&type=Date" width="260" alt="star history Graphify-Labs/graphify"></a> |
+| 7 | [anomalyco/opencode](https://github.com/anomalyco/opencode)<br>Write code with AI right in your terminal, no browser tab needed. Supports many models, rivals Claude Code and Codex, free and open source.<br>`Coding Agents` | +13,395 | 446.5 | 222,962 | <a href="https://www.star-history.com/#anomalyco/opencode&Date"><img src="https://api.star-history.com/svg?repos=anomalyco/opencode&type=Date" width="260" alt="star history anomalyco/opencode"></a> |
+| 8 | [openclaw/openclaw](https://github.com/openclaw/openclaw)<br>Not a chatbot, an AI that actually gets work done. Runs across systems, deploys locally, and your data never leaves your computer.<br>`Coding Agents` | +4,678 | 155.9 | 393,350 | <a href="https://www.star-history.com/#openclaw/openclaw&Date"><img src="https://api.star-history.com/svg?repos=openclaw/openclaw&type=Date" width="260" alt="star history openclaw/openclaw"></a> |
 
-给编程助手加技能包、记忆、审计、安全。
+## Fastest rising this year (last 365 days)
 
-| 项目 | 一句话解释 | 备注 |
-|------|------------|------|
-| [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | 专治 AI 写代码加一堆废话。让它学会像懒惰老手一样：能不写就不写，写就写对。 | 反 AI-slop 方向代表项目 |
+| # | Project | Stars gained | Stars/day | Total stars | Star history |
+|---|---|---:|---:|---:|---|
+| 1 | [morluto/rea](https://github.com/morluto/rea)<br>Reverse engineers stare at assembly for days; this lets AI just tell you what a program does. Hooks into Ghidra so an unreadable binary gets explained in one sentence.<br>`Coding Agents` | +404,018 | 2,040.5 †<br><sub>÷198d</sub> | 405,995 | <a href="https://www.star-history.com/#morluto/rea&Date"><img src="https://api.star-history.com/svg?repos=morluto/rea&type=Date" width="260" alt="star history morluto/rea"></a> |
+| 2 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)<br>A cure for AI padding its code with filler. Teaches it to act like a lazy veteran: skip what you can, get right what you must write.<br>`Skills & Harness` | +179,422 | 1,290.8 †<br><sub>÷139d</sub> | 179,791 | <a href="https://www.star-history.com/#DietrichGebert/ponytail&Date"><img src="https://api.star-history.com/svg?repos=DietrichGebert/ponytail&type=Date" width="260" alt="star history DietrichGebert/ponytail"></a> |
+| 3 | [openclaw/openclaw](https://github.com/openclaw/openclaw)<br>Not a chatbot, an AI that actually gets work done. Runs across systems, deploys locally, and your data never leaves your computer.<br>`Coding Agents` | +393,287 | 1,160.1 †<br><sub>÷339d</sub> | 393,350 | <a href="https://www.star-history.com/#openclaw/openclaw&Date"><img src="https://api.star-history.com/svg?repos=openclaw/openclaw&type=Date" width="260" alt="star history openclaw/openclaw"></a> |
+| 4 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)<br>Turns a whole codebase into a map so AI sees at a glance which files call which. Big projects no longer need reading top to bottom.<br>`Memory & Knowledge` | +138,066 | 660.6 †<br><sub>÷209d</sub> | 138,349 | <a href="https://www.star-history.com/#Graphify-Labs/graphify&Date"><img src="https://api.star-history.com/svg?repos=Graphify-Labs/graphify&type=Date" width="260" alt="star history Graphify-Labs/graphify"></a> |
+| 5 | [anomalyco/opencode](https://github.com/anomalyco/opencode)<br>Write code with AI right in your terminal, no browser tab needed. Supports many models, rivals Claude Code and Codex, free and open source.<br>`Coding Agents` | +194,683 | 533.4 | 222,962 | <a href="https://www.star-history.com/#anomalyco/opencode&Date"><img src="https://api.star-history.com/svg?repos=anomalyco/opencode&type=Date" width="260" alt="star history anomalyco/opencode"></a> |
+| 6 | [stablyai/orca](https://github.com/stablyai/orca)<br>Run several AI coding agents on one desktop and compare who writes better. Each agent gets its own workspace, so they never step on each other.<br>`Coding Agents` | +109,358 | 483.9 †<br><sub>÷226d</sub> | 109,805 | <a href="https://www.star-history.com/#stablyai/orca&Date"><img src="https://api.star-history.com/svg?repos=stablyai/orca&type=Date" width="260" alt="star history stablyai/orca"></a> |
+| 7 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill)<br>Have AI audit its own code for vulnerabilities, then call in a second AI to challenge the findings. Built for the insecure code coding agents tend to write.<br>`Security & Audit` | +51,969 | 390.7 †<br><sub>÷133d</sub> | 52,404 | <a href="https://www.star-history.com/#cloudflare/security-audit-skill&Date"><img src="https://api.star-history.com/svg?repos=cloudflare/security-audit-skill&type=Date" width="260" alt="star history cloudflare/security-audit-skill"></a> |
+| 8 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)<br>Write video the way you write a web page and let AI render it. Coding agents can use it too, no editing software to learn.<br>`Video & Media` | +74,939 | 321.6 †<br><sub>÷233d</sub> | 75,233 | <a href="https://www.star-history.com/#heygen-com/hyperframes&Date"><img src="https://api.star-history.com/svg?repos=heygen-com/hyperframes&type=Date" width="260" alt="star history heygen-com/hyperframes"></a> |
 
-## 记忆与知识
+† The repo is younger than the window, so stars/day is divided by the repo age in days (shown under the figure) instead of the full window.
 
-让 Agent 记住上下文、代码库、文档。
+## Total stars (all time)
 
-| 项目 | 一句话解释 | 备注 |
-|------|------------|------|
-| [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | 把整个代码库变成一张地图，AI 一眼就看懂哪些文件互相调用。大项目再也不用从头看到尾。 | 代码库记忆/知识图谱方向热门 |
+| # | Project | Total stars | Star history |
+|---|---|---:|---|
+| 1 | [morluto/rea](https://github.com/morluto/rea)<br>Reverse engineers stare at assembly for days; this lets AI just tell you what a program does. Hooks into Ghidra so an unreadable binary gets explained in one sentence.<br>`Coding Agents` | 405,995 | <a href="https://www.star-history.com/#morluto/rea&Date"><img src="https://api.star-history.com/svg?repos=morluto/rea&type=Date" width="260" alt="star history morluto/rea"></a> |
+| 2 | [openclaw/openclaw](https://github.com/openclaw/openclaw)<br>Not a chatbot, an AI that actually gets work done. Runs across systems, deploys locally, and your data never leaves your computer.<br>`Coding Agents` | 393,350 | <a href="https://www.star-history.com/#openclaw/openclaw&Date"><img src="https://api.star-history.com/svg?repos=openclaw/openclaw&type=Date" width="260" alt="star history openclaw/openclaw"></a> |
+| 3 | [anomalyco/opencode](https://github.com/anomalyco/opencode)<br>Write code with AI right in your terminal, no browser tab needed. Supports many models, rivals Claude Code and Codex, free and open source.<br>`Coding Agents` | 222,962 | <a href="https://www.star-history.com/#anomalyco/opencode&Date"><img src="https://api.star-history.com/svg?repos=anomalyco/opencode&type=Date" width="260" alt="star history anomalyco/opencode"></a> |
+| 4 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)<br>A cure for AI padding its code with filler. Teaches it to act like a lazy veteran: skip what you can, get right what you must write.<br>`Skills & Harness` | 179,791 | <a href="https://www.star-history.com/#DietrichGebert/ponytail&Date"><img src="https://api.star-history.com/svg?repos=DietrichGebert/ponytail&type=Date" width="260" alt="star history DietrichGebert/ponytail"></a> |
+| 5 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)<br>Turns a whole codebase into a map so AI sees at a glance which files call which. Big projects no longer need reading top to bottom.<br>`Memory & Knowledge` | 138,349 | <a href="https://www.star-history.com/#Graphify-Labs/graphify&Date"><img src="https://api.star-history.com/svg?repos=Graphify-Labs/graphify&type=Date" width="260" alt="star history Graphify-Labs/graphify"></a> |
+| 6 | [stablyai/orca](https://github.com/stablyai/orca)<br>Run several AI coding agents on one desktop and compare who writes better. Each agent gets its own workspace, so they never step on each other.<br>`Coding Agents` | 109,805 | <a href="https://www.star-history.com/#stablyai/orca&Date"><img src="https://api.star-history.com/svg?repos=stablyai/orca&type=Date" width="260" alt="star history stablyai/orca"></a> |
+| 7 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)<br>Write video the way you write a web page and let AI render it. Coding agents can use it too, no editing software to learn.<br>`Video & Media` | 75,233 | <a href="https://www.star-history.com/#heygen-com/hyperframes&Date"><img src="https://api.star-history.com/svg?repos=heygen-com/hyperframes&type=Date" width="260" alt="star history heygen-com/hyperframes"></a> |
+| 8 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill)<br>Have AI audit its own code for vulnerabilities, then call in a second AI to challenge the findings. Built for the insecure code coding agents tend to write.<br>`Security & Audit` | 52,404 | <a href="https://www.star-history.com/#cloudflare/security-audit-skill&Date"><img src="https://api.star-history.com/svg?repos=cloudflare/security-audit-skill&type=Date" width="260" alt="star history cloudflare/security-audit-skill"></a> |
 
-## 视频与媒体
+## Missing data
 
-AI 生成或处理视频。
+No project is missing data in this run.
 
-| 项目 | 一句话解释 | 备注 |
-|------|------------|------|
-| [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | 用写网页的方式写视频，AI 直接渲染出来。编程助手也能用，不用再学剪辑软件。 | AI 视频生成方向涨得快 |
+## How the numbers are produced
 
-## 安全与审计
+- Total stars: `GET /repos/{owner}/{repo}` → `stargazers_count`.
+- Stars gained: `GET /repos/{owner}/{repo}/stargazers/history` (GitHub's privacy-safe weekly/daily star counts). The gain is the sum of the N complete UTC days before today (today is excluded). Stars/day = gain ÷ N.
+- GitHub states that week/day bucket boundaries are not guaranteed to align with UTC, and stars that were later removed are not counted, so the figures can be off by a small amount at the window edges.
+- Star history curves are `star-history.com` SVG images embedded by URL. This repo contains no analytics or tracking script of any kind.
+- The raw numbers are in [`data/stats.json`](data/stats.json); daily snapshots of the star count are appended to [`data/stars.json`](data/stars.json).
 
-检查代码或 Agent 行为的风险。
+## Contributing
 
-| 项目 | 一句话解释 | 备注 |
-|------|------------|------|
-| [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | 让 AI 自己查自己的代码漏洞，还要再叫另一个 AI 来打脸。专治编程助手写出来的代码不安全。 | 近期周涨星常居前列 |
-
----
-
-## 分类说明
-
-| 分类 | 解决什么问题 |
-|------|-------------|
-| 编程助手 | 让 AI 帮你写代码、改代码、跑命令 |
-| 技能与运行时 | 给编程助手加技能包、记忆、审计 |
-| 记忆与知识 | 让 Agent 记住上下文、代码库、文档 |
-| 浏览器与电脑控制 | 让 Agent 操作浏览器或桌面 |
-| 文档与内容 | 把 PDF/PPT/视频转成可给 LLM 用的格式 |
-| 视频与媒体 | AI 生成或处理视频 |
-| 安全与审计 | 检查代码或 Agent 行为的风险 |
-| 本地模型与推理 | 在自己机器上跑模型 |
-| 工作流自动化 | 把多个工具串成流程 |
-| 其他 AI 工具 | 不属于上面类别但在涨的 AI 项目 |
-
-## 贡献
-
-欢迎提交新项目。在 `data/projects.json` 里加一条即可，格式：
-
-```json
-{
-  "name": "owner/repo",
-  "url": "https://github.com/owner/repo",
-  "category": "coding-agents",
-  "desc": "短视频风格：对比强、有钩子、一眼明白地说清楚它干什么",
-  "stars_note": "为什么现在在涨（可选）"
-}
-```
-
-分类 id 见 `data/categories.json`。
+Add an entry to `data/projects.json` (with `desc` in all five languages), then run `python tools/update_stars.py`. Daily updates: see [docs/DAILY_UPDATE.md](docs/DAILY_UPDATE.md).
