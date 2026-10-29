@@ -2,7 +2,7 @@
 
 AI 相关项目按「近期涨星速度」排序，而不是总星数。
 
-按「解决什么问题」清晰分类，每个项目用一句人话解释：它干什么、对应哪个闭源产品、为什么现在在涨。
+按「解决什么问题」清晰分类，每个项目用短视频风格的人话解释：对比强、有钩子、一眼明白。
 
 ## 为什么这个项目存在
 
@@ -19,10 +19,10 @@ AI 相关项目按「近期涨星速度」排序，而不是总星数。
 
 | 项目 | 一句话解释 | 备注 |
 |------|------------|------|
-| [morluto/rea](https://github.com/morluto/rea) | 用 AI Agent 逆向工程任意东西：从应用行为一直到二进制。接 Ghidra/Hopper，让代码助手能看懂原来看不懂的程序。 | 近期涨星极快的 AI 逆向工具 |
-| [anomalyco/opencode](https://github.com/anomalyco/opencode) | 开源的 AI 编程助手，在终端里用。支持多种模型，有桌面版正在测试。对标 Claude Code / Codex。 | 终端编程助手里涨星最稳的之一 |
-| [stablyai/orca](https://github.com/stablyai/orca) | 桌面端同时跑多个编程助手（Claude Code、Codex、OpenCode等），每个在独立的 git 工作区。 | 多 Agent 并行的实用工具 |
-| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 可以真正干活的 AI：跨系统、跨平台的个人助手。支持本地部署。 | 总星极高的个人 AI 助手 |
+| [morluto/rea](https://github.com/morluto/rea) | 别人逆向要盯几天汇编，这个让 AI 直接告诉你程序在干什么。接 Ghidra，原来看不懂的二进制一句话讲清楚。 | 近期涨星极快的 AI 逆向工具 |
+| [anomalyco/opencode](https://github.com/anomalyco/opencode) | 终端里直接用 AI 写代码，不用开网页。支持多种模型，对标 Claude Code 和 Codex，免费开源。 | 终端编程助手里涨星最稳的之一 |
+| [stablyai/orca](https://github.com/stablyai/orca) | 一个桌面同时跑好几个 AI 编程助手，比看谁写得好。每个助手独立工作区，不互相干扰。 | 多 Agent 并行的实用工具 |
+| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 不是聊天机器人，是真能帮你干活的 AI。跨系统跑，本地部署，数据不出你电脑。 | 总星极高的个人 AI 助手 |
 
 ## 技能与运行时
 
@@ -30,7 +30,7 @@ AI 相关项目按「近期涨星速度」排序，而不是总星数。
 
 | 项目 | 一句话解释 | 备注 |
 |------|------------|------|
-| [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | 让 AI Agent 像懒惰的资深开发一样思考：能不写就不写。一个反「AI 水」的技能包。 | 反 AI-slop 方向代表项目 |
+| [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | 专治 AI 写代码加一堆废话。让它学会像懒惰老手一样：能不写就不写，写就写对。 | 反 AI-slop 方向代表项目 |
 
 ## 记忆与知识
 
@@ -38,7 +38,7 @@ AI 相关项目按「近期涨星速度」排序，而不是总星数。
 
 | 项目 | 一句话解释 | 备注 |
 |------|------------|------|
-| [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | 把代码库、文档、SQL、配置转成可查询的知识图谱。让 Agent 能快速理解大项目结构。 | 代码库记忆/知识图谱方向热门 |
+| [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | 把整个代码库变成一张地图，AI 一眼就看懂哪些文件互相调用。大项目再也不用从头看到尾。 | 代码库记忆/知识图谱方向热门 |
 
 ## 视频与媒体
 
@@ -46,7 +46,7 @@ AI 生成或处理视频。
 
 | 项目 | 一句话解释 | 备注 |
 |------|------------|------|
-| [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | 用 HTML 写视频，再渲染出来。为 Agent 设计，可以让编程助手直接生成视频。 | AI 视频生成方向涨得快 |
+| [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | 用写网页的方式写视频，AI 直接渲染出来。编程助手也能用，不用再学剪辑软件。 | AI 视频生成方向涨得快 |
 
 ## 安全与审计
 
@@ -54,7 +54,7 @@ AI 生成或处理视频。
 
 | 项目 | 一句话解释 | 备注 |
 |------|------------|------|
-| [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | 给编程 Agent 加一个安全审计技能：多阶段扫描代码漏洞，再用另一个 Agent 尝试证伪每个发现。输出可机器读的结构化报告。 | 近期周涨星常居前列 |
+| [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | 让 AI 自己查自己的代码漏洞，还要再叫另一个 AI 来打脸。专治编程助手写出来的代码不安全。 | 近期周涨星常居前列 |
 
 ---
 
@@ -82,7 +82,7 @@ AI 生成或处理视频。
   "name": "owner/repo",
   "url": "https://github.com/owner/repo",
   "category": "coding-agents",
-  "desc": "一句人话：它干什么，对应哪个闭源产品或场景",
+  "desc": "短视频风格：对比强、有钩子、一眼明白地说清楚它干什么",
   "stars_note": "为什么现在在涨（可选）"
 }
 ```
