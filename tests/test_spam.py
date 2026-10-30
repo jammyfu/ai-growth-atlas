@@ -231,7 +231,7 @@ class ScheduledPathTests(unittest.TestCase):
                 mock.patch.object(up.newcomers, "discover_all",
                                   side_effect=lambda *a, **k: real(*a, sleep=NOSLEEP, **k)), \
                 mock.patch.dict("os.environ", {"GITHUB_TOKEN": "t"}):
-            rc = up.main(["--slot", "cn", "--now", "2026-10-30T00:00:00Z", "--no-render"])
+            rc = up.main(["--slot", "cn", "--now", "2026-10-30T00:00:00Z", "--no-render", "--no-i18n"])
         self.assertEqual(rc, 0)
         st = json.loads((tmp / "rankings/2026-10-30/cn-0000/stats.json").read_text("utf-8"))
         ai = [i["name"] for i in st["newcomers"]["categories"]["ai"]["items"]]

@@ -48,13 +48,17 @@ The pages are generated from `tools/i18n.py` (strings) and `stats.json` (data); 
 Beijing, pt if 00:xx in Los Angeles, otherwise manual). The workflow and `tools/local_daily.sh` pass the slot themselves.
 `tools/verify.py` checks that `latest/`, the indexes and every snapshot's `rankings*.md` (all languages) match their data.
 
-## New-repo description translations
+## New-repo description translations and polish
 
-The new-repos table shows the repo's own GitHub description. For each language, `data/newcomer_i18n.json`
-can hold a hand-written translation, keyed by repo full name with the original text in `src`; it is shown only
-while `src` still equals the current description, otherwise the original is shown. Repos new to the ranking
-have no entry until someone adds one, so check the gaps with `python3 tools/newcomer_i18n.py` (the daily run
-prints the count; it never fails because of it). No online translation service or key is used.
+The new-repos table shows the repo's own GitHub description. `data/newcomer_i18n.json` holds its translation
+into zh-Hans, zh-Hant, ja and ko (plus en when the source is Chinese), keyed by repo full name with the original
+text in `src`; it is shown only while `src` still equals the current description, otherwise the original is shown.
+
+Since the i18n pipeline, `tools/update_stars.py` fills this cache itself: after discovering the ranking it
+translates every displayed description that has no current translation (already translated ones are skipped),
+then polishes copy, then renders. It needs the repository secret `CURSOR_API_KEY`; without it, or if anything
+fails, the run carries on with the existing texts. Details, guards and the manual commands are in
+[I18N_PIPELINE.md](I18N_PIPELINE.md). `python3 tools/newcomer_i18n.py` still lists the gaps.
 
 ## Schedule: Beijing 00:00 and Los Angeles 00:00
 

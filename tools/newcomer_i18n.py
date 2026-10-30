@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Hand-written translations of the new-repo descriptions (data/newcomer_i18n.json).
+"""Translations of the new-repo descriptions (data/newcomer_i18n.json).
 
 The "hottest new repos" ranking shows each repo's own GitHub description. This cache maps a repo
 full name to {"src": <description it was translated from>, "<lang>": <translation>, ...}.
 A translation is used only when `src` still equals the current description; otherwise the original
-text is shown (it never shows a translation of a text that has since changed). No online
-translation, no keys: entries are added by hand.
+text is shown (it never shows a translation of a text that has since changed). Entries are added by
+tools/i18n_pipeline.py during the scheduled update (Cursor CLI, key from the CURSOR_API_KEY secret) or by hand.
 
 Usage:
   python tools/newcomer_i18n.py            list repos in the current ranking that lack a translation

@@ -13,3 +13,8 @@
 - Every ranking shows the top 20; 22 projects tracked.
 - Ranking history per time slot, `latest/`, and a history index linked from every README.
 - New ranking: hottest new repos created in the last 7 days (search API, deduplicated against all other rankings).
+
+## 2026-10-30 (i18n pipeline)
+
+- All 39 untranslated new-repo descriptions translated into zh-Hans, zh-Hant, ja, ko (+ en for the 11 Chinese sources); every project blurb and category description already had all five languages (now enforced by a test).
+- `tools/i18n_pipeline.py` + `tools/llm.py`: the scheduled update translates new descriptions into the cache (skipping anything already translated) and polishes copy through the Cursor CLI (default model `gemini-3.8-flash-medium`, key from the `CURSOR_API_KEY` Actions secret). Skipped without a key; a failure keeps the existing text and never blocks the update.
