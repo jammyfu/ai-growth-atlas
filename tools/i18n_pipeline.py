@@ -310,8 +310,7 @@ def translate(root: Path, items: list[dict[str, Any]], runner: Runner, budget: B
     today = today or dt.date.today().isoformat()
     hs = nci.hit_stats(lib, items)
     gaps = translation_gaps(lib, items)
-    log(f"translate: library {hs['hits']}/{hs['total']} hits ({_pct(hs['hits'], hs['total'])}), "
-        f"{hs['partial']} partial, {hs['new']} new -> {len(gaps)} to send to the model, 0 calls for the hits")
+    _log_library(hs, len(gaps), log)
     touched = False
     for it in items:  # entries that were used today stay alive for --prune-days
         if it.get("description") and not nci.missing_langs(lib, it["name"], it["description"]):
@@ -362,6 +361,11 @@ def translate(root: Path, items: list[dict[str, Any]], runner: Runner, budget: B
                 stat["translated"] += 1
         nci.save(lib, path)  # save after every batch so a later failure loses nothing
     return stat
+
+
+def _log_library(hs: dict[str, int], to_send: int, log: Callable[[str], None]) -> None:
+    log(f"translate: library {hs['hits']}/{hs['total']} hits ({_pct(hs['hits'], hs['total'])}), "
+        f"{hs['partial']} partial, {hs['new']} new -> {to_send} to send to the model, 0 calls for the hits")
 
 
 def _pct(a: int, b: int) -> str:
@@ -539,8 +543,10 @@ def run(root: Path, new: dict[str, Any] | None, *, do_translate: bool = True, do
                 "nothing new, 0 model calls")
         elif dry_run:
             result["translate"] = {"todo": len(gaps)}
+            _log_library(nci.hit_stats(lib, items), len(gaps), log)
         elif (r := ready(translate_backend, translate_model)) is None:
             result["translate"] = {"todo": len(gaps), "skipped": True}
+            _log_library(nci.hit_stats(lib, items), len(gaps), log)
         else:
             result["translate"] = translate(root, items, r, budget, log, limit)
             log(f"translate: {result['translate']}")

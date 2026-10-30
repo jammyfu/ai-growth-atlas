@@ -532,6 +532,18 @@ class LibraryReuseTests(unittest.TestCase):
         self.assertEqual(self.repo.entry("a/one", "Does one thing.")["seen"], "2026-10-20")
 
 
+class LibraryLogWhenSkippedTests(unittest.TestCase):
+    def test_hit_and_new_counts_are_logged_even_without_a_model(self):
+        repo = Repo({"a/one": "Does one thing.", "b/two": "Does two."},
+                    cache={"a/one": {"src": "Does one thing.", **{l: "t" for l in LANG5[1:]}}})
+        self.addCleanup(repo.close)
+        logs = []
+        res = pipe.run(repo.root, repo.new, do_polish=False, env={}, log=logs.append,
+                       make_runner=lambda b, m: Ready(FakeRunner(), "no key"))
+        self.assertTrue(res["translate"]["skipped"])
+        self.assertTrue(any("1/2 hits (50%)" in m and "1 new" in m for m in logs), logs)
+
+
 class GlossaryTests(unittest.TestCase):
     GLOS = json.loads((ROOT / "data/glossary.json").read_text("utf-8"))
 
