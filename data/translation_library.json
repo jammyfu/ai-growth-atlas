@@ -810,11 +810,11 @@
         "ko": "오픈 소스 커뮤니티가 누려야 할 데이터 변환 도구.",
         "seen": "2026-10-30",
         "hook": {
-          "en": "The open-source community's own data transformation tool",
-          "zh-Hans": "做数据转换，用开源社区自己的工具",
-          "zh-Hant": "做資料轉換，用開源社群自己的工具",
-          "ja": "データ変換は、オープンソースコミュニティのツールで",
-          "ko": "데이터 변환, 오픈 소스 커뮤니티의 도구로"
+          "zh-Hans": "开源社区理应拥有的数据转换工具",
+          "zh-Hant": "開源社群理應擁有的資料轉換工具",
+          "en": "The data transformation tool open source deserves",
+          "ja": "オープンソースにふさわしいデータ変換ツール",
+          "ko": "오픈 소스가 누려야 할 데이터 변환 도구"
         },
         "hook_prev": {
           "en": "The data transformation tool open source deserves",
@@ -1127,11 +1127,11 @@
         "ko": "검열 없는 AI API와 모델 — 키 하나로 Claude, GPT, Gemini, Grok, DeepSeek, GLM, Qwen을 쓸 수 있고, 제공되는 경우 무검열·abliterated 변형도 선택할 수 있다. OpenAI-…",
         "seen": "2026-10-30",
         "hook": {
-          "en": "One API key for many AI models",
-          "zh-Hans": "一个密钥，调用多家 AI 模型",
-          "zh-Hant": "一個金鑰，呼叫多家 AI 模型",
-          "ja": "1 つのキーで複数の AI モデルを使う",
-          "ko": "키 하나로 여러 AI 모델 사용"
+          "zh-Hans": "不设审查的 AI 接口，一个密钥多家模型",
+          "zh-Hant": "不設審查的 AI 介面，一個金鑰多家模型",
+          "en": "Uncensored AI API: one key, many models",
+          "ja": "検閲なしの AI API、1 つのキーで複数モデル",
+          "ko": "검열 없는 AI API, 키 하나로 여러 모델"
         },
         "hook_prev": {
           "en": "One key for many AI models, uncensored variants too",

@@ -37,11 +37,11 @@
       "ko": "웹 페이지 없이 터미널에서 바로 AI로 코딩한다. 여러 모델을 지원하고 Claude Code·Codex에 맞서는 무료 오픈소스."
     },
     "hook": {
-      "en": "AI writes your code right in the terminal, no browser",
-      "zh-Hans": "不开浏览器，终端里就有 AI 写代码",
-      "zh-Hant": "不開瀏覽器，終端裡就有 AI 寫程式碼",
-      "ja": "ブラウザなしで、ターミナルの AI がコードを書く",
-      "ko": "브라우저 없이 터미널에서 AI가 코드를 쓴다"
+      "zh-Hans": "终端里，有个开源 AI 帮你写代码",
+      "zh-Hant": "終端機裡，有個開源 AI 幫你寫程式碼",
+      "en": "An open-source AI that writes code in your terminal",
+      "ja": "ターミナルで、オープンソースの AI がコードを書く",
+      "ko": "터미널에서 오픈 소스 AI가 코드를 쓴다"
     },
     "hook_prev": {
       "en": "Free open-source AI coding in your terminal",
@@ -89,11 +89,11 @@
       "ko": "AI가 자기 코드의 취약점을 직접 찾게 하고, 다른 AI를 불러 반박까지 시킨다. 코딩 에이전트가 쓰는 불안전한 코드를 잡아낸다."
     },
     "hook": {
-      "en": "After AI writes the code, a second AI picks it apart",
-      "zh-Hans": "AI 写完代码，再请一个 AI 挑刺",
-      "zh-Hant": "AI 寫完程式碼，再請一個 AI 挑刺",
-      "ja": "AI が書いたコードを、別の AI が突っ込む",
-      "ko": "AI가 쓴 코드를 다른 AI가 다시 짚어 준다"
+      "zh-Hans": "AI 查代码漏洞，另一个 AI 逐条复核",
+      "zh-Hant": "AI 查程式碼漏洞，另一個 AI 逐條複核",
+      "en": "One AI hunts security holes, a fresh AI verifies each",
+      "ja": "AI が脆弱性を探し、別の AI が一件ずつ検証",
+      "ko": "AI가 취약점을 찾고, 다른 AI가 하나씩 검증"
     },
     "hook_prev": {
       "en": "One AI audits the code, a second AI challenges it",
@@ -193,11 +193,11 @@
       "ko": "챗봇이 아니라 실제로 일을 해주는 AI. 시스템을 가로질러 동작하고 로컬에 배포하며 데이터가 내 컴퓨터를 떠나지 않는다."
     },
     "hook": {
-      "en": "An AI that finishes the job, data stays on your machine",
-      "zh-Hans": "能把事做完的 AI，数据留在本机",
-      "zh-Hant": "能把事做完的 AI，資料留在本機",
-      "ja": "仕事を終わらせる AI。データは自分の PC に残る",
-      "ko": "일을 끝내는 AI, 데이터는 내 컴퓨터에 남는다"
+      "zh-Hans": "能把事做完的 AI 助手，跑在自己设备上",
+      "zh-Hant": "能把事做完的 AI 助理，跑在自己裝置上",
+      "en": "An AI assistant that gets things done, on your own devices",
+      "ja": "仕事を片付ける AI アシスタント、動くのは自分の端末",
+      "ko": "일을 끝내는 AI 비서, 내 기기에서 돌아간다"
     },
     "hook_prev": {
       "en": "An AI that gets work done, on your own machine",
@@ -375,11 +375,11 @@
       "ko": "무료 MIT 라이선스 AI 게이트웨이. 하나의 엔드포인트로 수백 개 제공자와 모델에 연결하고 할당량이 떨어지면 자동 전환한다. Claude Code·Codex·Cursor·OpenCode·Cline·Copilot과 함께 쓸 수 있다."
     },
     "hook": {
-      "en": "One entry to hundreds of models, quota switches itself",
-      "zh-Hans": "一个入口接几百个模型，额度自动切",
-      "zh-Hant": "一個入口接幾百個模型，額度自動切",
-      "ja": "入口 1 つで何百ものモデル、枠は自動で切替",
-      "ko": "입구 하나로 수백 개 모델, 한도는 자동 전환"
+      "zh-Hans": "一个入口接上千个模型，额度自动切",
+      "zh-Hant": "一個入口接上千個模型，額度自動切",
+      "en": "One entry to over a thousand models, quota switches itself",
+      "ja": "入口 1 つで千を超えるモデル、枠は自動で切替",
+      "ko": "입구 하나로 천 개 넘는 모델, 한도는 자동 전환"
     },
     "hook_prev": {
       "en": "One free gateway to hundreds of AI models",
@@ -687,11 +687,11 @@
       "ko": "LSP·tree-sitter·다중 선택을 내장한 모달 텍스트 에디터."
     },
     "hook": {
-      "en": "No pile of plugins: completion and highlighting built in",
-      "zh-Hans": "不装一堆插件，补全高亮都现成",
-      "zh-Hant": "不裝一堆外掛，補全高亮都現成",
-      "ja": "プラグイン不要、補完とハイライトは最初から",
-      "ko": "플러그인 없이 자동완성·하이라이트가 기본"
+      "zh-Hans": "语法高亮、语言服务都内置的文本编辑器",
+      "zh-Hant": "語法上色、語言服務都內建的文字編輯器",
+      "en": "A text editor with language server and highlighting built in",
+      "ja": "構文ハイライトも言語サーバーも内蔵のテキストエディタ",
+      "ko": "구문 강조와 언어 서버가 내장된 텍스트 편집기"
     },
     "hook_prev": {
       "en": "Modal editor with LSP built in",
@@ -713,11 +713,11 @@
       "ko": "다언어 런타임과 환경 관리를 한데 모은 개발 도구 버전 관리자."
     },
     "hook": {
-      "en": "Every language version, managed by one tool",
-      "zh-Hans": "各种语言版本，一个工具管齐",
-      "zh-Hant": "各種語言版本，一個工具管齊",
-      "ja": "言語のバージョンを 1 つのツールでまとめて管理",
-      "ko": "여러 언어 버전을 도구 하나로 관리"
+      "zh-Hans": "开发工具、环境变量、任务，一个工具管",
+      "zh-Hant": "開發工具、環境變數、任務，一個工具管",
+      "en": "Dev tools, env variables and tasks, in one tool",
+      "ja": "開発ツール・環境変数・タスクを 1 つで管理",
+      "ko": "개발 도구·환경 변수·작업을 도구 하나로"
     },
     "hook_prev": {
       "en": "One tool for all your dev tool versions",
@@ -817,11 +817,11 @@
       "ko": "컨테이너 이미지·파일시스템용 취약점 스캐너."
     },
     "hook": {
-      "en": "Check an image for vulnerabilities before it goes live",
-      "zh-Hans": "镜像上线前，先查查有没有漏洞",
-      "zh-Hant": "映像檔上線前，先查查有沒有漏洞",
-      "ja": "イメージを公開する前に、脆弱性を確認",
-      "ko": "이미지를 올리기 전에 취약점부터 확인"
+      "zh-Hans": "容器镜像有没有漏洞，扫一下就知道",
+      "zh-Hant": "容器映像檔有沒有漏洞，掃一下就知道",
+      "en": "Does your container image have vulnerabilities? Scan it",
+      "ja": "コンテナイメージに脆弱性がないか、スキャンで確認",
+      "ko": "컨테이너 이미지에 취약점이 있는지 스캔으로 확인"
     },
     "hook_prev": {
       "en": "Scan container images for vulnerabilities",
@@ -947,11 +947,11 @@
       "ko": "Go 소스의 흔한 불안전 패턴을 검사하는 도구."
     },
     "hook": {
-      "en": "Spot risky patterns in your Go code early",
-      "zh-Hans": "Go 代码里的危险写法，提前查出",
-      "zh-Hant": "Go 程式碼裡的危險寫法，提前查出",
-      "ja": "Go コードの危ない書き方を早めに見つける",
-      "ko": "Go 코드의 위험한 작성 패턴을 미리 찾는다"
+      "zh-Hans": "Go 代码的安全隐患，扫一遍就知道",
+      "zh-Hant": "Go 程式碼的資安隱患，掃一遍就知道",
+      "en": "Scan your Go code for security problems",
+      "ja": "Go コードのセキュリティ問題を、スキャンで見つける",
+      "ko": "Go 코드의 보안 문제를 스캔으로 찾는다"
     },
     "hook_prev": {
       "en": "Find insecure patterns in your Go code",
@@ -973,11 +973,11 @@
       "ko": "OWASP 치트시트 모음. 간결한 보안 모범 사례."
     },
     "hook": {
-      "en": "How to do security right? These pages are enough",
-      "zh-Hans": "安全该怎么做，查这几页就够",
-      "zh-Hant": "安全該怎麼做，查這幾頁就夠",
-      "ja": "セキュリティのやり方は、このシリーズで十分",
-      "ko": "보안은 어떻게 하나? 이 문서면 충분하다"
+      "zh-Hans": "应用安全怎么做，看这套速查表",
+      "zh-Hant": "應用程式資安怎麼做，看這套速查表",
+      "en": "Concise cheat sheets on application security",
+      "ja": "アプリのセキュリティは、この簡潔な手引きで",
+      "ko": "앱 보안은 이 간결한 가이드로"
     },
     "hook_prev": {
       "en": "Short, practical security best practices",
@@ -1025,11 +1025,11 @@
       "ko": "웹·네이티브 UI를 만들기 위한 라이브러리."
     },
     "hook": {
-      "en": "Web and app screens, built the same way",
-      "zh-Hans": "网页和 App 界面，用同一套写",
-      "zh-Hant": "網頁和 App 介面，用同一套寫",
-      "ja": "Web もアプリの画面も、同じ書き方で",
-      "ko": "웹과 앱 화면을 같은 방식으로"
+      "zh-Hans": "网页和 App 界面，都能用它来搭",
+      "zh-Hant": "網頁和 App 介面，都能用它來搭",
+      "en": "Build web and native app interfaces with one library",
+      "ja": "Web もネイティブアプリの画面も、これで作る",
+      "ko": "웹과 네이티브 앱 화면을 이걸로 만든다"
     },
     "hook_prev": {
       "en": "Build web and native UIs",
@@ -1077,11 +1077,11 @@
       "ko": "프레임워크를 컴파일로 없애는 웹 앱 방식."
     },
     "hook": {
-      "en": "You write a framework, visitors get a light page",
-      "zh-Hans": "写的是框架，跑的是轻巧网页",
-      "zh-Hant": "寫的是框架，跑的是輕巧網頁",
-      "ja": "書くのはフレームワーク、動くのは軽いページ",
-      "ko": "쓰는 건 프레임워크, 돌아가는 건 가벼운 페이지"
+      "zh-Hans": "你写组件，编译器变出高效的网页代码",
+      "zh-Hant": "你寫元件，編譯器變出高效的網頁程式碼",
+      "en": "A compiler turns your components into efficient web code",
+      "ja": "書いた部品を、コンパイラが効率的な Web コードに",
+      "ko": "작성한 컴포넌트를 컴파일러가 효율적인 웹 코드로"
     },
     "hook_prev": {
       "en": "Web apps with the framework compiled away",
@@ -1103,11 +1103,11 @@
       "ko": "콘텐츠 사이트용 웹 프레임워크. 기본적으로 JS를 적게 보냄."
     },
     "hook": {
-      "en": "Content sites with less script open lighter",
-      "zh-Hans": "内容网站少带脚本，打开更轻快",
-      "zh-Hant": "內容網站少帶指令碼，開啟更輕快",
-      "ja": "スクリプトを減らして、軽く開くコンテンツサイト",
-      "ko": "스크립트를 줄여 더 가볍게 열리는 콘텐츠 사이트"
+      "zh-Hans": "做内容型网站，页面输出更轻量",
+      "zh-Hant": "做內容型網站，頁面輸出更輕量",
+      "en": "For content-driven websites, with lightweight output",
+      "ja": "コンテンツ中心のサイトを、軽量な出力で作る",
+      "ko": "가벼운 결과물로 만드는 콘텐츠 중심 사이트"
     },
     "hook_prev": {
       "en": "Content sites that ship less JavaScript",
@@ -1155,11 +1155,11 @@
       "ko": "앱에 복사해 쓰는 아름다운 컴포넌트 모음."
     },
     "hook": {
-      "en": "Good-looking components: copy them in and use them",
-      "zh-Hans": "好看的组件，复制进来就能用",
-      "zh-Hant": "好看的元件，複製進來就能用",
-      "ja": "見栄えの良い部品。コピーしてすぐ使える",
-      "ko": "예쁜 컴포넌트, 복사해서 바로 쓴다"
+      "zh-Hans": "好看的组件，代码归你，随便改",
+      "zh-Hant": "好看的元件，程式碼歸你，隨便改",
+      "en": "Good-looking components, and the code is yours to change",
+      "ja": "見栄えの良い部品。コードは自分のもの、自由に改造",
+      "ko": "예쁜 컴포넌트, 코드는 내 것이니 마음대로 고친다"
     },
     "hook_prev": {
       "en": "Beautiful components you copy into your app",
@@ -1259,11 +1259,11 @@
       "ko": "클라우드 자원을 코드로 구축·변경하는 IaC 도구."
     },
     "hook": {
-      "en": "Write cloud resources as code, every change on record",
-      "zh-Hans": "云资源写成代码，改动有据可查",
-      "zh-Hant": "雲資源寫成程式碼，改動有據可查",
-      "ja": "クラウド資源をコードにして、変更を追えるように",
-      "ko": "클라우드 자원을 코드로, 변경 내역이 남는다"
+      "zh-Hans": "云资源写成代码，可审阅、可版本管理",
+      "zh-Hant": "雲資源寫成程式碼，可審閱、可版本管理",
+      "en": "Write cloud resources as code you can review and version",
+      "ja": "クラウド資源をコードにして、レビューもバージョン管理も",
+      "ko": "클라우드 자원을 코드로, 검토도 버전 관리도"
     },
     "hook_prev": {
       "en": "Manage cloud infrastructure as code",
@@ -1441,11 +1441,11 @@
       "ko": "제품 팀을 위한 오픈소스 디자인·프로토타입 플랫폼."
     },
     "hook": {
-      "en": "Design and prototype as a team, with open source",
-      "zh-Hans": "团队做设计和原型，用开源的",
-      "zh-Hant": "團隊做設計和原型，用開源的",
-      "ja": "チームのデザインとプロトタイプはオープンソースで",
-      "ko": "팀의 디자인·프로토타입, 오픈 소스로"
+      "zh-Hans": "团队一起做设计，用开源平台",
+      "zh-Hant": "團隊一起做設計，用開源平台",
+      "en": "Design together as a team, on an open-source platform",
+      "ja": "チームで一緒にデザイン、オープンソースの基盤で",
+      "ko": "팀이 함께 디자인, 오픈 소스 플랫폼에서"
     },
     "hook_prev": {
       "en": "Open-source design and prototyping for teams",
@@ -1467,11 +1467,11 @@
       "ko": "다이어그램·화이트보드 앱. diagrams.net의 코어."
     },
     "hook": {
-      "en": "Flowcharts and diagrams, drag and done",
-      "zh-Hans": "流程图和示意图，拖拖就画好",
-      "zh-Hant": "流程圖和示意圖，拖拖就畫好",
-      "ja": "フローチャートや図は、ドラッグで完成",
-      "ko": "순서도와 다이어그램, 끌어서 완성"
+      "zh-Hans": "画图和白板，一个编辑器搞定",
+      "zh-Hant": "畫圖和白板，一個編輯器搞定",
+      "en": "Diagrams and a whiteboard in one editor",
+      "ja": "作図もホワイトボードも、1 つのエディタで",
+      "ko": "다이어그램도 화이트보드도 에디터 하나로"
     },
     "hook_prev": {
       "en": "A diagram and whiteboard app",
@@ -1545,11 +1545,11 @@
       "ko": "Tailwind CSS용 인기 컴포넌트 라이브러리."
     },
     "hook": {
-      "en": "Using Tailwind? Ready-made components to pick from",
-      "zh-Hans": "用 Tailwind，也有现成组件可挑",
-      "zh-Hant": "用 Tailwind，也有現成元件可挑",
-      "ja": "Tailwind でも、選べる部品が最初から揃う",
-      "ko": "Tailwind에도 골라 쓸 컴포넌트가 준비돼 있다"
+      "zh-Hans": "Tailwind 也有现成组件可挑",
+      "zh-Hant": "Tailwind 也有現成元件可挑",
+      "en": "Pick ready-made components for Tailwind CSS",
+      "ja": "Tailwind 用の部品が最初から揃っている",
+      "ko": "Tailwind용 컴포넌트가 이미 준비돼 있다"
     },
     "hook_prev": {
       "en": "The most popular Tailwind CSS component library",
@@ -1597,11 +1597,11 @@
       "ko": "UI·도식·프레젠테이션용 유연한 아이콘 패밀리."
     },
     "hook": {
-      "en": "One icon family for screens, diagrams and slides",
-      "zh-Hans": "界面图示演示，图标一套够用",
-      "zh-Hant": "介面圖示演示，圖示一套夠用",
-      "ja": "画面・図・スライドに、アイコン一式で足りる",
-      "ko": "화면·도식·발표 자료까지 아이콘 한 세트"
+      "zh-Hans": "一整套灵活的图标，人人可用",
+      "zh-Hant": "一整套靈活的圖示，人人可用",
+      "en": "A flexible icon family for everyone",
+      "ja": "誰でも使える、柔軟なアイコンファミリー",
+      "ko": "누구나 쓸 수 있는 유연한 아이콘 패밀리"
     },
     "hook_prev": {
       "en": "A flexible icon family for any interface",
@@ -1701,11 +1701,11 @@
       "ko": "웨어하우스 데이터를 소프트웨어 공학 방식으로 변환."
     },
     "hook": {
-      "en": "Warehouse SQL with version control and tests",
-      "zh-Hans": "数仓 SQL 也能版本管理和测试",
-      "zh-Hant": "數倉 SQL 也能版本管理和測試",
-      "ja": "データウェアハウスの SQL もバージョン管理とテストを",
-      "ko": "데이터 웨어하우스 SQL도 버전 관리와 테스트를"
+      "zh-Hans": "数据转换，照软件工程的做法来",
+      "zh-Hant": "資料轉換，照軟體工程的做法來",
+      "en": "Transform data the way software engineers build apps",
+      "ja": "データ変換を、ソフトウェア開発のやり方で",
+      "ko": "데이터 변환을 소프트웨어 개발 방식으로"
     },
     "hook_prev": {
       "en": "Transform warehouse data like a software engineer",
@@ -1779,11 +1779,11 @@
       "ko": "분산 이벤트 스트리밍 플랫폼."
     },
     "hook": {
-      "en": "Pass messages between systems, caught reliably",
-      "zh-Hans": "系统之间传消息，稳稳接住",
-      "zh-Hant": "系統之間傳訊息，穩穩接住",
-      "ja": "システム間のメッセージを、確実に受け止める",
-      "ko": "시스템 사이의 메시지를 믿음직하게 받아낸다"
+      "zh-Hans": "系统之间的事件流，交给它来传",
+      "zh-Hant": "系統之間的事件流，交給它來傳",
+      "en": "Stream events between systems on one distributed platform",
+      "ja": "システム間のイベントの流れを、分散基盤で運ぶ",
+      "ko": "시스템 간 이벤트 흐름을 분산 플랫폼으로 전달"
     },
     "hook_prev": {
       "en": "Distributed event streaming platform",
@@ -1805,11 +1805,11 @@
       "ko": "문서를 만들고 공유하는 Jupyter 인터랙티브 노트북."
     },
     "hook": {
-      "en": "Code, results and notes together on one page",
-      "zh-Hans": "代码结果和说明，放在一页里",
-      "zh-Hant": "程式碼結果和說明，放在一頁裡",
-      "ja": "コードと結果と説明を、1 ページにまとめる",
-      "ko": "코드·결과·설명을 한 페이지에"
+      "zh-Hans": "在网页里写代码，边写边看结果",
+      "zh-Hant": "在網頁裡寫程式碼，邊寫邊看結果",
+      "en": "Write code in the browser and see results as you go",
+      "ja": "ブラウザでコードを書き、結果をその場で確認",
+      "ko": "브라우저에서 코드를 쓰고 결과를 바로 확인"
     },
     "hook_prev": {
       "en": "Interactive notebooks for creating and sharing documents",

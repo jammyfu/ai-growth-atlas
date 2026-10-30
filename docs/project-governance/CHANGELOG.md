@@ -30,6 +30,7 @@
 
 - The 70 tracked projects now use the zh-Hans slogan set (pain first, only source facts; `tests/fixtures/slogans_zh.md`); zh-Hant / en / ja / ko were written to carry the same meaning and flavour. The 44 listed new repos were rewritten under the same rules (15 pre-activated installer labels and `t3dotgg/tstack` stay literal).
 - The eight writing rules are part of `HOOK_RULE` / the hook prompt (`hooks.WRITING_RULES`). Previous hooks are kept as `hook_prev`; descriptions and translations are untouched.
+- Accuracy pass: every hook (70 projects + 43 rewritten new repos) was checked against the repo's own GitHub description and README. 23 hooks that added a feature absent from the source or skewed the core purpose were rewritten in all five languages (e.g. grype no longer says "before it goes live", drawio no longer says "drag", openclaw no longer says data never leaves the machine, uncensored-ai-api now says it is uncensored); daisyui shortened. `hook_prev` and all descriptions/translations are unchanged; `tests/fixtures/slogans_zh.md` carries the new zh-Hans column and a revision note.
 
 ## 2026-10-30 (one-line hooks)
 

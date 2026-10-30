@@ -13,20 +13,20 @@
 | 프로젝트 | 표의 한 줄 | 전체 설명 |
 |---|---|---|
 | [morluto/rea](https://github.com/morluto/rea) | AI가 어떤 소프트웨어든 클론해 준다 | 리버서가 며칠씩 어셈블리를 노려보던 일을, AI가 프로그램이 무슨 일을 하는지 바로 알려준다. Ghidra와 연결되어 읽을 수 없던 바이너리를 한 문장으로 설명한다. |
-| [anomalyco/opencode](https://github.com/anomalyco/opencode) | 브라우저 없이 터미널에서 AI가 코드를 쓴다 | 웹 페이지 없이 터미널에서 바로 AI로 코딩한다. 여러 모델을 지원하고 Claude Code·Codex에 맞서는 무료 오픈소스. |
+| [anomalyco/opencode](https://github.com/anomalyco/opencode) | 터미널에서 오픈 소스 AI가 코드를 쓴다 | 웹 페이지 없이 터미널에서 바로 AI로 코딩한다. 여러 모델을 지원하고 Claude Code·Codex에 맞서는 무료 오픈소스. |
 | [stablyai/orca](https://github.com/stablyai/orca) | AI 여러 개가 함께 쓰니 뭐가 나은지 한눈에 | 한 데스크톱에서 여러 AI 코딩 에이전트를 동시에 돌려 누가 더 잘 짜는지 비교한다. 에이전트마다 작업 공간이 따로라 서로 방해하지 않는다. |
-| [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | AI가 쓴 코드를 다른 AI가 다시 짚어 준다 | AI가 자기 코드의 취약점을 직접 찾게 하고, 다른 AI를 불러 반박까지 시킨다. 코딩 에이전트가 쓰는 불안전한 코드를 잡아낸다. |
+| [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | AI가 취약점을 찾고, 다른 AI가 하나씩 검증 | AI가 자기 코드의 취약점을 직접 찾게 하고, 다른 AI를 불러 반박까지 시킨다. 코딩 에이전트가 쓰는 불안전한 코드를 잡아낸다. |
 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | 편집 몰라도 웹페이지처럼 쓰면 영상이 된다 | 웹 페이지를 쓰듯 영상을 쓰면 AI가 바로 렌더링한다. 코딩 에이전트도 쓸 수 있어 편집 소프트웨어를 따로 배울 필요가 없다. |
 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | AI의 쓸데없는 코드는 줄이고 필요한 건 정확히 | AI가 코드에 군더더기를 잔뜩 붙이는 버릇을 고친다. 게으른 베테랑처럼 안 써도 되면 쓰지 않고, 쓸 거면 제대로 쓰게 가르친다. |
 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | 너무 커서 못 읽겠다면 이 지도부터 보자 | 코드베이스 전체를 한 장의 지도로 만들어 어떤 파일이 서로 호출하는지 AI가 한눈에 파악한다. 큰 프로젝트를 처음부터 끝까지 읽을 필요가 없다. |
-| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 일을 끝내는 AI, 데이터는 내 컴퓨터에 남는다 | 챗봇이 아니라 실제로 일을 해주는 AI. 시스템을 가로질러 동작하고 로컬에 배포하며 데이터가 내 컴퓨터를 떠나지 않는다. |
+| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 일을 끝내는 AI 비서, 내 기기에서 돌아간다 | 챗봇이 아니라 실제로 일을 해주는 AI. 시스템을 가로질러 동작하고 로컬에 배포하며 데이터가 내 컴퓨터를 떠나지 않는다. |
 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) | 원하는 에이전트를 플러그인으로 직접 조립 | DeepSeek이 공개한 오픈소스 에이전트 하네스(`dsh`). '모든 것이 플러그인'이라는 구조로 필요한 기능을 조립해 쓴다. 개발자 프리뷰 단계라 호환성이 깨지는 변경이 생길 수 있다. |
 | [affaan-m/ECC](https://github.com/affaan-m/ECC) | 코딩 AI에 기억, 스킬, 보안 점검을 더한다 | 코딩 에이전트를 위한 종합 강화 패키지. 스킬, 사용하며 배우는 습관, 메모리, 보안 점검, 조사부터 하고 구현하는 개발 흐름을 담았고 Claude Code·Codex·OpenCode·Cursor 등에서 쓸 수 있다. |
 | [yetone/magpie](https://github.com/yetone/magpie) | 코딩 AI의 모델을 바꾸고, 한도가 차도 이어서 | 메뉴 막대 앱과 로컬 게이트웨이로, 어떤 코딩 에이전트에서든 원하는 모델을 쓸 수 있다(Claude Code에 Kimi, Codex에 DeepSeek). 할당량이 떨어지면 다음 계정으로 자동 전환한다. |
 | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) | 트위터·유튜브·샤오홍슈, AI가 대신 검색 | AI 에이전트에게 인터넷 전체를 보여주는 도구. 명령 하나로 트위터·Reddit·YouTube·GitHub·Bilibili·샤오홍슈를 읽고 검색하며 API 비용이 들지 않는다. |
 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | AI가 똑같은 페이지만 만들지 않게 | 코딩 에이전트에게 '감각'을 주는 스킬 모음. 아트 디렉션, 실제 참고 이미지, 브라우저 자체 점검으로 흔해 빠진 AI 랜딩 페이지를 만들지 않게 한다. |
 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | AI가 만든 화면을 전문가 디자인처럼 | 코딩 에이전트에 디자인 감각을 더해 주는 스킬. 여러 플랫폼과 프레임워크에서 전문가다운 UI/UX를 만들게 한다. |
-| [cheaper-inference/OmniRoute](https://github.com/cheaper-inference/OmniRoute) | 입구 하나로 수백 개 모델, 한도는 자동 전환 | 무료 MIT 라이선스 AI 게이트웨이. 하나의 엔드포인트로 수백 개 제공자와 모델에 연결하고 할당량이 떨어지면 자동 전환한다. Claude Code·Codex·Cursor·OpenCode·Cline·Copilot과 함께 쓸 수 있다. |
+| [cheaper-inference/OmniRoute](https://github.com/cheaper-inference/OmniRoute) | 입구 하나로 천 개 넘는 모델, 한도는 자동 전환 | 무료 MIT 라이선스 AI 게이트웨이. 하나의 엔드포인트로 수백 개 제공자와 모델에 연결하고 할당량이 떨어지면 자동 전환한다. Claude Code·Codex·Cursor·OpenCode·Cline·Copilot과 함께 쓸 수 있다. |
 | [paperclipai/paperclip](https://github.com/paperclipai/paperclip) | AI 여럿의 작업과 비용을 한 화면에서 | AI 에이전트 팀을 회사처럼 운영하는 오픈소스 앱. 목표를 배정하고 예산을 정하고 작업과 비용을 한 대시보드에서 추적한다. OpenClaw가 직원이라면 Paperclip은 회사다. |
 | [farion1231/cc-switch](https://github.com/farion1231/cc-switch) | 설정 파일 안 고치고 원클릭으로 전환 | Claude Code·Codex·Gemini CLI·OpenCode·OpenClaw 등을 한곳에서 관리하는 데스크톱 앱. API 제공자를 한 번에 바꾸고 MCP·스킬·프롬프트도 설정 파일을 손으로 고치지 않고 관리한다. |
 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 쓸수록 일을 더 잘하는 AI 도우미 | Nous Research가 만든 스스로 개선하는 AI 에이전트. 학습 루프가 내장되어 경험에서 스킬을 만들고 쓰면서 다듬으며, Telegram·Discord·Slack 등에서도 대화할 수 있다. |
@@ -43,8 +43,8 @@
 | [oven-sh/bun](https://github.com/oven-sh/bun) | 실행·번들·테스트·설치를 도구 하나로 | 런타임·번들러·테스트·패키지 관리자를 한데 모은 JavaScript 툴킷. |
 | [biomejs/biome](https://github.com/biomejs/biome) | 웹 코드 정리와 점검을 도구 하나로 | 웹 프로젝트를 위한 고속 포맷터·린터. JS/TS/JSON/CSS 지원. |
 | [zed-industries/zed](https://github.com/zed-industries/zed) | 열자마자 빠르고, 함께 코딩도 된다 | Atom·Tree-sitter 제작진의 고성능 멀티플레이어 코드 에디터. |
-| [helix-editor/helix](https://github.com/helix-editor/helix) | 플러그인 없이 자동완성·하이라이트가 기본 | LSP·tree-sitter·다중 선택을 내장한 모달 텍스트 에디터. |
-| [jdx/mise](https://github.com/jdx/mise) | 여러 언어 버전을 도구 하나로 관리 | 다언어 런타임과 환경 관리를 한데 모은 개발 도구 버전 관리자. |
+| [helix-editor/helix](https://github.com/helix-editor/helix) | 구문 강조와 언어 서버가 내장된 텍스트 편집기 | LSP·tree-sitter·다중 선택을 내장한 모달 텍스트 에디터. |
+| [jdx/mise](https://github.com/jdx/mise) | 개발 도구·환경 변수·작업을 도구 하나로 | 다언어 런타임과 환경 관리를 한데 모은 개발 도구 버전 관리자. |
 | [cli/cli](https://github.com/cli/cli) | 브라우저 없이 명령줄에서 GitHub 처리 | 이슈·PR·Actions 등을 다루는 GitHub 공식 CLI. |
 | [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep) | 폴더 전체의 글자 검색, grep보다 빠르다 | 정규식으로 디렉터리를 재귀 검색. grep보다 빠름. |
 
@@ -53,25 +53,25 @@
 | 프로젝트 | 표의 한 줄 | 전체 설명 |
 |---|---|---|
 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy) | 컨테이너와 코드 저장소 보안 점검을 한 번에 | 컨테이너·파일시스템·Git 등을 위한 올인원 보안 스캐너. |
-| [anchore/grype](https://github.com/anchore/grype) | 이미지를 올리기 전에 취약점부터 확인 | 컨테이너 이미지·파일시스템용 취약점 스캐너. |
+| [anchore/grype](https://github.com/anchore/grype) | 컨테이너 이미지에 취약점이 있는지 스캔으로 확인 | 컨테이너 이미지·파일시스템용 취약점 스캐너. |
 | [semgrep/semgrep](https://github.com/semgrep/semgrep) | 코드의 문제는 커밋 전에 찾아낸다 | 다언어 경량 정적 분석. 버그를 찾고 가드를 강제. |
 | [projectdiscovery/nuclei](https://github.com/projectdiscovery/nuclei) | 템플릿 하나로 취약점을 한꺼번에 스캔 | 간단한 YAML 템플릿으로 동작하는 고속 취약점 스캐너. |
 | [falcosecurity/falco](https://github.com/falcosecurity/falco) | 클라우드의 이상 징후를 바로 안다 | 이상 활동을 감지하는 클라우드 네이티브 런타임 보안 도구. |
 | [google/osv-scanner](https://github.com/google/osv-scanner) | 쓰는 의존성이 안전한지, 스캔하면 안다 | OSV 데이터베이스와 대조해 의존성의 알려진 취약점을 검사. |
-| [securego/gosec](https://github.com/securego/gosec) | Go 코드의 위험한 작성 패턴을 미리 찾는다 | Go 소스의 흔한 불안전 패턴을 검사하는 도구. |
-| [OWASP/CheatSheetSeries](https://github.com/OWASP/CheatSheetSeries) | 보안은 어떻게 하나? 이 문서면 충분하다 | OWASP 치트시트 모음. 간결한 보안 모범 사례. |
+| [securego/gosec](https://github.com/securego/gosec) | Go 코드의 보안 문제를 스캔으로 찾는다 | Go 소스의 흔한 불안전 패턴을 검사하는 도구. |
+| [OWASP/CheatSheetSeries](https://github.com/OWASP/CheatSheetSeries) | 앱 보안은 이 간결한 가이드로 | OWASP 치트시트 모음. 간결한 보안 모범 사례. |
 
 ### Web / 프론트엔드
 
 | 프로젝트 | 표의 한 줄 | 전체 설명 |
 |---|---|---|
 | [vercel/next.js](https://github.com/vercel/next.js) | React로 사이트 전체를 앞뒤까지 완성 | 웹용 React 프레임워크. SSR·라우팅·풀스택. |
-| [facebook/react](https://github.com/facebook/react) | 웹과 앱 화면을 같은 방식으로 | 웹·네이티브 UI를 만들기 위한 라이브러리. |
+| [facebook/react](https://github.com/facebook/react) | 웹과 네이티브 앱 화면을 이걸로 만든다 | 웹·네이티브 UI를 만들기 위한 라이브러리. |
 | [vuejs/core](https://github.com/vuejs/core) | 작은 페이지부터, 쓰는 만큼만 배운다 | 점진적 JS 프레임워크의 코어 런타임과 컴파일러. |
-| [sveltejs/svelte](https://github.com/sveltejs/svelte) | 쓰는 건 프레임워크, 돌아가는 건 가벼운 페이지 | 프레임워크를 컴파일로 없애는 웹 앱 방식. |
-| [withastro/astro](https://github.com/withastro/astro) | 스크립트를 줄여 더 가볍게 열리는 콘텐츠 사이트 | 콘텐츠 사이트용 웹 프레임워크. 기본적으로 JS를 적게 보냄. |
+| [sveltejs/svelte](https://github.com/sveltejs/svelte) | 작성한 컴포넌트를 컴파일러가 효율적인 웹 코드로 | 프레임워크를 컴파일로 없애는 웹 앱 방식. |
+| [withastro/astro](https://github.com/withastro/astro) | 가벼운 결과물로 만드는 콘텐츠 중심 사이트 | 콘텐츠 사이트용 웹 프레임워크. 기본적으로 JS를 적게 보냄. |
 | [tailwindlabs/tailwindcss](https://github.com/tailwindlabs/tailwindcss) | CSS를 잔뜩 안 써도 맞춤 디자인 | 유틸리티 우선 CSS 프레임워크. 맞춤 디자인을 빠르게. |
-| [shadcn-ui/ui](https://github.com/shadcn-ui/ui) | 예쁜 컴포넌트, 복사해서 바로 쓴다 | 앱에 복사해 쓰는 아름다운 컴포넌트 모음. |
+| [shadcn-ui/ui](https://github.com/shadcn-ui/ui) | 예쁜 컴포넌트, 코드는 내 것이니 마음대로 고친다 | 앱에 복사해 쓰는 아름다운 컴포넌트 모음. |
 | [tanstack/query](https://github.com/tanstack/query) | 데이터 요청과 캐시는 이 도구에 맡긴다 | TS/JS·React·Vue·Solid용 강력한 비동기 상태 관리. |
 
 ### 인프라
@@ -80,7 +80,7 @@
 |---|---|---|
 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 컨테이너가 늘어도 배포와 확장은 맡긴다 | 프로덕션급 컨테이너 오케스트레이션. |
 | [docker/compose](https://github.com/docker/compose) | 여러 컨테이너를 파일 하나로 함께 실행 | Docker로 다중 컨테이너 앱을 정의·실행. |
-| [hashicorp/terraform](https://github.com/hashicorp/terraform) | 클라우드 자원을 코드로, 변경 내역이 남는다 | 클라우드 자원을 코드로 구축·변경하는 IaC 도구. |
+| [hashicorp/terraform](https://github.com/hashicorp/terraform) | 클라우드 자원을 코드로, 검토도 버전 관리도 | 클라우드 자원을 코드로 구축·변경하는 IaC 도구. |
 | [pulumi/pulumi](https://github.com/pulumi/pulumi) | 익숙한 프로그래밍 언어로 클라우드 자원 관리 | 범용 언어로 쓰는 인프라 as 코드. |
 | [caddyserver/caddy](https://github.com/caddyserver/caddy) | 웹 서버를 세우면 HTTPS는 자동 설정 | 자동 HTTPS를 갖춘 고속 멀티플랫폼 웹 서버. |
 | [traefik/traefik](https://github.com/traefik/traefik) | 서비스가 늘어도 트래픽은 자동 분배 | 클라우드 네이티브 리버스 프록시·로드 밸런서. |
@@ -92,13 +92,13 @@
 | 프로젝트 | 표의 한 줄 | 전체 설명 |
 |---|---|---|
 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw) | 열자마자 그린다, 종이에 낙서하듯 | 손그림 풍 다이어그램용 가상 화이트보드. |
-| [penpot/penpot](https://github.com/penpot/penpot) | 팀의 디자인·프로토타입, 오픈 소스로 | 제품 팀을 위한 오픈소스 디자인·프로토타입 플랫폼. |
-| [jgraph/drawio](https://github.com/jgraph/drawio) | 순서도와 다이어그램, 끌어서 완성 | 다이어그램·화이트보드 앱. diagrams.net의 코어. |
+| [penpot/penpot](https://github.com/penpot/penpot) | 팀이 함께 디자인, 오픈 소스 플랫폼에서 | 제품 팀을 위한 오픈소스 디자인·프로토타입 플랫폼. |
+| [jgraph/drawio](https://github.com/jgraph/drawio) | 다이어그램도 화이트보드도 에디터 하나로 | 다이어그램·화이트보드 앱. diagrams.net의 코어. |
 | [lottiefiles/lottie-ios](https://github.com/lottiefiles/lottie-ios) | After Effects 애니메이션을 그대로 iOS에 | Lottie로 After Effects 애니메이션을 iOS에 그리는 라이브러리. |
 | [airbnb/lottie-web](https://github.com/airbnb/lottie-web) | After Effects 애니메이션을 그대로 웹에 | Lottie로 웹에 After Effects 애니메이션을 네이티브 렌더. |
-| [saadeghi/daisyui](https://github.com/saadeghi/daisyui) | Tailwind에도 골라 쓸 컴포넌트가 준비돼 있다 | Tailwind CSS용 인기 컴포넌트 라이브러리. |
+| [saadeghi/daisyui](https://github.com/saadeghi/daisyui) | Tailwind용 컴포넌트가 이미 준비돼 있다 | Tailwind CSS용 인기 컴포넌트 라이브러리. |
 | [lucide-icons/lucide](https://github.com/lucide-icons/lucide) | 스타일이 통일된 아이콘 세트, 바로 쓴다 | 커뮤니티가 만든 아름답고 일관된 아이콘 키트. |
-| [phosphor-icons/homepage](https://github.com/phosphor-icons/homepage) | 화면·도식·발표 자료까지 아이콘 한 세트 | UI·도식·프레젠테이션용 유연한 아이콘 패밀리. |
+| [phosphor-icons/homepage](https://github.com/phosphor-icons/homepage) | 누구나 쓸 수 있는 유연한 아이콘 패밀리 | UI·도식·프레젠테이션용 유연한 아이콘 패밀리. |
 
 ### 데이터
 
@@ -107,11 +107,11 @@
 | [duckdb/duckdb](https://github.com/duckdb/duckdb) | DB 서버 없이도 SQL 분석을 돌린다 | 프로세스 내 SQL OLAP 데이터베이스. |
 | [pola-rs/polars](https://github.com/pola-rs/polars) | 표 데이터 처리가 빨라 기다릴 일 없다 | Rust·Python용 초고속 DataFrame 라이브러리. |
 | [apache/arrow](https://github.com/apache/arrow) | 언어가 달라도 데이터가 그대로 통한다 | 인메모리 분석용 언어 간 플랫폼. |
-| [dbt-labs/dbt-core](https://github.com/dbt-labs/dbt-core) | 데이터 웨어하우스 SQL도 버전 관리와 테스트를 | 웨어하우스 데이터를 소프트웨어 공학 방식으로 변환. |
+| [dbt-labs/dbt-core](https://github.com/dbt-labs/dbt-core) | 데이터 변환을 소프트웨어 개발 방식으로 | 웨어하우스 데이터를 소프트웨어 공학 방식으로 변환. |
 | [apache/superset](https://github.com/apache/superset) | 데이터가 안 읽히면 차트로 만들면 보인다 | 현대적 데이터 탐색·시각화 플랫폼. |
 | [ClickHouse/ClickHouse](https://github.com/ClickHouse/ClickHouse) | 대용량 데이터 실시간 분석, 오픈 소스로 | 실시간 분석용 오픈소스 컬럼형 DB. |
-| [apache/kafka](https://github.com/apache/kafka) | 시스템 사이의 메시지를 믿음직하게 받아낸다 | 분산 이벤트 스트리밍 플랫폼. |
-| [jupyter/notebook](https://github.com/jupyter/notebook) | 코드·결과·설명을 한 페이지에 | 문서를 만들고 공유하는 Jupyter 인터랙티브 노트북. |
+| [apache/kafka](https://github.com/apache/kafka) | 시스템 간 이벤트 흐름을 분산 플랫폼으로 전달 | 분산 이벤트 스트리밍 플랫폼. |
+| [jupyter/notebook](https://github.com/jupyter/notebook) | 브라우저에서 코드를 쓰고 결과를 바로 확인 | 문서를 만들고 공유하는 Jupyter 인터랙티브 노트북. |
 
 ## 현재 순위에 오른 새 저장소
 
@@ -133,7 +133,7 @@
 | [hevnsnt/CVEngine](https://github.com/hevnsnt/CVEngine) | 밖에서 보이는 약점을 AI가 찾아 근거로 확인 | AI 우선 외부 공격 표면 평가: 지속적인 탐색, 증거 기반 취약점 검증, 개발자 에이전트용 MCP 연동을 제공한다. |
 | [davemessew/AgentFlux](https://github.com/davemessew/AgentFlux) | AI 워크플로를 그려서 내 환경에서 실행 | 시각적 워크플로와 자율 에이전트를 위한 에이전틱 AI 플랫폼. Docker로 내 컴퓨터나 서버에서 실행할 수 있다. |
 | [SAOS-3624/dsh-video-storyboard](https://github.com/SAOS-3624/dsh-video-storyboard) | 영상 전체를 스토리보드 한 장으로 | DeepSeek Harness용 장면 인식 스토리보드: 번호가 매겨진 9~16개 칸을 타임스탬프, 대본, 오디오 엔벨로프와 함께 이미지 한 장(384 토큰)에 담는다. 도구 두 개… |
-| [routerhubSI/uncensored-ai-api](https://github.com/routerhubSI/uncensored-ai-api) | 키 하나로 여러 AI 모델 사용 | 검열 없는 AI API와 모델 — 키 하나로 Claude, GPT, Gemini, Grok, DeepSeek, GLM, Qwen을 쓸 수 있고, 제공되는 경우 무검열·abliterated 변형도 선택할 수 있다. OpenAI-… |
+| [routerhubSI/uncensored-ai-api](https://github.com/routerhubSI/uncensored-ai-api) | 검열 없는 AI API, 키 하나로 여러 모델 | 검열 없는 AI API와 모델 — 키 하나로 Claude, GPT, Gemini, Grok, DeepSeek, GLM, Qwen을 쓸 수 있고, 제공되는 경우 무검열·abliterated 변형도 선택할 수 있다. OpenAI-… |
 | [JunWan666/astrbot-for-android](https://github.com/JunWan666/astrbot-for-android) | 폰에서 AstrBot·NapCat, 루팅 없이 | Android 폰에서 AstrBot과 NapCat을 로컬로 배포하고 관리한다. PRoot Ubuntu 실행 환경을 내장했고, 네이티브 관리 화면, WebUI, 로그, 백업·복원, 독립 업데이트를 지원한다. root 불필요. |
 | [aa1143/NamiGPT](https://github.com/aa1143/NamiGPT) | LLM이 낯설다면 GPT-2를 직접 만들며 이해 | 사전 지식 없이 시작하는 대규모 언어 모델(LLM) 입문 튜토리얼: GPT-2를 처음부터 직접 짜면서 LLM이 어떻게 동작하는지 한 줄씩 이해한다 / PyTorch로 GPT-2를 처음부터 단계별로 구축 |
 | [jacke-pp/ai-wallet-binance](https://github.com/jacke-pp/ai-wallet-binance) | AI가 내 바이낸스 AI 지갑으로 거래하게 한다 | 어떤 AI든 내 Binance AI 지갑으로 거래할 수 있다: 즉시 매수·매도, Agent 전용 런치패드(Four, Flap, GANG) 스나이핑, AI 전용 Mint, 로컬 거래 페이지. 서명은 Binance가 처리하며 개인 키는 건드리지 않는다. 무료 오픈 소스 MIT · 제작자: Jacke_pp · 연락: X @Jacke_pp(DM) |
@@ -166,4 +166,4 @@
 | [xanthichi/mcd-meal-mate](https://github.com/xanthichi/mcd-meal-mate) | 맥도날드 조합을 실시간 메뉴·영양으로 추천 | M餐搭子(M 밀메이트): 맥도날드 MCP의 실시간 메뉴와 영양 데이터를 바탕으로 식단 조합을 짜 주는 Skill｜온라인 데모 공개 |
 | [zeabur-oss/zeabur](https://github.com/zeabur-oss/zeabur) | 내 Kubernetes 위에 나만의 PaaS를 | 내 Kubernetes 위에서 돌리는 셀프 호스팅 PaaS. |
 | [sanjayadanushka712/TaskFlow](https://github.com/sanjayadanushka712/TaskFlow) | 처음부터 끝까지 갖춘 DevOps API | 엔드투엔드 DevOps TaskFlow API — FastAPI, PostgreSQL, SQLAlchemy, Alembic, Docker Compose, Pytest, GitHub Actions CI, Kubernetes, prometheus, Grafana, helm, k9s, … |
-| [hugues31/duckpad](https://github.com/hugues31/duckpad) | 데이터 변환, 오픈 소스 커뮤니티의 도구로 | 오픈 소스 커뮤니티가 누려야 할 데이터 변환 도구. |
+| [hugues31/duckpad](https://github.com/hugues31/duckpad) | 오픈 소스가 누려야 할 데이터 변환 도구 | 오픈 소스 커뮤니티가 누려야 할 데이터 변환 도구. |
