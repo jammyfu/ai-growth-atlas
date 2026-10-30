@@ -1,0 +1,1028 @@
+{
+ "_comment": "The one-line hooks of PR #12 (before the ad-slogan rewrite). tests/test_hooks.py checks that each one is kept as `hook_prev`.",
+ "projects": {
+  "morluto/rea": {
+   "en": "Let AI reverse-engineer and clone any software",
+   "zh-Hans": "让 AI 帮你逆向、复刻任何软件",
+   "zh-Hant": "讓 AI 幫你逆向、復刻任何軟體",
+   "ja": "AI がどんなソフトも解析・再現してくれる",
+   "ko": "AI가 어떤 소프트웨어든 역분석·복제해 준다"
+  },
+  "anomalyco/opencode": {
+   "en": "Free open-source AI coding in your terminal",
+   "zh-Hans": "终端里的免费开源 AI 编程助手",
+   "zh-Hant": "終端裡的免費開源 AI 程式設計助手",
+   "ja": "ターミナルで使える無料の AI コーディング",
+   "ko": "터미널에서 쓰는 무료 오픈 소스 AI 코딩"
+  },
+  "stablyai/orca": {
+   "en": "Run many AI coding agents side by side",
+   "zh-Hans": "多个 AI 编程智能体同台比拼",
+   "zh-Hant": "多個 AI 程式設計代理同台比拼",
+   "ja": "複数の AI コーディングエージェントを並べて比較",
+   "ko": "여러 AI 코딩 에이전트를 나란히 비교"
+  },
+  "cloudflare/security-audit-skill": {
+   "en": "One AI audits the code, a second AI challenges it",
+   "zh-Hans": "两个 AI 互相挑代码漏洞",
+   "zh-Hant": "兩個 AI 互相挑程式碼漏洞",
+   "ja": "2 つの AI がコードの脆弱性を相互チェック",
+   "ko": "AI 두 개가 코드 취약점을 서로 검증"
+  },
+  "heygen-com/hyperframes": {
+   "en": "Write video like a web page, let AI render it",
+   "zh-Hans": "像写网页一样做视频",
+   "zh-Hant": "像寫網頁一樣做影片",
+   "ja": "Web ページを書く感覚で動画を作る",
+   "ko": "웹페이지 쓰듯 영상을 만든다"
+  },
+  "DietrichGebert/ponytail": {
+   "en": "Stops AI from padding its code",
+   "zh-Hans": "治好 AI 写代码灌水",
+   "zh-Hant": "治好 AI 寫程式碼灌水",
+   "ja": "AI のコードの水増しを防ぐ",
+   "ko": "AI의 코드 군더더기를 막아 준다"
+  },
+  "Graphify-Labs/graphify": {
+   "en": "Turn a codebase into a map AI can read",
+   "zh-Hans": "把整个代码库变成一张地图",
+   "zh-Hant": "把整個程式碼庫變成一張地圖",
+   "ja": "コードベースを 1 枚の地図にする",
+   "ko": "코드베이스를 한 장의 지도로"
+  },
+  "openclaw/openclaw": {
+   "en": "An AI that gets work done, on your own machine",
+   "zh-Hans": "真能干活的 AI，数据不出电脑",
+   "zh-Hant": "真能幹活的 AI，資料不出電腦",
+   "ja": "仕事を片付ける AI。データは手元から出ない",
+   "ko": "실제로 일하는 AI, 데이터는 내 컴퓨터에"
+  },
+  "deepseek-ai/deepseek-harness": {
+   "en": "DeepSeek's open-source agent kit, built from plugins",
+   "zh-Hans": "DeepSeek 开源智能体，插件自由拼装",
+   "zh-Hant": "DeepSeek 開源代理，外掛自由拼裝",
+   "ja": "DeepSeek 公式のプラグイン式エージェント基盤",
+   "ko": "DeepSeek의 플러그인형 오픈 소스 에이전트"
+  },
+  "affaan-m/ECC": {
+   "en": "Performance tune-up kit for coding agents",
+   "zh-Hans": "给编程智能体的性能调优套件",
+   "zh-Hant": "給程式設計代理的效能調優套件",
+   "ja": "コーディングエージェントの性能チューニング集",
+   "ko": "코딩 에이전트 성능 튜닝 키트"
+  },
+  "yetone/magpie": {
+   "en": "Use any model in any coding agent",
+   "zh-Hans": "任意编程智能体，任意模型",
+   "zh-Hant": "任意程式設計代理，任意模型",
+   "ja": "どのエージェントでも好きなモデルを使える",
+   "ko": "어떤 코딩 에이전트든 원하는 모델로"
+  },
+  "Panniantong/Agent-Reach": {
+   "en": "Give your AI agent eyes on the whole internet",
+   "zh-Hans": "让 AI 智能体看到整个互联网",
+   "zh-Hant": "讓 AI 代理看到整個網路",
+   "ja": "AI エージェントにネット全体を見せる",
+   "ko": "AI 에이전트가 인터넷 전체를 보게 한다"
+  },
+  "Leonxlnx/taste-skill": {
+   "en": "Give coding agents good design taste",
+   "zh-Hans": "让编程智能体有审美",
+   "zh-Hant": "讓程式設計代理有審美",
+   "ja": "コーディングエージェントにデザインの美意識を",
+   "ko": "코딩 에이전트에게 디자인 감각을"
+  },
+  "nextlevelbuilder/ui-ux-pro-max-skill": {
+   "en": "Make AI-built UIs look professional",
+   "zh-Hans": "让 AI 做的界面更专业",
+   "zh-Hant": "讓 AI 做的介面更專業",
+   "ja": "AI が作る UI をプロ品質に",
+   "ko": "AI가 만든 UI를 전문가 수준으로"
+  },
+  "cheaper-inference/OmniRoute": {
+   "en": "One free gateway to hundreds of AI models",
+   "zh-Hans": "一个免费入口，接上百个模型",
+   "zh-Hant": "一個免費入口，接上百個模型",
+   "ja": "無料の入口 1 つで何百ものモデルを使える",
+   "ko": "무료 게이트웨이 하나로 수백 개 모델"
+  },
+  "paperclipai/paperclip": {
+   "en": "Run a team of AI agents like a company",
+   "zh-Hans": "像开公司一样管理 AI 智能体团队",
+   "zh-Hant": "像開公司一樣管理 AI 代理團隊",
+   "ja": "AI エージェントを会社のように運営",
+   "ko": "AI 에이전트 팀을 회사처럼 운영"
+  },
+  "farion1231/cc-switch": {
+   "en": "Switch AI coding tools' API providers in one click",
+   "zh-Hans": "一键切换 AI 编程工具的接口",
+   "zh-Hant": "一鍵切換 AI 程式設計工具的介面",
+   "ja": "AI コーディングツールの API をワンクリック切替",
+   "ko": "AI 코딩 도구의 API를 원클릭 전환"
+  },
+  "NousResearch/hermes-agent": {
+   "en": "A self-improving AI agent that learns skills",
+   "zh-Hans": "会自我改进的 AI 智能体",
+   "zh-Hant": "會自我改進的 AI 代理",
+   "ja": "自分で改善していく AI エージェント",
+   "ko": "스스로 개선하는 AI 에이전트"
+  },
+  "NVIDIA/SkillSpector": {
+   "en": "Scan AI agent skills for risks before you install",
+   "zh-Hans": "装技能之前，先扫一遍风险",
+   "zh-Hant": "裝技能之前，先掃一遍風險",
+   "ja": "エージェントスキルを入れる前にリスク検査",
+   "ko": "에이전트 스킬 설치 전 위험 검사"
+  },
+  "addyosmani/agent-skills": {
+   "en": "Senior-engineer habits for your coding agent",
+   "zh-Hans": "把资深工程师的做法教给 AI",
+   "zh-Hant": "把資深工程師的做法教給 AI",
+   "ja": "シニアエンジニアの流儀を AI に教える",
+   "ko": "시니어 엔지니어의 방식을 AI에게"
+  },
+  "thedotmack/claude-mem": {
+   "en": "Gives AI agents memory across sessions",
+   "zh-Hans": "让智能体记住上次做过什么",
+   "zh-Hant": "讓代理記住上次做過什麼",
+   "ja": "エージェントがセッションをまたいで覚える",
+   "ko": "에이전트가 세션을 넘어 기억한다"
+  },
+  "anthropics/skills": {
+   "en": "Anthropic's public Agent Skills examples",
+   "zh-Hans": "Anthropic 官方智能体技能库",
+   "zh-Hant": "Anthropic 官方代理技能庫",
+   "ja": "Anthropic 公開のエージェントスキル集",
+   "ko": "Anthropic 공개 에이전트 스킬 모음"
+  },
+  "astral-sh/uv": {
+   "en": "Blazing-fast Python package manager",
+   "zh-Hans": "极快的 Python 包管理器",
+   "zh-Hant": "極快的 Python 包管理器",
+   "ja": "超高速な Python パッケージ管理",
+   "ko": "초고속 Python 패키지 관리자"
+  },
+  "oven-sh/bun": {
+   "en": "All-in-one JavaScript runtime and toolkit",
+   "zh-Hans": "JavaScript 一站式工具箱",
+   "zh-Hant": "JavaScript 一站式工具箱",
+   "ja": "オールインワンの JavaScript 実行環境",
+   "ko": "올인원 JavaScript 런타임"
+  },
+  "biomejs/biome": {
+   "en": "Fast formatter and linter for web code",
+   "zh-Hans": "快速的网页代码格式化与检查",
+   "zh-Hant": "快速的網頁程式碼格式化與檢查",
+   "ja": "高速な Web 向けフォーマッター兼リンター",
+   "ko": "빠른 웹 코드 포매터 겸 린터"
+  },
+  "zed-industries/zed": {
+   "en": "A fast code editor you can share with others",
+   "zh-Hans": "高性能、可多人协作的编辑器",
+   "zh-Hant": "高效能、可多人協作的編輯器",
+   "ja": "高速で共同編集もできるコードエディタ",
+   "ko": "빠르고 함께 편집하는 코드 에디터"
+  },
+  "helix-editor/helix": {
+   "en": "Modal editor with LSP built in",
+   "zh-Hans": "自带 LSP 的模态编辑器",
+   "zh-Hant": "自帶 LSP 的模態編輯器",
+   "ja": "LSP 内蔵のモーダルエディタ",
+   "ko": "LSP 내장 모달 에디터"
+  },
+  "jdx/mise": {
+   "en": "One tool for all your dev tool versions",
+   "zh-Hans": "一个工具管所有开发工具版本",
+   "zh-Hant": "一個工具管所有開發工具版本",
+   "ja": "開発ツールのバージョンを 1 つで管理",
+   "ko": "개발 도구 버전을 하나로 관리"
+  },
+  "cli/cli": {
+   "en": "GitHub in your terminal, from GitHub itself",
+   "zh-Hans": "GitHub 官方命令行工具",
+   "zh-Hant": "GitHub 官方命令列工具",
+   "ja": "GitHub 公式のコマンドラインツール",
+   "ko": "GitHub 공식 커맨드라인 도구"
+  },
+  "BurntSushi/ripgrep": {
+   "en": "Regex search, faster than grep",
+   "zh-Hans": "比 grep 更快的递归搜索",
+   "zh-Hant": "比 grep 更快的遞迴搜尋",
+   "ja": "grep より速い正規表現検索",
+   "ko": "grep보다 빠른 정규식 검색"
+  },
+  "aquasecurity/trivy": {
+   "en": "One scanner for containers and code repos",
+   "zh-Hans": "容器、代码仓库一站式安全扫描",
+   "zh-Hant": "容器、程式碼儲存庫一站式資安掃描",
+   "ja": "コンテナもリポジトリもまとめて安全スキャン",
+   "ko": "컨테이너와 저장소를 한 번에 보안 스캔"
+  },
+  "anchore/grype": {
+   "en": "Scan container images for vulnerabilities",
+   "zh-Hans": "给容器镜像做漏洞扫描",
+   "zh-Hant": "給容器映像檔做漏洞掃描",
+   "ja": "コンテナイメージの脆弱性をスキャン",
+   "ko": "컨테이너 이미지 취약점 스캔"
+  },
+  "semgrep/semgrep": {
+   "en": "Fast code scanning to catch bugs",
+   "zh-Hans": "快速扫描代码，揪出问题",
+   "zh-Hant": "快速掃描程式碼，揪出問題",
+   "ja": "高速コードスキャンでバグを発見",
+   "ko": "빠른 코드 스캔으로 버그 찾기"
+  },
+  "projectdiscovery/nuclei": {
+   "en": "Fast vulnerability scanner driven by YAML templates",
+   "zh-Hans": "用 YAML 模板快速扫漏洞",
+   "zh-Hant": "用 YAML 模板快速掃漏洞",
+   "ja": "YAML テンプレートで高速に脆弱性スキャン",
+   "ko": "YAML 템플릿으로 빠른 취약점 스캔"
+  },
+  "falcosecurity/falco": {
+   "en": "Spot suspicious activity in the cloud at runtime",
+   "zh-Hans": "实时发现云上异常行为",
+   "zh-Hant": "即時發現雲上異常行為",
+   "ja": "クラウドの不審な動きを実行時に検知",
+   "ko": "클라우드의 이상 행동을 실시간 탐지"
+  },
+  "google/osv-scanner": {
+   "en": "Check your dependencies for known vulnerabilities",
+   "zh-Hans": "查查依赖有没有已知漏洞",
+   "zh-Hant": "查查依賴有沒有已知漏洞",
+   "ja": "依存パッケージの既知の脆弱性をチェック",
+   "ko": "의존성의 알려진 취약점 점검"
+  },
+  "securego/gosec": {
+   "en": "Find insecure patterns in your Go code",
+   "zh-Hans": "给 Go 代码做安全检查",
+   "zh-Hant": "給 Go 程式碼做安全檢查",
+   "ja": "Go コードの危険なパターンを検出",
+   "ko": "Go 코드의 위험한 패턴 검사"
+  },
+  "OWASP/CheatSheetSeries": {
+   "en": "Short, practical security best practices",
+   "zh-Hans": "简明实用的安全最佳实践",
+   "zh-Hant": "簡明實用的資安最佳實務",
+   "ja": "短くて実用的なセキュリティの定石",
+   "ko": "간결한 보안 모범 사례 모음"
+  },
+  "vercel/next.js": {
+   "en": "The React framework for full-stack web apps",
+   "zh-Hans": "React 全栈网页框架",
+   "zh-Hant": "React 全棧網頁框架",
+   "ja": "React のフルスタック Web フレームワーク",
+   "ko": "React 풀스택 웹 프레임워크"
+  },
+  "facebook/react": {
+   "en": "Build web and native UIs",
+   "zh-Hans": "搭建网页与原生界面的库",
+   "zh-Hant": "搭建網頁與原生介面的庫",
+   "ja": "Web とネイティブの UI を作るライブラリ",
+   "ko": "웹과 네이티브 UI를 만드는 라이브러리"
+  },
+  "vuejs/core": {
+   "en": "The progressive JavaScript framework",
+   "zh-Hans": "渐进式 JavaScript 框架",
+   "zh-Hant": "漸進式 JavaScript 框架",
+   "ja": "プログレッシブな JavaScript フレームワーク",
+   "ko": "점진적 JavaScript 프레임워크"
+  },
+  "sveltejs/svelte": {
+   "en": "Web apps with the framework compiled away",
+   "zh-Hans": "把框架编译掉的网页开发",
+   "zh-Hant": "把框架編譯掉的網頁開發",
+   "ja": "フレームワークをコンパイルで消す Web 開発",
+   "ko": "프레임워크를 컴파일로 지우는 웹 개발"
+  },
+  "withastro/astro": {
+   "en": "Content sites that ship less JavaScript",
+   "zh-Hans": "少发 JavaScript 的内容站框架",
+   "zh-Hant": "少發 JavaScript 的內容站框架",
+   "ja": "JavaScript を減らすコンテンツサイト向け",
+   "ko": "JavaScript를 덜 보내는 콘텐츠 사이트"
+  },
+  "tailwindlabs/tailwindcss": {
+   "en": "Build custom designs with utility CSS classes",
+   "zh-Hans": "用工具类快速搭出定制界面",
+   "zh-Hant": "用工具類快速搭出定製介面",
+   "ja": "ユーティリティ CSS で素早くデザイン",
+   "ko": "유틸리티 CSS로 빠르게 디자인"
+  },
+  "shadcn-ui/ui": {
+   "en": "Beautiful components you copy into your app",
+   "zh-Hans": "好看的组件，直接复制进项目",
+   "zh-Hant": "好看的元件，直接複製進專案",
+   "ja": "コピーして使える美しい UI コンポーネント",
+   "ko": "복사해서 쓰는 예쁜 UI 컴포넌트"
+  },
+  "tanstack/query": {
+   "en": "Async state management for React, Vue and more",
+   "zh-Hans": "管好异步数据的状态库",
+   "zh-Hant": "管好非同步資料的狀態庫",
+   "ja": "非同期ステートを管理するライブラリ",
+   "ko": "비동기 상태를 관리하는 라이브러리"
+  },
+  "kubernetes/kubernetes": {
+   "en": "Production-grade container orchestration",
+   "zh-Hans": "生产级容器编排系统",
+   "zh-Hant": "生產級容器編排系統",
+   "ja": "本番運用向けコンテナオーケストレーション",
+   "ko": "프로덕션급 컨테이너 오케스트레이션"
+  },
+  "docker/compose": {
+   "en": "Define and run multi-container apps",
+   "zh-Hans": "定义并运行多容器应用",
+   "zh-Hant": "定義並執行多容器應用",
+   "ja": "複数コンテナのアプリを定義して実行",
+   "ko": "다중 컨테이너 앱 정의·실행"
+  },
+  "hashicorp/terraform": {
+   "en": "Manage cloud infrastructure as code",
+   "zh-Hans": "用代码管理云基础设施",
+   "zh-Hant": "用程式碼管理雲基礎設施",
+   "ja": "クラウド基盤をコードで管理",
+   "ko": "클라우드 인프라를 코드로 관리"
+  },
+  "pulumi/pulumi": {
+   "en": "Infrastructure as code in real programming languages",
+   "zh-Hans": "用通用编程语言写基础设施",
+   "zh-Hant": "用通用程式語言寫基礎設施",
+   "ja": "汎用プログラミング言語でインフラを記述",
+   "ko": "범용 프로그래밍 언어로 인프라 구성"
+  },
+  "caddyserver/caddy": {
+   "en": "Web server with automatic HTTPS",
+   "zh-Hans": "自动 HTTPS 的快速网页服务器",
+   "zh-Hant": "自動 HTTPS 的快速網頁伺服器",
+   "ja": "自動 HTTPS 対応の高速 Web サーバー",
+   "ko": "자동 HTTPS를 지원하는 빠른 웹 서버"
+  },
+  "traefik/traefik": {
+   "en": "Cloud-native reverse proxy and load balancer",
+   "zh-Hans": "云原生反向代理与负载均衡",
+   "zh-Hant": "雲原生反向代理與負載均衡",
+   "ja": "クラウドネイティブなリバースプロキシ",
+   "ko": "클라우드 네이티브 리버스 프록시"
+  },
+  "prometheus/prometheus": {
+   "en": "Systems monitoring and alerting toolkit",
+   "zh-Hans": "系统监控与告警工具包",
+   "zh-Hant": "系統監控與告警工具包",
+   "ja": "システム監視とアラートのツールキット",
+   "ko": "시스템 모니터링·알림 툴킷"
+  },
+  "grafana/grafana": {
+   "en": "Open observability for metrics, logs and traces",
+   "zh-Hans": "指标、日志、链路一站式观测",
+   "zh-Hant": "指標、日誌、追蹤一站式觀測",
+   "ja": "メトリクス・ログ・トレースをまとめて可視化",
+   "ko": "메트릭·로그·트레이스를 한곳에서"
+  },
+  "excalidraw/excalidraw": {
+   "en": "A virtual whiteboard with a hand-drawn look",
+   "zh-Hans": "手绘风格的在线白板",
+   "zh-Hant": "手繪風格的線上白板",
+   "ja": "手描き風のバーチャルホワイトボード",
+   "ko": "손으로 그린 듯한 가상 화이트보드"
+  },
+  "penpot/penpot": {
+   "en": "Open-source design and prototyping for teams",
+   "zh-Hans": "开源的团队设计与原型平台",
+   "zh-Hant": "開源的團隊設計與原型平台",
+   "ja": "チーム向けオープンソースのデザインツール",
+   "ko": "팀을 위한 오픈 소스 디자인·프로토타입"
+  },
+  "jgraph/drawio": {
+   "en": "A diagram and whiteboard app",
+   "zh-Hans": "画流程图和白板的应用",
+   "zh-Hant": "畫流程圖和白板的應用",
+   "ja": "作図とホワイトボードのアプリ",
+   "ko": "다이어그램·화이트보드 앱"
+  },
+  "lottiefiles/lottie-ios": {
+   "en": "Play After Effects animations in iOS apps",
+   "zh-Hans": "iOS 上播放 AE 动画",
+   "zh-Hant": "iOS 上播放 AE 動畫",
+   "ja": "After Effects のアニメを iOS で再生",
+   "ko": "After Effects 애니메이션을 iOS에서"
+  },
+  "airbnb/lottie-web": {
+   "en": "Play After Effects animations on the web",
+   "zh-Hans": "网页上播放 AE 动画",
+   "zh-Hant": "網頁上播放 AE 動畫",
+   "ja": "After Effects のアニメを Web で再生",
+   "ko": "After Effects 애니메이션을 웹에서"
+  },
+  "saadeghi/daisyui": {
+   "en": "The most popular Tailwind CSS component library",
+   "zh-Hans": "最受欢迎的 Tailwind 组件库",
+   "zh-Hant": "最受歡迎的 Tailwind 元件庫",
+   "ja": "最も人気の Tailwind CSS コンポーネント集",
+   "ko": "가장 인기 있는 Tailwind 컴포넌트 라이브러리"
+  },
+  "lucide-icons/lucide": {
+   "en": "Clean, consistent icons made by the community",
+   "zh-Hans": "社区打造的统一风格图标库",
+   "zh-Hant": "社群打造的統一風格圖示庫",
+   "ja": "コミュニティ製の統一感あるアイコン集",
+   "ko": "커뮤니티가 만든 일관된 아이콘"
+  },
+  "phosphor-icons/homepage": {
+   "en": "A flexible icon family for any interface",
+   "zh-Hans": "灵活好用的图标家族",
+   "zh-Hant": "靈活好用的圖示家族",
+   "ja": "柔軟に使えるアイコンファミリー",
+   "ko": "유연하게 쓰는 아이콘 패밀리"
+  },
+  "duckdb/duckdb": {
+   "en": "A SQL analytics database that runs inside your app",
+   "zh-Hans": "内嵌在应用里的 SQL 分析数据库",
+   "zh-Hant": "內嵌在應用裡的 SQL 分析資料庫",
+   "ja": "アプリ内で動く SQL 分析データベース",
+   "ko": "앱 안에서 도는 SQL 분석 데이터베이스"
+  },
+  "pola-rs/polars": {
+   "en": "Lightning-fast DataFrames for Rust and Python",
+   "zh-Hans": "极快的 DataFrame 库",
+   "zh-Hant": "極快的 DataFrame 庫",
+   "ja": "超高速な DataFrame ライブラリ",
+   "ko": "초고속 DataFrame 라이브러리"
+  },
+  "apache/arrow": {
+   "en": "Fast in-memory analytics across languages",
+   "zh-Hans": "跨语言的内存数据分析平台",
+   "zh-Hant": "跨語言的記憶體資料分析平台",
+   "ja": "言語をまたぐインメモリ分析基盤",
+   "ko": "언어를 넘나드는 인메모리 분석 플랫폼"
+  },
+  "dbt-labs/dbt-core": {
+   "en": "Transform warehouse data like a software engineer",
+   "zh-Hans": "用软件工程方式处理数据仓库",
+   "zh-Hant": "用軟體工程方式處理資料倉儲",
+   "ja": "ソフトウェア開発の流儀でデータを変換",
+   "ko": "소프트웨어 엔지니어링 방식으로 데이터 변환"
+  },
+  "apache/superset": {
+   "en": "Modern data exploration and charts",
+   "zh-Hans": "现代化的数据探索与可视化",
+   "zh-Hant": "現代化的資料探索與視覺化",
+   "ja": "モダンなデータ探索・可視化プラットフォーム",
+   "ko": "현대적인 데이터 탐색·시각화 플랫폼"
+  },
+  "ClickHouse/ClickHouse": {
+   "en": "Open-source database for real-time analytics",
+   "zh-Hans": "开源列式实时分析数据库",
+   "zh-Hant": "開源列式即時分析資料庫",
+   "ja": "オープンソースの列指向リアルタイム分析 DB",
+   "ko": "오픈 소스 실시간 분석용 컬럼 DB"
+  },
+  "apache/kafka": {
+   "en": "Distributed event streaming platform",
+   "zh-Hans": "分布式事件流平台",
+   "zh-Hant": "分散式事件流平台",
+   "ja": "分散型イベントストリーミング基盤",
+   "ko": "분산 이벤트 스트리밍 플랫폼"
+  },
+  "jupyter/notebook": {
+   "en": "Interactive notebooks for creating and sharing documents",
+   "zh-Hans": "可交互的笔记本文档",
+   "zh-Hant": "可互動的筆記本文件",
+   "ja": "対話型ノートブックで文書を作って共有",
+   "ko": "대화형 노트북으로 문서 작성·공유"
+  }
+ },
+ "library": {
+  "AshReinvigorate/Microsoft-Office": {
+   "41944f2cf9d4": {
+    "en": "Office 2026 installer, listed as pre-activated",
+    "zh-Hans": "Office 2026 预激活安装包",
+    "zh-Hant": "Office 2026 預啟用安裝包",
+    "ja": "Office 2026 の事前アクティベート済みインストーラー",
+    "ko": "Office 2026 사전 활성화 설치 파일"
+   }
+  },
+  "CaretakerPlain/Whale-Tracker": {
+   "db84e52126bc": {
+    "en": "Whale Tracker 2026, pre-activated desktop edition",
+    "zh-Hans": "Whale Tracker 2026 预激活桌面版",
+    "zh-Hant": "Whale Tracker 2026 預啟用桌面版",
+    "ja": "Whale Tracker 2026 事前アクティベート済みデスクトップ版",
+    "ko": "Whale Tracker 2026 사전 활성화 데스크톱판"
+   }
+  },
+  "Cattmonkey/ChaosIntelligence": {
+   "4220589e496d": {
+    "en": "Agents as functions, ideas as programs",
+    "zh-Hans": "智能体当函数，想法写成程序",
+    "zh-Hant": "代理當函式，想法寫成程式",
+    "ja": "エージェントを関数に、アイデアをプログラムに",
+    "ko": "에이전트를 함수로, 아이디어를 프로그램으로"
+   }
+  },
+  "ChannelCooperStart/capri-ai": {
+   "98b87d5d0bc7": {
+    "en": "An Edgerunners-inspired AI agent for your desktop",
+    "zh-Hans": "《边缘行者》风格的桌面 AI 智能体",
+    "zh-Hant": "《邊緣行者》風格的桌面 AI 代理",
+    "ja": "『エッジランナーズ』風のデスクトップ AI エージェント",
+    "ko": "엣지러너 풍 데스크톱 AI 에이전트"
+   }
+  },
+  "D3voz/openjutsu": {
+   "9563d416c7c1": {
+    "en": "One-click character swap in videos, run locally",
+    "zh-Hans": "一键给视频换角色，本地运行",
+    "zh-Hant": "一鍵給影片換角色，本機執行",
+    "ja": "動画のキャラをワンクリックで差し替え",
+    "ko": "영상 속 캐릭터를 원클릭으로 교체"
+   }
+  },
+  "DenisSergeevitch/ex-ussr-kinship-research": {
+   "0acb87efff3a": {
+    "en": "AI genealogy research for former-USSR records",
+    "zh-Hans": "用 AI 查前苏联地区的家谱档案",
+    "zh-Hant": "用 AI 查前蘇聯地區的家譜檔案",
+    "ja": "旧ソ連圏の家系調査を AI が支援",
+    "ko": "구소련 지역 가계 조사를 돕는 AI"
+   }
+  },
+  "Fangludisclose/SystemCare-Pro": {
+   "d5bc5d1a9b0c": {
+    "en": "Systemcare Pro 2026 installer, all features activated",
+    "zh-Hans": "Systemcare Pro 已激活安装包",
+    "zh-Hant": "Systemcare Pro 已啟用安裝包",
+    "ja": "Systemcare Pro 2026 アクティベート済みインストーラー",
+    "ko": "Systemcare Pro 2026 전체 기능 활성화 설치 파일"
+   }
+  },
+  "FormHalberdierSouk/SoundPad": {
+   "52e358e00d02": {
+    "en": "Soundpad 2026 installer with audio plugins",
+    "zh-Hans": "Soundpad 2026 音频插件完整安装包",
+    "zh-Hant": "Soundpad 2026 音訊外掛完整安裝包",
+    "ja": "Soundpad 2026 音声プラグイン入りインストーラー",
+    "ko": "Soundpad 2026 오디오 플러그인 설치 파일"
+   }
+  },
+  "JunWan666/astrbot-for-android": {
+   "d3cccd167bef": {
+    "en": "Run AstrBot and NapCat on your phone, no root",
+    "zh-Hans": "手机上免 Root 跑 AstrBot 和 NapCat",
+    "zh-Hant": "手機上免 Root 跑 AstrBot 和 NapCat",
+    "ja": "スマホで AstrBot と NapCat を Root なしで実行",
+    "ko": "루팅 없이 폰에서 AstrBot·NapCat 실행"
+   }
+  },
+  "Lostbrocreate/Adobe-InDesign": {
+   "a3ddeafcf196": {
+    "en": "2026 publishing installer, full working build",
+    "zh-Hans": "2026 出版方案完整安装程序",
+    "zh-Hant": "2026 出版方案完整安裝程式",
+    "ja": "2026 年版の出版用インストーラー",
+    "ko": "2026 출판용 전체 설치 파일"
+   }
+  },
+  "MiniMax-AI/mcode-stack": {
+   "f06ec0f214f8": {
+    "en": "How the MiniMax Code team builds MiniMax Code",
+    "zh-Hans": "MiniMax Code 团队的工作流与技能",
+    "zh-Hant": "MiniMax Code 團隊的工作流程與技能",
+    "ja": "MiniMax Code チームが実際に使うワークフロー",
+    "ko": "MiniMax Code 팀이 쓰는 워크플로와 스킬"
+   }
+  },
+  "Phantomeidemonstrate/AnyDesk": {
+   "744a0281fcb8": {
+    "en": "AnyDesk 2026 installer for remote desktop",
+    "zh-Hans": "AnyDesk 2026 远程桌面安装程序",
+    "zh-Hant": "AnyDesk 2026 遠端桌面安裝程式",
+    "ja": "AnyDesk 2026 リモートデスクトップ用インストーラー",
+    "ko": "AnyDesk 2026 원격 데스크톱 설치 파일"
+   }
+  },
+  "PhoenixRetreat/Wondshare-Recoverit": {
+   "91bb2e34919c": {
+    "en": "Recoverit 2026 installer, all features activated",
+    "zh-Hans": "Recoverit 2026 已激活安装程序",
+    "zh-Hant": "Recoverit 2026 已啟用安裝程式",
+    "ja": "Recoverit 2026 全機能アクティベート済みインストーラー",
+    "ko": "Recoverit 2026 전체 기능 활성화 설치 파일"
+   }
+  },
+  "SAOS-3624/dsh-video-storyboard": {
+   "e4ff78f9cb72": {
+    "en": "Pack a video into one storyboard image",
+    "zh-Hans": "把视频做成一张分镜图",
+    "zh-Hant": "把影片做成一張分鏡圖",
+    "ja": "動画を 1 枚の絵コンテ画像にまとめる",
+    "ko": "영상을 한 장의 스토리보드 이미지로"
+   }
+  },
+  "ScorpionHub17/KMS-Pico": {
+   "28a1da717842": {
+    "en": "Kms Pico Free 2026, pre-activated desktop edition",
+    "zh-Hans": "Kms Pico Free 2026 预激活桌面版",
+    "zh-Hant": "Kms Pico Free 2026 預啟用桌面版",
+    "ja": "Kms Pico Free 2026 事前アクティベート済みデスクトップ版",
+    "ko": "Kms Pico Free 2026 사전 활성화 데스크톱판"
+   }
+  },
+  "SoapmakerShout44/Cinema-4d": {
+   "20ff8cbf1e03": {
+    "en": "Cinema 4D utility setup, full standalone install",
+    "zh-Hans": "Cinema 4D 工具完整安装包",
+    "zh-Hant": "Cinema 4D 工具完整安裝包",
+    "ja": "Cinema 4D ユーティリティの完全版インストール",
+    "ko": "Cinema 4D 유틸리티 독립 설치 패키지"
+   }
+  },
+  "Sourcecladrag/Windows-Optimizer": {
+   "b45309a78c09": {
+    "en": "Windows Optimizer 2026 installer with system tweaks",
+    "zh-Hans": "Windows Optimizer 系统调优安装包",
+    "zh-Hant": "Windows Optimizer 系統調優安裝包",
+    "ja": "Windows Optimizer 2026 システム調整インストーラー",
+    "ko": "Windows Optimizer 2026 시스템 튜닝 설치 파일"
+   }
+  },
+  "UniteCuttlefishBolt/Canva-Pro": {
+   "2317b000f904": {
+    "en": "Canva Pro 2026 installer, all features unlocked",
+    "zh-Hans": "Canva Pro 2026 已解锁安装包",
+    "zh-Hant": "Canva Pro 2026 已解鎖安裝包",
+    "ja": "Canva Pro 2026 全機能アンロック済みインストーラー",
+    "ko": "Canva Pro 2026 전체 기능 잠금 해제 설치 파일"
+   }
+  },
+  "ViceFencerManacle/Camtasia": {
+   "1eec45a23144": {
+    "en": "Camtasia 2026 full working installer",
+    "zh-Hans": "Camtasia 2026 完整安装程序",
+    "zh-Hant": "Camtasia 2026 完整安裝程式",
+    "ja": "Camtasia 2026 の完全版インストーラー",
+    "ko": "Camtasia 2026 전체 설치 파일"
+   }
+  },
+  "ZiChuanLan/agent-purge": {
+   "e98448904fac": {
+    "en": "One persona across many coding agents",
+    "zh-Hans": "一个人设，通吃多个编程智能体",
+    "zh-Hant": "一個人設，通吃多個程式設計代理",
+    "ja": "1 つのペルソナを複数のコーディングエージェントで",
+    "ko": "하나의 페르소나를 여러 코딩 에이전트에"
+   }
+  },
+  "aa1143/NamiGPT": {
+   "0d949887546b": {
+    "en": "Build GPT-2 from scratch, line by line",
+    "zh-Hans": "零基础，从零手写 GPT-2",
+    "zh-Hant": "零基礎，從零手寫 GPT-2",
+    "ja": "ゼロから GPT-2 を手書きして LLM を理解",
+    "ko": "처음부터 GPT-2를 직접 만들며 배우는 LLM"
+   }
+  },
+  "andyhuo520/digital-human-koubo": {
+   "07d898e09358": {
+    "en": "Make talking-head AI videos from one photo",
+    "zh-Hans": "一张照片生成 AI 数字人口播视频",
+    "zh-Hant": "一張照片生成 AI 數位人口播影片",
+    "ja": "1 枚の写真から AI デジタルヒューマン動画",
+    "ko": "사진 한 장으로 AI 디지털 휴먼 영상"
+   }
+  },
+  "andyhuo520/vibe-knowledge": {
+   "09f577c63726": {
+    "en": "Turn one fact into a short video with sources",
+    "zh-Hans": "一个知识点，一条带出处的短片",
+    "zh-Hant": "一個知識點，一條帶出處的短片",
+    "ja": "1 つの知識を出典つきの短編動画に",
+    "ko": "지식 하나를 출처 있는 짧은 영상으로"
+   }
+  },
+  "anonnerdfrenzy/survival-llm": {
+   "a758c5dca530": {
+    "en": "A free offline AI assistant and survival library",
+    "zh-Hans": "断网也能用的免费 AI 生存知识库",
+    "zh-Hant": "斷網也能用的免費 AI 生存知識庫",
+    "ja": "ネット不要で使える無料の AI 生存ライブラリ",
+    "ko": "인터넷 없이 쓰는 무료 AI 생존 라이브러리"
+   }
+  },
+  "ccch1mneyyy/dsh-go": {
+   "7d7e0dde3d15": {
+    "en": "DeepSeek Harness in your pocket",
+    "zh-Hans": "DeepSeek Harness 装进口袋",
+    "zh-Hant": "DeepSeek Harness 裝進口袋",
+    "ja": "DeepSeek Harness をポケットに",
+    "ko": "DeepSeek Harness를 주머니 속에"
+   }
+  },
+  "daveebbelaar/bama": {
+   "c6a5974ecb20": {
+    "en": "Build any Mac app with agent skills",
+    "zh-Hans": "用智能体技能造任意 Mac 应用",
+    "zh-Hant": "用代理技能造任意 Mac 應用",
+    "ja": "エージェントスキルで好きな Mac アプリを作る",
+    "ko": "에이전트 스킬로 원하는 Mac 앱을 만든다"
+   }
+  },
+  "davemessew/AgentFlux": {
+   "84997ea85061": {
+    "en": "Visual workflows and autonomous agents, self-hosted",
+    "zh-Hans": "可视化搭建自主智能体工作流",
+    "zh-Hant": "視覺化搭建自主代理工作流程",
+    "ja": "ビジュアルでエージェント型ワークフローを構築",
+    "ko": "시각적으로 만드는 자율 에이전트 워크플로"
+   }
+  },
+  "designfuchen/word-atlas": {
+   "5096668083c7": {
+    "en": "Illustrated IELTS vocabulary, 7,298 words",
+    "zh-Hans": "带插图的雅思词汇，7,298 词",
+    "zh-Hant": "帶插圖的雅思詞彙，7,298 詞",
+    "ja": "挿絵つき IELTS 単語 7,298 語",
+    "ko": "삽화로 배우는 IELTS 어휘 7,298개"
+   }
+  },
+  "emanuele-em/kanzo": {
+   "6fa085cecdf0": {
+    "en": "A tiny self-hosted kanban for humans and agents",
+    "zh-Hans": "人和智能体都能用的自托管看板",
+    "zh-Hant": "人和代理都能用的自託管看板",
+    "ja": "人とエージェントが使えるセルフホスト看板",
+    "ko": "사람과 에이전트가 함께 쓰는 셀프 호스팅 칸반"
+   }
+  },
+  "floatboatai/OpenMinutes": {
+   "9298847c1e08": {
+    "en": "Voice recorder workbench: transcribe, sort, search",
+    "zh-Hans": "录音笔录音转文字、归类、检索",
+    "zh-Hant": "錄音筆錄音轉文字、歸類、檢索",
+    "ja": "録音を文字起こし・分類・検索できる作業台",
+    "ko": "녹음을 변환·분류·검색하는 워크벤치"
+   }
+  },
+  "haydenschmitty/floorplan": {
+   "0d7b5039191e": {
+    "en": "A plain-English map of how your app fits together",
+    "zh-Hans": "一张看懂你代码库的地图",
+    "zh-Hant": "一張看懂你程式碼庫的地圖",
+    "ja": "コードベースの全体像を 1 枚の地図に",
+    "ko": "코드베이스 구조를 한눈에 보는 지도"
+   }
+  },
+  "hevnsnt/CVEngine": {
+   "010ac25c3371": {
+    "en": "AI attack-surface scans with evidence-backed findings",
+    "zh-Hans": "AI 持续扫描攻击面并验证漏洞",
+    "zh-Hant": "AI 持續掃描攻擊面並驗證漏洞",
+    "ja": "AI が攻撃対象領域を継続調査し脆弱性を検証",
+    "ko": "AI가 공격 표면을 지속 점검하고 취약점 검증"
+   }
+  },
+  "heydeer/pngdeer": {
+   "0ad1c81042db": {
+    "en": "Smaller PNGs, same picture",
+    "zh-Hans": "图片更小，画面不变",
+    "zh-Hant": "圖片更小，畫面不變",
+    "ja": "画質そのまま、PNG をもっと小さく",
+    "ko": "화질은 그대로, PNG는 더 작게"
+   }
+  },
+  "hugues31/duckpad": {
+   "fe7d2b29ab2a": {
+    "en": "The data transformation tool open source deserves",
+    "zh-Hans": "开源社区应得的数据转换工具",
+    "zh-Hant": "開源社群應得的資料轉換工具",
+    "ja": "オープンソースにふさわしいデータ変換ツール",
+    "ko": "오픈 소스 커뮤니티를 위한 데이터 변환 도구"
+   }
+  },
+  "jacke-pp/ai-wallet-binance": {
+   "f3d5b873580c": {
+    "en": "Let any AI trade with your Binance AI wallet",
+    "zh-Hans": "让任何 AI 用你的币安钱包交易",
+    "zh-Hant": "讓任何 AI 用你的幣安錢包交易",
+    "ja": "あらゆる AI があなたの Binance AI ウォレットで取引",
+    "ko": "어떤 AI든 내 바이낸스 AI 지갑으로 거래"
+   }
+  },
+  "jackwener/DeepseekHarness-Android": {
+   "5b96b25575cb": {
+    "en": "Run DeepSeek Harness on Android, no root",
+    "zh-Hans": "安卓免 ROOT 跑 DeepSeek Harness",
+    "zh-Hant": "安卓免 ROOT 跑 DeepSeek Harness",
+    "ja": "ROOT なしで Android に DeepSeek Harness",
+    "ko": "루팅 없이 안드로이드에서 DeepSeek Harness"
+   }
+  },
+  "jianxinss/iching-64-motion": {
+   "dd5cbe769420": {
+    "en": "Animated I Ching hexagrams, made entirely in code",
+    "zh-Hans": "易经六十四卦动画，纯代码制作",
+    "zh-Hant": "易經六十四卦動畫，純程式碼製作",
+    "ja": "易経六十四卦のアニメ、すべてコードで制作",
+    "ko": "주역 64괘 애니메이션, 전부 코드로"
+   }
+  },
+  "jmanico/grim-prompter": {
+   "63f0f920065f": {
+    "en": "AI agents build a threat model of your repo",
+    "zh-Hans": "让 AI 给你的仓库做威胁建模",
+    "zh-Hant": "讓 AI 給你的儲存庫做威脅建模",
+    "ja": "AI エージェントがリポジトリの脅威モデルを作成",
+    "ko": "AI 에이전트가 저장소 위협 모델을 작성"
+   }
+  },
+  "konlu/story-studio": {
+   "9b110a07e181": {
+    "en": "From topic to JianYing draft, short video in one stop",
+    "zh-Hans": "从选题到剪映草稿，一站出短视频",
+    "zh-Hant": "從選題到剪映草稿，一站出短影片",
+    "ja": "題材選びから剪映の下書きまで一気通貫",
+    "ko": "주제 선정부터 JianYing 초안까지 한 번에"
+   }
+  },
+  "mochiiwuff/capri-desktop": {
+   "425253e2de0a": {
+    "en": "Capri lives on your desktop, narrating Claude Code",
+    "zh-Hans": "住在桌面上，实时解说 Claude Code",
+    "zh-Hant": "住在桌面上，即時解說 Claude Code",
+    "ja": "デスクトップに住み、Claude Code を実況",
+    "ko": "데스크톱에 사는 Claude Code 해설자"
+   }
+  },
+  "mokevnin/dev-quality-gates": {
+   "49c698e5bd32": {
+    "en": "One recommended tool per job to enforce standards",
+    "zh-Hans": "每项开发规范只推荐一个工具",
+    "zh-Hant": "每項開發規範只推薦一個工具",
+    "ja": "開発規約ごとに推奨ツールを 1 つだけ紹介",
+    "ko": "개발 규범마다 추천 도구 하나만"
+   }
+  },
+  "morganlinton/BeautifulRust": {
+   "a5480f24d64a": {
+    "en": "Teach coding agents to write idiomatic Rust",
+    "zh-Hans": "教 AI 写出地道的 Rust",
+    "zh-Hant": "教 AI 寫出地道的 Rust",
+    "ja": "AI に慣用的な Rust を書かせる",
+    "ko": "AI에게 관용적인 Rust를 가르친다"
+   }
+  },
+  "nodedevelopersack/Cubase": {
+   "e4e70a0685b8": {
+    "en": "Cubase 13 installer, listed as pre-activated",
+    "zh-Hans": "Cubase 13 预激活安装版",
+    "zh-Hant": "Cubase 13 預啟用安裝版",
+    "ja": "Cubase 13 事前アクティベート済みインストーラー",
+    "ko": "Cubase 13 사전 활성화 설치판"
+   }
+  },
+  "patch-gg/anymove": {
+   "eeffd1cbf6fb": {
+    "en": "Motion capture for any creature from one AI video",
+    "zh-Hans": "用一段 AI 视频做动作捕捉",
+    "zh-Hant": "用一段 AI 影片做動作捕捉",
+    "ja": "AI 動画 1 本でどんな生き物もモーキャプ",
+    "ko": "AI 영상 하나로 어떤 생물이든 모션 캡처"
+   }
+  },
+  "qybaihe/bla": {
+   "426182b4d222": {
+    "en": "Shield your code from AI reverse-engineering",
+    "zh-Hans": "保护你的程序不被 AI 逆向",
+    "zh-Hant": "保護你的程式不被 AI 逆向",
+    "ja": "AI によるリバースエンジニアリングからコードを守る",
+    "ko": "AI 리버스 엔지니어링으로부터 코드 보호"
+   }
+  },
+  "rddmwmddr/android-ad-cleaner": {
+   "e3d2e2d0e0c1": {
+    "en": "Switch off ads and pushes on Chinese Android phones",
+    "zh-Hans": "关掉国产安卓手机的广告推送",
+    "zh-Hant": "關掉國產安卓手機的廣告推送",
+    "ja": "中国メーカー製 Android の広告と通知をオフ",
+    "ko": "중국산 안드로이드 폰의 광고·푸시 끄기"
+   }
+  },
+  "routerhubSI/uncensored-ai-api": {
+   "66c2f1401a12": {
+    "en": "One key for many AI models, uncensored variants too",
+    "zh-Hans": "一个密钥调多家模型，含无审查版",
+    "zh-Hant": "一個金鑰調多家模型，含無審查版",
+    "ja": "1 つのキーで複数モデル、無審査版も",
+    "ko": "키 하나로 여러 모델, 무검열 버전 포함"
+   }
+  },
+  "sanjayadanushka712/Ghost-Night": {
+   "d9560e9d5334": {
+    "en": "Local browser fingerprint rotation for security tests",
+    "zh-Hans": "授权安全测试用的本地指纹轮换工具",
+    "zh-Hant": "授權資安測試用的本機指紋輪換工具",
+    "ja": "認可済みセキュリティテスト用の指紋切り替えツール",
+    "ko": "보안 테스트용 로컬 브라우저 핑거프린트 로테이션"
+   }
+  },
+  "sanjayadanushka712/TaskFlow": {
+   "c03fda0c6415": {
+    "en": "End-to-end DevOps TaskFlow API",
+    "zh-Hans": "端到端 DevOps TaskFlow API",
+    "zh-Hant": "端到端 DevOps TaskFlow API",
+    "ja": "エンドツーエンドの DevOps TaskFlow API",
+    "ko": "엔드투엔드 DevOps TaskFlow API"
+   }
+  },
+  "scarletscreengrasp/Uttorent": {
+   "e0f79c8f9f48": {
+    "en": "Uttorent 2026 full working installer",
+    "zh-Hans": "Uttorent 2026 完整安装程序",
+    "zh-Hant": "Uttorent 2026 完整安裝程式",
+    "ja": "Uttorent 2026 完全版インストーラー",
+    "ko": "Uttorent 2026 전체 설치 파일"
+   }
+  },
+  "shipwords-dev/shipwords": {
+   "f5a7f45302ae": {
+    "en": "A money-making AI site for every new keyword",
+    "zh-Hans": "一个新词，一个赚钱的 AI 网站",
+    "zh-Hant": "一個新詞，一個賺錢的 AI 網站",
+    "ja": "新ワードごとに稼ぐ AI サイトを 1 つ",
+    "ko": "새 키워드마다 돈 되는 AI 사이트 하나"
+   }
+  },
+  "t3dotgg/tstack": {
+   "32630c525219": {
+    "en": "The agent skills I use every day",
+    "zh-Hans": "我每天都在用的智能体技能",
+    "zh-Hant": "我每天都在用的代理技能",
+    "ja": "毎日使っているエージェントスキル",
+    "ko": "매일 쓰는 에이전트 스킬 모음"
+   }
+  },
+  "thomasunise/argus": {
+   "128f0e9249bd": {
+    "en": "Open-source agentic security operations platform",
+    "zh-Hans": "开源的智能体式安全运营平台",
+    "zh-Hant": "開源的代理式資安營運平台",
+    "ja": "オープンソースのエージェント型セキュリティ運用基盤",
+    "ko": "오픈 소스 에이전틱 보안 운영 플랫폼"
+   }
+  },
+  "twilightstonerestore/Glary-Utilities-Pro": {
+   "266bcb6f2e83": {
+    "en": "Glary Utilities Pro 2026 installer, tools activated",
+    "zh-Hans": "Glary Utilities Pro 已激活安装包",
+    "zh-Hant": "Glary Utilities Pro 已啟用安裝包",
+    "ja": "Glary Utilities Pro 2026 有効化済みインストーラー",
+    "ko": "Glary Utilities Pro 2026 도구 활성화 설치 파일"
+   }
+  },
+  "vaishantsah/watson-AI-osint-all-in-one": {
+   "95f188830685": {
+    "en": "Free OSINT: search people across 3,100+ sites",
+    "zh-Hans": "免费 OSINT：3,100 多个站点查人",
+    "zh-Hant": "免費 OSINT：3,100 多個站點查人",
+    "ja": "無料 OSINT、3,100 以上のサイトで人物検索",
+    "ko": "무료 OSINT, 3,100개 이상 사이트에서 인물 검색"
+   }
+  },
+  "wangrongding/tv-fresh": {
+   "19581adbd0c3": {
+    "en": "Remove ads from Xiaomi TV, no root, reversible",
+    "zh-Hans": "小米电视去广告，免 root 可逆",
+    "zh-Hant": "小米電視去廣告，免 root 可逆",
+    "ja": "Xiaomi TV の広告を root なしで除去、元に戻せる",
+    "ko": "샤오미 TV 광고 제거, 루팅 불필요·복원 가능"
+   }
+  },
+  "wangzan101/Mika": {
+   "fbc4ac54e724": {
+    "en": "A personal AI that operates your phone for you",
+    "zh-Hans": "你手机上的私人 AI 助理",
+    "zh-Hant": "你手機上的私人 AI 助理",
+    "ja": "スマホで代わりに動いてくれる専属 AI",
+    "ko": "내 폰에서 대신 일해 주는 개인 AI 비서"
+   }
+  },
+  "xanthichi/mcd-meal-mate": {
+   "60ecf917868f": {
+    "en": "Smart McDonald's meal pairing from live menu data",
+    "zh-Hans": "按实时菜单和营养搭麦当劳套餐",
+    "zh-Hant": "按即時菜單和營養搭麥當勞套餐",
+    "ja": "マクドナルドの最新メニューと栄養で賢くセット選び",
+    "ko": "맥도날드 실시간 메뉴·영양으로 조합 추천"
+   }
+  },
+  "zeabur-oss/zeabur": {
+   "001d514c66e3": {
+    "en": "Self-hosted PaaS on your own Kubernetes",
+    "zh-Hans": "跑在自家 Kubernetes 上的 PaaS",
+    "zh-Hant": "跑在自家 Kubernetes 上的 PaaS",
+    "ja": "自前の Kubernetes で動くセルフホスト PaaS",
+    "ko": "내 Kubernetes에서 돌리는 셀프 호스팅 PaaS"
+   }
+  }
+ }
+}

@@ -109,6 +109,9 @@ def get_hook(lib: Library, name: str, description: str, lang: str) -> str | None
 def put_hook(lib: Library, name: str, description: str, lang: str, text: str, today: str | None = None) -> None:
     """Store a hook. Only the `hook` sub-dict changes: translations already in the entry are never touched."""
     slot = lib["entries"].setdefault(name, {}).setdefault(src_hash(description), {"src": description})
+    old = (slot.get("hook") or {}).get(lang)
+    if old and old != text:  # an earlier hook is kept (never shown), not overwritten
+        slot.setdefault("hook_prev", {})[lang] = old
     slot.setdefault("hook", {})[lang] = text
     if today:
         slot["seen"] = today

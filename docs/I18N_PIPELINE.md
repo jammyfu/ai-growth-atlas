@@ -65,6 +65,8 @@ unchanged, as the detailed intro, and every translation stays too: both are list
   valid hook, in only the missing languages, go to the model (`HOOK_PROMPT`, which embeds `HOOK_RULE`). Backend:
   `I18N_HOOK_BACKEND`, default = the translate backend, so scheduled new repos get a hook in CI too; `tools/polish_local.sh`
   uses `agy`. A hook that fails the guard is rejected and the row falls back to the translation until the next run.
+- **Style: ad-grade, eight rules** (`hooks.WRITING_RULES`, embedded in `HOOK_RULE` and so in every hook prompt): (1) start from the reader's trouble, then what the project fixes; (2) only facts the source states; (3) write for someone who has never seen it; (4) one sentence sells one benefit; (5) short, no `!` / `…` / hype; (6) everyday actions and pictures; (7) security / compliance in plain words, cracked or pirated projects never a selling point; (8) a brand name is never the reason. All five languages carry the same meaning and flavour (written as copy in each language, not word-for-word translation). The 70 zh-Hans slogans of 2026-10-31 are kept in `tests/fixtures/slogans_zh.md`.
+- **Old hooks are kept**: when a hook is replaced, the previous one moves to `hook_prev` (same place, never shown); `tests/fixtures/previous_hooks_baseline.json` pins the PR #12 set.
 - Hooks are not polished; the polish stage only rewrites the detailed texts.
 
 ## 3. Polish
