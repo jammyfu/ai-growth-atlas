@@ -14,9 +14,12 @@ never fails the update):
               that was polished, so unchanged text is never sent again. A polished text is accepted
               only if it passes the guards in `check_polished`; otherwise the previous text stays.
 
-Both stages call the Cursor CLI through tools/llm.py (model from POLISH_MODEL / I18N_TRANSLATE_MODEL,
-default gemini-3.8-flash-medium; key from the CURSOR_API_KEY environment variable). Without a key,
-without the CLI, or when the model is not offered, the stage is skipped with a message.
+Both stages call an agent CLI through tools/llm.py, model gemini-3.8-flash-medium by default
+(POLISH_MODEL / I18N_TRANSLATE_MODEL):
+  translate  backend I18N_TRANSLATE_BACKEND, default "cursor" (Cursor CLI, key CURSOR_API_KEY: the CI step)
+  polish     backend I18N_POLISH_BACKEND,    default "agy"    (Antigravity CLI on the owner's machine)
+Without the CLI / sign-in / key, or when the model is not offered, the stage is skipped with a message.
+CI runs translate only; polish is run locally (tools/polish_local.sh, or tools/local_daily.sh).
 
 Usage: python3 tools/i18n_pipeline.py [--translate] [--polish] [--targets newcomers,projects,categories]
                                       [--limit N] [--dry-run]
@@ -456,26 +459,28 @@ def polish(root: Path, items: list[dict[str, Any]], runner: Runner, budget: Budg
 
 def run(root: Path, new: dict[str, Any] | None, *, do_translate: bool = True, do_polish: bool = True,
         targets: tuple[str, ...] = DEFAULT_TARGETS, env: dict[str, str] | None = None,
-        make_runner: Callable[[str], Any] | None = None, budget_sec: float | None = None,
+        make_runner: Callable[[str, str], Any] | None = None, budget_sec: float | None = None,
         log: Callable[[str], None] = print, limit: int | None = None, dry_run: bool = False) -> dict[str, Any]:
     """Run the stages. Raises nothing for LLM/model problems; those stages are skipped and reported."""
     env = dict(os.environ if env is None else env)
-    make_runner = make_runner or (lambda model: llm.CursorAgent(model, env=env))
+    make_runner = make_runner or (lambda backend, model: llm.make_agent(backend, model, env=env))
     budget = Budget(budget_sec if budget_sec is not None else float(env.get("I18N_BUDGET_SEC", DEFAULT_BUDGET_SEC)))
     items = displayed_newcomers(new)
     result: dict[str, Any] = {}
     polish_model = env.get("POLISH_MODEL") or llm.DEFAULT_MODEL
     translate_model = env.get("I18N_TRANSLATE_MODEL") or polish_model
-    runners: dict[str, Any] = {}
+    translate_backend = env.get("I18N_TRANSLATE_BACKEND") or "cursor"   # CI: Cursor CLI + CURSOR_API_KEY
+    polish_backend = env.get("I18N_POLISH_BACKEND") or "agy"            # owner's machine: Antigravity CLI
+    runners: dict[tuple[str, str], Any] = {}
 
-    def ready(model: str) -> Any | None:
-        if model not in runners:
-            r = make_runner(model)
+    def ready(backend: str, model: str) -> Any | None:
+        if (backend, model) not in runners:
+            r = make_runner(backend, model)
             why = r.unavailable_reason()
-            runners[model] = None if why else r
+            runners[(backend, model)] = None if why else r
             if why:
-                log(f"i18n: model {model}: skipped, {why}")
-        return runners[model]
+                log(f"i18n: {backend} / {model}: skipped, {why}")
+        return runners[(backend, model)]
 
     if do_translate:
         gaps = translation_gaps(nci.load(root / "data/newcomer_i18n.json"), items)
@@ -484,7 +489,7 @@ def run(root: Path, new: dict[str, Any] | None, *, do_translate: bool = True, do
             log("translate: nothing to do, every displayed description already has a current translation")
         elif dry_run:
             result["translate"] = {"todo": len(gaps)}
-        elif (r := ready(translate_model)) is None:
+        elif (r := ready(translate_backend, translate_model)) is None:
             result["translate"] = {"todo": len(gaps), "skipped": True}
         else:
             result["translate"] = translate(root, items, r, budget, log, limit)
@@ -496,7 +501,7 @@ def run(root: Path, new: dict[str, Any] | None, *, do_translate: bool = True, do
             log("polish: nothing to do, every text is already polished")
         elif dry_run:
             result["polish"] = {"todo": len(jobs)}
-        elif (r := ready(polish_model)) is None:
+        elif (r := ready(polish_backend, polish_model)) is None:
             result["polish"] = {"todo": len(jobs), "skipped": True}
         else:
             result["polish"] = polish(root, items, r, budget, targets, log, limit)

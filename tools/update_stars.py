@@ -116,10 +116,11 @@ def fetch_project(name: str, token: str, today: dt.date, snaps: dict[str, int]) 
 
 
 def i18n_step(new: dict[str, Any]) -> None:
-    """Translate new descriptions, then polish copy. Never raises and never changes the exit code:
+    """Translate new descriptions (and polish them when I18N_POLISH=1, i.e. on the owner's machine). Never raises and never changes the exit code:
     without a key / model, or on any failure, the existing (or original) texts are shown."""
-    print("translating and polishing copy (Cursor CLI; skipped without CURSOR_API_KEY) ...", flush=True)
-    i18n_pipeline.run_safe(ROOT, new)
+    polish = os.environ.get("I18N_POLISH") == "1"  # set by tools/local_daily.sh; CI translates only
+    print(f"translating{' and polishing' if polish else ''} copy (agent CLI; skipped when unavailable) ...", flush=True)
+    i18n_pipeline.run_safe(ROOT, new, do_polish=polish)
 
 
 def main(argv: list[str] | None = None) -> int:
