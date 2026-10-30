@@ -26,7 +26,7 @@ README_TOP = 10  # rows per board in the README; the full top 20 is in latest/
 REPO = "jammyfu/github-risers"
 SITE = "https://jammyfu.github.io/github-risers/"
 SOCIAL_IMAGE = ".github/social-preview.png"
-# Anchors of docs/FAQ.md (written by the GEO work); only linked, never generated here.
+# Anchors of docs/FAQ.md (owned by the GEO work, checked by a test); only linked, never generated here.
 FAQ_ANCHORS = ("what-is-github-risers", "is-it-the-same-as-github-trending", "how-often-is-it-updated")
 
 

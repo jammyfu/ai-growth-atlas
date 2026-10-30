@@ -178,9 +178,6 @@ class HeadlineTests(unittest.TestCase):
             self.assertIn("AI", blob, code)
 
 
-GEO_FILES = {"docs/FAQ.md", "docs/FACTS.md", "CITATION.cff", ".github/social-preview.png"}  # from the GEO pull request
-
-
 class SlimReadmeTests(unittest.TestCase):
     """The README is a first screen plus the boards; explanations live in docs/HOW_IT_WORKS*.md."""
 
@@ -231,6 +228,13 @@ class SlimReadmeTests(unittest.TestCase):
             for key in ("q1", "q2", "q3"):
                 self.assertIn(f"### {s[key]}", text, code)
 
+    def test_faq_links_point_at_real_faq_headings(self):
+        faq = (ROOT / "docs/FAQ.md").read_text("utf-8")
+        headings = {render_readme.anchor(m) for m in re.findall(r"^## (.+)$", faq, flags=re.M)}
+        for code in LANG_CODES:
+            for frag in re.findall(r"docs/FAQ\.md#([\w-]+)", self.readme(code)):
+                self.assertIn(frag, headings, f"{code}: docs/FAQ.md#{frag}")
+
     def test_everything_moved_is_on_the_docs_page(self):
         for code in LANG_CODES:
             s = render_readme.S[code]
@@ -247,7 +251,7 @@ class SlimReadmeTests(unittest.TestCase):
             for link in links:
                 self.assertIn(link, headings, f"{code}: #{link}")
 
-    def test_links_resolve_except_files_that_come_with_the_geo_pr(self):
+    def test_links_resolve(self):
         pages = [(ROOT / LANGS[c][0], ROOT) for c in LANG_CODES]
         pages += [(ROOT / "docs" / render_readme.how_name(c), ROOT / "docs") for c in LANG_CODES]
         for path, base in pages:
@@ -255,9 +259,6 @@ class SlimReadmeTests(unittest.TestCase):
             targets = re.findall(r"\]\(([^)#]+)\)", text) + re.findall(r'src="([^"]+)"', text)
             for target in targets:
                 if target.startswith("http"):
-                    continue
-                rel = (base / target).resolve().relative_to(ROOT.resolve()).as_posix()
-                if rel in GEO_FILES:
                     continue
                 self.assertTrue((base / target).exists(), f"{path.name} -> {target}")
 
