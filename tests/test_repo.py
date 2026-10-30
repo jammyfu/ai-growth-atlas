@@ -107,7 +107,7 @@ class ReadmeTests(unittest.TestCase):
 
     def test_english_is_default_readme(self):
         self.assertEqual(LANGS["en"][0], "README.md")
-        self.assertIn("ranked by how fast", (ROOT / "README.md").read_text("utf-8"))
+        self.assertIn("Ranked by Star Growth", (ROOT / "README.md").read_text("utf-8"))
 
     def test_every_language_translates_every_ui_string(self):
         keys = set(render_readme.S["en"])
@@ -129,6 +129,42 @@ class ReadmeTests(unittest.TestCase):
             text = (ROOT / fname).read_text("utf-8")
             self.assertNotIn('alt="star history', text, fname)
             self.assertIsNone(re.search(r"<sub>[^<]*\d\s?d</sub>", text), fname)
+
+
+class HeadlineTests(unittest.TestCase):
+    def test_english_top_has_no_chinese_hint(self):
+        body = (ROOT / "README.md").read_text("utf-8").split("\n", 1)[1]  # line 1 is the language switcher
+        self.assertNotIn("中文读者", body)
+        self.assertNotRegex(body[:1500], r"[\u4e00-\u9fff]")
+
+    def test_every_readme_has_schedule_and_leaders_from_real_data(self):
+        primary = next(c for c in cats if c.get("primary"))
+        for code, (fname, _l) in LANGS.items():
+            s = render_readme.S[code]
+            text = (ROOT / fname).read_text("utf-8")
+            self.assertIn(s["schedule"], text, fname)
+            self.assertIn("UTC+8", s["schedule"])
+            self.assertIn("America/Los_Angeles", s["schedule"])
+            sec = text.split(f"## {s['tops_title']}\n", 1)[1].split("\n## ", 1)[0]
+            rows = [l for l in sec.splitlines() if l.startswith("| **")]
+            self.assertEqual(len(rows), len(cats), fname)
+            # AI row first, and its #1 cells are exactly the data-derived leaders
+            self.assertIn(primary["name"][code], rows[0])
+            ai = [p for p in stats["projects"] if p.get("ok") and p.get("category") == "ai"]
+            for key in ("week", "month", "year"):
+                self.assertIn(f"[{core.rank(ai, key)[0]['name']}]", rows[0], f"{fname} {key}")
+            self.assertIn(f"[{core.rank(ai, 'total')[0]['name']}]", rows[0])
+            first_new = stats["newcomers"]["categories"]["ai"]["items"][0]["name"]
+            self.assertIn(f"[{first_new}]", rows[0])
+            # leaders block sits before the first category section
+            self.assertLess(text.index(f"## {s['tops_title']}"), text.index(f"## {primary['name'][code]}\n"))
+
+    def test_titles_mention_the_selling_points(self):
+        s = render_readme.S
+        self.assertIn("Star Growth", s["en"]["title"])
+        for code in LANG_CODES:
+            blob = s[code]["title"] + s[code]["tagline"]
+            self.assertIn("AI", blob, code)
 
 
 class ZeroTelemetryTests(unittest.TestCase):

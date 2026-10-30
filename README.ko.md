@@ -1,15 +1,30 @@
 [English](README.md) | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | [日本語](README.ja.md) | **한국어**
 
-# GitHub Risers
+# GitHub Risers: 스타 증가 속도로 줄 세우는 카테고리별 트렌딩 랭킹
 
-> 스타가 늘어나는 속도로 줄 세운 오픈소스 카테고리별 랭킹. AI를 맨 앞에.
+> 총 스타 수가 아니라 스타가 늘어나는 속도로 매긴 GitHub 트렌딩(Star Growth). AI가 메인이고 개발자 도구·보안·웹/프론트엔드·인프라·디자인·데이터도 다룹니다. 하루 두 번 갱신하며 카테고리마다 7일 신규 랭킹이 있습니다.
 
-대부분의 목록은 총 스타 순이라 오래된 프로젝트가 계속 상위를 차지하고, 새로 뜨는 프로젝트는 묻힙니다. GitHub Risers는 카테고리로 나누고(AI가 메인), 최근 7·30·365일의 증가 속도로 순위를 매기며 각 카테고리에 7일 신규 보드도 둡니다. 총 스타 랭킹은 카테고리 맨 아래. 분류 규칙: [docs/CATEGORIES.md](docs/CATEGORIES.md).
+총 스타 순 목록에서는 오래된 대형 프로젝트가 계속 상위를 차지하고, 지금 뜨는 프로젝트는 묻힙니다. GitHub Risers는 하루 평균 늘어난 스타 수(최근 7·30·365일)로 순위를 매기고 카테고리별로 보여 주며, AI가 메인 랭킹입니다. 각 카테고리는 최근 7일 안에 만들어진 저장소의 신규 랭킹, 주·월·연 증가 랭킹, 마지막으로 총 스타 순입니다. 모든 수치는 GitHub API에서 가져옵니다. 분류 규칙: [docs/CATEGORIES.md](docs/CATEGORIES.md).
 
 GitHub API에서 가져온 시각: 2026-10-30 07:50:31 (UTC).
+하루 두 번 갱신: 베이징 시간 0시(UTC+8)와 로스앤젤레스 시간 0시(America/Los_Angeles, 서머타임 반영). 갱신할 때마다 시간대별로 따로 보관합니다.
 각 카테고리 랭킹은 전체 70개 수록 프로젝트 중 상위 최대 20개만 보여 줍니다.
 
 아래가 최신 순위입니다. 업데이트할 때마다 시간대별로도 저장합니다: [순위 기록](rankings/README.ko.md) · [latest/rankings.ko.md](latest/rankings.ko.md).
+
+## 이번 회차 카테고리별 1위
+
+각 카테고리의 모든 랭킹 1위를 아래 실제 데이터로 스크립트가 자동 생성합니다. '없음'은 이번 실행에서 해당 랭킹에 항목이 없다는 뜻입니다.
+
+| 카테고리 | 신규 1위(7일) | 이번 주 1위 | 이번 달 1위 | 올해 1위 | 총 스타 1위 |
+|---|---|---|---|---|---|
+| **AI** ★ 메인 | [rddmwmddr/android-ad-cleaner](https://github.com/rddmwmddr/android-ad-cleaner)<br>800/일 | [morluto/rea](https://github.com/morluto/rea)<br>5,942/일 | [morluto/rea](https://github.com/morluto/rea)<br>13,623/일 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)<br>3,412/일 | [morluto/rea](https://github.com/morluto/rea)<br>409,334 ★ |
+| **개발자 도구** | [UniteCuttlefishBolt/Canva-Pro](https://github.com/UniteCuttlefishBolt/Canva-Pro)<br>296/일 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>56.6/일 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>53.8/일 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>70.6/일 | [oven-sh/bun](https://github.com/oven-sh/bun)<br>96,466 ★ |
+| **보안** | [petawheelwrightseek/Adobe-Substance-3d](https://github.com/petawheelwrightseek/Adobe-Substance-3d)<br>232/일 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>32.7/일 | [projectdiscovery/nuclei](https://github.com/projectdiscovery/nuclei)<br>29.7/일 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>27.7/일 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>38,849 ★ |
+| **Web / 프론트엔드** | [designfuchen/word-atlas](https://github.com/designfuchen/word-atlas)<br>661/일 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>103/일 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>84.6/일 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>83.0/일 | [facebook/react](https://github.com/facebook/react)<br>251,754 ★ |
+| **인프라** | [zeabur-oss/zeabur](https://github.com/zeabur-oss/zeabur)<br>91.1/일 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>44.1/일 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>83.4/일 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>32.4/일 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes)<br>128,521 ★ |
+| **디자인 / 크리에이티브** | [Ambererforum/Designcenter-NX](https://github.com/Ambererforum/Designcenter-NX)<br>233/일 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>65.6/일 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>64.6/일 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>73.9/일 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>134,831 ★ |
+| **데이터** | [atlanai/analytics-playbook](https://github.com/atlanai/analytics-playbook)<br>56.5/일 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>40.0/일 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>31.1/일 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>25.7/일 | [apache/superset](https://github.com/apache/superset)<br>75,365 ★ |
 
 <details><summary>카테고리</summary>
 

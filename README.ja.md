@@ -1,15 +1,30 @@
 [English](README.md) | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | **日本語** | [한국어](README.ko.md)
 
-# GitHub Risers
+# GitHub Risers：スター増加速度で並べるカテゴリ別トレンドランキング
 
-> スターの増える速さで並べたオープンソースのカテゴリ別ランキング。AI を先頭に。
+> 総スター数ではなく、スターが増える速さで並べた GitHub トレンド（Star Growth）。AI をメインに、開発者ツール・セキュリティ・Web/フロントエンド・インフラ・デザイン・データも。1 日 2 回更新、各カテゴリに 7 日以内の新着ランキング付き。
 
-多くのリストは総スター数順なので、古いプロジェクトが居座り、新しく伸びているものが埋もれます。GitHub Risers はカテゴリ別に分け（AI がメイン）、直近 7 / 30 / 365 日の増加速度で順位を付け、各カテゴリに 7 日新着枠もあります。総スター数はカテゴリ末尾。分類ルール：[docs/CATEGORIES.md](docs/CATEGORIES.md)。
+総スター数順のリストでは古い大物が居座り、いま伸びているものが埋もれます。GitHub Risers は 1 日あたりの増加スター数（直近 7・30・365 日）で並べ、カテゴリごとに表示します。AI がメインのランキングです。各カテゴリは、直近 7 日以内に作られたリポジトリの「新着」ランキング、週・月・年の増加ランキング、最後に総スター数の順です。数値はすべて GitHub API から取得しています。分類ルール：[docs/CATEGORIES.md](docs/CATEGORIES.md)。
 
 GitHub API から取得：2026-10-30 07:50:31（UTC）。
+1 日 2 回更新：北京時間 0 時（UTC+8）とロサンゼルス時間 0 時（America/Los_Angeles、夏時間に追従）。更新ごとに時間帯別に保存されます。
 各カテゴリのランキングは、全 70 収録プロジェクトのうち上位最大 20 件を表示します。
 
 以下が最新のランキングです。更新のたびに時間帯ごとにも保存しています：[ランキング履歴](rankings/README.ja.md) · [latest/rankings.ja.md](latest/rankings.ja.md)。
+
+## 今回のカテゴリ別 1 位
+
+各カテゴリの各ランキングの 1 位を、下の実データからスクリプトで自動生成しています。「なし」は今回その枠に該当がないことを示します。
+
+| カテゴリ | 新着 1 位（7 日） | 今週 1 位 | 今月 1 位 | 今年 1 位 | 総スター 1 位 |
+|---|---|---|---|---|---|
+| **AI** ★ メイン | [rddmwmddr/android-ad-cleaner](https://github.com/rddmwmddr/android-ad-cleaner)<br>800/日 | [morluto/rea](https://github.com/morluto/rea)<br>5,942/日 | [morluto/rea](https://github.com/morluto/rea)<br>13,623/日 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)<br>3,412/日 | [morluto/rea](https://github.com/morluto/rea)<br>409,334 ★ |
+| **開発者ツール** | [UniteCuttlefishBolt/Canva-Pro](https://github.com/UniteCuttlefishBolt/Canva-Pro)<br>296/日 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>56.6/日 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>53.8/日 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>70.6/日 | [oven-sh/bun](https://github.com/oven-sh/bun)<br>96,466 ★ |
+| **セキュリティ** | [petawheelwrightseek/Adobe-Substance-3d](https://github.com/petawheelwrightseek/Adobe-Substance-3d)<br>232/日 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>32.7/日 | [projectdiscovery/nuclei](https://github.com/projectdiscovery/nuclei)<br>29.7/日 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>27.7/日 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>38,849 ★ |
+| **Web / フロントエンド** | [designfuchen/word-atlas](https://github.com/designfuchen/word-atlas)<br>661/日 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>103/日 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>84.6/日 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>83.0/日 | [facebook/react](https://github.com/facebook/react)<br>251,754 ★ |
+| **インフラ** | [zeabur-oss/zeabur](https://github.com/zeabur-oss/zeabur)<br>91.1/日 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>44.1/日 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>83.4/日 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>32.4/日 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes)<br>128,521 ★ |
+| **デザイン / クリエイティブ** | [Ambererforum/Designcenter-NX](https://github.com/Ambererforum/Designcenter-NX)<br>233/日 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>65.6/日 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>64.6/日 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>73.9/日 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>134,831 ★ |
+| **データ** | [atlanai/analytics-playbook](https://github.com/atlanai/analytics-playbook)<br>56.5/日 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>40.0/日 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>31.1/日 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>25.7/日 | [apache/superset](https://github.com/apache/superset)<br>75,365 ★ |
 
 <details><summary>カテゴリ</summary>
 

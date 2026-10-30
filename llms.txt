@@ -1,6 +1,6 @@
 # GitHub Risers（GitHub 飙升榜）
 
-> Open-source projects ranked by how fast they gain stars, grouped by category (AI first). Real numbers from the GitHub API every day at Beijing and Los Angeles midnight. MIT license.
+> GitHub trending ranked by star growth, not total stars. AI first, plus developer tools, security, web, infrastructure, design and data; 7-day new-repo board per category. Real numbers from the GitHub API, updated twice a day (Beijing 00:00 and Los Angeles 00:00). MIT license.
 
 ## Docs
 - [README](https://github.com/jammyfu/github-risers#readme): English rankings

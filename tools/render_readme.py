@@ -153,20 +153,73 @@ def category_block(cat: dict, st: list[dict], projects: list[dict], cats: dict,
     return out
 
 
+def _rate(x: float) -> str:
+    return f"{x:,.0f}" if x >= 100 else f"{x:,.1f}"
+
+
+def _leader_cell(name: str | None, url: str | None, tail: str, lang: str) -> str:
+    if not name:
+        return S[lang]["none"]
+    return f"[{name}]({url})<br>{tail}"
+
+
+def leaders(stats: dict, projects: list[dict], cat_id: str, newcomers_block: dict | None) -> dict[str, dict | None]:
+    """#1 of each board in one category, taken from the run's real data (None = board empty/missing)."""
+    cat_stats = [p for p in stats["projects"] if p.get("category") == cat_id]
+    out: dict[str, dict | None] = {}
+    if newcomers_block and newcomers_block.get("ok") and newcomers_block.get("items"):
+        out["new"] = newcomers_block["items"][0]
+    else:
+        out["new"] = None
+    for key in ("week", "month", "year", "total"):
+        r = core.rank(cat_stats, key)
+        out[key] = r[0] if r else None
+    return out
+
+
+def tops_table(stats: dict, projects: list[dict], cats: dict, lang: str) -> str:
+    s = S[lang]
+    metas = {p["name"]: p for p in projects}
+    root = stats.get("newcomers") or {}
+    lines = [
+        f"| {s['tops_h_cat']} | {s['idx_h_new']} | {s['idx_h_week']} | {s['idx_h_month']} | {s['idx_h_year']} | {s['tops_h_total']} |",
+        "|---|---|---|---|---|---|",
+    ]
+    for cat in ordered_categories(cats):
+        if "categories" in root:
+            block = (root.get("categories") or {}).get(cat["id"])
+        else:
+            block = root if cat.get("primary") else None
+        led = leaders(stats, projects, cat["id"], block)
+        cells = []
+        n = led["new"]
+        cells.append(_leader_cell(n["name"], n["url"], s["idx_perday"].format(n=_rate(n["per_day"])), lang) if n else s["none"])
+        for key in ("week", "month", "year"):
+            p = led[key]
+            cells.append(_leader_cell(p["name"], metas[p["name"]]["url"],
+                                      s["idx_perday"].format(n=_rate(p["growth"][key]["per_day"])), lang) if p else s["none"])
+        p = led["total"]
+        cells.append(_leader_cell(p["name"], metas[p["name"]]["url"], f"{fmt_int(p['stars'])} ★", lang) if p else s["none"])
+        mark = f" ★ {s['primary_mark']}" if cat.get("primary") else ""
+        lines.append(f"| **{cat['name'][lang]}**{mark} | " + " | ".join(cells) + " |")
+    return "\n".join(lines)
+
+
 def render(lang: str, projects: list[dict], stats: dict, cats: dict, tr: dict | None = None) -> str:
     s = S[lang]
     st = stats["projects"]
     out: list[str] = [switcher(lang), ""]
-    if lang == "en":
-        out += ["> 💡 **中文读者请看**：[简体中文版 👉](README.zh-Hans.md)", ""]
     out += [
         f"# {s.get('title', 'GitHub Risers')}", "",
         f"> {s['tagline']}", "",
         s["intro"], "",
         s["updated"].format(ts=stats["generated_at"].replace("T", " ").replace("Z", "")),
+        s["schedule"],
         s["shown"].format(n=TOP_N, total=len(projects)), "",
         s["history"].format(index=f"rankings/{archive.index_name(lang)}",
                             latest=f"latest/{archive.rankings_name(lang)}"), "",
+        f"## {s['tops_title']}", "", s["tops_intro"], "",
+        tops_table(stats, projects, cats, lang), "",
         f"<details><summary>{s['cat_title']}</summary>", "",
         "| | |", "|---|---|",
     ]

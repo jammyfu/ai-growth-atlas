@@ -1,15 +1,30 @@
 [English](README.md) | [简体中文](README.zh-Hans.md) | **繁體中文** | [日本語](README.ja.md) | [한국어](README.ko.md)
 
-# GitHub 飆升榜（GitHub Risers）
+# GitHub 飆升榜（GitHub Risers）：依漲星速度排的分類漲星榜
 
-> 依星號成長速度（而不是總星數）替開源專案分門別類排名——AI 主榜置頂。
+> 依漲星速度、而不是總星號數排名的 GitHub Trending 漲星榜（Star Growth）。AI 是主榜，另有開發者工具、資安、Web/前端、基礎建設、設計/創意、資料等分類；每天更新兩次，每個分類都有 7 天新晉榜。
 
-多數榜單依總星號數排序，老專案長期霸占榜首，新近崛起的專案反而被埋沒。GitHub 飆升榜把儲存庫分成多個分類（AI 是主榜），計算近 7 / 30 / 365 天的日均新增星號並依增速排序；每個分類還有「7 天新晉」榜，總星榜放在分類末尾。分類規則見 [docs/CATEGORIES.md](docs/CATEGORIES.md)。
+多數榜單依總星號數排序，老專案長期霸占榜首，正在爆發的新專案反而被埋沒。GitHub 飆升榜依「每天新增多少星號」來排：統計近 7 天、30 天和 365 天的日均漲星，並依分類呈現，AI 是預設置頂的主榜。每個分類先看「7 天新晉」榜（最近 7 天內建立的儲存庫），再看週、月、年漲星榜，總星號榜放在最後。資料全部來自 GitHub API。分類規則請見 [docs/CATEGORIES.md](docs/CATEGORIES.md)。
 
 資料於 2026-10-30 07:50:31（UTC）從 GitHub API 取得。
+每天更新兩次：北京時間 0 點（UTC+8）和美西洛杉磯時間 0 點（America/Los_Angeles，隨夏令時間變動）。每次更新都會依各自的時段單獨存檔。
 每個分類榜單最多顯示全部 70 個已收錄專案中的前 20 名。
 
 下方表格為最新榜單。每次更新還會依時段另存一份：[榜單歷史](rankings/README.zh-Hant.md) · [latest/rankings.zh-Hant.md](latest/rankings.zh-Hant.md)。
+
+## 本期各類榜首
+
+每個分類裡每張榜的第 1 名，由腳本根據下方的真實資料自動產生。「無」表示本次執行該榜沒有項目。
+
+| 分類 | 新儲存庫第 1 名（7 天） | 本週第 1 名 | 本月第 1 名 | 今年第 1 名 | 總星號第 1 名 |
+|---|---|---|---|---|---|
+| **人工智慧** ★ 主榜 | [rddmwmddr/android-ad-cleaner](https://github.com/rddmwmddr/android-ad-cleaner)<br>800/天 | [morluto/rea](https://github.com/morluto/rea)<br>5,942/天 | [morluto/rea](https://github.com/morluto/rea)<br>13,623/天 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)<br>3,412/天 | [morluto/rea](https://github.com/morluto/rea)<br>409,334 ★ |
+| **開發者工具** | [UniteCuttlefishBolt/Canva-Pro](https://github.com/UniteCuttlefishBolt/Canva-Pro)<br>296/天 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>56.6/天 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>53.8/天 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>70.6/天 | [oven-sh/bun](https://github.com/oven-sh/bun)<br>96,466 ★ |
+| **資安** | [petawheelwrightseek/Adobe-Substance-3d](https://github.com/petawheelwrightseek/Adobe-Substance-3d)<br>232/天 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>32.7/天 | [projectdiscovery/nuclei](https://github.com/projectdiscovery/nuclei)<br>29.7/天 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>27.7/天 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>38,849 ★ |
+| **Web / 前端** | [designfuchen/word-atlas](https://github.com/designfuchen/word-atlas)<br>661/天 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>103/天 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>84.6/天 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>83.0/天 | [facebook/react](https://github.com/facebook/react)<br>251,754 ★ |
+| **基礎建設** | [zeabur-oss/zeabur](https://github.com/zeabur-oss/zeabur)<br>91.1/天 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>44.1/天 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>83.4/天 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>32.4/天 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes)<br>128,521 ★ |
+| **設計 / 創意** | [Ambererforum/Designcenter-NX](https://github.com/Ambererforum/Designcenter-NX)<br>233/天 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>65.6/天 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>64.6/天 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>73.9/天 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>134,831 ★ |
+| **資料** | [atlanai/analytics-playbook](https://github.com/atlanai/analytics-playbook)<br>56.5/天 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>40.0/天 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>31.1/天 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>25.7/天 | [apache/superset](https://github.com/apache/superset)<br>75,365 ★ |
 
 <details><summary>分類</summary>
 
