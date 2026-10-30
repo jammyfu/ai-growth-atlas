@@ -11,6 +11,13 @@
       "ko": "리버서가 며칠씩 어셈블리를 노려보던 일을, AI가 프로그램이 무슨 일을 하는지 바로 알려준다. Ghidra와 연결되어 읽을 수 없던 바이너리를 한 문장으로 설명한다."
     },
     "hook": {
+      "en": "Can't read a program? Let AI explain it to you",
+      "zh-Hans": "看不懂的程序，让 AI 讲给你听",
+      "zh-Hant": "看不懂的程式，讓 AI 講給你聽",
+      "ja": "読めないプログラムは、AI に説明させよう",
+      "ko": "읽을 수 없는 프로그램, AI가 설명해 준다"
+    },
+    "hook_prev": {
       "en": "Let AI reverse-engineer and clone any software",
       "zh-Hans": "让 AI 帮你逆向、复刻任何软件",
       "zh-Hant": "讓 AI 幫你逆向、復刻任何軟體",
@@ -30,6 +37,13 @@
       "ko": "웹 페이지 없이 터미널에서 바로 AI로 코딩한다. 여러 모델을 지원하고 Claude Code·Codex에 맞서는 무료 오픈소스."
     },
     "hook": {
+      "en": "AI writes your code right in the terminal, no browser",
+      "zh-Hans": "不开浏览器，终端里就有 AI 写代码",
+      "zh-Hant": "不開瀏覽器，終端裡就有 AI 寫程式碼",
+      "ja": "ブラウザなしで、ターミナルの AI がコードを書く",
+      "ko": "브라우저 없이 터미널에서 AI가 코드를 쓴다"
+    },
+    "hook_prev": {
       "en": "Free open-source AI coding in your terminal",
       "zh-Hans": "终端里的免费开源 AI 编程助手",
       "zh-Hant": "終端裡的免費開源 AI 程式設計助手",
@@ -49,6 +63,13 @@
       "ko": "한 데스크톱에서 여러 AI 코딩 에이전트를 동시에 돌려 누가 더 잘 짜는지 비교한다. 에이전트마다 작업 공간이 따로라 서로 방해하지 않는다."
     },
     "hook": {
+      "en": "Several AIs write at once, see which one works best",
+      "zh-Hans": "几个 AI 一起写，谁好用一眼看出",
+      "zh-Hant": "幾個 AI 一起寫，誰好用一眼看出",
+      "ja": "複数の AI に書かせて、どれが良いか一目で",
+      "ko": "AI 여러 개가 함께 쓰니 뭐가 나은지 한눈에"
+    },
+    "hook_prev": {
       "en": "Run many AI coding agents side by side",
       "zh-Hans": "多个 AI 编程智能体同台比拼",
       "zh-Hant": "多個 AI 程式設計代理同台比拼",
@@ -68,6 +89,13 @@
       "ko": "AI가 자기 코드의 취약점을 직접 찾게 하고, 다른 AI를 불러 반박까지 시킨다. 코딩 에이전트가 쓰는 불안전한 코드를 잡아낸다."
     },
     "hook": {
+      "en": "After AI writes the code, a second AI picks it apart",
+      "zh-Hans": "AI 写完代码，再请一个 AI 挑刺",
+      "zh-Hant": "AI 寫完程式碼，再請一個 AI 挑刺",
+      "ja": "AI が書いたコードを、別の AI が突っ込む",
+      "ko": "AI가 쓴 코드를 다른 AI가 다시 짚어 준다"
+    },
+    "hook_prev": {
       "en": "One AI audits the code, a second AI challenges it",
       "zh-Hans": "两个 AI 互相挑代码漏洞",
       "zh-Hant": "兩個 AI 互相挑程式碼漏洞",
@@ -87,6 +115,13 @@
       "ko": "웹 페이지를 쓰듯 영상을 쓰면 AI가 바로 렌더링한다. 코딩 에이전트도 쓸 수 있어 편집 소프트웨어를 따로 배울 필요가 없다."
     },
     "hook": {
+      "en": "Can't edit video? Write it like a web page",
+      "zh-Hans": "不会剪辑，写网页一样就能出片",
+      "zh-Hant": "不會剪輯，寫網頁一樣就能出片",
+      "ja": "編集できなくても、Web ページ感覚で動画に",
+      "ko": "편집 몰라도 웹페이지처럼 쓰면 영상이 된다"
+    },
+    "hook_prev": {
       "en": "Write video like a web page, let AI render it",
       "zh-Hans": "像写网页一样做视频",
       "zh-Hant": "像寫網頁一樣做影片",
@@ -106,6 +141,13 @@
       "ko": "AI가 코드에 군더더기를 잔뜩 붙이는 버릇을 고친다. 게으른 베테랑처럼 안 써도 되면 쓰지 않고, 쓸 거면 제대로 쓰게 가르친다."
     },
     "hook": {
+      "en": "Less filler code from AI, the needed code done right",
+      "zh-Hans": "让 AI 少写废代码，该写的写对",
+      "zh-Hant": "讓 AI 少寫廢程式碼，該寫的寫對",
+      "ja": "AI の無駄なコードを減らし、必要な所は正しく",
+      "ko": "AI의 쓸데없는 코드는 줄이고 필요한 건 정확히"
+    },
+    "hook_prev": {
       "en": "Stops AI from padding its code",
       "zh-Hans": "治好 AI 写代码灌水",
       "zh-Hant": "治好 AI 寫程式碼灌水",
@@ -125,6 +167,13 @@
       "ko": "코드베이스 전체를 한 장의 지도로 만들어 어떤 파일이 서로 호출하는지 AI가 한눈에 파악한다. 큰 프로젝트를 처음부터 끝까지 읽을 필요가 없다."
     },
     "hook": {
+      "en": "Too big to read? Start with this map of the code",
+      "zh-Hans": "大项目看不过来，先看这张地图",
+      "zh-Hant": "大專案看不過來，先看這張地圖",
+      "ja": "大きすぎて読めない時は、まずこの地図から",
+      "ko": "너무 커서 못 읽겠다면 이 지도부터 보자"
+    },
+    "hook_prev": {
       "en": "Turn a codebase into a map AI can read",
       "zh-Hans": "把整个代码库变成一张地图",
       "zh-Hant": "把整個程式碼庫變成一張地圖",
@@ -144,6 +193,13 @@
       "ko": "챗봇이 아니라 실제로 일을 해주는 AI. 시스템을 가로질러 동작하고 로컬에 배포하며 데이터가 내 컴퓨터를 떠나지 않는다."
     },
     "hook": {
+      "en": "An AI that finishes the job, data stays on your machine",
+      "zh-Hans": "能把事做完的 AI，数据留在本机",
+      "zh-Hant": "能把事做完的 AI，資料留在本機",
+      "ja": "仕事を終わらせる AI。データは自分の PC に残る",
+      "ko": "일을 끝내는 AI, 데이터는 내 컴퓨터에 남는다"
+    },
+    "hook_prev": {
       "en": "An AI that gets work done, on your own machine",
       "zh-Hans": "真能干活的 AI，数据不出电脑",
       "zh-Hant": "真能幹活的 AI，資料不出電腦",
@@ -163,6 +219,13 @@
       "ko": "DeepSeek이 공개한 오픈소스 에이전트 하네스(`dsh`). '모든 것이 플러그인'이라는 구조로 필요한 기능을 조립해 쓴다. 개발자 프리뷰 단계라 호환성이 깨지는 변경이 생길 수 있다."
     },
     "hook": {
+      "en": "Pick plugins and build the agent you want",
+      "zh-Hans": "想要什么智能体，用插件自己拼",
+      "zh-Hant": "想要什麼代理，用外掛自己拼",
+      "ja": "欲しいエージェントは、プラグインで自分で組む",
+      "ko": "원하는 에이전트를 플러그인으로 직접 조립"
+    },
+    "hook_prev": {
       "en": "DeepSeek's open-source agent kit, built from plugins",
       "zh-Hans": "DeepSeek 开源智能体，插件自由拼装",
       "zh-Hant": "DeepSeek 開源代理，外掛自由拼裝",
@@ -182,6 +245,13 @@
       "ko": "코딩 에이전트를 위한 종합 강화 패키지. 스킬, 사용하며 배우는 습관, 메모리, 보안 점검, 조사부터 하고 구현하는 개발 흐름을 담았고 Claude Code·Codex·OpenCode·Cursor 등에서 쓸 수 있다."
     },
     "hook": {
+      "en": "Give your coding AI memory, skills and safety checks",
+      "zh-Hans": "给编程 AI 加记忆、技能和安全检查",
+      "zh-Hant": "給程式設計 AI 加記憶、技能和安全檢查",
+      "ja": "コーディング AI に記憶・スキル・安全チェックを",
+      "ko": "코딩 AI에 기억, 스킬, 보안 점검을 더한다"
+    },
+    "hook_prev": {
       "en": "Performance tune-up kit for coding agents",
       "zh-Hans": "给编程智能体的性能调优套件",
       "zh-Hant": "給程式設計代理的效能調優套件",
@@ -201,6 +271,13 @@
       "ko": "메뉴 막대 앱과 로컬 게이트웨이로, 어떤 코딩 에이전트에서든 원하는 모델을 쓸 수 있다(Claude Code에 Kimi, Codex에 DeepSeek). 할당량이 떨어지면 다음 계정으로 자동 전환한다."
     },
     "hook": {
+      "en": "Swap models in your coding AI; quota runs out, it carries on",
+      "zh-Hans": "编程 AI 换模型，额度用完自动续",
+      "zh-Hant": "程式設計 AI 換模型，額度用完自動續",
+      "ja": "コーディング AI のモデルを替え、枠切れでも続行",
+      "ko": "코딩 AI의 모델을 바꾸고, 한도가 차도 이어서"
+    },
+    "hook_prev": {
       "en": "Use any model in any coding agent",
       "zh-Hans": "任意编程智能体，任意模型",
       "zh-Hant": "任意程式設計代理，任意模型",
@@ -220,6 +297,13 @@
       "ko": "AI 에이전트에게 인터넷 전체를 보여주는 도구. 명령 하나로 트위터·Reddit·YouTube·GitHub·Bilibili·샤오홍슈를 읽고 검색하며 API 비용이 들지 않는다."
     },
     "hook": {
+      "en": "Twitter, YouTube, Xiaohongshu: let AI search them for you",
+      "zh-Hans": "推特油管小红书，AI 都能帮你搜",
+      "zh-Hant": "推特油管小紅書，AI 都能幫你搜",
+      "ja": "Twitter・YouTube・小紅書を AI が代わりに検索",
+      "ko": "트위터·유튜브·샤오홍슈, AI가 대신 검색"
+    },
+    "hook_prev": {
       "en": "Give your AI agent eyes on the whole internet",
       "zh-Hans": "让 AI 智能体看到整个互联网",
       "zh-Hant": "讓 AI 代理看到整個網路",
@@ -239,6 +323,13 @@
       "ko": "코딩 에이전트에게 '감각'을 주는 스킬 모음. 아트 디렉션, 실제 참고 이미지, 브라우저 자체 점검으로 흔해 빠진 AI 랜딩 페이지를 만들지 않게 한다."
     },
     "hook": {
+      "en": "Stop AI from making every page look the same",
+      "zh-Hans": "别再让 AI 做出千篇一律的页面",
+      "zh-Hant": "別再讓 AI 做出千篇一律的頁面",
+      "ja": "AI が同じ見た目のページばかり作るのを止める",
+      "ko": "AI가 똑같은 페이지만 만들지 않게"
+    },
+    "hook_prev": {
       "en": "Give coding agents good design taste",
       "zh-Hans": "让编程智能体有审美",
       "zh-Hant": "讓程式設計代理有審美",
@@ -258,6 +349,13 @@
       "ko": "코딩 에이전트에 디자인 감각을 더해 주는 스킬. 여러 플랫폼과 프레임워크에서 전문가다운 UI/UX를 만들게 한다."
     },
     "hook": {
+      "en": "UIs built by AI that look professionally designed",
+      "zh-Hans": "AI 做的界面，看着像专业设计",
+      "zh-Hant": "AI 做的介面，看著像專業設計",
+      "ja": "AI が作る画面を、プロのデザインらしく",
+      "ko": "AI가 만든 화면을 전문가 디자인처럼"
+    },
+    "hook_prev": {
       "en": "Make AI-built UIs look professional",
       "zh-Hans": "让 AI 做的界面更专业",
       "zh-Hant": "讓 AI 做的介面更專業",
@@ -277,6 +375,13 @@
       "ko": "무료 MIT 라이선스 AI 게이트웨이. 하나의 엔드포인트로 수백 개 제공자와 모델에 연결하고 할당량이 떨어지면 자동 전환한다. Claude Code·Codex·Cursor·OpenCode·Cline·Copilot과 함께 쓸 수 있다."
     },
     "hook": {
+      "en": "One entry to hundreds of models, quota switches itself",
+      "zh-Hans": "一个入口接几百个模型，额度自动切",
+      "zh-Hant": "一個入口接幾百個模型，額度自動切",
+      "ja": "入口 1 つで何百ものモデル、枠は自動で切替",
+      "ko": "입구 하나로 수백 개 모델, 한도는 자동 전환"
+    },
+    "hook_prev": {
       "en": "One free gateway to hundreds of AI models",
       "zh-Hans": "一个免费入口，接上百个模型",
       "zh-Hant": "一個免費入口，接上百個模型",
@@ -296,6 +401,13 @@
       "ko": "AI 에이전트 팀을 회사처럼 운영하는 오픈소스 앱. 목표를 배정하고 예산을 정하고 작업과 비용을 한 대시보드에서 추적한다. OpenClaw가 직원이라면 Paperclip은 회사다."
     },
     "hook": {
+      "en": "Many AIs at work, tasks and costs on one screen",
+      "zh-Hans": "一群 AI 干活，任务和花费一屏看",
+      "zh-Hant": "一群 AI 幹活，任務和花費一屏看",
+      "ja": "AI が働く様子とコストを 1 画面で",
+      "ko": "AI 여럿의 작업과 비용을 한 화면에서"
+    },
+    "hook_prev": {
       "en": "Run a team of AI agents like a company",
       "zh-Hans": "像开公司一样管理 AI 智能体团队",
       "zh-Hant": "像開公司一樣管理 AI 代理團隊",
@@ -315,6 +427,13 @@
       "ko": "Claude Code·Codex·Gemini CLI·OpenCode·OpenClaw 등을 한곳에서 관리하는 데스크톱 앱. API 제공자를 한 번에 바꾸고 MCP·스킬·프롬프트도 설정 파일을 손으로 고치지 않고 관리한다."
     },
     "hook": {
+      "en": "Switch providers in one click, no config editing",
+      "zh-Hans": "换接口不用改配置，一键切",
+      "zh-Hant": "換介面不用改配置，一鍵切",
+      "ja": "設定ファイルを触らず、ワンクリックで切替",
+      "ko": "설정 파일 안 고치고 원클릭으로 전환"
+    },
+    "hook_prev": {
       "en": "Switch AI coding tools' API providers in one click",
       "zh-Hans": "一键切换 AI 编程工具的接口",
       "zh-Hant": "一鍵切換 AI 程式設計工具的介面",
@@ -334,6 +453,13 @@
       "ko": "Nous Research가 만든 스스로 개선하는 AI 에이전트. 학습 루프가 내장되어 경험에서 스킬을 만들고 쓰면서 다듬으며, Telegram·Discord·Slack 등에서도 대화할 수 있다."
     },
     "hook": {
+      "en": "An AI helper that gets better the more you use it",
+      "zh-Hans": "越用越会干活的 AI 助手",
+      "zh-Hant": "越用越會幹活的 AI 助手",
+      "ja": "使うほど仕事が上手くなる AI アシスタント",
+      "ko": "쓸수록 일을 더 잘하는 AI 도우미"
+    },
+    "hook_prev": {
       "en": "A self-improving AI agent that learns skills",
       "zh-Hans": "会自我改进的 AI 智能体",
       "zh-Hant": "會自我改進的 AI 代理",
@@ -353,6 +479,13 @@
       "ko": "NVIDIA가 만든 AI 에이전트 스킬 보안 스캐너. 설치 전에 취약점, 프롬프트 인젝션, 데이터 유출, 공급망 위험을 검사한다. Claude Code·Codex·MCP 스킬을 지원한다."
     },
     "hook": {
+      "en": "Check for traps before you install an AI skill",
+      "zh-Hans": "装 AI 技能前，先查有没有坑",
+      "zh-Hant": "裝 AI 技能前，先查有沒有坑",
+      "ja": "AI スキルを入れる前に、罠がないか確認",
+      "ko": "AI 스킬 설치 전에 함정부터 확인"
+    },
+    "hook_prev": {
       "en": "Scan AI agent skills for risks before you install",
       "zh-Hans": "装技能之前，先扫一遍风险",
       "zh-Hant": "裝技能之前，先掃一遍風險",
@@ -372,6 +505,13 @@
       "ko": "코딩 에이전트를 위한 실무급 엔지니어링 스킬 모음. 시니어 엔지니어가 명세부터 출시까지 지키는 워크플로와 품질 게이트를 담아 에이전트가 매번 따르게 한다."
     },
     "hook": {
+      "en": "Teach AI the working rules of veteran engineers",
+      "zh-Hans": "把老工程师的做事规矩教给 AI",
+      "zh-Hant": "把老工程師的做事規矩教給 AI",
+      "ja": "ベテランエンジニアの仕事の流儀を AI に教える",
+      "ko": "베테랑 엔지니어의 일하는 방식을 AI에게"
+    },
+    "hook_prev": {
       "en": "Senior-engineer habits for your coding agent",
       "zh-Hans": "把资深工程师的做法教给 AI",
       "zh-Hant": "把資深工程師的做法教給 AI",
@@ -391,6 +531,13 @@
       "ko": "세션이 바뀌어도 에이전트가 기억하게 한다. 작업 내용을 기록하고 AI로 압축해 다음 세션에 관련 내용을 다시 넣어 준다. Claude Code·Codex·Gemini·OpenCode 등에서 쓸 수 있다."
     },
     "hook": {
+      "en": "AI no longer forgets where it left off",
+      "zh-Hans": "AI 不再忘记上次做到哪",
+      "zh-Hant": "AI 不再忘記上次做到哪",
+      "ja": "AI が前回の続きを忘れなくなる",
+      "ko": "AI가 지난번 하던 일을 잊지 않는다"
+    },
+    "hook_prev": {
       "en": "Gives AI agents memory across sessions",
       "zh-Hans": "让智能体记住上次做过什么",
       "zh-Hant": "讓代理記住上次做過什麼",
@@ -410,6 +557,13 @@
       "ko": "Anthropic이 공개한 Agent Skills 저장소. 지침·스크립트·리소스를 담은 폴더를 Claude가 필요할 때 불러온다. 창작부터 웹 앱 테스트까지 다양해 직접 스킬을 만들 때 참고하기 좋다."
     },
     "hook": {
+      "en": "Learn to write Claude skills from the official examples",
+      "zh-Hans": "Claude 技能怎么写，照着官方学",
+      "zh-Hant": "Claude 技能怎麼寫，照著官方學",
+      "ja": "Claude スキルの書き方は、公式の例で学ぶ",
+      "ko": "Claude 스킬 작성법은 공식 예제로 배운다"
+    },
+    "hook_prev": {
       "en": "Anthropic's public Agent Skills examples",
       "zh-Hans": "Anthropic 官方智能体技能库",
       "zh-Hant": "Anthropic 官方代理技能庫",
@@ -429,6 +583,13 @@
       "ko": "Rust로 만든 초고속 Python 패키지·프로젝트 관리자."
     },
     "hook": {
+      "en": "Install Python packages without the wait",
+      "zh-Hans": "装 Python 包，不用再干等",
+      "zh-Hant": "裝 Python 包，不用再幹等",
+      "ja": "Python パッケージの導入で待たされない",
+      "ko": "Python 패키지 설치, 더 이상 기다리지 않는다"
+    },
+    "hook_prev": {
       "en": "Blazing-fast Python package manager",
       "zh-Hans": "极快的 Python 包管理器",
       "zh-Hant": "極快的 Python 包管理器",
@@ -448,6 +609,13 @@
       "ko": "런타임·번들러·테스트·패키지 관리자를 한데 모은 JavaScript 툴킷."
     },
     "hook": {
+      "en": "Run, bundle, test, install: one tool does it all",
+      "zh-Hans": "运行打包测试装包，一个工具全包",
+      "zh-Hant": "執行打包測試裝包，一個工具全包",
+      "ja": "実行・バンドル・テスト・導入を 1 つで",
+      "ko": "실행·번들·테스트·설치를 도구 하나로"
+    },
+    "hook_prev": {
       "en": "All-in-one JavaScript runtime and toolkit",
       "zh-Hans": "JavaScript 一站式工具箱",
       "zh-Hant": "JavaScript 一站式工具箱",
@@ -467,6 +635,13 @@
       "ko": "웹 프로젝트를 위한 고속 포맷터·린터. JS/TS/JSON/CSS 지원."
     },
     "hook": {
+      "en": "Format and check web code with one tool",
+      "zh-Hans": "网页代码格式和检查，一个工具搞定",
+      "zh-Hant": "網頁程式碼格式和檢查，一個工具搞定",
+      "ja": "Web コードの整形とチェックを 1 つで",
+      "ko": "웹 코드 정리와 점검을 도구 하나로"
+    },
+    "hook_prev": {
       "en": "Fast formatter and linter for web code",
       "zh-Hans": "快速的网页代码格式化与检查",
       "zh-Hant": "快速的網頁程式碼格式化與檢查",
@@ -486,6 +661,13 @@
       "ko": "Atom·Tree-sitter 제작진의 고성능 멀티플레이어 코드 에디터."
     },
     "hook": {
+      "en": "Opens fast, and you can code together with others",
+      "zh-Hans": "打开就快，还能多人一起写代码",
+      "zh-Hant": "開啟就快，還能多人一起寫程式碼",
+      "ja": "すぐ開けて、みんなで一緒にコードを書ける",
+      "ko": "열자마자 빠르고, 함께 코딩도 된다"
+    },
+    "hook_prev": {
       "en": "A fast code editor you can share with others",
       "zh-Hans": "高性能、可多人协作的编辑器",
       "zh-Hant": "高效能、可多人協作的編輯器",
@@ -505,6 +687,13 @@
       "ko": "LSP·tree-sitter·다중 선택을 내장한 모달 텍스트 에디터."
     },
     "hook": {
+      "en": "No pile of plugins: completion and highlighting built in",
+      "zh-Hans": "不装一堆插件，补全高亮都现成",
+      "zh-Hant": "不裝一堆外掛，補全高亮都現成",
+      "ja": "プラグイン不要、補完とハイライトは最初から",
+      "ko": "플러그인 없이 자동완성·하이라이트가 기본"
+    },
+    "hook_prev": {
       "en": "Modal editor with LSP built in",
       "zh-Hans": "自带 LSP 的模态编辑器",
       "zh-Hant": "自帶 LSP 的模態編輯器",
@@ -524,6 +713,13 @@
       "ko": "다언어 런타임과 환경 관리를 한데 모은 개발 도구 버전 관리자."
     },
     "hook": {
+      "en": "Every language version, managed by one tool",
+      "zh-Hans": "各种语言版本，一个工具管齐",
+      "zh-Hant": "各種語言版本，一個工具管齊",
+      "ja": "言語のバージョンを 1 つのツールでまとめて管理",
+      "ko": "여러 언어 버전을 도구 하나로 관리"
+    },
+    "hook_prev": {
       "en": "One tool for all your dev tool versions",
       "zh-Hans": "一个工具管所有开发工具版本",
       "zh-Hant": "一個工具管所有開發工具版本",
@@ -543,6 +739,13 @@
       "ko": "이슈·PR·Actions 등을 다루는 GitHub 공식 CLI."
     },
     "hook": {
+      "en": "Handle GitHub from the command line, no browser",
+      "zh-Hans": "不开网页，命令行里处理 GitHub",
+      "zh-Hant": "不開網頁，命令列裡處理 GitHub",
+      "ja": "ブラウザを開かず、コマンドラインで GitHub を操作",
+      "ko": "브라우저 없이 명령줄에서 GitHub 처리"
+    },
+    "hook_prev": {
       "en": "GitHub in your terminal, from GitHub itself",
       "zh-Hans": "GitHub 官方命令行工具",
       "zh-Hant": "GitHub 官方命令列工具",
@@ -562,6 +765,13 @@
       "ko": "정규식으로 디렉터리를 재귀 검색. grep보다 빠름."
     },
     "hook": {
+      "en": "Search a whole folder for text, faster than grep",
+      "zh-Hans": "翻遍整个目录找文字，比 grep 快",
+      "zh-Hant": "翻遍整個目錄找文字，比 grep 快",
+      "ja": "フォルダ全体の文字検索が grep より速い",
+      "ko": "폴더 전체의 글자 검색, grep보다 빠르다"
+    },
+    "hook_prev": {
       "en": "Regex search, faster than grep",
       "zh-Hans": "比 grep 更快的递归搜索",
       "zh-Hant": "比 grep 更快的遞迴搜尋",
@@ -581,6 +791,13 @@
       "ko": "컨테이너·파일시스템·Git 등을 위한 올인원 보안 스캐너."
     },
     "hook": {
+      "en": "Scan containers and code repos for security issues at once",
+      "zh-Hans": "容器和代码仓，一次扫完安全问题",
+      "zh-Hant": "容器和程式碼倉，一次掃完安全問題",
+      "ja": "コンテナもコードも、安全チェックは 1 回で",
+      "ko": "컨테이너와 코드 저장소 보안 점검을 한 번에"
+    },
+    "hook_prev": {
       "en": "One scanner for containers and code repos",
       "zh-Hans": "容器、代码仓库一站式安全扫描",
       "zh-Hant": "容器、程式碼儲存庫一站式資安掃描",
@@ -600,6 +817,13 @@
       "ko": "컨테이너 이미지·파일시스템용 취약점 스캐너."
     },
     "hook": {
+      "en": "Check an image for vulnerabilities before it goes live",
+      "zh-Hans": "镜像上线前，先查查有没有漏洞",
+      "zh-Hant": "映像檔上線前，先查查有沒有漏洞",
+      "ja": "イメージを公開する前に、脆弱性を確認",
+      "ko": "이미지를 올리기 전에 취약점부터 확인"
+    },
+    "hook_prev": {
       "en": "Scan container images for vulnerabilities",
       "zh-Hans": "给容器镜像做漏洞扫描",
       "zh-Hant": "給容器映像檔做漏洞掃描",
@@ -619,6 +843,13 @@
       "ko": "다언어 경량 정적 분석. 버그를 찾고 가드를 강제."
     },
     "hook": {
+      "en": "Catch the problems in your code before you commit",
+      "zh-Hans": "代码里的问题，提交前先揪出来",
+      "zh-Hant": "程式碼裡的問題，提交前先揪出來",
+      "ja": "コードの問題は、コミット前に見つけ出す",
+      "ko": "코드의 문제는 커밋 전에 찾아낸다"
+    },
+    "hook_prev": {
       "en": "Fast code scanning to catch bugs",
       "zh-Hans": "快速扫描代码，揪出问题",
       "zh-Hant": "快速掃描程式碼，揪出問題",
@@ -638,6 +869,13 @@
       "ko": "간단한 YAML 템플릿으로 동작하는 고속 취약점 스캐너."
     },
     "hook": {
+      "en": "Write one template, scan for vulnerabilities in bulk",
+      "zh-Hans": "写个模板，就能批量扫漏洞",
+      "zh-Hant": "寫個模板，就能批次掃漏洞",
+      "ja": "テンプレート 1 つで、脆弱性を一括スキャン",
+      "ko": "템플릿 하나로 취약점을 한꺼번에 스캔"
+    },
+    "hook_prev": {
       "en": "Fast vulnerability scanner driven by YAML templates",
       "zh-Hans": "用 YAML 模板快速扫漏洞",
       "zh-Hant": "用 YAML 模板快速掃漏洞",
@@ -657,6 +895,13 @@
       "ko": "이상 활동을 감지하는 클라우드 네이티브 런타임 보안 도구."
     },
     "hook": {
+      "en": "Know the moment something odd happens in the cloud",
+      "zh-Hans": "云上有异常，第一时间知道",
+      "zh-Hant": "雲上有異常，第一時間知道",
+      "ja": "クラウドの異常に、すぐ気づける",
+      "ko": "클라우드의 이상 징후를 바로 안다"
+    },
+    "hook_prev": {
       "en": "Spot suspicious activity in the cloud at runtime",
       "zh-Hans": "实时发现云上异常行为",
       "zh-Hant": "即時發現雲上異常行為",
@@ -676,6 +921,13 @@
       "ko": "OSV 데이터베이스와 대조해 의존성의 알려진 취약점을 검사."
     },
     "hook": {
+      "en": "Are your dependencies safe? One scan tells you",
+      "zh-Hans": "用的依赖安不安全，扫一下就知道",
+      "zh-Hant": "用的依賴安不安全，掃一下就知道",
+      "ja": "使っている依存は安全か、スキャンすればわかる",
+      "ko": "쓰는 의존성이 안전한지, 스캔하면 안다"
+    },
+    "hook_prev": {
       "en": "Check your dependencies for known vulnerabilities",
       "zh-Hans": "查查依赖有没有已知漏洞",
       "zh-Hant": "查查依賴有沒有已知漏洞",
@@ -695,6 +947,13 @@
       "ko": "Go 소스의 흔한 불안전 패턴을 검사하는 도구."
     },
     "hook": {
+      "en": "Spot risky patterns in your Go code early",
+      "zh-Hans": "Go 代码里的危险写法，提前查出",
+      "zh-Hant": "Go 程式碼裡的危險寫法，提前查出",
+      "ja": "Go コードの危ない書き方を早めに見つける",
+      "ko": "Go 코드의 위험한 작성 패턴을 미리 찾는다"
+    },
+    "hook_prev": {
       "en": "Find insecure patterns in your Go code",
       "zh-Hans": "给 Go 代码做安全检查",
       "zh-Hant": "給 Go 程式碼做安全檢查",
@@ -714,6 +973,13 @@
       "ko": "OWASP 치트시트 모음. 간결한 보안 모범 사례."
     },
     "hook": {
+      "en": "How to do security right? These pages are enough",
+      "zh-Hans": "安全该怎么做，查这几页就够",
+      "zh-Hant": "安全該怎麼做，查這幾頁就夠",
+      "ja": "セキュリティのやり方は、このシリーズで十分",
+      "ko": "보안은 어떻게 하나? 이 문서면 충분하다"
+    },
+    "hook_prev": {
       "en": "Short, practical security best practices",
       "zh-Hans": "简明实用的安全最佳实践",
       "zh-Hant": "簡明實用的資安最佳實務",
@@ -733,6 +999,13 @@
       "ko": "웹용 React 프레임워크. SSR·라우팅·풀스택."
     },
     "hook": {
+      "en": "Build a whole site with React, front to back",
+      "zh-Hans": "用 React 做完整网站，从前到后",
+      "zh-Hant": "用 React 做完整網站，從前到後",
+      "ja": "React でサイトを丸ごと、フロントから裏側まで",
+      "ko": "React로 사이트 전체를 앞뒤까지 완성"
+    },
+    "hook_prev": {
       "en": "The React framework for full-stack web apps",
       "zh-Hans": "React 全栈网页框架",
       "zh-Hant": "React 全棧網頁框架",
@@ -752,6 +1025,13 @@
       "ko": "웹·네이티브 UI를 만들기 위한 라이브러리."
     },
     "hook": {
+      "en": "Web and app screens, built the same way",
+      "zh-Hans": "网页和 App 界面，用同一套写",
+      "zh-Hant": "網頁和 App 介面，用同一套寫",
+      "ja": "Web もアプリの画面も、同じ書き方で",
+      "ko": "웹과 앱 화면을 같은 방식으로"
+    },
+    "hook_prev": {
       "en": "Build web and native UIs",
       "zh-Hans": "搭建网页与原生界面的库",
       "zh-Hant": "搭建網頁與原生介面的庫",
@@ -771,6 +1051,13 @@
       "ko": "점진적 JS 프레임워크의 코어 런타임과 컴파일러."
     },
     "hook": {
+      "en": "Start with one small page, learn only what you use",
+      "zh-Hans": "从一个小页面开始，用多少学多少",
+      "zh-Hant": "從一個小頁面開始，用多少學多少",
+      "ja": "小さなページから始め、使う分だけ学べる",
+      "ko": "작은 페이지부터, 쓰는 만큼만 배운다"
+    },
+    "hook_prev": {
       "en": "The progressive JavaScript framework",
       "zh-Hans": "渐进式 JavaScript 框架",
       "zh-Hant": "漸進式 JavaScript 框架",
@@ -790,6 +1077,13 @@
       "ko": "프레임워크를 컴파일로 없애는 웹 앱 방식."
     },
     "hook": {
+      "en": "You write a framework, visitors get a light page",
+      "zh-Hans": "写的是框架，跑的是轻巧网页",
+      "zh-Hant": "寫的是框架，跑的是輕巧網頁",
+      "ja": "書くのはフレームワーク、動くのは軽いページ",
+      "ko": "쓰는 건 프레임워크, 돌아가는 건 가벼운 페이지"
+    },
+    "hook_prev": {
       "en": "Web apps with the framework compiled away",
       "zh-Hans": "把框架编译掉的网页开发",
       "zh-Hant": "把框架編譯掉的網頁開發",
@@ -809,6 +1103,13 @@
       "ko": "콘텐츠 사이트용 웹 프레임워크. 기본적으로 JS를 적게 보냄."
     },
     "hook": {
+      "en": "Content sites with less script open lighter",
+      "zh-Hans": "内容网站少带脚本，打开更轻快",
+      "zh-Hant": "內容網站少帶指令碼，開啟更輕快",
+      "ja": "スクリプトを減らして、軽く開くコンテンツサイト",
+      "ko": "스크립트를 줄여 더 가볍게 열리는 콘텐츠 사이트"
+    },
+    "hook_prev": {
       "en": "Content sites that ship less JavaScript",
       "zh-Hans": "少发 JavaScript 的内容站框架",
       "zh-Hant": "少發 JavaScript 的內容站框架",
@@ -828,6 +1129,13 @@
       "ko": "유틸리티 우선 CSS 프레임워크. 맞춤 디자인을 빠르게."
     },
     "hook": {
+      "en": "Custom designs without writing a pile of CSS",
+      "zh-Hans": "不写一大堆 CSS，也能做定制界面",
+      "zh-Hant": "不寫一大堆 CSS，也能做定製介面",
+      "ja": "CSS を大量に書かなくても、独自デザインに",
+      "ko": "CSS를 잔뜩 안 써도 맞춤 디자인"
+    },
+    "hook_prev": {
       "en": "Build custom designs with utility CSS classes",
       "zh-Hans": "用工具类快速搭出定制界面",
       "zh-Hant": "用工具類快速搭出定製介面",
@@ -847,6 +1155,13 @@
       "ko": "앱에 복사해 쓰는 아름다운 컴포넌트 모음."
     },
     "hook": {
+      "en": "Good-looking components: copy them in and use them",
+      "zh-Hans": "好看的组件，复制进来就能用",
+      "zh-Hant": "好看的元件，複製進來就能用",
+      "ja": "見栄えの良い部品。コピーしてすぐ使える",
+      "ko": "예쁜 컴포넌트, 복사해서 바로 쓴다"
+    },
+    "hook_prev": {
       "en": "Beautiful components you copy into your app",
       "zh-Hans": "好看的组件，直接复制进项目",
       "zh-Hant": "好看的元件，直接複製進專案",
@@ -866,6 +1181,13 @@
       "ko": "TS/JS·React·Vue·Solid용 강력한 비동기 상태 관리."
     },
     "hook": {
+      "en": "Fetching data and caching it? Leave it to this",
+      "zh-Hans": "请求数据和缓存，交给它管",
+      "zh-Hant": "請求資料和快取，交給它管",
+      "ja": "データ取得とキャッシュは、これに任せる",
+      "ko": "데이터 요청과 캐시는 이 도구에 맡긴다"
+    },
+    "hook_prev": {
       "en": "Async state management for React, Vue and more",
       "zh-Hans": "管好异步数据的状态库",
       "zh-Hant": "管好非同步資料的狀態庫",
@@ -885,6 +1207,13 @@
       "ko": "프로덕션급 컨테이너 오케스트레이션."
     },
     "hook": {
+      "en": "Lots of containers? Leave deploying and scaling to it",
+      "zh-Hans": "容器多了，部署扩容交给它",
+      "zh-Hant": "容器多了，部署擴容交給它",
+      "ja": "コンテナが増えても、配備と拡張は任せる",
+      "ko": "컨테이너가 늘어도 배포와 확장은 맡긴다"
+    },
+    "hook_prev": {
       "en": "Production-grade container orchestration",
       "zh-Hans": "生产级容器编排系统",
       "zh-Hant": "生產級容器編排系統",
@@ -904,6 +1233,13 @@
       "ko": "Docker로 다중 컨테이너 앱을 정의·실행."
     },
     "hook": {
+      "en": "Put many containers in one file and run them together",
+      "zh-Hans": "多个容器写进一个文件，一起跑",
+      "zh-Hant": "多個容器寫進一個檔案，一起跑",
+      "ja": "複数のコンテナを 1 つのファイルでまとめて動かす",
+      "ko": "여러 컨테이너를 파일 하나로 함께 실행"
+    },
+    "hook_prev": {
       "en": "Define and run multi-container apps",
       "zh-Hans": "定义并运行多容器应用",
       "zh-Hant": "定義並執行多容器應用",
@@ -923,6 +1259,13 @@
       "ko": "클라우드 자원을 코드로 구축·변경하는 IaC 도구."
     },
     "hook": {
+      "en": "Write cloud resources as code, every change on record",
+      "zh-Hans": "云资源写成代码，改动有据可查",
+      "zh-Hant": "雲資源寫成程式碼，改動有據可查",
+      "ja": "クラウド資源をコードにして、変更を追えるように",
+      "ko": "클라우드 자원을 코드로, 변경 내역이 남는다"
+    },
+    "hook_prev": {
       "en": "Manage cloud infrastructure as code",
       "zh-Hans": "用代码管理云基础设施",
       "zh-Hant": "用程式碼管理雲基礎設施",
@@ -942,6 +1285,13 @@
       "ko": "범용 언어로 쓰는 인프라 as 코드."
     },
     "hook": {
+      "en": "Manage cloud resources in a language you already know",
+      "zh-Hans": "用熟悉的编程语言管云资源",
+      "zh-Hant": "用熟悉的程式語言管雲資源",
+      "ja": "使い慣れた言語で、クラウド資源を管理",
+      "ko": "익숙한 프로그래밍 언어로 클라우드 자원 관리"
+    },
+    "hook_prev": {
       "en": "Infrastructure as code in real programming languages",
       "zh-Hans": "用通用编程语言写基础设施",
       "zh-Hant": "用通用程式語言寫基礎設施",
@@ -961,6 +1311,13 @@
       "ko": "자동 HTTPS를 갖춘 고속 멀티플랫폼 웹 서버."
     },
     "hook": {
+      "en": "Set up a web server with HTTPS configured for you",
+      "zh-Hans": "搭网站服务器，HTTPS 自动配好",
+      "zh-Hant": "搭網站伺服器，HTTPS 自動配好",
+      "ja": "Web サーバー構築、HTTPS は自動で設定",
+      "ko": "웹 서버를 세우면 HTTPS는 자동 설정"
+    },
+    "hook_prev": {
       "en": "Web server with automatic HTTPS",
       "zh-Hans": "自动 HTTPS 的快速网页服务器",
       "zh-Hant": "自動 HTTPS 的快速網頁伺服器",
@@ -980,6 +1337,13 @@
       "ko": "클라우드 네이티브 리버스 프록시·로드 밸런서."
     },
     "hook": {
+      "en": "With many services, traffic gets sorted automatically",
+      "zh-Hans": "服务多了，流量自动分好",
+      "zh-Hant": "服務多了，流量自動分好",
+      "ja": "サービスが増えても、通信は自動で振り分け",
+      "ko": "서비스가 늘어도 트래픽은 자동 분배"
+    },
+    "hook_prev": {
       "en": "Cloud-native reverse proxy and load balancer",
       "zh-Hans": "云原生反向代理与负载均衡",
       "zh-Hant": "雲原生反向代理與負載均衡",
@@ -999,6 +1363,13 @@
       "ko": "시스템 모니터링·알림 툴킷."
     },
     "hook": {
+      "en": "When the system breaks, the alert finds you first",
+      "zh-Hans": "系统出问题，告警先找到你",
+      "zh-Hant": "系統出問題，告警先找到你",
+      "ja": "システムの不具合は、アラートが先に知らせる",
+      "ko": "시스템에 문제가 생기면 알림이 먼저 찾아온다"
+    },
+    "hook_prev": {
       "en": "Systems monitoring and alerting toolkit",
       "zh-Hans": "系统监控与告警工具包",
       "zh-Hant": "系統監控與告警工具包",
@@ -1018,6 +1389,13 @@
       "ko": "메트릭·로그·트레이스용 오픈 관측성 플랫폼."
     },
     "hook": {
+      "en": "Metrics, logs and traces on one dashboard",
+      "zh-Hans": "指标日志链路，放进一个面板",
+      "zh-Hant": "指標日誌追蹤，放進一個面板",
+      "ja": "指標・ログ・トレースを 1 つのパネルに",
+      "ko": "지표·로그·트레이스를 한 대시보드에"
+    },
+    "hook_prev": {
       "en": "Open observability for metrics, logs and traces",
       "zh-Hans": "指标、日志、链路一站式观测",
       "zh-Hant": "指標、日誌、追蹤一站式觀測",
@@ -1037,6 +1415,13 @@
       "ko": "손그림 풍 다이어그램용 가상 화이트보드."
     },
     "hook": {
+      "en": "Open it and draw, like sketching on paper",
+      "zh-Hans": "打开就画，像在纸上随手画图",
+      "zh-Hant": "開啟就畫，像在紙上隨手畫圖",
+      "ja": "開いてすぐ描ける、紙に落書きする感覚で",
+      "ko": "열자마자 그린다, 종이에 낙서하듯"
+    },
+    "hook_prev": {
       "en": "A virtual whiteboard with a hand-drawn look",
       "zh-Hans": "手绘风格的在线白板",
       "zh-Hant": "手繪風格的線上白板",
@@ -1056,6 +1441,13 @@
       "ko": "제품 팀을 위한 오픈소스 디자인·프로토타입 플랫폼."
     },
     "hook": {
+      "en": "Design and prototype as a team, with open source",
+      "zh-Hans": "团队做设计和原型，用开源的",
+      "zh-Hant": "團隊做設計和原型，用開源的",
+      "ja": "チームのデザインとプロトタイプはオープンソースで",
+      "ko": "팀의 디자인·프로토타입, 오픈 소스로"
+    },
+    "hook_prev": {
       "en": "Open-source design and prototyping for teams",
       "zh-Hans": "开源的团队设计与原型平台",
       "zh-Hant": "開源的團隊設計與原型平台",
@@ -1075,6 +1467,13 @@
       "ko": "다이어그램·화이트보드 앱. diagrams.net의 코어."
     },
     "hook": {
+      "en": "Flowcharts and diagrams, drag and done",
+      "zh-Hans": "流程图和示意图，拖拖就画好",
+      "zh-Hant": "流程圖和示意圖，拖拖就畫好",
+      "ja": "フローチャートや図は、ドラッグで完成",
+      "ko": "순서도와 다이어그램, 끌어서 완성"
+    },
+    "hook_prev": {
       "en": "A diagram and whiteboard app",
       "zh-Hans": "画流程图和白板的应用",
       "zh-Hant": "畫流程圖和白板的應用",
@@ -1094,6 +1493,13 @@
       "ko": "Lottie로 After Effects 애니메이션을 iOS에 그리는 라이브러리."
     },
     "hook": {
+      "en": "Drop After Effects animations straight into iOS",
+      "zh-Hans": "AE 做的动画，直接放进 iOS",
+      "zh-Hant": "AE 做的動畫，直接放進 iOS",
+      "ja": "After Effects のアニメを、そのまま iOS に",
+      "ko": "After Effects 애니메이션을 그대로 iOS에"
+    },
+    "hook_prev": {
       "en": "Play After Effects animations in iOS apps",
       "zh-Hans": "iOS 上播放 AE 动画",
       "zh-Hant": "iOS 上播放 AE 動畫",
@@ -1113,6 +1519,13 @@
       "ko": "Lottie로 웹에 After Effects 애니메이션을 네이티브 렌더."
     },
     "hook": {
+      "en": "Drop After Effects animations straight into web pages",
+      "zh-Hans": "AE 做的动画，直接放进网页",
+      "zh-Hant": "AE 做的動畫，直接放進網頁",
+      "ja": "After Effects のアニメを、そのまま Web に",
+      "ko": "After Effects 애니메이션을 그대로 웹에"
+    },
+    "hook_prev": {
       "en": "Play After Effects animations on the web",
       "zh-Hans": "网页上播放 AE 动画",
       "zh-Hant": "網頁上播放 AE 動畫",
@@ -1132,6 +1545,13 @@
       "ko": "Tailwind CSS용 인기 컴포넌트 라이브러리."
     },
     "hook": {
+      "en": "Using Tailwind? Ready-made components to pick from",
+      "zh-Hans": "用 Tailwind，也有现成组件可挑",
+      "zh-Hant": "用 Tailwind，也有現成元件可挑",
+      "ja": "Tailwind でも、選べる部品が最初から揃う",
+      "ko": "Tailwind에도 골라 쓸 컴포넌트가 준비돼 있다"
+    },
+    "hook_prev": {
       "en": "The most popular Tailwind CSS component library",
       "zh-Hans": "最受欢迎的 Tailwind 组件库",
       "zh-Hant": "最受歡迎的 Tailwind 元件庫",
@@ -1151,6 +1571,13 @@
       "ko": "커뮤니티가 만든 아름답고 일관된 아이콘 키트."
     },
     "hook": {
+      "en": "One icon set in one style, ready to use",
+      "zh-Hans": "一套图标风格统一，拿来就用",
+      "zh-Hant": "一套圖示風格統一，拿來就用",
+      "ja": "スタイルが揃ったアイコン一式、すぐ使える",
+      "ko": "스타일이 통일된 아이콘 세트, 바로 쓴다"
+    },
+    "hook_prev": {
       "en": "Clean, consistent icons made by the community",
       "zh-Hans": "社区打造的统一风格图标库",
       "zh-Hant": "社群打造的統一風格圖示庫",
@@ -1170,6 +1597,13 @@
       "ko": "UI·도식·프레젠테이션용 유연한 아이콘 패밀리."
     },
     "hook": {
+      "en": "One icon family for screens, diagrams and slides",
+      "zh-Hans": "界面图示演示，图标一套够用",
+      "zh-Hant": "介面圖示演示，圖示一套夠用",
+      "ja": "画面・図・スライドに、アイコン一式で足りる",
+      "ko": "화면·도식·발표 자료까지 아이콘 한 세트"
+    },
+    "hook_prev": {
       "en": "A flexible icon family for any interface",
       "zh-Hans": "灵活好用的图标家族",
       "zh-Hant": "靈活好用的圖示家族",
@@ -1189,6 +1623,13 @@
       "ko": "프로세스 내 SQL OLAP 데이터베이스."
     },
     "hook": {
+      "en": "Run SQL analysis without setting up a database server",
+      "zh-Hans": "不搭数据库服务，也能跑 SQL 分析",
+      "zh-Hant": "不搭資料庫服務，也能跑 SQL 分析",
+      "ja": "データベースサーバーなしで、SQL 分析ができる",
+      "ko": "DB 서버 없이도 SQL 분석을 돌린다"
+    },
+    "hook_prev": {
       "en": "A SQL analytics database that runs inside your app",
       "zh-Hans": "内嵌在应用里的 SQL 分析数据库",
       "zh-Hant": "內嵌在應用裡的 SQL 分析資料庫",
@@ -1208,6 +1649,13 @@
       "ko": "Rust·Python용 초고속 DataFrame 라이브러리."
     },
     "hook": {
+      "en": "Table data handled fast, no more waiting",
+      "zh-Hans": "表格数据处理快，不用干等",
+      "zh-Hant": "表格資料處理快，不用幹等",
+      "ja": "表データの処理が速く、待たされない",
+      "ko": "표 데이터 처리가 빨라 기다릴 일 없다"
+    },
+    "hook_prev": {
       "en": "Lightning-fast DataFrames for Rust and Python",
       "zh-Hans": "极快的 DataFrame 库",
       "zh-Hant": "極快的 DataFrame 庫",
@@ -1227,6 +1675,13 @@
       "ko": "인메모리 분석용 언어 간 플랫폼."
     },
     "hook": {
+      "en": "Across languages, the data works as it is",
+      "zh-Hans": "不同语言之间，数据直接通用",
+      "zh-Hant": "不同語言之間，資料直接通用",
+      "ja": "言語が違っても、データはそのまま通じる",
+      "ko": "언어가 달라도 데이터가 그대로 통한다"
+    },
+    "hook_prev": {
       "en": "Fast in-memory analytics across languages",
       "zh-Hans": "跨语言的内存数据分析平台",
       "zh-Hant": "跨語言的記憶體資料分析平台",
@@ -1246,6 +1701,13 @@
       "ko": "웨어하우스 데이터를 소프트웨어 공학 방식으로 변환."
     },
     "hook": {
+      "en": "Warehouse SQL with version control and tests",
+      "zh-Hans": "数仓 SQL 也能版本管理和测试",
+      "zh-Hant": "數倉 SQL 也能版本管理和測試",
+      "ja": "データウェアハウスの SQL もバージョン管理とテストを",
+      "ko": "데이터 웨어하우스 SQL도 버전 관리와 테스트를"
+    },
+    "hook_prev": {
       "en": "Transform warehouse data like a software engineer",
       "zh-Hans": "用软件工程方式处理数据仓库",
       "zh-Hant": "用軟體工程方式處理資料倉儲",
@@ -1265,6 +1727,13 @@
       "ko": "현대적 데이터 탐색·시각화 플랫폼."
     },
     "hook": {
+      "en": "Can't make sense of the data? Turn it into charts",
+      "zh-Hans": "数据看不懂，做成图就明白",
+      "zh-Hant": "資料看不懂，做成圖就明白",
+      "ja": "データは、グラフにすれば見えてくる",
+      "ko": "데이터가 안 읽히면 차트로 만들면 보인다"
+    },
+    "hook_prev": {
       "en": "Modern data exploration and charts",
       "zh-Hans": "现代化的数据探索与可视化",
       "zh-Hant": "現代化的資料探索與視覺化",
@@ -1284,6 +1753,13 @@
       "ko": "실시간 분석용 오픈소스 컬럼형 DB."
     },
     "hook": {
+      "en": "Real-time analysis of huge data, with open source",
+      "zh-Hans": "大量数据实时分析，用开源的",
+      "zh-Hant": "大量資料即時分析，用開源的",
+      "ja": "大量データのリアルタイム分析をオープンソースで",
+      "ko": "대용량 데이터 실시간 분석, 오픈 소스로"
+    },
+    "hook_prev": {
       "en": "Open-source database for real-time analytics",
       "zh-Hans": "开源列式实时分析数据库",
       "zh-Hant": "開源列式即時分析資料庫",
@@ -1303,6 +1779,13 @@
       "ko": "분산 이벤트 스트리밍 플랫폼."
     },
     "hook": {
+      "en": "Pass messages between systems, caught reliably",
+      "zh-Hans": "系统之间传消息，稳稳接住",
+      "zh-Hant": "系統之間傳訊息，穩穩接住",
+      "ja": "システム間のメッセージを、確実に受け止める",
+      "ko": "시스템 사이의 메시지를 믿음직하게 받아낸다"
+    },
+    "hook_prev": {
       "en": "Distributed event streaming platform",
       "zh-Hans": "分布式事件流平台",
       "zh-Hant": "分散式事件流平台",
@@ -1322,6 +1805,13 @@
       "ko": "문서를 만들고 공유하는 Jupyter 인터랙티브 노트북."
     },
     "hook": {
+      "en": "Code, results and notes together on one page",
+      "zh-Hans": "代码结果和说明，放在一页里",
+      "zh-Hant": "程式碼結果和說明，放在一頁裡",
+      "ja": "コードと結果と説明を、1 ページにまとめる",
+      "ko": "코드·결과·설명을 한 페이지에"
+    },
+    "hook_prev": {
       "en": "Interactive notebooks for creating and sharing documents",
       "zh-Hans": "可交互的笔记本文档",
       "zh-Hant": "可互動的筆記本文件",

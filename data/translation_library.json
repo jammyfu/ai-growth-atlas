@@ -16,6 +16,13 @@
           "zh-Hant": "Office 2026 預啟用安裝包",
           "ja": "Office 2026 の事前アクティベート済みインストーラー",
           "ko": "Office 2026 사전 활성화 설치 파일"
+        },
+        "hook_prev": {
+          "en": "Office 2026 installer, listed as pre-activated",
+          "zh-Hans": "Office 2026 预激活安装包",
+          "zh-Hant": "Office 2026 預啟用安裝包",
+          "ja": "Office 2026 の事前アクティベート済みインストーラー",
+          "ko": "Office 2026 사전 활성화 설치 파일"
         }
       }
     },
@@ -28,6 +35,13 @@
         "ko": "Whale Tracker 2026: 사전 활성화된 데스크톱 버전으로, 모든 기능을 바로 쓸 수 있다.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Whale Tracker 2026, pre-activated desktop edition",
+          "zh-Hans": "Whale Tracker 2026 预激活桌面版",
+          "zh-Hant": "Whale Tracker 2026 預啟用桌面版",
+          "ja": "Whale Tracker 2026 事前アクティベート済みデスクトップ版",
+          "ko": "Whale Tracker 2026 사전 활성화 데스크톱판"
+        },
+        "hook_prev": {
           "en": "Whale Tracker 2026, pre-activated desktop edition",
           "zh-Hans": "Whale Tracker 2026 预激活桌面版",
           "zh-Hant": "Whale Tracker 2026 預啟用桌面版",
@@ -46,6 +60,13 @@
         "en": "Treat agents as functions and turn ideas into programs. An agent-native functional language with a CLI, Web IDE, goal-driven bots and live UI. Source-available; no AI training.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Treat agents as functions and write ideas as programs",
+          "zh-Hans": "想法写成程序，智能体当函数用",
+          "zh-Hant": "想法寫成程式，代理當函式用",
+          "ja": "アイデアをプログラムに、エージェントは関数として",
+          "ko": "아이디어를 프로그램으로, 에이전트는 함수처럼"
+        },
+        "hook_prev": {
           "en": "Agents as functions, ideas as programs",
           "zh-Hans": "智能体当函数，想法写成程序",
           "zh-Hant": "代理當函式，想法寫成程式",
@@ -63,6 +84,13 @@
         "ko": "🌃 Capri — 《사이버펑크: 엣지러너》에서 영감을 받은 데스크톱용 AI 에이전트. Claude Code, Codex, Antigravity 등에서 쓸 수 있다.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "An AI agent on your desktop with Edgerunners flavor",
+          "zh-Hans": "桌面上有个《边缘行者》风的 AI 智能体",
+          "zh-Hant": "桌面上有個《邊緣行者》風的 AI 代理",
+          "ja": "デスクトップに『エッジランナーズ』風の AI エージェント",
+          "ko": "데스크톱에 엣지러너 풍 AI 에이전트가 산다"
+        },
+        "hook_prev": {
           "en": "An Edgerunners-inspired AI agent for your desktop",
           "zh-Hans": "《边缘行者》风格的桌面 AI 智能体",
           "zh-Hant": "《邊緣行者》風格的桌面 AI 代理",
@@ -80,6 +108,13 @@
         "ko": "영상 속 캐릭터를 한 번에 교체: ComfyUI와 MiniMax H3 위에 만든, 오픈 소스 로컬 Higgsfield Genjutsu 대안. FLUX.3 Klein으로 조명도 다시 입힌다.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Swap a character in a video with one click, run locally",
+          "zh-Hans": "视频换角色，一键在本机完成",
+          "zh-Hant": "影片換角色，一鍵在本機完成",
+          "ja": "動画のキャラ替えが、ワンクリックで手元で完結",
+          "ko": "영상 속 캐릭터 교체, 내 컴퓨터에서 원클릭"
+        },
+        "hook_prev": {
           "en": "One-click character swap in videos, run locally",
           "zh-Hans": "一键给视频换角色，本地运行",
           "zh-Hant": "一鍵給影片換角色，本機執行",
@@ -97,6 +132,13 @@
         "ko": "AI 에이전트(Codex, Claude Code)를 위한 증거 우선 족보 조사 스킬: 구소련 전역의 교회 기록부, 민사, 군사, 강제 이주, 탄압 기록…",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Trace family roots in former-Soviet records with AI",
+          "zh-Hans": "查前苏联地区的家谱，让 AI 帮你翻档案",
+          "zh-Hant": "查前蘇聯地區的家譜，讓 AI 幫你翻檔案",
+          "ja": "旧ソ連圏の家系調べ、資料探しは AI に",
+          "ko": "구소련 지역 족보 찾기, 기록 뒤지기는 AI에게"
+        },
+        "hook_prev": {
           "en": "AI genealogy research for former-USSR records",
           "zh-Hans": "用 AI 查前苏联地区的家谱档案",
           "zh-Hant": "用 AI 查前蘇聯地區的家譜檔案",
@@ -119,6 +161,13 @@
           "zh-Hant": "Systemcare Pro 已啟用安裝包",
           "ja": "Systemcare Pro 2026 アクティベート済みインストーラー",
           "ko": "Systemcare Pro 2026 전체 기능 활성화 설치 파일"
+        },
+        "hook_prev": {
+          "en": "Systemcare Pro 2026 installer, all features activated",
+          "zh-Hans": "Systemcare Pro 已激活安装包",
+          "zh-Hant": "Systemcare Pro 已啟用安裝包",
+          "ja": "Systemcare Pro 2026 アクティベート済みインストーラー",
+          "ko": "Systemcare Pro 2026 전체 기능 활성화 설치 파일"
         }
       }
     },
@@ -131,6 +180,13 @@
         "ko": "Soundpad 2026: 전문 오디오 제작에 필요한 주요 플러그인과 이펙트를 모두 담은, 바로 쓸 수 있는 완전한 설치 프로그램.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Soundpad 2026 installer with audio plugins",
+          "zh-Hans": "Soundpad 2026 音频插件完整安装包",
+          "zh-Hant": "Soundpad 2026 音訊外掛完整安裝包",
+          "ja": "Soundpad 2026 音声プラグイン入りインストーラー",
+          "ko": "Soundpad 2026 오디오 플러그인 설치 파일"
+        },
+        "hook_prev": {
           "en": "Soundpad 2026 installer with audio plugins",
           "zh-Hans": "Soundpad 2026 音频插件完整安装包",
           "zh-Hant": "Soundpad 2026 音訊外掛完整安裝包",
@@ -149,6 +205,13 @@
         "en": "Deploy and manage AstrBot and NapCat locally on an Android phone. Ships with a built-in PRoot Ubuntu runtime and supports a native management UI, WebUI, logs, backup and restore, and independent updates, with no root required.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Run AstrBot and NapCat on your phone, no root",
+          "zh-Hans": "手机跑 AstrBot 和 NapCat，免 Root",
+          "zh-Hant": "手機跑 AstrBot 和 NapCat，免 Root",
+          "ja": "スマホで AstrBot と NapCat、Root は不要",
+          "ko": "폰에서 AstrBot·NapCat, 루팅 없이"
+        },
+        "hook_prev": {
           "en": "Run AstrBot and NapCat on your phone, no root",
           "zh-Hans": "手机上免 Root 跑 AstrBot 和 NapCat",
           "zh-Hant": "手機上免 Root 跑 AstrBot 和 NapCat",
@@ -171,6 +234,13 @@
           "zh-Hant": "2026 出版方案完整安裝程式",
           "ja": "2026 年版の出版用インストーラー",
           "ko": "2026 출판용 전체 설치 파일"
+        },
+        "hook_prev": {
+          "en": "2026 publishing installer, full working build",
+          "zh-Hans": "2026 出版方案完整安装程序",
+          "zh-Hant": "2026 出版方案完整安裝程式",
+          "ja": "2026 年版の出版用インストーラー",
+          "ko": "2026 출판용 전체 설치 파일"
         }
       }
     },
@@ -183,6 +253,13 @@
         "ko": "MiniMax Code 팀이 MiniMax Code를 만드는 데 쓰는 워크플로와 스킬. 오픈 소스이며 설치해서 바로 쓸 수 있다.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "See how the MiniMax Code team builds MiniMax Code",
+          "zh-Hans": "看 MiniMax Code 团队自己怎么做",
+          "zh-Hant": "看 MiniMax Code 團隊自己怎麼做",
+          "ja": "MiniMax Code チームの作り方を、そのまま見られる",
+          "ko": "MiniMax Code 팀이 만드는 방식을 그대로 본다"
+        },
+        "hook_prev": {
           "en": "How the MiniMax Code team builds MiniMax Code",
           "zh-Hans": "MiniMax Code 团队的工作流与技能",
           "zh-Hant": "MiniMax Code 團隊的工作流程與技能",
@@ -205,6 +282,13 @@
           "zh-Hant": "AnyDesk 2026 遠端桌面安裝程式",
           "ja": "AnyDesk 2026 リモートデスクトップ用インストーラー",
           "ko": "AnyDesk 2026 원격 데스크톱 설치 파일"
+        },
+        "hook_prev": {
+          "en": "AnyDesk 2026 installer for remote desktop",
+          "zh-Hans": "AnyDesk 2026 远程桌面安装程序",
+          "zh-Hant": "AnyDesk 2026 遠端桌面安裝程式",
+          "ja": "AnyDesk 2026 リモートデスクトップ用インストーラー",
+          "ko": "AnyDesk 2026 원격 데스크톱 설치 파일"
         }
       }
     },
@@ -222,6 +306,13 @@
           "zh-Hant": "Recoverit 2026 已啟用安裝程式",
           "ja": "Recoverit 2026 全機能アクティベート済みインストーラー",
           "ko": "Recoverit 2026 전체 기능 활성화 설치 파일"
+        },
+        "hook_prev": {
+          "en": "Recoverit 2026 installer, all features activated",
+          "zh-Hans": "Recoverit 2026 已激活安装程序",
+          "zh-Hant": "Recoverit 2026 已啟用安裝程式",
+          "ja": "Recoverit 2026 全機能アクティベート済みインストーラー",
+          "ko": "Recoverit 2026 전체 기능 활성화 설치 파일"
         }
       }
     },
@@ -234,6 +325,13 @@
         "ko": "DeepSeek Harness용 장면 인식 스토리보드: 번호가 매겨진 9~16개 칸을 타임스탬프, 대본, 오디오 엔벨로프와 함께 이미지 한 장(384 토큰)에 담는다. 도구 두 개…",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Squeeze a whole video into one storyboard image",
+          "zh-Hans": "整段视频，压成一张分镜图",
+          "zh-Hant": "整段影片，壓成一張分鏡圖",
+          "ja": "動画まるごと、1 枚の絵コンテに",
+          "ko": "영상 전체를 스토리보드 한 장으로"
+        },
+        "hook_prev": {
           "en": "Pack a video into one storyboard image",
           "zh-Hans": "把视频做成一张分镜图",
           "zh-Hant": "把影片做成一張分鏡圖",
@@ -256,6 +354,13 @@
           "zh-Hant": "Kms Pico Free 2026 預啟用桌面版",
           "ja": "Kms Pico Free 2026 事前アクティベート済みデスクトップ版",
           "ko": "Kms Pico Free 2026 사전 활성화 데스크톱판"
+        },
+        "hook_prev": {
+          "en": "Kms Pico Free 2026, pre-activated desktop edition",
+          "zh-Hans": "Kms Pico Free 2026 预激活桌面版",
+          "zh-Hant": "Kms Pico Free 2026 預啟用桌面版",
+          "ja": "Kms Pico Free 2026 事前アクティベート済みデスクトップ版",
+          "ko": "Kms Pico Free 2026 사전 활성화 데스크톱판"
         }
       }
     },
@@ -268,6 +373,13 @@
         "ko": "전문가용 Cinema 4D 유틸리티 구성. 완전한 독립 설치 세트로 2026년의 작업 흐름을 효율적으로 만들어 준다.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Cinema 4D utility setup, full standalone install",
+          "zh-Hans": "Cinema 4D 工具完整安装包",
+          "zh-Hant": "Cinema 4D 工具完整安裝包",
+          "ja": "Cinema 4D ユーティリティの完全版インストール",
+          "ko": "Cinema 4D 유틸리티 독립 설치 패키지"
+        },
+        "hook_prev": {
           "en": "Cinema 4D utility setup, full standalone install",
           "zh-Hans": "Cinema 4D 工具完整安装包",
           "zh-Hant": "Cinema 4D 工具完整安裝包",
@@ -290,6 +402,13 @@
           "zh-Hant": "Windows Optimizer 系統調優安裝包",
           "ja": "Windows Optimizer 2026 システム調整インストーラー",
           "ko": "Windows Optimizer 2026 시스템 튜닝 설치 파일"
+        },
+        "hook_prev": {
+          "en": "Windows Optimizer 2026 installer with system tweaks",
+          "zh-Hans": "Windows Optimizer 系统调优安装包",
+          "zh-Hant": "Windows Optimizer 系統調優安裝包",
+          "ja": "Windows Optimizer 2026 システム調整インストーラー",
+          "ko": "Windows Optimizer 2026 시스템 튜닝 설치 파일"
         }
       }
     },
@@ -302,6 +421,13 @@
         "ko": "Canva Pro 2026: 모든 기능이 잠금 해제된 상태로 바로 실행할 수 있는 완전한 독립 설치본.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Canva Pro 2026 installer, all features unlocked",
+          "zh-Hans": "Canva Pro 2026 已解锁安装包",
+          "zh-Hant": "Canva Pro 2026 已解鎖安裝包",
+          "ja": "Canva Pro 2026 全機能アンロック済みインストーラー",
+          "ko": "Canva Pro 2026 전체 기능 잠금 해제 설치 파일"
+        },
+        "hook_prev": {
           "en": "Canva Pro 2026 installer, all features unlocked",
           "zh-Hans": "Canva Pro 2026 已解锁安装包",
           "zh-Hant": "Canva Pro 2026 已解鎖安裝包",
@@ -324,6 +450,13 @@
           "zh-Hant": "Camtasia 2026 完整安裝程式",
           "ja": "Camtasia 2026 の完全版インストーラー",
           "ko": "Camtasia 2026 전체 설치 파일"
+        },
+        "hook_prev": {
+          "en": "Camtasia 2026 full working installer",
+          "zh-Hans": "Camtasia 2026 完整安装程序",
+          "zh-Hant": "Camtasia 2026 完整安裝程式",
+          "ja": "Camtasia 2026 の完全版インストーラー",
+          "ko": "Camtasia 2026 전체 설치 파일"
         }
       }
     },
@@ -336,6 +469,13 @@
         "ko": "하나의 페르소나로 여러 코딩 에이전트에 적용. codex, claude, opencode, grok, omp, hermes, pi, zcode의 시스템 프롬프트를 교체하거나 주입할 수 있으며 로컬 웹 콘솔을 제공한다.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "One persona for all your coding agents",
+          "zh-Hans": "一个人设，所有编程智能体通用",
+          "zh-Hant": "一個人設，所有程式設計代理通用",
+          "ja": "ペルソナ 1 つを、全コーディングエージェントで",
+          "ko": "페르소나 하나를 모든 코딩 에이전트에"
+        },
+        "hook_prev": {
           "en": "One persona across many coding agents",
           "zh-Hans": "一个人设，通吃多个编程智能体",
           "zh-Hant": "一個人設，通吃多個程式設計代理",
@@ -354,6 +494,13 @@
         "en": "A beginner tutorial for large language models (LLMs): write GPT-2 by hand from scratch and see line by line how an LLM works / Build GPT-2 from scratch in PyTorch, step by step",
         "seen": "2026-10-30",
         "hook": {
+          "en": "New to LLMs? Build GPT-2 by hand, line by line",
+          "zh-Hans": "不懂大模型？从零手写 GPT-2 看明白",
+          "zh-Hant": "不懂大模型？從零手寫 GPT-2 看明白",
+          "ja": "LLM が分からなくても、GPT-2 を手書きして理解",
+          "ko": "LLM이 낯설다면 GPT-2를 직접 만들며 이해"
+        },
+        "hook_prev": {
           "en": "Build GPT-2 from scratch, line by line",
           "zh-Hans": "零基础，从零手写 GPT-2",
           "zh-Hant": "零基礎，從零手寫 GPT-2",
@@ -371,6 +518,13 @@
         "ko": "사진 한 장으로 AI 디지털 휴먼 토킹헤드 영상 제작: Renoise MCP 생성 + 편집 스타일 5종 + 크리에이터급 패키징 컴포넌트 48개. Claude용 에이전트 스킬…",
         "seen": "2026-10-30",
         "hook": {
+          "en": "One photo becomes a talking-head AI video",
+          "zh-Hans": "一张照片，生成数字人口播视频",
+          "zh-Hant": "一張照片，生成數位人口播影片",
+          "ja": "写真 1 枚から、AI デジタルヒューマンの動画",
+          "ko": "사진 한 장으로 디지털 휴먼 말하는 영상"
+        },
+        "hook_prev": {
           "en": "Make talking-head AI videos from one photo",
           "zh-Hans": "一张照片生成 AI 数字人口播视频",
           "zh-Hant": "一張照片生成 AI 數位人口播影片",
@@ -390,6 +544,13 @@
         "seen": "2026-10-30",
         "hook": {
           "en": "Turn one fact into a short video with sources",
+          "zh-Hans": "一个知识点，做成带出处的短片",
+          "zh-Hant": "一個知識點，做成帶出處的短片",
+          "ja": "1 つの知識を、出典つきの短い動画に",
+          "ko": "지식 하나를 출처 있는 짧은 영상으로"
+        },
+        "hook_prev": {
+          "en": "Turn one fact into a short video with sources",
           "zh-Hans": "一个知识点，一条带出处的短片",
           "zh-Hant": "一個知識點，一條帶出處的短片",
           "ja": "1 つの知識を出典つきの短編動画に",
@@ -406,6 +567,13 @@
         "ko": "내 컴퓨터에서 실행되는 무료 AI 어시스턴트이자 서바이벌 라이브러리로, 인터넷이 필요 없다. 모든 답변의 출처를 보여 준다.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "An AI helper that works offline, free",
+          "zh-Hans": "没网也能问的免费 AI 助手",
+          "zh-Hant": "沒網也能問的免費 AI 助手",
+          "ja": "ネットがなくても使える無料の AI アシスタント",
+          "ko": "인터넷 없이 쓰는 무료 AI 도우미"
+        },
+        "hook_prev": {
           "en": "A free offline AI assistant and survival library",
           "zh-Hans": "断网也能用的免费 AI 生存知识库",
           "zh-Hant": "斷網也能用的免費 AI 生存知識庫",
@@ -424,6 +592,13 @@
         "en": "dsh-go — DeepSeek Harness in your pocket: it runs on the phone itself and can also remote-control your computer.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "DeepSeek Harness on your phone, can drive your PC too",
+          "zh-Hans": "DeepSeek Harness 装进手机，遥控电脑",
+          "zh-Hant": "DeepSeek Harness 裝進手機，遙控電腦",
+          "ja": "DeepSeek Harness をスマホで動かし、PC も遠隔操作",
+          "ko": "DeepSeek Harness를 폰에서, PC 원격 제어도"
+        },
+        "hook_prev": {
           "en": "DeepSeek Harness in your pocket",
           "zh-Hans": "DeepSeek Harness 装进口袋",
           "zh-Hant": "DeepSeek Harness 裝進口袋",
@@ -442,6 +617,13 @@
         "seen": "2026-10-30",
         "hook": {
           "en": "Build any Mac app with agent skills",
+          "zh-Hans": "想做 Mac 应用，让智能体技能来帮你",
+          "zh-Hant": "想做 Mac 應用，讓代理技能來幫你",
+          "ja": "Mac アプリ作りを、エージェントスキルが手伝う",
+          "ko": "Mac 앱 만들기를 에이전트 스킬이 돕는다"
+        },
+        "hook_prev": {
+          "en": "Build any Mac app with agent skills",
           "zh-Hans": "用智能体技能造任意 Mac 应用",
           "zh-Hant": "用代理技能造任意 Mac 應用",
           "ja": "エージェントスキルで好きな Mac アプリを作る",
@@ -458,6 +640,13 @@
         "ko": "시각적 워크플로와 자율 에이전트를 위한 에이전틱 AI 플랫폼. Docker로 내 컴퓨터나 서버에서 실행할 수 있다.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Draw your AI workflow, run it on your own machine",
+          "zh-Hans": "画出 AI 工作流，在自己电脑上跑",
+          "zh-Hant": "畫出 AI 工作流程，在自己電腦上跑",
+          "ja": "AI のワークフローを描いて、自分の環境で動かす",
+          "ko": "AI 워크플로를 그려서 내 환경에서 실행"
+        },
+        "hook_prev": {
           "en": "Visual workflows and autonomous agents, self-hosted",
           "zh-Hans": "可视化搭建自主智能体工作流",
           "zh-Hant": "視覺化搭建自主代理工作流程",
@@ -476,6 +665,13 @@
         "en": "词光 · Word Atlas — Illustrated IELTS vocabulary with 7,298 words, UK/US audio and FSRS review. Open-source app + CC BY 4.0 dataset.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "IELTS words with pictures and audio, 7,298 of them",
+          "zh-Hans": "雅思单词配图配发音，共 7,298 个",
+          "zh-Hant": "雅思單詞配圖配發音，共 7,298 個",
+          "ja": "IELTS 単語を絵と音声で、7,298 語",
+          "ko": "IELTS 어휘를 그림과 발음으로, 7,298개"
+        },
+        "hook_prev": {
           "en": "Illustrated IELTS vocabulary, 7,298 words",
           "zh-Hans": "带插图的雅思词汇，7,298 词",
           "zh-Hant": "帶插圖的雅思詞彙，7,298 詞",
@@ -493,6 +689,13 @@
         "ko": "사람과 에이전트가 함께 쓰는 셀프 호스팅 칸반. 4MB짜리 바이너리 하나로, 2ms 만에 시작되고 별도 설정이 필요 없다.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "A kanban board that people and agents both use",
+          "zh-Hans": "人和智能体一起用的看板，装完即用",
+          "zh-Hant": "人和代理一起用的看板，裝完即用",
+          "ja": "人もエージェントも使える、すぐ動く看板",
+          "ko": "사람과 에이전트가 함께 쓰고 바로 켜지는 칸반"
+        },
+        "hook_prev": {
           "en": "A tiny self-hosted kanban for humans and agents",
           "zh-Hans": "人和智能体都能用的自托管看板",
           "zh-Hant": "人和代理都能用的自託管看板",
@@ -511,6 +714,13 @@
         "en": "OpenMinutes · a voice-recorder workbench: import MemoTalk S1 recordings · transcribe · AI sorting · search and review (an open-source implementation of Floatboat Workbench)",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Turn voice-recorder files into notes you can search",
+          "zh-Hans": "录音笔的录音，转成能搜的文字",
+          "zh-Hant": "錄音筆的錄音，轉成能搜的文字",
+          "ja": "ボイスレコーダーの録音を、検索できる文字に",
+          "ko": "녹음기의 녹음을 검색되는 글로"
+        },
+        "hook_prev": {
           "en": "Voice recorder workbench: transcribe, sort, search",
           "zh-Hans": "录音笔录音转文字、归类、检索",
           "zh-Hant": "錄音筆錄音轉文字、歸類、檢索",
@@ -528,6 +738,13 @@
         "ko": "앱이 실제로 어떻게 맞물려 있는지 보여 준다. Claude나 Codex가 그려 주는, 쉬운 영어로 설명된 대화형 코드베이스 지도.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "See at a glance how your app fits together",
+          "zh-Hans": "代码库怎么拼起来的，看这张图",
+          "zh-Hant": "程式碼庫怎麼拼起來的，看這張圖",
+          "ja": "アプリの組み立てが、この地図で見える",
+          "ko": "앱이 어떻게 맞물리는지 이 지도로 본다"
+        },
+        "hook_prev": {
           "en": "A plain-English map of how your app fits together",
           "zh-Hans": "一张看懂你代码库的地图",
           "zh-Hant": "一張看懂你程式碼庫的地圖",
@@ -545,6 +762,13 @@
         "ko": "AI 우선 외부 공격 표면 평가: 지속적인 탐색, 증거 기반 취약점 검증, 개발자 에이전트용 MCP 연동을 제공한다.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Find weak spots visible from outside, backed by evidence",
+          "zh-Hans": "从外面看你的系统哪里有洞，并有证据",
+          "zh-Hant": "從外面看你的系統哪裡有洞，並有證據",
+          "ja": "外から見える弱点を、AI が見つけて証拠つきで確認",
+          "ko": "밖에서 보이는 약점을 AI가 찾아 근거로 확인"
+        },
+        "hook_prev": {
           "en": "AI attack-surface scans with evidence-backed findings",
           "zh-Hans": "AI 持续扫描攻击面并验证漏洞",
           "zh-Hant": "AI 持續掃描攻擊面並驗證漏洞",
@@ -563,6 +787,13 @@
         "seen": "2026-10-30",
         "hook": {
           "en": "Smaller PNGs, same picture",
+          "zh-Hans": "图片变小，画面不变",
+          "zh-Hant": "圖片變小，畫面不變",
+          "ja": "PNG は小さく、画質はそのまま",
+          "ko": "PNG는 작게, 화질은 그대로"
+        },
+        "hook_prev": {
+          "en": "Smaller PNGs, same picture",
           "zh-Hans": "图片更小，画面不变",
           "zh-Hant": "圖片更小，畫面不變",
           "ja": "画質そのまま、PNG をもっと小さく",
@@ -579,6 +810,13 @@
         "ko": "오픈 소스 커뮤니티가 누려야 할 데이터 변환 도구.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "The open-source community's own data transformation tool",
+          "zh-Hans": "做数据转换，用开源社区自己的工具",
+          "zh-Hant": "做資料轉換，用開源社群自己的工具",
+          "ja": "データ変換は、オープンソースコミュニティのツールで",
+          "ko": "데이터 변환, 오픈 소스 커뮤니티의 도구로"
+        },
+        "hook_prev": {
           "en": "The data transformation tool open source deserves",
           "zh-Hans": "开源社区应得的数据转换工具",
           "zh-Hant": "開源社群應得的資料轉換工具",
@@ -597,6 +835,13 @@
         "en": "Let any AI trade with your own Binance AI wallet: instant buy and sell, sniping on Agent-only launchpads (Four, Flap, GANG), AI-only Mint, and a local trading page. Binance signs the transactions and your private key is never touched. Free and open source, MIT · Author: Jacke_pp · Contact: X @Jacke_pp (DM)",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Let any AI trade from your own Binance AI wallet",
+          "zh-Hans": "让 AI 用你自己的币安钱包交易",
+          "zh-Hant": "讓 AI 用你自己的幣安錢包交易",
+          "ja": "AI に自分の Binance AI ウォレットで取引させる",
+          "ko": "AI가 내 바이낸스 AI 지갑으로 거래하게 한다"
+        },
+        "hook_prev": {
           "en": "Let any AI trade with your Binance AI wallet",
           "zh-Hans": "让任何 AI 用你的币安钱包交易",
           "zh-Hant": "讓任何 AI 用你的幣安錢包交易",
@@ -615,6 +860,13 @@
         "en": "No root and no Termux: one APK runs DeepSeek Harness on an Android phone. Engine embedded in the app process · reads the screen to operate apps · changes system settings · scheduled/conditional automation · optional Shizuku",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Run DeepSeek Harness on your phone, no root",
+          "zh-Hans": "手机直接跑 DeepSeek Harness，免 ROOT",
+          "zh-Hant": "手機直接跑 DeepSeek Harness，免 ROOT",
+          "ja": "ROOT なしで、スマホで DeepSeek Harness を動かす",
+          "ko": "루팅 없이 폰에서 DeepSeek Harness 실행"
+        },
+        "hook_prev": {
           "en": "Run DeepSeek Harness on Android, no root",
           "zh-Hans": "安卓免 ROOT 跑 DeepSeek Harness",
           "zh-Hant": "安卓免 ROOT 跑 DeepSeek Harness",
@@ -633,6 +885,13 @@
         "en": "Structural animations of the 64 hexagrams of the I Ching · I Ching 64 Hexagrams motion graphics, made entirely with code (Remotion + React)",
         "seen": "2026-10-30",
         "hook": {
+          "en": "The 64 I Ching hexagrams as animation, all in code",
+          "zh-Hans": "六十四卦做成动画，全靠代码",
+          "zh-Hant": "六十四卦做成動畫，全靠程式碼",
+          "ja": "易経六十四卦をアニメに、すべてコードで",
+          "ko": "주역 64괘를 애니메이션으로, 전부 코드로"
+        },
+        "hook_prev": {
           "en": "Animated I Ching hexagrams, made entirely in code",
           "zh-Hans": "易经六十四卦动画，纯代码制作",
           "zh-Hant": "易經六十四卦動畫，純程式碼製作",
@@ -650,6 +909,13 @@
         "ko": "AI 코딩 에이전트를 위한 위협 모델링: Claude Code, Codex 등 어떤 에이전트든 저장소에 연결하면 근거를 추적할 수 있는 위협 모델을 만들어 준다. 아키텍처 36종, 기법 29종, …",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Have AI map out the threats facing your repo",
+          "zh-Hans": "让 AI 把仓库面临的威胁理清楚",
+          "zh-Hant": "讓 AI 把倉庫面臨的威脅理清楚",
+          "ja": "リポジトリの脅威を、AI に整理させる",
+          "ko": "저장소의 위협을 AI가 정리해 준다"
+        },
+        "hook_prev": {
           "en": "AI agents build a threat model of your repo",
           "zh-Hans": "让 AI 给你的仓库做威胁建模",
           "zh-Hant": "讓 AI 給你的儲存庫做威脅建模",
@@ -668,6 +934,13 @@
         "en": "A one-stop AI short-video content creation Agent Skill, from picking a topic to a JianYing (CapCut) draft",
         "seen": "2026-10-30",
         "hook": {
+          "en": "From picking a topic to a JianYing draft, in one skill",
+          "zh-Hans": "从选题到剪映草稿，一个技能走完",
+          "zh-Hant": "從選題到剪映草稿，一個技能走完",
+          "ja": "題材選びから剪映の下書きまで、1 つのスキルで",
+          "ko": "주제 선정부터 JianYing 초안까지 스킬 하나로"
+        },
+        "hook_prev": {
           "en": "From topic to JianYing draft, short video in one stop",
           "zh-Hans": "从选题到剪映草稿，一站出短视频",
           "zh-Hant": "從選題到剪映草稿，一站出短影片",
@@ -685,6 +958,13 @@
         "ko": "Capri는 《사이버펑크: 엣지러너 2》의 프로젝트 카프리콘(Project Capricorn)에서 나온 구조체로, 데스크톱에 살면서 Claude Code가 하는 일을 내레이션한다.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "A desktop companion that narrates Claude Code's work",
+          "zh-Hans": "桌面解说员，讲 Claude Code 在做什么",
+          "zh-Hant": "桌面解說員，講 Claude Code 在做什麼",
+          "ja": "Claude Code の作業を実況してくれるデスクトップの相棒",
+          "ko": "Claude Code가 하는 일을 해설해 주는 데스크톱 친구"
+        },
+        "hook_prev": {
           "en": "Capri lives on your desktop, narrating Claude Code",
           "zh-Hans": "住在桌面上，实时解说 Claude Code",
           "zh-Hant": "住在桌面上，即時解說 Claude Code",
@@ -702,6 +982,13 @@
         "ko": "소프트웨어 개발 표준을 지키기 위한 도구를 뚜렷한 기준으로 엄선한 목록. 작업마다 추천 도구는 하나이며, 한계도 함께 적어 두었다.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "One recommended tool for each dev standard",
+          "zh-Hans": "每项开发规范，只推荐一个工具",
+          "zh-Hant": "每項開發規範，只推薦一個工具",
+          "ja": "開発規約ごとに、おすすめツールは 1 つだけ",
+          "ko": "개발 규범마다 추천 도구는 하나만"
+        },
+        "hook_prev": {
           "en": "One recommended tool per job to enforce standards",
           "zh-Hans": "每项开发规范只推荐一个工具",
           "zh-Hant": "每項開發規範只推薦一個工具",
@@ -719,6 +1006,13 @@
         "ko": "코딩 에이전트에게 관용적인 Rust 코드를 작성하고 리뷰하고 포팅하는 법을 가르치는 Agent Skills와 검증된 clippy 설정. Claude Code, Codex, Copilot, Cursor 등에서 쓸 수 있다…",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Teach your coding AI to write proper Rust",
+          "zh-Hans": "让编程 AI 写出地道的 Rust",
+          "zh-Hant": "讓程式設計 AI 寫出地道的 Rust",
+          "ja": "コーディング AI に、まっとうな Rust を書かせる",
+          "ko": "코딩 AI가 제대로 된 Rust를 쓰게 가르친다"
+        },
+        "hook_prev": {
           "en": "Teach coding agents to write idiomatic Rust",
           "zh-Hans": "教 AI 写出地道的 Rust",
           "zh-Hant": "教 AI 寫出地道的 Rust",
@@ -741,6 +1035,13 @@
           "zh-Hant": "Cubase 13 預啟用安裝版",
           "ja": "Cubase 13 事前アクティベート済みインストーラー",
           "ko": "Cubase 13 사전 활성화 설치판"
+        },
+        "hook_prev": {
+          "en": "Cubase 13 installer, listed as pre-activated",
+          "zh-Hans": "Cubase 13 预激活安装版",
+          "zh-Hant": "Cubase 13 預啟用安裝版",
+          "ja": "Cubase 13 事前アクティベート済みインストーラー",
+          "ko": "Cubase 13 사전 활성화 설치판"
         }
       }
     },
@@ -753,6 +1054,13 @@
         "ko": "AI 영상 하나로 모든 생물의 모션 캡처: 한 화면에 카메라 두 대, DINOv2 관절 인식, 두 시점 모두에 리그를 맞추고 GLB로 출력.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Motion capture for any creature from one AI video",
+          "zh-Hans": "一段 AI 视频，给任何生物做动作捕捉",
+          "zh-Hant": "一段 AI 影片，給任何生物做動作捕捉",
+          "ja": "AI 動画 1 本で、どんな生き物もモーキャプ",
+          "ko": "AI 영상 하나로 어떤 생물이든 모션 캡처"
+        },
+        "hook_prev": {
           "en": "Motion capture for any creature from one AI video",
           "zh-Hans": "用一段 AI 视频做动作捕捉",
           "zh-Hant": "用一段 AI 影片做動作捕捉",
@@ -770,6 +1078,13 @@
         "ko": "🛡️ BLA(Blind LLM Agents) — 바이너리, Electron 앱, JS 번들, Python, WebAssembly를 AI 리버스 엔지니어링으로부터 보호하는 적대적 방어 실드…",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Keep AI from reverse-engineering your program",
+          "zh-Hans": "不想被 AI 逆向，给程序加层防护",
+          "zh-Hant": "不想被 AI 逆向，給程式加層防護",
+          "ja": "AI にリバースエンジニアリングされないよう守る",
+          "ko": "AI의 리버스 엔지니어링으로부터 프로그램을 지킨다"
+        },
+        "hook_prev": {
           "en": "Shield your code from AI reverse-engineering",
           "zh-Hans": "保护你的程序不被 AI 逆向",
           "zh-Hant": "保護你的程式不被 AI 逆向",
@@ -788,6 +1103,13 @@
         "en": "Turns off the ads, trending searches, news recommendations and marketing pushes built into Chinese Android phone systems. No root needed, reversible, and AI agents can run it in one step.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Turn off ads on Chinese Android phones, and undo it",
+          "zh-Hans": "关掉国产安卓手机里的广告，可还原",
+          "zh-Hant": "關掉國產安卓手機裡的廣告，可還原",
+          "ja": "中国メーカー製 Android の広告をオフ、元に戻せる",
+          "ko": "중국산 안드로이드 폰의 광고를 끄고 되돌릴 수도"
+        },
+        "hook_prev": {
           "en": "Switch off ads and pushes on Chinese Android phones",
           "zh-Hans": "关掉国产安卓手机的广告推送",
           "zh-Hant": "關掉國產安卓手機的廣告推送",
@@ -805,6 +1127,13 @@
         "ko": "검열 없는 AI API와 모델 — 키 하나로 Claude, GPT, Gemini, Grok, DeepSeek, GLM, Qwen을 쓸 수 있고, 제공되는 경우 무검열·abliterated 변형도 선택할 수 있다. OpenAI-…",
         "seen": "2026-10-30",
         "hook": {
+          "en": "One API key for many AI models",
+          "zh-Hans": "一个密钥，调用多家 AI 模型",
+          "zh-Hant": "一個金鑰，呼叫多家 AI 模型",
+          "ja": "1 つのキーで複数の AI モデルを使う",
+          "ko": "키 하나로 여러 AI 모델 사용"
+        },
+        "hook_prev": {
           "en": "One key for many AI models, uncensored variants too",
           "zh-Hans": "一个密钥调多家模型，含无审查版",
           "zh-Hant": "一個金鑰調多家模型，含無審查版",
@@ -822,6 +1151,13 @@
         "ko": "로컬에서만 동작하는 브라우저 핑거프린트·신원 교체 툴킷으로, 허가받은 보안 테스트용이다. Tor/obfs4, 일관된 프로필, WebRTC/DNS 유출 방지를 지원한다.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Browser fingerprint rotation for authorized security tests",
+          "zh-Hans": "授权安全测试用的本地指纹轮换",
+          "zh-Hant": "授權資安測試用的本機指紋輪換",
+          "ja": "認可済みセキュリティテスト用の指紋切り替え",
+          "ko": "승인된 보안 테스트용 지문 로테이션"
+        },
+        "hook_prev": {
           "en": "Local browser fingerprint rotation for security tests",
           "zh-Hans": "授权安全测试用的本地指纹轮换工具",
           "zh-Hant": "授權資安測試用的本機指紋輪換工具",
@@ -839,6 +1175,13 @@
         "ko": "엔드투엔드 DevOps TaskFlow API — FastAPI, PostgreSQL, SQLAlchemy, Alembic, Docker Compose, Pytest, GitHub Actions CI, Kubernetes, prometheus, Grafana, helm, k9s, …",
         "seen": "2026-10-30",
         "hook": {
+          "en": "An end-to-end DevOps API, start to finish",
+          "zh-Hans": "一套从头到尾的 DevOps 任务接口",
+          "zh-Hant": "一套從頭到尾的 DevOps 任務介面",
+          "ja": "最初から最後までそろった DevOps の API",
+          "ko": "처음부터 끝까지 갖춘 DevOps API"
+        },
+        "hook_prev": {
           "en": "End-to-end DevOps TaskFlow API",
           "zh-Hans": "端到端 DevOps TaskFlow API",
           "zh-Hant": "端到端 DevOps TaskFlow API",
@@ -861,6 +1204,13 @@
           "zh-Hant": "Uttorent 2026 完整安裝程式",
           "ja": "Uttorent 2026 完全版インストーラー",
           "ko": "Uttorent 2026 전체 설치 파일"
+        },
+        "hook_prev": {
+          "en": "Uttorent 2026 full working installer",
+          "zh-Hans": "Uttorent 2026 完整安装程序",
+          "zh-Hant": "Uttorent 2026 完整安裝程式",
+          "ja": "Uttorent 2026 完全版インストーラー",
+          "ko": "Uttorent 2026 전체 설치 파일"
         }
       }
     },
@@ -874,6 +1224,13 @@
         "en": "Ship a money-making AI site for every new keyword. Cloudflare-native starter with auth, credits, payments and AI generation. / A framework for farms of new-keyword sites: one new keyword, one site, live in an afternoon. Keep iterating on the ones that take off, drop the ones that don't…",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Found a new keyword? Launch an AI site in an afternoon",
+          "zh-Hans": "追到新词，一下午上线一个 AI 站",
+          "zh-Hant": "追到新詞，一下午上線一個 AI 站",
+          "ja": "新ワードを見つけたら、午後には AI サイトを公開",
+          "ko": "새 키워드를 잡으면 한나절에 AI 사이트 오픈"
+        },
+        "hook_prev": {
           "en": "A money-making AI site for every new keyword",
           "zh-Hans": "一个新词，一个赚钱的 AI 网站",
           "zh-Hant": "一個新詞，一個賺錢的 AI 網站",
@@ -896,6 +1253,13 @@
           "zh-Hant": "我每天都在用的代理技能",
           "ja": "毎日使っているエージェントスキル",
           "ko": "매일 쓰는 에이전트 스킬 모음"
+        },
+        "hook_prev": {
+          "en": "The agent skills I use every day",
+          "zh-Hans": "我每天都在用的智能体技能",
+          "zh-Hant": "我每天都在用的代理技能",
+          "ja": "毎日使っているエージェントスキル",
+          "ko": "매일 쓰는 에이전트 스킬 모음"
         }
       }
     },
@@ -908,6 +1272,13 @@
         "ko": "오픈 소스 에이전틱 보안 운영 플랫폼:",
         "seen": "2026-10-30",
         "hook": {
+          "en": "A security operations platform run by agents, open source",
+          "zh-Hans": "智能体来管安全运营，开源可用",
+          "zh-Hant": "代理來管資安營運，開源可用",
+          "ja": "エージェントが回すオープンソースのセキュリティ運用",
+          "ko": "에이전트가 돌리는 오픈 소스 보안 운영"
+        },
+        "hook_prev": {
           "en": "Open-source agentic security operations platform",
           "zh-Hans": "开源的智能体式安全运营平台",
           "zh-Hant": "開源的代理式資安營運平台",
@@ -930,6 +1301,13 @@
           "zh-Hant": "Glary Utilities Pro 已啟用安裝包",
           "ja": "Glary Utilities Pro 2026 有効化済みインストーラー",
           "ko": "Glary Utilities Pro 2026 도구 활성화 설치 파일"
+        },
+        "hook_prev": {
+          "en": "Glary Utilities Pro 2026 installer, tools activated",
+          "zh-Hans": "Glary Utilities Pro 已激活安装包",
+          "zh-Hant": "Glary Utilities Pro 已啟用安裝包",
+          "ja": "Glary Utilities Pro 2026 有効化済みインストーラー",
+          "ko": "Glary Utilities Pro 2026 도구 활성화 설치 파일"
         }
       }
     },
@@ -942,6 +1320,13 @@
         "ko": "Watson — Windows용 무료 OSINT 도구: 닉네임, 이메일, 전화번호, 웹사이트로 3,100개 이상의 공개 사이트에서 사람을 검색한다. 오픈소스 인텔리전스를 쉽게: digi…",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Search a person across 3,100+ public sites, free",
+          "zh-Hans": "昵称邮箱电话，查遍 3,100 多个站点",
+          "zh-Hant": "暱稱郵箱電話，查遍 3,100 多個站點",
+          "ja": "ニックネーム・メール・電話から、3,100 以上のサイトで検索",
+          "ko": "닉네임·메일·전화로 3,100개 이상 사이트 검색"
+        },
+        "hook_prev": {
           "en": "Free OSINT: search people across 3,100+ sites",
           "zh-Hans": "免费 OSINT：3,100 多个站点查人",
           "zh-Hant": "免費 OSINT：3,100 多個站點查人",
@@ -960,6 +1345,13 @@
         "en": "tv-fresh TV refresh: an Agent Skill that removes ads from Xiaomi TV (MIUI TV), cleans out preinstalled apps, swaps the launcher, and installs a proxy and the video-source app \"YingShiCang\" (影视仓) — no root needed, reversible, with a firmware reverse-engineering log and a one-click script",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Clear ads off Xiaomi TV, no root, reversible",
+          "zh-Hans": "小米电视的广告，不 root 也能清掉",
+          "zh-Hant": "小米電視的廣告，不 root 也能清掉",
+          "ja": "Xiaomi TV の広告を、root なしで消す",
+          "ko": "샤오미 TV 광고를 루팅 없이 지운다"
+        },
+        "hook_prev": {
           "en": "Remove ads from Xiaomi TV, no root, reversible",
           "zh-Hans": "小米电视去广告，免 root 可逆",
           "zh-Hant": "小米電視去廣告，免 root 可逆",
@@ -978,6 +1370,13 @@
         "en": "Mika — a personal AI assistant on your phone that operates apps, browses the web and gets things done for you. An on-device AI agent for Android that operates apps and the web to get things done for you.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "A personal AI on your phone that does the tapping",
+          "zh-Hans": "手机上的 AI 助理，替你点 App、上网",
+          "zh-Hant": "手機上的 AI 助理，替你點 App、上網",
+          "ja": "スマホの AI アシスタントが、アプリ操作を代行",
+          "ko": "폰 속 AI 비서가 앱 조작을 대신한다"
+        },
+        "hook_prev": {
           "en": "A personal AI that operates your phone for you",
           "zh-Hans": "你手机上的私人 AI 助理",
           "zh-Hant": "你手機上的私人 AI 助理",
@@ -996,6 +1395,13 @@
         "en": "M Meal Mate (M餐搭子): a smart meal-pairing Skill built on McDonald's MCP live menu and nutrition data | online demo now live",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Pair a McDonald's meal from live menu and nutrition data",
+          "zh-Hans": "吃麦当劳不会搭？按实时菜单和营养来配",
+          "zh-Hant": "吃麥當勞不會搭？按即時菜單和營養來配",
+          "ja": "マクドナルドのセット選びを、最新メニューと栄養で",
+          "ko": "맥도날드 조합을 실시간 메뉴·영양으로 추천"
+        },
+        "hook_prev": {
           "en": "Smart McDonald's meal pairing from live menu data",
           "zh-Hans": "按实时菜单和营养搭麦当劳套餐",
           "zh-Hant": "按即時菜單和營養搭麥當勞套餐",
@@ -1013,6 +1419,13 @@
         "ko": "내 Kubernetes 위에서 돌리는 셀프 호스팅 PaaS.",
         "seen": "2026-10-30",
         "hook": {
+          "en": "Run your own PaaS on your own Kubernetes",
+          "zh-Hans": "在自家 Kubernetes 上搭一个 PaaS",
+          "zh-Hant": "在自家 Kubernetes 上搭一個 PaaS",
+          "ja": "自前の Kubernetes に、自分の PaaS を",
+          "ko": "내 Kubernetes 위에 나만의 PaaS를"
+        },
+        "hook_prev": {
           "en": "Self-hosted PaaS on your own Kubernetes",
           "zh-Hans": "跑在自家 Kubernetes 上的 PaaS",
           "zh-Hant": "跑在自家 Kubernetes 上的 PaaS",

@@ -6,9 +6,11 @@ what the project lets you do, in words a beginner understands at a glance. Every
 file formats, the long original wording) stays in the detail text and is listed on docs/DETAILS*.md.
 
 Where hooks live:
-  data/projects.json                      "hook": {lang: text}   next to "desc" (= the detail text)
+  data/projects.json                      "hook": {lang: text}   next to "desc" (= the detail text);
+                                          "hook_prev": the hook before the last rewrite (kept, never shown)
   data/translation_library.json           slot["hook"] = {lang: text}   next to the translations of a source text
-                                          (same repo + source-hash key, so a changed source needs a new hook)
+                                          (same repo + source-hash key, so a changed source needs a new hook);
+                                          slot["hook_prev"] keeps the previous hook the same way
 
 The length limits below are enforced by `check_hook` (the pipeline rejects longer hooks and keeps the old
 text) and by tests/test_hooks.py (every stored hook must obey them, in every language).
@@ -27,16 +29,30 @@ MAX_WIDTH = {"en": 60, "zh-Hans": 36, "zh-Hant": 36, "ja": 56, "ko": 60}
 GOAL = {"en": "about 45 characters", "zh-Hans": "about 15 Chinese characters", "zh-Hant": "about 15 Chinese characters",
         "ja": "about 25 Japanese characters", "ko": "about 25 Korean characters"}
 
+# The eight writing rules for ad-grade hooks (from the 2026-10-31 zh-Hans slogan set). Every one of them is in the prompt.
+WRITING_RULES = (
+    "Start from the reader's trouble, then say what the project fixes: find the pain in the source text, never start from a technical noun.",
+    "Say only what the source states: add no feature, number, effect or platform; if the source does not say open source, free or local, you do not say it either.",
+    "Write for someone who has never seen it: say \"install packages\", not \"dependency resolution\"; say \"AI remembers last time\", not \"cross-session memory\".",
+    "One sentence sells ONE benefit; drop the minor features rather than listing them.",
+    "Short enough to read at a glance (limits below); no exclamation marks, no ellipsis, no hype words.",
+    "Use everyday actions and pictures: look, find, install, draw, switch, scan, manage; few abstract nouns.",
+    "Security / compliance: plain words about what is checked and what is kept out, never scary; cracked, pirated or limit-bypassing projects are never turned into a selling point.",
+    "A brand name is not a reason: official / big-company / famous-author appears only when the source says it and it really helps understanding, never in place of the user's benefit.",
+)
+
 HOOK_RULE = (
-    "HOOK RULE: each ranking row shows ONE short hook per language. A hook is a single plain, catchy sentence "
-    "(or fragment) that says what the project lets you DO, so a beginner gets it at a glance. "
-    "Example: \"Let AI reverse-engineer and clone any software\" / 「让 AI 帮你逆向、复刻任何软件」. "
-    "Limits (hard): English <= {en} characters; Simplified/Traditional Chinese <= 18 Chinese characters "
+    "HOOK RULE: each ranking row shows ONE ad-grade hook per language (a single plain, catchy sentence or fragment). "
+    "Example: \"Can't read a program? Let AI explain it to you\" / 「看不懂的程序，让 AI 讲给你听」. "
+    "Write it as a copywriter in that language would (benefit first, natural rhythm), not as a word-for-word translation: "
+    "all languages carry the same meaning and flavour. "
+    "Eight writing rules: "
+    + " ".join(f"({i}) {r}" for i, r in enumerate(WRITING_RULES, 1))
+    + " Hard limits: English <= {en} characters; Simplified/Traditional Chinese <= 18 Chinese characters "
     "(aim for about 15); Japanese <= 28 characters; Korean <= 30 characters. "
-    "Use everyday words; lead with the benefit; drop file formats, tool names, version lists and credits "
-    "(they stay in the detail text, nothing is lost). Never invent a fact, number or claim that the source does not state; "
-    "no exclamation marks, no hype or clickbait words, no trailing \"…\". One line, no markdown, no quotes. "
-    "For repos that look cracked / pirated / pre-activated, do not make them attractive: a flat literal label "
+    "Tool names, file formats, version lists and credits stay in the detail text (nothing is lost). "
+    "No trailing \"…\", one line, no markdown, no quotes. "
+    "For repos that look cracked / pirated / pre-activated, write a flat literal label "
     "(for example \"<name> 2026 installer, listed as pre-activated\")."
 ).format(**{"en": MAX_WIDTH["en"]})
 

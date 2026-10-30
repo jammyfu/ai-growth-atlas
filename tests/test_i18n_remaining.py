@@ -34,7 +34,7 @@ class LibrarySchemaTests(unittest.TestCase):
             for h, entry in versions.items():
                 self.assertEqual(h, newcomer_i18n.src_hash(entry["src"]), f"{name}: key is not the source hash")
                 for lang, text in entry.items():
-                    if lang == "hook":  # the one-line table hook, a separate field (tests/test_hooks.py)
+                    if lang in ("hook", "hook_prev"):  # the one-line table hook, a separate field (tests/test_hooks.py)
                         self.assertEqual(set(text), set(LANGS), name)
                     elif lang not in ("src", "seen"):
                         self.assertIn(lang, LANGS, f"{name}: unknown language {lang}")

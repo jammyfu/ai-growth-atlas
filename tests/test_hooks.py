@@ -58,8 +58,8 @@ class LengthRuleTests(unittest.TestCase):
         for lang in LANG5:
             self.assertIsNotNone(hooks.check_hook(rea["desc"][lang], lang), lang)  # the long text fails the rule
             self.assertIsNone(hooks.check_hook(rea["hook"][lang], lang, rea["desc"][lang]), lang)
-        self.assertEqual(rea["hook"]["zh-Hans"], "让 AI 帮你逆向、复刻任何软件")
-        self.assertLessEqual(len(rea["hook"]["zh-Hans"].replace(" ", "")), 15)
+        self.assertEqual(rea["hook"]["zh-Hans"], "看不懂的程序，让 AI 讲给你听")
+        self.assertEqual(rea["hook_prev"]["zh-Hans"], "让 AI 帮你逆向、复刻任何软件")  # the PR #12 hook is kept
 
     def test_rejects_hype_exclamation_ellipsis_new_numbers_and_multiline(self):
         d = "A tool with 3 parts."
@@ -84,6 +84,70 @@ class LengthRuleTests(unittest.TestCase):
         missing = [it["name"] for it in items if it.get("description")
                    and not all(nci.get_hook(LIB, it["name"], it["description"], l) for l in LANG5)]
         self.assertEqual(missing, [], "run: python3 tools/i18n_pipeline.py --hooks")
+
+
+class SloganTests(unittest.TestCase):
+    """The 70 zh-Hans slogans of tests/fixtures/slogans_zh.md are the zh-Hans hooks, the old hooks are kept."""
+
+    def slogans(self):
+        rows = {}
+        for line in (ROOT / "tests/fixtures/slogans_zh.md").read_text("utf-8").splitlines():
+            cells = [c.strip() for c in line.strip().strip("|").split("|")]
+            if len(cells) == 4 and "/" in cells[0]:
+                rows[cells[0]] = (cells[1], cells[2])
+        return rows
+
+    def test_the_70_slogans_are_the_zh_hans_hooks_and_the_old_one_is_kept(self):
+        rows = self.slogans()
+        self.assertEqual(len(rows), 70)
+        by_name = {p["name"]: p for p in PROJECTS}
+        for name, (old, new) in rows.items():
+            self.assertEqual(by_name[name]["hook"]["zh-Hans"], new, name)
+            self.assertEqual(by_name[name]["hook_prev"]["zh-Hans"], old, name)
+
+    def test_every_hook_of_the_previous_set_is_kept_as_hook_prev(self):
+        prev = json.loads((ROOT / "tests/fixtures/previous_hooks_baseline.json").read_text("utf-8"))
+        by_name = {p["name"]: p for p in PROJECTS}
+        for name, hook in prev["projects"].items():
+            self.assertEqual(by_name[name]["hook_prev"], hook, name)
+        for name, versions in prev["library"].items():
+            for h, hook in versions.items():
+                self.assertEqual(LIB["entries"][name][h]["hook_prev"], hook, name)
+
+    def test_slogans_are_not_the_old_hooks_and_every_language_changed(self):
+        by_name = {p["name"]: p for p in PROJECTS}
+        for name in self.slogans():
+            for lang in LANG5:
+                self.assertNotEqual(by_name[name]["hook"][lang], by_name[name]["hook_prev"][lang], (name, lang))
+
+    LITERAL = {"AshReinvigorate/Microsoft-Office", "CaretakerPlain/Whale-Tracker", "Fangludisclose/SystemCare-Pro",
+               "FormHalberdierSouk/SoundPad", "Lostbrocreate/Adobe-InDesign", "Phantomeidemonstrate/AnyDesk",
+               "PhoenixRetreat/Wondshare-Recoverit", "ScorpionHub17/KMS-Pico", "SoapmakerShout44/Cinema-4d",
+               "Sourcecladrag/Windows-Optimizer", "UniteCuttlefishBolt/Canva-Pro", "ViceFencerManacle/Camtasia",
+               "nodedevelopersack/Cubase", "scarletscreengrasp/Uttorent", "twilightstonerestore/Glary-Utilities-Pro"}
+
+    def test_listed_repos_are_rewritten_too_except_literal_labels_and_one_already_plain_text(self):
+        same = {n for n, v in LIB["entries"].items() for e in v.values() if e["hook"] == e["hook_prev"]}
+        # cracked / pre-activated installers keep their flat literal label (rule 7); tstack's source text is already the plain hook
+        self.assertEqual(same, self.LITERAL | {"t3dotgg/tstack"})
+        for n, v in LIB["entries"].items():
+            if n not in same:
+                for e in v.values():
+                    self.assertNotEqual(e["hook"]["zh-Hans"], e["hook_prev"]["zh-Hans"], n)
+
+    def test_regenerating_a_hook_keeps_the_previous_one(self):
+        repo = Repo({"a/one": "Does one thing."})
+        self.addCleanup(repo.close)
+        repo.write("projects.json", [project("p/proj", "A long English description.")])
+        pipe.write_hooks(repo.root, repo.items, FakeRunner(), pipe.Budget(60), lambda m: None)
+        rows = repo.read("projects.json")
+        rows[0]["hook"]["en"] = "x" * 80  # now breaks the rule
+        repo.write("projects.json", rows)
+        pipe.write_hooks(repo.root, repo.items, FakeRunner(hook=lambda i: {l: f"better {l}" for l in i["langs"]}),
+                         pipe.Budget(60), lambda m: None)
+        row = repo.read("projects.json")[0]
+        self.assertEqual(row["hook"]["en"], "better en")
+        self.assertEqual(row["hook_prev"]["en"], "x" * 80)
 
 
 class OldEntriesSurviveTests(unittest.TestCase):
@@ -150,9 +214,20 @@ class PipelineTests(unittest.TestCase):
         self.run_hooks(r)
         prompt = r.calls[0]
         for needle in ("English <= 60", "18 Chinese characters", "Japanese <= 28", "Korean <= 30",
-                       "让 AI 帮你逆向、复刻任何软件", "never invent", "literal"):
+                       "看不懂的程序，让 AI 讲给你听", "copywriter", "word-for-word", "literal"):
             self.assertIn(needle.lower(), prompt.lower(), needle)
         self.assertIn('"literal": true', prompt)  # the suspicious repo is flagged to the model
+
+    def test_all_eight_writing_rules_are_in_the_prompt(self):
+        self.assertEqual(len(hooks.WRITING_RULES), 8)
+        r = FakeRunner()
+        self.run_hooks(r)
+        for i, rule in enumerate(hooks.WRITING_RULES, 1):
+            self.assertIn(f"({i}) {rule}", r.calls[0], i)
+        # the eight rules of the source file, by their key phrases
+        for needle in ("reader's trouble", "Say only what the source states", "never seen it", "ONE benefit",
+                       "no exclamation marks", "everyday actions", "never scary", "A brand name is not a reason"):
+            self.assertIn(needle, hooks.HOOK_RULE, needle)
 
     def test_polish_prompt_keeps_the_details_and_points_at_the_hooks(self):
         self.assertIn("one-line hook", pipe.POLISH_PROMPT)

@@ -493,7 +493,11 @@ def write_hooks(root: Path, items: list[dict[str, Any]], runner: Runner, budget:
                 if g["kind"] == "newcomer":
                     nci.put_hook(lib, g["id"], g["src"], lang, text.strip(), today)
                 else:
-                    by_name[g["id"]].setdefault("hook", {})[lang] = text.strip()
+                    row = by_name[g["id"]]
+                    old = (row.get("hook") or {}).get(lang)
+                    if old and old != text.strip():  # an earlier hook is kept (never shown), not overwritten
+                        row.setdefault("hook_prev", {})[lang] = old
+                    row.setdefault("hook", {})[lang] = text.strip()
                 stat["written"] += 1
         nci.save(lib, root / LIB_REL)  # saved after every batch so a later failure loses nothing
         _write_json(projects_path, projects)
