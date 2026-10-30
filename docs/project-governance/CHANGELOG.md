@@ -17,4 +17,4 @@
 ## 2026-10-30 (i18n pipeline)
 
 - All 39 untranslated new-repo descriptions translated into zh-Hans, zh-Hant, ja, ko (+ en for the 11 Chinese sources); every project blurb and category description already had all five languages (now enforced by a test).
-- `tools/i18n_pipeline.py` + `tools/llm.py`: the scheduled update translates new descriptions into the cache (skipping anything already translated) and polishes copy through the Cursor CLI (default model `gemini-3.8-flash-medium`, key from the `CURSOR_API_KEY` Actions secret). Skipped without a key; a failure keeps the existing text and never blocks the update.
+- `tools/i18n_pipeline.py` + `tools/llm.py`: the scheduled update translates new descriptions into the cache (skipping anything already translated) in CI (Cursor CLI, optional `CURSOR_API_KEY` secret). Polish runs locally with the Antigravity CLI (`agy`, model `gemini-3.8-flash-medium`) via `tools/polish_local.sh` / `tools/local_daily.sh`. A failure keeps the existing text and never blocks the update.
