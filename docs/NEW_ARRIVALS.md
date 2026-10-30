@@ -53,4 +53,7 @@ five-language `desc`); from then on it leaves this ranking and competes in the o
 ## Descriptions
 
 The table shows the repo's own GitHub description in its original language (made safe for a table cell:
-newlines removed, `|` replaced, HTML escaped, cut at 160 characters). It is not translated or rewritten.
+newlines removed, `|` replaced, HTML escaped, cut at 160 characters). It is never rewritten by the generator.
+A hand-written translation in `data/newcomer_i18n.json` is shown instead on a page of that language, but only while its
+`src` equals the current description; a repo without a (current) translation shows the original. Gaps:
+`python3 tools/newcomer_i18n.py`.

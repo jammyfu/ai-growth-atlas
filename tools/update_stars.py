@@ -24,6 +24,7 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import archive  # noqa: E402
 import atlas_core as core  # noqa: E402
+import newcomer_i18n  # noqa: E402
 import newcomers  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -191,6 +192,11 @@ def main(argv: list[str] | None = None) -> int:
     if not args.no_render:
         import render_readme
         render_readme.main([])
+    if new.get("ok"):  # informational only: a gap falls back to the original text, it never fails the run
+        gaps = newcomer_i18n.problems(newcomer_i18n.load(ROOT / "data/newcomer_i18n.json"), new["items"][:archive.TOP_N])
+        if gaps:
+            print(f"{len(gaps)} new-repo descriptions have no up-to-date translation "
+                  "(shown in the original language); run: python3 tools/newcomer_i18n.py")
     return 0
 
 

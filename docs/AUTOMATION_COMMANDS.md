@@ -21,7 +21,8 @@ python3 tools/next_plan.py
 ```bash
 GITHUB_TOKEN=$(gh auth token) python3 tools/update_stars.py
 python3 tools/update_stars.py --slot cn   # cn|pt|manual|auto; archives to rankings/<date>/<slot>/ and latest/
-python3 tools/render_readme.py          # re-render only (READMEs, latest/, rankings/README.md)
+python3 tools/render_readme.py          # re-render only (READMEs, latest/, rankings/README*.md, per-language snapshot pages)
+python3 tools/newcomer_i18n.py          # list new-repo descriptions that still lack a translation (--strict: exit 1)
 tools/local_daily.sh --no-push          # full local daily cycle, commit but do not push
 ```
 

@@ -6,6 +6,10 @@ Layout (all generated; snapshots are written once per slot-run and kept forever)
   rankings/README.md                       history index linking every snapshot, newest first
   latest/stats.json, latest/rankings.md    copy of the newest run
 
+Every page except stats.json also exists once per language, named like the READMEs:
+rankings.<lang>.md, README.<lang>.md (rankings/), latest/rankings.<lang>.md, for every code in
+i18n.LANGS other than "en". The strings come from i18n.S; the data is the same stats.json.
+
 Slots: cn = Beijing 00:00 (folder date = Asia/Shanghai date), pt = Los Angeles 00:00
 (folder date = America/Los_Angeles date), manual = any other run (folder date and time = UTC).
 """
@@ -19,6 +23,7 @@ from typing import Any
 from zoneinfo import ZoneInfo
 
 import atlas_core as core
+from i18n import LANGS, S
 
 TOP_N = 20
 SLOTS = {
@@ -26,6 +31,29 @@ SLOTS = {
     "pt": ("America/Los_Angeles", "Los Angeles 00:00"),
 }
 SLOT_CHOICES = ("auto", "cn", "pt", "manual")
+
+
+def rankings_name(lang: str) -> str:
+    """File name of the rankings page: rankings.md for English, rankings.<lang>.md otherwise."""
+    return "rankings.md" if lang == "en" else f"rankings.{lang}.md"
+
+
+def index_name(lang: str) -> str:
+    """File name of the history index in rankings/: README.md or README.<lang>.md."""
+    return "README.md" if lang == "en" else f"README.{lang}.md"
+
+
+def slot_label(slot: dict[str, str], lang: str) -> str:
+    """The slot's label in `lang`; unknown slots keep the label stored in stats.json."""
+    s = S[lang]
+    if slot.get("name") == "cn":
+        return s["slot_cn"]
+    if slot.get("name") == "pt":
+        return s["slot_pt"]
+    sid = slot.get("id", "")
+    if slot.get("name") == "manual" and len(sid) == 11 and sid.startswith("manual-"):
+        return s["slot_manual"].format(hm=f"{sid[7:9]}:{sid[9:11]}")
+    return slot["label"]
 
 
 def detect_slot(now_utc: dt.datetime) -> str:
@@ -50,14 +78,14 @@ def make_slot(now_utc: dt.datetime, requested: str = "auto") -> dict[str, str]:
             "label": f"Manual {utc:%H:%M} UTC", "tz": "UTC"}
 
 
-def _rows(ranked: list[dict], key: str) -> list[str]:
+def _rows(ranked: list[dict], key: str, lang: str = "en") -> list[str]:
     out = []
     for i, p in enumerate(ranked, 1):
         if key == "total":
             out.append(f"| {i} | [{p['name']}](https://github.com/{p['name']}) | {p['stars']:,} |")
             continue
         g = p["growth"][key]
-        mark = f" † (÷{g['effective_days']}d)" if g["young"] else ""
+        mark = f" † ({S[lang]['young_div'].format(n=g['effective_days'])})" if g["young"] else ""
         out.append(f"| {i} | [{p['name']}](https://github.com/{p['name']}) | +{g['gained']:,} | "
                    f"{g['per_day']:,.1f}{mark} | {p['stars']:,} |")
     return out
@@ -68,14 +96,13 @@ def _new_rows(items: list[dict]) -> list[str]:
             f"{it['per_day']:,.1f} |" for i, it in enumerate(items, 1)]
 
 
-def render_rankings_md(stats: dict[str, Any]) -> str:
-    from i18n import S
-    s = S["en"]
-    slot = stats.get("slot") or {"label": "unlabelled", "date": stats["today_utc"], "id": "n/a"}
+def render_rankings_md(stats: dict[str, Any], lang: str = "en") -> str:
+    s = S[lang]
+    slot = stats.get("slot") or {"label": s["snap_unlabelled"], "date": stats["today_utc"], "id": "n/a"}
     lines = [
-        f"# Rankings snapshot: {slot['label']}, {slot['date']}", "",
-        f"Slot `{slot['id']}`. Data fetched from the GitHub API at {stats['generated_at']} "
-        f"(window end: {stats['today_utc']} UTC). Top {TOP_N}.", "",
+        "# " + s["snap_title"].format(label=slot_label(slot, lang),
+                                      date=slot["date"]), "",
+        s["snap_meta"].format(id=slot["id"], ts=stats["generated_at"], end=stats["today_utc"], n=TOP_N), "",
     ]
     projects = stats["projects"]
     new = stats.get("newcomers")
@@ -84,21 +111,23 @@ def render_rankings_md(stats: dict[str, Any]) -> str:
         if not new["ok"]:
             lines += [s["new_failed"].format(error=new["error"]), ""]
         else:
-            lines += ["| # | Repo | Created (UTC) | Stars | Stars/day |", "|---|---|---|---:|---:|"]
+            lines += [f"| {s['h_rank']} | {s['h_repo']} | {s['h_created']} | {s['h_stars_short']} | {s['h_perday']} |",
+                      "|---|---|---|---:|---:|"]
             lines += _new_rows(new["items"][:TOP_N]) + [""]
             bad = [q for q in new["queries"] if not q["ok"]]
             if bad:
                 lines += [s["new_partial"].format(failed=len(bad), total=len(new["queries"])), ""]
     for key in ("week", "month", "year"):
         lines += [f"## {s[key]}", "",
-                  "| # | Project | Stars gained | Stars/day | Total stars |", "|---|---|---:|---:|---:|"]
-        lines += _rows(core.rank(projects, key)[:TOP_N], key) + [""]
-    lines += [f"## {s['total']}", "", "| # | Project | Total stars |", "|---|---|---:|"]
-    lines += _rows(core.rank(projects, "total")[:TOP_N], "total") + [""]
+                  f"| {s['h_rank']} | {s['h_project']} | {s['h_gain']} | {s['h_perday']} | {s['h_stars']} |",
+                  "|---|---|---:|---:|---:|"]
+        lines += _rows(core.rank(projects, key)[:TOP_N], key, lang) + [""]
+    lines += [f"## {s['total']}", "", f"| {s['h_rank']} | {s['h_project']} | {s['h_stars']} |", "|---|---|---:|"]
+    lines += _rows(core.rank(projects, "total")[:TOP_N], "total", lang) + [""]
     missing = [p for p in projects if not p.get("ok")]
     lines += [f"## {s['missing_title']}", ""]
     lines += [f"- `{p['name']}`: {p['error']}" for p in missing] if missing else [s["missing_none"]]
-    lines += ["", "† The repo is younger than the window; stars/day is divided by the repo age in days.", ""]
+    lines += ["", s["snap_young"], ""]
     return "\n".join(lines)
 
 
@@ -111,7 +140,8 @@ def write_snapshot(root: Path, stats: dict[str, Any]) -> Path:
     slot = stats["slot"]
     d = root / "rankings" / slot["date"] / slot["id"]
     write_json(d / "stats.json", stats)
-    (d / "rankings.md").write_text(render_rankings_md(stats), "utf-8")
+    for lang in LANGS:
+        (d / rankings_name(lang)).write_text(render_rankings_md(stats, lang), "utf-8")
     return d
 
 
@@ -123,16 +153,17 @@ def scan_snapshots(root: Path) -> list[tuple[Path, dict[str, Any]]]:
     return found
 
 
-def render_index(root: Path) -> str:
+def render_index(root: Path, lang: str = "en") -> str:
+    s = S[lang]
+    rk = rankings_name(lang)
     snaps = scan_snapshots(root)
     lines = [
-        "# Ranking history", "",
-        "Every update stores its full result in its own folder, `rankings/<date>/<slot>/`, and the history is kept. "
-        "Slots: `cn-0000` = Beijing 00:00, `pt-0000` = Los Angeles 00:00, `manual-HHMM` = any other run (UTC). "
-        "Folder dates are the local date of the slot's time zone.", "",
-        "Latest: [`latest/rankings.md`](../latest/rankings.md) · [`latest/stats.json`](../latest/stats.json) · "
-        "[README](../README.md)", "",
-        "| Date | Slot | Fetched (UTC) | #1 new (7 days) | #1 this week | #1 this month | #1 this year | Snapshot |",
+        "# " + s["idx_title"], "",
+        s["idx_intro"], "",
+        f"{s['idx_latest']}[`latest/{rk}`](../latest/{rk}) · [`latest/stats.json`](../latest/stats.json) · "
+        f"[README](../{LANGS[lang][0]})", "",
+        f"| {s['idx_h_date']} | {s['idx_h_slot']} | {s['idx_h_fetched']} | {s['idx_h_new']} | {s['idx_h_week']} | "
+        f"{s['idx_h_month']} | {s['idx_h_year']} | {s['idx_h_snap']} |",
         "|---|---|---|---|---|---|---|---|",
     ]
     for d, st in snaps:
@@ -140,27 +171,39 @@ def render_index(root: Path) -> str:
         tops = []
         for key in ("week", "month", "year"):
             r = core.rank(st["projects"], key)
-            tops.append(f"{r[0]['name']} ({r[0]['growth'][key]['per_day']:,.0f}/day)" if r else "n/a")
+            per_day = f"{r[0]['growth'][key]['per_day']:,.0f}" if r else ""
+            tops.append(f"{r[0]['name']} ({s['idx_perday'].format(n=per_day)})" if r else s["none"])
         new = st.get("newcomers")
-        top_new = (f"{new['items'][0]['name']} ({new['items'][0]['per_day']:,.0f}/day)"
-                   if new and new.get("ok") and new["items"] else "n/a")
+        top_new = s["none"]
+        if new and new.get("ok") and new["items"]:
+            first = new["items"][0]
+            top_new = f"{first['name']} ({s['idx_perday'].format(n=format(first['per_day'], ',.0f'))})"
         rel = d.relative_to(root / "rankings").as_posix()
-        lines.append(f"| {slot['date']} | {slot['label']} (`{slot['id']}`) | {st['generated_at']} | "
-                     f"{top_new} | {tops[0]} | {tops[1]} | {tops[2]} | [{rel}]({rel}/rankings.md) · [json]({rel}/stats.json) |")
+        lines.append(f"| {slot['date']} | {slot_label(slot, lang)} (`{slot['id']}`) | {st['generated_at']} | "
+                     f"{top_new} | {tops[0]} | {tops[1]} | {tops[2]} | [{rel}]({rel}/{rk}) · [json]({rel}/stats.json) |")
     if not snaps:
-        lines.append("| | | | | | | | no snapshots yet |")
+        lines.append(f"| | | | | | | | {s['idx_no_snaps']} |")
     lines.append("")
     return "\n".join(lines)
 
 
 def render_latest_and_index(root: Path) -> dict[Path, str]:
-    """Return {path: expected text} for latest/ and the index, derived from the newest snapshot."""
-    out: dict[Path, str] = {root / "rankings/README.md": render_index(root)}
+    """Return {path: expected text} for latest/, the indexes and the localized snapshot pages.
+
+    Derived from the committed stats.json files. The English snapshot page (rankings.md) is not
+    listed: it is written once when the snapshot is created and then left alone.
+    """
+    out: dict[Path, str] = {root / "rankings" / index_name(lang): render_index(root, lang) for lang in LANGS}
     snaps = scan_snapshots(root)
     if snaps:
         newest = snaps[0][1]
         out[root / "latest/stats.json"] = json.dumps(newest, ensure_ascii=False, indent=2) + "\n"
-        out[root / "latest/rankings.md"] = render_rankings_md(newest)
+        for lang in LANGS:
+            out[root / "latest" / rankings_name(lang)] = render_rankings_md(newest, lang)
+    for d, st in snaps:
+        for lang in LANGS:
+            if lang != "en":
+                out[d / rankings_name(lang)] = render_rankings_md(st, lang)
     return out
 
 

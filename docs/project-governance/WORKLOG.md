@@ -22,3 +22,9 @@
 - Added the "hottest new repos (last 7 days)" ranking (`tools/newcomers.py`, `docs/NEW_ARRIVALS.md`), rediscovered on every slot run, stored in each snapshot (`newcomers`), `latest/` and all five READMEs.
 - Dedup: excludes tracked projects and anything in the week/month/year/total top 20; enforced by tests on committed data and every snapshot.
 - Verification: `python3 tools/verify.py` green (59 tests).
+
+## 2026-10-30 (i18n follow-up)
+
+- Hand-written translations of the new-repo descriptions in `data/newcomer_i18n.json` (zh-Hans, zh-Hant, ja, ko; en for CJK sources); used only while `src` matches the current description, otherwise the original shows. `tools/newcomer_i18n.py` lists gaps (`--strict` exits 1); the daily run prints the gap count.
+- Ranking pages are generated per language: `rankings/README.<lang>.md`, `latest/rankings.<lang>.md`, `rankings/<date>/<slot>/rankings.<lang>.md`; each README links to its own language. English pages are byte-identical to before.
+- Verification: `python3 tools/verify.py` green (76 tests).

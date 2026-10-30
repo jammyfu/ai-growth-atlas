@@ -129,6 +129,11 @@ class RepoHistoryTests(unittest.TestCase):
             self.assertEqual(d.parent.name, st["slot"]["date"])
             self.assertEqual((d / "rankings.md").read_text("utf-8"), archive.render_rankings_md(st))
             self.assertIn(f"{d.parent.name}/{d.name}/rankings.md", index)
+            for code in LANGS:  # one page per language, same data
+                self.assertEqual((d / archive.rankings_name(code)).read_text("utf-8"),
+                                 archive.render_rankings_md(st, code), f"{d} {code}")
+                idx = (ROOT / "rankings" / archive.index_name(code)).read_text("utf-8")
+                self.assertIn(f"{d.parent.name}/{d.name}/{archive.rankings_name(code)}", idx, code)
             self.assertTrue(all(p["ok"] or "error" in p for p in st["projects"]))
 
     def test_latest_equals_newest_snapshot_and_matches_data_stats(self):
@@ -139,8 +144,10 @@ class RepoHistoryTests(unittest.TestCase):
     def test_every_readme_links_history_and_latest(self):
         for code, (fname, _l) in LANGS.items():
             text = (ROOT / fname).read_text("utf-8")
-            self.assertIn("rankings/README.md", text, fname)
-            self.assertIn("latest/rankings.md", text, fname)
+            self.assertIn(f"rankings/{archive.index_name(code)}", text, fname)
+            self.assertIn(f"latest/{archive.rankings_name(code)}", text, fname)
+            self.assertTrue((ROOT / "rankings" / archive.index_name(code)).exists(), code)
+            self.assertTrue((ROOT / "latest" / archive.rankings_name(code)).exists(), code)
 
 
 if __name__ == "__main__":
