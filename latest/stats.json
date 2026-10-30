@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-30T08:26:39Z",
+  "generated_at": "2026-10-30T08:39:25Z",
   "today_utc": "2026-10-30",
   "slot": {
     "name": "manual",
-    "id": "manual-0826",
+    "id": "manual-0839",
     "date": "2026-10-30",
-    "label": "Manual 08:26 UTC",
+    "label": "Manual 08:39 UTC",
     "tz": "UTC"
   },
   "windows_days": {
@@ -18,7 +18,7 @@
     {
       "name": "morluto/rea",
       "ok": true,
-      "stars": 409505,
+      "stars": 409565,
       "created_at": "2026-04-14T00:51:32Z",
       "archived": false,
       "github_description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
@@ -32,21 +32,21 @@
         },
         "month": {
           "window_days": 30,
-          "gained": 408695,
+          "gained": 408693,
           "effective_days": 30,
-          "per_day": 13623.167,
+          "per_day": 13623.1,
           "young": false
         },
         "year": {
           "window_days": 365,
-          "gained": 409097,
+          "gained": 409095,
           "effective_days": 199,
-          "per_day": 2055.764,
+          "per_day": 2055.754,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 409505,
+      "history_total": 409565,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -78,9 +78,9 @@
         },
         "year": {
           "window_days": 365,
-          "gained": 194806,
+          "gained": 194805,
           "effective_days": 365,
-          "per_day": 533.715,
+          "per_day": 533.712,
           "young": false
         }
       },
@@ -96,7 +96,7 @@
     {
       "name": "stablyai/orca",
       "ok": true,
-      "stars": 110509,
+      "stars": 110515,
       "created_at": "2026-03-17T03:28:57Z",
       "archived": false,
       "github_description": "Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
@@ -124,7 +124,7 @@
         }
       },
       "history_complete": true,
-      "history_total": 110509,
+      "history_total": 110515,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -135,7 +135,7 @@
     {
       "name": "cloudflare/security-audit-skill",
       "ok": true,
-      "stars": 53218,
+      "stars": 53235,
       "created_at": "2026-06-18T14:08:44Z",
       "archived": false,
       "github_description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
@@ -163,7 +163,7 @@
         }
       },
       "history_complete": true,
-      "history_total": 53218,
+      "history_total": 53235,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -174,7 +174,7 @@
     {
       "name": "heygen-com/hyperframes",
       "ok": true,
-      "stars": 75666,
+      "stars": 75673,
       "created_at": "2026-03-10T01:51:06Z",
       "archived": false,
       "github_description": "Write HTML. Render video. Built for agents.",
@@ -202,7 +202,7 @@
         }
       },
       "history_complete": true,
-      "history_total": 75666,
+      "history_total": 75673,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -213,7 +213,7 @@
     {
       "name": "DietrichGebert/ponytail",
       "ok": true,
-      "stars": 180473,
+      "stars": 180485,
       "created_at": "2026-06-12T00:52:37Z",
       "archived": false,
       "github_description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
@@ -241,7 +241,7 @@
         }
       },
       "history_complete": true,
-      "history_total": 180473,
+      "history_total": 180485,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -252,7 +252,7 @@
     {
       "name": "Graphify-Labs/graphify",
       "ok": true,
-      "stars": 138978,
+      "stars": 138983,
       "created_at": "2026-04-03T15:49:07Z",
       "archived": false,
       "github_description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
@@ -273,14 +273,14 @@
         },
         "year": {
           "window_days": 365,
-          "gained": 138923,
+          "gained": 138922,
           "effective_days": 210,
-          "per_day": 661.538,
+          "per_day": 661.533,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 138978,
+      "history_total": 138982,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -330,7 +330,7 @@
     {
       "name": "deepseek-ai/deepseek-harness",
       "ok": true,
-      "stars": 266263,
+      "stars": 266274,
       "created_at": "2026-08-13T11:56:32Z",
       "archived": false,
       "github_description": "DeepSeek Harness: Everything is a Plugin.",
@@ -358,7 +358,7 @@
         }
       },
       "history_complete": true,
-      "history_total": 266263,
+      "history_total": 266274,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -369,7 +369,7 @@
     {
       "name": "affaan-m/ECC",
       "ok": true,
-      "stars": 292931,
+      "stars": 292932,
       "created_at": "2026-01-18T00:51:51Z",
       "archived": false,
       "github_description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
@@ -390,14 +390,14 @@
         },
         "year": {
           "window_days": 365,
-          "gained": 292885,
+          "gained": 292884,
           "effective_days": 285,
-          "per_day": 1027.667,
+          "per_day": 1027.663,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 292931,
+      "history_total": 292932,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -408,7 +408,7 @@
     {
       "name": "yetone/magpie",
       "ok": true,
-      "stars": 25802,
+      "stars": 25810,
       "created_at": "2026-09-23T16:22:35Z",
       "archived": false,
       "github_description": "Every agent's model. One place. Codex on DeepSeek, Claude Code on Kimi, from the menu bar.",
@@ -422,21 +422,21 @@
         },
         "month": {
           "window_days": 30,
-          "gained": 22601,
+          "gained": 22600,
           "effective_days": 30,
-          "per_day": 753.367,
+          "per_day": 753.333,
           "young": false
         },
         "year": {
           "window_days": 365,
-          "gained": 25720,
+          "gained": 25719,
           "effective_days": 37,
-          "per_day": 695.135,
+          "per_day": 695.108,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 25802,
+      "history_total": 25810,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -447,7 +447,7 @@
     {
       "name": "Panniantong/Agent-Reach",
       "ok": true,
-      "stars": 106500,
+      "stars": 106509,
       "created_at": "2026-02-24T02:10:24Z",
       "archived": false,
       "github_description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
@@ -475,7 +475,7 @@
         }
       },
       "history_complete": true,
-      "history_total": 106500,
+      "history_total": 106509,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -486,7 +486,7 @@
     {
       "name": "Leonxlnx/taste-skill",
       "ok": true,
-      "stars": 105827,
+      "stars": 105834,
       "created_at": "2026-02-19T21:44:05Z",
       "archived": false,
       "github_description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
@@ -514,7 +514,7 @@
         }
       },
       "history_complete": true,
-      "history_total": 105827,
+      "history_total": 105834,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -525,7 +525,7 @@
     {
       "name": "nextlevelbuilder/ui-ux-pro-max-skill",
       "ok": true,
-      "stars": 142709,
+      "stars": 142715,
       "created_at": "2025-11-30T11:36:31Z",
       "archived": false,
       "github_description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
@@ -553,7 +553,7 @@
         }
       },
       "history_complete": true,
-      "history_total": 142709,
+      "history_total": 142715,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -564,7 +564,7 @@
     {
       "name": "cheaper-inference/OmniRoute",
       "ok": true,
-      "stars": 82661,
+      "stars": 82663,
       "created_at": "2026-02-13T12:38:31Z",
       "archived": false,
       "github_description": "Never stop coding. Free MIT AI gateway: one endpoint, 375 providers (150+ free), 1,400+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 900+ contributors",
@@ -592,7 +592,7 @@
         }
       },
       "history_complete": true,
-      "history_total": 82660,
+      "history_total": 82662,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -603,7 +603,7 @@
     {
       "name": "paperclipai/paperclip",
       "ok": true,
-      "stars": 108792,
+      "stars": 108798,
       "created_at": "2026-03-02T15:01:51Z",
       "archived": false,
       "github_description": "The open-source app everyone uses to manage agents at work",
@@ -631,7 +631,7 @@
         }
       },
       "history_complete": true,
-      "history_total": 108792,
+      "history_total": 108798,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -642,7 +642,7 @@
     {
       "name": "farion1231/cc-switch",
       "ok": true,
-      "stars": 150224,
+      "stars": 150238,
       "created_at": "2025-08-04T14:16:16Z",
       "archived": false,
       "github_description": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode,DeepSeek Harness and more. Only official website: ccswitch.io",
@@ -681,7 +681,7 @@
     {
       "name": "NousResearch/hermes-agent",
       "ok": true,
-      "stars": 258632,
+      "stars": 258636,
       "created_at": "2025-07-22T22:22:28Z",
       "archived": false,
       "github_description": "The agent that grows with you",
@@ -720,7 +720,7 @@
     {
       "name": "NVIDIA/SkillSpector",
       "ok": true,
-      "stars": 23429,
+      "stars": 23432,
       "created_at": "2026-03-21T00:28:43Z",
       "archived": false,
       "github_description": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and supply-chain risks in Claude Code, Codex, and MCP skills before you install them.",
@@ -748,7 +748,7 @@
         }
       },
       "history_complete": true,
-      "history_total": 23429,
+      "history_total": 23432,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -759,7 +759,7 @@
     {
       "name": "addyosmani/agent-skills",
       "ok": true,
-      "stars": 111820,
+      "stars": 111823,
       "created_at": "2026-02-15T20:20:26Z",
       "archived": false,
       "github_description": "Production-grade engineering skills for AI coding agents.",
@@ -780,14 +780,14 @@
         },
         "year": {
           "window_days": 365,
-          "gained": 111806,
+          "gained": 111805,
           "effective_days": 257,
-          "per_day": 435.043,
+          "per_day": 435.039,
           "young": true
         }
       },
       "history_complete": true,
-      "history_total": 111820,
+      "history_total": 111823,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -798,7 +798,7 @@
     {
       "name": "thedotmack/claude-mem",
       "ok": true,
-      "stars": 105130,
+      "stars": 105138,
       "created_at": "2025-08-31T20:50:03Z",
       "archived": false,
       "github_description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
@@ -837,7 +837,7 @@
     {
       "name": "anthropics/skills",
       "ok": true,
-      "stars": 184883,
+      "stars": 184884,
       "created_at": "2025-09-22T15:53:31Z",
       "archived": false,
       "github_description": "Public repository for Agent Skills",
@@ -858,14 +858,14 @@
         },
         "year": {
           "window_days": 365,
-          "gained": 170781,
+          "gained": 170780,
           "effective_days": 365,
-          "per_day": 467.893,
+          "per_day": 467.89,
           "young": false
         }
       },
       "history_complete": true,
-      "history_total": 184883,
+      "history_total": 184884,
       "snapshot_check": {
         "week": null,
         "month": null,
@@ -993,7 +993,7 @@
     {
       "name": "zed-industries/zed",
       "ok": true,
-      "stars": 92405,
+      "stars": 92406,
       "created_at": "2021-02-20T03:01:06Z",
       "archived": false,
       "github_description": "Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
@@ -1032,7 +1032,7 @@
     {
       "name": "helix-editor/helix",
       "ok": true,
-      "stars": 46732,
+      "stars": 46733,
       "created_at": "2020-06-01T04:26:56Z",
       "archived": false,
       "github_description": "A post-modern modal text editor.",
@@ -1266,7 +1266,7 @@
     {
       "name": "semgrep/semgrep",
       "ok": true,
-      "stars": 17351,
+      "stars": 17352,
       "created_at": "2019-12-13T09:29:54Z",
       "archived": false,
       "github_description": "Lightweight static analysis for many languages. Find bug variants with patterns that look like source code.",
@@ -1539,30 +1539,30 @@
     {
       "name": "facebook/react",
       "ok": true,
-      "stars": 251755,
+      "stars": 251753,
       "created_at": "2013-05-24T16:15:54Z",
       "archived": false,
       "github_description": "The library for web and native user interfaces.",
       "growth": {
         "week": {
           "window_days": 7,
-          "gained": 344,
+          "gained": 343,
           "effective_days": 7,
-          "per_day": 49.143,
+          "per_day": 49.0,
           "young": false
         },
         "month": {
           "window_days": 30,
-          "gained": 1582,
+          "gained": 1581,
           "effective_days": 30,
-          "per_day": 52.733,
+          "per_day": 52.7,
           "young": false
         },
         "year": {
           "window_days": 365,
-          "gained": 15180,
+          "gained": 15179,
           "effective_days": 365,
-          "per_day": 41.589,
+          "per_day": 41.586,
           "young": false
         }
       },
@@ -1734,7 +1734,7 @@
     {
       "name": "shadcn-ui/ui",
       "ok": true,
-      "stars": 126936,
+      "stars": 126937,
       "created_at": "2023-01-04T12:43:27Z",
       "archived": false,
       "github_description": "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own.",
@@ -1812,7 +1812,7 @@
     {
       "name": "kubernetes/kubernetes",
       "ok": true,
-      "stars": 128521,
+      "stars": 128522,
       "created_at": "2014-06-06T22:56:04Z",
       "archived": false,
       "github_description": "Production-Grade Container Scheduling and Management",
@@ -1851,7 +1851,7 @@
     {
       "name": "docker/compose",
       "ok": true,
-      "stars": 38524,
+      "stars": 38525,
       "created_at": "2013-12-09T11:40:58Z",
       "archived": false,
       "github_description": "Define and run multi-container applications with Docker",
@@ -2007,7 +2007,7 @@
     {
       "name": "traefik/traefik",
       "ok": true,
-      "stars": 65413,
+      "stars": 65414,
       "created_at": "2015-09-13T19:04:02Z",
       "archived": false,
       "github_description": "The Cloud Native Application Proxy",
@@ -2124,7 +2124,7 @@
     {
       "name": "excalidraw/excalidraw",
       "ok": true,
-      "stars": 134833,
+      "stars": 134834,
       "created_at": "2020-01-02T01:04:43Z",
       "archived": false,
       "github_description": "Virtual whiteboard for sketching hand-drawn like diagrams",
@@ -2358,7 +2358,7 @@
     {
       "name": "lucide-icons/lucide",
       "ok": true,
-      "stars": 25389,
+      "stars": 25390,
       "created_at": "2020-06-08T15:36:21Z",
       "archived": false,
       "github_description": "Beautiful & consistent icon toolkit made by the community. Open-source project and a fork of Feather Icons.",
@@ -2749,104 +2749,104 @@
   "newcomers": {
     "ok": true,
     "window_days": 7,
-    "since": "2026-10-23T08:26:39Z",
+    "since": "2026-10-23T08:39:25Z",
     "min_stars": 100,
     "top_n": 20,
     "categories": {
       "ai": {
         "category": "ai",
         "window_days": 7,
-        "since": "2026-10-23T08:26:39Z",
+        "since": "2026-10-23T08:39:25Z",
         "min_stars": 100,
         "top_n": 20,
         "queries": [
           {
             "label": "topic:ai",
-            "q": "topic:ai created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:ai created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 5
           },
           {
             "label": "topic:artificial-intelligence",
-            "q": "topic:artificial-intelligence created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:artificial-intelligence created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:llm",
-            "q": "topic:llm created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:llm created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 9
           },
           {
             "label": "topic:large-language-models",
-            "q": "topic:large-language-models created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:large-language-models created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 1
           },
           {
             "label": "topic:llm-agent",
-            "q": "topic:llm-agent created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:llm-agent created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 1
           },
           {
             "label": "topic:ai-agents",
-            "q": "topic:ai-agents created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:ai-agents created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 10
           },
           {
             "label": "topic:ai-agent",
-            "q": "topic:ai-agent created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:ai-agent created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 6
           },
           {
             "label": "topic:mcp",
-            "q": "topic:mcp created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:mcp created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 11
           },
           {
             "label": "topic:mcp-server",
-            "q": "topic:mcp-server created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:mcp-server created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 6
           },
           {
             "label": "topic:claude-code",
-            "q": "topic:claude-code created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:claude-code created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 18
           },
           {
             "label": "topic:generative-ai",
-            "q": "topic:generative-ai created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:generative-ai created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 2
           },
           {
             "label": "topic:machine-learning",
-            "q": "topic:machine-learning created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:machine-learning created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:deep-learning",
-            "q": "topic:deep-learning created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:deep-learning created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 1
           },
           {
             "label": "topic:rag",
-            "q": "topic:rag created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:rag created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:vibe-coding",
-            "q": "topic:vibe-coding created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:vibe-coding created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 1
           }
@@ -2861,10 +2861,10 @@
             "url": "https://github.com/rddmwmddr/android-ad-cleaner",
             "description": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
             "language": "Python",
-            "stars": 4889,
+            "stars": 4892,
             "created_at": "2026-10-24T05:35:47Z",
-            "age_days": 6.12,
-            "per_day": 799.0,
+            "age_days": 6.13,
+            "per_day": 798.4,
             "topics": [
               "adb",
               "ai-agent",
@@ -2882,10 +2882,10 @@
             "url": "https://github.com/wangzan101/Mika",
             "description": "Mika — 你手机上的私人 AI 助理，替你操作 App、上网、把事办成。An on-device AI agent for Android that operates apps and the web to get things done for you.",
             "language": "Kotlin",
-            "stars": 279,
+            "stars": 284,
             "created_at": "2026-10-29T14:34:07Z",
             "age_days": 1.0,
-            "per_day": 279.0,
+            "per_day": 284.0,
             "topics": [
               "accessibility",
               "ai-agent",
@@ -2905,8 +2905,8 @@
             "language": "Python",
             "stars": 1280,
             "created_at": "2026-10-25T10:05:56Z",
-            "age_days": 4.93,
-            "per_day": 259.6,
+            "age_days": 4.94,
+            "per_day": 259.1,
             "topics": [
               "agent-skills",
               "archives",
@@ -2922,12 +2922,12 @@
             "name": "ccch1mneyyy/dsh-go",
             "repo_id": 1432967563,
             "url": "https://github.com/ccch1mneyyy/dsh-go",
-            "description": "dsh-go — DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。Android · Unofficial.",
+            "description": "dsh-go — DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。",
             "language": "Dart",
-            "stars": 1159,
+            "stars": 1187,
             "created_at": "2026-10-25T08:09:52Z",
-            "age_days": 5.01,
-            "per_day": 231.3,
+            "age_days": 5.02,
+            "per_day": 236.4,
             "topics": [
               "ai-agent",
               "android",
@@ -2936,6 +2936,7 @@
               "deepseek",
               "deepseek-harness",
               "dsh",
+              "dsh-plugin",
               "dsh-tui",
               "flutter",
               "llm"
@@ -2947,7 +2948,7 @@
             "url": "https://github.com/qybaihe/bla",
             "description": "🛡️ BLA (Blind LLM Agents) — Adversarial defense shield that protects binaries, Electron apps, JS bundles, Python, and WebAssembly against AI reverse-engineerin…",
             "language": "TypeScript",
-            "stars": 1070,
+            "stars": 1072,
             "created_at": "2026-10-25T05:25:45Z",
             "age_days": 5.13,
             "per_day": 208.8,
@@ -2970,10 +2971,10 @@
             "url": "https://github.com/ZiChuanLan/agent-purge",
             "description": "One persona, many coding agents. Replace or inject system prompts across codex, claude, opencode, grok, omp, hermes, pi, zcode - with a local web console.",
             "language": "JavaScript",
-            "stars": 893,
+            "stars": 895,
             "created_at": "2026-10-25T06:06:02Z",
-            "age_days": 5.1,
-            "per_day": 175.2,
+            "age_days": 5.11,
+            "per_day": 175.3,
             "topics": [
               "claude-code",
               "codex",
@@ -2992,10 +2993,10 @@
             "url": "https://github.com/jackwener/DeepseekHarness-Android",
             "description": "免 ROOT 免 Termux，一个 APK 在安卓手机上跑 DeepSeek Harness。引擎内嵌 App 进程 · 读屏操作 App · 改系统设置 · 定时/条件自动化 · 可选 Shizuku",
             "language": "Kotlin",
-            "stars": 375,
+            "stars": 376,
             "created_at": "2026-10-27T19:26:12Z",
-            "age_days": 2.54,
-            "per_day": 147.5,
+            "age_days": 2.55,
+            "per_day": 147.4,
             "topics": [
               "ai-agent",
               "android",
@@ -3014,8 +3015,8 @@
             "language": "JavaScript",
             "stars": 410,
             "created_at": "2026-10-27T12:03:01Z",
-            "age_days": 2.85,
-            "per_day": 143.9,
+            "age_days": 2.86,
+            "per_day": 143.4,
             "topics": [
               "ai-coding",
               "architecture-diagram",
@@ -3039,8 +3040,8 @@
             "language": "Python",
             "stars": 431,
             "created_at": "2026-10-27T08:00:42Z",
-            "age_days": 3.02,
-            "per_day": 142.8,
+            "age_days": 3.03,
+            "per_day": 142.4,
             "topics": [
               "agent-skills",
               "animation",
@@ -3058,10 +3059,10 @@
             "url": "https://github.com/daveebbelaar/bama",
             "description": "BAMA: Build Any Mac App. Agent skills to research, clone, design, build, optimize, and test native macOS apps with Swift and SwiftUI.",
             "language": "Swift",
-            "stars": 836,
+            "stars": 838,
             "created_at": "2026-10-24T08:44:36Z",
-            "age_days": 5.99,
-            "per_day": 139.6,
+            "age_days": 6.0,
+            "per_day": 139.8,
             "topics": [
               "agent-skills",
               "ai-agents",
@@ -3088,8 +3089,8 @@
             "language": "TypeScript",
             "stars": 287,
             "created_at": "2026-10-28T06:35:51Z",
-            "age_days": 2.08,
-            "per_day": 138.2,
+            "age_days": 2.09,
+            "per_day": 137.6,
             "topics": [
               "ai",
               "cloudflare",
@@ -3112,7 +3113,7 @@
             "stars": 188,
             "created_at": "2026-10-28T12:09:26Z",
             "age_days": 1.85,
-            "per_day": 101.9,
+            "per_day": 101.4,
             "topics": [
               "ai-agents",
               "appsec",
@@ -3135,8 +3136,8 @@
             "language": "JavaScript",
             "stars": 185,
             "created_at": "2026-10-28T09:37:45Z",
-            "age_days": 1.95,
-            "per_day": 94.8,
+            "age_days": 1.96,
+            "per_day": 94.4,
             "topics": [
               "chinese",
               "claude-code",
@@ -3155,8 +3156,8 @@
             "language": "Python",
             "stars": 510,
             "created_at": "2026-10-24T22:34:43Z",
-            "age_days": 5.41,
-            "per_day": 94.3,
+            "age_days": 5.42,
+            "per_day": 94.1,
             "topics": [
               "ai",
               "attack-surface-management",
@@ -3176,8 +3177,8 @@
             "language": "TypeScript",
             "stars": 235,
             "created_at": "2026-10-27T14:43:07Z",
-            "age_days": 2.74,
-            "per_day": 85.8,
+            "age_days": 2.75,
+            "per_day": 85.5,
             "topics": [
               "ai-agents",
               "docker",
@@ -3192,10 +3193,10 @@
             "url": "https://github.com/SAOS-3624/dsh-video-storyboard",
             "description": "Scene-aware storyboard for DeepSeek Harness: 9-16 numbered cells with timestamps + transcript + an audio envelope, packed into ONE image (384 tokens). Two tool…",
             "language": "JavaScript",
-            "stars": 228,
+            "stars": 229,
             "created_at": "2026-10-26T22:00:04Z",
             "age_days": 3.44,
-            "per_day": 66.4,
+            "per_day": 66.5,
             "topics": [
               "asr",
               "contact-sheet",
@@ -3217,8 +3218,8 @@
             "language": null,
             "stars": 368,
             "created_at": "2026-10-24T16:55:17Z",
-            "age_days": 5.65,
-            "per_day": 65.2,
+            "age_days": 5.66,
+            "per_day": 65.1,
             "topics": [
               "abliterated-models",
               "ai-api",
@@ -3250,8 +3251,8 @@
             "language": "Kotlin",
             "stars": 264,
             "created_at": "2026-10-26T05:13:32Z",
-            "age_days": 4.13,
-            "per_day": 63.9,
+            "age_days": 4.14,
+            "per_day": 63.7,
             "topics": [
               "ai",
               "android",
@@ -3277,8 +3278,8 @@
             "language": "Python",
             "stars": 135,
             "created_at": "2026-10-28T00:57:01Z",
-            "age_days": 2.31,
-            "per_day": 58.4,
+            "age_days": 2.32,
+            "per_day": 58.2,
             "topics": [
               "attention",
               "chinese",
@@ -3300,8 +3301,8 @@
             "language": "JavaScript",
             "stars": 236,
             "created_at": "2026-10-25T09:53:57Z",
-            "age_days": 4.94,
-            "per_day": 47.8,
+            "age_days": 4.95,
+            "per_day": 47.7,
             "topics": [
               "agent-id",
               "agentic-wallet",
@@ -3320,55 +3321,55 @@
       "devtools": {
         "category": "devtools",
         "window_days": 7,
-        "since": "2026-10-23T08:26:39Z",
+        "since": "2026-10-23T08:39:25Z",
         "min_stars": 100,
         "top_n": 20,
         "queries": [
           {
             "label": "topic:cli",
-            "q": "topic:cli created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:cli created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 5
           },
           {
             "label": "topic:developer-tools",
-            "q": "topic:developer-tools created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:developer-tools created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 32
           },
           {
             "label": "topic:devtools",
-            "q": "topic:devtools created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:devtools created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:lsp",
-            "q": "topic:lsp created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:lsp created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:package-manager",
-            "q": "topic:package-manager created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:package-manager created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:linter",
-            "q": "topic:linter created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:linter created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:formatter",
-            "q": "topic:formatter created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:formatter created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:build-tool",
-            "q": "topic:build-tool created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:build-tool created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           }
@@ -3387,8 +3388,8 @@
             "language": "Rust",
             "stars": 371,
             "created_at": "2026-10-25T05:09:24Z",
-            "age_days": 5.14,
-            "per_day": 72.2,
+            "age_days": 5.15,
+            "per_day": 72.1,
             "topics": [
               "cli",
               "color-quantization",
@@ -3410,8 +3411,8 @@
             "language": "Rust",
             "stars": 188,
             "created_at": "2026-10-25T11:14:03Z",
-            "age_days": 4.88,
-            "per_day": 38.5,
+            "age_days": 4.89,
+            "per_day": 38.4,
             "topics": [
               "ai-agents",
               "claude-code",
@@ -3440,7 +3441,7 @@
             "language": "Python",
             "stars": 205,
             "created_at": "2026-10-23T13:04:31Z",
-            "age_days": 6.81,
+            "age_days": 6.82,
             "per_day": 30.1,
             "topics": [
               "agentic-ai",
@@ -3465,8 +3466,8 @@
             "language": "Python",
             "stars": 147,
             "created_at": "2026-10-23T22:48:28Z",
-            "age_days": 6.4,
-            "per_day": 23.0,
+            "age_days": 6.41,
+            "per_day": 22.9,
             "topics": [
               "ai-agents",
               "code-quality",
@@ -3486,7 +3487,7 @@
             "language": "Python",
             "stars": 122,
             "created_at": "2026-10-24T06:02:19Z",
-            "age_days": 6.1,
+            "age_days": 6.11,
             "per_day": 20.0,
             "topics": [
               "browser-privacy",
@@ -4001,55 +4002,55 @@
       "security": {
         "category": "security",
         "window_days": 7,
-        "since": "2026-10-23T08:26:39Z",
+        "since": "2026-10-23T08:39:25Z",
         "min_stars": 100,
         "top_n": 20,
         "queries": [
           {
             "label": "topic:cybersecurity",
-            "q": "topic:cybersecurity created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:cybersecurity created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 3
           },
           {
             "label": "topic:vulnerability",
-            "q": "topic:vulnerability created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:vulnerability created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:sast",
-            "q": "topic:sast created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:sast created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:devops-security",
-            "q": "topic:devops-security created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:devops-security created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:supply-chain-security",
-            "q": "topic:supply-chain-security created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:supply-chain-security created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:container-security",
-            "q": "topic:container-security created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:container-security created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:pentest",
-            "q": "topic:pentest created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:pentest created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 1
           },
           {
             "label": "topic:infosec",
-            "q": "topic:infosec created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:infosec created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 1
           }
@@ -4069,7 +4070,7 @@
             "stars": 316,
             "created_at": "2026-10-28T00:09:33Z",
             "age_days": 2.35,
-            "per_day": 134.7,
+            "per_day": 134.2,
             "topics": [
               "cybersecurity",
               "desktop-app",
@@ -4101,7 +4102,7 @@
             "language": "Python",
             "stars": 114,
             "created_at": "2026-10-24T16:12:28Z",
-            "age_days": 5.68,
+            "age_days": 5.69,
             "per_day": 20.1,
             "topics": [
               "agentic-ai",
@@ -4126,49 +4127,49 @@
       "web": {
         "category": "web",
         "window_days": 7,
-        "since": "2026-10-23T08:26:39Z",
+        "since": "2026-10-23T08:39:25Z",
         "min_stars": 100,
         "top_n": 20,
         "queries": [
           {
             "label": "topic:frontend",
-            "q": "topic:frontend created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:frontend created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:react",
-            "q": "topic:react created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:react created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 6
           },
           {
             "label": "topic:vue",
-            "q": "topic:vue created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:vue created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:svelte",
-            "q": "topic:svelte created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:svelte created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:css",
-            "q": "topic:css created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:css created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:nextjs",
-            "q": "topic:nextjs created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:nextjs created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 1
           },
           {
             "label": "topic:tailwind",
-            "q": "topic:tailwind created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:tailwind created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           }
@@ -4186,10 +4187,10 @@
             "url": "https://github.com/designfuchen/word-atlas",
             "description": "词光 · Word Atlas — Illustrated IELTS vocabulary with 7,298 words, UK/US audio and FSRS review. Open-source app + CC BY 4.0 dataset.",
             "language": "TypeScript",
-            "stars": 3295,
+            "stars": 3297,
             "created_at": "2026-10-25T08:27:22Z",
-            "age_days": 5.0,
-            "per_day": 659.1,
+            "age_days": 5.01,
+            "per_day": 658.3,
             "topics": [
               "chinese",
               "dataset",
@@ -4213,8 +4214,8 @@
             "language": "TypeScript",
             "stars": 440,
             "created_at": "2026-10-26T13:48:11Z",
-            "age_days": 3.78,
-            "per_day": 116.5,
+            "age_days": 3.79,
+            "per_day": 116.2,
             "topics": [
               "character-swap",
               "comfyui",
@@ -4233,8 +4234,8 @@
             "language": "TypeScript",
             "stars": 106,
             "created_at": "2026-10-28T12:48:27Z",
-            "age_days": 1.82,
-            "per_day": 58.3,
+            "age_days": 1.83,
+            "per_day": 58.0,
             "topics": [
               "ai-classification",
               "floatboat",
@@ -4256,8 +4257,8 @@
             "language": "TypeScript",
             "stars": 154,
             "created_at": "2026-10-27T01:41:01Z",
-            "age_days": 3.28,
-            "per_day": 46.9,
+            "age_days": 3.29,
+            "per_day": 46.8,
             "topics": [
               "chinese-culture",
               "data-visualization",
@@ -4277,8 +4278,8 @@
             "language": "TypeScript",
             "stars": 128,
             "created_at": "2026-10-24T12:39:14Z",
-            "age_days": 5.82,
-            "per_day": 22.0,
+            "age_days": 5.83,
+            "per_day": 21.9,
             "topics": [
               "mcdonalds",
               "mcp",
@@ -4296,55 +4297,55 @@
       "infra": {
         "category": "infra",
         "window_days": 7,
-        "since": "2026-10-23T08:26:39Z",
+        "since": "2026-10-23T08:39:25Z",
         "min_stars": 100,
         "top_n": 20,
         "queries": [
           {
             "label": "topic:kubernetes",
-            "q": "topic:kubernetes created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:kubernetes created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 2
           },
           {
             "label": "topic:docker",
-            "q": "topic:docker created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:docker created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 2
           },
           {
             "label": "topic:devops",
-            "q": "topic:devops created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:devops created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 1
           },
           {
             "label": "topic:infrastructure",
-            "q": "topic:infrastructure created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:infrastructure created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:terraform",
-            "q": "topic:terraform created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:terraform created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:observability",
-            "q": "topic:observability created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:observability created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:containers",
-            "q": "topic:containers created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:containers created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:sre",
-            "q": "topic:sre created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:sre created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           }
@@ -4363,8 +4364,8 @@
             "language": "Rust",
             "stars": 551,
             "created_at": "2026-10-24T07:25:39Z",
-            "age_days": 6.04,
-            "per_day": 91.2,
+            "age_days": 6.05,
+            "per_day": 91.1,
             "topics": [
               "databases",
               "deployment",
@@ -4384,7 +4385,7 @@
             "language": "Python",
             "stars": 121,
             "created_at": "2026-10-25T16:03:32Z",
-            "age_days": 4.68,
+            "age_days": 4.69,
             "per_day": 25.8,
             "topics": [
               "alembic",
@@ -4415,37 +4416,37 @@
       "design": {
         "category": "design",
         "window_days": 7,
-        "since": "2026-10-23T08:26:39Z",
+        "since": "2026-10-23T08:39:25Z",
         "min_stars": 100,
         "top_n": 20,
         "queries": [
           {
             "label": "topic:design-system",
-            "q": "topic:design-system created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:design-system created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:figma",
-            "q": "topic:figma created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:figma created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:animation",
-            "q": "topic:animation created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:animation created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 1
           },
           {
             "label": "topic:svg",
-            "q": "topic:svg created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:svg created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:ui-design",
-            "q": "topic:ui-design created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:ui-design created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           }
@@ -4461,49 +4462,49 @@
       "data": {
         "category": "data",
         "window_days": 7,
-        "since": "2026-10-23T08:26:39Z",
+        "since": "2026-10-23T08:39:25Z",
         "min_stars": 100,
         "top_n": 20,
         "queries": [
           {
             "label": "topic:database",
-            "q": "topic:database created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:database created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:etl",
-            "q": "topic:etl created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:etl created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:data-engineering",
-            "q": "topic:data-engineering created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:data-engineering created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 1
           },
           {
             "label": "topic:sql",
-            "q": "topic:sql created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:sql created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:olap",
-            "q": "topic:olap created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:olap created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:dataframe",
-            "q": "topic:dataframe created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:dataframe created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           },
           {
             "label": "topic:big-data",
-            "q": "topic:big-data created:>=2026-10-23T08:26:39Z stars:>=100 fork:false archived:false",
+            "q": "topic:big-data created:>=2026-10-23T08:39:25Z stars:>=100 fork:false archived:false",
             "ok": true,
             "total": 0
           }
@@ -4520,8 +4521,8 @@
             "language": "Python",
             "stars": 269,
             "created_at": "2026-10-25T07:57:16Z",
-            "age_days": 5.02,
-            "per_day": 53.6,
+            "age_days": 5.03,
+            "per_day": 53.5,
             "topics": [
               "data-engineering",
               "duckdb"
