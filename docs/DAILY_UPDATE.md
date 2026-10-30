@@ -28,15 +28,25 @@ rankings/<date>/pt-0000/   Los Angeles 00:00 run  (date = America/Los_Angeles da
 rankings/<date>/manual-HHMM/   any other run, e.g. manual dispatch (date/time = UTC)
     stats.json     full API-derived data of that run, plus a "slot" block and the new-repos ranking (`newcomers`)
     rankings.md    top-20 tables for that run, new-repos table first (English, compact)
-rankings/README.md   history index linking every snapshot, newest first
-latest/stats.json, latest/rankings.md   copy of the newest run
+    rankings.<lang>.md   the same page in zh-Hans, zh-Hant, ja, ko
+rankings/README.md   history index linking every snapshot, newest first (README.<lang>.md per language)
+latest/stats.json, latest/rankings.md   copy of the newest run (latest/rankings.<lang>.md per language)
 data/stats.json      what the READMEs are rendered from (same as the newest run)
 ```
 
-The five READMEs show the latest ranking and link to the history index and `latest/rankings.md`.
+The five READMEs show the latest ranking and link to the history index and `latest/rankings*.md` of their own language.
+The pages are generated from `tools/i18n.py` (strings) and `stats.json` (data); never edit them by hand.
 `tools/update_stars.py --slot cn|pt|manual|auto` picks the folder (`auto`, the default, uses cn if it is 00:xx in
 Beijing, pt if 00:xx in Los Angeles, otherwise manual). The workflow and `tools/local_daily.sh` pass the slot themselves.
-`tools/verify.py` checks that `latest/`, the index and every snapshot's `rankings.md` match their data.
+`tools/verify.py` checks that `latest/`, the indexes and every snapshot's `rankings*.md` (all languages) match their data.
+
+## New-repo description translations
+
+The new-repos table shows the repo's own GitHub description. For each language, `data/newcomer_i18n.json`
+can hold a hand-written translation, keyed by repo full name with the original text in `src`; it is shown only
+while `src` still equals the current description, otherwise the original is shown. Repos new to the ranking
+have no entry until someone adds one, so check the gaps with `python3 tools/newcomer_i18n.py` (the daily run
+prints the count; it never fails because of it). No online translation service or key is used.
 
 ## Schedule: Beijing 00:00 and Los Angeles 00:00
 

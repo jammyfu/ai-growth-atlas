@@ -15,6 +15,7 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import archive  # noqa: E402
 import atlas_core as core  # noqa: E402
+import newcomer_i18n  # noqa: E402
 from i18n import LANGS, S  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -79,21 +80,23 @@ def total_table(ranked: list[dict], metas: dict, cats: dict, lang: str) -> str:
     return "\n".join(lines)
 
 
-def new_table(items: list[dict], lang: str) -> str:
+def new_table(items: list[dict], lang: str, tr: dict | None = None) -> str:
     s = S[lang]
+    tr = tr or {}
     lines = [
         f"| {s['h_rank']} | {s['h_project']} | {s['h_created']} | {s['h_stars']} | {s['h_perday']} | {s['h_curve']} |",
         "|---|---|---|---:|---:|---|",
     ]
     for i, it in enumerate(items, 1):
-        desc = f"<br>{it['description']}" if it["description"] else ""
+        text = newcomer_i18n.pick(tr, it["name"], it["description"], lang) if it["description"] else ""
+        desc = f"<br>{text}" if text else ""
         lines.append(
             f"| {i} | [{it['name']}]({it['url']}){desc} | {it['created_at'][:10]}<br><sub>{s['age_fmt'].format(x=it['age_days'])}</sub> | "
             f"{fmt_int(it['stars'])} | {fmt_rate(it['per_day'])} | {curve_cell(it['name'], lang)} |")
     return "\n".join(lines)
 
 
-def render(lang: str, projects: list[dict], stats: dict, cats: dict) -> str:
+def render(lang: str, projects: list[dict], stats: dict, cats: dict, tr: dict | None = None) -> str:
     s = S[lang]
     metas = {p["name"]: p for p in projects}
     st = stats["projects"]
@@ -108,7 +111,8 @@ def render(lang: str, projects: list[dict], stats: dict, cats: dict) -> str:
         s["intro"], "",
         s["updated"].format(ts=stats["generated_at"].replace("T", " ").replace("Z", "")),
         s["shown"].format(n=TOP_N, total=len(projects)), "",
-        s["history"], "",
+        s["history"].format(index=f"rankings/{archive.index_name(lang)}",
+                            latest=f"latest/{archive.rankings_name(lang)}"), "",
         f"<details><summary>{s['cat_title']}</summary>", "",
         "| | |", "|---|---|",
     ]
@@ -124,7 +128,7 @@ def render(lang: str, projects: list[dict], stats: dict, cats: dict) -> str:
         elif not new["items"]:
             out += [s["new_none"], ""]
         else:
-            out += [new_table(new["items"][:TOP_N], lang), ""]
+            out += [new_table(new["items"][:TOP_N], lang, tr), ""]
         if new["ok"] and any(not q["ok"] for q in new["queries"]):
             bad = sum(1 for q in new["queries"] if not q["ok"])
             out += [s["new_partial"].format(failed=bad, total=len(new["queries"])), ""]
@@ -163,9 +167,10 @@ def main(argv: list[str] | None = None) -> int:
     projects = json.loads((ROOT / "data/projects.json").read_text("utf-8"))
     cats = {c["id"]: c for c in json.loads((ROOT / "data/categories.json").read_text("utf-8"))}
     stats = json.loads((ROOT / "data/stats.json").read_text("utf-8"))
+    tr = newcomer_i18n.load(ROOT / "data/newcomer_i18n.json")
     stale = []
     for lang, (fname, _label) in LANGS.items():
-        text = render(lang, projects, stats, cats)
+        text = render(lang, projects, stats, cats, tr)
         path = ROOT / fname
         if args.check:
             if not path.exists() or path.read_text("utf-8") != text:

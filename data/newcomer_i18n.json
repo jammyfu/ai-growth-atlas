@@ -1,0 +1,147 @@
+{
+  "rddmwmddr/android-ad-cleaner": {
+    "src": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
+    "zh-Hans": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
+    "zh-Hant": "關閉國產 Android 手機系統裡的廣告、熱搜、資訊推薦和行銷推播。不需 root，可還原，支援 AI 代理一鍵執行。",
+    "ja": "中国メーカー製 Android スマホのシステム内にある広告、トレンド検索、ニュースのおすすめ、マーケティング通知をオフにする。root 不要で元に戻せ、AI エージェントがワンクリックで実行できる。",
+    "ko": "중국산 안드로이드 스마트폰 시스템의 광고, 인기 검색어, 뉴스 추천, 마케팅 푸시를 꺼 준다. root 없이 쓸 수 있고 원래대로 되돌릴 수 있으며, AI 에이전트가 한 번에 실행할 수 있다.",
+    "en": "Turns off the ads, trending searches, news recommendations and marketing pushes built into Chinese Android phone systems. No root needed, reversible, and AI agents can run it in one step."
+  },
+  "t3dotgg/tstack": {
+    "src": "The agent skills I use every day. Works with Claude Code and Codex.",
+    "zh-Hans": "我每天都在用的智能体技能。适用于 Claude Code 和 Codex。",
+    "zh-Hant": "我每天都在用的代理技能。適用於 Claude Code 和 Codex。",
+    "ja": "私が毎日使っているエージェントスキル。Claude Code と Codex で使える。",
+    "ko": "내가 매일 쓰는 에이전트 스킬. Claude Code와 Codex에서 쓸 수 있다."
+  },
+  "andyhuo520/digital-human-koubo": {
+    "src": "AI digital-human talking-head videos from one photo: Renoise MCP generation + 5 editing styles + 48 creator-grade packaging components. Agent skill for Claude…",
+    "zh-Hans": "用一张照片生成 AI 数字人口播视频：Renoise MCP 生成 + 5 种剪辑风格 + 48 个创作者级包装组件。适用于 Claude 的智能体技能…",
+    "zh-Hant": "用一張照片生成 AI 數位人口播影片：Renoise MCP 生成 + 5 種剪輯風格 + 48 個創作者級包裝元件。適用於 Claude 的代理技能…",
+    "ja": "1 枚の写真から AI デジタルヒューマンのトーキングヘッド動画を作成：Renoise MCP による生成 + 5 種類の編集スタイル + 48 個のクリエイター向け演出パーツ。Claude 向けエージェントスキル…",
+    "ko": "사진 한 장으로 AI 디지털 휴먼 토킹헤드 영상 제작: Renoise MCP 생성 + 편집 스타일 5종 + 크리에이터급 패키징 컴포넌트 48개. Claude용 에이전트 스킬…"
+  },
+  "DenisSergeevitch/ex-ussr-kinship-research": {
+    "src": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Re…",
+    "zh-Hans": "面向 AI 智能体（Codex、Claude Code）的证据优先家谱研究技能：涵盖前苏联地区的教会簿册、民事、军事、流放和政治迫害档案…",
+    "zh-Hant": "面向 AI 代理（Codex、Claude Code）的證據優先家譜研究技能：涵蓋前蘇聯地區的教會簿冊、民事、軍事、流放和政治迫害檔案…",
+    "ja": "AI エージェント（Codex、Claude Code）向けの、証拠第一の系譜調査スキル：旧ソ連全域の教会記録、民事、軍事、強制移住、弾圧に関する記録…",
+    "ko": "AI 에이전트(Codex, Claude Code)를 위한 증거 우선 족보 조사 스킬: 구소련 전역의 교회 기록부, 민사, 군사, 강제 이주, 탄압 기록…"
+  },
+  "MiniMax-AI/mcode-stack": {
+    "src": "The workflows and skills the MiniMax Code team uses to build MiniMax Code. Open source, install and use.",
+    "zh-Hans": "MiniMax Code 团队用来构建 MiniMax Code 的工作流和技能。开源，安装即用。",
+    "zh-Hant": "MiniMax Code 團隊用來打造 MiniMax Code 的工作流程和技能。開源，安裝即可使用。",
+    "ja": "MiniMax Code チームが MiniMax Code の開発に使っているワークフローとスキル。オープンソースで、インストールしてすぐ使える。",
+    "ko": "MiniMax Code 팀이 MiniMax Code를 만드는 데 쓰는 워크플로와 스킬. 오픈 소스이며 설치해서 바로 쓸 수 있다."
+  },
+  "morganlinton/BeautifulRust": {
+    "src": "Agent Skills that teach coding agents to write, review, and port idiomatic Rust, plus a tested clippy config. Works with Claude Code, Codex, Copilot, Cursor, a…",
+    "zh-Hans": "教编程智能体编写、审查和移植地道 Rust 代码的 Agent Skills，另附一份经过测试的 clippy 配置。适用于 Claude Code、Codex、Copilot、Cursor 等…",
+    "zh-Hant": "教程式設計代理撰寫、審查和移植道地 Rust 程式碼的 Agent Skills，另附一份經過測試的 clippy 設定。適用於 Claude Code、Codex、Copilot、Cursor 等…",
+    "ja": "コーディングエージェントに、イディオマティックな Rust の記述・レビュー・移植を教える Agent Skills。テスト済みの clippy 設定も付属。Claude Code、Codex、Copilot、Cursor など…",
+    "ko": "코딩 에이전트에게 관용적인 Rust 코드를 작성하고 리뷰하고 포팅하는 법을 가르치는 Agent Skills와 검증된 clippy 설정. Claude Code, Codex, Copilot, Cursor 등에서 쓸 수 있다…"
+  },
+  "ChannelCooperStart/capri-ai": {
+    "src": "🌃 Capri — Edgerunners-inspired AI agent for your desktop. Works with Claude Code, Codex, Antigravity &amp; more.",
+    "zh-Hans": "🌃 Capri —— 受《赛博朋克：边缘行者》启发的桌面 AI 智能体。适用于 Claude Code、Codex、Antigravity 等。",
+    "zh-Hant": "🌃 Capri —— 受《電馭叛客：邊緣行者》啟發的桌面 AI 代理。適用於 Claude Code、Codex、Antigravity 等。",
+    "ja": "🌃 Capri — 『サイバーパンク：エッジランナーズ』にインスパイアされたデスクトップ向け AI エージェント。Claude Code、Codex、Antigravity などで使える。",
+    "ko": "🌃 Capri — 《사이버펑크: 엣지러너》에서 영감을 받은 데스크톱용 AI 에이전트. Claude Code, Codex, Antigravity 등에서 쓸 수 있다."
+  },
+  "ZiChuanLan/agent-purge": {
+    "src": "One persona, many coding agents. Replace or inject system prompts across codex, claude, opencode, grok, omp, hermes, pi, zcode - with a local web console.",
+    "zh-Hans": "一个人设，适配多个编程智能体。可在 codex、claude、opencode、grok、omp、hermes、pi、zcode 之间替换或注入系统提示词，并提供本地 Web 控制台。",
+    "zh-Hant": "一個人設，適用多個程式設計代理。可在 codex、claude、opencode、grok、omp、hermes、pi、zcode 之間替換或注入系統提示詞，並提供本機 Web 主控台。",
+    "ja": "1 つのペルソナで複数のコーディングエージェントに対応。codex、claude、opencode、grok、omp、hermes、pi、zcode のシステムプロンプトを置き換えたり注入したりでき、ローカルの Web コンソール付き。",
+    "ko": "하나의 페르소나로 여러 코딩 에이전트에 적용. codex, claude, opencode, grok, omp, hermes, pi, zcode의 시스템 프롬프트를 교체하거나 주입할 수 있으며 로컬 웹 콘솔을 제공한다."
+  },
+  "shipwords-dev/shipwords": {
+    "src": "Ship a money-making AI site for every new keyword. Cloudflare-native starter with auth, credits, payments and AI generation. / 新词站群框架：一个新词一个站，一个下午上线。起量的继续迭代，没起…",
+    "zh-Hans": "为每个新关键词上线一个赚钱的 AI 网站。基于 Cloudflare 的启动模板，含登录认证、积分、支付和 AI 生成。/ 新词站群框架：一个新词一个站，一个下午上线。起量的继续迭代，没起…",
+    "zh-Hant": "為每個新關鍵字上線一個賺錢的 AI 網站。基於 Cloudflare 的起始範本，含登入驗證、點數、付款和 AI 生成。/ 新詞站群框架：一個新詞一個站，一個下午上線。起量的繼續迭代，沒起…",
+    "ja": "新しいキーワードごとに稼げる AI サイトを公開。認証、クレジット、決済、AI 生成を備えた Cloudflare ネイティブのスターター。/ 新語サイト群フレームワーク：1 語につき 1 サイト、午後のうちに公開。伸びたものは改良を続け、伸びなかったものは…",
+    "ko": "새 키워드마다 돈 되는 AI 사이트를 하나씩 배포. 인증, 크레딧, 결제, AI 생성을 갖춘 Cloudflare 네이티브 스타터. / 신조어 사이트군 프레임워크: 키워드 하나에 사이트 하나, 오후 한나절이면 오픈. 반응이 오면 계속 개선하고, 반응이 없으면…",
+    "en": "Ship a money-making AI site for every new keyword. Cloudflare-native starter with auth, credits, payments and AI generation. / A framework for farms of new-keyword sites: one new keyword, one site, live in an afternoon. Keep iterating on the ones that take off, drop the ones that don't…"
+  },
+  "patch-gg/anymove": {
+    "src": "Motion capture for any creature from one AI video: two cameras in one frame, a DINOv2 joint reader, the rig fitted in both views, a GLB out.",
+    "zh-Hans": "只用一段 AI 视频，为任何生物做动作捕捉：一个画面里两个机位、DINOv2 关节识别、在两个视角中拟合骨架，输出 GLB。",
+    "zh-Hant": "只用一段 AI 影片，為任何生物做動作捕捉：一個畫面裡兩個機位、DINOv2 關節辨識、在兩個視角中擬合骨架，輸出 GLB。",
+    "ja": "1 本の AI 動画からあらゆる生き物のモーションキャプチャを実現：1 フレームに 2 台のカメラ、DINOv2 による関節検出、両方の視点でリグをフィットさせ、GLB を出力。",
+    "ko": "AI 영상 하나로 모든 생물의 모션 캡처: 한 화면에 카메라 두 대, DINOv2 관절 인식, 두 시점 모두에 리그를 맞추고 GLB로 출력."
+  },
+  "haydenschmitty/floorplan": {
+    "src": "See how your app actually fits together. An interactive, plain-English map of your codebase, drawn by Claude or Codex.",
+    "zh-Hans": "看清你的应用究竟是如何拼装在一起的。一张可交互、用通俗英语讲解的代码库地图，由 Claude 或 Codex 绘制。",
+    "zh-Hant": "看清你的應用程式究竟是如何組合在一起的。一張可互動、用淺顯英文說明的程式碼庫地圖，由 Claude 或 Codex 繪製。",
+    "ja": "アプリが実際にどう組み合わさっているかが見える。Claude または Codex が描く、平易な英語で説明されたインタラクティブなコードベースマップ。",
+    "ko": "앱이 실제로 어떻게 맞물려 있는지 보여 준다. Claude나 Codex가 그려 주는, 쉬운 영어로 설명된 대화형 코드베이스 지도."
+  },
+  "anonnerdfrenzy/survival-llm": {
+    "src": "A free AI assistant and survival library that runs on your own computer, with no internet needed. Shows the source of every answer.",
+    "zh-Hans": "运行在你自己电脑上的免费 AI 助手兼生存知识库，无需联网。每个回答都会标明来源。",
+    "zh-Hant": "在你自己電腦上執行的免費 AI 助理兼生存知識庫，無需連網。每個回答都會標明來源。",
+    "ja": "自分のパソコンで動く無料の AI アシスタント兼サバイバル資料庫で、インターネット接続は不要。すべての回答に出典を表示する。",
+    "ko": "내 컴퓨터에서 실행되는 무료 AI 어시스턴트이자 서바이벌 라이브러리로, 인터넷이 필요 없다. 모든 답변의 출처를 보여 준다."
+  },
+  "konlu/story-studio": {
+    "src": "从选题到剪映草稿的一站式 AI 短视频内容创作 Agent Skill",
+    "zh-Hans": "从选题到剪映草稿的一站式 AI 短视频内容创作 Agent Skill",
+    "zh-Hant": "從選題到剪映草稿的一站式 AI 短影片內容創作 Agent Skill",
+    "ja": "テーマ選定から剪映（CapCut）の下書きまでを一気通貫で行う、AI ショート動画制作向けの Agent Skill",
+    "ko": "주제 선정부터 젠잉(剪映, CapCut) 초안까지 한 번에 끝내는 AI 숏폼 영상 제작용 Agent Skill",
+    "en": "A one-stop AI short-video content creation Agent Skill, from picking a topic to a JianYing (CapCut) draft"
+  },
+  "daveebbelaar/bama": {
+    "src": "BAMA: Build Any Mac App. Agent skills to research, clone, design, build, optimize, and test native macOS apps with Swift and SwiftUI.",
+    "zh-Hans": "BAMA：Build Any Mac App（构建任意 Mac 应用）。用 Swift 和 SwiftUI 调研、仿制、设计、构建、优化和测试原生 macOS 应用的智能体技能。",
+    "zh-Hant": "BAMA：Build Any Mac App（打造任何 Mac 應用程式）。用 Swift 和 SwiftUI 研究、仿製、設計、建置、最佳化和測試原生 macOS 應用程式的代理技能。",
+    "ja": "BAMA：Build Any Mac App（あらゆる Mac アプリを作る）。Swift と SwiftUI でネイティブ macOS アプリを調査・クローン・設計・構築・最適化・テストするためのエージェントスキル。",
+    "ko": "BAMA: Build Any Mac App(어떤 Mac 앱이든 만든다). Swift와 SwiftUI로 네이티브 macOS 앱을 조사, 복제, 설계, 빌드, 최적화, 테스트하는 에이전트 스킬."
+  },
+  "qybaihe/bla": {
+    "src": "🛡️ BLA (Blind LLM Agents) — Adversarial defense shield that protects binaries, Electron apps, JS bundles, Python, and WebAssembly against AI reverse-engineerin…",
+    "zh-Hans": "🛡️ BLA（Blind LLM Agents）—— 对抗式防御盾，保护二进制文件、Electron 应用、JS 包、Python 和 WebAssembly 免受 AI 逆向工程…",
+    "zh-Hant": "🛡️ BLA（Blind LLM Agents）—— 對抗式防禦盾，保護二進位檔、Electron 應用程式、JS 套件、Python 和 WebAssembly 免受 AI 逆向工程…",
+    "ja": "🛡️ BLA（Blind LLM Agents）— バイナリ、Electron アプリ、JS バンドル、Python、WebAssembly を AI によるリバースエンジニアリングから守る、敵対的防御シールド…",
+    "ko": "🛡️ BLA(Blind LLM Agents) — 바이너리, Electron 앱, JS 번들, Python, WebAssembly를 AI 리버스 엔지니어링으로부터 보호하는 적대적 방어 실드…"
+  },
+  "andyhuo520/vibe-knowledge": {
+    "src": "Vibe 知识大赏：一个知识点 → 一条有旁白、每句有出处的精品知识短片（Claude Code skill · 44 套风格 · 代码逐帧成片）",
+    "zh-Hans": "Vibe 知识大赏：一个知识点 → 一条有旁白、每句有出处的精品知识短片（Claude Code skill · 44 套风格 · 代码逐帧成片）",
+    "zh-Hant": "Vibe 知識大賞：一個知識點 → 一支有旁白、每句有出處的精品知識短片（Claude Code skill · 44 套風格 · 程式碼逐格成片）",
+    "ja": "Vibe 知識大賞：1 つの知識ポイント → ナレーション付きで、すべての文に出典がある高品質な知識ショート動画に（Claude Code skill · 44 種のスタイル · コードでフレームごとに生成）",
+    "ko": "Vibe 지식 대상: 지식 포인트 하나 → 내레이션이 있고 모든 문장에 출처가 달린 고품질 지식 쇼츠 영상 한 편(Claude Code skill · 스타일 44종 · 코드로 프레임 단위 제작)",
+    "en": "Vibe Knowledge Awards: one knowledge point → one polished short knowledge video with narration and a source for every sentence (Claude Code skill · 44 styles · built frame by frame in code)"
+  },
+  "davemessew/AgentFlux": {
+    "src": "Agentic AI platform for visual workflows and autonomous agents. Run it with Docker on your own computer or server.",
+    "zh-Hans": "面向可视化工作流和自主智能体的智能体式 AI 平台。可用 Docker 在你自己的电脑或服务器上运行。",
+    "zh-Hant": "適用於視覺化工作流程與自主代理的代理式 AI 平台。可用 Docker 在你自己的電腦或伺服器上執行。",
+    "ja": "ビジュアルワークフローと自律型エージェントのためのエージェント型 AI プラットフォーム。Docker で自分のパソコンやサーバーに立ち上げられる。",
+    "ko": "시각적 워크플로와 자율 에이전트를 위한 에이전틱 AI 플랫폼. Docker로 내 컴퓨터나 서버에서 실행할 수 있다."
+  },
+  "wangrongding/tv-fresh": {
+    "src": "tv-fresh 电视焕新：小米电视(MIUI TV)去广告/清理预装/换桌面/装代理与影视仓的 Agent Skill——免root可逆，含固件逆向实录与一键脚本",
+    "zh-Hans": "tv-fresh 电视焕新：小米电视(MIUI TV)去广告/清理预装/换桌面/装代理与影视仓的 Agent Skill——免root可逆，含固件逆向实录与一键脚本",
+    "zh-Hant": "tv-fresh 電視煥新：小米電視(MIUI TV)去廣告/清理預裝/換桌面/裝代理與影視倉的 Agent Skill——免root可逆，含韌體逆向實錄與一鍵指令碼",
+    "ja": "tv-fresh テレビ刷新：Xiaomi TV（MIUI TV）の広告削除／プリインストールアプリの整理／ホーム画面の変更／プロキシと動画ソースアプリ「影视仓」の導入を行う Agent Skill——root 不要で元に戻せ、ファームウェア解析の記録とワンクリックスクリプト付き",
+    "ko": "tv-fresh TV 새 단장: 샤오미 TV(MIUI TV)의 광고 제거/사전 설치 앱 정리/런처 교체/프록시와 영상 소스 앱 '影视仓' 설치를 해 주는 Agent Skill——root 없이 가능하고 되돌릴 수 있으며, 펌웨어 리버스 기록과 원클릭 스크립트 포함",
+    "en": "tv-fresh TV refresh: an Agent Skill that removes ads from Xiaomi TV (MIUI TV), cleans out preinstalled apps, swaps the launcher, and installs a proxy and the video-source app \"YingShiCang\" (影视仓) — no root needed, reversible, with a firmware reverse-engineering log and a one-click script"
+  },
+  "hevnsnt/CVEngine": {
+    "src": "AI-first external attack surface assessment with continuous discovery, evidence-based vulnerability validation, and developer-agent MCP integration.",
+    "zh-Hans": "以 AI 为先的外部攻击面评估：持续发现资产、基于证据验证漏洞，并集成开发者智能体 MCP。",
+    "zh-Hant": "以 AI 為先的外部攻擊面評估：持續探索資產、以證據為基礎驗證漏洞，並整合開發者代理 MCP。",
+    "ja": "AI ファーストの外部攻撃対象領域アセスメント。継続的な探索、証拠に基づく脆弱性の検証、開発者エージェント向け MCP 連携を備える。",
+    "ko": "AI 우선 외부 공격 표면 평가: 지속적인 탐색, 증거 기반 취약점 검증, 개발자 에이전트용 MCP 연동을 제공한다."
+  },
+  "mochiiwuff/capri-desktop": {
+    "src": "Capri, the Project Capricorn construct from Cyberpunk: Edgerunners 2, living on your desktop and narrating what Claude Code is doing.",
+    "zh-Hans": "Capri，来自《赛博朋克：边缘行者 2》的摩羯座计划（Project Capricorn）造物，住在你的桌面上，实时讲述 Claude Code 正在做什么。",
+    "zh-Hant": "Capri，來自《電馭叛客：邊緣行者 2》的摩羯座計畫（Project Capricorn）造物，住在你的桌面上，講述 Claude Code 正在做什麼。",
+    "ja": "Capri は『サイバーパンク：エッジランナーズ 2』の Project Capricorn（カプリコーン計画）のコンストラクト。デスクトップに住みつき、Claude Code の作業をナレーションする。",
+    "ko": "Capri는 《사이버펑크: 엣지러너 2》의 프로젝트 카프리콘(Project Capricorn)에서 나온 구조체로, 데스크톱에 살면서 Claude Code가 하는 일을 내레이션한다."
+  }
+}

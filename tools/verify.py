@@ -17,6 +17,7 @@ def commands(root: Path) -> list[list[str]]:
         [py, "-m", "compileall", "-q", "tools", "tests"],
         [py, "-m", "unittest", "discover", "-s", "tests", "-v"],
         [py, "tools/render_readme.py", "--check"],
+        [py, "tools/newcomer_i18n.py"],  # lists untranslated new-repo descriptions; informational, never fails
     ]
 
 
