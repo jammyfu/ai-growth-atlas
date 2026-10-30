@@ -13,3 +13,10 @@ Project harness follows `jammyfu/CoderSkills` → `skills/continuous-project-loo
 - The "hottest new repos (7 days)" ranking is discovered by `tools/newcomers.py` from the search API; it must never repeat a project from another ranking (see `docs/NEW_ARRIVALS.md`).
 
 - Categories (AI primary + others) are defined in `data/categories.json` and documented in `docs/CATEGORIES.md`. Newcomers are per-category; see `docs/NEW_ARRIVALS.md`.
+
+## Harness rules (from `jammyfu/CoderSkills`: `skills/continuous-project-loop`, `skills/multi-project-program-management`)
+
+- Each round: Assess (read this file, `CURRENT_PLAN.md`, `TODO_BACKLOG.md`, `WORKLOG.md`) -> Plan (one Goal, 3-7 verifiable tasks, Out of Scope, Next Candidates; check with `python3 tools/next_plan.py --check`) -> Implement one minimal closed loop -> Verify (`python3 tools/verify.py`) -> Record (`CURRENT_PLAN.md`, `WORKLOG.md`, `TODO_BACKLOG.md`, `DECISIONS.md`, `CHANGELOG.md` when users can see the change) -> Continue (write the next step into the files, not only into the reply).
+- Dirty worktree: if a run starts with uncommitted changes, finish or park them first (`verify` -> PR); do not stack new work on top. `tools/local_daily.sh` refuses to run on a dirty tree or off `main`.
+- Verification must not depend on the shell PATH: `tools/verify.py` and `tools/local_daily.sh` use explicit interpreters, no `shell=True` (guarded by `tests/test_harness.py`).
+- Do not edit the plan files to claim a result that `tools/verify.py` has not confirmed.

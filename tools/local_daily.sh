@@ -62,6 +62,8 @@ if [ -n "$(git status --porcelain)" ]; then
 fi
 git pull --ff-only
 
+# doc-state tests (plan files, governance) must not block the data update; CI still runs them on every PR
+export RISERS_DAILY_RUN=1
 export I18N_POLISH="${I18N_POLISH:-1}" I18N_TRANSLATE_BACKEND="${I18N_TRANSLATE_BACKEND:-agy}" I18N_POLISH_BACKEND=agy
 "$PY" tools/update_stars.py --slot "$UPDATE_SLOT"
 "$PY" tools/verify.py

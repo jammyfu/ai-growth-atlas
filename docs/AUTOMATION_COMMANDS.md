@@ -13,7 +13,8 @@ python3 tools/verify.py
 ## Roll to the next plan
 
 ```bash
-python3 tools/next_plan.py
+python3 tools/next_plan.py          # roll a finished plan forward (draft: edit it by hand)
+python3 tools/next_plan.py --check  # validate CURRENT_PLAN.md: one Goal, 3-7 tasks, Out of Scope, Next Candidates
 ```
 
 ## Refresh star data (GitHub API)
@@ -31,8 +32,8 @@ tools/local_daily.sh --no-push          # full local daily cycle, commit but do 
 1. Read `CURRENT_PLAN.md`, `MASTER_PLAN.md`, `TODO_BACKLOG.md`, `docs/project-governance/WORKLOG.md`
 2. Finish the smallest closed loop
 3. `python3 tools/verify.py`
-4. Update the record files
-5. If the plan is complete, `python3 tools/next_plan.py`
+4. Update the record files (`CURRENT_PLAN.md`, `TODO_BACKLOG.md`, `WORKLOG.md`, `DECISIONS.md`, `CHANGELOG.md`)
+5. If the plan is complete, `python3 tools/next_plan.py`, edit the draft, `python3 tools/next_plan.py --check`
 
 `update_stars.py` also re-discovers the 7-day new-repo ranking (about 2 minutes; rules in [NEW_ARRIVALS.md](NEW_ARRIVALS.md)).
 
