@@ -36,9 +36,10 @@ def fmt_rate(x: float) -> str:
     return f"{x:,.1f}"
 
 
-def curve_cell(name: str) -> str:
+def curve_cell(name: str, lang: str) -> str:
+    alt = S[lang]["curve_alt"].format(name=name)
     return (f'<a href="{core.star_history_page(name)}">'
-            f'<img src="{core.star_history_svg(name)}" width="260" alt="star history {name}"></a>')
+            f'<img src="{core.star_history_svg(name)}" width="260" alt="{alt}"></a>')
 
 
 def project_cell(p: dict, meta: dict, cats: dict, lang: str) -> str:
@@ -57,11 +58,11 @@ def growth_table(ranked: list[dict], key: str, metas: dict, cats: dict, lang: st
         g = p["growth"][key]
         mark = ""
         if g["young"]:
-            mark = f" †<br><sub>÷{g['effective_days']}d</sub>"
+            mark = f" †<br><sub>{s['young_div'].format(n=g['effective_days'])}</sub>"
             any_young = True
         lines.append(
             f"| {i} | {project_cell(p, metas[p['name']], cats, lang)} | +{fmt_int(g['gained'])} | "
-            f"{fmt_rate(g['per_day'])}{mark} | {fmt_int(p['stars'])} | {curve_cell(p['name'])} |"
+            f"{fmt_rate(g['per_day'])}{mark} | {fmt_int(p['stars'])} | {curve_cell(p['name'], lang)} |"
         )
     return "\n".join(lines), any_young
 
@@ -74,7 +75,7 @@ def total_table(ranked: list[dict], metas: dict, cats: dict, lang: str) -> str:
     ]
     for i, p in enumerate(ranked, 1):
         lines.append(f"| {i} | {project_cell(p, metas[p['name']], cats, lang)} | "
-                     f"{fmt_int(p['stars'])} | {curve_cell(p['name'])} |")
+                     f"{fmt_int(p['stars'])} | {curve_cell(p['name'], lang)} |")
     return "\n".join(lines)
 
 
@@ -87,8 +88,8 @@ def new_table(items: list[dict], lang: str) -> str:
     for i, it in enumerate(items, 1):
         desc = f"<br>{it['description']}" if it["description"] else ""
         lines.append(
-            f"| {i} | [{it['name']}]({it['url']}){desc} | {it['created_at'][:10]}<br><sub>{it['age_days']:.1f} d</sub> | "
-            f"{fmt_int(it['stars'])} | {fmt_rate(it['per_day'])} | {curve_cell(it['name'])} |")
+            f"| {i} | [{it['name']}]({it['url']}){desc} | {it['created_at'][:10]}<br><sub>{s['age_fmt'].format(x=it['age_days'])}</sub> | "
+            f"{fmt_int(it['stars'])} | {fmt_rate(it['per_day'])} | {curve_cell(it['name'], lang)} |")
     return "\n".join(lines)
 
 
@@ -100,7 +101,7 @@ def render(lang: str, projects: list[dict], stats: dict, cats: dict) -> str:
         switcher(lang), "",
     ]
     if lang == "en":
-        out += ["> 💡 **中文读者点这里**：[切换到简体中文（大白话通俗说明）👉](README.zh-Hans.md)", ""]
+        out += ["> 💡 **中文读者请看**：[简体中文版 👉](README.zh-Hans.md)", ""]
     out += [
         f"# {s.get('title', 'AI Growth Atlas')}", "",
         f"> {s['tagline']}", "",
@@ -171,8 +172,6 @@ def main(argv: list[str] | None = None) -> int:
                 stale.append(fname)
         else:
             path.write_text(text, "utf-8")
-            if fname == "README.md":
-                (ROOT / "README.zh-Hans.md").write_text(text, "utf-8")
             print(f"wrote {fname}")
     if args.check:
         stale += archive.stale_latest_and_index(ROOT)

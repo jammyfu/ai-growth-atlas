@@ -1,6 +1,6 @@
 **English** | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | [日本語](README.ja.md) | [한국어](README.ko.md)
 
-> 💡 **中文读者点这里**：[切换到简体中文（大白话通俗说明）👉](README.zh-Hans.md)
+> 💡 **中文读者请看**：[简体中文版 👉](README.zh-Hans.md)
 
 # AI Growth Atlas
 
