@@ -23,7 +23,7 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import archive  # noqa: E402
-import atlas_core as core  # noqa: E402
+import risers_core as core  # noqa: E402
 import newcomer_i18n  # noqa: E402
 import newcomers  # noqa: E402
 
@@ -47,7 +47,7 @@ def api_get(path: str, token: str, retries: int = 3) -> Any:
             "Authorization": f"Bearer {token}",
             "Accept": "application/vnd.github+json",
             "X-GitHub-Api-Version": "2022-11-28",
-            "User-Agent": "ai-growth-atlas-updater",
+            "User-Agent": "github-risers-updater",
         },
     )
     for attempt in range(retries):
@@ -154,14 +154,24 @@ def main(argv: list[str] | None = None) -> int:
         print("error: no project could be fetched; files left untouched", file=sys.stderr)
         return 1
 
-    tracked = {p["name"] for p in projects}
-    excluded = tracked | newcomers.displayed_names(results, archive.TOP_N, core.rank)
-    print("discovering new repos (GitHub search API, ~1.5 min) ...", flush=True)
-    new = newcomers.discover(lambda path: api_get(path, token), now, excluded)
+    # Attach category from projects.json onto each result for per-category rankings.
+    meta_by_name = {p["name"]: p for p in projects}
+    for r in results:
+        meta = meta_by_name.get(r["name"], {})
+        r["category"] = meta.get("category", "ai")
+
+    categories = json.loads((ROOT / "data/categories.json").read_text("utf-8"))
+    print("discovering new repos per category (GitHub search API, several minutes) ...", flush=True)
+    new = newcomers.discover_all(
+        lambda path: api_get(path, token), now, categories, projects, results, core.rank)
     if new["ok"]:
-        print(f"new: {len(new['items'])} ranked from {new['candidates_seen']} candidates")
+        for cid, block in new["categories"].items():
+            if block.get("ok"):
+                print(f"new[{cid}]: {len(block['items'])} ranked from {block['candidates_seen']} candidates")
+            else:
+                print(f"MISS new[{cid}]: {block.get('error')}", file=sys.stderr)
     else:
-        print(f"MISS new-arrivals: {new['error']}", file=sys.stderr)
+        print(f"MISS new-arrivals: {new.get('error')}", file=sys.stderr)
 
     stats = {
         "generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -170,10 +180,12 @@ def main(argv: list[str] | None = None) -> int:
         "windows_days": core.WINDOWS,
         "method": (
             "stars = GET /repos/{r}.stargazers_count; gained = sum of daily buckets from "
-            "GET /repos/{r}/stargazers/history over the N complete UTC days before today"
+            "GET /repos/{r}/stargazers/history over the N complete UTC days before today; "
+            "newcomers = per-category GitHub search (topics in data/categories.json; repo must carry a category topic)"
         ),
         "projects": results,
         "newcomers": new,
+        "category_ids": [c["id"] for c in sorted(categories, key=lambda c: (0 if c.get("primary") else 1, c.get("order", 99)))],
     }
     (ROOT / "data/stats.json").write_text(
         json.dumps(stats, ensure_ascii=False, indent=2) + "\n", "utf-8")
@@ -193,7 +205,11 @@ def main(argv: list[str] | None = None) -> int:
         import render_readme
         render_readme.main([])
     if new.get("ok"):  # informational only: a gap falls back to the original text, it never fails the run
-        gaps = newcomer_i18n.problems(newcomer_i18n.load(ROOT / "data/newcomer_i18n.json"), new["items"][:archive.TOP_N])
+        items = []
+        for block in (new.get("categories") or {}).values():
+            if block.get("ok"):
+                items.extend(block.get("items") or [])
+        gaps = newcomer_i18n.problems(newcomer_i18n.load(ROOT / "data/newcomer_i18n.json"), items[:archive.TOP_N * 7])
         if gaps:
             print(f"{len(gaps)} new-repo descriptions have no up-to-date translation "
                   "(shown in the original language); run: python3 tools/newcomer_i18n.py")

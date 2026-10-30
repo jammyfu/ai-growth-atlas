@@ -25,7 +25,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -53,7 +53,7 @@ jobs:
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "slot=auto" >> "$GITHUB_OUTPUT"
           fi
-      # Also re-discovers the 7-day new-repo ranking (GitHub search API, ~2 min, paced to 30 requests/min).
+      # Also re-discovers per-category 7-day new-repo rankings (GitHub search API; several minutes; paced to 30 requests/min).
       - name: Fetch star data from the GitHub API and regenerate READMEs
         if: steps.gate.outputs.run == 'true'
         env:

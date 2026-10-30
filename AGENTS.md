@@ -11,3 +11,5 @@ Project harness follows `jammyfu/CoderSkills` → `skills/continuous-project-loo
 - Changes go through pull requests. Do not push or merge to `main` without the owner's approval (the daily workflow/script is the only automated writer of `data/` and `README*`).
 - Generated too: `rankings/README*.md`, `latest/rankings*.md`, `rankings/<date>/<slot>/rankings.<lang>.md` (all from `tools/i18n.py` + `stats.json`). Translations of new-repo descriptions are hand-written in `data/newcomer_i18n.json`; list the gaps with `python3 tools/newcomer_i18n.py`.
 - The "hottest new repos (7 days)" ranking is discovered by `tools/newcomers.py` from the search API; it must never repeat a project from another ranking (see `docs/NEW_ARRIVALS.md`).
+
+- Categories (AI primary + others) are defined in `data/categories.json` and documented in `docs/CATEGORIES.md`. Newcomers are per-category; see `docs/NEW_ARRIVALS.md`.

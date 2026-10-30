@@ -28,3 +28,10 @@
 - Hand-written translations of the new-repo descriptions in `data/newcomer_i18n.json` (zh-Hans, zh-Hant, ja, ko; en for CJK sources); used only while `src` matches the current description, otherwise the original shows. `tools/newcomer_i18n.py` lists gaps (`--strict` exits 1); the daily run prints the gap count.
 - Ranking pages are generated per language: `rankings/README.<lang>.md`, `latest/rankings.<lang>.md`, `rankings/<date>/<slot>/rankings.<lang>.md`; each README links to its own language. English pages are byte-identical to before.
 - Verification: `python3 tools/verify.py` green (76 tests).
+
+## 2026-10-30 — rebrand to github-risers + category rankings
+
+- Renamed product/docs/User-Agent/launchd from ai-growth-atlas to github-risers (repo rename via `gh repo rename` after CI).
+- Replaced AI-only subcategories with top-level categories: ai (primary), devtools, security, web, infra, design, data.
+- Each category has newcomers / week / month / year / total (top 20); newcomers deduped within category and AI-first across categories.
+- Tracked projects expanded to 70; real API run stored as rankings/2026-10-30/manual-0750.
