@@ -12,7 +12,7 @@ The ranking tables show one short line per project. This page keeps the full des
 
 | Project | In the table | Full description |
 |---|---|---|
-| [morluto/rea](https://github.com/morluto/rea) | Can't read a program? Let AI explain it to you | Reverse engineers stare at assembly for days; this lets AI just tell you what a program does. Hooks into Ghidra so an unreadable binary gets explained in one sentence. |
+| [morluto/rea](https://github.com/morluto/rea) | Let AI clone any software for you | Reverse engineers stare at assembly for days; this lets AI just tell you what a program does. Hooks into Ghidra so an unreadable binary gets explained in one sentence. |
 | [anomalyco/opencode](https://github.com/anomalyco/opencode) | AI writes your code right in the terminal, no browser | Write code with AI right in your terminal, no browser tab needed. Supports many models, rivals Claude Code and Codex, free and open source. |
 | [stablyai/orca](https://github.com/stablyai/orca) | Several AIs write at once, see which one works best | Run several AI coding agents on one desktop and compare who writes better. Each agent gets its own workspace, so they never step on each other. |
 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | After AI writes the code, a second AI picks it apart | Have AI audit its own code for vulnerabilities, then call in a second AI to challenge the findings. Built for the insecure code coding agents tend to write. |

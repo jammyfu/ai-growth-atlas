@@ -58,7 +58,7 @@ class LengthRuleTests(unittest.TestCase):
         for lang in LANG5:
             self.assertIsNotNone(hooks.check_hook(rea["desc"][lang], lang), lang)  # the long text fails the rule
             self.assertIsNone(hooks.check_hook(rea["hook"][lang], lang, rea["desc"][lang]), lang)
-        self.assertEqual(rea["hook"]["zh-Hans"], "看不懂的程序，让 AI 讲给你听")
+        self.assertEqual(rea["hook"]["zh-Hans"], "让 AI 帮你克隆任何软件")  # the user: the core of rea is "clone a software"
         self.assertEqual(rea["hook_prev"]["zh-Hans"], "让 AI 帮你逆向、复刻任何软件")  # the PR #12 hook is kept
 
     def test_rejects_hype_exclamation_ellipsis_new_numbers_and_multiline(self):

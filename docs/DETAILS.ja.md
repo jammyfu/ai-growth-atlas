@@ -12,7 +12,7 @@
 
 | プロジェクト | 表の 1 行 | 完全な説明 |
 |---|---|---|
-| [morluto/rea](https://github.com/morluto/rea) | 読めないプログラムは、AI に説明させよう | リバースエンジニアが何日もアセンブリを睨む代わりに、AI がプログラムの動作をそのまま教えてくれる。Ghidra と連携し、読めなかったバイナリを一言で説明する。 |
+| [morluto/rea](https://github.com/morluto/rea) | AI でどんなソフトもクローンできる | リバースエンジニアが何日もアセンブリを睨む代わりに、AI がプログラムの動作をそのまま教えてくれる。Ghidra と連携し、読めなかったバイナリを一言で説明する。 |
 | [anomalyco/opencode](https://github.com/anomalyco/opencode) | ブラウザなしで、ターミナルの AI がコードを書く | ブラウザを開かず、ターミナルのまま AI でコーディング。多数のモデルに対応し、Claude Code や Codex に対抗する無料のオープンソース。 |
 | [stablyai/orca](https://github.com/stablyai/orca) | 複数の AI に書かせて、どれが良いか一目で | 一つのデスクトップで複数の AI コーディングエージェントを同時に走らせ、誰の出来が良いか比べられる。各エージェントは独立したワークスペースで互いに干渉しない。 |
 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | AI が書いたコードを、別の AI が突っ込む | AI に自分のコードの脆弱性を調べさせ、さらに別の AI に反論させる。コーディングエージェントが書きがちな安全でないコード対策。 |

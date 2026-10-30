@@ -1,8 +1,10 @@
 # GitHub 飙升榜 · 广告级 slogan（中文）
 
+> 修订（2026-10-31）：用户确认 morluto/rea 的核心是「克隆软件」，该行新 slogan 由「看不懂的程序，让 AI 讲给你听」改为「让 AI 帮你克隆任何软件」。
+
 | repo | 旧一句话 | 新 slogan | 打中的痛点（半句） |
 |---|---|---|---|
-| morluto/rea | 让 AI 帮你逆向、复刻任何软件 | 看不懂的程序，让 AI 讲给你听 | 盯汇编好几天还看不懂 |
+| morluto/rea | 让 AI 帮你逆向、复刻任何软件 | 让 AI 帮你克隆任何软件 | 盯汇编好几天还看不懂 |
 | anomalyco/opencode | 终端里的免费开源 AI 编程助手 | 不开浏览器，终端里就有 AI 写代码 | 写代码还要来回切网页 |
 | stablyai/orca | 多个 AI 编程智能体同台比拼 | 几个 AI 一起写，谁好用一眼看出 | 不知道哪个 AI 写得好 |
 | cloudflare/security-audit-skill | 两个 AI 互相挑代码漏洞 | AI 写完代码，再请一个 AI 挑刺 | AI 写的代码不敢放心用 |

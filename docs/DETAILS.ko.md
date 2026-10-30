@@ -12,7 +12,7 @@
 
 | 프로젝트 | 표의 한 줄 | 전체 설명 |
 |---|---|---|
-| [morluto/rea](https://github.com/morluto/rea) | 읽을 수 없는 프로그램, AI가 설명해 준다 | 리버서가 며칠씩 어셈블리를 노려보던 일을, AI가 프로그램이 무슨 일을 하는지 바로 알려준다. Ghidra와 연결되어 읽을 수 없던 바이너리를 한 문장으로 설명한다. |
+| [morluto/rea](https://github.com/morluto/rea) | AI가 어떤 소프트웨어든 클론해 준다 | 리버서가 며칠씩 어셈블리를 노려보던 일을, AI가 프로그램이 무슨 일을 하는지 바로 알려준다. Ghidra와 연결되어 읽을 수 없던 바이너리를 한 문장으로 설명한다. |
 | [anomalyco/opencode](https://github.com/anomalyco/opencode) | 브라우저 없이 터미널에서 AI가 코드를 쓴다 | 웹 페이지 없이 터미널에서 바로 AI로 코딩한다. 여러 모델을 지원하고 Claude Code·Codex에 맞서는 무료 오픈소스. |
 | [stablyai/orca](https://github.com/stablyai/orca) | AI 여러 개가 함께 쓰니 뭐가 나은지 한눈에 | 한 데스크톱에서 여러 AI 코딩 에이전트를 동시에 돌려 누가 더 잘 짜는지 비교한다. 에이전트마다 작업 공간이 따로라 서로 방해하지 않는다. |
 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | AI가 쓴 코드를 다른 AI가 다시 짚어 준다 | AI가 자기 코드의 취약점을 직접 찾게 하고, 다른 AI를 불러 반박까지 시킨다. 코딩 에이전트가 쓰는 불안전한 코드를 잡아낸다. |

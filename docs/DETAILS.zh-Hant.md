@@ -12,7 +12,7 @@
 
 | 專案 | 表裡的一句話 | 完整介紹 |
 |---|---|---|
-| [morluto/rea](https://github.com/morluto/rea) | 看不懂的程式，讓 AI 講給你聽 | 逆向工程師往往得盯著組合語言看上好幾天，這個工具讓 AI 直接告訴你程式在做什麼。它串接 Ghidra，讓原本看不懂的二進位檔一句話就能說明清楚。 |
+| [morluto/rea](https://github.com/morluto/rea) | 讓 AI 幫你克隆任何軟體 | 逆向工程師往往得盯著組合語言看上好幾天，這個工具讓 AI 直接告訴你程式在做什麼。它串接 Ghidra，讓原本看不懂的二進位檔一句話就能說明清楚。 |
 | [anomalyco/opencode](https://github.com/anomalyco/opencode) | 不開瀏覽器，終端裡就有 AI 寫程式碼 | 直接在終端機裡用 AI 寫程式，不必開啟瀏覽器分頁。支援多種模型，可與 Claude Code 和 Codex 一較高下，免費開源。 |
 | [stablyai/orca](https://github.com/stablyai/orca) | 幾個 AI 一起寫，誰好用一眼看出 | 在同一台桌上型電腦上同時執行多個 AI 程式設計代理，比較誰寫得更好。每個代理都有自己的工作區，彼此不會互相干擾。 |
 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | AI 寫完程式碼，再請一個 AI 挑刺 | 讓 AI 審查自己寫的程式碼是否有漏洞，再請第二個 AI 來質疑審查結論。專門針對程式設計代理容易寫出的不安全程式碼。 |

@@ -12,7 +12,7 @@
 
 | 项目 | 表里的一句话 | 完整介绍 |
 |---|---|---|
-| [morluto/rea](https://github.com/morluto/rea) | 看不懂的程序，让 AI 讲给你听 | 逆向工程师往往要盯着汇编看上好几天，这个工具让 AI 直接告诉你程序做了什么。它接入 Ghidra，让原本读不懂的二进制文件一句话就能讲清楚。 |
+| [morluto/rea](https://github.com/morluto/rea) | 让 AI 帮你克隆任何软件 | 逆向工程师往往要盯着汇编看上好几天，这个工具让 AI 直接告诉你程序做了什么。它接入 Ghidra，让原本读不懂的二进制文件一句话就能讲清楚。 |
 | [anomalyco/opencode](https://github.com/anomalyco/opencode) | 不开浏览器，终端里就有 AI 写代码 | 直接在终端里用 AI 写代码，无需打开浏览器标签页。支持多种模型，可与 Claude Code 和 Codex 相媲美，免费开源。 |
 | [stablyai/orca](https://github.com/stablyai/orca) | 几个 AI 一起写，谁好用一眼看出 | 在同一台桌面电脑上同时运行多个 AI 编程智能体，比较谁写得更好。每个智能体都有自己的工作区，互不干扰。 |
 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | AI 写完代码，再请一个 AI 挑刺 | 让 AI 审查自己写的代码是否有漏洞，再请第二个 AI 来质疑审查结论。专门针对编程智能体容易写出的不安全代码。 |
