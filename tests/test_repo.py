@@ -94,6 +94,27 @@ class ReadmeTests(unittest.TestCase):
         self.assertEqual(LANGS["en"][0], "README.md")
         self.assertIn("ranked by how fast", (ROOT / "README.md").read_text("utf-8"))
 
+    def test_every_language_translates_every_ui_string(self):
+        keys = set(render_readme.S["en"])
+        for code in LANG_CODES:
+            self.assertEqual(set(render_readme.S[code]), keys, code)
+        for code in LANG_CODES:
+            if code == "en":
+                continue
+            s = render_readme.S[code]
+            for key, value in s.items():
+                if key in ("none", "h_rank", "title"):  # "#" and the project name stay as is
+                    continue
+                self.assertNotEqual(value, render_readme.S["en"][key], f"{code}.{key} is still English")
+
+    def test_non_english_readmes_have_no_english_image_alt_or_day_units(self):
+        for code, (fname, _l) in LANGS.items():
+            if code == "en":
+                continue
+            text = (ROOT / fname).read_text("utf-8")
+            self.assertNotIn('alt="star history', text, fname)
+            self.assertIsNone(re.search(r"<sub>[^<]*\d\s?d</sub>", text), fname)
+
 
 class ZeroTelemetryTests(unittest.TestCase):
     def test_no_trackers_in_repo_text(self):

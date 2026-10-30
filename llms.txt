@@ -1,9 +1,9 @@
-# 谁在真正变火：AI 开源黑马榜 (AI Growth Atlas)
+# AI 增长图谱（AI Growth Atlas）
 
-> 专治老项目霸榜！不比谁十年前攒了多少老本，只比这几天谁涨赞最猛。每天自动从 GitHub 官方接口拉取真实数据，计算近 7 天、30 天平均每日涨赞速度，带你一眼看清全世界开发者正在狂赞的新神仙 AI 工具。遵循 MIT 开源协议。
+> 按星标增长的速度，而不是总星标数，为 AI 项目排名。每天自动从 GitHub API 获取真实数据，计算近 7 天、30 天和 365 天的日均新增星标数，帮助你发现正在快速崛起的 AI 项目。遵循 MIT 开源协议。
 
 ## 核心文档索引
-- [README.zh-Hans.md](README.zh-Hans.md): 简体中文完整榜单（通俗大白话版）
+- [README.zh-Hans.md](README.zh-Hans.md): 简体中文完整榜单
 - [README.md](README.md): English Overview & Rankings
 - [data/projects.json](data/projects.json): 收录的所有开源项目元数据
 - [data/stats.json](data/stats.json): 最新涨赞速度与统计原始数据

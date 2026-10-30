@@ -5,8 +5,8 @@
     "category": "coding-agents",
     "desc": {
       "en": "Reverse engineers stare at assembly for days; this lets AI just tell you what a program does. Hooks into Ghidra so an unreadable binary gets explained in one sentence.",
-      "zh-Hans": "别人研究底层代码要死盯天书看好几天，这个让 AI 直接开口告诉你“这程序到底在干啥”。以前根本看不懂的底层乱码，现在一句话就讲明白。",
-      "zh-Hant": "別人研究底層程式碼要死盯天書看好幾天，這個讓 AI 直接開口告訴你「這程式到底在幹嘛」。以前根本看不懂的底層亂碼，現在一句話就講明白。",
+      "zh-Hans": "逆向工程师往往要盯着汇编看上好几天，这个工具让 AI 直接告诉你程序做了什么。它接入 Ghidra，让原本读不懂的二进制文件一句话就能讲清楚。",
+      "zh-Hant": "逆向工程師往往得盯著組合語言看上好幾天，這個工具讓 AI 直接告訴你程式在做什麼。它串接 Ghidra，讓原本看不懂的二進位檔一句話就能說明清楚。",
       "ja": "リバースエンジニアが何日もアセンブリを睨む代わりに、AI がプログラムの動作をそのまま教えてくれる。Ghidra と連携し、読めなかったバイナリを一言で説明する。",
       "ko": "리버서가 며칠씩 어셈블리를 노려보던 일을, AI가 프로그램이 무슨 일을 하는지 바로 알려준다. Ghidra와 연결되어 읽을 수 없던 바이너리를 한 문장으로 설명한다."
     }
@@ -17,8 +17,8 @@
     "category": "coding-agents",
     "desc": {
       "en": "Write code with AI right in your terminal, no browser tab needed. Supports many models, rivals Claude Code and Codex, free and open source.",
-      "zh-Hans": "直接在黑框终端里敲键盘让 AI 帮你写代码，不用打开繁琐的网页。能力匹敌国外收费大厂，完全开源免费。",
-      "zh-Hant": "直接在黑框終端機裡打字讓 AI 幫你寫程式，不用開啟繁瑣的網頁。能力匹敵國外收費大廠，完全開源免費。",
+      "zh-Hans": "直接在终端里用 AI 写代码，无需打开浏览器标签页。支持多种模型，可与 Claude Code 和 Codex 相媲美，免费开源。",
+      "zh-Hant": "直接在終端機裡用 AI 寫程式，不必開啟瀏覽器分頁。支援多種模型，可與 Claude Code 和 Codex 一較高下，免費開源。",
       "ja": "ブラウザを開かず、ターミナルのまま AI でコーディング。多数のモデルに対応し、Claude Code や Codex に対抗する無料のオープンソース。",
       "ko": "웹 페이지 없이 터미널에서 바로 AI로 코딩한다. 여러 모델을 지원하고 Claude Code·Codex에 맞서는 무료 오픈소스."
     }
@@ -29,8 +29,8 @@
     "category": "coding-agents",
     "desc": {
       "en": "Run several AI coding agents on one desktop and compare who writes better. Each agent gets its own workspace, so they never step on each other.",
-      "zh-Hans": "在电脑上同时叫来好几个 AI 编程助手一起干活，比比看谁写得更好。各干各的工作台，绝不互相打架扯皮。",
-      "zh-Hant": "在電腦上同時叫來好幾個 AI 編程助手一起幹活，比比看誰寫得更好。各幹各的工作台，絕不互相打架扯皮。",
+      "zh-Hans": "在同一台桌面电脑上同时运行多个 AI 编程智能体，比较谁写得更好。每个智能体都有自己的工作区，互不干扰。",
+      "zh-Hant": "在同一台桌上型電腦上同時執行多個 AI 程式設計代理，比較誰寫得更好。每個代理都有自己的工作區，彼此不會互相干擾。",
       "ja": "一つのデスクトップで複数の AI コーディングエージェントを同時に走らせ、誰の出来が良いか比べられる。各エージェントは独立したワークスペースで互いに干渉しない。",
       "ko": "한 데스크톱에서 여러 AI 코딩 에이전트를 동시에 돌려 누가 더 잘 짜는지 비교한다. 에이전트마다 작업 공간이 따로라 서로 방해하지 않는다."
     }
@@ -41,8 +41,8 @@
     "category": "security-audit",
     "desc": {
       "en": "Have AI audit its own code for vulnerabilities, then call in a second AI to challenge the findings. Built for the insecure code coding agents tend to write.",
-      "zh-Hans": "AI 刚写完代码，马上叫另一个 AI 过来挑刺找漏洞、当场打脸。专治 AI 随手乱写导致的系统不安全。",
-      "zh-Hant": "AI 剛寫完程式碼，馬上叫另一個 AI 過來挑刺找漏洞、當場打臉。專治 AI 隨手亂寫導致的系統不安全。",
+      "zh-Hans": "让 AI 审查自己写的代码是否有漏洞，再请第二个 AI 来质疑审查结论。专门针对编程智能体容易写出的不安全代码。",
+      "zh-Hant": "讓 AI 審查自己寫的程式碼是否有漏洞，再請第二個 AI 來質疑審查結論。專門針對程式設計代理容易寫出的不安全程式碼。",
       "ja": "AI に自分のコードの脆弱性を調べさせ、さらに別の AI に反論させる。コーディングエージェントが書きがちな安全でないコード対策。",
       "ko": "AI가 자기 코드의 취약점을 직접 찾게 하고, 다른 AI를 불러 반박까지 시킨다. 코딩 에이전트가 쓰는 불안전한 코드를 잡아낸다."
     }
@@ -53,8 +53,8 @@
     "category": "video-media",
     "desc": {
       "en": "Write video the way you write a web page and let AI render it. Coding agents can use it too, no editing software to learn.",
-      "zh-Hans": "像平时写说明文一样排版台词，AI 直接把成片视频渲染出来。普通人也能当导演，不用去学复杂的剪辑软件。",
-      "zh-Hant": "像平時寫說明文一樣排版台詞，AI 直接把成片影片算繪出來。普通人也能當導演，不用去學複雜的剪輯軟體。",
+      "zh-Hans": "像写网页一样写视频，再交给 AI 渲染成片。编程智能体也能使用，无需学习任何剪辑软件。",
+      "zh-Hant": "像寫網頁一樣寫影片，再交給 AI 算繪成片。程式設計代理也能使用，不必學任何剪輯軟體。",
       "ja": "Web ページを書く感覚で動画を書けば、AI がそのままレンダリングする。コーディングエージェントからも使え、編集ソフトを覚える必要はない。",
       "ko": "웹 페이지를 쓰듯 영상을 쓰면 AI가 바로 렌더링한다. 코딩 에이전트도 쓸 수 있어 편집 소프트웨어를 따로 배울 필요가 없다."
     }
@@ -65,8 +65,8 @@
     "category": "skills-harness",
     "desc": {
       "en": "A cure for AI padding its code with filler. Teaches it to act like a lazy veteran: skip what you can, get right what you must write.",
-      "zh-Hans": "专治 AI 写代码喜欢瞎加一堆无用废话。把它调教得像个老油条程序员：能少写就少写，写出来的每一句全在点子上。",
-      "zh-Hant": "專治 AI 寫程式碼喜歡瞎加一堆無用廢話。把它調教得像個老油條工程師：能少寫就少寫，寫出來的每一句全在點子上。",
+      "zh-Hans": "专治 AI 写代码时灌水凑数。教它像一位偷懒的老手那样做事：能省则省，必须写的部分一定写对。",
+      "zh-Hant": "專治 AI 寫程式時灌水湊數。教它像一位愛偷懶的老手那樣做事：能省則省，非寫不可的部分務必寫對。",
       "ja": "AI がコードに余計なものを盛りすぎる問題の特効薬。怠け者のベテランのように、書かずに済むなら書かず、書くなら正しく書くことを教える。",
       "ko": "AI가 코드에 군더더기를 잔뜩 붙이는 버릇을 고친다. 게으른 베테랑처럼 안 써도 되면 쓰지 않고, 쓸 거면 제대로 쓰게 가르친다."
     }
@@ -77,8 +77,8 @@
     "category": "memory-knowledge",
     "desc": {
       "en": "Turns a whole codebase into a map so AI sees at a glance which files call which. Big projects no longer need reading top to bottom.",
-      "zh-Hans": "把几十万行混乱的大项目直接画成一张连线全景地图，AI 一眼就能看清谁调用了谁。再庞大的项目也绝不会迷路。",
-      "zh-Hant": "把幾十萬行混亂的大專案直接畫成一張連線全景地圖，AI 一眼就能看清誰呼叫了誰。再龐大的專案也絕不會迷路。",
+      "zh-Hans": "把整个代码库变成一张地图，让 AI 一眼看出哪些文件调用了哪些文件。大型项目不必再从头读到尾。",
+      "zh-Hant": "把整個程式碼庫變成一張地圖，讓 AI 一眼看出哪些檔案呼叫了哪些檔案。大型專案不必再從頭讀到尾。",
       "ja": "コードベース全体を一枚の地図にして、どのファイルが互いに呼び合うか AI が一目で把握できる。大規模プロジェクトを頭から読む必要がなくなる。",
       "ko": "코드베이스 전체를 한 장의 지도로 만들어 어떤 파일이 서로 호출하는지 AI가 한눈에 파악한다. 큰 프로젝트를 처음부터 끝까지 읽을 필요가 없다."
     }
@@ -89,8 +89,8 @@
     "category": "coding-agents",
     "desc": {
       "en": "Not a chatbot, an AI that actually gets work done. Runs across systems, deploys locally, and your data never leaves your computer.",
-      "zh-Hans": "这不是只会陪你闲聊的废话机器人，而是真能帮你干活办事的数字员工。装在自己电脑上就能跑，隐私数据绝不出你的电脑。",
-      "zh-Hant": "這不是只會陪你閒聊的廢話機器人，而是真能幫你幹活辦事的數位員工。裝在自己電腦上就能跑，隱私資料絕不出你的電腦。",
+      "zh-Hans": "它不是聊天机器人，而是真正能把事情做完的 AI。可跨系统运行、本地部署，你的数据不会离开你的电脑。",
+      "zh-Hant": "它不是聊天機器人，而是真正能把事情做完的 AI。可跨系統執行、在本機部署，你的資料不會離開你的電腦。",
       "ja": "チャットボットではなく、本当に仕事をこなす AI。システムをまたいで動き、ローカルにデプロイでき、データは PC の外に出ない。",
       "ko": "챗봇이 아니라 실제로 일을 해주는 AI. 시스템을 가로질러 동작하고 로컬에 배포하며 데이터가 내 컴퓨터를 떠나지 않는다."
     }
@@ -101,8 +101,8 @@
     "category": "skills-harness",
     "desc": {
       "en": "DeepSeek's open-source agent harness (`dsh`). Everything is a plugin, so you assemble the agent you want. Developer preview: expect breaking changes.",
-      "zh-Hans": "DeepSeek 官方开源的智能体“底座”（命令 dsh）。核心思路是“万物皆插件”，想要什么功能自己拼。目前还是开发者预览版，随时可能大改，别直接拿去上生产。",
-      "zh-Hant": "DeepSeek 官方開源的智慧體「底座」（指令 dsh）。核心思路是「萬物皆外掛」，想要什麼功能自己拼。目前還是開發者預覽版，隨時可能大改，別直接拿去上正式環境。",
+      "zh-Hans": "DeepSeek 开源的智能体 Harness（`dsh`）。一切皆插件，你可以自行组装想要的智能体。目前为开发者预览版，可能出现破坏性变更。",
+      "zh-Hant": "DeepSeek 開源的代理 Harness（`dsh`）。一切皆外掛，你可以自行組裝想要的代理。目前為開發者預覽版，可能出現破壞性變更。",
       "ja": "DeepSeek 公式のオープンソース・エージェントハーネス（`dsh`）。「すべてがプラグイン」という設計で、必要な機能を組み合わせて使う。開発者プレビュー版のため、互換性が壊れる変更が入る可能性がある。",
       "ko": "DeepSeek이 공개한 오픈소스 에이전트 하네스(`dsh`). '모든 것이 플러그인'이라는 구조로 필요한 기능을 조립해 쓴다. 개발자 프리뷰 단계라 호환성이 깨지는 변경이 생길 수 있다."
     }
@@ -113,8 +113,8 @@
     "category": "skills-harness",
     "desc": {
       "en": "A performance-tuning kit for agent harnesses: skills, learned instincts, memory, security checks and research-first development for Claude Code, Codex, OpenCode, Cursor and more.",
-      "zh-Hans": "给 AI 编程助手装的“全套加强包”：技能、从使用中学到的习惯、记忆、安全检查，还有“先调研再动手”的开发流程。Claude Code、Codex、OpenCode、Cursor 等都能用。",
-      "zh-Hant": "給 AI 編程助手裝的「全套加強包」：技能、從使用中學到的習慣、記憶、安全檢查，還有「先調研再動手」的開發流程。Claude Code、Codex、OpenCode、Cursor 等都能用。",
+      "zh-Hans": "面向智能体 Harness 的性能优化套件：为 Claude Code、Codex、OpenCode、Cursor 等提供技能、习得的直觉、记忆、安全检查，以及先调研后开发的工作方式。",
+      "zh-Hant": "針對代理 Harness 的效能調校套件：為 Claude Code、Codex、OpenCode、Cursor 等提供技能、習得的直覺、記憶、安全檢查，以及先研究再開發的工作方式。",
       "ja": "コーディングエージェント向けの総合強化パック。スキル、使いながら学ぶ習慣、記憶、セキュリティチェック、調査してから実装する開発フローを備え、Claude Code・Codex・OpenCode・Cursor などで使える。",
       "ko": "코딩 에이전트를 위한 종합 강화 패키지. 스킬, 사용하며 배우는 습관, 메모리, 보안 점검, 조사부터 하고 구현하는 개발 흐름을 담았고 Claude Code·Codex·OpenCode·Cursor 등에서 쓸 수 있다."
     }
@@ -125,8 +125,8 @@
     "category": "workflow",
     "desc": {
       "en": "One menu-bar app and local gateway that lets any coding agent use any model: Claude Code on Kimi, Codex on DeepSeek. When one quota runs out it moves to your next account.",
-      "zh-Hans": "菜单栏里的一个小应用，加一个本地网关：让任何编程助手都能换成任何模型，比如 Claude Code 用 Kimi，Codex 用 DeepSeek。某个额度用完了，自动换到你的下一个账号继续干。",
-      "zh-Hant": "選單列裡的一個小應用，加一個本機閘道：讓任何編程助手都能換成任何模型，例如 Claude Code 用 Kimi、Codex 用 DeepSeek。某個額度用完了，自動換到你的下一個帳號繼續幹。",
+      "zh-Hans": "一个菜单栏应用加本地网关，让任意编程智能体都能使用任意模型：Claude Code 跑 Kimi，Codex 跑 DeepSeek。一个额度用完后，会自动切换到你的下一个账号。",
+      "zh-Hant": "一個選單列應用程式加上本機閘道，讓任何程式設計代理都能使用任何模型：Claude Code 搭配 Kimi，Codex 搭配 DeepSeek。某個額度用完時，會自動切換到你的下一個帳號。",
       "ja": "メニューバーのアプリとローカルゲートウェイで、どのコーディングエージェントでも好きなモデルを使える（Claude Code を Kimi で、Codex を DeepSeek で）。クォータが尽きたら次のアカウントに自動で切り替わる。",
       "ko": "메뉴 막대 앱과 로컬 게이트웨이로, 어떤 코딩 에이전트에서든 원하는 모델을 쓸 수 있다(Claude Code에 Kimi, Codex에 DeepSeek). 할당량이 떨어지면 다음 계정으로 자동 전환한다."
     }
@@ -137,8 +137,8 @@
     "category": "browser-computer",
     "desc": {
       "en": "Gives your AI agent eyes on the whole internet. One command-line tool to read and search Twitter, Reddit, YouTube, GitHub, Bilibili and XiaoHongShu, with zero API fees.",
-      "zh-Hans": "让 AI 助手“看得见”整个互联网。一条命令就能读、搜推特、Reddit、YouTube、GitHub、B 站和小红书，不用花 API 费用。",
-      "zh-Hant": "讓 AI 助手「看得見」整個網際網路。一條指令就能讀、搜推特、Reddit、YouTube、GitHub、B 站和小紅書，不用花 API 費用。",
+      "zh-Hans": "让你的 AI 智能体看到整个互联网。一个命令行工具即可读取和搜索 Twitter、Reddit、YouTube、GitHub、哔哩哔哩和小红书，零 API 费用。",
+      "zh-Hant": "讓你的 AI 代理看見整個網際網路。一個命令列工具就能讀取和搜尋 Twitter、Reddit、YouTube、GitHub、嗶哩嗶哩和小紅書，零 API 費用。",
       "ja": "AI エージェントにインターネット全体を見せるツール。コマンド一つで Twitter・Reddit・YouTube・GitHub・Bilibili・小紅書を読み、検索できる。API 利用料はかからない。",
       "ko": "AI 에이전트에게 인터넷 전체를 보여주는 도구. 명령 하나로 트위터·Reddit·YouTube·GitHub·Bilibili·샤오홍슈를 읽고 검색하며 API 비용이 들지 않는다."
     }
@@ -149,8 +149,8 @@
     "category": "skills-harness",
     "desc": {
       "en": "Agent skills that give coding agents taste: art direction, real reference images and a browser check, so they stop producing the generic average AI landing page.",
-      "zh-Hans": "教 AI 编程助手“有审美”的技能包：先定美术方向，用真实参考图，做完还自己开浏览器检查，不再产出千篇一律的 AI 网页。",
-      "zh-Hant": "教 AI 編程助手「有審美」的技能包：先定美術方向，用真實參考圖，做完還自己開瀏覽器檢查，不再產出千篇一律的 AI 網頁。",
+      "zh-Hans": "赋予编程智能体审美的技能：确定美术风格、使用真实参考图，并在浏览器中检查成果，让它们不再产出千篇一律的 AI 落地页。",
+      "zh-Hant": "賦予程式設計代理美感的技能：確立美術風格、使用真實參考圖，並在瀏覽器中檢查成果，讓它們不再產出千篇一律的 AI 登陸頁。",
       "ja": "コーディングエージェントにセンスを与えるスキル集。アートディレクション、実在の参考画像、ブラウザでの自己チェックにより、ありがちな平均的 AI ランディングページを作らせない。",
       "ko": "코딩 에이전트에게 '감각'을 주는 스킬 모음. 아트 디렉션, 실제 참고 이미지, 브라우저 자체 점검으로 흔해 빠진 AI 랜딩 페이지를 만들지 않게 한다."
     }
@@ -161,8 +161,8 @@
     "category": "skills-harness",
     "desc": {
       "en": "An AI skill that brings design intelligence to coding agents, so the UI/UX they build looks professional across multiple platforms and frameworks.",
-      "zh-Hans": "给 AI 编程助手补上“设计功底”的技能：让它做出来的界面和交互更专业，支持多种平台和框架。",
-      "zh-Hant": "給 AI 編程助手補上「設計功底」的技能：讓它做出來的介面和互動更專業，支援多種平台和框架。",
+      "zh-Hans": "一项为编程智能体带来设计智慧的 AI 技能，让它们构建的 UI/UX 在多个平台和框架上都显得专业。",
+      "zh-Hant": "一項為程式設計代理帶來設計智慧的 AI 技能，讓它們打造的 UI/UX 在多個平台與框架上都顯得專業。",
       "ja": "コーディングエージェントにデザインの知見を与えるスキル。複数のプラットフォームやフレームワークで、プロらしい UI/UX を作らせる。",
       "ko": "코딩 에이전트에 디자인 감각을 더해 주는 스킬. 여러 플랫폼과 프레임워크에서 전문가다운 UI/UX를 만들게 한다."
     }
@@ -173,8 +173,8 @@
     "category": "workflow",
     "desc": {
       "en": "A free MIT-licensed AI gateway: one endpoint for hundreds of providers and models, with quota-aware automatic fallback. Works with Claude Code, Codex, Cursor, OpenCode, Cline and Copilot.",
-      "zh-Hans": "免费的 MIT 开源 AI 网关：一个入口对接几百个服务商和模型，额度用完自动切换。Claude Code、Codex、Cursor、OpenCode、Cline、Copilot 都能接。",
-      "zh-Hant": "免費的 MIT 開源 AI 閘道：一個入口對接幾百個服務商和模型，額度用完自動切換。Claude Code、Codex、Cursor、OpenCode、Cline、Copilot 都能接。",
+      "zh-Hans": "免费的 MIT 许可 AI 网关：一个端点对接数百家服务商和模型，并可根据额度自动回退切换。支持 Claude Code、Codex、Cursor、OpenCode、Cline 和 Copilot。",
+      "zh-Hant": "免費的 MIT 授權 AI 閘道：一個端點對接數百家供應商和模型，並依額度自動備援切換。支援 Claude Code、Codex、Cursor、OpenCode、Cline 和 Copilot。",
       "ja": "無料の MIT ライセンス AI ゲートウェイ。一つのエンドポイントで数百のプロバイダーとモデルにつながり、クォータ切れ時は自動で切り替える。Claude Code・Codex・Cursor・OpenCode・Cline・Copilot に対応。",
       "ko": "무료 MIT 라이선스 AI 게이트웨이. 하나의 엔드포인트로 수백 개 제공자와 모델에 연결하고 할당량이 떨어지면 자동 전환한다. Claude Code·Codex·Cursor·OpenCode·Cline·Copilot과 함께 쓸 수 있다."
     }
@@ -185,8 +185,8 @@
     "category": "workflow",
     "desc": {
       "en": "Open-source app for running a team of AI agents like a company: assign goals, set budgets, and track work and costs from one dashboard. If OpenClaw is an employee, Paperclip is the company.",
-      "zh-Hans": "把一群 AI 助手当“公司”来管的开源应用：定目标、设预算，工作进度和花费都在一个看板里。如果说 OpenClaw 是一名员工，Paperclip 就是整家公司。",
-      "zh-Hant": "把一群 AI 助手當「公司」來管的開源應用：訂目標、設預算，工作進度和花費都在一個看板裡。如果說 OpenClaw 是一名員工，Paperclip 就是整家公司。",
+      "zh-Hans": "像管理公司一样管理一队 AI 智能体的开源应用：分配目标、设定预算，并在同一个仪表板中跟踪工作和成本。如果说 OpenClaw 是一名员工，Paperclip 就是整家公司。",
+      "zh-Hant": "像經營公司一樣管理一組 AI 代理的開源應用程式：分派目標、設定預算，並在同一個儀表板中追蹤工作與成本。如果說 OpenClaw 是一名員工，Paperclip 就是整間公司。",
       "ja": "AI エージェントのチームを会社のように運営するオープンソースアプリ。目標を割り当て、予算を決め、作業とコストを一つのダッシュボードで追える。OpenClaw が社員なら、Paperclip は会社そのもの。",
       "ko": "AI 에이전트 팀을 회사처럼 운영하는 오픈소스 앱. 목표를 배정하고 예산을 정하고 작업과 비용을 한 대시보드에서 추적한다. OpenClaw가 직원이라면 Paperclip은 회사다."
     }
@@ -197,8 +197,8 @@
     "category": "coding-agents",
     "desc": {
       "en": "Desktop all-in-one manager for Claude Code, Codex, Gemini CLI, OpenCode, OpenClaw and more: switch API providers in one click and manage MCP, Skills and Prompts without hand-editing config files.",
-      "zh-Hans": "一个桌面端“总开关”，管 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw 等：一键切换接口服务商，MCP、技能、提示词也在一处管，不用再手改配置文件。",
-      "zh-Hant": "一個桌面端「總開關」，管 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw 等：一鍵切換 API 服務商，MCP、技能、提示詞也在一處管，不用再手改設定檔。",
+      "zh-Hans": "面向 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw 等的桌面端一体化管理器：一键切换 API 服务商，无需手动编辑配置文件即可管理 MCP、技能和提示词。",
+      "zh-Hant": "適用於 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw 等的桌面端整合管理工具：一鍵切換 API 供應商，不必手動編輯設定檔就能管理 MCP、技能和提示詞。",
       "ja": "Claude Code・Codex・Gemini CLI・OpenCode・OpenClaw などをまとめて管理するデスクトップアプリ。API プロバイダーをワンクリックで切り替え、MCP・スキル・プロンプトも設定ファイルを手で編集せず一か所で管理できる。",
       "ko": "Claude Code·Codex·Gemini CLI·OpenCode·OpenClaw 등을 한곳에서 관리하는 데스크톱 앱. API 제공자를 한 번에 바꾸고 MCP·스킬·프롬프트도 설정 파일을 손으로 고치지 않고 관리한다."
     }
@@ -209,8 +209,8 @@
     "category": "coding-agents",
     "desc": {
       "en": "A self-improving AI agent from Nous Research with a built-in learning loop: it builds skills from experience, improves them as it works, and reaches you on Telegram, Discord, Slack and more.",
-      "zh-Hans": "Nous Research 做的“会自我进化”的 AI 助手，自带学习循环：干完复杂活会自己总结成技能，用着用着继续改进，还能通过 Telegram、Discord、Slack 等找你说话。",
-      "zh-Hant": "Nous Research 做的「會自我進化」的 AI 助手，自帶學習循環：做完複雜工作會自己總結成技能，用著用著繼續改進，還能透過 Telegram、Discord、Slack 等找你說話。",
+      "zh-Hans": "Nous Research 出品的可自我改进的 AI 智能体，内置学习循环：从经验中构建技能，并在工作中不断改进，还能通过 Telegram、Discord、Slack 等渠道联系你。",
+      "zh-Hant": "Nous Research 推出、能自我改進的 AI 代理，內建學習迴圈：從經驗中建立技能，並在工作中持續改進，還能透過 Telegram、Discord、Slack 等管道與你聯繫。",
       "ja": "Nous Research 製の自己改善型 AI エージェント。学習ループを内蔵し、経験からスキルを作り、使いながら改善する。Telegram・Discord・Slack などからも話しかけられる。",
       "ko": "Nous Research가 만든 스스로 개선하는 AI 에이전트. 학습 루프가 내장되어 경험에서 스킬을 만들고 쓰면서 다듬으며, Telegram·Discord·Slack 등에서도 대화할 수 있다."
     }
@@ -221,8 +221,8 @@
     "category": "security-audit",
     "desc": {
       "en": "NVIDIA's security scanner for AI agent skills: checks vulnerabilities, prompt injection, data exfiltration and supply-chain risks in Claude Code, Codex and MCP skills before you install them.",
-      "zh-Hans": "NVIDIA 出的 AI 技能“安检仪”：装之前先扫一遍，查漏洞、提示词注入、偷传数据、供应链风险，覆盖 Claude Code、Codex 和 MCP 技能。",
-      "zh-Hant": "NVIDIA 出的 AI 技能「安檢儀」：安裝之前先掃一遍，查漏洞、提示詞注入、偷傳資料、供應鏈風險，涵蓋 Claude Code、Codex 和 MCP 技能。",
+      "zh-Hans": "NVIDIA 出品的 AI 智能体技能安全扫描器：在安装前检查 Claude Code、Codex 和 MCP 技能中的漏洞、提示词注入、数据外泄和供应链风险。",
+      "zh-Hant": "NVIDIA 推出的 AI 代理技能資安掃描器：在安裝前檢查 Claude Code、Codex 和 MCP 技能中的漏洞、提示詞注入、資料外洩與供應鏈風險。",
       "ja": "NVIDIA 製の AI エージェント向けスキルのセキュリティスキャナ。インストール前に脆弱性、プロンプトインジェクション、データ流出、サプライチェーンリスクを検査する。Claude Code・Codex・MCP スキルに対応。",
       "ko": "NVIDIA가 만든 AI 에이전트 스킬 보안 스캐너. 설치 전에 취약점, 프롬프트 인젝션, 데이터 유출, 공급망 위험을 검사한다. Claude Code·Codex·MCP 스킬을 지원한다."
     }
@@ -233,8 +233,8 @@
     "category": "skills-harness",
     "desc": {
       "en": "Production-grade engineering skills for AI coding agents: the workflows and quality gates senior engineers use, from spec to ship, packaged so agents follow them every time.",
-      "zh-Hans": "给 AI 编程助手的“正规军工程规范”：把资深工程师从定需求到上线的流程和质量关卡打包成技能，让助手每次都照着做。",
-      "zh-Hant": "給 AI 編程助手的「正規軍工程規範」：把資深工程師從定需求到上線的流程和品質關卡打包成技能，讓助手每次都照著做。",
+      "zh-Hans": "面向 AI 编程智能体的生产级工程技能：把资深工程师从需求规格到发布所用的工作流和质量关卡打包起来，让智能体每次都照做。",
+      "zh-Hant": "適用於 AI 程式設計代理的產品級工程技能：把資深工程師從規格到上線所用的工作流程與品質關卡打包起來，讓代理每次都照著做。",
       "ja": "コーディングエージェント向けの本格的なエンジニアリングスキル集。シニアエンジニアが仕様から出荷まで守るワークフローと品質ゲートをまとめ、エージェントが毎回それに従うようにする。",
       "ko": "코딩 에이전트를 위한 실무급 엔지니어링 스킬 모음. 시니어 엔지니어가 명세부터 출시까지 지키는 워크플로와 품질 게이트를 담아 에이전트가 매번 따르게 한다."
     }
@@ -245,8 +245,8 @@
     "category": "memory-knowledge",
     "desc": {
       "en": "Gives agents memory across sessions: it records what your agent does, compresses it with AI and feeds the relevant parts back into later sessions. Works with Claude Code, Codex, Gemini, OpenCode and more.",
-      "zh-Hans": "让 AI 助手跨对话“记住事”：自动记录它干过什么，用 AI 压缩整理，下次开工再把相关内容塞回去。Claude Code、Codex、Gemini、OpenCode 等都能用。",
-      "zh-Hant": "讓 AI 助手跨對話「記住事」：自動記錄它做過什麼，用 AI 壓縮整理，下次開工再把相關內容塞回去。Claude Code、Codex、Gemini、OpenCode 等都能用。",
+      "zh-Hans": "为智能体提供跨会话记忆：记录智能体做过的事，用 AI 压缩，并把相关部分回填到之后的会话中。支持 Claude Code、Codex、Gemini、OpenCode 等。",
+      "zh-Hant": "為代理提供跨工作階段的記憶：記錄代理做過的事，用 AI 壓縮，並把相關部分回饋到之後的工作階段中。支援 Claude Code、Codex、Gemini、OpenCode 等。",
       "ja": "セッションをまたいでエージェントに記憶を持たせる。作業内容を記録し、AI で圧縮して、次のセッションに関連部分を戻す。Claude Code・Codex・Gemini・OpenCode などで使える。",
       "ko": "세션이 바뀌어도 에이전트가 기억하게 한다. 작업 내용을 기록하고 AI로 압축해 다음 세션에 관련 내용을 다시 넣어 준다. Claude Code·Codex·Gemini·OpenCode 등에서 쓸 수 있다."
     }
@@ -257,8 +257,8 @@
     "category": "skills-harness",
     "desc": {
       "en": "Anthropic's public repository of Agent Skills: folders of instructions, scripts and resources that Claude loads on demand, from creative work to testing web apps. Examples and inspiration for your own skills.",
-      "zh-Hans": "Anthropic 官方公开的“技能”仓库：每个技能就是一个文件夹，里面有说明、脚本和资源，Claude 需要时才加载。从创意设计到测试网页应用都有，可以直接拿来参考，写你自己的技能。",
-      "zh-Hant": "Anthropic 官方公開的「技能」儲存庫：每個技能就是一個資料夾，裡面有說明、腳本和資源，Claude 需要時才載入。從創意設計到測試網頁應用都有，可以直接拿來參考，寫你自己的技能。",
+      "zh-Hans": "Anthropic 公开的 Agent Skills 仓库：由说明、脚本和资源组成的文件夹，Claude 会按需加载，涵盖从创意工作到网页应用测试等场景。可作为你编写自己技能的示例和灵感。",
+      "zh-Hant": "Anthropic 公開的 Agent Skills 儲存庫：由說明、指令碼和資源組成的資料夾，Claude 會依需求載入，涵蓋從創意工作到網頁應用程式測試等場景。可作為你撰寫自己技能的範例與靈感。",
       "ja": "Anthropic 公式の Agent Skills 公開リポジトリ。指示・スクリプト・リソースをまとめたフォルダを Claude が必要なときに読み込む。クリエイティブ制作から Web アプリのテストまで、自作スキルの手本になる。",
       "ko": "Anthropic이 공개한 Agent Skills 저장소. 지침·스크립트·리소스를 담은 폴더를 Claude가 필요할 때 불러온다. 창작부터 웹 앱 테스트까지 다양해 직접 스킬을 만들 때 참고하기 좋다."
     }
