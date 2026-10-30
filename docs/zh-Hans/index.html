@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GitHub 涨星榜（GitHub Risers）：按涨星速度排名的 GitHub 热门仓库</title>
+<meta name="description" content="按每天新增 star 数（涨星速度）而不是总 star 数给 GitHub 仓库排名。AI 为主榜，另有开发工具、安全、前端、基础设施、设计、数据榜。数据来自 GitHub API，每天更新两次。">
+<link rel="canonical" href="https://jammyfu.github.io/github-risers/zh-Hans/">
+<link rel="alternate" hreflang="en" href="https://jammyfu.github.io/github-risers/">
+<link rel="alternate" hreflang="zh-Hans" href="https://jammyfu.github.io/github-risers/zh-Hans/">
+<link rel="alternate" hreflang="x-default" href="https://jammyfu.github.io/github-risers/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GitHub 涨星榜（GitHub Risers）：按涨星速度排名的 GitHub 热门仓库">
+<meta property="og:description" content="按每天新增 star 数（涨星速度）而不是总 star 数给 GitHub 仓库排名。AI 为主榜，另有开发工具、安全、前端、基础设施、设计、数据榜。数据来自 GitHub API，每天更新两次。">
+<meta property="og:url" content="https://jammyfu.github.io/github-risers/zh-Hans/">
+<meta property="og:image" content="https://raw.githubusercontent.com/jammyfu/github-risers/main/.github/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>*{box-sizing:border-box}body{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI","Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif;color:#1b1f2a;background:#f6f7fb}
+header{background:linear-gradient(135deg,#0f172a,#312e81 55%,#7c3aed);color:#fff;padding:56px 20px 48px}
+.w{max-width:860px;margin:0 auto}h1{margin:0 0 12px;font-size:2.2rem;line-height:1.2}header p{margin:8px 0;font-size:1.08rem;color:#e5e7ff}
+a.btn{display:inline-block;margin-top:14px;padding:10px 18px;border-radius:8px;background:#fff;color:#312e81;text-decoration:none;font-weight:600}
+main{padding:12px 20px 40px}h2{margin-top:36px;font-size:1.35rem}table{border-collapse:collapse;width:100%;background:#fff}td,th{border:1px solid #e3e5ee;padding:8px 12px;text-align:left;vertical-align:top}th{width:9em;background:#eef0f8}
+details{background:#fff;border:1px solid #e3e5ee;border-radius:8px;padding:10px 14px;margin:8px 0}summary{cursor:pointer;font-weight:600}
+a{color:#4338ca}ul.l{padding-left:1.2em}footer{padding:24px 20px 40px;color:#555;font-size:.9rem}.sw{font-size:.9rem;margin-top:16px}.sw a{color:#c7d2fe}</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Dataset",
+ "name": "GitHub 涨星榜（GitHub Risers）",
+ "description": "按每天新增 star 数（涨星速度）而不是总 star 数给 GitHub 仓库排名。AI 为主榜，另有开发工具、安全、前端、基础设施、设计、数据榜。数据来自 GitHub API，每天更新两次。",
+ "url": "https://jammyfu.github.io/github-risers/zh-Hans/",
+ "sameAs": "https://github.com/jammyfu/github-risers",
+ "license": "https://opensource.org/license/mit",
+ "isAccessibleForFree": true,
+ "inLanguage": [
+  "en",
+  "zh-Hans",
+  "zh-Hant",
+  "ja",
+  "ko"
+ ],
+ "creator": {
+  "@type": "Person",
+  "name": "jammyfu",
+  "url": "https://github.com/jammyfu"
+ },
+ "keywords": [
+  "GitHub trending",
+  "trending repositories",
+  "star growth",
+  "GitHub ranking",
+  "涨星榜",
+  "open source",
+  "AI"
+ ],
+ "measurementTechnique": "Stars gained per day from the GitHub REST API (stargazers/history), over 7, 30 and 365 complete UTC days; newcomers from GitHub search by topic",
+ "variableMeasured": [
+  "stars",
+  "stars gained per day"
+ ],
+ "temporalCoverage": "2026-10-29/..",
+ "version": "0.1.0",
+ "distribution": [
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "application/json",
+   "contentUrl": "https://raw.githubusercontent.com/jammyfu/github-risers/main/data/stats.json"
+  },
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "text/markdown",
+   "contentUrl": "https://raw.githubusercontent.com/jammyfu/github-risers/main/latest/rankings.md"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "SoftwareSourceCode",
+ "name": "github-risers",
+ "codeRepository": "https://github.com/jammyfu/github-risers",
+ "programmingLanguage": "Python",
+ "license": "https://opensource.org/license/mit",
+ "author": {
+  "@type": "Person",
+  "name": "jammyfu",
+  "url": "https://github.com/jammyfu"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "inLanguage": "zh-Hans",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "GitHub 涨星榜是什么？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "一份按涨星速度而不是总 star 数排序的 GitHub 仓库榜单。AI 是主榜，开发工具、安全、前端、基础设施、设计、数据各有独立榜单。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "涨星速度怎么算？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "每日涨星 = 窗口内新增 star 数 ÷ 所用天数。新增数取自 GitHub API 的 stargazers/history，按运行日之前完整的 UTC 日累加。比窗口更新的仓库用自己的年龄做除数，并标为新仓库。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "多久更新一次？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "每天两次：北京时间 0 点（UTC+8）和美西洛杉矶时间 0 点。由 GitHub Actions 定时触发，可能晚几分钟开始。每次运行都会在仓库里单独存档。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "它和 GitHub Trending 一样吗？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "不一样。GitHub Trending 是 GitHub 自己的页面；涨星榜是独立的开源项目，规则公开，每次更新都有存档，与 GitHub 无任何关联。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "“最热新仓库”榜怎么选？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "近 7 天内创建、至少 100 star、非 fork、未归档的仓库，按 star 数 ÷ 仓库年龄（天）排序。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "能识别刷星吗？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "不能。它只如实报告 GitHub API 返回的数字。仅对疑似破解 / 盗版合集的新仓库用公开的规则标记，并排在所有正常仓库之后。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "用了生成式 AI 吗？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "榜单由普通脚本计算。新仓库描述的翻译可在一个可选步骤里用 AI 模型生成；数字从不由 AI 生成。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "怎么引用？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "使用仓库里的 CITATION.cff（GitHub 页面有“Cite this repository”按钮），并注明所用快照的日期。"
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header><div class="w">
+<h1>GitHub 涨星榜（GitHub Risers）</h1>
+<p>按<strong>涨星速度</strong>（每天新增 star 数）而不是总 star 数，给 GitHub 热门仓库排名。AI 是主榜，开发工具、安全、前端、基础设施、设计、数据各有自己的榜。数字直接取自 GitHub API，每天更新两次。</p>
+<p>它是脚本生成的榜单：不是 GitHub 官方产品，不是人工精选清单，也不是买星或推广服务。</p>
+<a class="btn" href="https://github.com/jammyfu/github-risers/blob/main/README.zh-Hans.md">查看最新榜单</a>
+<p class="sw"><a href="https://jammyfu.github.io/github-risers/" hreflang="en">English</a></p>
+</div></header>
+<main><div class="w">
+<h2>关键事实</h2>
+<table>
+<tr><th>是什么</th><td>按 7、30、365 天的每日涨星速度排名，另有近 7 天新仓库榜</td></tr><tr><th>分类</th><td>AI（主榜）、开发工具、安全、Web / 前端、基础设施、设计 / 创意、数据</td></tr><tr><th>更新时间</th><td>每天北京时间 0 点和美西（洛杉矶）0 点各一次</td></tr><tr><th>数据来源</th><td>只用 GitHub REST API；取不到的数据标为缺失，不估算</td></tr><tr><th>遥测</th><td>无</td></tr><tr><th>许可证</th><td>MIT</td></tr>
+</table>
+<h2>五种语言的榜单</h2>
+<ul class="l">
+<li><a href="https://github.com/jammyfu/github-risers/blob/main/README.zh-Hans.md">简体中文</a></li><li><a href="https://github.com/jammyfu/github-risers/blob/main/README.zh-Hant.md">繁體中文</a></li><li><a href="https://github.com/jammyfu/github-risers#readme">English</a></li><li><a href="https://github.com/jammyfu/github-risers/blob/main/README.ja.md">日本語</a></li><li><a href="https://github.com/jammyfu/github-risers/blob/main/README.ko.md">한국어</a></li>
+</ul>
+<h2>常见问题</h2>
+<details><summary>GitHub 涨星榜是什么？</summary><p>一份按涨星速度而不是总 star 数排序的 GitHub 仓库榜单。AI 是主榜，开发工具、安全、前端、基础设施、设计、数据各有独立榜单。</p></details><details><summary>涨星速度怎么算？</summary><p>每日涨星 = 窗口内新增 star 数 ÷ 所用天数。新增数取自 GitHub API 的 stargazers/history，按运行日之前完整的 UTC 日累加。比窗口更新的仓库用自己的年龄做除数，并标为新仓库。</p></details><details><summary>多久更新一次？</summary><p>每天两次：北京时间 0 点（UTC+8）和美西洛杉矶时间 0 点。由 GitHub Actions 定时触发，可能晚几分钟开始。每次运行都会在仓库里单独存档。</p></details><details><summary>它和 GitHub Trending 一样吗？</summary><p>不一样。GitHub Trending 是 GitHub 自己的页面；涨星榜是独立的开源项目，规则公开，每次更新都有存档，与 GitHub 无任何关联。</p></details><details><summary>“最热新仓库”榜怎么选？</summary><p>近 7 天内创建、至少 100 star、非 fork、未归档的仓库，按 star 数 ÷ 仓库年龄（天）排序。</p></details><details><summary>能识别刷星吗？</summary><p>不能。它只如实报告 GitHub API 返回的数字。仅对疑似破解 / 盗版合集的新仓库用公开的规则标记，并排在所有正常仓库之后。</p></details><details><summary>用了生成式 AI 吗？</summary><p>榜单由普通脚本计算。新仓库描述的翻译可在一个可选步骤里用 AI 模型生成；数字从不由 AI 生成。</p></details><details><summary>怎么引用？</summary><p>使用仓库里的 CITATION.cff（GitHub 页面有“Cite this repository”按钮），并注明所用快照的日期。</p></details>
+<h2>文档</h2>
+<ul class="l">
+<li><a href="https://github.com/jammyfu/github-risers/blob/main/docs/FACTS.md">一页事实表（英文）</a></li><li><a href="https://github.com/jammyfu/github-risers/blob/main/docs/FAQ.md">常见问题（英文）</a></li><li><a href="https://github.com/jammyfu/github-risers/blob/main/docs/CATEGORIES.md">分类规则</a></li><li><a href="https://github.com/jammyfu/github-risers/blob/main/docs/NEW_ARRIVALS.md">新仓库榜标准</a></li><li><a href="https://github.com/jammyfu/github-risers/blob/main/docs/DAILY_UPDATE.md">每日更新</a></li><li><a href="https://raw.githubusercontent.com/jammyfu/github-risers/main/data/stats.json">最新数据（JSON）</a></li><li><a href="https://jammyfu.github.io/github-risers/llms.txt">llms.txt</a></li><li><a href="https://github.com/jammyfu/github-risers">源码</a></li>
+</ul>
+</div></main>
+<footer><div class="w">MIT 许可证。作者：<a href="https://github.com/jammyfu">jammyfu</a>。无统计、无追踪。与 GitHub 无关联。</div></footer>
+</body>
+</html>

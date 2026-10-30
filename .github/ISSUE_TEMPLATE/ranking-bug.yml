@@ -1,0 +1,15 @@
+name: Ranking or data problem
+description: A wrong number, a repo in the wrong board, or a broken link
+labels: [bug]
+body:
+  - type: input
+    id: where
+    attributes: {label: Where, description: "Page and board, e.g. README.md > AI > Fastest rising this week"}
+    validations: {required: true}
+  - type: input
+    id: snapshot
+    attributes: {label: Snapshot, description: "e.g. rankings/2026-10-30/cn-0000"}
+  - type: textarea
+    id: problem
+    attributes: {label: What is wrong?, description: "Include how you checked it against the GitHub API if you can"}
+    validations: {required: true}

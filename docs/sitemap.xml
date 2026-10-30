@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://jammyfu.github.io/github-risers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jammyfu.github.io/github-risers/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://jammyfu.github.io/github-risers/zh-Hans/"/>
+  </url>
+  <url>
+    <loc>https://jammyfu.github.io/github-risers/zh-Hans/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jammyfu.github.io/github-risers/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://jammyfu.github.io/github-risers/zh-Hans/"/>
+  </url>
+</urlset>

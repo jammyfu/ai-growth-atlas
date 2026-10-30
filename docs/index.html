@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GitHub Risers: GitHub Trending Repos Ranked by Star Growth</title>
+<meta name="description" content="GitHub trending repositories ranked by stars gained per day, not total stars. AI first, plus developer tools, security, web, infrastructure, design and data. Updated twice a day from the GitHub API.">
+<link rel="canonical" href="https://jammyfu.github.io/github-risers/">
+<link rel="alternate" hreflang="en" href="https://jammyfu.github.io/github-risers/">
+<link rel="alternate" hreflang="zh-Hans" href="https://jammyfu.github.io/github-risers/zh-Hans/">
+<link rel="alternate" hreflang="x-default" href="https://jammyfu.github.io/github-risers/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GitHub Risers: GitHub Trending Repos Ranked by Star Growth">
+<meta property="og:description" content="GitHub trending repositories ranked by stars gained per day, not total stars. AI first, plus developer tools, security, web, infrastructure, design and data. Updated twice a day from the GitHub API.">
+<meta property="og:url" content="https://jammyfu.github.io/github-risers/">
+<meta property="og:image" content="https://raw.githubusercontent.com/jammyfu/github-risers/main/.github/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>*{box-sizing:border-box}body{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI","Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif;color:#1b1f2a;background:#f6f7fb}
+header{background:linear-gradient(135deg,#0f172a,#312e81 55%,#7c3aed);color:#fff;padding:56px 20px 48px}
+.w{max-width:860px;margin:0 auto}h1{margin:0 0 12px;font-size:2.2rem;line-height:1.2}header p{margin:8px 0;font-size:1.08rem;color:#e5e7ff}
+a.btn{display:inline-block;margin-top:14px;padding:10px 18px;border-radius:8px;background:#fff;color:#312e81;text-decoration:none;font-weight:600}
+main{padding:12px 20px 40px}h2{margin-top:36px;font-size:1.35rem}table{border-collapse:collapse;width:100%;background:#fff}td,th{border:1px solid #e3e5ee;padding:8px 12px;text-align:left;vertical-align:top}th{width:9em;background:#eef0f8}
+details{background:#fff;border:1px solid #e3e5ee;border-radius:8px;padding:10px 14px;margin:8px 0}summary{cursor:pointer;font-weight:600}
+a{color:#4338ca}ul.l{padding-left:1.2em}footer{padding:24px 20px 40px;color:#555;font-size:.9rem}.sw{font-size:.9rem;margin-top:16px}.sw a{color:#c7d2fe}</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Dataset",
+ "name": "GitHub Risers: GitHub repositories ranked by star growth",
+ "description": "GitHub trending repositories ranked by stars gained per day, not total stars. AI first, plus developer tools, security, web, infrastructure, design and data. Updated twice a day from the GitHub API.",
+ "url": "https://jammyfu.github.io/github-risers/",
+ "sameAs": "https://github.com/jammyfu/github-risers",
+ "license": "https://opensource.org/license/mit",
+ "isAccessibleForFree": true,
+ "inLanguage": [
+  "en",
+  "zh-Hans",
+  "zh-Hant",
+  "ja",
+  "ko"
+ ],
+ "creator": {
+  "@type": "Person",
+  "name": "jammyfu",
+  "url": "https://github.com/jammyfu"
+ },
+ "keywords": [
+  "GitHub trending",
+  "trending repositories",
+  "star growth",
+  "GitHub ranking",
+  "涨星榜",
+  "open source",
+  "AI"
+ ],
+ "measurementTechnique": "Stars gained per day from the GitHub REST API (stargazers/history), over 7, 30 and 365 complete UTC days; newcomers from GitHub search by topic",
+ "variableMeasured": [
+  "stars",
+  "stars gained per day"
+ ],
+ "temporalCoverage": "2026-10-29/..",
+ "version": "0.1.0",
+ "distribution": [
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "application/json",
+   "contentUrl": "https://raw.githubusercontent.com/jammyfu/github-risers/main/data/stats.json"
+  },
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "text/markdown",
+   "contentUrl": "https://raw.githubusercontent.com/jammyfu/github-risers/main/latest/rankings.md"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "SoftwareSourceCode",
+ "name": "github-risers",
+ "codeRepository": "https://github.com/jammyfu/github-risers",
+ "programmingLanguage": "Python",
+ "license": "https://opensource.org/license/mit",
+ "author": {
+  "@type": "Person",
+  "name": "jammyfu",
+  "url": "https://github.com/jammyfu"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "inLanguage": "en",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What is GitHub Risers?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A leaderboard of GitHub repositories ranked by how fast they gain stars, not by how many they already have. AI is the main board, with separate boards for developer tools, security, web, infrastructure, design and data."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How is the growth rate computed?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "per_day = stars gained over the window / days used. The gain is the sum of daily star counts from the GitHub API endpoint stargazers/history over the complete UTC days before the run. A repository younger than the window is divided by its own age and marked young."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How often is it updated?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Twice a day, at 00:00 Beijing time (UTC+8) and 00:00 Los Angeles time. The schedule runs on GitHub Actions, so a run can start a few minutes late. Every run is archived under its own folder in the repository."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is it the same as GitHub Trending?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. GitHub Trending is GitHub's own page. GitHub Risers is an independent open-source project with published rules and a saved history of every update. It is not affiliated with GitHub."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is the hottest new repos board?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Repositories created in the last 7 days with at least 100 stars, not forks, not archived, ranked by stars divided by age in days."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does it detect fake stars?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. It reports the counts the GitHub API returns. It only flags, with a published heuristic, new repos that look like cracked or pirated bundles and ranks them after all normal repos."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does it use generative AI?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The rankings are computed by plain scripts. Translations of repo descriptions can be produced with an AI model in an optional step; numbers never are."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I cite it?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Use the CITATION.cff file in the repository (GitHub shows a Cite this repository button) and name the snapshot date."
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header><div class="w">
+<h1>GitHub Risers</h1>
+<p>GitHub trending repositories ranked by <strong>star growth</strong> (stars gained per day), not total stars. AI is the main board; developer tools, security, web, infrastructure, design and data have their own. Numbers come straight from the GitHub API and are refreshed twice a day.</p>
+<p>It is a script-generated leaderboard: not an official GitHub product, not a manually curated list, and not a star-buying or promotion service.</p>
+<a class="btn" href="https://github.com/jammyfu/github-risers#readme">Open the latest rankings</a>
+<p class="sw"><a href="https://jammyfu.github.io/github-risers/zh-Hans/" hreflang="zh-Hans">简体中文</a></p>
+</div></header>
+<main><div class="w">
+<h2>Key facts</h2>
+<table>
+<tr><th>What</th><td>Repositories ranked by stars gained per day over 7, 30 and 365 days, plus a 7-day hottest-new-repos board</td></tr><tr><th>Categories</th><td>AI (main), Developer Tools, Security, Web / Frontend, Infrastructure, Design / Creative, Data</td></tr><tr><th>Updates</th><td>00:00 Beijing time and 00:00 Los Angeles time, every day</td></tr><tr><th>Data source</th><td>GitHub REST API only; missing data is shown as missing, never estimated</td></tr><tr><th>Telemetry</th><td>None</td></tr><tr><th>License</th><td>MIT</td></tr>
+</table>
+<h2>Rankings in five languages</h2>
+<ul class="l">
+<li><a href="https://github.com/jammyfu/github-risers#readme">English</a></li><li><a href="https://github.com/jammyfu/github-risers/blob/main/README.zh-Hans.md">简体中文</a></li><li><a href="https://github.com/jammyfu/github-risers/blob/main/README.zh-Hant.md">繁體中文</a></li><li><a href="https://github.com/jammyfu/github-risers/blob/main/README.ja.md">日本語</a></li><li><a href="https://github.com/jammyfu/github-risers/blob/main/README.ko.md">한국어</a></li>
+</ul>
+<h2>FAQ</h2>
+<details><summary>What is GitHub Risers?</summary><p>A leaderboard of GitHub repositories ranked by how fast they gain stars, not by how many they already have. AI is the main board, with separate boards for developer tools, security, web, infrastructure, design and data.</p></details><details><summary>How is the growth rate computed?</summary><p>per_day = stars gained over the window / days used. The gain is the sum of daily star counts from the GitHub API endpoint stargazers/history over the complete UTC days before the run. A repository younger than the window is divided by its own age and marked young.</p></details><details><summary>How often is it updated?</summary><p>Twice a day, at 00:00 Beijing time (UTC+8) and 00:00 Los Angeles time. The schedule runs on GitHub Actions, so a run can start a few minutes late. Every run is archived under its own folder in the repository.</p></details><details><summary>Is it the same as GitHub Trending?</summary><p>No. GitHub Trending is GitHub&#x27;s own page. GitHub Risers is an independent open-source project with published rules and a saved history of every update. It is not affiliated with GitHub.</p></details><details><summary>What is the hottest new repos board?</summary><p>Repositories created in the last 7 days with at least 100 stars, not forks, not archived, ranked by stars divided by age in days.</p></details><details><summary>Does it detect fake stars?</summary><p>No. It reports the counts the GitHub API returns. It only flags, with a published heuristic, new repos that look like cracked or pirated bundles and ranks them after all normal repos.</p></details><details><summary>Does it use generative AI?</summary><p>The rankings are computed by plain scripts. Translations of repo descriptions can be produced with an AI model in an optional step; numbers never are.</p></details><details><summary>How do I cite it?</summary><p>Use the CITATION.cff file in the repository (GitHub shows a Cite this repository button) and name the snapshot date.</p></details>
+<h2>Documentation</h2>
+<ul class="l">
+<li><a href="https://github.com/jammyfu/github-risers/blob/main/docs/FACTS.md">Facts (one page)</a></li><li><a href="https://github.com/jammyfu/github-risers/blob/main/docs/FAQ.md">FAQ</a></li><li><a href="https://github.com/jammyfu/github-risers/blob/main/docs/CATEGORIES.md">Category rules</a></li><li><a href="https://github.com/jammyfu/github-risers/blob/main/docs/NEW_ARRIVALS.md">New-repo criteria</a></li><li><a href="https://github.com/jammyfu/github-risers/blob/main/docs/DAILY_UPDATE.md">Daily update</a></li><li><a href="https://raw.githubusercontent.com/jammyfu/github-risers/main/data/stats.json">Latest data (JSON)</a></li><li><a href="https://jammyfu.github.io/github-risers/llms.txt">llms.txt</a></li><li><a href="https://github.com/jammyfu/github-risers">Source code</a></li>
+</ul>
+</div></main>
+<footer><div class="w">MIT License. Author: <a href="https://github.com/jammyfu">jammyfu</a>. No analytics or tracking. Not affiliated with GitHub.</div></footer>
+</body>
+</html>

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use GitHub Risers rankings or data, please cite it as below."
+title: "GitHub Risers: GitHub trending repositories ranked by star growth"
+abstract: "A script-generated leaderboard that ranks GitHub repositories by stars gained per day (last 7, 30 and 365 days) instead of total stars, grouped by category with AI as the main board. Data comes from the GitHub API and is refreshed twice a day."
+type: dataset
+authors:
+  - alias: "jammyfu"
+    website: "https://github.com/jammyfu"
+repository-code: "https://github.com/jammyfu/github-risers"
+url: "https://jammyfu.github.io/github-risers/"
+license: MIT
+version: 0.1.0
+date-released: 2026-10-30
+keywords:
+  - github-trending
+  - trending-repositories
+  - star-growth
+  - github-ranking
+  - open-source
+  - ai

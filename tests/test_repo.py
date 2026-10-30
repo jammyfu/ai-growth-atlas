@@ -174,6 +174,8 @@ class ZeroTelemetryTests(unittest.TestCase):
                  and p.name not in {"test_repo.py"}]
         for f in files:
             body = f.read_text("utf-8", "replace").lower()
+            # Inert JSON-LD blocks (structured data for search engines, never executed) are the only allowed <script>.
+            body = re.sub(r'<script type="application/ld\+json">.*?</script>', "", body, flags=re.S)
             for t in TRACKERS:
                 self.assertNotIn(t, body, f"{f.relative_to(ROOT)} contains {t}")
 
