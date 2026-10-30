@@ -56,8 +56,9 @@ text in `src`; it is shown only while `src` still equals the current description
 
 Since the i18n pipeline, `tools/update_stars.py` fills this cache itself: after discovering the ranking it
 translates every displayed description that has no current translation (already translated ones are skipped),
-then polishes copy, then renders. It needs the repository secret `CURSOR_API_KEY`; without it, or if anything
-fails, the run carries on with the existing texts. Details, guards and the manual commands are in
+then renders. In CI this uses the Cursor CLI and the optional repository secret `CURSOR_API_KEY`; without it, or if
+anything fails, the run carries on with the existing texts. Polishing the copy is done on the owner's machine with
+the Antigravity CLI (`tools/polish_local.sh`, or `tools/local_daily.sh`), never in CI. Details, guards and the manual commands are in
 [I18N_PIPELINE.md](I18N_PIPELINE.md). `python3 tools/newcomer_i18n.py` still lists the gaps.
 
 ## Schedule: Beijing 00:00 and Los Angeles 00:00
