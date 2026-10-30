@@ -1,69 +1,69 @@
 {
   "_comment": "Daily snapshots of stargazers_count from the GitHub API. Format: { \"owner/repo\": { \"YYYY-MM-DD\": stars } }. Appended by tools/update_stars.py.",
   "DietrichGebert/ponytail": {
-    "2026-10-29": 179871
+    "2026-10-29": 179948
   },
   "Graphify-Labs/graphify": {
-    "2026-10-29": 138413
+    "2026-10-29": 138481
   },
   "Leonxlnx/taste-skill": {
-    "2026-10-29": 105258
+    "2026-10-29": 105322
   },
   "NVIDIA/SkillSpector": {
-    "2026-10-29": 23302
+    "2026-10-29": 23318
   },
   "NousResearch/hermes-agent": {
-    "2026-10-29": 258420
+    "2026-10-29": 258439
   },
   "Panniantong/Agent-Reach": {
-    "2026-10-29": 106123
+    "2026-10-29": 106165
   },
   "addyosmani/agent-skills": {
-    "2026-10-29": 111655
+    "2026-10-29": 111682
   },
   "affaan-m/ECC": {
-    "2026-10-29": 292434
+    "2026-10-29": 292500
   },
   "anomalyco/opencode": {
-    "2026-10-29": 222979
+    "2026-10-29": 222992
   },
   "anthropics/skills": {
-    "2026-10-29": 184702
+    "2026-10-29": 184737
   },
   "cheaper-inference/OmniRoute": {
-    "2026-10-29": 82482
+    "2026-10-29": 82507
   },
   "cloudflare/security-audit-skill": {
-    "2026-10-29": 52499
+    "2026-10-29": 52589
   },
   "deepseek-ai/deepseek-harness": {
-    "2026-10-29": 265637
+    "2026-10-29": 265682
   },
   "farion1231/cc-switch": {
-    "2026-10-29": 150034
+    "2026-10-29": 150045
   },
   "heygen-com/hyperframes": {
-    "2026-10-29": 75286
+    "2026-10-29": 75326
   },
   "morluto/rea": {
-    "2026-10-29": 406443
+    "2026-10-29": 406776
   },
   "nextlevelbuilder/ui-ux-pro-max-skill": {
-    "2026-10-29": 142419
+    "2026-10-29": 142450
   },
   "openclaw/openclaw": {
-    "2026-10-29": 393355
+    "2026-10-29": 393358
   },
   "paperclipai/paperclip": {
-    "2026-10-29": 108529
+    "2026-10-29": 108550
   },
   "stablyai/orca": {
-    "2026-10-29": 109903
+    "2026-10-29": 109983
   },
   "thedotmack/claude-mem": {
-    "2026-10-29": 104417
+    "2026-10-29": 104488
   },
   "yetone/magpie": {
-    "2026-10-29": 25293
+    "2026-10-29": 25326
   }
 }

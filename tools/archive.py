@@ -63,6 +63,11 @@ def _rows(ranked: list[dict], key: str) -> list[str]:
     return out
 
 
+def _new_rows(items: list[dict]) -> list[str]:
+    return [f"| {i} | [{it['name']}]({it['url']}) | {it['created_at'][:10]} | {it['stars']:,} | "
+            f"{it['per_day']:,.1f} |" for i, it in enumerate(items, 1)]
+
+
 def render_rankings_md(stats: dict[str, Any]) -> str:
     from i18n import S
     s = S["en"]
@@ -73,6 +78,17 @@ def render_rankings_md(stats: dict[str, Any]) -> str:
         f"(window end: {stats['today_utc']} UTC). Top {TOP_N}.", "",
     ]
     projects = stats["projects"]
+    new = stats.get("newcomers")
+    if new is not None:  # snapshots written before this ranking existed have no such key
+        lines += [f"## {s['new']}", ""]
+        if not new["ok"]:
+            lines += [s["new_failed"].format(error=new["error"]), ""]
+        else:
+            lines += ["| # | Repo | Created (UTC) | Stars | Stars/day |", "|---|---|---|---:|---:|"]
+            lines += _new_rows(new["items"][:TOP_N]) + [""]
+            bad = [q for q in new["queries"] if not q["ok"]]
+            if bad:
+                lines += [s["new_partial"].format(failed=len(bad), total=len(new["queries"])), ""]
     for key in ("week", "month", "year"):
         lines += [f"## {s[key]}", "",
                   "| # | Project | Stars gained | Stars/day | Total stars |", "|---|---|---:|---:|---:|"]
@@ -116,8 +132,8 @@ def render_index(root: Path) -> str:
         "Folder dates are the local date of the slot's time zone.", "",
         "Latest: [`latest/rankings.md`](../latest/rankings.md) · [`latest/stats.json`](../latest/stats.json) · "
         "[README](../README.md)", "",
-        "| Date | Slot | Fetched (UTC) | #1 this week | #1 this month | #1 this year | Snapshot |",
-        "|---|---|---|---|---|---|---|",
+        "| Date | Slot | Fetched (UTC) | #1 new (7 days) | #1 this week | #1 this month | #1 this year | Snapshot |",
+        "|---|---|---|---|---|---|---|---|",
     ]
     for d, st in snaps:
         slot = st["slot"]
@@ -125,11 +141,14 @@ def render_index(root: Path) -> str:
         for key in ("week", "month", "year"):
             r = core.rank(st["projects"], key)
             tops.append(f"{r[0]['name']} ({r[0]['growth'][key]['per_day']:,.0f}/day)" if r else "n/a")
+        new = st.get("newcomers")
+        top_new = (f"{new['items'][0]['name']} ({new['items'][0]['per_day']:,.0f}/day)"
+                   if new and new.get("ok") and new["items"] else "n/a")
         rel = d.relative_to(root / "rankings").as_posix()
         lines.append(f"| {slot['date']} | {slot['label']} (`{slot['id']}`) | {st['generated_at']} | "
-                     f"{tops[0]} | {tops[1]} | {tops[2]} | [{rel}]({rel}/rankings.md) · [json]({rel}/stats.json) |")
+                     f"{top_new} | {tops[0]} | {tops[1]} | {tops[2]} | [{rel}]({rel}/rankings.md) · [json]({rel}/stats.json) |")
     if not snaps:
-        lines.append("| | | | | | | no snapshots yet |")
+        lines.append("| | | | | | | | no snapshots yet |")
     lines.append("")
     return "\n".join(lines)
 

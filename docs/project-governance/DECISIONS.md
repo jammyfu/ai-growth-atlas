@@ -33,3 +33,8 @@
 ### History snapshots are real runs only
 
 - A snapshot folder is written only by an actual run at that slot. Past slots are not back-filled, because the star count at that moment cannot be recovered from the API.
+
+### New arrivals: hotness and dedup
+
+- Hotness = stars / max(age days, 1); descriptions are the repo's own GitHub text (not translated).
+- Dedup excludes tracked projects and all displayed top-20 repos, so no project is in two rankings; a repo must be added to `data/projects.json` by the owner to be tracked.

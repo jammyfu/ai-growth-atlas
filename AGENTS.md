@@ -9,3 +9,4 @@ Project harness follows `jammyfu/CoderSkills` → `skills/continuous-project-loo
 - Zero telemetry: no analytics, tracking or beacon scripts, ever.
 - `data/projects.json` `desc` and `data/categories.json` `name`/`desc` need all five languages: en, zh-Hans, zh-Hant, ja, ko.
 - Changes go through pull requests. Do not push or merge to `main` without the owner's approval (the daily workflow/script is the only automated writer of `data/` and `README*`).
+- The "hottest new repos (7 days)" ranking is discovered by `tools/newcomers.py` from the search API; it must never repeat a project from another ranking (see `docs/NEW_ARRIVALS.md`).

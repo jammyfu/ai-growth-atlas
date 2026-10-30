@@ -7,7 +7,8 @@ project that cannot be fetched is listed under "Missing data" in the README.
 
 1. `GET /repos/{owner}/{repo}` → `stargazers_count`, `created_at`.
 2. `GET /repos/{owner}/{repo}/stargazers/history` (newest week first, 30 weeks per page) until one year is covered.
-3. Writes `data/stats.json` (growth per project), archives it under `rankings/<date>/<slot>/` and `latest/`, appends today's star count to `data/stars.json`
+3. Re-discovers the "hottest new repos (last 7 days)" ranking with the GitHub search API (about 30 search requests, paced to the 30/min limit, so a run takes roughly 2 minutes; rules in [NEW_ARRIVALS.md](NEW_ARRIVALS.md)). Every slot run (Beijing and Los Angeles, Actions or local) redoes it from scratch.
+4. Writes `data/stats.json` (growth per project), archives it under `rankings/<date>/<slot>/` and `latest/`, appends today's star count to `data/stars.json`
    (snapshots, used for cross-checks over time), then regenerates the five READMEs.
 
 Why `stargazers/history` and not `stargazers` + `starred_at`: since July 2026 GitHub returns 404 for
@@ -25,8 +26,8 @@ Every run stores its result in its own folder and keeps it (nothing is overwritt
 rankings/<date>/cn-0000/   Beijing 00:00 run      (date = Asia/Shanghai date)
 rankings/<date>/pt-0000/   Los Angeles 00:00 run  (date = America/Los_Angeles date)
 rankings/<date>/manual-HHMM/   any other run, e.g. manual dispatch (date/time = UTC)
-    stats.json     full API-derived data of that run, plus a "slot" block
-    rankings.md    top-20 tables for that run (English, compact)
+    stats.json     full API-derived data of that run, plus a "slot" block and the new-repos ranking (`newcomers`)
+    rankings.md    top-20 tables for that run, new-repos table first (English, compact)
 rankings/README.md   history index linking every snapshot, newest first
 latest/stats.json, latest/rankings.md   copy of the newest run
 data/stats.json      what the READMEs are rendered from (same as the newest run)

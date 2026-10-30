@@ -101,13 +101,19 @@ class SnapshotTests(unittest.TestCase):
                         "description": "d"}
             return [{"week": epoch, "days": [10] * 7, "total": 70}]
 
+        stub = {"ok": True, "queries": [], "candidates_seen": 0, "items": [], "excluded_duplicates": []}
         with mock.patch.object(up, "ROOT", self.tmp), mock.patch.object(up, "api_get", fake), \
+                mock.patch.object(up.newcomers, "discover", return_value=stub) as disc, \
                 mock.patch.dict("os.environ", {"GITHUB_TOKEN": "t"}):
             rc = up.main(["--slot", "pt", "--now", "2026-10-30T07:05:00Z", "--no-render"])
         self.assertEqual(rc, 0)
+        self.assertEqual(disc.call_count, 1)  # new repos are re-discovered on every run
         st = json.loads((self.tmp / "rankings/2026-10-30/pt-0000/stats.json").read_text("utf-8"))
         self.assertEqual(st["slot"]["id"], "pt-0000")
         self.assertEqual(st["projects"][0]["stars"], 70)
+        self.assertEqual(st["newcomers"], stub)
+        # tracked projects are passed to discovery as the exclusion set
+        self.assertIn("o/r", disc.call_args.args[2])
         self.assertEqual(json.loads((self.tmp / "latest/stats.json").read_text("utf-8")), st)
         self.assertEqual(json.loads((self.tmp / "data/stats.json").read_text("utf-8")), st)
         self.assertEqual(archive.stale_latest_and_index(self.tmp), [])
