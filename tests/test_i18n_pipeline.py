@@ -250,25 +250,32 @@ class RunTests(unittest.TestCase):
         asked = []
         for why in ("CURSOR_API_KEY is not set", "model 'gemini-3.8-flash-medium' is not available; available: gemini-3-flash"):
             res = pipe.run(self.repo.root, self.repo.new, env={}, log=lambda m: None,
-                           make_runner=lambda model: Ready(FakeRunner(translate=lambda i: asked.append(i)), why))
+                           make_runner=lambda backend, model: Ready(FakeRunner(translate=lambda i: asked.append(i)), why))
             self.assertTrue(res["translate"]["skipped"] and res["polish"]["skipped"])
         self.assertEqual(asked, [])
         self.assertEqual(self.repo.read("projects.json"), before)
         self.assertEqual(self.repo.read("newcomer_i18n.json"), {})
 
-    def test_model_defaults_to_gemini_3_8_flash_and_env_overrides(self):
+    def test_backends_and_models_default_to_cursor_translate_agy_polish(self):
         seen = []
-        pipe.run(self.repo.root, self.repo.new, env={}, log=lambda m: None, dry_run=False,
-                 make_runner=lambda model: seen.append(model) or Ready(FakeRunner(), "off"))
-        self.assertEqual(set(seen), {"gemini-3.8-flash-medium"})
+        pipe.run(self.repo.root, self.repo.new, env={}, log=lambda m: None,
+                 make_runner=lambda backend, model: seen.append((backend, model)) or Ready(FakeRunner(), "off"))
+        self.assertEqual(set(seen), {("cursor", "gemini-3.8-flash-medium"), ("agy", "gemini-3.8-flash-medium")})
         seen.clear()
-        pipe.run(self.repo.root, self.repo.new, env={"POLISH_MODEL": "gemini-3.8-flash-high"}, log=lambda m: None,
-                 make_runner=lambda model: seen.append(model) or Ready(FakeRunner(), "off"))
-        self.assertEqual(set(seen), {"gemini-3.8-flash-high"})
+        env = {"POLISH_MODEL": "gemini-3.8-flash-high", "I18N_TRANSLATE_BACKEND": "agy"}
+        pipe.run(self.repo.root, self.repo.new, env=env, log=lambda m: None,
+                 make_runner=lambda backend, model: seen.append((backend, model)) or Ready(FakeRunner(), "off"))
+        self.assertEqual(set(seen), {("agy", "gemini-3.8-flash-high")})
+
+    def test_translate_only_never_touches_the_polish_backend(self):
+        seen = []
+        pipe.run(self.repo.root, self.repo.new, do_polish=False, env={}, log=lambda m: None,
+                 make_runner=lambda backend, model: seen.append(backend) or Ready(FakeRunner(translate=fake_tr), None))
+        self.assertEqual(set(seen), {"cursor"})  # what CI does
 
     def test_full_run_translates_then_polishes(self):
         runner = FakeRunner(translate=fake_tr, polish=lambda t: t)
-        res = pipe.run(self.repo.root, self.repo.new, env={}, log=lambda m: None, make_runner=lambda m: Ready(runner))
+        res = pipe.run(self.repo.root, self.repo.new, env={}, log=lambda m: None, make_runner=lambda b, m: Ready(runner))
         self.assertEqual(res["translate"]["translated"], 1)
         self.assertGreater(res["polish"]["todo"], 0)
         self.assertEqual(set(self.repo.read("newcomer_i18n.json")["a/one"]) - {"src"}, set(LANG5[1:]))
@@ -276,12 +283,12 @@ class RunTests(unittest.TestCase):
     def test_run_safe_swallows_everything(self):
         def boom(model):
             raise RuntimeError("kaboom")
-        res = pipe.run_safe(self.repo.root, self.repo.new, env={}, log=lambda m: None, make_runner=boom)
+        res = pipe.run_safe(self.repo.root, self.repo.new, env={}, log=lambda m: None, make_runner=lambda b, m: boom(m))
         self.assertIn("error", res)
 
     def test_dry_run_calls_nothing(self):
         res = pipe.run(self.repo.root, self.repo.new, env={}, log=lambda m: None, dry_run=True,
-                       make_runner=lambda m: self.fail("must not create a runner"))
+                       make_runner=lambda b, m: self.fail("must not create a runner"))
         self.assertEqual(res["translate"]["todo"], 1)
 
 
@@ -289,6 +296,20 @@ class UpdateHookTests(unittest.TestCase):
     def test_i18n_step_never_raises(self):
         with mock.patch.object(up.i18n_pipeline, "run", side_effect=ValueError("x")):
             up.i18n_step({"ok": True})  # must not raise
+
+    def test_polish_only_when_asked_so_ci_translates_only(self):
+        calls = []
+        with mock.patch.object(up.i18n_pipeline, "run_safe", lambda root, new, **kw: calls.append(kw)):
+            with mock.patch.dict("os.environ", {}, clear=False):
+                os_env = up.os.environ
+                os_env.pop("I18N_POLISH", None)
+                up.i18n_step({})
+                os_env["I18N_POLISH"] = "1"
+                try:
+                    up.i18n_step({})
+                finally:
+                    os_env.pop("I18N_POLISH", None)
+        self.assertEqual([c["do_polish"] for c in calls], [False, True])
 
     def test_update_stars_runs_the_step_before_rendering(self):
         src = (ROOT / "tools/update_stars.py").read_text("utf-8")
@@ -342,6 +363,74 @@ class LlmTests(unittest.TestCase):
         self.assertEqual(llm.extract_json('Sure!\n```json\n{"a": "b"}\n```'), {"a": "b"})
         with self.assertRaises(llm.LLMError):
             llm.extract_json("no json here")
+
+
+AGY_MODELS = """Fetching available models...
+gemini-4-argon-high       Gemini 4 Argon (High)
+gemini-3.8-flash-high     Gemini 3.8 Flash (High)
+gemini-3.8-flash-medium   Gemini 3.8 Flash (Medium)
+gemini-3.7-flash-medium   Gemini 3.7 Flash (Medium)
+"""
+
+
+class AgyTests(unittest.TestCase):
+    def agent(self, outputs, seen=None, model="gemini-3.8-flash-medium", env=None):
+        def run(argv, **kw):
+            if seen is not None:
+                seen.append((argv, kw))
+            out = outputs(argv) if callable(outputs) else outputs
+            return subprocess.CompletedProcess(argv, 0, stdout=out, stderr="")
+        e = {"AGY_BIN": sys.executable, "CURSOR_API_KEY": "cursor-secret", "GITHUB_TOKEN": "ghs_x", **(env or {})}
+        return llm.AgyAgent(model, env=e, run=run)
+
+    def test_exact_slug_must_be_listed_and_nothing_is_substituted(self):
+        self.assertIsNone(self.agent(AGY_MODELS).unavailable_reason())
+        why = self.agent(AGY_MODELS, model="gemini-3.8-flash-low").unavailable_reason()
+        self.assertIn("gemini-3.8-flash-low", why)
+        self.assertIn("gemini-3.8-flash-medium", why)  # lists what is available
+        self.assertIn("gemini-4-argon-high", why)
+
+    def test_signed_out_is_reported_not_raised(self):
+        why = self.agent("Fetching available models...\nError: Please sign in to view available models.\n").unavailable_reason()
+        self.assertIn("sign in", why)
+
+    def test_missing_binary(self):
+        a = llm.AgyAgent(env={"AGY_BIN": "definitely-not-installed"})
+        self.assertIn("not installed", a.unavailable_reason())
+
+    def test_ask_pins_model_runs_in_temp_dir_and_hides_other_credentials(self):
+        seen = []
+        a = self.agent('{"status":"SUCCESS","response":"{\\"0\\": \\"hi\\"}\\n"}', seen=seen)
+        self.assertEqual(a.ask("polish this"), '{"0": "hi"}\n')
+        argv, kw = seen[0]
+        self.assertEqual(argv[argv.index("--model") + 1], "gemini-3.8-flash-medium")
+        self.assertEqual(argv[argv.index("--output-format") + 1], "json")
+        self.assertIn("-p", argv)
+        self.assertNotIn(kw["cwd"], (str(ROOT), "."))
+        self.assertNotIn("GITHUB_TOKEN", kw["env"])
+        self.assertNotIn("CURSOR_API_KEY", kw["env"])
+
+    def test_error_status_raises_llm_error(self):
+        a = self.agent('{"status":"ERROR","response":"","error":"model x is not recognized"}')
+        with self.assertRaises(llm.LLMError):
+            a.ask("hi")
+
+    def test_factory(self):
+        self.assertIsInstance(llm.make_agent("agy", "m", env={}), llm.AgyAgent)
+        self.assertNotIsInstance(llm.make_agent("cursor", "m", env={}), llm.AgyAgent)
+        with self.assertRaises(ValueError):
+            llm.make_agent("other", "m")
+
+    def test_local_scripts_exist_and_never_embed_credentials(self):
+        for name in ("polish_local.sh", "local_daily.sh"):
+            text = (ROOT / "tools" / name).read_text("utf-8")
+            self.assertNotRegex(text, r"GEMINI_API_KEY\s*=\s*\S", name)
+        text = (ROOT / "tools/polish_local.sh").read_text("utf-8")
+        self.assertIn("agy models", text)
+        self.assertIn("gemini-3.8-flash-medium", text)
+        wf = (ROOT / ".github/workflows/daily-update.yml").read_text("utf-8")
+        self.assertNotIn("agy", wf.replace("Polish is NOT done here: it runs on the owner's machine with `agy` (tools/polish_local.sh).", ""))
+        self.assertNotIn("POLISH_MODEL", wf)
 
 
 class RepoDataTests(unittest.TestCase):

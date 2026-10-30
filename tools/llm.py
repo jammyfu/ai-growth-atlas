@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
-"""Thin wrapper around the Cursor CLI (`agent` / `cursor-agent`) used for translation and polish.
+"""Thin wrappers around two agent CLIs, used for translation and polish.
 
-Design rules:
-- The API key is read from the CURSOR_API_KEY environment variable only (in CI: a GitHub Actions
-  secret). It is never written to a file and never put on a command line.
-- The model is named explicitly. It is checked against `agent --list-models` first; if it is not
-  there, nothing is substituted: the caller skips the step and reports the models that are available.
-- Every call is read-only (`--mode ask`) in an empty temporary workspace, so the agent cannot see or
-  touch the repository.
+- CursorAgent: Cursor CLI (`agent` / `cursor-agent`). Key = CURSOR_API_KEY (in CI: an Actions secret).
+- AgyAgent:    Google Antigravity CLI (`agy`), run locally on the owner's machine. It uses the owner's
+               signed-in Antigravity session (no key in the repo); a GEMINI_API_KEY in the environment
+               also works if `modelProvider` is set to `gemini` in ~/.gemini/antigravity-cli/settings.json.
+
+Design rules (both):
+- No key is ever written to a file or put on a command line.
+- The model is named explicitly and checked against the CLI's model list first (`agent --list-models`,
+  `agy models`); if it is not there, nothing is substituted: the caller skips the step and reports
+  the models that are available.
+- Every call runs in an empty temporary workspace, so the agent cannot see or touch the repository
+  (Cursor additionally runs with --mode ask; agy headless mode soft-denies tools that need approval).
 - Any failure raises LLMError; callers keep the text they already have.
 """
 from __future__ import annotations
@@ -24,6 +29,7 @@ from typing import Callable
 DEFAULT_MODEL = "gemini-3.8-flash-medium"
 KEY_ENV = "CURSOR_API_KEY"
 CALL_TIMEOUT = 240
+BACKENDS = ("cursor", "agy")
 
 
 class LLMError(RuntimeError):
@@ -43,7 +49,7 @@ def parse_model_ids(listing: str) -> list[str]:
     ids = []
     for line in re.sub(r"\x1b\[[0-9;]*[A-Za-z]", "", listing).splitlines():
         m = re.match(r"^\W*([a-z0-9][a-z0-9._\-\[\]=,]*)\b", line.strip().lower())
-        if m and m.group(1) not in ("available", "models", "loading", "tip"):
+        if m and m.group(1) not in ("available", "models", "loading", "tip", "fetching", "error"):
             ids.append(m.group(1))
     return ids
 
@@ -98,6 +104,74 @@ class CursorAgent:
             tail = (r.stderr or r.stdout or "").strip().splitlines()[-1:] or ["no output"]
             raise LLMError(f"exit {r.returncode}: {tail[0][:200]}".replace(self.env.get(KEY_ENV, "\0"), "***"))
         return r.stdout
+
+
+def find_agy(env: dict[str, str] | None = None) -> str | None:
+    env = os.environ if env is None else env
+    explicit = env.get("AGY_BIN")
+    if explicit:
+        return explicit if shutil.which(explicit) else None
+    return shutil.which("agy")
+
+
+def build_agy_command(binary: str, model: str, prompt: str) -> list[str]:
+    """argv for one headless call: JSON envelope out, bounded time, slash commands off."""
+    return [binary, "-p", prompt, "--model", model, "--output-format", "json",
+            "--print-timeout", "4m", "--disable-slash-commands"]
+
+
+class AgyAgent(CursorAgent):
+    """Google Antigravity CLI. Same interface as CursorAgent; no API key is required by this code."""
+
+    def __init__(self, model: str = DEFAULT_MODEL, env: dict[str, str] | None = None,
+                 run: Callable[..., subprocess.CompletedProcess] = subprocess.run):
+        base = dict(os.environ if env is None else env)
+        super().__init__(model, env=base, run=run)
+        # the agent needs neither the repo token nor the Cursor key
+        for k in ("GITHUB_TOKEN", "GH_TOKEN", KEY_ENV):
+            self.env.pop(k, None)
+        self.binary = find_agy(self.env)
+
+    def unavailable_reason(self) -> str | None:
+        if not self.binary:
+            return "Antigravity CLI (`agy`) is not installed (curl -fsSL https://antigravity.google/cli/install.sh | bash)"
+        try:
+            ids = self.list_models()
+        except LLMError as e:
+            return f"could not list agy models: {e}"
+        if self.model.lower() not in ids:
+            gem = [i for i in ids if "gemini" in i] or ids[:20]
+            return (f"model {self.model!r} is not available in agy for this account; "
+                    f"available: {', '.join(gem) or '(none listed)'}")
+        return None
+
+    def list_models(self) -> list[str]:
+        out = self._exec([self.binary, "models"], timeout=60)
+        err = re.search(r"^\s*error:?\s*(.+)$", out, re.I | re.M)
+        if err:  # agy prints "Error: Please sign in ..." and still exits 0
+            raise LLMError(err.group(1).strip()[:160])
+        return parse_model_ids(out)
+
+    def ask(self, prompt: str) -> str:
+        with tempfile.TemporaryDirectory(prefix="risers-agy-") as ws:
+            out = self._exec(build_agy_command(self.binary, self.model, prompt), timeout=CALL_TIMEOUT, cwd=ws)
+        try:
+            env = json.loads(out.strip().splitlines()[-1])
+        except (ValueError, IndexError):
+            return out  # plain text: extract_json will decide
+        if not isinstance(env, dict):
+            return out
+        if env.get("status") not in (None, "SUCCESS"):
+            raise LLMError(f"agy status {env.get('status')}: {str(env.get('error', ''))[:160]}")
+        return str(env.get("response", ""))
+
+
+def make_agent(backend: str, model: str, env: dict[str, str] | None = None) -> CursorAgent:
+    if backend == "cursor":
+        return CursorAgent(model, env=env)
+    if backend == "agy":
+        return AgyAgent(model, env=env)
+    raise ValueError(f"unknown backend {backend!r}; use one of {BACKENDS}")
 
 
 def extract_json(text: str) -> dict:

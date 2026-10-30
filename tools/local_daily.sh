@@ -10,8 +10,13 @@
 #   tools/local_daily.sh            # update, verify, commit, push to origin/main
 #   tools/local_daily.sh --no-push  # update, verify, commit locally only
 #   tools/local_daily.sh --slot la  # only proceed if it is currently 00:xx in Los Angeles
+#
+# Copy: this local run also translates new-repo descriptions and polishes copy with Google Antigravity CLI
+# (`agy`, your signed-in session; model POLISH_MODEL, default gemini-3.8-flash-medium) when agy is installed.
+# Without agy, or if anything fails, those steps are skipped and the update goes on. Set I18N_POLISH=0 to
+# turn polish off. See docs/I18N_PIPELINE.md.
 set -euo pipefail
-export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:${PATH:-}"
+export PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:${PATH:-}"
 cd "$(dirname "$0")/.."
 
 PUSH=1
@@ -57,6 +62,7 @@ if [ -n "$(git status --porcelain)" ]; then
 fi
 git pull --ff-only
 
+export I18N_POLISH="${I18N_POLISH:-1}" I18N_TRANSLATE_BACKEND="${I18N_TRANSLATE_BACKEND:-agy}" I18N_POLISH_BACKEND=agy
 "$PY" tools/update_stars.py --slot "$UPDATE_SLOT"
 "$PY" tools/verify.py
 
