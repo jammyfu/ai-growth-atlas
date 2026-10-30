@@ -9,6 +9,13 @@
       "zh-Hant": "逆向工程師往往得盯著組合語言看上好幾天，這個工具讓 AI 直接告訴你程式在做什麼。它串接 Ghidra，讓原本看不懂的二進位檔一句話就能說明清楚。",
       "ja": "リバースエンジニアが何日もアセンブリを睨む代わりに、AI がプログラムの動作をそのまま教えてくれる。Ghidra と連携し、読めなかったバイナリを一言で説明する。",
       "ko": "리버서가 며칠씩 어셈블리를 노려보던 일을, AI가 프로그램이 무슨 일을 하는지 바로 알려준다. Ghidra와 연결되어 읽을 수 없던 바이너리를 한 문장으로 설명한다."
+    },
+    "hook": {
+      "en": "Let AI reverse-engineer and clone any software",
+      "zh-Hans": "让 AI 帮你逆向、复刻任何软件",
+      "zh-Hant": "讓 AI 幫你逆向、復刻任何軟體",
+      "ja": "AI がどんなソフトも解析・再現してくれる",
+      "ko": "AI가 어떤 소프트웨어든 역분석·복제해 준다"
     }
   },
   {
@@ -21,6 +28,13 @@
       "zh-Hant": "直接在終端機裡用 AI 寫程式，不必開啟瀏覽器分頁。支援多種模型，可與 Claude Code 和 Codex 一較高下，免費開源。",
       "ja": "ブラウザを開かず、ターミナルのまま AI でコーディング。多数のモデルに対応し、Claude Code や Codex に対抗する無料のオープンソース。",
       "ko": "웹 페이지 없이 터미널에서 바로 AI로 코딩한다. 여러 모델을 지원하고 Claude Code·Codex에 맞서는 무료 오픈소스."
+    },
+    "hook": {
+      "en": "Free open-source AI coding in your terminal",
+      "zh-Hans": "终端里的免费开源 AI 编程助手",
+      "zh-Hant": "終端裡的免費開源 AI 程式設計助手",
+      "ja": "ターミナルで使える無料の AI コーディング",
+      "ko": "터미널에서 쓰는 무료 오픈 소스 AI 코딩"
     }
   },
   {
@@ -33,6 +47,13 @@
       "zh-Hant": "在同一台桌上型電腦上同時執行多個 AI 程式設計代理，比較誰寫得更好。每個代理都有自己的工作區，彼此不會互相干擾。",
       "ja": "一つのデスクトップで複数の AI コーディングエージェントを同時に走らせ、誰の出来が良いか比べられる。各エージェントは独立したワークスペースで互いに干渉しない。",
       "ko": "한 데스크톱에서 여러 AI 코딩 에이전트를 동시에 돌려 누가 더 잘 짜는지 비교한다. 에이전트마다 작업 공간이 따로라 서로 방해하지 않는다."
+    },
+    "hook": {
+      "en": "Run many AI coding agents side by side",
+      "zh-Hans": "多个 AI 编程智能体同台比拼",
+      "zh-Hant": "多個 AI 程式設計代理同台比拼",
+      "ja": "複数の AI コーディングエージェントを並べて比較",
+      "ko": "여러 AI 코딩 에이전트를 나란히 비교"
     }
   },
   {
@@ -45,6 +66,13 @@
       "zh-Hant": "讓 AI 審查自己寫的程式碼是否有漏洞，再請第二個 AI 來質疑審查結論。專門針對程式設計代理容易寫出的不安全程式碼。",
       "ja": "AI に自分のコードの脆弱性を調べさせ、さらに別の AI に反論させる。コーディングエージェントが書きがちな安全でないコード対策。",
       "ko": "AI가 자기 코드의 취약점을 직접 찾게 하고, 다른 AI를 불러 반박까지 시킨다. 코딩 에이전트가 쓰는 불안전한 코드를 잡아낸다."
+    },
+    "hook": {
+      "en": "One AI audits the code, a second AI challenges it",
+      "zh-Hans": "两个 AI 互相挑代码漏洞",
+      "zh-Hant": "兩個 AI 互相挑程式碼漏洞",
+      "ja": "2 つの AI がコードの脆弱性を相互チェック",
+      "ko": "AI 두 개가 코드 취약점을 서로 검증"
     }
   },
   {
@@ -57,6 +85,13 @@
       "zh-Hant": "像寫網頁一樣寫影片，再交給 AI 算繪成片。程式設計代理也能使用，不必學任何剪輯軟體。",
       "ja": "Web ページを書く感覚で動画を書けば、AI がそのままレンダリングする。コーディングエージェントからも使え、編集ソフトを覚える必要はない。",
       "ko": "웹 페이지를 쓰듯 영상을 쓰면 AI가 바로 렌더링한다. 코딩 에이전트도 쓸 수 있어 편집 소프트웨어를 따로 배울 필요가 없다."
+    },
+    "hook": {
+      "en": "Write video like a web page, let AI render it",
+      "zh-Hans": "像写网页一样做视频",
+      "zh-Hant": "像寫網頁一樣做影片",
+      "ja": "Web ページを書く感覚で動画を作る",
+      "ko": "웹페이지 쓰듯 영상을 만든다"
     }
   },
   {
@@ -69,6 +104,13 @@
       "zh-Hant": "專治 AI 寫程式時灌水湊數。教它像一位愛偷懶的老手那樣做事：能省則省，非寫不可的部分務必寫對。",
       "ja": "AI がコードに余計なものを盛りすぎる問題の特効薬。怠け者のベテランのように、書かずに済むなら書かず、書くなら正しく書くことを教える。",
       "ko": "AI가 코드에 군더더기를 잔뜩 붙이는 버릇을 고친다. 게으른 베테랑처럼 안 써도 되면 쓰지 않고, 쓸 거면 제대로 쓰게 가르친다."
+    },
+    "hook": {
+      "en": "Stops AI from padding its code",
+      "zh-Hans": "治好 AI 写代码灌水",
+      "zh-Hant": "治好 AI 寫程式碼灌水",
+      "ja": "AI のコードの水増しを防ぐ",
+      "ko": "AI의 코드 군더더기를 막아 준다"
     }
   },
   {
@@ -81,6 +123,13 @@
       "zh-Hant": "把整個程式碼庫變成一張地圖，讓 AI 一眼看出哪些檔案呼叫了哪些檔案。大型專案不必再從頭讀到尾。",
       "ja": "コードベース全体を一枚の地図にして、どのファイルが互いに呼び合うか AI が一目で把握できる。大規模プロジェクトを頭から読む必要がなくなる。",
       "ko": "코드베이스 전체를 한 장의 지도로 만들어 어떤 파일이 서로 호출하는지 AI가 한눈에 파악한다. 큰 프로젝트를 처음부터 끝까지 읽을 필요가 없다."
+    },
+    "hook": {
+      "en": "Turn a codebase into a map AI can read",
+      "zh-Hans": "把整个代码库变成一张地图",
+      "zh-Hant": "把整個程式碼庫變成一張地圖",
+      "ja": "コードベースを 1 枚の地図にする",
+      "ko": "코드베이스를 한 장의 지도로"
     }
   },
   {
@@ -93,6 +142,13 @@
       "zh-Hant": "它不是聊天機器人，而是真正能把事情做完的 AI。可跨系統執行、在本機部署，你的資料不會離開你的電腦。",
       "ja": "チャットボットではなく、本当に仕事をこなす AI。システムをまたいで動き、ローカルにデプロイでき、データは PC の外に出ない。",
       "ko": "챗봇이 아니라 실제로 일을 해주는 AI. 시스템을 가로질러 동작하고 로컬에 배포하며 데이터가 내 컴퓨터를 떠나지 않는다."
+    },
+    "hook": {
+      "en": "An AI that gets work done, on your own machine",
+      "zh-Hans": "真能干活的 AI，数据不出电脑",
+      "zh-Hant": "真能幹活的 AI，資料不出電腦",
+      "ja": "仕事を片付ける AI。データは手元から出ない",
+      "ko": "실제로 일하는 AI, 데이터는 내 컴퓨터에"
     }
   },
   {
@@ -105,6 +161,13 @@
       "zh-Hant": "DeepSeek 開源的代理 Harness（`dsh`）。一切皆外掛，你可以自行組裝想要的代理。目前為開發者預覽版，可能出現破壞性變更。",
       "ja": "DeepSeek 公式のオープンソース・エージェントハーネス（`dsh`）。「すべてがプラグイン」という設計で、必要な機能を組み合わせて使う。開発者プレビュー版のため、互換性が壊れる変更が入る可能性がある。",
       "ko": "DeepSeek이 공개한 오픈소스 에이전트 하네스(`dsh`). '모든 것이 플러그인'이라는 구조로 필요한 기능을 조립해 쓴다. 개발자 프리뷰 단계라 호환성이 깨지는 변경이 생길 수 있다."
+    },
+    "hook": {
+      "en": "DeepSeek's open-source agent kit, built from plugins",
+      "zh-Hans": "DeepSeek 开源智能体，插件自由拼装",
+      "zh-Hant": "DeepSeek 開源代理，外掛自由拼裝",
+      "ja": "DeepSeek 公式のプラグイン式エージェント基盤",
+      "ko": "DeepSeek의 플러그인형 오픈 소스 에이전트"
     }
   },
   {
@@ -117,6 +180,13 @@
       "zh-Hant": "針對代理 Harness 的效能調校套件：為 Claude Code、Codex、OpenCode、Cursor 等提供技能、習得的直覺、記憶、安全檢查，以及先研究再開發的工作方式。",
       "ja": "コーディングエージェント向けの総合強化パック。スキル、使いながら学ぶ習慣、記憶、セキュリティチェック、調査してから実装する開発フローを備え、Claude Code・Codex・OpenCode・Cursor などで使える。",
       "ko": "코딩 에이전트를 위한 종합 강화 패키지. 스킬, 사용하며 배우는 습관, 메모리, 보안 점검, 조사부터 하고 구현하는 개발 흐름을 담았고 Claude Code·Codex·OpenCode·Cursor 등에서 쓸 수 있다."
+    },
+    "hook": {
+      "en": "Performance tune-up kit for coding agents",
+      "zh-Hans": "给编程智能体的性能调优套件",
+      "zh-Hant": "給程式設計代理的效能調優套件",
+      "ja": "コーディングエージェントの性能チューニング集",
+      "ko": "코딩 에이전트 성능 튜닝 키트"
     }
   },
   {
@@ -129,6 +199,13 @@
       "zh-Hant": "一個選單列應用程式加上本機閘道，讓任何程式設計代理都能使用任何模型：Claude Code 搭配 Kimi，Codex 搭配 DeepSeek。某個額度用完時，會自動切換到你的下一個帳號。",
       "ja": "メニューバーのアプリとローカルゲートウェイで、どのコーディングエージェントでも好きなモデルを使える（Claude Code を Kimi で、Codex を DeepSeek で）。クォータが尽きたら次のアカウントに自動で切り替わる。",
       "ko": "메뉴 막대 앱과 로컬 게이트웨이로, 어떤 코딩 에이전트에서든 원하는 모델을 쓸 수 있다(Claude Code에 Kimi, Codex에 DeepSeek). 할당량이 떨어지면 다음 계정으로 자동 전환한다."
+    },
+    "hook": {
+      "en": "Use any model in any coding agent",
+      "zh-Hans": "任意编程智能体，任意模型",
+      "zh-Hant": "任意程式設計代理，任意模型",
+      "ja": "どのエージェントでも好きなモデルを使える",
+      "ko": "어떤 코딩 에이전트든 원하는 모델로"
     }
   },
   {
@@ -141,6 +218,13 @@
       "zh-Hant": "讓你的 AI 代理看見整個網際網路。一個命令列工具就能讀取和搜尋 Twitter、Reddit、YouTube、GitHub、嗶哩嗶哩和小紅書，零 API 費用。",
       "ja": "AI エージェントにインターネット全体を見せるツール。コマンド一つで Twitter・Reddit・YouTube・GitHub・Bilibili・小紅書を読み、検索できる。API 利用料はかからない。",
       "ko": "AI 에이전트에게 인터넷 전체를 보여주는 도구. 명령 하나로 트위터·Reddit·YouTube·GitHub·Bilibili·샤오홍슈를 읽고 검색하며 API 비용이 들지 않는다."
+    },
+    "hook": {
+      "en": "Give your AI agent eyes on the whole internet",
+      "zh-Hans": "让 AI 智能体看到整个互联网",
+      "zh-Hant": "讓 AI 代理看到整個網路",
+      "ja": "AI エージェントにネット全体を見せる",
+      "ko": "AI 에이전트가 인터넷 전체를 보게 한다"
     }
   },
   {
@@ -153,6 +237,13 @@
       "zh-Hant": "賦予程式設計代理美感的技能：確立美術風格、使用真實參考圖，並在瀏覽器中檢查成果，讓它們不再產出千篇一律的 AI 登陸頁。",
       "ja": "コーディングエージェントにセンスを与えるスキル集。アートディレクション、実在の参考画像、ブラウザでの自己チェックにより、ありがちな平均的 AI ランディングページを作らせない。",
       "ko": "코딩 에이전트에게 '감각'을 주는 스킬 모음. 아트 디렉션, 실제 참고 이미지, 브라우저 자체 점검으로 흔해 빠진 AI 랜딩 페이지를 만들지 않게 한다."
+    },
+    "hook": {
+      "en": "Give coding agents good design taste",
+      "zh-Hans": "让编程智能体有审美",
+      "zh-Hant": "讓程式設計代理有審美",
+      "ja": "コーディングエージェントにデザインの美意識を",
+      "ko": "코딩 에이전트에게 디자인 감각을"
     }
   },
   {
@@ -165,6 +256,13 @@
       "zh-Hant": "一項為程式設計代理帶來設計智慧的 AI 技能，讓它們打造的 UI/UX 在多個平台與框架上都顯得專業。",
       "ja": "コーディングエージェントにデザインの知見を与えるスキル。複数のプラットフォームやフレームワークで、プロらしい UI/UX を作らせる。",
       "ko": "코딩 에이전트에 디자인 감각을 더해 주는 스킬. 여러 플랫폼과 프레임워크에서 전문가다운 UI/UX를 만들게 한다."
+    },
+    "hook": {
+      "en": "Make AI-built UIs look professional",
+      "zh-Hans": "让 AI 做的界面更专业",
+      "zh-Hant": "讓 AI 做的介面更專業",
+      "ja": "AI が作る UI をプロ品質に",
+      "ko": "AI가 만든 UI를 전문가 수준으로"
     }
   },
   {
@@ -177,6 +275,13 @@
       "zh-Hant": "免費的 MIT 授權 AI 閘道：一個端點對接數百家供應商和模型，並依額度自動備援切換。支援 Claude Code、Codex、Cursor、OpenCode、Cline 和 Copilot。",
       "ja": "無料の MIT ライセンス AI ゲートウェイ。一つのエンドポイントで数百のプロバイダーとモデルにつながり、クォータ切れ時は自動で切り替える。Claude Code・Codex・Cursor・OpenCode・Cline・Copilot に対応。",
       "ko": "무료 MIT 라이선스 AI 게이트웨이. 하나의 엔드포인트로 수백 개 제공자와 모델에 연결하고 할당량이 떨어지면 자동 전환한다. Claude Code·Codex·Cursor·OpenCode·Cline·Copilot과 함께 쓸 수 있다."
+    },
+    "hook": {
+      "en": "One free gateway to hundreds of AI models",
+      "zh-Hans": "一个免费入口，接上百个模型",
+      "zh-Hant": "一個免費入口，接上百個模型",
+      "ja": "無料の入口 1 つで何百ものモデルを使える",
+      "ko": "무료 게이트웨이 하나로 수백 개 모델"
     }
   },
   {
@@ -189,6 +294,13 @@
       "zh-Hant": "像經營公司一樣管理一組 AI 代理的開源應用程式：分派目標、設定預算，並在同一個儀表板中追蹤工作與成本。如果說 OpenClaw 是一名員工，Paperclip 就是整間公司。",
       "ja": "AI エージェントのチームを会社のように運営するオープンソースアプリ。目標を割り当て、予算を決め、作業とコストを一つのダッシュボードで追える。OpenClaw が社員なら、Paperclip は会社そのもの。",
       "ko": "AI 에이전트 팀을 회사처럼 운영하는 오픈소스 앱. 목표를 배정하고 예산을 정하고 작업과 비용을 한 대시보드에서 추적한다. OpenClaw가 직원이라면 Paperclip은 회사다."
+    },
+    "hook": {
+      "en": "Run a team of AI agents like a company",
+      "zh-Hans": "像开公司一样管理 AI 智能体团队",
+      "zh-Hant": "像開公司一樣管理 AI 代理團隊",
+      "ja": "AI エージェントを会社のように運営",
+      "ko": "AI 에이전트 팀을 회사처럼 운영"
     }
   },
   {
@@ -201,6 +313,13 @@
       "zh-Hant": "適用於 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw 等的桌面端整合管理工具：一鍵切換 API 供應商，不必手動編輯設定檔就能管理 MCP、技能和提示詞。",
       "ja": "Claude Code・Codex・Gemini CLI・OpenCode・OpenClaw などをまとめて管理するデスクトップアプリ。API プロバイダーをワンクリックで切り替え、MCP・スキル・プロンプトも設定ファイルを手で編集せず一か所で管理できる。",
       "ko": "Claude Code·Codex·Gemini CLI·OpenCode·OpenClaw 등을 한곳에서 관리하는 데스크톱 앱. API 제공자를 한 번에 바꾸고 MCP·스킬·프롬프트도 설정 파일을 손으로 고치지 않고 관리한다."
+    },
+    "hook": {
+      "en": "Switch AI coding tools' API providers in one click",
+      "zh-Hans": "一键切换 AI 编程工具的接口",
+      "zh-Hant": "一鍵切換 AI 程式設計工具的介面",
+      "ja": "AI コーディングツールの API をワンクリック切替",
+      "ko": "AI 코딩 도구의 API를 원클릭 전환"
     }
   },
   {
@@ -213,6 +332,13 @@
       "zh-Hant": "Nous Research 推出、能自我改進的 AI 代理，內建學習迴圈：從經驗中建立技能，並在工作中持續改進，還能透過 Telegram、Discord、Slack 等管道與你聯繫。",
       "ja": "Nous Research 製の自己改善型 AI エージェント。学習ループを内蔵し、経験からスキルを作り、使いながら改善する。Telegram・Discord・Slack などからも話しかけられる。",
       "ko": "Nous Research가 만든 스스로 개선하는 AI 에이전트. 학습 루프가 내장되어 경험에서 스킬을 만들고 쓰면서 다듬으며, Telegram·Discord·Slack 등에서도 대화할 수 있다."
+    },
+    "hook": {
+      "en": "A self-improving AI agent that learns skills",
+      "zh-Hans": "会自我改进的 AI 智能体",
+      "zh-Hant": "會自我改進的 AI 代理",
+      "ja": "自分で改善していく AI エージェント",
+      "ko": "스스로 개선하는 AI 에이전트"
     }
   },
   {
@@ -225,6 +351,13 @@
       "zh-Hant": "NVIDIA 推出的 AI 代理技能資安掃描器：在安裝前檢查 Claude Code、Codex 和 MCP 技能中的漏洞、提示詞注入、資料外洩與供應鏈風險。",
       "ja": "NVIDIA 製の AI エージェント向けスキルのセキュリティスキャナ。インストール前に脆弱性、プロンプトインジェクション、データ流出、サプライチェーンリスクを検査する。Claude Code・Codex・MCP スキルに対応。",
       "ko": "NVIDIA가 만든 AI 에이전트 스킬 보안 스캐너. 설치 전에 취약점, 프롬프트 인젝션, 데이터 유출, 공급망 위험을 검사한다. Claude Code·Codex·MCP 스킬을 지원한다."
+    },
+    "hook": {
+      "en": "Scan AI agent skills for risks before you install",
+      "zh-Hans": "装技能之前，先扫一遍风险",
+      "zh-Hant": "裝技能之前，先掃一遍風險",
+      "ja": "エージェントスキルを入れる前にリスク検査",
+      "ko": "에이전트 스킬 설치 전 위험 검사"
     }
   },
   {
@@ -237,6 +370,13 @@
       "zh-Hant": "適用於 AI 程式設計代理的產品級工程技能：把資深工程師從規格到上線所用的工作流程與品質關卡打包起來，讓代理每次都照著做。",
       "ja": "コーディングエージェント向けの本格的なエンジニアリングスキル集。シニアエンジニアが仕様から出荷まで守るワークフローと品質ゲートをまとめ、エージェントが毎回それに従うようにする。",
       "ko": "코딩 에이전트를 위한 실무급 엔지니어링 스킬 모음. 시니어 엔지니어가 명세부터 출시까지 지키는 워크플로와 품질 게이트를 담아 에이전트가 매번 따르게 한다."
+    },
+    "hook": {
+      "en": "Senior-engineer habits for your coding agent",
+      "zh-Hans": "把资深工程师的做法教给 AI",
+      "zh-Hant": "把資深工程師的做法教給 AI",
+      "ja": "シニアエンジニアの流儀を AI に教える",
+      "ko": "시니어 엔지니어의 방식을 AI에게"
     }
   },
   {
@@ -249,6 +389,13 @@
       "zh-Hant": "為代理提供跨工作階段的記憶：記錄代理做過的事，用 AI 壓縮，並把相關部分回饋到之後的工作階段中。支援 Claude Code、Codex、Gemini、OpenCode 等。",
       "ja": "セッションをまたいでエージェントに記憶を持たせる。作業内容を記録し、AI で圧縮して、次のセッションに関連部分を戻す。Claude Code・Codex・Gemini・OpenCode などで使える。",
       "ko": "세션이 바뀌어도 에이전트가 기억하게 한다. 작업 내용을 기록하고 AI로 압축해 다음 세션에 관련 내용을 다시 넣어 준다. Claude Code·Codex·Gemini·OpenCode 등에서 쓸 수 있다."
+    },
+    "hook": {
+      "en": "Gives AI agents memory across sessions",
+      "zh-Hans": "让智能体记住上次做过什么",
+      "zh-Hant": "讓代理記住上次做過什麼",
+      "ja": "エージェントがセッションをまたいで覚える",
+      "ko": "에이전트가 세션을 넘어 기억한다"
     }
   },
   {
@@ -261,6 +408,13 @@
       "zh-Hant": "Anthropic 公開的 Agent Skills 儲存庫：由說明、指令碼和資源組成的資料夾，Claude 會依需求載入，涵蓋從創意工作到網頁應用程式測試等場景。可作為你撰寫自己技能的範例與靈感。",
       "ja": "Anthropic 公式の Agent Skills 公開リポジトリ。指示・スクリプト・リソースをまとめたフォルダを Claude が必要なときに読み込む。クリエイティブ制作から Web アプリのテストまで、自作スキルの手本になる。",
       "ko": "Anthropic이 공개한 Agent Skills 저장소. 지침·스크립트·리소스를 담은 폴더를 Claude가 필요할 때 불러온다. 창작부터 웹 앱 테스트까지 다양해 직접 스킬을 만들 때 참고하기 좋다."
+    },
+    "hook": {
+      "en": "Anthropic's public Agent Skills examples",
+      "zh-Hans": "Anthropic 官方智能体技能库",
+      "zh-Hant": "Anthropic 官方代理技能庫",
+      "ja": "Anthropic 公開のエージェントスキル集",
+      "ko": "Anthropic 공개 에이전트 스킬 모음"
     }
   },
   {
@@ -273,6 +427,13 @@
       "zh-Hant": "用 Rust 寫的極速 Python 套件與專案管理器。",
       "ja": "Rust 製の超高速 Python パッケージ／プロジェクトマネージャ。",
       "ko": "Rust로 만든 초고속 Python 패키지·프로젝트 관리자."
+    },
+    "hook": {
+      "en": "Blazing-fast Python package manager",
+      "zh-Hans": "极快的 Python 包管理器",
+      "zh-Hant": "極快的 Python 包管理器",
+      "ja": "超高速な Python パッケージ管理",
+      "ko": "초고속 Python 패키지 관리자"
     }
   },
   {
@@ -285,6 +446,13 @@
       "zh-Hant": "一體化 JavaScript 執行環境與工具箱：執行環境、打包、測試、套件管理。",
       "ja": "ランタイム・バンドラ・テスト・パッケージマネージャを一体にした JavaScript ツールキット。",
       "ko": "런타임·번들러·테스트·패키지 관리자를 한데 모은 JavaScript 툴킷."
+    },
+    "hook": {
+      "en": "All-in-one JavaScript runtime and toolkit",
+      "zh-Hans": "JavaScript 一站式工具箱",
+      "zh-Hant": "JavaScript 一站式工具箱",
+      "ja": "オールインワンの JavaScript 実行環境",
+      "ko": "올인원 JavaScript 런타임"
     }
   },
   {
@@ -297,6 +465,13 @@
       "zh-Hant": "面向 Web 專案的高速格式化與檢查工具，涵蓋 JS/TS/JSON/CSS。",
       "ja": "Web 向けの高速フォーマッタ／リンタ。JS/TS/JSON/CSS に対応。",
       "ko": "웹 프로젝트를 위한 고속 포맷터·린터. JS/TS/JSON/CSS 지원."
+    },
+    "hook": {
+      "en": "Fast formatter and linter for web code",
+      "zh-Hans": "快速的网页代码格式化与检查",
+      "zh-Hant": "快速的網頁程式碼格式化與檢查",
+      "ja": "高速な Web 向けフォーマッター兼リンター",
+      "ko": "빠른 웹 코드 포매터 겸 린터"
     }
   },
   {
@@ -309,6 +484,13 @@
       "zh-Hant": "Atom 與 Tree-sitter 作者打造的高效能多人協作程式碼編輯器。",
       "ja": "Atom / Tree-sitter 作者による高性能マルチプレイヤーコードエディタ。",
       "ko": "Atom·Tree-sitter 제작진의 고성능 멀티플레이어 코드 에디터."
+    },
+    "hook": {
+      "en": "A fast code editor you can share with others",
+      "zh-Hans": "高性能、可多人协作的编辑器",
+      "zh-Hant": "高效能、可多人協作的編輯器",
+      "ja": "高速で共同編集もできるコードエディタ",
+      "ko": "빠르고 함께 편집하는 코드 에디터"
     }
   },
   {
@@ -321,6 +503,13 @@
       "zh-Hant": "內建 LSP、tree-sitter 與多重選取的模態文字編輯器。",
       "ja": "LSP・tree-sitter・複数選択を内蔵したモーダルテキストエディタ。",
       "ko": "LSP·tree-sitter·다중 선택을 내장한 모달 텍스트 에디터."
+    },
+    "hook": {
+      "en": "Modal editor with LSP built in",
+      "zh-Hans": "自带 LSP 的模态编辑器",
+      "zh-Hant": "自帶 LSP 的模態編輯器",
+      "ja": "LSP 内蔵のモーダルエディタ",
+      "ko": "LSP 내장 모달 에디터"
     }
   },
   {
@@ -333,6 +522,13 @@
       "zh-Hant": "開發工具版本管理器：多語言執行環境與環境管理合一。",
       "ja": "多言語ランタイムと環境管理を一つにまとめた開発ツール版マネージャ。",
       "ko": "다언어 런타임과 환경 관리를 한데 모은 개발 도구 버전 관리자."
+    },
+    "hook": {
+      "en": "One tool for all your dev tool versions",
+      "zh-Hans": "一个工具管所有开发工具版本",
+      "zh-Hant": "一個工具管所有開發工具版本",
+      "ja": "開発ツールのバージョンを 1 つで管理",
+      "ko": "개발 도구 버전을 하나로 관리"
     }
   },
   {
@@ -345,6 +541,13 @@
       "zh-Hant": "GitHub 官方命令列工具，用於議題、PR、Actions 等。",
       "ja": "Issue・PR・Actions などを扱う GitHub 公式 CLI。",
       "ko": "이슈·PR·Actions 등을 다루는 GitHub 공식 CLI."
+    },
+    "hook": {
+      "en": "GitHub in your terminal, from GitHub itself",
+      "zh-Hans": "GitHub 官方命令行工具",
+      "zh-Hant": "GitHub 官方命令列工具",
+      "ja": "GitHub 公式のコマンドラインツール",
+      "ko": "GitHub 공식 커맨드라인 도구"
     }
   },
   {
@@ -357,6 +560,13 @@
       "zh-Hant": "用正規表達式遞迴搜尋目錄，比 grep 更快。",
       "ja": "正規表現でディレクトリを再帰検索。grep より速い。",
       "ko": "정규식으로 디렉터리를 재귀 검색. grep보다 빠름."
+    },
+    "hook": {
+      "en": "Regex search, faster than grep",
+      "zh-Hans": "比 grep 更快的递归搜索",
+      "zh-Hant": "比 grep 更快的遞迴搜尋",
+      "ja": "grep より速い正規表現検索",
+      "ko": "grep보다 빠른 정규식 검색"
     }
   },
   {
@@ -369,6 +579,13 @@
       "zh-Hant": "面向容器、檔案系統、Git 儲存庫等的一體化資安掃描器。",
       "ja": "コンテナ・ファイルシステム・Git などを対象にした総合セキュリティスキャナ。",
       "ko": "컨테이너·파일시스템·Git 등을 위한 올인원 보안 스캐너."
+    },
+    "hook": {
+      "en": "One scanner for containers and code repos",
+      "zh-Hans": "容器、代码仓库一站式安全扫描",
+      "zh-Hant": "容器、程式碼儲存庫一站式資安掃描",
+      "ja": "コンテナもリポジトリもまとめて安全スキャン",
+      "ko": "컨테이너와 저장소를 한 번에 보안 스캔"
     }
   },
   {
@@ -381,6 +598,13 @@
       "zh-Hant": "面向容器映像與檔案系統的弱點掃描器。",
       "ja": "コンテナイメージとファイルシステム向け脆弱性スキャナ。",
       "ko": "컨테이너 이미지·파일시스템용 취약점 스캐너."
+    },
+    "hook": {
+      "en": "Scan container images for vulnerabilities",
+      "zh-Hans": "给容器镜像做漏洞扫描",
+      "zh-Hant": "給容器映像檔做漏洞掃描",
+      "ja": "コンテナイメージの脆弱性をスキャン",
+      "ko": "컨테이너 이미지 취약점 스캔"
     }
   },
   {
@@ -393,6 +617,13 @@
       "zh-Hant": "面向多語言的輕量快速靜態分析，找弱點並執行規則。",
       "ja": "多言語対応の軽量静的解析。バグ検出とガードを強制。",
       "ko": "다언어 경량 정적 분석. 버그를 찾고 가드를 강제."
+    },
+    "hook": {
+      "en": "Fast code scanning to catch bugs",
+      "zh-Hans": "快速扫描代码，揪出问题",
+      "zh-Hant": "快速掃描程式碼，揪出問題",
+      "ja": "高速コードスキャンでバグを発見",
+      "ko": "빠른 코드 스캔으로 버그 찾기"
     }
   },
   {
@@ -405,6 +636,13 @@
       "zh-Hant": "基於簡潔 YAML 範本的高速弱點掃描器。",
       "ja": "シンプルな YAML テンプレで動く高速脆弱性スキャナ。",
       "ko": "간단한 YAML 템플릿으로 동작하는 고속 취약점 스캐너."
+    },
+    "hook": {
+      "en": "Fast vulnerability scanner driven by YAML templates",
+      "zh-Hans": "用 YAML 模板快速扫漏洞",
+      "zh-Hant": "用 YAML 模板快速掃漏洞",
+      "ja": "YAML テンプレートで高速に脆弱性スキャン",
+      "ko": "YAML 템플릿으로 빠른 취약점 스캔"
     }
   },
   {
@@ -417,6 +655,13 @@
       "zh-Hant": "雲原生執行時資安工具，偵測異常行為。",
       "ja": "異常な挙動を検知するクラウドネイティブ・ランタイムセキュリティ。",
       "ko": "이상 활동을 감지하는 클라우드 네이티브 런타임 보안 도구."
+    },
+    "hook": {
+      "en": "Spot suspicious activity in the cloud at runtime",
+      "zh-Hans": "实时发现云上异常行为",
+      "zh-Hant": "即時發現雲上異常行為",
+      "ja": "クラウドの不審な動きを実行時に検知",
+      "ko": "클라우드의 이상 행동을 실시간 탐지"
     }
   },
   {
@@ -429,6 +674,13 @@
       "zh-Hant": "對照 OSV 資料庫掃描相依套件中的已知弱點。",
       "ja": "OSV データベースと照合して依存関係の既知脆弱性を検査。",
       "ko": "OSV 데이터베이스와 대조해 의존성의 알려진 취약점을 검사."
+    },
+    "hook": {
+      "en": "Check your dependencies for known vulnerabilities",
+      "zh-Hans": "查查依赖有没有已知漏洞",
+      "zh-Hant": "查查依賴有沒有已知漏洞",
+      "ja": "依存パッケージの既知の脆弱性をチェック",
+      "ko": "의존성의 알려진 취약점 점검"
     }
   },
   {
@@ -441,6 +693,13 @@
       "zh-Hant": "檢查 Go 原始碼中常見不安全模式的資安檢查器。",
       "ja": "Go ソースのよくある不安全パターンを検査するツール。",
       "ko": "Go 소스의 흔한 불안전 패턴을 검사하는 도구."
+    },
+    "hook": {
+      "en": "Find insecure patterns in your Go code",
+      "zh-Hans": "给 Go 代码做安全检查",
+      "zh-Hant": "給 Go 程式碼做安全檢查",
+      "ja": "Go コードの危険なパターンを検出",
+      "ko": "Go 코드의 위험한 패턴 검사"
     }
   },
   {
@@ -453,6 +712,13 @@
       "zh-Hant": "OWASP 速查表系列：精煉的資安最佳實務。",
       "ja": "OWASP チートシート集。簡潔なセキュリティベストプラクティス。",
       "ko": "OWASP 치트시트 모음. 간결한 보안 모범 사례."
+    },
+    "hook": {
+      "en": "Short, practical security best practices",
+      "zh-Hans": "简明实用的安全最佳实践",
+      "zh-Hant": "簡明實用的資安最佳實務",
+      "ja": "短くて実用的なセキュリティの定石",
+      "ko": "간결한 보안 모범 사례 모음"
     }
   },
   {
@@ -465,6 +731,13 @@
       "zh-Hant": "面向 Web 的 React 框架：SSR、路由與全端能力。",
       "ja": "Web 向け React フレームワーク。SSR・ルーティング・フルスタック。",
       "ko": "웹용 React 프레임워크. SSR·라우팅·풀스택."
+    },
+    "hook": {
+      "en": "The React framework for full-stack web apps",
+      "zh-Hans": "React 全栈网页框架",
+      "zh-Hant": "React 全棧網頁框架",
+      "ja": "React のフルスタック Web フレームワーク",
+      "ko": "React 풀스택 웹 프레임워크"
     }
   },
   {
@@ -477,6 +750,13 @@
       "zh-Hant": "用於建置 Web 與原生使用者介面的函式庫。",
       "ja": "Web / ネイティブ UI を作るためのライブラリ。",
       "ko": "웹·네이티브 UI를 만들기 위한 라이브러리."
+    },
+    "hook": {
+      "en": "Build web and native UIs",
+      "zh-Hans": "搭建网页与原生界面的库",
+      "zh-Hant": "搭建網頁與原生介面的庫",
+      "ja": "Web とネイティブの UI を作るライブラリ",
+      "ko": "웹과 네이티브 UI를 만드는 라이브러리"
     }
   },
   {
@@ -489,6 +769,13 @@
       "zh-Hant": "漸進式 JavaScript 框架的核心執行環境與編譯器。",
       "ja": "プログレッシブ JS フレームワークのコアランタイムとコンパイラ。",
       "ko": "점진적 JS 프레임워크의 코어 런타임과 컴파일러."
+    },
+    "hook": {
+      "en": "The progressive JavaScript framework",
+      "zh-Hans": "渐进式 JavaScript 框架",
+      "zh-Hant": "漸進式 JavaScript 框架",
+      "ja": "プログレッシブな JavaScript フレームワーク",
+      "ko": "점진적 JavaScript 프레임워크"
     }
   },
   {
@@ -501,6 +788,13 @@
       "zh-Hant": "編譯掉框架本身的增強型 Web 應用方案。",
       "ja": "フレームワークをコンパイルで消す Web アプリの作り方。",
       "ko": "프레임워크를 컴파일로 없애는 웹 앱 방식."
+    },
+    "hook": {
+      "en": "Web apps with the framework compiled away",
+      "zh-Hans": "把框架编译掉的网页开发",
+      "zh-Hant": "把框架編譯掉的網頁開發",
+      "ja": "フレームワークをコンパイルで消す Web 開発",
+      "ko": "프레임워크를 컴파일로 지우는 웹 개발"
     }
   },
   {
@@ -513,6 +807,13 @@
       "zh-Hant": "面向內容網站的 Web 框架，預設少送 JavaScript。",
       "ja": "コンテンツ重視サイト向け。デフォルトで JS を少なく届ける。",
       "ko": "콘텐츠 사이트용 웹 프레임워크. 기본적으로 JS를 적게 보냄."
+    },
+    "hook": {
+      "en": "Content sites that ship less JavaScript",
+      "zh-Hans": "少发 JavaScript 的内容站框架",
+      "zh-Hant": "少發 JavaScript 的內容站框架",
+      "ja": "JavaScript を減らすコンテンツサイト向け",
+      "ko": "JavaScript를 덜 보내는 콘텐츠 사이트"
     }
   },
   {
@@ -525,6 +826,13 @@
       "zh-Hant": "實用優先的 CSS 框架，快速搭建自訂設計。",
       "ja": "ユーティリティファーストの CSS。素早く独自デザインを組む。",
       "ko": "유틸리티 우선 CSS 프레임워크. 맞춤 디자인을 빠르게."
+    },
+    "hook": {
+      "en": "Build custom designs with utility CSS classes",
+      "zh-Hans": "用工具类快速搭出定制界面",
+      "zh-Hant": "用工具類快速搭出定製介面",
+      "ja": "ユーティリティ CSS で素早くデザイン",
+      "ko": "유틸리티 CSS로 빠르게 디자인"
     }
   },
   {
@@ -537,6 +845,13 @@
       "zh-Hant": "設計精美、可直接複製進專案的元件集合。",
       "ja": "アプリにコピーして使う、美しいコンポーネント集。",
       "ko": "앱에 복사해 쓰는 아름다운 컴포넌트 모음."
+    },
+    "hook": {
+      "en": "Beautiful components you copy into your app",
+      "zh-Hans": "好看的组件，直接复制进项目",
+      "zh-Hant": "好看的元件，直接複製進專案",
+      "ja": "コピーして使える美しい UI コンポーネント",
+      "ko": "복사해서 쓰는 예쁜 UI 컴포넌트"
     }
   },
   {
@@ -549,6 +864,13 @@
       "zh-Hant": "面向 TS/JS、React、Vue、Solid 等的強力非同步狀態管理。",
       "ja": "TS/JS・React・Vue・Solid 向けの強力な非同期状態管理。",
       "ko": "TS/JS·React·Vue·Solid용 강력한 비동기 상태 관리."
+    },
+    "hook": {
+      "en": "Async state management for React, Vue and more",
+      "zh-Hans": "管好异步数据的状态库",
+      "zh-Hant": "管好非同步資料的狀態庫",
+      "ja": "非同期ステートを管理するライブラリ",
+      "ko": "비동기 상태를 관리하는 라이브러리"
     }
   },
   {
@@ -561,6 +883,13 @@
       "zh-Hant": "產品級容器編排系統。",
       "ja": "プロダクション級のコンテナオーケストレーション。",
       "ko": "프로덕션급 컨테이너 오케스트레이션."
+    },
+    "hook": {
+      "en": "Production-grade container orchestration",
+      "zh-Hans": "生产级容器编排系统",
+      "zh-Hant": "生產級容器編排系統",
+      "ja": "本番運用向けコンテナオーケストレーション",
+      "ko": "프로덕션급 컨테이너 오케스트레이션"
     }
   },
   {
@@ -573,6 +902,13 @@
       "zh-Hant": "用 Docker 定義並執行多容器應用。",
       "ja": "Docker で複数コンテナアプリを定義・実行。",
       "ko": "Docker로 다중 컨테이너 앱을 정의·실행."
+    },
+    "hook": {
+      "en": "Define and run multi-container apps",
+      "zh-Hans": "定义并运行多容器应用",
+      "zh-Hant": "定義並執行多容器應用",
+      "ja": "複数コンテナのアプリを定義して実行",
+      "ko": "다중 컨테이너 앱 정의·실행"
     }
   },
   {
@@ -585,6 +921,13 @@
       "zh-Hant": "用程式碼建置與變更雲端資源的基礎建設即程式碼工具。",
       "ja": "クラウド資源をコードで構築・変更する IaC ツール。",
       "ko": "클라우드 자원을 코드로 구축·변경하는 IaC 도구."
+    },
+    "hook": {
+      "en": "Manage cloud infrastructure as code",
+      "zh-Hans": "用代码管理云基础设施",
+      "zh-Hant": "用程式碼管理雲基礎設施",
+      "ja": "クラウド基盤をコードで管理",
+      "ko": "클라우드 인프라를 코드로 관리"
     }
   },
   {
@@ -597,6 +940,13 @@
       "zh-Hant": "用通用程式語言寫基礎建設即程式碼。",
       "ja": "汎用言語で書くインフラ as コード。",
       "ko": "범용 언어로 쓰는 인프라 as 코드."
+    },
+    "hook": {
+      "en": "Infrastructure as code in real programming languages",
+      "zh-Hans": "用通用编程语言写基础设施",
+      "zh-Hant": "用通用程式語言寫基礎設施",
+      "ja": "汎用プログラミング言語でインフラを記述",
+      "ko": "범용 프로그래밍 언어로 인프라 구성"
     }
   },
   {
@@ -609,6 +959,13 @@
       "zh-Hant": "快速、跨平台的 Web 伺服器，自動 HTTPS。",
       "ja": "自動 HTTPS 付きの高速マルチプラットフォーム Web サーバ。",
       "ko": "자동 HTTPS를 갖춘 고속 멀티플랫폼 웹 서버."
+    },
+    "hook": {
+      "en": "Web server with automatic HTTPS",
+      "zh-Hans": "自动 HTTPS 的快速网页服务器",
+      "zh-Hant": "自動 HTTPS 的快速網頁伺服器",
+      "ja": "自動 HTTPS 対応の高速 Web サーバー",
+      "ko": "자동 HTTPS를 지원하는 빠른 웹 서버"
     }
   },
   {
@@ -621,6 +978,13 @@
       "zh-Hant": "雲原生應用代理 / 反向代理與負載平衡。",
       "ja": "クラウドネイティブなリバースプロキシ／ロードバランサ。",
       "ko": "클라우드 네이티브 리버스 프록시·로드 밸런서."
+    },
+    "hook": {
+      "en": "Cloud-native reverse proxy and load balancer",
+      "zh-Hans": "云原生反向代理与负载均衡",
+      "zh-Hant": "雲原生反向代理與負載均衡",
+      "ja": "クラウドネイティブなリバースプロキシ",
+      "ko": "클라우드 네이티브 리버스 프록시"
     }
   },
   {
@@ -633,6 +997,13 @@
       "zh-Hant": "系統監控與告警工具包。",
       "ja": "システム監視とアラートのツールキット。",
       "ko": "시스템 모니터링·알림 툴킷."
+    },
+    "hook": {
+      "en": "Systems monitoring and alerting toolkit",
+      "zh-Hans": "系统监控与告警工具包",
+      "zh-Hant": "系統監控與告警工具包",
+      "ja": "システム監視とアラートのツールキット",
+      "ko": "시스템 모니터링·알림 툴킷"
     }
   },
   {
@@ -645,6 +1016,13 @@
       "zh-Hant": "面向指標、日誌與追蹤的開源可觀測性平台。",
       "ja": "メトリクス・ログ・トレース向けオープン可観測性プラットフォーム。",
       "ko": "메트릭·로그·트레이스용 오픈 관측성 플랫폼."
+    },
+    "hook": {
+      "en": "Open observability for metrics, logs and traces",
+      "zh-Hans": "指标、日志、链路一站式观测",
+      "zh-Hant": "指標、日誌、追蹤一站式觀測",
+      "ja": "メトリクス・ログ・トレースをまとめて可視化",
+      "ko": "메트릭·로그·트레이스를 한곳에서"
     }
   },
   {
@@ -657,6 +1035,13 @@
       "zh-Hant": "手繪風格的線上白板，用來畫示意圖。",
       "ja": "手描き風ダイアグラム用の仮想ホワイトボード。",
       "ko": "손그림 풍 다이어그램용 가상 화이트보드."
+    },
+    "hook": {
+      "en": "A virtual whiteboard with a hand-drawn look",
+      "zh-Hans": "手绘风格的在线白板",
+      "zh-Hant": "手繪風格的線上白板",
+      "ja": "手描き風のバーチャルホワイトボード",
+      "ko": "손으로 그린 듯한 가상 화이트보드"
     }
   },
   {
@@ -669,6 +1054,13 @@
       "zh-Hant": "面向產品團隊的開源設計與原型平台。",
       "ja": "プロダクトチーム向けオープンソースのデザイン／プロトタイプ基盤。",
       "ko": "제품 팀을 위한 오픈소스 디자인·프로토타입 플랫폼."
+    },
+    "hook": {
+      "en": "Open-source design and prototyping for teams",
+      "zh-Hans": "开源的团队设计与原型平台",
+      "zh-Hant": "開源的團隊設計與原型平台",
+      "ja": "チーム向けオープンソースのデザインツール",
+      "ko": "팀을 위한 오픈 소스 디자인·프로토타입"
     }
   },
   {
@@ -681,6 +1073,13 @@
       "zh-Hant": "繪圖與白板應用，diagrams.net 的核心。",
       "ja": "ダイアグラム／ホワイトボード。diagrams.net のコア。",
       "ko": "다이어그램·화이트보드 앱. diagrams.net의 코어."
+    },
+    "hook": {
+      "en": "A diagram and whiteboard app",
+      "zh-Hans": "画流程图和白板的应用",
+      "zh-Hant": "畫流程圖和白板的應用",
+      "ja": "作図とホワイトボードのアプリ",
+      "ko": "다이어그램·화이트보드 앱"
     }
   },
   {
@@ -693,6 +1092,13 @@
       "zh-Hant": "透過 Lottie 在 iOS 上算繪 After Effects 動畫的函式庫。",
       "ja": "Lottie 経由で After Effects アニメを iOS に描画するライブラリ。",
       "ko": "Lottie로 After Effects 애니메이션을 iOS에 그리는 라이브러리."
+    },
+    "hook": {
+      "en": "Play After Effects animations in iOS apps",
+      "zh-Hans": "iOS 上播放 AE 动画",
+      "zh-Hant": "iOS 上播放 AE 動畫",
+      "ja": "After Effects のアニメを iOS で再生",
+      "ko": "After Effects 애니메이션을 iOS에서"
     }
   },
   {
@@ -705,6 +1111,13 @@
       "zh-Hant": "用 Lottie 在網頁上原生算繪 After Effects 動畫。",
       "ja": "Lottie で Web に After Effects アニメをネイティブ描画。",
       "ko": "Lottie로 웹에 After Effects 애니메이션을 네이티브 렌더."
+    },
+    "hook": {
+      "en": "Play After Effects animations on the web",
+      "zh-Hans": "网页上播放 AE 动画",
+      "zh-Hant": "網頁上播放 AE 動畫",
+      "ja": "After Effects のアニメを Web で再生",
+      "ko": "After Effects 애니메이션을 웹에서"
     }
   },
   {
@@ -717,6 +1130,13 @@
       "zh-Hant": "最受歡迎的 Tailwind CSS 元件庫。",
       "ja": "Tailwind CSS 向けで人気のコンポーネントライブラリ。",
       "ko": "Tailwind CSS용 인기 컴포넌트 라이브러리."
+    },
+    "hook": {
+      "en": "The most popular Tailwind CSS component library",
+      "zh-Hans": "最受欢迎的 Tailwind 组件库",
+      "zh-Hant": "最受歡迎的 Tailwind 元件庫",
+      "ja": "最も人気の Tailwind CSS コンポーネント集",
+      "ko": "가장 인기 있는 Tailwind 컴포넌트 라이브러리"
     }
   },
   {
@@ -729,6 +1149,13 @@
       "zh-Hant": "社群維護的美觀一致圖示工具包。",
       "ja": "コミュニティ製の美しく一貫したアイコンキット。",
       "ko": "커뮤니티가 만든 아름답고 일관된 아이콘 키트."
+    },
+    "hook": {
+      "en": "Clean, consistent icons made by the community",
+      "zh-Hans": "社区打造的统一风格图标库",
+      "zh-Hant": "社群打造的統一風格圖示庫",
+      "ja": "コミュニティ製の統一感あるアイコン集",
+      "ko": "커뮤니티가 만든 일관된 아이콘"
     }
   },
   {
@@ -741,6 +1168,13 @@
       "zh-Hant": "面向介面、示意圖與簡報的靈活圖示家族。",
       "ja": "UI・図・プレゼン向けの柔軟なアイコンファミリー。",
       "ko": "UI·도식·프레젠테이션용 유연한 아이콘 패밀리."
+    },
+    "hook": {
+      "en": "A flexible icon family for any interface",
+      "zh-Hans": "灵活好用的图标家族",
+      "zh-Hant": "靈活好用的圖示家族",
+      "ja": "柔軟に使えるアイコンファミリー",
+      "ko": "유연하게 쓰는 아이콘 패밀리"
     }
   },
   {
@@ -753,6 +1187,13 @@
       "zh-Hant": "行程內 SQL OLAP 資料庫管理系統。",
       "ja": "プロセス内で動く SQL OLAP データベース。",
       "ko": "프로세스 내 SQL OLAP 데이터베이스."
+    },
+    "hook": {
+      "en": "A SQL analytics database that runs inside your app",
+      "zh-Hans": "内嵌在应用里的 SQL 分析数据库",
+      "zh-Hant": "內嵌在應用裡的 SQL 分析資料庫",
+      "ja": "アプリ内で動く SQL 分析データベース",
+      "ko": "앱 안에서 도는 SQL 분석 데이터베이스"
     }
   },
   {
@@ -765,6 +1206,13 @@
       "zh-Hant": "面向 Rust 與 Python 的極速 DataFrame 函式庫。",
       "ja": "Rust / Python 向けの超高速 DataFrame ライブラリ。",
       "ko": "Rust·Python용 초고속 DataFrame 라이브러리."
+    },
+    "hook": {
+      "en": "Lightning-fast DataFrames for Rust and Python",
+      "zh-Hans": "极快的 DataFrame 库",
+      "zh-Hant": "極快的 DataFrame 庫",
+      "ja": "超高速な DataFrame ライブラリ",
+      "ko": "초고속 DataFrame 라이브러리"
     }
   },
   {
@@ -777,6 +1225,13 @@
       "zh-Hant": "面向記憶體分析的跨語言開發平台。",
       "ja": "インメモリ分析向けの言語横断プラットフォーム。",
       "ko": "인메모리 분석용 언어 간 플랫폼."
+    },
+    "hook": {
+      "en": "Fast in-memory analytics across languages",
+      "zh-Hans": "跨语言的内存数据分析平台",
+      "zh-Hant": "跨語言的記憶體資料分析平台",
+      "ja": "言語をまたぐインメモリ分析基盤",
+      "ko": "언어를 넘나드는 인메모리 분석 플랫폼"
     }
   },
   {
@@ -789,6 +1244,13 @@
       "zh-Hant": "用軟體工程方式在資料倉中轉換資料。",
       "ja": "ウェアハウスのデータをソフト工学のやり方で変換。",
       "ko": "웨어하우스 데이터를 소프트웨어 공학 방식으로 변환."
+    },
+    "hook": {
+      "en": "Transform warehouse data like a software engineer",
+      "zh-Hans": "用软件工程方式处理数据仓库",
+      "zh-Hant": "用軟體工程方式處理資料倉儲",
+      "ja": "ソフトウェア開発の流儀でデータを変換",
+      "ko": "소프트웨어 엔지니어링 방식으로 데이터 변환"
     }
   },
   {
@@ -801,6 +1263,13 @@
       "zh-Hant": "現代資料探索與視覺化平台。",
       "ja": "モダンなデータ探索・可視化プラットフォーム。",
       "ko": "현대적 데이터 탐색·시각화 플랫폼."
+    },
+    "hook": {
+      "en": "Modern data exploration and charts",
+      "zh-Hans": "现代化的数据探索与可视化",
+      "zh-Hant": "現代化的資料探索與視覺化",
+      "ja": "モダンなデータ探索・可視化プラットフォーム",
+      "ko": "현대적인 데이터 탐색·시각화 플랫폼"
     }
   },
   {
@@ -813,6 +1282,13 @@
       "zh-Hant": "面向即時分析的開源欄式資料庫。",
       "ja": "リアルタイム分析向けオープンソース列指向 DB。",
       "ko": "실시간 분석용 오픈소스 컬럼형 DB."
+    },
+    "hook": {
+      "en": "Open-source database for real-time analytics",
+      "zh-Hans": "开源列式实时分析数据库",
+      "zh-Hant": "開源列式即時分析資料庫",
+      "ja": "オープンソースの列指向リアルタイム分析 DB",
+      "ko": "오픈 소스 실시간 분석용 컬럼 DB"
     }
   },
   {
@@ -825,6 +1301,13 @@
       "zh-Hant": "分散式事件串流平台。",
       "ja": "分散イベントストリーミング基盤。",
       "ko": "분산 이벤트 스트리밍 플랫폼."
+    },
+    "hook": {
+      "en": "Distributed event streaming platform",
+      "zh-Hans": "分布式事件流平台",
+      "zh-Hant": "分散式事件流平台",
+      "ja": "分散型イベントストリーミング基盤",
+      "ko": "분산 이벤트 스트리밍 플랫폼"
     }
   },
   {
@@ -837,6 +1320,13 @@
       "zh-Hant": "用於建立與分享文件的 Jupyter 互動式筆記本。",
       "ja": "文書を作り共有する Jupyter インタラクティブノートブック。",
       "ko": "문서를 만들고 공유하는 Jupyter 인터랙티브 노트북."
+    },
+    "hook": {
+      "en": "Interactive notebooks for creating and sharing documents",
+      "zh-Hans": "可交互的笔记本文档",
+      "zh-Hant": "可互動的筆記本文件",
+      "ja": "対話型ノートブックで文書を作って共有",
+      "ko": "대화형 노트북으로 문서 작성·공유"
     }
   }
 ]

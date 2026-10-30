@@ -6,12 +6,15 @@ translations keyed exactly by  repo + hash of the source text + language:
 
     { "version": 2,
       "entries": { "owner/repo": { "<sha256(src)[:12]>": { "src": "<the description>", "seen": "YYYY-MM-DD",
-                                                           "zh-Hans": "...", "zh-Hant": "...", "ja": "...", "ko": "...", "en": "..." } } } }
+                                                           "zh-Hans": "...", "zh-Hant": "...", "ja": "...", "ko": "...", "en": "...",
+                                                           "hook": { "en": "...", "zh-Hans": "...", ... } } } } }
 
 * Hit  = the (repo, source hash) entry has the language: the stored text is used, no model is involved.
 * Miss = the source text is new or changed: only then a model is asked, and only for the missing languages.
 * Older versions of a description stay in the library (a description that changes back is a hit again);
   `seen` is the last day the entry was used (refreshed at most weekly) so `--prune-days N` can drop dead ones.
+* `hook` = the one-line text the ranking tables show (see tools/hooks.py); the translations above are the detailed
+  text (docs/DETAILS*.md). Adding a hook never changes a translation, and a missing hook never counts as a translation gap.
 * The original text is shown for any language without a hit; a translation of a text that has since changed is never shown.
 
 Entries are added by tools/i18n_pipeline.py during the update (or by hand).
@@ -93,6 +96,20 @@ def get(lib: Library, name: str, description: str, lang: str) -> str | None:
 def put(lib: Library, name: str, description: str, lang: str, text: str, today: str | None = None) -> None:
     slot = lib["entries"].setdefault(name, {}).setdefault(src_hash(description), {"src": description})
     slot[lang] = text
+    if today:
+        slot["seen"] = today
+
+
+def get_hook(lib: Library, name: str, description: str, lang: str) -> str | None:
+    """The one-line hook (tools/hooks.py) stored next to the translations of this exact source text, if any."""
+    text = (((lookup(lib, name, description) or {}).get("hook") or {}).get(lang) or "")
+    return text if text.strip() else None
+
+
+def put_hook(lib: Library, name: str, description: str, lang: str, text: str, today: str | None = None) -> None:
+    """Store a hook. Only the `hook` sub-dict changes: translations already in the entry are never touched."""
+    slot = lib["entries"].setdefault(name, {}).setdefault(src_hash(description), {"src": description})
+    slot.setdefault("hook", {})[lang] = text
     if today:
         slot["seen"] = today
 

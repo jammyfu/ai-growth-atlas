@@ -15,6 +15,7 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import archive  # noqa: E402
+import hooks  # noqa: E402
 import newcomers as nc  # noqa: E402
 import newcomer_i18n  # noqa: E402
 import risers_core as core  # noqa: E402
@@ -42,6 +43,11 @@ def how_name(lang: str) -> str:
     return "HOW_IT_WORKS.md" if lang == "en" else f"HOW_IT_WORKS.{lang}.md"
 
 
+def details_name(lang: str) -> str:
+    """File name (inside docs/) of the generated 'project details' page for a language."""
+    return "DETAILS.md" if lang == "en" else f"DETAILS.{lang}.md"
+
+
 def anchor(heading: str) -> str:
     """GitHub's #fragment for a heading: lower-case, punctuation dropped, spaces to hyphens."""
     return re.sub(r"[^\w\- ]", "", heading.lower()).replace(" ", "-")
@@ -63,7 +69,8 @@ def curve_cell(name: str, lang: str) -> str:
 
 def project_cell(p: dict, meta: dict, cats: dict, lang: str) -> str:
     cat = cats.get(meta["category"], {}).get("name", {}).get(lang, meta["category"])
-    return f"[{p['name']}]({meta['url']})<br>{meta['desc'][lang]}<br>`{cat}`"
+    text = hooks.pick(meta.get("hook"), lang, meta["desc"][lang])  # one-line hook; the full text is on docs/DETAILS*.md
+    return f"[{p['name']}]({meta['url']})<br>{text}<br>`{cat}`"
 
 
 def growth_table(ranked: list[dict], key: str, metas: dict, cats: dict, lang: str) -> tuple[str, bool]:
@@ -106,7 +113,10 @@ def new_table(items: list[dict], lang: str, tr: dict | None = None) -> str:
         "|---|---|---|---:|---:|---|",
     ]
     for i, it in enumerate(items, 1):
-        text = newcomer_i18n.pick(tr, it["name"], it["description"], lang) if it["description"] else ""
+        text = ""
+        if it["description"]:  # the one-line hook; until one exists, the translation (or the original) is shown
+            text = (newcomer_i18n.get_hook(tr, it["name"], it["description"], lang)
+                    or newcomer_i18n.pick(tr, it["name"], it["description"], lang))
         desc = f"<br>{text}" if text else ""
         lines.append(
             f"| {i} | [{it['name']}]({it['url']}){desc} | {it['created_at'][:10]}<br><sub>{s['age_fmt'].format(x=it['age_days'])}</sub> | "
@@ -259,6 +269,7 @@ def render(lang: str, projects: list[dict], stats: dict, cats: dict, tr: dict | 
         f"## {s['tops_title']}", "",
         tops_table(stats, projects, cats, lang, link=True), "",
         s["top_note"].format(latest=latest), "",
+        s["details_note"].format(details=f"docs/{details_name(lang)}"), "",
     ]
     out += faq_block(lang)
     newcomers_root = stats.get("newcomers")
@@ -305,6 +316,50 @@ def render_docs(lang: str, projects: list[dict], cats: dict) -> str:
     return _docs_links("\n".join(out))
 
 
+def _cell(text: str) -> str:
+    """Text that is safe inside a Markdown table cell."""
+    return text.replace("|", "\\|").replace("\n", " ")
+
+
+def render_details(lang: str, projects: list[dict], cats: dict, stats: dict, tr: dict | None = None) -> str:
+    """docs/DETAILS*.md: the full description behind every one-line hook shown in the ranking tables."""
+    s = S[lang]
+    tr = tr or {}
+    sw = " | ".join(f"**{label}**" if code == lang else f"[{label}]({details_name(code)})"
+                    for code, (_f, label) in LANGS.items())
+    out: list[str] = [sw, "", f"# {s['det_title']}", "", f"[{s['det_back']}](../{LANGS[lang][0]})", "", s["det_intro"], "",
+                      f"## {s['det_projects']}", ""]
+    for cat in ordered_categories(cats):
+        rows = [p for p in projects if p["category"] == cat["id"]]
+        if not rows:
+            continue
+        out += [f"### {cat['name'][lang]}", "",
+                f"| {s['det_h_project']} | {s['det_h_hook']} | {s['det_h_detail']} |", "|---|---|---|"]
+        for p in rows:
+            hook = hooks.pick(p.get("hook"), lang, p["desc"][lang])
+            out.append(f"| [{p['name']}]({p['url']}) | {_cell(hook)} | {_cell(p['desc'][lang])} |")
+        out.append("")
+    new = stats.get("newcomers") or {}
+    blocks = [(cid, b) for cid, b in (new.get("categories") or {}).items()] if "categories" in new else [("ai", new)]
+    shown = []
+    seen: set[str] = set()
+    for cat in ordered_categories(cats):
+        block = dict(blocks).get(cat["id"]) or {}
+        for it in (block.get("items") or [])[:TOP_N] if block.get("ok") else []:
+            if it["name"] not in seen and it.get("description"):
+                seen.add(it["name"])
+                shown.append(it)
+    if shown:
+        out += [f"## {s['det_new']}", "",
+                f"| {s['det_h_project']} | {s['det_h_hook']} | {s['det_h_detail']} |", "|---|---|---|"]
+        for it in shown:
+            hook = newcomer_i18n.get_hook(tr, it["name"], it["description"], lang) or ""
+            detail = newcomer_i18n.pick(tr, it["name"], it["description"], lang)
+            out.append(f"| [{it['name']}]({it['url']}) | {_cell(hook)} | {_cell(detail)} |")
+        out.append("")
+    return "\n".join(out)
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true")
@@ -316,7 +371,8 @@ def main(argv: list[str] | None = None) -> int:
     stale = []
     for lang, (fname, _label) in LANGS.items():
         for rel, text in ((fname, render(lang, projects, stats, cats, tr)),
-                          (f"docs/{how_name(lang)}", render_docs(lang, projects, cats))):
+                          (f"docs/{how_name(lang)}", render_docs(lang, projects, cats)),
+                          (f"docs/{details_name(lang)}", render_details(lang, projects, cats, stats, tr))):
             path = ROOT / rel
             if args.check:
                 if not path.exists() or path.read_text("utf-8") != text:

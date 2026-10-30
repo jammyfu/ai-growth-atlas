@@ -21,8 +21,9 @@ LANG5 = ("en", "zh-Hans", "zh-Hant", "ja", "ko")
 class FakeRunner:
     """Answers translate/polish prompts from a callback; counts calls."""
 
-    def __init__(self, translate=None, polish=None, error=None):
+    def __init__(self, translate=None, polish=None, error=None, hook=None):
         self.calls, self.translate, self.polish, self.error = [], translate, polish, error
+        self.hook = hook or (lambda item: {l: f"hook {l}" for l in item["langs"]})
 
     def ask(self, prompt):
         self.calls.append(prompt)
@@ -31,6 +32,9 @@ class FakeRunner:
         if prompt.startswith("You translate"):
             items = json.loads(prompt.split("Input items: ", 1)[1].split("\nFor each item", 1)[0])
             return json.dumps({i["id"]: self.translate(i) for i in items}, ensure_ascii=False)
+        if prompt.startswith("You write the ONE-LINE hook"):
+            items = json.loads(prompt.split("Input items: ", 1)[1].split("\nFor each item", 1)[0])
+            return json.dumps({i["id"]: self.hook(i) for i in items}, ensure_ascii=False)
         items = json.loads(prompt.split("Items: ", 1)[1])
         return "```json\n" + json.dumps({i["id"]: self.polish(i["text"]) for i in items}, ensure_ascii=False) + "\n```"
 
@@ -285,7 +289,8 @@ class RunTests(unittest.TestCase):
         res = pipe.run(self.repo.root, self.repo.new, env={}, log=lambda m: None, make_runner=lambda b, m: Ready(runner))
         self.assertEqual(res["translate"]["translated"], 1)
         self.assertGreater(res["polish"]["todo"], 0)
-        self.assertEqual(set(self.repo.entry("a/one", "Does one thing.")) - {"src", "seen"}, set(LANG5[1:]))
+        self.assertEqual(set(self.repo.entry("a/one", "Does one thing.")) - {"src", "seen", "hook"}, set(LANG5[1:]))
+        self.assertEqual(set(self.repo.entry("a/one", "Does one thing.")["hook"]), set(LANG5))
 
     def test_run_safe_swallows_everything(self):
         def boom(model):
@@ -464,7 +469,7 @@ class LibraryReuseTests(unittest.TestCase):
     def test_run_with_everything_cached_does_not_even_build_a_translate_runner(self):
         self.translate(FakeRunner(translate=fake_tr))
         built = []
-        res = pipe.run(self.repo.root, self.repo.new, do_polish=False, env={}, log=self.logs.append,
+        res = pipe.run(self.repo.root, self.repo.new, do_polish=False, do_hooks=False, env={}, log=self.logs.append,
                        make_runner=lambda b, m: built.append(b) or self.fail("no runner needed on a full hit"))
         self.assertEqual(built, [])
         self.assertEqual(res["translate"]["calls"], 0)

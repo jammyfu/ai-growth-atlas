@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Polish the copy (project blurbs + translated new-repo descriptions) with Google Antigravity CLI (`agy`)
+# Write the one-line table hooks that are missing, then polish the copy (project blurbs + translated new-repo descriptions) with Google Antigravity CLI (`agy`)
 # on YOUR machine, then render, verify and commit. CI never runs this: it only translates.
 #
 #   tools/polish_local.sh --check-models   # list the models agy offers and say whether the one we pin is there
@@ -17,7 +17,7 @@ export PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:${P
 cd "$(dirname "$0")/.."
 
 MODEL="${POLISH_MODEL:-gemini-3.8-flash-medium}"
-export POLISH_MODEL="$MODEL" I18N_POLISH_BACKEND=agy
+export POLISH_MODEL="$MODEL" I18N_POLISH_BACKEND=agy I18N_HOOK_BACKEND=agy
 PUSH=0; DRY=0; CHECK=0; ARGS=()
 while [ $# -gt 0 ]; do
   case "$1" in
@@ -64,7 +64,7 @@ if [ "$DRY" = 0 ]; then
   if [ "$(git rev-parse --abbrev-ref HEAD)" = main ]; then git pull --ff-only; fi
 fi
 
-"$PY" tools/i18n_pipeline.py --polish ${ARGS[@]+"${ARGS[@]}"}
+"$PY" tools/i18n_pipeline.py --hooks --polish ${ARGS[@]+"${ARGS[@]}"}
 [ "$DRY" = 1 ] && exit 0
 
 "$PY" tools/render_readme.py
@@ -73,7 +73,7 @@ if [ -z "$(git status --porcelain)" ]; then
   echo "No changes."
   exit 0
 fi
-git add data README*.md docs/HOW_IT_WORKS*.md latest rankings
+git add data README*.md docs/HOW_IT_WORKS*.md docs/DETAILS*.md latest rankings
 git commit -m "chore(i18n): polish copy via agy ($MODEL)"
 if [ "$PUSH" = 1 ]; then
   git push

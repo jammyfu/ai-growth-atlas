@@ -10,6 +10,7 @@ A one-page, quotable summary. Details live in [CATEGORIES.md](CATEGORIES.md), [N
 | Main board | AI (LLMs, agents, MCP, coding copilots, generative AI) |
 | Other boards | Developer Tools, Security, Web / Frontend, Infrastructure, Design / Creative, Data |
 | Boards per category | 1. Hottest new repos (created in the last 7 days) 2. Fastest rising this week 3. This month 4. This year 5. Total stars (always last). Up to the top 20 each |
+| Descriptions | Each ranking row shows one short hook (about 15 Chinese characters or 60 English letters). The full description of every project, in all five languages, is on [DETAILS.md](DETAILS.md) |
 | Growth windows | 7, 30 and 365 complete UTC days before the run day |
 | Growth formula | `per_day = stars gained in the window / days used`. A repo younger than the window uses its own age as the divisor and is marked young |
 | New-repo hotness | `stars / max(age in days, 1)`, repos created in the last 7 days, at least 100 stars, not a fork, not archived |

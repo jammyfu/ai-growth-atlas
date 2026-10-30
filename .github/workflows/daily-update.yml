@@ -91,6 +91,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data rankings latest README*.md docs/HOW_IT_WORKS*.md
+          git add data rankings latest README*.md docs/HOW_IT_WORKS*.md docs/DETAILS*.md
           git commit -m "chore(data): daily star update $(date -u +%F)"
           git push origin HEAD:main
