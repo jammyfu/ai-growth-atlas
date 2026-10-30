@@ -53,12 +53,31 @@ jobs:
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "slot=auto" >> "$GITHUB_OUTPUT"
           fi
+      # Optional: translate new-repo descriptions and polish copy with the Cursor CLI (tools/i18n_pipeline.py).
+      # Needs the repository secret CURSOR_API_KEY. Without it, or if the install fails, this step does
+      # nothing and the update continues with the existing / original texts.
+      - name: Install Cursor CLI (only when CURSOR_API_KEY is set)
+        if: steps.gate.outputs.run == 'true'
+        continue-on-error: true
+        env:
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+        run: |
+          if [ -z "$CURSOR_API_KEY" ]; then
+            echo "CURSOR_API_KEY not set: translation/polish will be skipped."
+            exit 0
+          fi
+          curl -fsSL https://cursor.com/install | bash
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
       # Also re-discovers per-category 7-day new-repo rankings (GitHub search API; several minutes; paced to 30 requests/min).
       - name: Fetch star data from the GitHub API and regenerate READMEs
         if: steps.gate.outputs.run == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SLOT: ${{ steps.gate.outputs.slot }}
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          # optional repository variables; empty = built-in default (gemini-3.8-flash-medium)
+          POLISH_MODEL: ${{ vars.POLISH_MODEL }}
+          I18N_TRANSLATE_MODEL: ${{ vars.I18N_TRANSLATE_MODEL }}
         run: python3 tools/update_stars.py --slot "$SLOT"
       - name: Verify
         if: steps.gate.outputs.run == 'true'

@@ -23,6 +23,7 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import archive  # noqa: E402
+import i18n_pipeline  # noqa: E402
 import risers_core as core  # noqa: E402
 import newcomer_i18n  # noqa: E402
 import newcomers  # noqa: E402
@@ -114,6 +115,13 @@ def fetch_project(name: str, token: str, today: dt.date, snaps: dict[str, int]) 
     return entry
 
 
+def i18n_step(new: dict[str, Any]) -> None:
+    """Translate new descriptions, then polish copy. Never raises and never changes the exit code:
+    without a key / model, or on any failure, the existing (or original) texts are shown."""
+    print("translating and polishing copy (Cursor CLI; skipped without CURSOR_API_KEY) ...", flush=True)
+    i18n_pipeline.run_safe(ROOT, new)
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--today", help="override UTC date (YYYY-MM-DD), for tests/back-fills")
@@ -122,6 +130,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--now", default=os.environ.get("ATLAS_NOW_UTC"),
                     help="override the current time (ISO 8601 UTC), for tests/back-fills")
     ap.add_argument("--no-render", action="store_true", help="skip README generation")
+    ap.add_argument("--no-i18n", action="store_true",
+                    help="skip translating new-repo descriptions and polishing copy (tools/i18n_pipeline.py)")
     args = ap.parse_args(argv)
 
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
@@ -201,6 +211,8 @@ def main(argv: list[str] | None = None) -> int:
     archive.refresh_latest_and_index(ROOT)
     print(f"snapshot: {snap_dir.relative_to(ROOT)}  (latest/ and rankings/README.md refreshed)")
 
+    if not args.no_i18n:
+        i18n_step(new)  # before rendering, so the READMEs already show this run's translations
     if not args.no_render:
         import render_readme
         render_readme.main([])

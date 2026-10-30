@@ -100,7 +100,7 @@ class WorkflowScheduleTests(unittest.TestCase):
 
     def test_la_guard_wired_and_steps_gated(self):
         self.assertIn("tools/schedule_guard.py --tz America/Los_Angeles --hour 0", self.wf)
-        self.assertEqual(self.wf.count("if: steps.gate.outputs.run == 'true'"), 3)
+        self.assertEqual(self.wf.count("if: steps.gate.outputs.run == 'true'"), 4)  # install CLI, fetch, verify, commit
         # Beijing cron is the only unguarded schedule
         self.assertIn('"$CRON" = "0 16 * * *"', self.wf)
         self.assertIn("slot=cn", self.wf)
