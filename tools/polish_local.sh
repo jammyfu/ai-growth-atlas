@@ -73,7 +73,7 @@ if [ -z "$(git status --porcelain)" ]; then
   echo "No changes."
   exit 0
 fi
-git add data README*.md latest rankings
+git add data README*.md docs/HOW_IT_WORKS*.md latest rankings
 git commit -m "chore(i18n): polish copy via agy ($MODEL)"
 if [ "$PUSH" = 1 ]; then
   git push

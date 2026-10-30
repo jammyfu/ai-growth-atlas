@@ -1,52 +1,50 @@
 [English](README.md) | **简体中文** | [繁體中文](README.zh-Hant.md) | [日本語](README.ja.md) | [한국어](README.ko.md)
 
-# GitHub 飙升榜（GitHub Risers）：按涨星速度排的分类涨星榜
+# GitHub 涨星榜 / GitHub Risers
 
-> 按涨星速度、而不是总星标数排名的 GitHub Trending 涨星榜（Star Growth）。AI 是主榜，另有开发者工具、安全、Web/前端、基础设施、设计/创意、数据等分类；每天更新两次，每个分类都有 7 天新晋榜。
+<img src=".github/social-preview.png" alt="GitHub 涨星榜 / GitHub Risers" width="640">
 
-多数榜单按总星标数排序，老项目长期占据榜首，正在爆发的新项目反而被埋没。GitHub 飙升榜按“每天新增多少星标”来排：统计近 7 天、30 天和 365 天的日均涨星，并按分类展示，AI 是默认置顶的主榜。每个分类先看“7 天新晋”榜（最近 7 天内创建的仓库），再看周、月、年涨星榜，总星标榜放在最后。数据全部来自 GitHub API。分类规则见 [docs/CATEGORIES.md](docs/CATEGORIES.md)。
+[![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![CI](https://github.com/jammyfu/github-risers/actions/workflows/ci.yml/badge.svg)](https://github.com/jammyfu/github-risers/actions/workflows/ci.yml) [![updated](https://img.shields.io/badge/updated-2026--10--30-brightgreen.svg)](latest/rankings.zh-Hans.md)
 
-数据于 2026-10-30 08:39:25（UTC）从 GitHub API 获取。
-每天更新两次：北京时间 0 点（UTC+8）和美西洛杉矶时间 0 点（America/Los_Angeles，随夏令时变化）。每次更新都会按各自的时段单独存档。
-每个分类榜单最多展示全部 70 个已收录项目中的前 20 名。
+按每天新增星标（而不是总星标）给 GitHub 仓库排名：AI 在前，其后是开发者工具、安全、Web / 前端、基础设施、设计 / 创意和数据；每天更新两次。
 
-下方表格为最新榜单。每次更新还会按时段另存一份：[榜单历史](rankings/README.zh-Hans.md) · [latest/rankings.zh-Hans.md](latest/rankings.zh-Hans.md)。
+更新于 2026-10-30 08:39（UTC），每天两次（北京时间 0 点、洛杉矶时间 0 点）。
+
+[网站](https://jammyfu.github.io/github-risers/) · [运作方式](docs/HOW_IT_WORKS.zh-Hans.md) · [事实速查](docs/FACTS.md) · [历史榜单](rankings/README.zh-Hans.md) · [最新快照](latest/rankings.zh-Hans.md)
 
 ## 本期各类榜首
 
-每个分类里每张榜的第 1 名，由脚本根据下方的真实数据自动生成。“无”表示本次运行该榜没有条目。
-
 | 分类 | 新仓库第 1 名（7 天） | 本周第 1 名 | 本月第 1 名 | 今年第 1 名 | 总星标第 1 名 |
 |---|---|---|---|---|---|
-| **人工智能** ★ 主榜 | [rddmwmddr/android-ad-cleaner](https://github.com/rddmwmddr/android-ad-cleaner)<br>798/天 | [morluto/rea](https://github.com/morluto/rea)<br>5,942/天 | [morluto/rea](https://github.com/morluto/rea)<br>13,623/天 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)<br>3,412/天 | [morluto/rea](https://github.com/morluto/rea)<br>409,565 ★ |
-| **开发者工具** | [heydeer/pngdeer](https://github.com/heydeer/pngdeer)<br>72.1/天 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>56.6/天 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>53.8/天 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>70.6/天 | [oven-sh/bun](https://github.com/oven-sh/bun)<br>96,468 ★ |
-| **安全** | [vaishantsah/watson-AI-osint-all-in-one](https://github.com/vaishantsah/watson-AI-osint-all-in-one)<br>134/天 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>32.7/天 | [projectdiscovery/nuclei](https://github.com/projectdiscovery/nuclei)<br>29.7/天 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>27.7/天 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>38,849 ★ |
-| **Web / 前端** | [designfuchen/word-atlas](https://github.com/designfuchen/word-atlas)<br>658/天 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>103/天 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>84.6/天 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>83.0/天 | [facebook/react](https://github.com/facebook/react)<br>251,753 ★ |
-| **基础设施** | [zeabur-oss/zeabur](https://github.com/zeabur-oss/zeabur)<br>91.1/天 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>44.1/天 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>83.4/天 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>32.4/天 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes)<br>128,522 ★ |
-| **设计 / 创意** | 无 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>65.6/天 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>64.6/天 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>73.9/天 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>134,834 ★ |
-| **数据** | [hugues31/duckpad](https://github.com/hugues31/duckpad)<br>53.5/天 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>40.0/天 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>31.1/天 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>25.7/天 | [apache/superset](https://github.com/apache/superset)<br>75,366 ★ |
+| **[人工智能](#人工智能)** ★ 主榜 | [rddmwmddr/android-ad-cleaner](https://github.com/rddmwmddr/android-ad-cleaner)<br>798/天 | [morluto/rea](https://github.com/morluto/rea)<br>5,942/天 | [morluto/rea](https://github.com/morluto/rea)<br>13,623/天 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)<br>3,412/天 | [morluto/rea](https://github.com/morluto/rea)<br>409,565 ★ |
+| **[开发者工具](#开发者工具)** | [heydeer/pngdeer](https://github.com/heydeer/pngdeer)<br>72.1/天 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>56.6/天 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>53.8/天 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>70.6/天 | [oven-sh/bun](https://github.com/oven-sh/bun)<br>96,468 ★ |
+| **[安全](#安全)** | [vaishantsah/watson-AI-osint-all-in-one](https://github.com/vaishantsah/watson-AI-osint-all-in-one)<br>134/天 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>32.7/天 | [projectdiscovery/nuclei](https://github.com/projectdiscovery/nuclei)<br>29.7/天 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>27.7/天 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>38,849 ★ |
+| **[Web / 前端](#web--前端)** | [designfuchen/word-atlas](https://github.com/designfuchen/word-atlas)<br>658/天 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>103/天 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>84.6/天 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>83.0/天 | [facebook/react](https://github.com/facebook/react)<br>251,753 ★ |
+| **[基础设施](#基础设施)** | [zeabur-oss/zeabur](https://github.com/zeabur-oss/zeabur)<br>91.1/天 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>44.1/天 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>83.4/天 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>32.4/天 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes)<br>128,522 ★ |
+| **[设计 / 创意](#设计--创意)** | 无 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>65.6/天 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>64.6/天 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>73.9/天 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>134,834 ★ |
+| **[数据](#数据)** | [hugues31/duckpad](https://github.com/hugues31/duckpad)<br>53.5/天 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>40.0/天 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>31.1/天 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>25.7/天 | [apache/superset](https://github.com/apache/superset)<br>75,366 ★ |
 
-<details><summary>分类</summary>
+这里每张榜只列前 10 名，完整的前 20 名见 [latest/rankings.zh-Hans.md](latest/rankings.zh-Hans.md)。
 
-| | |
-|---|---|
-| 人工智能 ★ 主榜 | 大模型、智能体、MCP、编程助手与生成式 AI |
-| 开发者工具 | 命令行、编辑器、包管理、代码检查与构建工具 |
-| 安全 | 漏洞扫描、静态分析、供应链与运行时安全 |
-| Web / 前端 | 前端框架、UI 组件库、CSS 与浏览器工具 |
-| 基础设施 | 容器、Kubernetes、云、网络与可观测性 |
-| 设计 / 创意 | 设计系统、绘图、动画与创意工具 |
-| 数据 | 数据库、分析、ETL 与数据工程 |
+## 常见问题
 
-</details>
+### GitHub 涨星榜是什么？
+
+按每天新增星标、而不是总星标给 GitHub 仓库排名的榜单。AI 是主榜，后面还有六个分类；数据由脚本从 GitHub API 生成。 [了解更多](docs/FAQ.md#what-is-github-risers)
+
+### 和 GitHub Trending 有什么不同？
+
+GitHub Trending 是 GitHub 官方页面；GitHub 涨星榜是独立的开源项目，规则公开，有五种语言，并保存每次更新的历史。它与 GitHub 官方没有关联。 [了解更多](docs/FAQ.md#is-it-the-same-as-github-trending)
+
+### 多久更新一次？
+
+每天两次，北京时间 0 点和洛杉矶时间 0 点；每次运行都会存档。 [了解更多](docs/FAQ.md#how-often-is-it-updated)
 
 ## 人工智能
 
 > 大模型、智能体、MCP、编程助手与生成式 AI
 
 ### 最热新仓库（近 7 天内创建）
-
-本分类下最近 7 天内创建的仓库，通过 GitHub 搜索 API（按 topic 匹配：仓库自己必须带有该分类的 topic）找出，按创建以来的日均星标排序。已出现在本分类其他榜单（或本分类已收录项目）中的仓库，以及已被更靠前分类（AI 优先）占位的仓库，不会重复列入。简介取自仓库自己的 GitHub 简介；人工译文见 [data/newcomer_i18n.json](data/newcomer_i18n.json)。规则见 [docs/NEW_ARRIVALS.md](docs/NEW_ARRIVALS.md)。
 
 | # | 项目 | 创建时间（UTC） | 总星标 | 星标/天 | 星标历史 |
 |---|---|---|---:|---:|---|
@@ -60,16 +58,6 @@
 | 8 | [haydenschmitty/floorplan](https://github.com/haydenschmitty/floorplan)<br>看清你的应用究竟是如何拼装在一起的。一张可交互、用通俗英语讲解的代码库地图，由 Claude 或 Codex 绘制。 | 2026-10-27<br><sub>2.9 天</sub> | 410 | 143.4 | <a href="https://www.star-history.com/#haydenschmitty/floorplan&Date"><img src="https://api.star-history.com/svg?repos=haydenschmitty/floorplan&type=Date" width="260" alt="haydenschmitty/floorplan 的星标历史曲线"></a> |
 | 9 | [patch-gg/anymove](https://github.com/patch-gg/anymove)<br>只用一段 AI 视频，为任何生物做动作捕捉：一个画面里两个机位、DINOv2 关节识别、在两个视角中拟合骨架，输出 GLB。 | 2026-10-27<br><sub>3.0 天</sub> | 431 | 142.4 | <a href="https://www.star-history.com/#patch-gg/anymove&Date"><img src="https://api.star-history.com/svg?repos=patch-gg/anymove&type=Date" width="260" alt="patch-gg/anymove 的星标历史曲线"></a> |
 | 10 | [daveebbelaar/bama](https://github.com/daveebbelaar/bama)<br>BAMA：Build Any Mac App（构建任意 Mac 应用）。用 Swift 和 SwiftUI 调研、仿制、设计、构建、优化和测试原生 macOS 应用的智能体技能。 | 2026-10-24<br><sub>6.0 天</sub> | 838 | 139.8 | <a href="https://www.star-history.com/#daveebbelaar/bama&Date"><img src="https://api.star-history.com/svg?repos=daveebbelaar/bama&type=Date" width="260" alt="daveebbelaar/bama 的星标历史曲线"></a> |
-| 11 | [shipwords-dev/shipwords](https://github.com/shipwords-dev/shipwords)<br>为每个新关键词上线一个赚钱的 AI 网站。基于 Cloudflare 的启动模板，含登录认证、积分、支付和 AI 生成。/ 新词站群框架：一个新词一个站，一个下午上线。起量的继续迭代，没起… | 2026-10-28<br><sub>2.1 天</sub> | 287 | 137.6 | <a href="https://www.star-history.com/#shipwords-dev/shipwords&Date"><img src="https://api.star-history.com/svg?repos=shipwords-dev/shipwords&type=Date" width="260" alt="shipwords-dev/shipwords 的星标历史曲线"></a> |
-| 12 | [jmanico/grim-prompter](https://github.com/jmanico/grim-prompter)<br>面向 AI 编程智能体的威胁建模：让 Claude Code、Codex 或任何智能体读取你的仓库，生成有证据可追溯的威胁模型。36 种架构，29 种方法，… | 2026-10-28<br><sub>1.9 天</sub> | 188 | 101.4 | <a href="https://www.star-history.com/#jmanico/grim-prompter&Date"><img src="https://api.star-history.com/svg?repos=jmanico/grim-prompter&type=Date" width="260" alt="jmanico/grim-prompter 的星标历史曲线"></a> |
-| 13 | [andyhuo520/vibe-knowledge](https://github.com/andyhuo520/vibe-knowledge)<br>Vibe 知识大赏：一个知识点 → 一条有旁白、每句有出处的精品知识短片（Claude Code skill · 44 套风格 · 代码逐帧成片） | 2026-10-28<br><sub>2.0 天</sub> | 185 | 94.4 | <a href="https://www.star-history.com/#andyhuo520/vibe-knowledge&Date"><img src="https://api.star-history.com/svg?repos=andyhuo520/vibe-knowledge&type=Date" width="260" alt="andyhuo520/vibe-knowledge 的星标历史曲线"></a> |
-| 14 | [hevnsnt/CVEngine](https://github.com/hevnsnt/CVEngine)<br>以 AI 为先的外部攻击面评估：持续发现资产、基于证据验证漏洞，并集成开发者智能体 MCP。 | 2026-10-24<br><sub>5.4 天</sub> | 510 | 94.1 | <a href="https://www.star-history.com/#hevnsnt/CVEngine&Date"><img src="https://api.star-history.com/svg?repos=hevnsnt/CVEngine&type=Date" width="260" alt="hevnsnt/CVEngine 的星标历史曲线"></a> |
-| 15 | [davemessew/AgentFlux](https://github.com/davemessew/AgentFlux)<br>面向可视化工作流和自主智能体的智能体式 AI 平台。可用 Docker 在你自己的电脑或服务器上运行。 | 2026-10-27<br><sub>2.8 天</sub> | 235 | 85.5 | <a href="https://www.star-history.com/#davemessew/AgentFlux&Date"><img src="https://api.star-history.com/svg?repos=davemessew/AgentFlux&type=Date" width="260" alt="davemessew/AgentFlux 的星标历史曲线"></a> |
-| 16 | [SAOS-3624/dsh-video-storyboard](https://github.com/SAOS-3624/dsh-video-storyboard)<br>面向 DeepSeek Harness 的场景感知分镜：把 9–16 个带编号的格子，连同时间戳、文字稿和音频包络，打包进同一张图（384 个 token）。两个工具… | 2026-10-26<br><sub>3.4 天</sub> | 229 | 66.5 | <a href="https://www.star-history.com/#SAOS-3624/dsh-video-storyboard&Date"><img src="https://api.star-history.com/svg?repos=SAOS-3624/dsh-video-storyboard&type=Date" width="260" alt="SAOS-3624/dsh-video-storyboard 的星标历史曲线"></a> |
-| 17 | [routerhubSI/uncensored-ai-api](https://github.com/routerhubSI/uncensored-ai-api)<br>无审查 AI API 与模型——一个密钥即可调用 Claude、GPT、Gemini、Grok、DeepSeek、GLM 和 Qwen，并在可用时提供无审查和 abliterated 变体。兼容 OpenAI-… | 2026-10-24<br><sub>5.7 天</sub> | 368 | 65.1 | <a href="https://www.star-history.com/#routerhubSI/uncensored-ai-api&Date"><img src="https://api.star-history.com/svg?repos=routerhubSI/uncensored-ai-api&type=Date" width="260" alt="routerhubSI/uncensored-ai-api 的星标历史曲线"></a> |
-| 18 | [JunWan666/astrbot-for-android](https://github.com/JunWan666/astrbot-for-android)<br>在 Android 手机上本地部署和管理 AstrBot 与 NapCat，内置 PRoot Ubuntu 运行环境，支持原生管理界面、WebUI、日志、备份恢复和独立更新，无需 Root。 | 2026-10-26<br><sub>4.1 天</sub> | 264 | 63.7 | <a href="https://www.star-history.com/#JunWan666/astrbot-for-android&Date"><img src="https://api.star-history.com/svg?repos=JunWan666/astrbot-for-android&type=Date" width="260" alt="JunWan666/astrbot-for-android 的星标历史曲线"></a> |
-| 19 | [aa1143/NamiGPT](https://github.com/aa1143/NamiGPT)<br>零基础入门大模型（LLM）的基础教程：从零手写 GPT-2，一行行看懂大模型是怎么工作的 / 用 PyTorch 从零开始、一步步构建 GPT-2 | 2026-10-28<br><sub>2.3 天</sub> | 135 | 58.2 | <a href="https://www.star-history.com/#aa1143/NamiGPT&Date"><img src="https://api.star-history.com/svg?repos=aa1143/NamiGPT&type=Date" width="260" alt="aa1143/NamiGPT 的星标历史曲线"></a> |
-| 20 | [jacke-pp/ai-wallet-binance](https://github.com/jacke-pp/ai-wallet-binance)<br>让任何 AI 用你自己的币安 AI 钱包交易：秒买秒卖、狙击 Agent 专属发射台（Four、Flap、GANG）、AI 专属 Mint、本机交易页面。币安签名，不碰私钥。免费开源 MIT · 作者：Jacke_pp · 联系：X @Jacke_pp（私信） | 2026-10-25<br><sub>5.0 天</sub> | 236 | 47.7 | <a href="https://www.star-history.com/#jacke-pp/ai-wallet-binance&Date"><img src="https://api.star-history.com/svg?repos=jacke-pp/ai-wallet-binance&type=Date" width="260" alt="jacke-pp/ai-wallet-binance 的星标历史曲线"></a> |
 
 ### 本周增长最快（近 7 天）
 
@@ -85,16 +73,6 @@
 | 8 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)<br>把整个代码库变成一张地图，让 AI 一眼看出哪些文件调用了哪些文件。大型项目不必再从头读到尾。<br>`人工智能` | +5,783 | 826.1 | 138,983 | <a href="https://www.star-history.com/#Graphify-Labs/graphify&Date"><img src="https://api.star-history.com/svg?repos=Graphify-Labs/graphify&type=Date" width="260" alt="Graphify-Labs/graphify 的星标历史曲线"></a> |
 | 9 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)<br>像写网页一样写视频，再交给 AI 渲染成片。编程智能体也能使用，无需学习任何剪辑软件。<br>`人工智能` | +5,541 | 791.6 | 75,673 | <a href="https://www.star-history.com/#heygen-com/hyperframes&Date"><img src="https://api.star-history.com/svg?repos=heygen-com/hyperframes&type=Date" width="260" alt="heygen-com/hyperframes 的星标历史曲线"></a> |
 | 10 | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)<br>让你的 AI 智能体看到整个互联网。一个命令行工具即可读取和搜索 Twitter、Reddit、YouTube、GitHub、哔哩哔哩和小红书，零 API 费用。<br>`人工智能` | +5,483 | 783.3 | 106,509 | <a href="https://www.star-history.com/#Panniantong/Agent-Reach&Date"><img src="https://api.star-history.com/svg?repos=Panniantong/Agent-Reach&type=Date" width="260" alt="Panniantong/Agent-Reach 的星标历史曲线"></a> |
-| 11 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)<br>赋予编程智能体审美的技能：确定美术风格、使用真实参考图，并在浏览器中检查成果，让它们不再产出千篇一律的 AI 落地页。<br>`人工智能` | +4,623 | 660.4 | 105,834 | <a href="https://www.star-history.com/#Leonxlnx/taste-skill&Date"><img src="https://api.star-history.com/svg?repos=Leonxlnx/taste-skill&type=Date" width="260" alt="Leonxlnx/taste-skill 的星标历史曲线"></a> |
-| 12 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)<br>一项为编程智能体带来设计智慧的 AI 技能，让它们构建的 UI/UX 在多个平台和框架上都显得专业。<br>`人工智能` | +3,692 | 527.4 | 142,715 | <a href="https://www.star-history.com/#nextlevelbuilder/ui-ux-pro-max-skill&Date"><img src="https://api.star-history.com/svg?repos=nextlevelbuilder/ui-ux-pro-max-skill&type=Date" width="260" alt="nextlevelbuilder/ui-ux-pro-max-skill 的星标历史曲线"></a> |
-| 13 | [anomalyco/opencode](https://github.com/anomalyco/opencode)<br>直接在终端里用 AI 写代码，无需打开浏览器标签页。支持多种模型，可与 Claude Code 和 Codex 相媲美，免费开源。<br>`人工智能` | +3,142 | 448.9 | 223,154 | <a href="https://www.star-history.com/#anomalyco/opencode&Date"><img src="https://api.star-history.com/svg?repos=anomalyco/opencode&type=Date" width="260" alt="anomalyco/opencode 的星标历史曲线"></a> |
-| 14 | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)<br>为智能体提供跨会话记忆：记录智能体做过的事，用 AI 压缩，并把相关部分回填到之后的会话中。支持 Claude Code、Codex、Gemini、OpenCode 等。<br>`人工智能` | +2,821 | 403.0 | 105,138 | <a href="https://www.star-history.com/#thedotmack/claude-mem&Date"><img src="https://api.star-history.com/svg?repos=thedotmack/claude-mem&type=Date" width="260" alt="thedotmack/claude-mem 的星标历史曲线"></a> |
-| 15 | [cheaper-inference/OmniRoute](https://github.com/cheaper-inference/OmniRoute)<br>免费的 MIT 许可 AI 网关：一个端点对接数百家服务商和模型，并可根据额度自动回退切换。支持 Claude Code、Codex、Cursor、OpenCode、Cline 和 Copilot。<br>`人工智能` | +2,779 | 397.0 | 82,663 | <a href="https://www.star-history.com/#cheaper-inference/OmniRoute&Date"><img src="https://api.star-history.com/svg?repos=cheaper-inference/OmniRoute&type=Date" width="260" alt="cheaper-inference/OmniRoute 的星标历史曲线"></a> |
-| 16 | [paperclipai/paperclip](https://github.com/paperclipai/paperclip)<br>像管理公司一样管理一队 AI 智能体的开源应用：分配目标、设定预算，并在同一个仪表板中跟踪工作和成本。如果说 OpenClaw 是一名员工，Paperclip 就是整家公司。<br>`人工智能` | +2,593 | 370.4 | 108,798 | <a href="https://www.star-history.com/#paperclipai/paperclip&Date"><img src="https://api.star-history.com/svg?repos=paperclipai/paperclip&type=Date" width="260" alt="paperclipai/paperclip 的星标历史曲线"></a> |
-| 17 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)<br>Nous Research 出品的可自我改进的 AI 智能体，内置学习循环：从经验中构建技能，并在工作中不断改进，还能通过 Telegram、Discord、Slack 等渠道联系你。<br>`人工智能` | +2,564 | 366.3 | 258,636 | <a href="https://www.star-history.com/#NousResearch/hermes-agent&Date"><img src="https://api.star-history.com/svg?repos=NousResearch/hermes-agent&type=Date" width="260" alt="NousResearch/hermes-agent 的星标历史曲线"></a> |
-| 18 | [farion1231/cc-switch](https://github.com/farion1231/cc-switch)<br>面向 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw 等的桌面端一体化管理器：一键切换 API 服务商，无需手动编辑配置文件即可管理 MCP、技能和提示词。<br>`人工智能` | +2,542 | 363.1 | 150,238 | <a href="https://www.star-history.com/#farion1231/cc-switch&Date"><img src="https://api.star-history.com/svg?repos=farion1231/cc-switch&type=Date" width="260" alt="farion1231/cc-switch 的星标历史曲线"></a> |
-| 19 | [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)<br>NVIDIA 出品的 AI 智能体技能安全扫描器：在安装前检查 Claude Code、Codex 和 MCP 技能中的漏洞、提示词注入、数据外泄和供应链风险。<br>`人工智能` | +2,414 | 344.9 | 23,432 | <a href="https://www.star-history.com/#NVIDIA/SkillSpector&Date"><img src="https://api.star-history.com/svg?repos=NVIDIA/SkillSpector&type=Date" width="260" alt="NVIDIA/SkillSpector 的星标历史曲线"></a> |
-| 20 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)<br>面向 AI 编程智能体的生产级工程技能：把资深工程师从需求规格到发布所用的工作流和质量关卡打包起来，让智能体每次都照做。<br>`人工智能` | +2,185 | 312.1 | 111,823 | <a href="https://www.star-history.com/#addyosmani/agent-skills&Date"><img src="https://api.star-history.com/svg?repos=addyosmani/agent-skills&type=Date" width="260" alt="addyosmani/agent-skills 的星标历史曲线"></a> |
 
 ### 本月增长最快（近 30 天）
 
@@ -110,16 +88,6 @@
 | 8 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)<br>像写网页一样写视频，再交给 AI 渲染成片。编程智能体也能使用，无需学习任何剪辑软件。<br>`人工智能` | +21,640 | 721.3 | 75,673 | <a href="https://www.star-history.com/#heygen-com/hyperframes&Date"><img src="https://api.star-history.com/svg?repos=heygen-com/hyperframes&type=Date" width="260" alt="heygen-com/hyperframes 的星标历史曲线"></a> |
 | 9 | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)<br>让你的 AI 智能体看到整个互联网。一个命令行工具即可读取和搜索 Twitter、Reddit、YouTube、GitHub、哔哩哔哩和小红书，零 API 费用。<br>`人工智能` | +20,788 | 692.9 | 106,509 | <a href="https://www.star-history.com/#Panniantong/Agent-Reach&Date"><img src="https://api.star-history.com/svg?repos=Panniantong/Agent-Reach&type=Date" width="260" alt="Panniantong/Agent-Reach 的星标历史曲线"></a> |
 | 10 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)<br>把整个代码库变成一张地图，让 AI 一眼看出哪些文件调用了哪些文件。大型项目不必再从头读到尾。<br>`人工智能` | +17,170 | 572.3 | 138,983 | <a href="https://www.star-history.com/#Graphify-Labs/graphify&Date"><img src="https://api.star-history.com/svg?repos=Graphify-Labs/graphify&type=Date" width="260" alt="Graphify-Labs/graphify 的星标历史曲线"></a> |
-| 11 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)<br>赋予编程智能体审美的技能：确定美术风格、使用真实参考图，并在浏览器中检查成果，让它们不再产出千篇一律的 AI 落地页。<br>`人工智能` | +14,956 | 498.5 | 105,834 | <a href="https://www.star-history.com/#Leonxlnx/taste-skill&Date"><img src="https://api.star-history.com/svg?repos=Leonxlnx/taste-skill&type=Date" width="260" alt="Leonxlnx/taste-skill 的星标历史曲线"></a> |
-| 12 | [paperclipai/paperclip](https://github.com/paperclipai/paperclip)<br>像管理公司一样管理一队 AI 智能体的开源应用：分配目标、设定预算，并在同一个仪表板中跟踪工作和成本。如果说 OpenClaw 是一名员工，Paperclip 就是整家公司。<br>`人工智能` | +14,436 | 481.2 | 108,798 | <a href="https://www.star-history.com/#paperclipai/paperclip&Date"><img src="https://api.star-history.com/svg?repos=paperclipai/paperclip&type=Date" width="260" alt="paperclipai/paperclip 的星标历史曲线"></a> |
-| 13 | [anomalyco/opencode](https://github.com/anomalyco/opencode)<br>直接在终端里用 AI 写代码，无需打开浏览器标签页。支持多种模型，可与 Claude Code 和 Codex 相媲美，免费开源。<br>`人工智能` | +13,404 | 446.8 | 223,154 | <a href="https://www.star-history.com/#anomalyco/opencode&Date"><img src="https://api.star-history.com/svg?repos=anomalyco/opencode&type=Date" width="260" alt="anomalyco/opencode 的星标历史曲线"></a> |
-| 14 | [farion1231/cc-switch](https://github.com/farion1231/cc-switch)<br>面向 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw 等的桌面端一体化管理器：一键切换 API 服务商，无需手动编辑配置文件即可管理 MCP、技能和提示词。<br>`人工智能` | +12,324 | 410.8 | 150,238 | <a href="https://www.star-history.com/#farion1231/cc-switch&Date"><img src="https://api.star-history.com/svg?repos=farion1231/cc-switch&type=Date" width="260" alt="farion1231/cc-switch 的星标历史曲线"></a> |
-| 15 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)<br>面向 AI 编程智能体的生产级工程技能：把资深工程师从需求规格到发布所用的工作流和质量关卡打包起来，让智能体每次都照做。<br>`人工智能` | +12,280 | 409.3 | 111,823 | <a href="https://www.star-history.com/#addyosmani/agent-skills&Date"><img src="https://api.star-history.com/svg?repos=addyosmani/agent-skills&type=Date" width="260" alt="addyosmani/agent-skills 的星标历史曲线"></a> |
-| 16 | [cheaper-inference/OmniRoute](https://github.com/cheaper-inference/OmniRoute)<br>免费的 MIT 许可 AI 网关：一个端点对接数百家服务商和模型，并可根据额度自动回退切换。支持 Claude Code、Codex、Cursor、OpenCode、Cline 和 Copilot。<br>`人工智能` | +11,696 | 389.9 | 82,663 | <a href="https://www.star-history.com/#cheaper-inference/OmniRoute&Date"><img src="https://api.star-history.com/svg?repos=cheaper-inference/OmniRoute&type=Date" width="260" alt="cheaper-inference/OmniRoute 的星标历史曲线"></a> |
-| 17 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)<br>一项为编程智能体带来设计智慧的 AI 技能，让它们构建的 UI/UX 在多个平台和框架上都显得专业。<br>`人工智能` | +11,660 | 388.7 | 142,715 | <a href="https://www.star-history.com/#nextlevelbuilder/ui-ux-pro-max-skill&Date"><img src="https://api.star-history.com/svg?repos=nextlevelbuilder/ui-ux-pro-max-skill&type=Date" width="260" alt="nextlevelbuilder/ui-ux-pro-max-skill 的星标历史曲线"></a> |
-| 18 | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)<br>为智能体提供跨会话记忆：记录智能体做过的事，用 AI 压缩，并把相关部分回填到之后的会话中。支持 Claude Code、Codex、Gemini、OpenCode 等。<br>`人工智能` | +10,595 | 353.2 | 105,138 | <a href="https://www.star-history.com/#thedotmack/claude-mem&Date"><img src="https://api.star-history.com/svg?repos=thedotmack/claude-mem&type=Date" width="260" alt="thedotmack/claude-mem 的星标历史曲线"></a> |
-| 19 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)<br>Nous Research 出品的可自我改进的 AI 智能体，内置学习循环：从经验中构建技能，并在工作中不断改进，还能通过 Telegram、Discord、Slack 等渠道联系你。<br>`人工智能` | +9,731 | 324.4 | 258,636 | <a href="https://www.star-history.com/#NousResearch/hermes-agent&Date"><img src="https://api.star-history.com/svg?repos=NousResearch/hermes-agent&type=Date" width="260" alt="NousResearch/hermes-agent 的星标历史曲线"></a> |
-| 20 | [anthropics/skills](https://github.com/anthropics/skills)<br>Anthropic 公开的 Agent Skills 仓库：由说明、脚本和资源组成的文件夹，Claude 会按需加载，涵盖从创意工作到网页应用测试等场景。可作为你编写自己技能的示例和灵感。<br>`人工智能` | +6,531 | 217.7 | 184,884 | <a href="https://www.star-history.com/#anthropics/skills&Date"><img src="https://api.star-history.com/svg?repos=anthropics/skills&type=Date" width="260" alt="anthropics/skills 的星标历史曲线"></a> |
 
 ### 今年增长最快（近 365 天）
 
@@ -135,16 +103,6 @@
 | 8 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)<br>把整个代码库变成一张地图，让 AI 一眼看出哪些文件调用了哪些文件。大型项目不必再从头读到尾。<br>`人工智能` | +138,922 | 661.5 †<br><sub>÷210 天</sub> | 138,983 | <a href="https://www.star-history.com/#Graphify-Labs/graphify&Date"><img src="https://api.star-history.com/svg?repos=Graphify-Labs/graphify&type=Date" width="260" alt="Graphify-Labs/graphify 的星标历史曲线"></a> |
 | 9 | [anomalyco/opencode](https://github.com/anomalyco/opencode)<br>直接在终端里用 AI 写代码，无需打开浏览器标签页。支持多种模型，可与 Claude Code 和 Codex 相媲美，免费开源。<br>`人工智能` | +194,805 | 533.7 | 223,154 | <a href="https://www.star-history.com/#anomalyco/opencode&Date"><img src="https://api.star-history.com/svg?repos=anomalyco/opencode&type=Date" width="260" alt="anomalyco/opencode 的星标历史曲线"></a> |
 | 10 | [stablyai/orca](https://github.com/stablyai/orca)<br>在同一台桌面电脑上同时运行多个 AI 编程智能体，比较谁写得更好。每个智能体都有自己的工作区，互不干扰。<br>`人工智能` | +110,415 | 486.4 †<br><sub>÷227 天</sub> | 110,515 | <a href="https://www.star-history.com/#stablyai/orca&Date"><img src="https://api.star-history.com/svg?repos=stablyai/orca&type=Date" width="260" alt="stablyai/orca 的星标历史曲线"></a> |
-| 11 | [anthropics/skills](https://github.com/anthropics/skills)<br>Anthropic 公开的 Agent Skills 仓库：由说明、脚本和资源组成的文件夹，Claude 会按需加载，涵盖从创意工作到网页应用测试等场景。可作为你编写自己技能的示例和灵感。<br>`人工智能` | +170,780 | 467.9 | 184,884 | <a href="https://www.star-history.com/#anthropics/skills&Date"><img src="https://api.star-history.com/svg?repos=anthropics/skills&type=Date" width="260" alt="anthropics/skills 的星标历史曲线"></a> |
-| 12 | [paperclipai/paperclip](https://github.com/paperclipai/paperclip)<br>像管理公司一样管理一队 AI 智能体的开源应用：分配目标、设定预算，并在同一个仪表板中跟踪工作和成本。如果说 OpenClaw 是一名员工，Paperclip 就是整家公司。<br>`人工智能` | +108,764 | 449.4 †<br><sub>÷242 天</sub> | 108,798 | <a href="https://www.star-history.com/#paperclipai/paperclip&Date"><img src="https://api.star-history.com/svg?repos=paperclipai/paperclip&type=Date" width="260" alt="paperclipai/paperclip 的星标历史曲线"></a> |
-| 13 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)<br>面向 AI 编程智能体的生产级工程技能：把资深工程师从需求规格到发布所用的工作流和质量关卡打包起来，让智能体每次都照做。<br>`人工智能` | +111,805 | 435.0 †<br><sub>÷257 天</sub> | 111,823 | <a href="https://www.star-history.com/#addyosmani/agent-skills&Date"><img src="https://api.star-history.com/svg?repos=addyosmani/agent-skills&type=Date" width="260" alt="addyosmani/agent-skills 的星标历史曲线"></a> |
-| 14 | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)<br>让你的 AI 智能体看到整个互联网。一个命令行工具即可读取和搜索 Twitter、Reddit、YouTube、GitHub、哔哩哔哩和小红书，零 API 费用。<br>`人工智能` | +106,451 | 429.2 †<br><sub>÷248 天</sub> | 106,509 | <a href="https://www.star-history.com/#Panniantong/Agent-Reach&Date"><img src="https://api.star-history.com/svg?repos=Panniantong/Agent-Reach&type=Date" width="260" alt="Panniantong/Agent-Reach 的星标历史曲线"></a> |
-| 15 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)<br>一项为编程智能体带来设计智慧的 AI 技能，让它们构建的 UI/UX 在多个平台和框架上都显得专业。<br>`人工智能` | +142,662 | 427.1 †<br><sub>÷334 天</sub> | 142,715 | <a href="https://www.star-history.com/#nextlevelbuilder/ui-ux-pro-max-skill&Date"><img src="https://api.star-history.com/svg?repos=nextlevelbuilder/ui-ux-pro-max-skill&type=Date" width="260" alt="nextlevelbuilder/ui-ux-pro-max-skill 的星标历史曲线"></a> |
-| 16 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)<br>赋予编程智能体审美的技能：确定美术风格、使用真实参考图，并在浏览器中检查成果，让它们不再产出千篇一律的 AI 落地页。<br>`人工智能` | +105,762 | 418.0 †<br><sub>÷253 天</sub> | 105,834 | <a href="https://www.star-history.com/#Leonxlnx/taste-skill&Date"><img src="https://api.star-history.com/svg?repos=Leonxlnx/taste-skill&type=Date" width="260" alt="Leonxlnx/taste-skill 的星标历史曲线"></a> |
-| 17 | [farion1231/cc-switch](https://github.com/farion1231/cc-switch)<br>面向 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw 等的桌面端一体化管理器：一键切换 API 服务商，无需手动编辑配置文件即可管理 MCP、技能和提示词。<br>`人工智能` | +147,480 | 404.1 | 150,238 | <a href="https://www.star-history.com/#farion1231/cc-switch&Date"><img src="https://api.star-history.com/svg?repos=farion1231/cc-switch&type=Date" width="260" alt="farion1231/cc-switch 的星标历史曲线"></a> |
-| 18 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill)<br>让 AI 审查自己写的代码是否有漏洞，再请第二个 AI 来质疑审查结论。专门针对编程智能体容易写出的不安全代码。<br>`人工智能` | +53,137 | 396.5 †<br><sub>÷134 天</sub> | 53,235 | <a href="https://www.star-history.com/#cloudflare/security-audit-skill&Date"><img src="https://api.star-history.com/svg?repos=cloudflare/security-audit-skill&type=Date" width="260" alt="cloudflare/security-audit-skill 的星标历史曲线"></a> |
-| 19 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)<br>像写网页一样写视频，再交给 AI 渲染成片。编程智能体也能使用，无需学习任何剪辑软件。<br>`人工智能` | +75,613 | 323.1 †<br><sub>÷234 天</sub> | 75,673 | <a href="https://www.star-history.com/#heygen-com/hyperframes&Date"><img src="https://api.star-history.com/svg?repos=heygen-com/hyperframes&type=Date" width="260" alt="heygen-com/hyperframes 的星标历史曲线"></a> |
-| 20 | [cheaper-inference/OmniRoute](https://github.com/cheaper-inference/OmniRoute)<br>免费的 MIT 许可 AI 网关：一个端点对接数百家服务商和模型，并可根据额度自动回退切换。支持 Claude Code、Codex、Cursor、OpenCode、Cline 和 Copilot。<br>`人工智能` | +82,646 | 319.1 †<br><sub>÷259 天</sub> | 82,663 | <a href="https://www.star-history.com/#cheaper-inference/OmniRoute&Date"><img src="https://api.star-history.com/svg?repos=cheaper-inference/OmniRoute&type=Date" width="260" alt="cheaper-inference/OmniRoute 的星标历史曲线"></a> |
 
 † 该仓库创建时间短于统计窗口，因此“星标/天”按仓库存在的天数（显示在数字下方）计算，而不是按完整窗口。
 
@@ -162,24 +120,12 @@
 | 8 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)<br>专治 AI 写代码时灌水凑数。教它像一位偷懒的老手那样做事：能省则省，必须写的部分一定写对。<br>`人工智能` | 180,485 | <a href="https://www.star-history.com/#DietrichGebert/ponytail&Date"><img src="https://api.star-history.com/svg?repos=DietrichGebert/ponytail&type=Date" width="260" alt="DietrichGebert/ponytail 的星标历史曲线"></a> |
 | 9 | [farion1231/cc-switch](https://github.com/farion1231/cc-switch)<br>面向 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw 等的桌面端一体化管理器：一键切换 API 服务商，无需手动编辑配置文件即可管理 MCP、技能和提示词。<br>`人工智能` | 150,238 | <a href="https://www.star-history.com/#farion1231/cc-switch&Date"><img src="https://api.star-history.com/svg?repos=farion1231/cc-switch&type=Date" width="260" alt="farion1231/cc-switch 的星标历史曲线"></a> |
 | 10 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)<br>一项为编程智能体带来设计智慧的 AI 技能，让它们构建的 UI/UX 在多个平台和框架上都显得专业。<br>`人工智能` | 142,715 | <a href="https://www.star-history.com/#nextlevelbuilder/ui-ux-pro-max-skill&Date"><img src="https://api.star-history.com/svg?repos=nextlevelbuilder/ui-ux-pro-max-skill&type=Date" width="260" alt="nextlevelbuilder/ui-ux-pro-max-skill 的星标历史曲线"></a> |
-| 11 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)<br>把整个代码库变成一张地图，让 AI 一眼看出哪些文件调用了哪些文件。大型项目不必再从头读到尾。<br>`人工智能` | 138,983 | <a href="https://www.star-history.com/#Graphify-Labs/graphify&Date"><img src="https://api.star-history.com/svg?repos=Graphify-Labs/graphify&type=Date" width="260" alt="Graphify-Labs/graphify 的星标历史曲线"></a> |
-| 12 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)<br>面向 AI 编程智能体的生产级工程技能：把资深工程师从需求规格到发布所用的工作流和质量关卡打包起来，让智能体每次都照做。<br>`人工智能` | 111,823 | <a href="https://www.star-history.com/#addyosmani/agent-skills&Date"><img src="https://api.star-history.com/svg?repos=addyosmani/agent-skills&type=Date" width="260" alt="addyosmani/agent-skills 的星标历史曲线"></a> |
-| 13 | [stablyai/orca](https://github.com/stablyai/orca)<br>在同一台桌面电脑上同时运行多个 AI 编程智能体，比较谁写得更好。每个智能体都有自己的工作区，互不干扰。<br>`人工智能` | 110,515 | <a href="https://www.star-history.com/#stablyai/orca&Date"><img src="https://api.star-history.com/svg?repos=stablyai/orca&type=Date" width="260" alt="stablyai/orca 的星标历史曲线"></a> |
-| 14 | [paperclipai/paperclip](https://github.com/paperclipai/paperclip)<br>像管理公司一样管理一队 AI 智能体的开源应用：分配目标、设定预算，并在同一个仪表板中跟踪工作和成本。如果说 OpenClaw 是一名员工，Paperclip 就是整家公司。<br>`人工智能` | 108,798 | <a href="https://www.star-history.com/#paperclipai/paperclip&Date"><img src="https://api.star-history.com/svg?repos=paperclipai/paperclip&type=Date" width="260" alt="paperclipai/paperclip 的星标历史曲线"></a> |
-| 15 | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)<br>让你的 AI 智能体看到整个互联网。一个命令行工具即可读取和搜索 Twitter、Reddit、YouTube、GitHub、哔哩哔哩和小红书，零 API 费用。<br>`人工智能` | 106,509 | <a href="https://www.star-history.com/#Panniantong/Agent-Reach&Date"><img src="https://api.star-history.com/svg?repos=Panniantong/Agent-Reach&type=Date" width="260" alt="Panniantong/Agent-Reach 的星标历史曲线"></a> |
-| 16 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)<br>赋予编程智能体审美的技能：确定美术风格、使用真实参考图，并在浏览器中检查成果，让它们不再产出千篇一律的 AI 落地页。<br>`人工智能` | 105,834 | <a href="https://www.star-history.com/#Leonxlnx/taste-skill&Date"><img src="https://api.star-history.com/svg?repos=Leonxlnx/taste-skill&type=Date" width="260" alt="Leonxlnx/taste-skill 的星标历史曲线"></a> |
-| 17 | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)<br>为智能体提供跨会话记忆：记录智能体做过的事，用 AI 压缩，并把相关部分回填到之后的会话中。支持 Claude Code、Codex、Gemini、OpenCode 等。<br>`人工智能` | 105,138 | <a href="https://www.star-history.com/#thedotmack/claude-mem&Date"><img src="https://api.star-history.com/svg?repos=thedotmack/claude-mem&type=Date" width="260" alt="thedotmack/claude-mem 的星标历史曲线"></a> |
-| 18 | [cheaper-inference/OmniRoute](https://github.com/cheaper-inference/OmniRoute)<br>免费的 MIT 许可 AI 网关：一个端点对接数百家服务商和模型，并可根据额度自动回退切换。支持 Claude Code、Codex、Cursor、OpenCode、Cline 和 Copilot。<br>`人工智能` | 82,663 | <a href="https://www.star-history.com/#cheaper-inference/OmniRoute&Date"><img src="https://api.star-history.com/svg?repos=cheaper-inference/OmniRoute&type=Date" width="260" alt="cheaper-inference/OmniRoute 的星标历史曲线"></a> |
-| 19 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)<br>像写网页一样写视频，再交给 AI 渲染成片。编程智能体也能使用，无需学习任何剪辑软件。<br>`人工智能` | 75,673 | <a href="https://www.star-history.com/#heygen-com/hyperframes&Date"><img src="https://api.star-history.com/svg?repos=heygen-com/hyperframes&type=Date" width="260" alt="heygen-com/hyperframes 的星标历史曲线"></a> |
-| 20 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill)<br>让 AI 审查自己写的代码是否有漏洞，再请第二个 AI 来质疑审查结论。专门针对编程智能体容易写出的不安全代码。<br>`人工智能` | 53,235 | <a href="https://www.star-history.com/#cloudflare/security-audit-skill&Date"><img src="https://api.star-history.com/svg?repos=cloudflare/security-audit-skill&type=Date" width="260" alt="cloudflare/security-audit-skill 的星标历史曲线"></a> |
 
 ## 开发者工具
 
 > 命令行、编辑器、包管理、代码检查与构建工具
 
 ### 最热新仓库（近 7 天内创建）
-
-本分类下最近 7 天内创建的仓库，通过 GitHub 搜索 API（按 topic 匹配：仓库自己必须带有该分类的 topic）找出，按创建以来的日均星标排序。已出现在本分类其他榜单（或本分类已收录项目）中的仓库，以及已被更靠前分类（AI 优先）占位的仓库，不会重复列入。简介取自仓库自己的 GitHub 简介；人工译文见 [data/newcomer_i18n.json](data/newcomer_i18n.json)。规则见 [docs/NEW_ARRIVALS.md](docs/NEW_ARRIVALS.md)。
 
 | # | 项目 | 创建时间（UTC） | 总星标 | 星标/天 | 星标历史 |
 |---|---|---|---:|---:|---|
@@ -193,16 +139,6 @@
 | 8 | [ScorpionHub17/KMS-Pico](https://github.com/ScorpionHub17/KMS-Pico)<br>Kms Pico Free 2026 完整独立安装包。预先激活的桌面版，开箱即用，安装过程顺畅。 | 2026-10-29<br><sub>1.0 天</sub> | 197 | 197.0 | <a href="https://www.star-history.com/#ScorpionHub17/KMS-Pico&Date"><img src="https://api.star-history.com/svg?repos=ScorpionHub17/KMS-Pico&type=Date" width="260" alt="ScorpionHub17/KMS-Pico 的星标历史曲线"></a> |
 | 9 | [Sourcecladrag/Windows-Optimizer](https://github.com/Sourcecladrag/Windows-Optimizer)<br>Windows Optimizer 2026——可直接使用的完整安装程序，含高级系统调优与增强功能。 | 2026-10-29<br><sub>1.0 天</sub> | 197 | 197.0 | <a href="https://www.star-history.com/#Sourcecladrag/Windows-Optimizer&Date"><img src="https://api.star-history.com/svg?repos=Sourcecladrag/Windows-Optimizer&type=Date" width="260" alt="Sourcecladrag/Windows-Optimizer 的星标历史曲线"></a> |
 | 10 | [AshReinvigorate/Microsoft-Office](https://github.com/AshReinvigorate/Microsoft-Office)<br>Microsoft Office 2026 完整独立安装包。开箱即用的桌面版安装，所有功能均已预先激活。 | 2026-10-30<br><sub>1.0 天</sub> | 126 | 126.0 | <a href="https://www.star-history.com/#AshReinvigorate/Microsoft-Office&Date"><img src="https://api.star-history.com/svg?repos=AshReinvigorate/Microsoft-Office&type=Date" width="260" alt="AshReinvigorate/Microsoft-Office 的星标历史曲线"></a> |
-| 11 | [Fangludisclose/SystemCare-Pro](https://github.com/Fangludisclose/SystemCare-Pro)<br>Systemcare Pro 2026 可直接使用的完整安装程序。完整独立安装包，所有功能均已激活，开箱即用。 | 2026-10-30<br><sub>1.0 天</sub> | 126 | 126.0 | <a href="https://www.star-history.com/#Fangludisclose/SystemCare-Pro&Date"><img src="https://api.star-history.com/svg?repos=Fangludisclose/SystemCare-Pro&type=Date" width="260" alt="Fangludisclose/SystemCare-Pro 的星标历史曲线"></a> |
-| 12 | [FormHalberdierSouk/SoundPad](https://github.com/FormHalberdierSouk/SoundPad)<br>Soundpad 2026：可直接使用的完整安装程序，内含专业音频制作所需的全部重要插件和效果。 | 2026-10-30<br><sub>1.0 天</sub> | 126 | 126.0 | <a href="https://www.star-history.com/#FormHalberdierSouk/SoundPad&Date"><img src="https://api.star-history.com/svg?repos=FormHalberdierSouk/SoundPad&type=Date" width="260" alt="FormHalberdierSouk/SoundPad 的星标历史曲线"></a> |
-| 13 | [Lostbrocreate/Adobe-InDesign](https://github.com/Lostbrocreate/Adobe-InDesign)<br>安全数字资产部署流水线 2026 可直接使用的完整安装程序。开箱即用的方案，兼顾线上与线下出版的效率。 | 2026-10-30<br><sub>1.0 天</sub> | 126 | 126.0 | <a href="https://www.star-history.com/#Lostbrocreate/Adobe-InDesign&Date"><img src="https://api.star-history.com/svg?repos=Lostbrocreate/Adobe-InDesign&type=Date" width="260" alt="Lostbrocreate/Adobe-InDesign 的星标历史曲线"></a> |
-| 14 | [nodedevelopersack/Cubase](https://github.com/nodedevelopersack/Cubase)<br>专业版 Cubase 13 完整独立安装构建，已预先激活，适合在桌面端流畅进行音频制作。 | 2026-10-30<br><sub>1.0 天</sub> | 126 | 126.0 | <a href="https://www.star-history.com/#nodedevelopersack/Cubase&Date"><img src="https://api.star-history.com/svg?repos=nodedevelopersack/Cubase&type=Date" width="260" alt="nodedevelopersack/Cubase 的星标历史曲线"></a> |
-| 15 | [Phantomeidemonstrate/AnyDesk](https://github.com/Phantomeidemonstrate/AnyDesk)<br>Anydesk 2026：可直接使用的完整安装程序，完整独立安装包，让远程桌面访问更顺畅。 | 2026-10-30<br><sub>1.0 天</sub> | 125 | 125.0 | <a href="https://www.star-history.com/#Phantomeidemonstrate/AnyDesk&Date"><img src="https://api.star-history.com/svg?repos=Phantomeidemonstrate/AnyDesk&type=Date" width="260" alt="Phantomeidemonstrate/AnyDesk 的星标历史曲线"></a> |
-| 16 | [PhoenixRetreat/Wondshare-Recoverit](https://github.com/PhoenixRetreat/Wondshare-Recoverit)<br>Wondshare Recoverit 2026 完整独立安装包。可直接运行的完整安装程序，所有功能均已激活。 | 2026-10-30<br><sub>1.0 天</sub> | 125 | 125.0 | <a href="https://www.star-history.com/#PhoenixRetreat/Wondshare-Recoverit&Date"><img src="https://api.star-history.com/svg?repos=PhoenixRetreat/Wondshare-Recoverit&type=Date" width="260" alt="PhoenixRetreat/Wondshare-Recoverit 的星标历史曲线"></a> |
-| 17 | [scarletscreengrasp/Uttorent](https://github.com/scarletscreengrasp/Uttorent)<br>Uttorent 2026——可直接使用的完整安装程序，完整独立安装包，开箱即用。 | 2026-10-30<br><sub>1.0 天</sub> | 125 | 125.0 | <a href="https://www.star-history.com/#scarletscreengrasp/Uttorent&Date"><img src="https://api.star-history.com/svg?repos=scarletscreengrasp/Uttorent&type=Date" width="260" alt="scarletscreengrasp/Uttorent 的星标历史曲线"></a> |
-| 18 | [SoapmakerShout44/Cinema-4d](https://github.com/SoapmakerShout44/Cinema-4d)<br>专业 Cinema 4D 实用工具配置，完整独立安装包，让 2026 年的工作流程更高效。 | 2026-10-30<br><sub>1.0 天</sub> | 125 | 125.0 | <a href="https://www.star-history.com/#SoapmakerShout44/Cinema-4d&Date"><img src="https://api.star-history.com/svg?repos=SoapmakerShout44/Cinema-4d&type=Date" width="260" alt="SoapmakerShout44/Cinema-4d 的星标历史曲线"></a> |
-| 19 | [twilightstonerestore/Glary-Utilities-Pro](https://github.com/twilightstonerestore/Glary-Utilities-Pro)<br>Glary Utilities Pro 2026：可直接使用的完整安装程序，所有工具均已激活，可立即在桌面上使用。 | 2026-10-30<br><sub>1.0 天</sub> | 125 | 125.0 | <a href="https://www.star-history.com/#twilightstonerestore/Glary-Utilities-Pro&Date"><img src="https://api.star-history.com/svg?repos=twilightstonerestore/Glary-Utilities-Pro&type=Date" width="260" alt="twilightstonerestore/Glary-Utilities-Pro 的星标历史曲线"></a> |
-| 20 | [ViceFencerManacle/Camtasia](https://github.com/ViceFencerManacle/Camtasia)<br>Camtasia 2026 可直接使用的完整安装程序，功能齐全，可在桌面上直接运行。 | 2026-10-30<br><sub>1.0 天</sub> | 125 | 125.0 | <a href="https://www.star-history.com/#ViceFencerManacle/Camtasia&Date"><img src="https://api.star-history.com/svg?repos=ViceFencerManacle/Camtasia&type=Date" width="260" alt="ViceFencerManacle/Camtasia 的星标历史曲线"></a> |
 
 ### 本周增长最快（近 7 天）
 
@@ -261,8 +197,6 @@
 > 漏洞扫描、静态分析、供应链与运行时安全
 
 ### 最热新仓库（近 7 天内创建）
-
-本分类下最近 7 天内创建的仓库，通过 GitHub 搜索 API（按 topic 匹配：仓库自己必须带有该分类的 topic）找出，按创建以来的日均星标排序。已出现在本分类其他榜单（或本分类已收录项目）中的仓库，以及已被更靠前分类（AI 优先）占位的仓库，不会重复列入。简介取自仓库自己的 GitHub 简介；人工译文见 [data/newcomer_i18n.json](data/newcomer_i18n.json)。规则见 [docs/NEW_ARRIVALS.md](docs/NEW_ARRIVALS.md)。
 
 | # | 项目 | 创建时间（UTC） | 总星标 | 星标/天 | 星标历史 |
 |---|---|---|---:|---:|---|
@@ -326,8 +260,6 @@
 > 前端框架、UI 组件库、CSS 与浏览器工具
 
 ### 最热新仓库（近 7 天内创建）
-
-本分类下最近 7 天内创建的仓库，通过 GitHub 搜索 API（按 topic 匹配：仓库自己必须带有该分类的 topic）找出，按创建以来的日均星标排序。已出现在本分类其他榜单（或本分类已收录项目）中的仓库，以及已被更靠前分类（AI 优先）占位的仓库，不会重复列入。简介取自仓库自己的 GitHub 简介；人工译文见 [data/newcomer_i18n.json](data/newcomer_i18n.json)。规则见 [docs/NEW_ARRIVALS.md](docs/NEW_ARRIVALS.md)。
 
 | # | 项目 | 创建时间（UTC） | 总星标 | 星标/天 | 星标历史 |
 |---|---|---|---:|---:|---|
@@ -395,8 +327,6 @@
 
 ### 最热新仓库（近 7 天内创建）
 
-本分类下最近 7 天内创建的仓库，通过 GitHub 搜索 API（按 topic 匹配：仓库自己必须带有该分类的 topic）找出，按创建以来的日均星标排序。已出现在本分类其他榜单（或本分类已收录项目）中的仓库，以及已被更靠前分类（AI 优先）占位的仓库，不会重复列入。简介取自仓库自己的 GitHub 简介；人工译文见 [data/newcomer_i18n.json](data/newcomer_i18n.json)。规则见 [docs/NEW_ARRIVALS.md](docs/NEW_ARRIVALS.md)。
-
 | # | 项目 | 创建时间（UTC） | 总星标 | 星标/天 | 星标历史 |
 |---|---|---|---:|---:|---|
 | 1 | [zeabur-oss/zeabur](https://github.com/zeabur-oss/zeabur)<br>运行在你自己的 Kubernetes 上的自托管 PaaS。 | 2026-10-24<br><sub>6.0 天</sub> | 551 | 91.1 | <a href="https://www.star-history.com/#zeabur-oss/zeabur&Date"><img src="https://api.star-history.com/svg?repos=zeabur-oss/zeabur&type=Date" width="260" alt="zeabur-oss/zeabur 的星标历史曲线"></a> |
@@ -460,8 +390,6 @@
 
 ### 最热新仓库（近 7 天内创建）
 
-本分类下最近 7 天内创建的仓库，通过 GitHub 搜索 API（按 topic 匹配：仓库自己必须带有该分类的 topic）找出，按创建以来的日均星标排序。已出现在本分类其他榜单（或本分类已收录项目）中的仓库，以及已被更靠前分类（AI 优先）占位的仓库，不会重复列入。简介取自仓库自己的 GitHub 简介；人工译文见 [data/newcomer_i18n.json](data/newcomer_i18n.json)。规则见 [docs/NEW_ARRIVALS.md](docs/NEW_ARRIVALS.md)。
-
 本次运行中没有符合条件的新仓库。
 
 ### 本周增长最快（近 7 天）
@@ -522,8 +450,6 @@
 
 ### 最热新仓库（近 7 天内创建）
 
-本分类下最近 7 天内创建的仓库，通过 GitHub 搜索 API（按 topic 匹配：仓库自己必须带有该分类的 topic）找出，按创建以来的日均星标排序。已出现在本分类其他榜单（或本分类已收录项目）中的仓库，以及已被更靠前分类（AI 优先）占位的仓库，不会重复列入。简介取自仓库自己的 GitHub 简介；人工译文见 [data/newcomer_i18n.json](data/newcomer_i18n.json)。规则见 [docs/NEW_ARRIVALS.md](docs/NEW_ARRIVALS.md)。
-
 | # | 项目 | 创建时间（UTC） | 总星标 | 星标/天 | 星标历史 |
 |---|---|---|---:|---:|---|
 | 1 | [hugues31/duckpad](https://github.com/hugues31/duckpad)<br>开源社区应得的数据转换工具。 | 2026-10-25<br><sub>5.0 天</sub> | 269 | 53.5 | <a href="https://www.star-history.com/#hugues31/duckpad&Date"><img src="https://api.star-history.com/svg?repos=hugues31/duckpad&type=Date" width="260" alt="hugues31/duckpad 的星标历史曲线"></a> |
@@ -580,18 +506,10 @@
 | 7 | [dbt-labs/dbt-core](https://github.com/dbt-labs/dbt-core)<br>用软件工程方式在数仓中转换数据。<br>`数据` | 14,104 | <a href="https://www.star-history.com/#dbt-labs/dbt-core&Date"><img src="https://api.star-history.com/svg?repos=dbt-labs/dbt-core&type=Date" width="260" alt="dbt-labs/dbt-core 的星标历史曲线"></a> |
 | 8 | [jupyter/notebook](https://github.com/jupyter/notebook)<br>用于创建与分享文档的 Jupyter 交互式笔记本。<br>`数据` | 13,461 | <a href="https://www.star-history.com/#jupyter/notebook&Date"><img src="https://api.star-history.com/svg?repos=jupyter/notebook&type=Date" width="260" alt="jupyter/notebook 的星标历史曲线"></a> |
 
-## 缺失数据
+---
 
-本次运行中没有项目缺失数据。
+如果它帮你省了时间，请给仓库点个星标，让更多人找得到。
 
-## 数据是如何得出的
+如何引用：见 [CITATION.cff](CITATION.cff)。
 
-- 总星标数：`GET /repos/{owner}/{repo}` → `stargazers_count`。
-- 新增星标：`GET /repos/{owner}/{repo}/stargazers/history`（GitHub 提供的、保护隐私的按周/按日星标数）。新增数为今天之前 N 个完整 UTC 日的总和（不含今天），星标/天 = 新增数 ÷ N。
-- GitHub 说明，周/日统计区间的边界不保证与 UTC 对齐，且之后被取消的星标不会计入，因此窗口边缘的数字可能有小幅偏差。
-- 星标历史曲线是以 URL 嵌入的 `star-history.com` SVG 图片。本仓库不含任何分析或追踪脚本。
-- 原始数据见 [`data/stats.json`](data/stats.json)；每日星标数快照追加到 [`data/stars.json`](data/stars.json)。
-
-## 参与贡献
-
-在 `data/projects.json` 中添加条目（`desc` 需包含全部五种语言），然后运行 `python tools/update_stars.py`。每日更新说明见 [docs/DAILY_UPDATE.md](docs/DAILY_UPDATE.md)。
+数据怎么算和如何参与：[docs/HOW_IT_WORKS.zh-Hans.md](docs/HOW_IT_WORKS.zh-Hans.md)。新仓库规则：[docs/NEW_ARRIVALS.md](docs/NEW_ARRIVALS.md)。分类说明：[docs/CATEGORIES.md](docs/CATEGORIES.md)。

@@ -1,0 +1,612 @@
+{
+  "_comment": "Translation library for new-repo descriptions, keyed by repo + sha256(source)[:12] + language. Used by tools/newcomer_i18n.py and tools/i18n_pipeline.py; see docs/I18N_PIPELINE.md.",
+  "version": 2,
+  "entries": {
+    "AshReinvigorate/Microsoft-Office": {
+      "41944f2cf9d4": {
+        "src": "Microsoft Office 2026 complete standalone setup. Ready-to-run desktop installation with all features pre-activated.",
+        "zh-Hans": "Microsoft Office 2026 完整独立安装包。开箱即用的桌面版安装，所有功能均已预先激活。",
+        "zh-Hant": "Microsoft Office 2026 完整獨立安裝包。開箱即用的桌面版安裝，所有功能均已預先啟用。",
+        "ja": "Microsoft Office 2026 の完全版スタンドアロンセットアップ。すぐに使えるデスクトップ版インストールで、全機能がアクティベーション済み。",
+        "ko": "Microsoft Office 2026 완전한 독립 설치본. 바로 실행할 수 있는 데스크톱 설치본으로, 모든 기능이 사전 활성화되어 있다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "CaretakerPlain/Whale-Tracker": {
+      "db84e52126bc": {
+        "src": "Whale Tracker 2026: Pre-activated desktop edition with all features ready to run.",
+        "zh-Hans": "Whale Tracker 2026：预先激活的桌面版，所有功能开箱即用。",
+        "zh-Hant": "Whale Tracker 2026：預先啟用的桌面版，所有功能開箱即用。",
+        "ja": "Whale Tracker 2026：アクティベーション済みのデスクトップ版で、全機能をすぐに使える。",
+        "ko": "Whale Tracker 2026: 사전 활성화된 데스크톱 버전으로, 모든 기능을 바로 쓸 수 있다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "Cattmonkey/ChaosIntelligence": {
+      "4220589e496d": {
+        "src": "把智能体当函数，把想法写成程序。Agent-native functional language with a CLI, Web IDE, goal-driven bots and live UI. Source-available; no AI training.",
+        "zh-Hans": "把智能体当函数，把想法写成程序。原生支持智能体的函数式语言，带 CLI、Web IDE、目标驱动的机器人和实时界面。源码可见；禁止用于 AI 训练。",
+        "zh-Hant": "把代理當函式，把想法寫成程式。原生支援代理的函數式語言，附 CLI、Web IDE、目標導向的機器人和即時介面。原始碼可見；禁止用於 AI 訓練。",
+        "ja": "エージェントを関数として扱い、アイデアをプログラムにする。エージェントネイティブな関数型言語で、CLI、Web IDE、ゴール駆動のボット、ライブ UI を備える。ソース公開（source-available）。AI の学習には使用不可。",
+        "ko": "에이전트를 함수처럼 다뤄 아이디어를 프로그램으로 만든다. 에이전트 네이티브 함수형 언어로, CLI, 웹 IDE, 목표 기반 봇, 실시간 UI를 갖췄다. 소스 공개(source-available), AI 학습 용도 사용 금지.",
+        "en": "Treat agents as functions and turn ideas into programs. An agent-native functional language with a CLI, Web IDE, goal-driven bots and live UI. Source-available; no AI training.",
+        "seen": "2026-10-30"
+      }
+    },
+    "ChannelCooperStart/capri-ai": {
+      "98b87d5d0bc7": {
+        "src": "🌃 Capri — Edgerunners-inspired AI agent for your desktop. Works with Claude Code, Codex, Antigravity &amp; more.",
+        "zh-Hans": "🌃 Capri —— 受《赛博朋克：边缘行者》启发的桌面 AI 智能体。适用于 Claude Code、Codex、Antigravity 等。",
+        "zh-Hant": "🌃 Capri —— 受《電馭叛客：邊緣行者》啟發的桌面 AI 代理。適用於 Claude Code、Codex、Antigravity 等。",
+        "ja": "🌃 Capri — 『サイバーパンク：エッジランナーズ』にインスパイアされたデスクトップ向け AI エージェント。Claude Code、Codex、Antigravity などで使える。",
+        "ko": "🌃 Capri — 《사이버펑크: 엣지러너》에서 영감을 받은 데스크톱용 AI 에이전트. Claude Code, Codex, Antigravity 등에서 쓸 수 있다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "D3voz/openjutsu": {
+      "9563d416c7c1": {
+        "src": "One-click character swap for videos: an open-source, local Higgsfield Genjutsu alternative built on ComfyUI and MiniMax H3, with FLUX.3 Klein relighting.",
+        "zh-Hans": "一键为视频换角色：基于 ComfyUI 和 MiniMax H3 构建的开源本地版 Higgsfield Genjutsu 替代方案，并用 FLUX.3 Klein 重新打光。",
+        "zh-Hant": "一鍵為影片換角色：以 ComfyUI 和 MiniMax H3 建構的開源本機版 Higgsfield Genjutsu 替代方案，並用 FLUX.3 Klein 重新打光。",
+        "ja": "動画のキャラクターをワンクリックで入れ替え：ComfyUI と MiniMax H3 の上に作られた、オープンソースでローカル動作の Higgsfield Genjutsu 代替ツール。FLUX.3 Klein によるリライティングにも対応。",
+        "ko": "영상 속 캐릭터를 한 번에 교체: ComfyUI와 MiniMax H3 위에 만든, 오픈 소스 로컬 Higgsfield Genjutsu 대안. FLUX.3 Klein으로 조명도 다시 입힌다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "DenisSergeevitch/ex-ussr-kinship-research": {
+      "0acb87efff3a": {
+        "src": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Re…",
+        "zh-Hans": "面向 AI 智能体（Codex、Claude Code）的证据优先家谱研究技能：涵盖前苏联地区的教会簿册、民事、军事、流放和政治迫害档案…",
+        "zh-Hant": "面向 AI 代理（Codex、Claude Code）的證據優先家譜研究技能：涵蓋前蘇聯地區的教會簿冊、民事、軍事、流放和政治迫害檔案…",
+        "ja": "AI エージェント（Codex、Claude Code）向けの、証拠第一の系譜調査スキル：旧ソ連全域の教会記録、民事、軍事、強制移住、弾圧に関する記録…",
+        "ko": "AI 에이전트(Codex, Claude Code)를 위한 증거 우선 족보 조사 스킬: 구소련 전역의 교회 기록부, 민사, 군사, 강제 이주, 탄압 기록…",
+        "seen": "2026-10-30"
+      }
+    },
+    "Fangludisclose/SystemCare-Pro": {
+      "d5bc5d1a9b0c": {
+        "src": "Systemcare Pro 2026 full working installer. Complete standalone setup with all features activated, ready to run.",
+        "zh-Hans": "Systemcare Pro 2026 可直接使用的完整安装程序。完整独立安装包，所有功能均已激活，开箱即用。",
+        "zh-Hant": "Systemcare Pro 2026 可直接使用的完整安裝程式。完整獨立安裝包，所有功能均已啟用，開箱即用。",
+        "ja": "Systemcare Pro 2026 のすぐに使える完全版インストーラー。全機能がアクティベーション済みの完全なスタンドアロンセットアップで、そのまま実行できる。",
+        "ko": "Systemcare Pro 2026 바로 쓸 수 있는 완전한 설치 프로그램. 모든 기능이 활성화된 완전한 독립 설치본으로, 바로 실행할 수 있다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "FormHalberdierSouk/SoundPad": {
+      "52e358e00d02": {
+        "src": "Soundpad 2026: Full working installer with all essential plugins and effects for professional audio production.",
+        "zh-Hans": "Soundpad 2026：可直接使用的完整安装程序，内含专业音频制作所需的全部重要插件和效果。",
+        "zh-Hant": "Soundpad 2026：可直接使用的完整安裝程式，內含專業音訊製作所需的全部重要外掛與效果。",
+        "ja": "Soundpad 2026：プロ向けのオーディオ制作に必要なプラグインとエフェクトをひととおり揃えた、すぐに使える完全版インストーラー。",
+        "ko": "Soundpad 2026: 전문 오디오 제작에 필요한 주요 플러그인과 이펙트를 모두 담은, 바로 쓸 수 있는 완전한 설치 프로그램.",
+        "seen": "2026-10-30"
+      }
+    },
+    "JunWan666/astrbot-for-android": {
+      "d3cccd167bef": {
+        "src": "在 Android 手机上本地部署和管理 AstrBot 与 NapCat，内置 PRoot Ubuntu 运行环境，支持原生管理界面、WebUI、日志、备份恢复和独立更新，无需 Root。",
+        "zh-Hans": "在 Android 手机上本地部署和管理 AstrBot 与 NapCat，内置 PRoot Ubuntu 运行环境，支持原生管理界面、WebUI、日志、备份恢复和独立更新，无需 Root。",
+        "zh-Hant": "在 Android 手機上本機部署並管理 AstrBot 與 NapCat，內建 PRoot Ubuntu 執行環境，支援原生管理介面、WebUI、記錄檔、備份還原和獨立更新，無需 Root。",
+        "ja": "Android スマホ上で AstrBot と NapCat をローカルにデプロイして管理できる。PRoot Ubuntu の実行環境を内蔵し、ネイティブ管理画面、WebUI、ログ、バックアップと復元、独立したアップデートに対応。root 不要。",
+        "ko": "Android 폰에서 AstrBot과 NapCat을 로컬로 배포하고 관리한다. PRoot Ubuntu 실행 환경을 내장했고, 네이티브 관리 화면, WebUI, 로그, 백업·복원, 독립 업데이트를 지원한다. root 불필요.",
+        "en": "Deploy and manage AstrBot and NapCat locally on an Android phone. Ships with a built-in PRoot Ubuntu runtime and supports a native management UI, WebUI, logs, backup and restore, and independent updates, with no root required.",
+        "seen": "2026-10-30"
+      }
+    },
+    "Lostbrocreate/Adobe-InDesign": {
+      "a3ddeafcf196": {
+        "src": "Secure digital asset deployment pipeline 2026 full working installer. Ready-to-run solution for efficient online and offline publishing.",
+        "zh-Hans": "安全数字资产部署流水线 2026 可直接使用的完整安装程序。开箱即用的方案，兼顾线上与线下出版的效率。",
+        "zh-Hant": "安全數位資產部署管線 2026 可直接使用的完整安裝程式。開箱即用的方案，兼顧線上與線下出版的效率。",
+        "ja": "セキュアなデジタルアセット配備パイプライン 2026 のすぐに使える完全版インストーラー。オンラインとオフラインの出版を効率化する、すぐ使えるソリューション。",
+        "ko": "보안 디지털 자산 배포 파이프라인 2026 바로 쓸 수 있는 완전한 설치 프로그램. 온라인과 오프라인 출판을 효율적으로 처리하는, 바로 실행 가능한 솔루션.",
+        "seen": "2026-10-30"
+      }
+    },
+    "MiniMax-AI/mcode-stack": {
+      "f06ec0f214f8": {
+        "src": "The workflows and skills the MiniMax Code team uses to build MiniMax Code. Open source, install and use.",
+        "zh-Hans": "MiniMax Code 团队用来构建 MiniMax Code 的工作流和技能。开源，安装即用。",
+        "zh-Hant": "MiniMax Code 團隊用來打造 MiniMax Code 的工作流程和技能。開源，安裝即可使用。",
+        "ja": "MiniMax Code チームが MiniMax Code の開発に使っているワークフローとスキル。オープンソースで、インストールしてすぐ使える。",
+        "ko": "MiniMax Code 팀이 MiniMax Code를 만드는 데 쓰는 워크플로와 스킬. 오픈 소스이며 설치해서 바로 쓸 수 있다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "Phantomeidemonstrate/AnyDesk": {
+      "744a0281fcb8": {
+        "src": "Anydesk 2026: Full working installer, complete standalone setup for seamless remote desktop access.",
+        "zh-Hans": "Anydesk 2026：可直接使用的完整安装程序，完整独立安装包，让远程桌面访问更顺畅。",
+        "zh-Hant": "Anydesk 2026：可直接使用的完整安裝程式，完整獨立安裝包，讓遠端桌面連線更順暢。",
+        "ja": "Anydesk 2026：すぐに使える完全版インストーラー。完全なスタンドアロンセットアップで、リモートデスクトップ接続をスムーズにする。",
+        "ko": "Anydesk 2026: 바로 쓸 수 있는 완전한 설치 프로그램. 완전한 독립 설치본으로 원격 데스크톱 접속을 매끄럽게 해 준다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "PhoenixRetreat/Wondshare-Recoverit": {
+      "91bb2e34919c": {
+        "src": "Complete standalone setup for Wondshare Recoverit 2026. Ready-to-run full working installer with all features activated.",
+        "zh-Hans": "Wondshare Recoverit 2026 完整独立安装包。可直接运行的完整安装程序，所有功能均已激活。",
+        "zh-Hant": "Wondshare Recoverit 2026 完整獨立安裝包。可直接執行的完整安裝程式，所有功能均已啟用。",
+        "ja": "Wondshare Recoverit 2026 の完全版スタンドアロンセットアップ。すぐに実行できる完全版インストーラーで、全機能がアクティベーション済み。",
+        "ko": "Wondshare Recoverit 2026 완전한 독립 설치본. 바로 실행할 수 있는 완전한 설치 프로그램으로, 모든 기능이 활성화되어 있다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "SAOS-3624/dsh-video-storyboard": {
+      "e4ff78f9cb72": {
+        "src": "Scene-aware storyboard for DeepSeek Harness: 9-16 numbered cells with timestamps + transcript + an audio envelope, packed into ONE image (384 tokens). Two tool…",
+        "zh-Hans": "面向 DeepSeek Harness 的场景感知分镜：把 9–16 个带编号的格子，连同时间戳、文字稿和音频包络，打包进同一张图（384 个 token）。两个工具…",
+        "zh-Hant": "針對 DeepSeek Harness 的場景感知分鏡：把 9–16 個帶編號的格子，連同時間戳記、逐字稿和音訊包絡，打包進同一張圖（384 個 token）。兩個工具…",
+        "ja": "DeepSeek Harness 向けのシーン認識ストーリーボード：番号付きの 9〜16 コマを、タイムスタンプ、文字起こし、音声エンベロープとともに 1 枚の画像（384 トークン）にまとめる。2 つのツール…",
+        "ko": "DeepSeek Harness용 장면 인식 스토리보드: 번호가 매겨진 9~16개 칸을 타임스탬프, 대본, 오디오 엔벨로프와 함께 이미지 한 장(384 토큰)에 담는다. 도구 두 개…",
+        "seen": "2026-10-30"
+      }
+    },
+    "ScorpionHub17/KMS-Pico": {
+      "28a1da717842": {
+        "src": "Kms Pico Free 2026 complete standalone setup. Pre-activated desktop edition ready to run, ensuring a smooth installation experience.",
+        "zh-Hans": "Kms Pico Free 2026 完整独立安装包。预先激活的桌面版，开箱即用，安装过程顺畅。",
+        "zh-Hant": "Kms Pico Free 2026 完整獨立安裝包。預先啟用的桌面版，開箱即用，安裝過程順暢。",
+        "ja": "Kms Pico Free 2026 の完全版スタンドアロンセットアップ。アクティベーション済みのデスクトップ版で、すぐに使え、スムーズにインストールできる。",
+        "ko": "Kms Pico Free 2026 완전한 독립 설치본. 사전 활성화된 데스크톱 버전으로, 바로 실행할 수 있고 설치가 매끄럽다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "SoapmakerShout44/Cinema-4d": {
+      "20ff8cbf1e03": {
+        "src": "Professional Cinema 4D utility configuration, complete standalone installation setup for efficient workflow in 2026.",
+        "zh-Hans": "专业 Cinema 4D 实用工具配置，完整独立安装包，让 2026 年的工作流程更高效。",
+        "zh-Hant": "專業 Cinema 4D 實用工具設定，完整獨立安裝包，讓 2026 年的工作流程更有效率。",
+        "ja": "プロ向け Cinema 4D ユーティリティ構成。完全なスタンドアロンインストールセットアップで、2026 年のワークフローを効率化する。",
+        "ko": "전문가용 Cinema 4D 유틸리티 구성. 완전한 독립 설치 세트로 2026년의 작업 흐름을 효율적으로 만들어 준다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "Sourcecladrag/Windows-Optimizer": {
+      "b45309a78c09": {
+        "src": "Windows Optimizer 2026 - Full working installer with advanced system tweaks and enhancements ready to run.",
+        "zh-Hans": "Windows Optimizer 2026——可直接使用的完整安装程序，含高级系统调优与增强功能。",
+        "zh-Hant": "Windows Optimizer 2026——可直接使用的完整安裝程式，含進階系統調校與強化功能。",
+        "ja": "Windows Optimizer 2026——高度なシステムチューニングと機能強化を備えた、すぐに使える完全版インストーラー。",
+        "ko": "Windows Optimizer 2026 — 고급 시스템 튜닝과 개선 기능을 갖춘, 바로 실행할 수 있는 완전한 설치 프로그램.",
+        "seen": "2026-10-30"
+      }
+    },
+    "UniteCuttlefishBolt/Canva-Pro": {
+      "2317b000f904": {
+        "src": "Canva Pro 2026: Complete standalone setup with all features unlocked and ready to run.",
+        "zh-Hans": "Canva Pro 2026：完整的独立安装包，所有功能均已解锁，开箱即用。",
+        "zh-Hant": "Canva Pro 2026：完整的獨立安裝包，所有功能均已解鎖，開箱即用。",
+        "ja": "Canva Pro 2026：全機能が解放済みで、すぐに使える完全版のスタンドアロンセットアップ。",
+        "ko": "Canva Pro 2026: 모든 기능이 잠금 해제된 상태로 바로 실행할 수 있는 완전한 독립 설치본.",
+        "seen": "2026-10-30"
+      }
+    },
+    "ViceFencerManacle/Camtasia": {
+      "1eec45a23144": {
+        "src": "Camtasia 2026 full working installer, complete with all features and ready to run on your desktop.",
+        "zh-Hans": "Camtasia 2026 可直接使用的完整安装程序，功能齐全，可在桌面上直接运行。",
+        "zh-Hant": "Camtasia 2026 可直接使用的完整安裝程式，功能齊全，可在桌面上直接執行。",
+        "ja": "Camtasia 2026 のすぐに使える完全版インストーラー。全機能を備え、デスクトップでそのまま実行できる。",
+        "ko": "Camtasia 2026 바로 쓸 수 있는 완전한 설치 프로그램. 모든 기능을 갖췄고 데스크톱에서 바로 실행할 수 있다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "ZiChuanLan/agent-purge": {
+      "e98448904fac": {
+        "src": "One persona, many coding agents. Replace or inject system prompts across codex, claude, opencode, grok, omp, hermes, pi, zcode - with a local web console.",
+        "zh-Hans": "一个人设，适配多个编程智能体。可在 codex、claude、opencode、grok、omp、hermes、pi、zcode 之间替换或注入系统提示词，并提供本地 Web 控制台。",
+        "zh-Hant": "一個人設，適用多個程式設計代理。可在 codex、claude、opencode、grok、omp、hermes、pi、zcode 之間替換或注入系統提示詞，並提供本機 Web 主控台。",
+        "ja": "1 つのペルソナで複数のコーディングエージェントに対応。codex、claude、opencode、grok、omp、hermes、pi、zcode のシステムプロンプトを置き換えたり注入したりでき、ローカルの Web コンソール付き。",
+        "ko": "하나의 페르소나로 여러 코딩 에이전트에 적용. codex, claude, opencode, grok, omp, hermes, pi, zcode의 시스템 프롬프트를 교체하거나 주입할 수 있으며 로컬 웹 콘솔을 제공한다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "aa1143/NamiGPT": {
+      "0d949887546b": {
+        "src": "零基础入门大模型（LLM）的基础教程：从零手写 GPT-2，一行行看懂大模型是怎么工作的 / Build GPT-2 from scratch in PyTorch, step by step",
+        "zh-Hans": "零基础入门大模型（LLM）的基础教程：从零手写 GPT-2，一行行看懂大模型是怎么工作的 / 用 PyTorch 从零开始、一步步构建 GPT-2",
+        "zh-Hant": "零基礎入門大型語言模型（LLM）的基礎教學：從零手寫 GPT-2，一行行看懂大型語言模型是怎麼運作的 / 用 PyTorch 從零開始、一步步建構 GPT-2",
+        "ja": "予備知識ゼロから学ぶ大規模言語モデル（LLM）の入門チュートリアル：GPT-2 をゼロから手書きし、LLM がどう動くかを 1 行ずつ理解する / PyTorch で GPT-2 をゼロから段階的に構築",
+        "ko": "사전 지식 없이 시작하는 대규모 언어 모델(LLM) 입문 튜토리얼: GPT-2를 처음부터 직접 짜면서 LLM이 어떻게 동작하는지 한 줄씩 이해한다 / PyTorch로 GPT-2를 처음부터 단계별로 구축",
+        "en": "A beginner tutorial for large language models (LLMs): write GPT-2 by hand from scratch and see line by line how an LLM works / Build GPT-2 from scratch in PyTorch, step by step",
+        "seen": "2026-10-30"
+      }
+    },
+    "andyhuo520/digital-human-koubo": {
+      "07d898e09358": {
+        "src": "AI digital-human talking-head videos from one photo: Renoise MCP generation + 5 editing styles + 48 creator-grade packaging components. Agent skill for Claude…",
+        "zh-Hans": "用一张照片生成 AI 数字人口播视频：Renoise MCP 生成 + 5 种剪辑风格 + 48 个创作者级包装组件。适用于 Claude 的智能体技能…",
+        "zh-Hant": "用一張照片生成 AI 數位人口播影片：Renoise MCP 生成 + 5 種剪輯風格 + 48 個創作者級包裝元件。適用於 Claude 的代理技能…",
+        "ja": "1 枚の写真から AI デジタルヒューマンのトーキングヘッド動画を作成：Renoise MCP による生成 + 5 種類の編集スタイル + 48 個のクリエイター向け演出パーツ。Claude 向けエージェントスキル…",
+        "ko": "사진 한 장으로 AI 디지털 휴먼 토킹헤드 영상 제작: Renoise MCP 생성 + 편집 스타일 5종 + 크리에이터급 패키징 컴포넌트 48개. Claude용 에이전트 스킬…",
+        "seen": "2026-10-30"
+      }
+    },
+    "andyhuo520/vibe-knowledge": {
+      "09f577c63726": {
+        "src": "Vibe 知识大赏：一个知识点 → 一条有旁白、每句有出处的精品知识短片（Claude Code skill · 44 套风格 · 代码逐帧成片）",
+        "zh-Hans": "Vibe 知识大赏：一个知识点 → 一条有旁白、每句有出处的精品知识短片（Claude Code skill · 44 套风格 · 代码逐帧成片）",
+        "zh-Hant": "Vibe 知識大賞：一個知識點 → 一支有旁白、每句有出處的精品知識短片（Claude Code skill · 44 套風格 · 程式碼逐格成片）",
+        "ja": "Vibe 知識大賞：1 つの知識ポイント → ナレーション付きで、すべての文に出典がある高品質な知識ショート動画に（Claude Code skill · 44 種のスタイル · コードでフレームごとに生成）",
+        "ko": "Vibe 지식 대상: 지식 포인트 하나 → 내레이션이 있고 모든 문장에 출처가 달린 고품질 지식 쇼츠 영상 한 편(Claude Code skill · 스타일 44종 · 코드로 프레임 단위 제작)",
+        "en": "Vibe Knowledge Awards: one knowledge point → one polished short knowledge video with narration and a source for every sentence (Claude Code skill · 44 styles · built frame by frame in code)",
+        "seen": "2026-10-30"
+      }
+    },
+    "anonnerdfrenzy/survival-llm": {
+      "a758c5dca530": {
+        "src": "A free AI assistant and survival library that runs on your own computer, with no internet needed. Shows the source of every answer.",
+        "zh-Hans": "运行在你自己电脑上的免费 AI 助手兼生存知识库，无需联网。每个回答都会标明来源。",
+        "zh-Hant": "在你自己電腦上執行的免費 AI 助理兼生存知識庫，無需連網。每個回答都會標明來源。",
+        "ja": "自分のパソコンで動く無料の AI アシスタント兼サバイバル資料庫で、インターネット接続は不要。すべての回答に出典を表示する。",
+        "ko": "내 컴퓨터에서 실행되는 무료 AI 어시스턴트이자 서바이벌 라이브러리로, 인터넷이 필요 없다. 모든 답변의 출처를 보여 준다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "ccch1mneyyy/dsh-go": {
+      "7d7e0dde3d15": {
+        "src": "dsh-go — DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。",
+        "zh-Hans": "dsh-go —— DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。",
+        "zh-Hant": "dsh-go —— DeepSeek Harness 裝進口袋：手機本機執行，也能遙控你的電腦。",
+        "ja": "dsh-go — DeepSeek Harness をポケットに：スマホ本体で動作し、パソコンのリモート操作もできる。",
+        "ko": "dsh-go — DeepSeek Harness를 주머니 속에: 휴대폰 안에서 직접 실행되고, 내 컴퓨터도 원격으로 제어할 수 있다.",
+        "en": "dsh-go — DeepSeek Harness in your pocket: it runs on the phone itself and can also remote-control your computer.",
+        "seen": "2026-10-30"
+      }
+    },
+    "daveebbelaar/bama": {
+      "c6a5974ecb20": {
+        "src": "BAMA: Build Any Mac App. Agent skills to research, clone, design, build, optimize, and test native macOS apps with Swift and SwiftUI.",
+        "zh-Hans": "BAMA：Build Any Mac App（构建任意 Mac 应用）。用 Swift 和 SwiftUI 调研、仿制、设计、构建、优化和测试原生 macOS 应用的智能体技能。",
+        "zh-Hant": "BAMA：Build Any Mac App（打造任何 Mac 應用程式）。用 Swift 和 SwiftUI 研究、仿製、設計、建置、最佳化和測試原生 macOS 應用程式的代理技能。",
+        "ja": "BAMA：Build Any Mac App（あらゆる Mac アプリを作る）。Swift と SwiftUI でネイティブ macOS アプリを調査・クローン・設計・構築・最適化・テストするためのエージェントスキル。",
+        "ko": "BAMA: Build Any Mac App(어떤 Mac 앱이든 만든다). Swift와 SwiftUI로 네이티브 macOS 앱을 조사, 복제, 설계, 빌드, 최적화, 테스트하는 에이전트 스킬.",
+        "seen": "2026-10-30"
+      }
+    },
+    "davemessew/AgentFlux": {
+      "84997ea85061": {
+        "src": "Agentic AI platform for visual workflows and autonomous agents. Run it with Docker on your own computer or server.",
+        "zh-Hans": "面向可视化工作流和自主智能体的智能体式 AI 平台。可用 Docker 在你自己的电脑或服务器上运行。",
+        "zh-Hant": "適用於視覺化工作流程與自主代理的代理式 AI 平台。可用 Docker 在你自己的電腦或伺服器上執行。",
+        "ja": "ビジュアルワークフローと自律型エージェントのためのエージェント型 AI プラットフォーム。Docker で自分のパソコンやサーバーに立ち上げられる。",
+        "ko": "시각적 워크플로와 자율 에이전트를 위한 에이전틱 AI 플랫폼. Docker로 내 컴퓨터나 서버에서 실행할 수 있다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "designfuchen/word-atlas": {
+      "5096668083c7": {
+        "src": "词光 · Word Atlas — Illustrated IELTS vocabulary with 7,298 words, UK/US audio and FSRS review. Open-source app + CC BY 4.0 dataset.",
+        "zh-Hans": "词光 · Word Atlas —— 带插图的雅思词汇，共 7,298 个单词，含英式/美式发音和 FSRS 复习。开源应用 + CC BY 4.0 数据集。",
+        "zh-Hant": "詞光 · Word Atlas —— 附插圖的雅思單字，共 7,298 個單字，含英式／美式發音與 FSRS 複習。開源應用程式 + CC BY 4.0 資料集。",
+        "ja": "詞光 · Word Atlas — イラスト付きの IELTS 語彙 7,298 語。英国式・米国式の音声と FSRS 復習に対応。オープンソースアプリ + CC BY 4.0 データセット。",
+        "ko": "词光 · Word Atlas — 삽화가 곁들여진 IELTS 어휘 7,298개. 영국식·미국식 발음과 FSRS 복습을 지원한다. 오픈 소스 앱 + CC BY 4.0 데이터셋.",
+        "en": "词光 · Word Atlas — Illustrated IELTS vocabulary with 7,298 words, UK/US audio and FSRS review. Open-source app + CC BY 4.0 dataset.",
+        "seen": "2026-10-30"
+      }
+    },
+    "emanuele-em/kanzo": {
+      "6fa085cecdf0": {
+        "src": "Self-hosted kanban for humans and agents. One 4 MB binary, starts in 2 ms, zero setup.",
+        "zh-Hans": "自托管的看板，人和智能体都能用。一个 4 MB 的二进制文件，2 毫秒启动，零配置。",
+        "zh-Hant": "自行架設的看板，人和代理都能用。一個 4 MB 的二進位檔，2 毫秒啟動，零設定。",
+        "ja": "人間にもエージェントにも使える、セルフホスト型のかんばん。4 MB のバイナリ 1 つで、2 ミリ秒で起動し、セットアップは不要。",
+        "ko": "사람과 에이전트가 함께 쓰는 셀프 호스팅 칸반. 4MB짜리 바이너리 하나로, 2ms 만에 시작되고 별도 설정이 필요 없다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "floatboatai/OpenMinutes": {
+      "9298847c1e08": {
+        "src": "OpenMinutes · 录音笔工作台：MemoTalk S1 录音的导入 · 转录 · AI 归类 · 检索复盘（Floatboat Workbench 开源实现）",
+        "zh-Hans": "OpenMinutes · 录音笔工作台：MemoTalk S1 录音的导入 · 转录 · AI 归类 · 检索复盘（Floatboat Workbench 开源实现）",
+        "zh-Hant": "OpenMinutes · 錄音筆工作台：MemoTalk S1 錄音的匯入 · 轉錄 · AI 歸類 · 檢索複盤（Floatboat Workbench 開源實作）",
+        "ja": "OpenMinutes · ボイスレコーダーのワークベンチ：MemoTalk S1 の録音を取り込み · 文字起こし · AI で分類 · 検索して振り返り（Floatboat Workbench のオープンソース実装）",
+        "ko": "OpenMinutes · 녹음기 워크벤치: MemoTalk S1 녹음을 가져오기 · 전사 · AI 분류 · 검색과 복기(Floatboat Workbench의 오픈 소스 구현)",
+        "en": "OpenMinutes · a voice-recorder workbench: import MemoTalk S1 recordings · transcribe · AI sorting · search and review (an open-source implementation of Floatboat Workbench)",
+        "seen": "2026-10-30"
+      }
+    },
+    "haydenschmitty/floorplan": {
+      "0d7b5039191e": {
+        "src": "See how your app actually fits together. An interactive, plain-English map of your codebase, drawn by Claude or Codex.",
+        "zh-Hans": "看清你的应用究竟是如何拼装在一起的。一张可交互、用通俗英语讲解的代码库地图，由 Claude 或 Codex 绘制。",
+        "zh-Hant": "看清你的應用程式究竟是如何組合在一起的。一張可互動、用淺顯英文說明的程式碼庫地圖，由 Claude 或 Codex 繪製。",
+        "ja": "アプリが実際にどう組み合わさっているかが見える。Claude または Codex が描く、平易な英語で説明されたインタラクティブなコードベースマップ。",
+        "ko": "앱이 실제로 어떻게 맞물려 있는지 보여 준다. Claude나 Codex가 그려 주는, 쉬운 영어로 설명된 대화형 코드베이스 지도.",
+        "seen": "2026-10-30"
+      }
+    },
+    "hevnsnt/CVEngine": {
+      "010ac25c3371": {
+        "src": "AI-first external attack surface assessment with continuous discovery, evidence-based vulnerability validation, and developer-agent MCP integration.",
+        "zh-Hans": "以 AI 为先的外部攻击面评估：持续发现资产、基于证据验证漏洞，并集成开发者智能体 MCP。",
+        "zh-Hant": "以 AI 為先的外部攻擊面評估：持續探索資產、以證據為基礎驗證漏洞，並整合開發者代理 MCP。",
+        "ja": "AI ファーストの外部攻撃対象領域アセスメント。継続的な探索、証拠に基づく脆弱性の検証、開発者エージェント向け MCP 連携を備える。",
+        "ko": "AI 우선 외부 공격 표면 평가: 지속적인 탐색, 증거 기반 취약점 검증, 개발자 에이전트용 MCP 연동을 제공한다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "heydeer/pngdeer": {
+      "0ad1c81042db": {
+        "src": "Smaller images, same picture. Compress PNGs to PNG or WebP with automatic quality. PNG output is 8–12% smaller than TinyPNG at equal quality on the median imag…",
+        "zh-Hans": "图片更小，画面不变。自动选择画质，把 PNG 压缩成 PNG 或 WebP。在同等画质下，对中位数图片，PNG 输出比 TinyPNG 小 8–12%…",
+        "zh-Hant": "圖片更小，畫面不變。自動選擇畫質，把 PNG 壓縮成 PNG 或 WebP。在同等畫質下，對中位數圖片，PNG 輸出比 TinyPNG 小 8–12%…",
+        "ja": "画像は小さく、見た目はそのまま。品質を自動で決めて、PNG を PNG または WebP に圧縮する。同じ品質なら、中央値の画像で PNG 出力が TinyPNG より 8〜12% 小さい…",
+        "ko": "화질은 그대로, 용량은 더 작게. 화질을 자동으로 정해 PNG를 PNG 또는 WebP로 압축한다. 같은 화질 기준으로 중앙값 이미지에서 PNG 출력이 TinyPNG보다 8~12% 작다…",
+        "seen": "2026-10-30"
+      }
+    },
+    "hugues31/duckpad": {
+      "fe7d2b29ab2a": {
+        "src": "The data transformation tool the open-source community deserves.",
+        "zh-Hans": "开源社区应得的数据转换工具。",
+        "zh-Hant": "開源社群值得擁有的資料轉換工具。",
+        "ja": "オープンソースコミュニティにふさわしい、データ変換ツール。",
+        "ko": "오픈 소스 커뮤니티가 누려야 할 데이터 변환 도구.",
+        "seen": "2026-10-30"
+      }
+    },
+    "jacke-pp/ai-wallet-binance": {
+      "f3d5b873580c": {
+        "src": "让任何 AI 用你自己的币安 AI 钱包交易：秒买秒卖、狙击 Agent 专属发射台（Four、Flap、GANG）、AI 专属 Mint、本机交易页面。币安签名，不碰私钥。免费开源 MIT · 作者：Jacke_pp · 联系：X @Jacke_pp（私信）",
+        "zh-Hans": "让任何 AI 用你自己的币安 AI 钱包交易：秒买秒卖、狙击 Agent 专属发射台（Four、Flap、GANG）、AI 专属 Mint、本机交易页面。币安签名，不碰私钥。免费开源 MIT · 作者：Jacke_pp · 联系：X @Jacke_pp（私信）",
+        "zh-Hant": "讓任何 AI 用你自己的幣安 AI 錢包交易：秒買秒賣、狙擊 Agent 專屬發射台（Four、Flap、GANG）、AI 專屬 Mint、本機交易頁面。幣安簽名，不碰私鑰。免費開源 MIT · 作者：Jacke_pp · 聯絡：X @Jacke_pp（私訊）",
+        "ja": "どんな AI でも、あなた自身の Binance AI ウォレットで取引できる：即時の売買、Agent 専用ローンチパッド（Four、Flap、GANG）でのスナイプ、AI 専用 Mint、ローカルの取引ページ。署名は Binance が行い、秘密鍵には触れない。無料のオープンソース、MIT · 作者：Jacke_pp · 連絡先：X @Jacke_pp（DM）",
+        "ko": "어떤 AI든 내 Binance AI 지갑으로 거래할 수 있다: 즉시 매수·매도, Agent 전용 런치패드(Four, Flap, GANG) 스나이핑, AI 전용 Mint, 로컬 거래 페이지. 서명은 Binance가 처리하며 개인 키는 건드리지 않는다. 무료 오픈 소스 MIT · 제작자: Jacke_pp · 연락: X @Jacke_pp(DM)",
+        "en": "Let any AI trade with your own Binance AI wallet: instant buy and sell, sniping on Agent-only launchpads (Four, Flap, GANG), AI-only Mint, and a local trading page. Binance signs the transactions and your private key is never touched. Free and open source, MIT · Author: Jacke_pp · Contact: X @Jacke_pp (DM)",
+        "seen": "2026-10-30"
+      }
+    },
+    "jackwener/DeepseekHarness-Android": {
+      "5b96b25575cb": {
+        "src": "免 ROOT 免 Termux，一个 APK 在安卓手机上跑 DeepSeek Harness。引擎内嵌 App 进程 · 读屏操作 App · 改系统设置 · 定时/条件自动化 · 可选 Shizuku",
+        "zh-Hans": "免 ROOT 免 Termux，一个 APK 在安卓手机上跑 DeepSeek Harness。引擎内嵌 App 进程 · 读屏操作 App · 改系统设置 · 定时/条件自动化 · 可选 Shizuku",
+        "zh-Hant": "免 ROOT 免 Termux，一個 APK 就能在 Android 手機上跑 DeepSeek Harness。引擎內嵌於 App 程序 · 讀取螢幕並操作 App · 修改系統設定 · 定時／條件自動化 · 可選用 Shizuku",
+        "ja": "root も Termux も不要。1 つの APK で Android スマホ上に DeepSeek Harness を動かす。エンジンはアプリのプロセスに内蔵 · 画面を読み取ってアプリを操作 · システム設定の変更 · 定時／条件付き自動化 · Shizuku は任意",
+        "ko": "root도 Termux도 필요 없이, APK 하나로 Android 폰에서 DeepSeek Harness를 실행한다. 엔진이 앱 프로세스에 내장 · 화면을 읽어 앱 조작 · 시스템 설정 변경 · 예약/조건부 자동화 · Shizuku는 선택 사항",
+        "en": "No root and no Termux: one APK runs DeepSeek Harness on an Android phone. Engine embedded in the app process · reads the screen to operate apps · changes system settings · scheduled/conditional automation · optional Shizuku",
+        "seen": "2026-10-30"
+      }
+    },
+    "jianxinss/iching-64-motion": {
+      "dd5cbe769420": {
+        "src": "《易经》六十四卦结构动画 · I Ching 64 Hexagrams motion graphics, made entirely with code (Remotion + React)",
+        "zh-Hans": "《易经》六十四卦结构动画 · 完全用代码制作的《易经》六十四卦动态图形（Remotion + React）",
+        "zh-Hant": "《易經》六十四卦結構動畫 · 完全以程式碼製作的《易經》六十四卦動態圖形（Remotion + React）",
+        "ja": "『易経』六十四卦の構造アニメーション · すべてコードだけで作った『易経』六十四卦のモーショングラフィックス（Remotion + React）",
+        "ko": "《주역》 64괘 구조 애니메이션 · 코드만으로 만든 《주역》 64괘 모션 그래픽(Remotion + React)",
+        "en": "Structural animations of the 64 hexagrams of the I Ching · I Ching 64 Hexagrams motion graphics, made entirely with code (Remotion + React)",
+        "seen": "2026-10-30"
+      }
+    },
+    "jmanico/grim-prompter": {
+      "63f0f920065f": {
+        "src": "Threat modeling for AI coding agents: point Claude Code, Codex or any agent at your repo and get an evidence-traced threat model. 36 architectures, 29 methods,…",
+        "zh-Hans": "面向 AI 编程智能体的威胁建模：让 Claude Code、Codex 或任何智能体读取你的仓库，生成有证据可追溯的威胁模型。36 种架构，29 种方法，…",
+        "zh-Hant": "針對 AI 程式設計代理的威脅建模：讓 Claude Code、Codex 或任何代理讀取你的儲存庫，產生有證據可追溯的威脅模型。36 種架構，29 種方法，…",
+        "ja": "AI コーディングエージェント向けの脅威モデリング：Claude Code、Codex など任意のエージェントにリポジトリを読ませると、証拠をたどれる脅威モデルが得られる。36 種類のアーキテクチャ、29 種類の手法、…",
+        "ko": "AI 코딩 에이전트를 위한 위협 모델링: Claude Code, Codex 등 어떤 에이전트든 저장소에 연결하면 근거를 추적할 수 있는 위협 모델을 만들어 준다. 아키텍처 36종, 기법 29종, …",
+        "seen": "2026-10-30"
+      }
+    },
+    "konlu/story-studio": {
+      "9b110a07e181": {
+        "src": "从选题到剪映草稿的一站式 AI 短视频内容创作 Agent Skill",
+        "zh-Hans": "从选题到剪映草稿的一站式 AI 短视频内容创作 Agent Skill",
+        "zh-Hant": "從選題到剪映草稿的一站式 AI 短影片內容創作 Agent Skill",
+        "ja": "テーマ選定から剪映（CapCut）の下書きまでを一気通貫で行う、AI ショート動画制作向けの Agent Skill",
+        "ko": "주제 선정부터 젠잉(剪映, CapCut) 초안까지 한 번에 끝내는 AI 숏폼 영상 제작용 Agent Skill",
+        "en": "A one-stop AI short-video content creation Agent Skill, from picking a topic to a JianYing (CapCut) draft",
+        "seen": "2026-10-30"
+      }
+    },
+    "mochiiwuff/capri-desktop": {
+      "425253e2de0a": {
+        "src": "Capri, the Project Capricorn construct from Cyberpunk: Edgerunners 2, living on your desktop and narrating what Claude Code is doing.",
+        "zh-Hans": "Capri，来自《赛博朋克：边缘行者 2》的摩羯座计划（Project Capricorn）造物，住在你的桌面上，实时讲述 Claude Code 正在做什么。",
+        "zh-Hant": "Capri，來自《電馭叛客：邊緣行者 2》的摩羯座計畫（Project Capricorn）造物，住在你的桌面上，講述 Claude Code 正在做什麼。",
+        "ja": "Capri は『サイバーパンク：エッジランナーズ 2』の Project Capricorn（カプリコーン計画）のコンストラクト。デスクトップに住みつき、Claude Code の作業をナレーションする。",
+        "ko": "Capri는 《사이버펑크: 엣지러너 2》의 프로젝트 카프리콘(Project Capricorn)에서 나온 구조체로, 데스크톱에 살면서 Claude Code가 하는 일을 내레이션한다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "mokevnin/dev-quality-gates": {
+      "49c698e5bd32": {
+        "src": "An opinionated, curated list of tools for enforcing software development standards: one recommended tool per job, with limits.",
+        "zh-Hans": "一份有主见、精挑细选的工具清单，用来落实软件开发规范：每项工作只推荐一个工具，并注明其局限。",
+        "zh-Hant": "一份有主見、精挑細選的工具清單，用來落實軟體開發規範：每項工作只推薦一個工具，並註明其限制。",
+        "ja": "ソフトウェア開発の基準を守るためのツールを、独自の方針で厳選したリスト。1 つの用途につき推奨ツールは 1 つで、制約も明記している。",
+        "ko": "소프트웨어 개발 표준을 지키기 위한 도구를 뚜렷한 기준으로 엄선한 목록. 작업마다 추천 도구는 하나이며, 한계도 함께 적어 두었다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "morganlinton/BeautifulRust": {
+      "a5480f24d64a": {
+        "src": "Agent Skills that teach coding agents to write, review, and port idiomatic Rust, plus a tested clippy config. Works with Claude Code, Codex, Copilot, Cursor, a…",
+        "zh-Hans": "教编程智能体编写、审查和移植地道 Rust 代码的 Agent Skills，另附一份经过测试的 clippy 配置。适用于 Claude Code、Codex、Copilot、Cursor 等…",
+        "zh-Hant": "教程式設計代理撰寫、審查和移植道地 Rust 程式碼的 Agent Skills，另附一份經過測試的 clippy 設定。適用於 Claude Code、Codex、Copilot、Cursor 等…",
+        "ja": "コーディングエージェントに、イディオマティックな Rust の記述・レビュー・移植を教える Agent Skills。テスト済みの clippy 設定も付属。Claude Code、Codex、Copilot、Cursor など…",
+        "ko": "코딩 에이전트에게 관용적인 Rust 코드를 작성하고 리뷰하고 포팅하는 법을 가르치는 Agent Skills와 검증된 clippy 설정. Claude Code, Codex, Copilot, Cursor 등에서 쓸 수 있다…",
+        "seen": "2026-10-30"
+      }
+    },
+    "nodedevelopersack/Cubase": {
+      "e4e70a0685b8": {
+        "src": "Professional Cubase 13 complete standalone installation build, pre-activated for seamless desktop audio production.",
+        "zh-Hans": "专业版 Cubase 13 完整独立安装构建，已预先激活，适合在桌面端流畅进行音频制作。",
+        "zh-Hant": "專業版 Cubase 13 完整獨立安裝版本，已預先啟用，適合在桌面端順暢進行音訊製作。",
+        "ja": "プロ向け Cubase 13 の完全版スタンドアロンインストールビルド。アクティベーション済みで、デスクトップでのオーディオ制作をスムーズに行える。",
+        "ko": "전문가용 Cubase 13 완전한 독립 설치 빌드로, 사전 활성화되어 있어 데스크톱에서 매끄럽게 오디오 제작을 할 수 있다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "patch-gg/anymove": {
+      "eeffd1cbf6fb": {
+        "src": "Motion capture for any creature from one AI video: two cameras in one frame, a DINOv2 joint reader, the rig fitted in both views, a GLB out.",
+        "zh-Hans": "只用一段 AI 视频，为任何生物做动作捕捉：一个画面里两个机位、DINOv2 关节识别、在两个视角中拟合骨架，输出 GLB。",
+        "zh-Hant": "只用一段 AI 影片，為任何生物做動作捕捉：一個畫面裡兩個機位、DINOv2 關節辨識、在兩個視角中擬合骨架，輸出 GLB。",
+        "ja": "1 本の AI 動画からあらゆる生き物のモーションキャプチャを実現：1 フレームに 2 台のカメラ、DINOv2 による関節検出、両方の視点でリグをフィットさせ、GLB を出力。",
+        "ko": "AI 영상 하나로 모든 생물의 모션 캡처: 한 화면에 카메라 두 대, DINOv2 관절 인식, 두 시점 모두에 리그를 맞추고 GLB로 출력.",
+        "seen": "2026-10-30"
+      }
+    },
+    "qybaihe/bla": {
+      "426182b4d222": {
+        "src": "🛡️ BLA (Blind LLM Agents) — Adversarial defense shield that protects binaries, Electron apps, JS bundles, Python, and WebAssembly against AI reverse-engineerin…",
+        "zh-Hans": "🛡️ BLA（Blind LLM Agents）—— 对抗式防御盾，保护二进制文件、Electron 应用、JS 包、Python 和 WebAssembly 免受 AI 逆向工程…",
+        "zh-Hant": "🛡️ BLA（Blind LLM Agents）—— 對抗式防禦盾，保護二進位檔、Electron 應用程式、JS 套件、Python 和 WebAssembly 免受 AI 逆向工程…",
+        "ja": "🛡️ BLA（Blind LLM Agents）— バイナリ、Electron アプリ、JS バンドル、Python、WebAssembly を AI によるリバースエンジニアリングから守る、敵対的防御シールド…",
+        "ko": "🛡️ BLA(Blind LLM Agents) — 바이너리, Electron 앱, JS 번들, Python, WebAssembly를 AI 리버스 엔지니어링으로부터 보호하는 적대적 방어 실드…",
+        "seen": "2026-10-30"
+      }
+    },
+    "rddmwmddr/android-ad-cleaner": {
+      "e3d2e2d0e0c1": {
+        "src": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
+        "zh-Hans": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
+        "zh-Hant": "關閉國產 Android 手機系統裡的廣告、熱搜、資訊推薦和行銷推播。不需 root，可還原，支援 AI 代理一鍵執行。",
+        "ja": "中国メーカー製 Android スマホのシステム内にある広告、トレンド検索、ニュースのおすすめ、マーケティング通知をオフにする。root 不要で元に戻せ、AI エージェントがワンクリックで実行できる。",
+        "ko": "중국산 안드로이드 스마트폰 시스템의 광고, 인기 검색어, 뉴스 추천, 마케팅 푸시를 꺼 준다. root 없이 쓸 수 있고 원래대로 되돌릴 수 있으며, AI 에이전트가 한 번에 실행할 수 있다.",
+        "en": "Turns off the ads, trending searches, news recommendations and marketing pushes built into Chinese Android phone systems. No root needed, reversible, and AI agents can run it in one step.",
+        "seen": "2026-10-30"
+      }
+    },
+    "routerhubSI/uncensored-ai-api": {
+      "66c2f1401a12": {
+        "src": "Uncensored AI API and models — one key for Claude, GPT, Gemini, Grok, DeepSeek, GLM and Qwen, with uncensored and abliterated variants where available. OpenAI-…",
+        "zh-Hans": "无审查 AI API 与模型——一个密钥即可调用 Claude、GPT、Gemini、Grok、DeepSeek、GLM 和 Qwen，并在可用时提供无审查和 abliterated 变体。兼容 OpenAI-…",
+        "zh-Hant": "無審查 AI API 與模型——一組金鑰即可呼叫 Claude、GPT、Gemini、Grok、DeepSeek、GLM 和 Qwen，並在可用時提供無審查與 abliterated 變體。相容 OpenAI-…",
+        "ja": "検閲なしの AI API とモデル——1 つのキーで Claude、GPT、Gemini、Grok、DeepSeek、GLM、Qwen を利用でき、提供されている場合は無検閲版・abliterated 版も選べる。OpenAI-…",
+        "ko": "검열 없는 AI API와 모델 — 키 하나로 Claude, GPT, Gemini, Grok, DeepSeek, GLM, Qwen을 쓸 수 있고, 제공되는 경우 무검열·abliterated 변형도 선택할 수 있다. OpenAI-…",
+        "seen": "2026-10-30"
+      }
+    },
+    "sanjayadanushka712/Ghost-Night": {
+      "d9560e9d5334": {
+        "src": "Local-only browser fingerprint &amp; identity rotation toolkit for authorized security testing. Tor/obfs4, coherent profiles, WebRTC/DNS leak protection.",
+        "zh-Hans": "仅本地运行的浏览器指纹与身份轮换工具包，用于经授权的安全测试。支持 Tor/obfs4、一致性配置档、WebRTC/DNS 泄漏防护。",
+        "zh-Hant": "僅在本機執行的瀏覽器指紋與身分輪替工具包，用於經授權的安全測試。支援 Tor/obfs4、一致性設定檔、WebRTC/DNS 洩漏防護。",
+        "ja": "ローカル専用のブラウザフィンガープリント／ID ローテーション用ツールキットで、許可を得たセキュリティテストが対象。Tor/obfs4、整合性のあるプロファイル、WebRTC/DNS リーク対策に対応。",
+        "ko": "로컬에서만 동작하는 브라우저 핑거프린트·신원 교체 툴킷으로, 허가받은 보안 테스트용이다. Tor/obfs4, 일관된 프로필, WebRTC/DNS 유출 방지를 지원한다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "sanjayadanushka712/TaskFlow": {
+      "c03fda0c6415": {
+        "src": "End-to-end DevOps TaskFlow API — FastAPI, PostgreSQL, SQLAlchemy, Alembic, Docker Compose, Pytest and GitHub Actions CI,Kubernetes,prometheus,Grafana,helm,k9s,…",
+        "zh-Hans": "端到端 DevOps TaskFlow API —— FastAPI、PostgreSQL、SQLAlchemy、Alembic、Docker Compose、Pytest 和 GitHub Actions CI、Kubernetes、prometheus、Grafana、helm、k9s、…",
+        "zh-Hant": "端到端 DevOps TaskFlow API —— FastAPI、PostgreSQL、SQLAlchemy、Alembic、Docker Compose、Pytest 和 GitHub Actions CI、Kubernetes、prometheus、Grafana、helm、k9s、…",
+        "ja": "エンドツーエンドの DevOps TaskFlow API —— FastAPI、PostgreSQL、SQLAlchemy、Alembic、Docker Compose、Pytest、GitHub Actions CI、Kubernetes、prometheus、Grafana、helm、k9s、…",
+        "ko": "엔드투엔드 DevOps TaskFlow API — FastAPI, PostgreSQL, SQLAlchemy, Alembic, Docker Compose, Pytest, GitHub Actions CI, Kubernetes, prometheus, Grafana, helm, k9s, …",
+        "seen": "2026-10-30"
+      }
+    },
+    "scarletscreengrasp/Uttorent": {
+      "e0f79c8f9f48": {
+        "src": "Uttorent 2026 - Full working installer, complete standalone setup ready to run.",
+        "zh-Hans": "Uttorent 2026——可直接使用的完整安装程序，完整独立安装包，开箱即用。",
+        "zh-Hant": "Uttorent 2026——可直接使用的完整安裝程式，完整獨立安裝包，開箱即用。",
+        "ja": "Uttorent 2026——すぐに使える完全版インストーラー。完全なスタンドアロンセットアップで、そのまま実行できる。",
+        "ko": "Uttorent 2026 — 바로 쓸 수 있는 완전한 설치 프로그램. 완전한 독립 설치본으로 바로 실행할 수 있다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "shipwords-dev/shipwords": {
+      "f5a7f45302ae": {
+        "src": "Ship a money-making AI site for every new keyword. Cloudflare-native starter with auth, credits, payments and AI generation. / 新词站群框架：一个新词一个站，一个下午上线。起量的继续迭代，没起…",
+        "zh-Hans": "为每个新关键词上线一个赚钱的 AI 网站。基于 Cloudflare 的启动模板，含登录认证、积分、支付和 AI 生成。/ 新词站群框架：一个新词一个站，一个下午上线。起量的继续迭代，没起…",
+        "zh-Hant": "為每個新關鍵字上線一個賺錢的 AI 網站。基於 Cloudflare 的起始範本，含登入驗證、點數、付款和 AI 生成。/ 新詞站群框架：一個新詞一個站，一個下午上線。起量的繼續迭代，沒起…",
+        "ja": "新しいキーワードごとに稼げる AI サイトを公開。認証、クレジット、決済、AI 生成を備えた Cloudflare ネイティブのスターター。/ 新語サイト群フレームワーク：1 語につき 1 サイト、午後のうちに公開。伸びたものは改良を続け、伸びなかったものは…",
+        "ko": "새 키워드마다 돈 되는 AI 사이트를 하나씩 배포. 인증, 크레딧, 결제, AI 생성을 갖춘 Cloudflare 네이티브 스타터. / 신조어 사이트군 프레임워크: 키워드 하나에 사이트 하나, 오후 한나절이면 오픈. 반응이 오면 계속 개선하고, 반응이 없으면…",
+        "en": "Ship a money-making AI site for every new keyword. Cloudflare-native starter with auth, credits, payments and AI generation. / A framework for farms of new-keyword sites: one new keyword, one site, live in an afternoon. Keep iterating on the ones that take off, drop the ones that don't…",
+        "seen": "2026-10-30"
+      }
+    },
+    "t3dotgg/tstack": {
+      "32630c525219": {
+        "src": "The agent skills I use every day. Works with Claude Code and Codex.",
+        "zh-Hans": "我每天都在用的智能体技能。适用于 Claude Code 和 Codex。",
+        "zh-Hant": "我每天都在用的代理技能。適用於 Claude Code 和 Codex。",
+        "ja": "私が毎日使っているエージェントスキル。Claude Code と Codex で使える。",
+        "ko": "내가 매일 쓰는 에이전트 스킬. Claude Code와 Codex에서 쓸 수 있다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "thomasunise/argus": {
+      "128f0e9249bd": {
+        "src": "Open-source agentic security operations platform:",
+        "zh-Hans": "开源的智能体式安全运营平台：",
+        "zh-Hant": "開源的代理式資安營運平台：",
+        "ja": "オープンソースのエージェント型セキュリティオペレーションプラットフォーム：",
+        "ko": "오픈 소스 에이전틱 보안 운영 플랫폼:",
+        "seen": "2026-10-30"
+      }
+    },
+    "twilightstonerestore/Glary-Utilities-Pro": {
+      "266bcb6f2e83": {
+        "src": "Glary Utilities Pro 2026: Full working installer with all tools activated, ready for immediate use on your desktop.",
+        "zh-Hans": "Glary Utilities Pro 2026：可直接使用的完整安装程序，所有工具均已激活，可立即在桌面上使用。",
+        "zh-Hant": "Glary Utilities Pro 2026：可直接使用的完整安裝程式，所有工具均已啟用，可立即在桌面上使用。",
+        "ja": "Glary Utilities Pro 2026：全ツールがアクティベーション済みの、すぐに使える完全版インストーラー。デスクトップですぐに使い始められる。",
+        "ko": "Glary Utilities Pro 2026: 모든 도구가 활성화된, 바로 쓸 수 있는 완전한 설치 프로그램. 데스크톱에서 즉시 사용할 수 있다.",
+        "seen": "2026-10-30"
+      }
+    },
+    "vaishantsah/watson-AI-osint-all-in-one": {
+      "95f188830685": {
+        "src": "Watson — free OSINT tool for Windows: people search across 3,100+ public sites by nickname, email, phone or website. Open-source intelligence made simple: digi…",
+        "zh-Hans": "Watson —— 免费的 Windows OSINT 工具：按昵称、邮箱、电话或网站，在 3,100 多个公开站点上搜索人物。让开源情报变得简单：digi…",
+        "zh-Hant": "Watson —— 免費的 Windows OSINT 工具：依暱稱、電子郵件、電話或網站，在 3,100 多個公開網站上搜尋人物。讓開源情報變得簡單：digi…",
+        "ja": "Watson — Windows 向けの無料 OSINT ツール：ニックネーム、メールアドレス、電話番号、Web サイトから、3,100 以上の公開サイトで人物を検索できる。オープンソースインテリジェンスを手軽に：digi…",
+        "ko": "Watson — Windows용 무료 OSINT 도구: 닉네임, 이메일, 전화번호, 웹사이트로 3,100개 이상의 공개 사이트에서 사람을 검색한다. 오픈소스 인텔리전스를 쉽게: digi…",
+        "seen": "2026-10-30"
+      }
+    },
+    "wangrongding/tv-fresh": {
+      "19581adbd0c3": {
+        "src": "tv-fresh 电视焕新：小米电视(MIUI TV)去广告/清理预装/换桌面/装代理与影视仓的 Agent Skill——免root可逆，含固件逆向实录与一键脚本",
+        "zh-Hans": "tv-fresh 电视焕新：小米电视(MIUI TV)去广告/清理预装/换桌面/装代理与影视仓的 Agent Skill——免root可逆，含固件逆向实录与一键脚本",
+        "zh-Hant": "tv-fresh 電視煥新：小米電視(MIUI TV)去廣告/清理預裝/換桌面/裝代理與影視倉的 Agent Skill——免root可逆，含韌體逆向實錄與一鍵指令碼",
+        "ja": "tv-fresh テレビ刷新：Xiaomi TV（MIUI TV）の広告削除／プリインストールアプリの整理／ホーム画面の変更／プロキシと動画ソースアプリ「影视仓」の導入を行う Agent Skill——root 不要で元に戻せ、ファームウェア解析の記録とワンクリックスクリプト付き",
+        "ko": "tv-fresh TV 새 단장: 샤오미 TV(MIUI TV)의 광고 제거/사전 설치 앱 정리/런처 교체/프록시와 영상 소스 앱 '影视仓' 설치를 해 주는 Agent Skill——root 없이 가능하고 되돌릴 수 있으며, 펌웨어 리버스 기록과 원클릭 스크립트 포함",
+        "en": "tv-fresh TV refresh: an Agent Skill that removes ads from Xiaomi TV (MIUI TV), cleans out preinstalled apps, swaps the launcher, and installs a proxy and the video-source app \"YingShiCang\" (影视仓) — no root needed, reversible, with a firmware reverse-engineering log and a one-click script",
+        "seen": "2026-10-30"
+      }
+    },
+    "wangzan101/Mika": {
+      "fbc4ac54e724": {
+        "src": "Mika — 你手机上的私人 AI 助理，替你操作 App、上网、把事办成。An on-device AI agent for Android that operates apps and the web to get things done for you.",
+        "zh-Hans": "Mika —— 你手机上的私人 AI 助理，替你操作 App、上网、把事办成。一个运行在 Android 本机上的 AI 智能体，替你操作 App 和网页，把事情办好。",
+        "zh-Hant": "Mika —— 你手機上的私人 AI 助理，替你操作 App、上網、把事辦成。一個在 Android 本機執行的 AI 代理，替你操作 App 和網頁，把事情辦好。",
+        "ja": "Mika — スマホの中のパーソナル AI アシスタント。アプリを操作し、ネットを使い、用事を片づけてくれる。Android 端末上で動作する AI エージェントが、アプリや Web を操作して代わりに作業を進める。",
+        "ko": "Mika — 내 휴대폰 속 개인 AI 비서. 앱을 조작하고 인터넷을 쓰며 일을 처리해 준다. Android 기기 안에서 실행되는 AI 에이전트가 앱과 웹을 대신 조작해 일을 끝낸다.",
+        "en": "Mika — a personal AI assistant on your phone that operates apps, browses the web and gets things done for you. An on-device AI agent for Android that operates apps and the web to get things done for you.",
+        "seen": "2026-10-30"
+      }
+    },
+    "xanthichi/mcd-meal-mate": {
+      "60ecf917868f": {
+        "src": "M餐搭子：基于麦当劳 MCP 实时菜单与营养数据的智能搭餐 Skill｜在线演示已上线",
+        "zh-Hans": "M餐搭子：基于麦当劳 MCP 实时菜单与营养数据的智能搭餐 Skill｜在线演示已上线",
+        "zh-Hant": "M餐搭子：基於麥當勞 MCP 即時菜單與營養資料的智慧搭餐 Skill｜線上示範已上線",
+        "ja": "M餐搭子（Mミールメイト）：マクドナルドの MCP によるリアルタイムのメニューと栄養データをもとに、食事の組み合わせを考える Skill｜オンラインデモ公開中",
+        "ko": "M餐搭子(M 밀메이트): 맥도날드 MCP의 실시간 메뉴와 영양 데이터를 바탕으로 식단 조합을 짜 주는 Skill｜온라인 데모 공개",
+        "en": "M Meal Mate (M餐搭子): a smart meal-pairing Skill built on McDonald's MCP live menu and nutrition data | online demo now live",
+        "seen": "2026-10-30"
+      }
+    },
+    "zeabur-oss/zeabur": {
+      "001d514c66e3": {
+        "src": "Self-hosted PaaS on your own Kubernetes.",
+        "zh-Hans": "运行在你自己的 Kubernetes 上的自托管 PaaS。",
+        "zh-Hant": "運行在你自己的 Kubernetes 上的自行架設 PaaS。",
+        "ja": "自分の Kubernetes 上で動かすセルフホスト型 PaaS。",
+        "ko": "내 Kubernetes 위에서 돌리는 셀프 호스팅 PaaS.",
+        "seen": "2026-10-30"
+      }
+    }
+  }
+}

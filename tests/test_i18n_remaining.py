@@ -13,23 +13,37 @@ import newcomer_i18n  # noqa: E402
 import render_readme  # noqa: E402
 from i18n import LANGS, S  # noqa: E402
 
-cache = newcomer_i18n.load(ROOT / "data/newcomer_i18n.json")
+cache = newcomer_i18n.load(ROOT / "data/translation_library.json")
 stats = json.loads((ROOT / "data/stats.json").read_text("utf-8"))
 ITEMS = [{"name": "o/r", "description": "Original text", "url": "https://github.com/o/r",
           "created_at": "2026-10-24T00:00:00Z", "age_days": 2.5, "stars": 10, "per_day": 4.0}]
 
 
-class CacheSchemaTests(unittest.TestCase):
-    def test_entries_are_well_formed(self):
-        for name, entry in cache.items():
+def lib_of(repo, src, **langs):
+    lib = newcomer_i18n.empty()
+    for lang, text in langs.items():
+        newcomer_i18n.put(lib, repo, src, lang, text)
+    return lib
+
+
+class LibrarySchemaTests(unittest.TestCase):
+    def test_entries_are_keyed_by_repo_source_hash_and_language(self):
+        self.assertEqual(cache["version"], newcomer_i18n.VERSION)
+        for name, versions in cache["entries"].items():
             self.assertIn("/", name)
-            self.assertTrue(entry.get("src", "").strip(), name)
-            for lang, text in entry.items():
-                if lang != "src":
-                    self.assertIn(lang, LANGS, f"{name}: unknown language {lang}")
-                    self.assertTrue(text.strip(), f"{name} {lang}")
-            for lang in newcomer_i18n.required_langs(entry["src"]):
-                self.assertIn(lang, entry, f"{name} lacks {lang}")
+            for h, entry in versions.items():
+                self.assertEqual(h, newcomer_i18n.src_hash(entry["src"]), f"{name}: key is not the source hash")
+                for lang, text in entry.items():
+                    if lang not in ("src", "seen"):
+                        self.assertIn(lang, LANGS, f"{name}: unknown language {lang}")
+                        self.assertTrue(text.strip(), f"{name} {lang}")
+                for lang in newcomer_i18n.required_langs(entry["src"]):
+                    self.assertIn(lang, entry, f"{name} lacks {lang}")
+
+    def test_legacy_shape_is_converted_not_lost(self):
+        old = {"o/r": {"src": "Original text", "ja": "訳"}}
+        lib = newcomer_i18n.from_legacy(old)
+        self.assertEqual(newcomer_i18n.get(lib, "o/r", "Original text", "ja"), "訳")
 
     def test_no_secrets_or_online_translation_in_the_tool(self):
         text = (ROOT / "tools/newcomer_i18n.py").read_text("utf-8")
@@ -39,33 +53,60 @@ class CacheSchemaTests(unittest.TestCase):
 
 class PickTests(unittest.TestCase):
     def test_translation_used_when_source_matches(self):
-        c = {"o/r": {"src": "Original text", "ja": "原文の訳"}}
+        c = lib_of("o/r", "Original text", ja="原文の訳")
         self.assertEqual(newcomer_i18n.pick(c, "o/r", "Original text", "ja"), "原文の訳")
 
-    def test_falls_back_to_original_when_missing_or_stale(self):
-        c = {"o/r": {"src": "Old text", "ja": "古い訳"}}
-        self.assertEqual(newcomer_i18n.pick(c, "o/r", "Original text", "ja"), "Original text")  # stale
+    def test_falls_back_to_original_when_missing_or_changed(self):
+        c = lib_of("o/r", "Old text", ja="古い訳")
+        self.assertEqual(newcomer_i18n.pick(c, "o/r", "Original text", "ja"), "Original text")  # source changed
         self.assertEqual(newcomer_i18n.pick(c, "o/r", "Old text", "ko"), "Old text")  # no ko
         self.assertEqual(newcomer_i18n.pick({}, "o/r", "Original text", "ja"), "Original text")  # no entry
+        self.assertEqual(newcomer_i18n.pick(c, "x/y", "Old text", "ja"), "Old text")  # same text, other repo: no hit
+
+    def test_key_is_exactly_repo_hash_language(self):
+        c = lib_of("o/r", "Text", ja="訳")
+        self.assertEqual(newcomer_i18n.get(c, "o/r", "Text", "ja"), "訳")
+        self.assertIsNone(newcomer_i18n.get(c, "o/r", "Text ", "ja"))  # one byte different = other hash
+        self.assertIsNone(newcomer_i18n.get(c, "o/r2", "Text", "ja"))
+        self.assertIsNone(newcomer_i18n.get(c, "o/r", "Text", "ko"))
+
+    def test_a_description_that_changes_back_is_a_hit_again(self):
+        c = lib_of("o/r", "v1", ja="訳1")
+        newcomer_i18n.put(c, "o/r", "v2", "ja", "訳2")
+        self.assertEqual(newcomer_i18n.pick(c, "o/r", "v1", "ja"), "訳1")
+        self.assertEqual(newcomer_i18n.pick(c, "o/r", "v2", "ja"), "訳2")
 
     def test_table_uses_translation_per_language_and_original_without_one(self):
-        c = {"o/r": {"src": "Original text", "zh-Hans": "原文的译文"}}
+        c = lib_of("o/r", "Original text", **{"zh-Hans": "原文的译文"})
         self.assertIn("<br>原文的译文", render_readme.new_table(ITEMS, "zh-Hans", c))
         self.assertIn("<br>Original text", render_readme.new_table(ITEMS, "ko", c))
         self.assertIn("<br>Original text", render_readme.new_table(ITEMS, "zh-Hans", {}))
 
 
 class ProblemsTests(unittest.TestCase):
-    def test_reports_missing_stale_and_partial(self):
+    def test_reports_missing_changed_and_partial(self):
         items = [{"name": "a/new", "description": "x"}, {"name": "b/old", "description": "changed"},
                  {"name": "c/part", "description": "y"}, {"name": "d/none", "description": ""}]
-        c = {"b/old": {"src": "was", **{l: "t" for l in newcomer_i18n.REQUIRED}},
-             "c/part": {"src": "y", "zh-Hans": "t"}}
+        c = newcomer_i18n.empty()
+        for l in newcomer_i18n.REQUIRED:
+            newcomer_i18n.put(c, "b/old", "was", l, "t")
+        newcomer_i18n.put(c, "c/part", "y", "zh-Hans", "t")
         out = newcomer_i18n.problems(c, items)
         self.assertEqual(len(out), 3)
         self.assertIn("a/new: missing", out[0])
-        self.assertIn("b/old: stale", out[1])
+        self.assertIn("b/old: changed since", out[1])
         self.assertIn("c/part: missing zh-Hant, ja, ko", out[2])
+
+    def test_hit_stats_and_pruning(self):
+        c = newcomer_i18n.empty()
+        for l in newcomer_i18n.REQUIRED:
+            newcomer_i18n.put(c, "a/hit", "x", l, "t", today="2026-01-01")
+        items = [{"name": "a/hit", "description": "x"}, {"name": "b/new", "description": "y"}]
+        self.assertEqual(newcomer_i18n.hit_stats(c, items), {"total": 2, "hits": 1, "partial": 0, "new": 1})
+        self.assertFalse(newcomer_i18n.touch(c, "a/hit", "x", "2026-01-03"))  # refreshed at most weekly
+        self.assertTrue(newcomer_i18n.touch(c, "a/hit", "x", "2026-01-09"))
+        self.assertEqual(newcomer_i18n.prune(c, "2026-06-01", 90), 1)
+        self.assertEqual(c["entries"], {})
 
     def test_cjk_source_also_requires_english(self):
         self.assertIn("en", newcomer_i18n.required_langs("从选题到剪映草稿"))

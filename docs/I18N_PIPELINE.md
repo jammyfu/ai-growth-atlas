@@ -12,11 +12,37 @@ existing text stays and the scheduled update carries on (`run_safe` swallows any
 
 ## 1. Translate
 
-`data/newcomer_i18n.json`: `{ "owner/repo": { "src": "<description it was translated from>", "zh-Hans": ..., "zh-Hant": ..., "ja": ..., "ko": ..., "en": ... } }`.
-`en` is only needed when the source contains CJK text. The README shows a translation only while `src` equals the live description.
+### The translation library (`data/translation_library.json`)
 
-For the top 20 of every category (what the READMEs show) the pipeline lists the gaps (`translation_gaps`): no entry,
-a stale `src`, or a missing language. Already translated entries are never sent again. New translations are written
+Keyed exactly by **repo + hash of the source text + language**:
+
+```
+{ "version": 2, "entries": { "owner/repo": { "<sha256(src)[:12]>": { "src": "<the description>", "seen": "YYYY-MM-DD",
+    "zh-Hans": ..., "zh-Hant": ..., "ja": ..., "ko": ..., "en": ... } } } }
+```
+
+`en` is only needed when the source contains CJK text. Rules:
+
+- **Hit** (same repo, same source hash, language present): the stored text is used. No model call, no tokens. A page shows
+  a stored text only for a hit; otherwise the original.
+- **Miss** (new repo, or the description changed, so the hash changed): only the missing languages of that one text are
+  sent to the model. The old version stays in the library, so a description that changes back is a hit again.
+- Every run logs the split, for example `translate: library 50/50 hits (100%), 0 partial, 0 new -> 0 to send to the model,
+  0 calls for the hits`, and when everything hits the translate model is not even started.
+- `seen` is the last day an entry was used (refreshed at most once a week, so the file does not change daily).
+  `python3 tools/newcomer_i18n.py --prune-days 180` drops entries that were not used for that long; nothing is pruned
+  automatically. `python3 tools/newcomer_i18n.py` shows the library size and the hit rate for the current ranking.
+- Older flat files (`{repo: {"src": ..., lang: ...}}`) are still read and converted on load.
+
+### Glossary (`data/glossary.json`)
+
+Fixed wording for common terms (star, agent, skill, repo, prompt, ...) in all five languages, plus names to keep as is
+(MCP, CLI, Docker, ...). The prompt carries only the glossary entries that occur in the texts of that batch, so the token
+cost stays small. UI strings are not machine-translated at all: they are fixed text in `tools/i18n.py` and follow the same terms
+(star = 星标 / 星號).
+
+For the top 20 of every category (what the READMEs show) the pipeline lists the gaps (`translation_gaps`): no entry for the current
+source hash, or a missing language. New translations are written
 after every batch of 8 repos. A translation is accepted only if it is one plain line and keeps every number of 2+ digits and
 every identifier-like name (`TinyPNG`, `gpt-2`, `Node.js`...). Rules sent to the model: add no facts, remove no facts,
 keep names/links/code/emoji/`…`, star = 星标 (zh-Hans) / 星號 (zh-Hant), agent = 智能体 / 代理 / エージェント / 에이전트,
@@ -32,7 +58,7 @@ descriptions. Category descriptions (`data/categories.json`) are short taxonomy 
 (`--targets categories`). Never polished: suspected cracked/pirated repos (they stay literal), UI strings in `tools/i18n.py`,
 and the repo's own original description (`src`, it is not ours).
 
-Each text is polished once. `data/polish_state.json` stores, per `kind|name|lang`, the hash of the text as it is now; the
+Each text is polished once, and only un-polished entries are ever sent (the log prints `polish: N/M texts already polished or given up on (skipped), K to send`). `data/polish_state.json` stores, per `kind|name|lang` (for new-repo texts `name` is `repo@sourcehash`, so a changed source is a new, unpolished entry), the hash of the text as it is now; the
 same text is never sent twice, an edited or re-translated text is polished again, and a text whose polish was rejected 3
 times is left alone until it changes. Bump `POLISH_VERSION` in `tools/i18n_pipeline.py` after changing the style prompt to
 polish everything again. Delete `polish_state.json` for the same effect.

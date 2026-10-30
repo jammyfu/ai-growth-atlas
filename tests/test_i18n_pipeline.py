@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 import i18n_pipeline as pipe  # noqa: E402
 import llm  # noqa: E402
+import newcomer_i18n as nci  # noqa: E402
 import update_stars as up  # noqa: E402
 
 LANG5 = ("en", "zh-Hans", "zh-Hant", "ja", "ko")
@@ -58,7 +59,7 @@ class Repo:
         (self.root / "data").mkdir()
         self.items = [{"name": n, "description": d, "suspicious": n in suspicious} for n, d in descs.items()]
         self.new = {"ok": True, "categories": {"ai": {"ok": True, "items": self.items}}}
-        self.write("newcomer_i18n.json", cache or {})
+        self.write("translation_library.json", nci.from_legacy(cache or {}))
         self.write("projects.json", projects or [])
         self.write("categories.json", [{"id": "ai", "desc": {l: f"cat {l}" for l in LANG5}}])
 
@@ -67,6 +68,9 @@ class Repo:
 
     def read(self, name):
         return json.loads((self.root / "data" / name).read_text("utf-8"))
+
+    def entry(self, name, src):
+        return (self.read("translation_library.json")["entries"].get(name) or {}).get(nci.src_hash(src))
 
     def close(self):
         self.tmp.cleanup()
@@ -138,10 +142,9 @@ class TranslateTests(unittest.TestCase):
         self.assertEqual({i["id"] for i in sent}, {"b/two", "c/three"})  # a/one was already translated
         self.assertEqual(set(next(i for i in sent if i["id"] == "b/two")["langs"]), set(LANG5))   # CJK source also gets en
         self.assertEqual(set(next(i for i in sent if i["id"] == "c/three")["langs"]), set(LANG5[1:]))
-        cache = self.repo.read("newcomer_i18n.json")
-        self.assertEqual(cache["a/one"]["zh-Hans"], "old zh-Hans")  # untouched
-        self.assertEqual(cache["c/three"]["src"], "Does three.")
-        self.assertEqual(cache["b/two"]["en"], "[en] 做一件事。")
+        self.assertEqual(self.repo.entry("a/one", "Does one thing.")["zh-Hans"], "old zh-Hans")  # untouched
+        self.assertEqual(self.repo.entry("c/three", "Does three.")["src"], "Does three.")
+        self.assertEqual(self.repo.entry("b/two", "做一件事。")["en"], "[en] 做一件事。")
 
     def test_second_run_makes_no_calls(self):
         self.run_translate(FakeRunner(translate=fake_tr))
@@ -155,12 +158,13 @@ class TranslateTests(unittest.TestCase):
         r = FakeRunner(translate=fake_tr)
         self.run_translate(r)
         self.assertEqual(len(r.calls), 1)
-        self.assertEqual(self.repo.read("newcomer_i18n.json")["a/one"]["src"], "Does one thing, better.")
+        self.assertEqual(self.repo.entry("a/one", "Does one thing, better.")["ja"], "[ja] Does one thing, better.")
+        self.assertEqual(self.repo.entry("a/one", "Does one thing.")["ja"], "old ja")  # the old text stays in the library
 
     def test_only_missing_languages_are_requested(self):
-        cache = self.repo.read("newcomer_i18n.json")
-        del cache["a/one"]["ko"]
-        self.repo.write("newcomer_i18n.json", cache)
+        lib = self.repo.read("translation_library.json")
+        del lib["entries"]["a/one"][nci.src_hash("Does one thing.")]["ko"]
+        self.repo.write("translation_library.json", lib)
         r = FakeRunner(translate=fake_tr)
         self.run_translate(r, limit=1)
         sent = json.loads(r.calls[0].split("Input items: ", 1)[1].split("\nFor each item", 1)[0])
@@ -171,13 +175,16 @@ class TranslateTests(unittest.TestCase):
         self.addCleanup(repo.close)
         bad = lambda i: {l: "faster by 50%" for l in i["langs"]}  # noqa: E731
         pipe.translate(repo.root, repo.items, FakeRunner(translate=bad), pipe.Budget(60), lambda m: None)
-        self.assertEqual(repo.read("newcomer_i18n.json"), {})
+        self.assertEqual(repo.read("translation_library.json")["entries"], {})
 
     def test_failure_keeps_everything_and_does_not_raise(self):
-        before = self.repo.read("newcomer_i18n.json")
+        def texts():  # `seen` is bookkeeping, the translations are what must not change
+            return {n: {h: {k: v for k, v in e.items() if k != "seen"} for h, e in vs.items()}
+                    for n, vs in self.repo.read("translation_library.json")["entries"].items()}
+        before = texts()
         stat = self.run_translate(FakeRunner(error="boom"))
         self.assertGreaterEqual(stat["errors"], 1)
-        self.assertEqual(self.repo.read("newcomer_i18n.json"), before)
+        self.assertEqual(texts(), before)
 
 
 class PolishTests(unittest.TestCase):
@@ -234,10 +241,10 @@ class PolishTests(unittest.TestCase):
         self.assertEqual(kinds, {"category"})
 
     def test_failure_does_not_raise_or_change_files(self):
-        before = (self.repo.read("projects.json"), self.repo.read("newcomer_i18n.json"))
+        before = (self.repo.read("projects.json"), self.repo.read("translation_library.json"))
         stat = self.run_polish(FakeRunner(error="down"))
         self.assertGreaterEqual(stat["errors"], 1)
-        self.assertEqual((self.repo.read("projects.json"), self.repo.read("newcomer_i18n.json")), before)
+        self.assertEqual((self.repo.read("projects.json"), self.repo.read("translation_library.json")), before)
 
 
 class RunTests(unittest.TestCase):
@@ -254,7 +261,7 @@ class RunTests(unittest.TestCase):
             self.assertTrue(res["translate"]["skipped"] and res["polish"]["skipped"])
         self.assertEqual(asked, [])
         self.assertEqual(self.repo.read("projects.json"), before)
-        self.assertEqual(self.repo.read("newcomer_i18n.json"), {})
+        self.assertEqual(self.repo.read("translation_library.json")["entries"], {})
 
     def test_backends_and_models_default_to_cursor_translate_agy_polish(self):
         seen = []
@@ -278,7 +285,7 @@ class RunTests(unittest.TestCase):
         res = pipe.run(self.repo.root, self.repo.new, env={}, log=lambda m: None, make_runner=lambda b, m: Ready(runner))
         self.assertEqual(res["translate"]["translated"], 1)
         self.assertGreater(res["polish"]["todo"], 0)
-        self.assertEqual(set(self.repo.read("newcomer_i18n.json")["a/one"]) - {"src"}, set(LANG5[1:]))
+        self.assertEqual(set(self.repo.entry("a/one", "Does one thing.")) - {"src", "seen"}, set(LANG5[1:]))
 
     def test_run_safe_swallows_everything(self):
         def boom(model):
@@ -433,6 +440,131 @@ class AgyTests(unittest.TestCase):
         self.assertNotIn("POLISH_MODEL", wf)
 
 
+class LibraryReuseTests(unittest.TestCase):
+    """Token saving: a library hit never reaches the model; only a changed source costs a call."""
+
+    def setUp(self):
+        self.repo = Repo({"a/one": "Does one thing.", "b/two": "Does two things."})
+        self.addCleanup(self.repo.close)
+        self.logs = []
+
+    def translate(self, runner, **kw):
+        return pipe.translate(self.repo.root, self.repo.items, runner, pipe.Budget(60), self.logs.append, **kw)
+
+    def test_zero_model_calls_when_everything_is_in_the_library(self):
+        first = FakeRunner(translate=fake_tr)
+        self.translate(first)
+        self.assertEqual(len(first.calls), 1)
+        for _ in range(3):  # any number of later runs
+            r = FakeRunner(translate=lambda i: self.fail("a library hit must not reach the model"))
+            stat = self.translate(r)
+            self.assertEqual(r.calls, [])
+            self.assertEqual((stat["hits"], stat["total"], stat["calls"]), (2, 2, 0))
+
+    def test_run_with_everything_cached_does_not_even_build_a_translate_runner(self):
+        self.translate(FakeRunner(translate=fake_tr))
+        built = []
+        res = pipe.run(self.repo.root, self.repo.new, do_polish=False, env={}, log=self.logs.append,
+                       make_runner=lambda b, m: built.append(b) or self.fail("no runner needed on a full hit"))
+        self.assertEqual(built, [])
+        self.assertEqual(res["translate"]["calls"], 0)
+        self.assertTrue(any("2/2 hits (100%)" in m and "0 model calls" in m for m in self.logs), self.logs)
+
+    def test_only_the_changed_source_is_sent_and_the_rest_are_hits(self):
+        self.translate(FakeRunner(translate=fake_tr))
+        self.repo.items[1]["description"] = "Does two things, faster."
+        r = FakeRunner(translate=fake_tr)
+        stat = self.translate(r)
+        sent = json.loads(r.calls[0].split("Input items: ", 1)[1].split("\nFor each item", 1)[0])
+        self.assertEqual([i["id"] for i in sent], ["b/two"])
+        self.assertEqual((stat["hits"], stat["new"], stat["calls"]), (1, 1, 1))
+
+    def test_same_text_in_another_repo_is_not_a_hit(self):
+        self.translate(FakeRunner(translate=fake_tr))
+        self.repo.items.append({"name": "c/copy", "description": "Does one thing."})
+        r = FakeRunner(translate=fake_tr)
+        self.translate(r)
+        sent = json.loads(r.calls[0].split("Input items: ", 1)[1].split("\nFor each item", 1)[0])
+        self.assertEqual([i["id"] for i in sent], ["c/copy"])
+
+    def test_log_prints_hit_and_new_counts(self):
+        self.translate(FakeRunner(translate=fake_tr))
+        self.logs.clear()
+        self.repo.items.append({"name": "c/new", "description": "Brand new."})
+        self.translate(FakeRunner(translate=fake_tr))
+        line = next(m for m in self.logs if m.startswith("translate: library"))
+        self.assertIn("2/3 hits (67%)", line)
+        self.assertIn("1 new", line)
+        self.assertIn("1 to send to the model", line)
+
+    def test_dry_run_reports_without_writing(self):
+        before = self.repo.read("translation_library.json")
+        stat = self.translate(FakeRunner(translate=fake_tr), dry_run=True)
+        self.assertEqual((stat["todo"], stat["calls"]), (2, 0))
+        self.assertEqual(self.repo.read("translation_library.json"), before)
+
+    def test_only_unpolished_entries_are_polished(self):
+        self.translate(FakeRunner(translate=fake_tr))
+        first = FakeRunner(polish=lambda t: t)
+        pipe.polish(self.repo.root, self.repo.items, first, pipe.Budget(60), ("newcomers",), self.logs.append)
+        self.assertGreater(len(first.calls), 0)
+        self.repo.items.append({"name": "c/new", "description": "Brand new."})
+        self.translate(FakeRunner(translate=fake_tr))
+        r = FakeRunner(polish=lambda t: t)
+        stat = pipe.polish(self.repo.root, self.repo.items, r, pipe.Budget(60), ("newcomers",), self.logs.append)
+        self.assertEqual(stat["todo"], 4)  # c/new in four languages; the eight polished texts are skipped
+        self.assertEqual((stat["skipped"], stat["candidates"]), (8, 12))
+        self.assertTrue(any("8/12 texts already polished" in m for m in self.logs))
+
+    def test_changed_source_means_a_new_unpolished_entry(self):
+        self.translate(FakeRunner(translate=fake_tr))
+        pipe.polish(self.repo.root, self.repo.items, FakeRunner(polish=lambda t: t), pipe.Budget(60), ("newcomers",), lambda m: None)
+        self.repo.items[0]["description"] = "Does one thing, faster."
+        self.translate(FakeRunner(translate=fake_tr))
+        stat = pipe.polish(self.repo.root, self.repo.items, FakeRunner(polish=lambda t: t), pipe.Budget(60), ("newcomers",), lambda m: None)
+        self.assertEqual(stat["todo"], 4)
+
+    def test_translate_hits_refresh_seen_at_most_weekly(self):
+        self.translate(FakeRunner(translate=fake_tr), today="2026-10-01")
+        self.translate(FakeRunner(translate=fake_tr), today="2026-10-03")
+        self.assertEqual(self.repo.entry("a/one", "Does one thing.")["seen"], "2026-10-01")
+        self.translate(FakeRunner(translate=fake_tr), today="2026-10-20")
+        self.assertEqual(self.repo.entry("a/one", "Does one thing.")["seen"], "2026-10-20")
+
+
+class GlossaryTests(unittest.TestCase):
+    GLOS = json.loads((ROOT / "data/glossary.json").read_text("utf-8"))
+
+    def test_only_terms_present_in_the_texts_are_sent(self):
+        g = pipe.glossary_for(["An agent that reads your repo"], ["zh-Hans", "ja"], self.GLOS)
+        self.assertIn("agent = 智能体 (zh-Hans) / エージェント (ja)", g)
+        self.assertIn("repo = 仓库 (zh-Hans)", g)
+        self.assertNotIn("dataset", g)
+        self.assertNotIn("星标", g)
+
+    def test_no_terms_means_a_short_prompt(self):
+        g = pipe.glossary_for(["Fast."], ["ko"], self.GLOS)
+        self.assertEqual(g, pipe.BASE_RULES)
+
+    def test_prompt_contains_glossary_terms_and_stays_smaller_than_the_full_list(self):
+        repo = Repo({"a/one": "An agent skill."})
+        self.addCleanup(repo.close)
+        shutil.copy(ROOT / "data/glossary.json", repo.root / "data/glossary.json")
+        r = FakeRunner(translate=fake_tr)
+        pipe.translate(repo.root, repo.items, r, pipe.Budget(60), lambda m: None)
+        self.assertIn("智能体", r.calls[0])
+        self.assertIn("技能", r.calls[0])
+        self.assertNotIn("数据集", r.calls[0])
+
+    def test_glossary_covers_every_language_and_uses_the_house_wording(self):
+        for t in self.GLOS["terms"]:
+            self.assertEqual({"en", "zh-Hans", "zh-Hant", "ja", "ko"}, set(t), t)
+        star = next(t for t in self.GLOS["terms"] if t["en"] == "star")
+        self.assertEqual((star["zh-Hans"], star["zh-Hant"]), ("星标", "星號"))
+        agent = next(t for t in self.GLOS["terms"] if t["en"] == "agent")
+        self.assertEqual((agent["zh-Hans"], agent["zh-Hant"], agent["ja"], agent["ko"]), ("智能体", "代理", "エージェント", "에이전트"))
+
+
 class RepoDataTests(unittest.TestCase):
     def test_every_blurb_and_category_has_all_five_languages(self):
         for fname in ("projects.json", "categories.json"):
@@ -446,11 +578,13 @@ class RepoDataTests(unittest.TestCase):
         for p in json.loads((ROOT / "data/projects.json").read_text("utf-8")):
             for lang, text in p["desc"].items():
                 self.assertIsNone(pipe.check_polished(text, text, lang), (p["name"], lang))
-        for name, entry in json.loads((ROOT / "data/newcomer_i18n.json").read_text("utf-8")).items():
-            for lang in LANG5:
-                if lang in entry:
-                    self.assertIsNone(pipe.check_polished(entry[lang], entry[lang], lang), (name, lang))
-                    self.assertIsNone(pipe.check_translation(entry["src"], entry[lang]), (name, lang))
+        lib = json.loads((ROOT / "data/translation_library.json").read_text("utf-8"))
+        for name, versions in lib["entries"].items():
+            for entry in versions.values():
+                for lang in LANG5:
+                    if lang in entry:
+                        self.assertIsNone(pipe.check_polished(entry[lang], entry[lang], lang), (name, lang))
+                        self.assertIsNone(pipe.check_translation(entry["src"], entry[lang]), (name, lang))
 
     def test_secret_is_referenced_not_stored(self):
         wf = (ROOT / ".github/workflows/daily-update.yml").read_text("utf-8")

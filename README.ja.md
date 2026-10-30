@@ -1,52 +1,50 @@
 [English](README.md) | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | **日本語** | [한국어](README.ko.md)
 
-# GitHub Risers：スター増加速度で並べるカテゴリ別トレンドランキング
+# GitHub スター急上昇ランキング / GitHub Risers
 
-> 総スター数ではなく、スターが増える速さで並べた GitHub トレンド（Star Growth）。AI をメインに、開発者ツール・セキュリティ・Web/フロントエンド・インフラ・デザイン・データも。1 日 2 回更新、各カテゴリに 7 日以内の新着ランキング付き。
+<img src=".github/social-preview.png" alt="GitHub スター急上昇ランキング / GitHub Risers" width="640">
 
-総スター数順のリストでは古い大物が居座り、いま伸びているものが埋もれます。GitHub Risers は 1 日あたりの増加スター数（直近 7・30・365 日）で並べ、カテゴリごとに表示します。AI がメインのランキングです。各カテゴリは、直近 7 日以内に作られたリポジトリの「新着」ランキング、週・月・年の増加ランキング、最後に総スター数の順です。数値はすべて GitHub API から取得しています。分類ルール：[docs/CATEGORIES.md](docs/CATEGORIES.md)。
+[![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![CI](https://github.com/jammyfu/github-risers/actions/workflows/ci.yml/badge.svg)](https://github.com/jammyfu/github-risers/actions/workflows/ci.yml) [![updated](https://img.shields.io/badge/updated-2026--10--30-brightgreen.svg)](latest/rankings.ja.md)
 
-GitHub API から取得：2026-10-30 08:39:25（UTC）。
-1 日 2 回更新：北京時間 0 時（UTC+8）とロサンゼルス時間 0 時（America/Los_Angeles、夏時間に追従）。更新ごとに時間帯別に保存されます。
-各カテゴリのランキングは、全 70 収録プロジェクトのうち上位最大 20 件を表示します。
+総スター数ではなく、1 日あたりに増えたスター数で GitHub リポジトリを並べます。AI が先頭で、開発者ツール、セキュリティ、Web / フロントエンド、インフラ、デザイン / クリエイティブ、データが続きます。1 日 2 回更新。
 
-以下が最新のランキングです。更新のたびに時間帯ごとにも保存しています：[ランキング履歴](rankings/README.ja.md) · [latest/rankings.ja.md](latest/rankings.ja.md)。
+2026-10-30 08:39（UTC）更新、1 日 2 回（北京時間 0 時、ロサンゼルス時間 0 時）。
+
+[ウェブサイト](https://jammyfu.github.io/github-risers/) · [仕組み](docs/HOW_IT_WORKS.ja.md) · [ファクト](docs/FACTS.md) · [履歴](rankings/README.ja.md) · [最新](latest/rankings.ja.md)
 
 ## 今回のカテゴリ別 1 位
 
-各カテゴリの各ランキングの 1 位を、下の実データからスクリプトで自動生成しています。「なし」は今回その枠に該当がないことを示します。
-
 | カテゴリ | 新着 1 位（7 日） | 今週 1 位 | 今月 1 位 | 今年 1 位 | 総スター 1 位 |
 |---|---|---|---|---|---|
-| **AI** ★ メイン | [rddmwmddr/android-ad-cleaner](https://github.com/rddmwmddr/android-ad-cleaner)<br>798/日 | [morluto/rea](https://github.com/morluto/rea)<br>5,942/日 | [morluto/rea](https://github.com/morluto/rea)<br>13,623/日 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)<br>3,412/日 | [morluto/rea](https://github.com/morluto/rea)<br>409,565 ★ |
-| **開発者ツール** | [heydeer/pngdeer](https://github.com/heydeer/pngdeer)<br>72.1/日 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>56.6/日 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>53.8/日 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>70.6/日 | [oven-sh/bun](https://github.com/oven-sh/bun)<br>96,468 ★ |
-| **セキュリティ** | [vaishantsah/watson-AI-osint-all-in-one](https://github.com/vaishantsah/watson-AI-osint-all-in-one)<br>134/日 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>32.7/日 | [projectdiscovery/nuclei](https://github.com/projectdiscovery/nuclei)<br>29.7/日 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>27.7/日 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>38,849 ★ |
-| **Web / フロントエンド** | [designfuchen/word-atlas](https://github.com/designfuchen/word-atlas)<br>658/日 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>103/日 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>84.6/日 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>83.0/日 | [facebook/react](https://github.com/facebook/react)<br>251,753 ★ |
-| **インフラ** | [zeabur-oss/zeabur](https://github.com/zeabur-oss/zeabur)<br>91.1/日 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>44.1/日 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>83.4/日 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>32.4/日 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes)<br>128,522 ★ |
-| **デザイン / クリエイティブ** | なし | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>65.6/日 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>64.6/日 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>73.9/日 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>134,834 ★ |
-| **データ** | [hugues31/duckpad](https://github.com/hugues31/duckpad)<br>53.5/日 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>40.0/日 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>31.1/日 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>25.7/日 | [apache/superset](https://github.com/apache/superset)<br>75,366 ★ |
+| **[AI](#ai)** ★ メイン | [rddmwmddr/android-ad-cleaner](https://github.com/rddmwmddr/android-ad-cleaner)<br>798/日 | [morluto/rea](https://github.com/morluto/rea)<br>5,942/日 | [morluto/rea](https://github.com/morluto/rea)<br>13,623/日 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)<br>3,412/日 | [morluto/rea](https://github.com/morluto/rea)<br>409,565 ★ |
+| **[開発者ツール](#開発者ツール)** | [heydeer/pngdeer](https://github.com/heydeer/pngdeer)<br>72.1/日 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>56.6/日 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>53.8/日 | [zed-industries/zed](https://github.com/zed-industries/zed)<br>70.6/日 | [oven-sh/bun](https://github.com/oven-sh/bun)<br>96,468 ★ |
+| **[セキュリティ](#セキュリティ)** | [vaishantsah/watson-AI-osint-all-in-one](https://github.com/vaishantsah/watson-AI-osint-all-in-one)<br>134/日 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>32.7/日 | [projectdiscovery/nuclei](https://github.com/projectdiscovery/nuclei)<br>29.7/日 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>27.7/日 | [aquasecurity/trivy](https://github.com/aquasecurity/trivy)<br>38,849 ★ |
+| **[Web / フロントエンド](#web--フロントエンド)** | [designfuchen/word-atlas](https://github.com/designfuchen/word-atlas)<br>658/日 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>103/日 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>84.6/日 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui)<br>83.0/日 | [facebook/react](https://github.com/facebook/react)<br>251,753 ★ |
+| **[インフラ](#インフラ)** | [zeabur-oss/zeabur](https://github.com/zeabur-oss/zeabur)<br>91.1/日 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>44.1/日 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>83.4/日 | [caddyserver/caddy](https://github.com/caddyserver/caddy)<br>32.4/日 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes)<br>128,522 ★ |
+| **[デザイン / クリエイティブ](#デザイン--クリエイティブ)** | なし | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>65.6/日 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>64.6/日 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>73.9/日 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw)<br>134,834 ★ |
+| **[データ](#データ)** | [hugues31/duckpad](https://github.com/hugues31/duckpad)<br>53.5/日 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>40.0/日 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>31.1/日 | [duckdb/duckdb](https://github.com/duckdb/duckdb)<br>25.7/日 | [apache/superset](https://github.com/apache/superset)<br>75,366 ★ |
 
-<details><summary>カテゴリ</summary>
+ここでは各ランキングの上位 10 件だけを載せています。上位 20 件の全体は [latest/rankings.ja.md](latest/rankings.ja.md) にあります。
 
-| | |
-|---|---|
-| AI ★ メイン | LLM・エージェント・MCP・コーディング助手・生成 AI |
-| 開発者ツール | CLI・エディタ・パッケージマネージャ・リンタ・ビルドツール |
-| セキュリティ | 脆弱性スキャン・SAST・サプライチェーン・ランタイムセキュリティ |
-| Web / フロントエンド | フロントエンド枠組み・UI キット・CSS・ブラウザツール |
-| インフラ | コンテナ・Kubernetes・クラウド・ネットワーク・可観測性 |
-| デザイン / クリエイティブ | デザインシステム・描画・アニメーション・制作ツール |
-| データ | データベース・分析・ETL・データエンジニアリング |
+## よくある質問
 
-</details>
+### GitHub Risers とは？
+
+総スター数ではなく、1 日あたりに増えたスター数で GitHub リポジトリを並べたランキングです。AI がメインで、ほかに 6 つのカテゴリがあります。データは GitHub API からスクリプトで作っています。 [詳しく見る](docs/FAQ.md#what-is-github-risers)
+
+### GitHub Trending とどう違う？
+
+GitHub Trending は GitHub 公式のページです。GitHub Risers は独立したオープンソースのプロジェクトで、ルールを公開し、5 言語に対応し、更新のたびに履歴を残します。GitHub とは無関係です。 [詳しく見る](docs/FAQ.md#is-it-the-same-as-github-trending)
+
+### 更新は何回？
+
+1 日 2 回、北京時間 0 時とロサンゼルス時間 0 時です。実行のたびに保存します。 [詳しく見る](docs/FAQ.md#how-often-is-it-updated)
 
 ## AI
 
 > LLM・エージェント・MCP・コーディング助手・生成 AI
 
 ### 7 日以内の新着で最も熱いリポジトリ（作成から 7 日以内）
-
-このカテゴリで直近 7 日以内に作成されたリポジトリを GitHub 検索 API（topic で判定：リポジトリ自身がそのカテゴリの topic を持つこと）で探し、作成からの 1 日あたりスター数で並べます。このカテゴリの他のランキング（または収録プロジェクト）に載っているもの、および先のカテゴリ（AI 優先）ですでに載ったものは除外します。説明文は各リポジトリ自身の GitHub 説明；手作業の翻訳は [data/newcomer_i18n.json](data/newcomer_i18n.json)。ルール：[docs/NEW_ARRIVALS.md](docs/NEW_ARRIVALS.md)。
 
 | # | プロジェクト | 作成日（UTC） | 総スター数 | スター/日 | スター推移 |
 |---|---|---|---:|---:|---|
@@ -60,16 +58,6 @@ GitHub API から取得：2026-10-30 08:39:25（UTC）。
 | 8 | [haydenschmitty/floorplan](https://github.com/haydenschmitty/floorplan)<br>アプリが実際にどう組み合わさっているかが見える。Claude または Codex が描く、平易な英語で説明されたインタラクティブなコードベースマップ。 | 2026-10-27<br><sub>2.9 日</sub> | 410 | 143.4 | <a href="https://www.star-history.com/#haydenschmitty/floorplan&Date"><img src="https://api.star-history.com/svg?repos=haydenschmitty/floorplan&type=Date" width="260" alt="haydenschmitty/floorplan のスター推移グラフ"></a> |
 | 9 | [patch-gg/anymove](https://github.com/patch-gg/anymove)<br>1 本の AI 動画からあらゆる生き物のモーションキャプチャを実現：1 フレームに 2 台のカメラ、DINOv2 による関節検出、両方の視点でリグをフィットさせ、GLB を出力。 | 2026-10-27<br><sub>3.0 日</sub> | 431 | 142.4 | <a href="https://www.star-history.com/#patch-gg/anymove&Date"><img src="https://api.star-history.com/svg?repos=patch-gg/anymove&type=Date" width="260" alt="patch-gg/anymove のスター推移グラフ"></a> |
 | 10 | [daveebbelaar/bama](https://github.com/daveebbelaar/bama)<br>BAMA：Build Any Mac App（あらゆる Mac アプリを作る）。Swift と SwiftUI でネイティブ macOS アプリを調査・クローン・設計・構築・最適化・テストするためのエージェントスキル。 | 2026-10-24<br><sub>6.0 日</sub> | 838 | 139.8 | <a href="https://www.star-history.com/#daveebbelaar/bama&Date"><img src="https://api.star-history.com/svg?repos=daveebbelaar/bama&type=Date" width="260" alt="daveebbelaar/bama のスター推移グラフ"></a> |
-| 11 | [shipwords-dev/shipwords](https://github.com/shipwords-dev/shipwords)<br>新しいキーワードごとに稼げる AI サイトを公開。認証、クレジット、決済、AI 生成を備えた Cloudflare ネイティブのスターター。/ 新語サイト群フレームワーク：1 語につき 1 サイト、午後のうちに公開。伸びたものは改良を続け、伸びなかったものは… | 2026-10-28<br><sub>2.1 日</sub> | 287 | 137.6 | <a href="https://www.star-history.com/#shipwords-dev/shipwords&Date"><img src="https://api.star-history.com/svg?repos=shipwords-dev/shipwords&type=Date" width="260" alt="shipwords-dev/shipwords のスター推移グラフ"></a> |
-| 12 | [jmanico/grim-prompter](https://github.com/jmanico/grim-prompter)<br>AI コーディングエージェント向けの脅威モデリング：Claude Code、Codex など任意のエージェントにリポジトリを読ませると、証拠をたどれる脅威モデルが得られる。36 種類のアーキテクチャ、29 種類の手法、… | 2026-10-28<br><sub>1.9 日</sub> | 188 | 101.4 | <a href="https://www.star-history.com/#jmanico/grim-prompter&Date"><img src="https://api.star-history.com/svg?repos=jmanico/grim-prompter&type=Date" width="260" alt="jmanico/grim-prompter のスター推移グラフ"></a> |
-| 13 | [andyhuo520/vibe-knowledge](https://github.com/andyhuo520/vibe-knowledge)<br>Vibe 知識大賞：1 つの知識ポイント → ナレーション付きで、すべての文に出典がある高品質な知識ショート動画に（Claude Code skill · 44 種のスタイル · コードでフレームごとに生成） | 2026-10-28<br><sub>2.0 日</sub> | 185 | 94.4 | <a href="https://www.star-history.com/#andyhuo520/vibe-knowledge&Date"><img src="https://api.star-history.com/svg?repos=andyhuo520/vibe-knowledge&type=Date" width="260" alt="andyhuo520/vibe-knowledge のスター推移グラフ"></a> |
-| 14 | [hevnsnt/CVEngine](https://github.com/hevnsnt/CVEngine)<br>AI ファーストの外部攻撃対象領域アセスメント。継続的な探索、証拠に基づく脆弱性の検証、開発者エージェント向け MCP 連携を備える。 | 2026-10-24<br><sub>5.4 日</sub> | 510 | 94.1 | <a href="https://www.star-history.com/#hevnsnt/CVEngine&Date"><img src="https://api.star-history.com/svg?repos=hevnsnt/CVEngine&type=Date" width="260" alt="hevnsnt/CVEngine のスター推移グラフ"></a> |
-| 15 | [davemessew/AgentFlux](https://github.com/davemessew/AgentFlux)<br>ビジュアルワークフローと自律型エージェントのためのエージェント型 AI プラットフォーム。Docker で自分のパソコンやサーバーに立ち上げられる。 | 2026-10-27<br><sub>2.8 日</sub> | 235 | 85.5 | <a href="https://www.star-history.com/#davemessew/AgentFlux&Date"><img src="https://api.star-history.com/svg?repos=davemessew/AgentFlux&type=Date" width="260" alt="davemessew/AgentFlux のスター推移グラフ"></a> |
-| 16 | [SAOS-3624/dsh-video-storyboard](https://github.com/SAOS-3624/dsh-video-storyboard)<br>DeepSeek Harness 向けのシーン認識ストーリーボード：番号付きの 9〜16 コマを、タイムスタンプ、文字起こし、音声エンベロープとともに 1 枚の画像（384 トークン）にまとめる。2 つのツール… | 2026-10-26<br><sub>3.4 日</sub> | 229 | 66.5 | <a href="https://www.star-history.com/#SAOS-3624/dsh-video-storyboard&Date"><img src="https://api.star-history.com/svg?repos=SAOS-3624/dsh-video-storyboard&type=Date" width="260" alt="SAOS-3624/dsh-video-storyboard のスター推移グラフ"></a> |
-| 17 | [routerhubSI/uncensored-ai-api](https://github.com/routerhubSI/uncensored-ai-api)<br>検閲なしの AI API とモデル——1 つのキーで Claude、GPT、Gemini、Grok、DeepSeek、GLM、Qwen を利用でき、提供されている場合は無検閲版・abliterated 版も選べる。OpenAI-… | 2026-10-24<br><sub>5.7 日</sub> | 368 | 65.1 | <a href="https://www.star-history.com/#routerhubSI/uncensored-ai-api&Date"><img src="https://api.star-history.com/svg?repos=routerhubSI/uncensored-ai-api&type=Date" width="260" alt="routerhubSI/uncensored-ai-api のスター推移グラフ"></a> |
-| 18 | [JunWan666/astrbot-for-android](https://github.com/JunWan666/astrbot-for-android)<br>Android スマホ上で AstrBot と NapCat をローカルにデプロイして管理できる。PRoot Ubuntu の実行環境を内蔵し、ネイティブ管理画面、WebUI、ログ、バックアップと復元、独立したアップデートに対応。root 不要。 | 2026-10-26<br><sub>4.1 日</sub> | 264 | 63.7 | <a href="https://www.star-history.com/#JunWan666/astrbot-for-android&Date"><img src="https://api.star-history.com/svg?repos=JunWan666/astrbot-for-android&type=Date" width="260" alt="JunWan666/astrbot-for-android のスター推移グラフ"></a> |
-| 19 | [aa1143/NamiGPT](https://github.com/aa1143/NamiGPT)<br>予備知識ゼロから学ぶ大規模言語モデル（LLM）の入門チュートリアル：GPT-2 をゼロから手書きし、LLM がどう動くかを 1 行ずつ理解する / PyTorch で GPT-2 をゼロから段階的に構築 | 2026-10-28<br><sub>2.3 日</sub> | 135 | 58.2 | <a href="https://www.star-history.com/#aa1143/NamiGPT&Date"><img src="https://api.star-history.com/svg?repos=aa1143/NamiGPT&type=Date" width="260" alt="aa1143/NamiGPT のスター推移グラフ"></a> |
-| 20 | [jacke-pp/ai-wallet-binance](https://github.com/jacke-pp/ai-wallet-binance)<br>どんな AI でも、あなた自身の Binance AI ウォレットで取引できる：即時の売買、Agent 専用ローンチパッド（Four、Flap、GANG）でのスナイプ、AI 専用 Mint、ローカルの取引ページ。署名は Binance が行い、秘密鍵には触れない。無料のオープンソース、MIT · 作者：Jacke_pp · 連絡先：X @Jacke_pp（DM） | 2026-10-25<br><sub>5.0 日</sub> | 236 | 47.7 | <a href="https://www.star-history.com/#jacke-pp/ai-wallet-binance&Date"><img src="https://api.star-history.com/svg?repos=jacke-pp/ai-wallet-binance&type=Date" width="260" alt="jacke-pp/ai-wallet-binance のスター推移グラフ"></a> |
 
 ### 今週もっとも伸びた（直近 7 日）
 
@@ -85,16 +73,6 @@ GitHub API から取得：2026-10-30 08:39:25（UTC）。
 | 8 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)<br>コードベース全体を一枚の地図にして、どのファイルが互いに呼び合うか AI が一目で把握できる。大規模プロジェクトを頭から読む必要がなくなる。<br>`AI` | +5,783 | 826.1 | 138,983 | <a href="https://www.star-history.com/#Graphify-Labs/graphify&Date"><img src="https://api.star-history.com/svg?repos=Graphify-Labs/graphify&type=Date" width="260" alt="Graphify-Labs/graphify のスター推移グラフ"></a> |
 | 9 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)<br>Web ページを書く感覚で動画を書けば、AI がそのままレンダリングする。コーディングエージェントからも使え、編集ソフトを覚える必要はない。<br>`AI` | +5,541 | 791.6 | 75,673 | <a href="https://www.star-history.com/#heygen-com/hyperframes&Date"><img src="https://api.star-history.com/svg?repos=heygen-com/hyperframes&type=Date" width="260" alt="heygen-com/hyperframes のスター推移グラフ"></a> |
 | 10 | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)<br>AI エージェントにインターネット全体を見せるツール。コマンド一つで Twitter・Reddit・YouTube・GitHub・Bilibili・小紅書を読み、検索できる。API 利用料はかからない。<br>`AI` | +5,483 | 783.3 | 106,509 | <a href="https://www.star-history.com/#Panniantong/Agent-Reach&Date"><img src="https://api.star-history.com/svg?repos=Panniantong/Agent-Reach&type=Date" width="260" alt="Panniantong/Agent-Reach のスター推移グラフ"></a> |
-| 11 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)<br>コーディングエージェントにセンスを与えるスキル集。アートディレクション、実在の参考画像、ブラウザでの自己チェックにより、ありがちな平均的 AI ランディングページを作らせない。<br>`AI` | +4,623 | 660.4 | 105,834 | <a href="https://www.star-history.com/#Leonxlnx/taste-skill&Date"><img src="https://api.star-history.com/svg?repos=Leonxlnx/taste-skill&type=Date" width="260" alt="Leonxlnx/taste-skill のスター推移グラフ"></a> |
-| 12 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)<br>コーディングエージェントにデザインの知見を与えるスキル。複数のプラットフォームやフレームワークで、プロらしい UI/UX を作らせる。<br>`AI` | +3,692 | 527.4 | 142,715 | <a href="https://www.star-history.com/#nextlevelbuilder/ui-ux-pro-max-skill&Date"><img src="https://api.star-history.com/svg?repos=nextlevelbuilder/ui-ux-pro-max-skill&type=Date" width="260" alt="nextlevelbuilder/ui-ux-pro-max-skill のスター推移グラフ"></a> |
-| 13 | [anomalyco/opencode](https://github.com/anomalyco/opencode)<br>ブラウザを開かず、ターミナルのまま AI でコーディング。多数のモデルに対応し、Claude Code や Codex に対抗する無料のオープンソース。<br>`AI` | +3,142 | 448.9 | 223,154 | <a href="https://www.star-history.com/#anomalyco/opencode&Date"><img src="https://api.star-history.com/svg?repos=anomalyco/opencode&type=Date" width="260" alt="anomalyco/opencode のスター推移グラフ"></a> |
-| 14 | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)<br>セッションをまたいでエージェントに記憶を持たせる。作業内容を記録し、AI で圧縮して、次のセッションに関連部分を戻す。Claude Code・Codex・Gemini・OpenCode などで使える。<br>`AI` | +2,821 | 403.0 | 105,138 | <a href="https://www.star-history.com/#thedotmack/claude-mem&Date"><img src="https://api.star-history.com/svg?repos=thedotmack/claude-mem&type=Date" width="260" alt="thedotmack/claude-mem のスター推移グラフ"></a> |
-| 15 | [cheaper-inference/OmniRoute](https://github.com/cheaper-inference/OmniRoute)<br>無料の MIT ライセンス AI ゲートウェイ。一つのエンドポイントで数百のプロバイダーとモデルにつながり、クォータ切れ時は自動で切り替える。Claude Code・Codex・Cursor・OpenCode・Cline・Copilot に対応。<br>`AI` | +2,779 | 397.0 | 82,663 | <a href="https://www.star-history.com/#cheaper-inference/OmniRoute&Date"><img src="https://api.star-history.com/svg?repos=cheaper-inference/OmniRoute&type=Date" width="260" alt="cheaper-inference/OmniRoute のスター推移グラフ"></a> |
-| 16 | [paperclipai/paperclip](https://github.com/paperclipai/paperclip)<br>AI エージェントのチームを会社のように運営するオープンソースアプリ。目標を割り当て、予算を決め、作業とコストを一つのダッシュボードで追える。OpenClaw が社員なら、Paperclip は会社そのもの。<br>`AI` | +2,593 | 370.4 | 108,798 | <a href="https://www.star-history.com/#paperclipai/paperclip&Date"><img src="https://api.star-history.com/svg?repos=paperclipai/paperclip&type=Date" width="260" alt="paperclipai/paperclip のスター推移グラフ"></a> |
-| 17 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)<br>Nous Research 製の自己改善型 AI エージェント。学習ループを内蔵し、経験からスキルを作り、使いながら改善する。Telegram・Discord・Slack などからも話しかけられる。<br>`AI` | +2,564 | 366.3 | 258,636 | <a href="https://www.star-history.com/#NousResearch/hermes-agent&Date"><img src="https://api.star-history.com/svg?repos=NousResearch/hermes-agent&type=Date" width="260" alt="NousResearch/hermes-agent のスター推移グラフ"></a> |
-| 18 | [farion1231/cc-switch](https://github.com/farion1231/cc-switch)<br>Claude Code・Codex・Gemini CLI・OpenCode・OpenClaw などをまとめて管理するデスクトップアプリ。API プロバイダーをワンクリックで切り替え、MCP・スキル・プロンプトも設定ファイルを手で編集せず一か所で管理できる。<br>`AI` | +2,542 | 363.1 | 150,238 | <a href="https://www.star-history.com/#farion1231/cc-switch&Date"><img src="https://api.star-history.com/svg?repos=farion1231/cc-switch&type=Date" width="260" alt="farion1231/cc-switch のスター推移グラフ"></a> |
-| 19 | [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)<br>NVIDIA 製の AI エージェント向けスキルのセキュリティスキャナ。インストール前に脆弱性、プロンプトインジェクション、データ流出、サプライチェーンリスクを検査する。Claude Code・Codex・MCP スキルに対応。<br>`AI` | +2,414 | 344.9 | 23,432 | <a href="https://www.star-history.com/#NVIDIA/SkillSpector&Date"><img src="https://api.star-history.com/svg?repos=NVIDIA/SkillSpector&type=Date" width="260" alt="NVIDIA/SkillSpector のスター推移グラフ"></a> |
-| 20 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)<br>コーディングエージェント向けの本格的なエンジニアリングスキル集。シニアエンジニアが仕様から出荷まで守るワークフローと品質ゲートをまとめ、エージェントが毎回それに従うようにする。<br>`AI` | +2,185 | 312.1 | 111,823 | <a href="https://www.star-history.com/#addyosmani/agent-skills&Date"><img src="https://api.star-history.com/svg?repos=addyosmani/agent-skills&type=Date" width="260" alt="addyosmani/agent-skills のスター推移グラフ"></a> |
 
 ### 今月もっとも伸びた（直近 30 日）
 
@@ -110,16 +88,6 @@ GitHub API から取得：2026-10-30 08:39:25（UTC）。
 | 8 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)<br>Web ページを書く感覚で動画を書けば、AI がそのままレンダリングする。コーディングエージェントからも使え、編集ソフトを覚える必要はない。<br>`AI` | +21,640 | 721.3 | 75,673 | <a href="https://www.star-history.com/#heygen-com/hyperframes&Date"><img src="https://api.star-history.com/svg?repos=heygen-com/hyperframes&type=Date" width="260" alt="heygen-com/hyperframes のスター推移グラフ"></a> |
 | 9 | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)<br>AI エージェントにインターネット全体を見せるツール。コマンド一つで Twitter・Reddit・YouTube・GitHub・Bilibili・小紅書を読み、検索できる。API 利用料はかからない。<br>`AI` | +20,788 | 692.9 | 106,509 | <a href="https://www.star-history.com/#Panniantong/Agent-Reach&Date"><img src="https://api.star-history.com/svg?repos=Panniantong/Agent-Reach&type=Date" width="260" alt="Panniantong/Agent-Reach のスター推移グラフ"></a> |
 | 10 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)<br>コードベース全体を一枚の地図にして、どのファイルが互いに呼び合うか AI が一目で把握できる。大規模プロジェクトを頭から読む必要がなくなる。<br>`AI` | +17,170 | 572.3 | 138,983 | <a href="https://www.star-history.com/#Graphify-Labs/graphify&Date"><img src="https://api.star-history.com/svg?repos=Graphify-Labs/graphify&type=Date" width="260" alt="Graphify-Labs/graphify のスター推移グラフ"></a> |
-| 11 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)<br>コーディングエージェントにセンスを与えるスキル集。アートディレクション、実在の参考画像、ブラウザでの自己チェックにより、ありがちな平均的 AI ランディングページを作らせない。<br>`AI` | +14,956 | 498.5 | 105,834 | <a href="https://www.star-history.com/#Leonxlnx/taste-skill&Date"><img src="https://api.star-history.com/svg?repos=Leonxlnx/taste-skill&type=Date" width="260" alt="Leonxlnx/taste-skill のスター推移グラフ"></a> |
-| 12 | [paperclipai/paperclip](https://github.com/paperclipai/paperclip)<br>AI エージェントのチームを会社のように運営するオープンソースアプリ。目標を割り当て、予算を決め、作業とコストを一つのダッシュボードで追える。OpenClaw が社員なら、Paperclip は会社そのもの。<br>`AI` | +14,436 | 481.2 | 108,798 | <a href="https://www.star-history.com/#paperclipai/paperclip&Date"><img src="https://api.star-history.com/svg?repos=paperclipai/paperclip&type=Date" width="260" alt="paperclipai/paperclip のスター推移グラフ"></a> |
-| 13 | [anomalyco/opencode](https://github.com/anomalyco/opencode)<br>ブラウザを開かず、ターミナルのまま AI でコーディング。多数のモデルに対応し、Claude Code や Codex に対抗する無料のオープンソース。<br>`AI` | +13,404 | 446.8 | 223,154 | <a href="https://www.star-history.com/#anomalyco/opencode&Date"><img src="https://api.star-history.com/svg?repos=anomalyco/opencode&type=Date" width="260" alt="anomalyco/opencode のスター推移グラフ"></a> |
-| 14 | [farion1231/cc-switch](https://github.com/farion1231/cc-switch)<br>Claude Code・Codex・Gemini CLI・OpenCode・OpenClaw などをまとめて管理するデスクトップアプリ。API プロバイダーをワンクリックで切り替え、MCP・スキル・プロンプトも設定ファイルを手で編集せず一か所で管理できる。<br>`AI` | +12,324 | 410.8 | 150,238 | <a href="https://www.star-history.com/#farion1231/cc-switch&Date"><img src="https://api.star-history.com/svg?repos=farion1231/cc-switch&type=Date" width="260" alt="farion1231/cc-switch のスター推移グラフ"></a> |
-| 15 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)<br>コーディングエージェント向けの本格的なエンジニアリングスキル集。シニアエンジニアが仕様から出荷まで守るワークフローと品質ゲートをまとめ、エージェントが毎回それに従うようにする。<br>`AI` | +12,280 | 409.3 | 111,823 | <a href="https://www.star-history.com/#addyosmani/agent-skills&Date"><img src="https://api.star-history.com/svg?repos=addyosmani/agent-skills&type=Date" width="260" alt="addyosmani/agent-skills のスター推移グラフ"></a> |
-| 16 | [cheaper-inference/OmniRoute](https://github.com/cheaper-inference/OmniRoute)<br>無料の MIT ライセンス AI ゲートウェイ。一つのエンドポイントで数百のプロバイダーとモデルにつながり、クォータ切れ時は自動で切り替える。Claude Code・Codex・Cursor・OpenCode・Cline・Copilot に対応。<br>`AI` | +11,696 | 389.9 | 82,663 | <a href="https://www.star-history.com/#cheaper-inference/OmniRoute&Date"><img src="https://api.star-history.com/svg?repos=cheaper-inference/OmniRoute&type=Date" width="260" alt="cheaper-inference/OmniRoute のスター推移グラフ"></a> |
-| 17 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)<br>コーディングエージェントにデザインの知見を与えるスキル。複数のプラットフォームやフレームワークで、プロらしい UI/UX を作らせる。<br>`AI` | +11,660 | 388.7 | 142,715 | <a href="https://www.star-history.com/#nextlevelbuilder/ui-ux-pro-max-skill&Date"><img src="https://api.star-history.com/svg?repos=nextlevelbuilder/ui-ux-pro-max-skill&type=Date" width="260" alt="nextlevelbuilder/ui-ux-pro-max-skill のスター推移グラフ"></a> |
-| 18 | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)<br>セッションをまたいでエージェントに記憶を持たせる。作業内容を記録し、AI で圧縮して、次のセッションに関連部分を戻す。Claude Code・Codex・Gemini・OpenCode などで使える。<br>`AI` | +10,595 | 353.2 | 105,138 | <a href="https://www.star-history.com/#thedotmack/claude-mem&Date"><img src="https://api.star-history.com/svg?repos=thedotmack/claude-mem&type=Date" width="260" alt="thedotmack/claude-mem のスター推移グラフ"></a> |
-| 19 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)<br>Nous Research 製の自己改善型 AI エージェント。学習ループを内蔵し、経験からスキルを作り、使いながら改善する。Telegram・Discord・Slack などからも話しかけられる。<br>`AI` | +9,731 | 324.4 | 258,636 | <a href="https://www.star-history.com/#NousResearch/hermes-agent&Date"><img src="https://api.star-history.com/svg?repos=NousResearch/hermes-agent&type=Date" width="260" alt="NousResearch/hermes-agent のスター推移グラフ"></a> |
-| 20 | [anthropics/skills](https://github.com/anthropics/skills)<br>Anthropic 公式の Agent Skills 公開リポジトリ。指示・スクリプト・リソースをまとめたフォルダを Claude が必要なときに読み込む。クリエイティブ制作から Web アプリのテストまで、自作スキルの手本になる。<br>`AI` | +6,531 | 217.7 | 184,884 | <a href="https://www.star-history.com/#anthropics/skills&Date"><img src="https://api.star-history.com/svg?repos=anthropics/skills&type=Date" width="260" alt="anthropics/skills のスター推移グラフ"></a> |
 
 ### 今年もっとも伸びた（直近 365 日）
 
@@ -135,16 +103,6 @@ GitHub API から取得：2026-10-30 08:39:25（UTC）。
 | 8 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)<br>コードベース全体を一枚の地図にして、どのファイルが互いに呼び合うか AI が一目で把握できる。大規模プロジェクトを頭から読む必要がなくなる。<br>`AI` | +138,922 | 661.5 †<br><sub>÷210日</sub> | 138,983 | <a href="https://www.star-history.com/#Graphify-Labs/graphify&Date"><img src="https://api.star-history.com/svg?repos=Graphify-Labs/graphify&type=Date" width="260" alt="Graphify-Labs/graphify のスター推移グラフ"></a> |
 | 9 | [anomalyco/opencode](https://github.com/anomalyco/opencode)<br>ブラウザを開かず、ターミナルのまま AI でコーディング。多数のモデルに対応し、Claude Code や Codex に対抗する無料のオープンソース。<br>`AI` | +194,805 | 533.7 | 223,154 | <a href="https://www.star-history.com/#anomalyco/opencode&Date"><img src="https://api.star-history.com/svg?repos=anomalyco/opencode&type=Date" width="260" alt="anomalyco/opencode のスター推移グラフ"></a> |
 | 10 | [stablyai/orca](https://github.com/stablyai/orca)<br>一つのデスクトップで複数の AI コーディングエージェントを同時に走らせ、誰の出来が良いか比べられる。各エージェントは独立したワークスペースで互いに干渉しない。<br>`AI` | +110,415 | 486.4 †<br><sub>÷227日</sub> | 110,515 | <a href="https://www.star-history.com/#stablyai/orca&Date"><img src="https://api.star-history.com/svg?repos=stablyai/orca&type=Date" width="260" alt="stablyai/orca のスター推移グラフ"></a> |
-| 11 | [anthropics/skills](https://github.com/anthropics/skills)<br>Anthropic 公式の Agent Skills 公開リポジトリ。指示・スクリプト・リソースをまとめたフォルダを Claude が必要なときに読み込む。クリエイティブ制作から Web アプリのテストまで、自作スキルの手本になる。<br>`AI` | +170,780 | 467.9 | 184,884 | <a href="https://www.star-history.com/#anthropics/skills&Date"><img src="https://api.star-history.com/svg?repos=anthropics/skills&type=Date" width="260" alt="anthropics/skills のスター推移グラフ"></a> |
-| 12 | [paperclipai/paperclip](https://github.com/paperclipai/paperclip)<br>AI エージェントのチームを会社のように運営するオープンソースアプリ。目標を割り当て、予算を決め、作業とコストを一つのダッシュボードで追える。OpenClaw が社員なら、Paperclip は会社そのもの。<br>`AI` | +108,764 | 449.4 †<br><sub>÷242日</sub> | 108,798 | <a href="https://www.star-history.com/#paperclipai/paperclip&Date"><img src="https://api.star-history.com/svg?repos=paperclipai/paperclip&type=Date" width="260" alt="paperclipai/paperclip のスター推移グラフ"></a> |
-| 13 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)<br>コーディングエージェント向けの本格的なエンジニアリングスキル集。シニアエンジニアが仕様から出荷まで守るワークフローと品質ゲートをまとめ、エージェントが毎回それに従うようにする。<br>`AI` | +111,805 | 435.0 †<br><sub>÷257日</sub> | 111,823 | <a href="https://www.star-history.com/#addyosmani/agent-skills&Date"><img src="https://api.star-history.com/svg?repos=addyosmani/agent-skills&type=Date" width="260" alt="addyosmani/agent-skills のスター推移グラフ"></a> |
-| 14 | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)<br>AI エージェントにインターネット全体を見せるツール。コマンド一つで Twitter・Reddit・YouTube・GitHub・Bilibili・小紅書を読み、検索できる。API 利用料はかからない。<br>`AI` | +106,451 | 429.2 †<br><sub>÷248日</sub> | 106,509 | <a href="https://www.star-history.com/#Panniantong/Agent-Reach&Date"><img src="https://api.star-history.com/svg?repos=Panniantong/Agent-Reach&type=Date" width="260" alt="Panniantong/Agent-Reach のスター推移グラフ"></a> |
-| 15 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)<br>コーディングエージェントにデザインの知見を与えるスキル。複数のプラットフォームやフレームワークで、プロらしい UI/UX を作らせる。<br>`AI` | +142,662 | 427.1 †<br><sub>÷334日</sub> | 142,715 | <a href="https://www.star-history.com/#nextlevelbuilder/ui-ux-pro-max-skill&Date"><img src="https://api.star-history.com/svg?repos=nextlevelbuilder/ui-ux-pro-max-skill&type=Date" width="260" alt="nextlevelbuilder/ui-ux-pro-max-skill のスター推移グラフ"></a> |
-| 16 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)<br>コーディングエージェントにセンスを与えるスキル集。アートディレクション、実在の参考画像、ブラウザでの自己チェックにより、ありがちな平均的 AI ランディングページを作らせない。<br>`AI` | +105,762 | 418.0 †<br><sub>÷253日</sub> | 105,834 | <a href="https://www.star-history.com/#Leonxlnx/taste-skill&Date"><img src="https://api.star-history.com/svg?repos=Leonxlnx/taste-skill&type=Date" width="260" alt="Leonxlnx/taste-skill のスター推移グラフ"></a> |
-| 17 | [farion1231/cc-switch](https://github.com/farion1231/cc-switch)<br>Claude Code・Codex・Gemini CLI・OpenCode・OpenClaw などをまとめて管理するデスクトップアプリ。API プロバイダーをワンクリックで切り替え、MCP・スキル・プロンプトも設定ファイルを手で編集せず一か所で管理できる。<br>`AI` | +147,480 | 404.1 | 150,238 | <a href="https://www.star-history.com/#farion1231/cc-switch&Date"><img src="https://api.star-history.com/svg?repos=farion1231/cc-switch&type=Date" width="260" alt="farion1231/cc-switch のスター推移グラフ"></a> |
-| 18 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill)<br>AI に自分のコードの脆弱性を調べさせ、さらに別の AI に反論させる。コーディングエージェントが書きがちな安全でないコード対策。<br>`AI` | +53,137 | 396.5 †<br><sub>÷134日</sub> | 53,235 | <a href="https://www.star-history.com/#cloudflare/security-audit-skill&Date"><img src="https://api.star-history.com/svg?repos=cloudflare/security-audit-skill&type=Date" width="260" alt="cloudflare/security-audit-skill のスター推移グラフ"></a> |
-| 19 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)<br>Web ページを書く感覚で動画を書けば、AI がそのままレンダリングする。コーディングエージェントからも使え、編集ソフトを覚える必要はない。<br>`AI` | +75,613 | 323.1 †<br><sub>÷234日</sub> | 75,673 | <a href="https://www.star-history.com/#heygen-com/hyperframes&Date"><img src="https://api.star-history.com/svg?repos=heygen-com/hyperframes&type=Date" width="260" alt="heygen-com/hyperframes のスター推移グラフ"></a> |
-| 20 | [cheaper-inference/OmniRoute](https://github.com/cheaper-inference/OmniRoute)<br>無料の MIT ライセンス AI ゲートウェイ。一つのエンドポイントで数百のプロバイダーとモデルにつながり、クォータ切れ時は自動で切り替える。Claude Code・Codex・Cursor・OpenCode・Cline・Copilot に対応。<br>`AI` | +82,646 | 319.1 †<br><sub>÷259日</sub> | 82,663 | <a href="https://www.star-history.com/#cheaper-inference/OmniRoute&Date"><img src="https://api.star-history.com/svg?repos=cheaper-inference/OmniRoute&type=Date" width="260" alt="cheaper-inference/OmniRoute のスター推移グラフ"></a> |
 
 † リポジトリの作成が集計期間より新しいため、スター/日は期間全体ではなくリポジトリの経過日数（数値の下に表示）で割っています。
 
@@ -162,24 +120,12 @@ GitHub API から取得：2026-10-30 08:39:25（UTC）。
 | 8 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)<br>AI がコードに余計なものを盛りすぎる問題の特効薬。怠け者のベテランのように、書かずに済むなら書かず、書くなら正しく書くことを教える。<br>`AI` | 180,485 | <a href="https://www.star-history.com/#DietrichGebert/ponytail&Date"><img src="https://api.star-history.com/svg?repos=DietrichGebert/ponytail&type=Date" width="260" alt="DietrichGebert/ponytail のスター推移グラフ"></a> |
 | 9 | [farion1231/cc-switch](https://github.com/farion1231/cc-switch)<br>Claude Code・Codex・Gemini CLI・OpenCode・OpenClaw などをまとめて管理するデスクトップアプリ。API プロバイダーをワンクリックで切り替え、MCP・スキル・プロンプトも設定ファイルを手で編集せず一か所で管理できる。<br>`AI` | 150,238 | <a href="https://www.star-history.com/#farion1231/cc-switch&Date"><img src="https://api.star-history.com/svg?repos=farion1231/cc-switch&type=Date" width="260" alt="farion1231/cc-switch のスター推移グラフ"></a> |
 | 10 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)<br>コーディングエージェントにデザインの知見を与えるスキル。複数のプラットフォームやフレームワークで、プロらしい UI/UX を作らせる。<br>`AI` | 142,715 | <a href="https://www.star-history.com/#nextlevelbuilder/ui-ux-pro-max-skill&Date"><img src="https://api.star-history.com/svg?repos=nextlevelbuilder/ui-ux-pro-max-skill&type=Date" width="260" alt="nextlevelbuilder/ui-ux-pro-max-skill のスター推移グラフ"></a> |
-| 11 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)<br>コードベース全体を一枚の地図にして、どのファイルが互いに呼び合うか AI が一目で把握できる。大規模プロジェクトを頭から読む必要がなくなる。<br>`AI` | 138,983 | <a href="https://www.star-history.com/#Graphify-Labs/graphify&Date"><img src="https://api.star-history.com/svg?repos=Graphify-Labs/graphify&type=Date" width="260" alt="Graphify-Labs/graphify のスター推移グラフ"></a> |
-| 12 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)<br>コーディングエージェント向けの本格的なエンジニアリングスキル集。シニアエンジニアが仕様から出荷まで守るワークフローと品質ゲートをまとめ、エージェントが毎回それに従うようにする。<br>`AI` | 111,823 | <a href="https://www.star-history.com/#addyosmani/agent-skills&Date"><img src="https://api.star-history.com/svg?repos=addyosmani/agent-skills&type=Date" width="260" alt="addyosmani/agent-skills のスター推移グラフ"></a> |
-| 13 | [stablyai/orca](https://github.com/stablyai/orca)<br>一つのデスクトップで複数の AI コーディングエージェントを同時に走らせ、誰の出来が良いか比べられる。各エージェントは独立したワークスペースで互いに干渉しない。<br>`AI` | 110,515 | <a href="https://www.star-history.com/#stablyai/orca&Date"><img src="https://api.star-history.com/svg?repos=stablyai/orca&type=Date" width="260" alt="stablyai/orca のスター推移グラフ"></a> |
-| 14 | [paperclipai/paperclip](https://github.com/paperclipai/paperclip)<br>AI エージェントのチームを会社のように運営するオープンソースアプリ。目標を割り当て、予算を決め、作業とコストを一つのダッシュボードで追える。OpenClaw が社員なら、Paperclip は会社そのもの。<br>`AI` | 108,798 | <a href="https://www.star-history.com/#paperclipai/paperclip&Date"><img src="https://api.star-history.com/svg?repos=paperclipai/paperclip&type=Date" width="260" alt="paperclipai/paperclip のスター推移グラフ"></a> |
-| 15 | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)<br>AI エージェントにインターネット全体を見せるツール。コマンド一つで Twitter・Reddit・YouTube・GitHub・Bilibili・小紅書を読み、検索できる。API 利用料はかからない。<br>`AI` | 106,509 | <a href="https://www.star-history.com/#Panniantong/Agent-Reach&Date"><img src="https://api.star-history.com/svg?repos=Panniantong/Agent-Reach&type=Date" width="260" alt="Panniantong/Agent-Reach のスター推移グラフ"></a> |
-| 16 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)<br>コーディングエージェントにセンスを与えるスキル集。アートディレクション、実在の参考画像、ブラウザでの自己チェックにより、ありがちな平均的 AI ランディングページを作らせない。<br>`AI` | 105,834 | <a href="https://www.star-history.com/#Leonxlnx/taste-skill&Date"><img src="https://api.star-history.com/svg?repos=Leonxlnx/taste-skill&type=Date" width="260" alt="Leonxlnx/taste-skill のスター推移グラフ"></a> |
-| 17 | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)<br>セッションをまたいでエージェントに記憶を持たせる。作業内容を記録し、AI で圧縮して、次のセッションに関連部分を戻す。Claude Code・Codex・Gemini・OpenCode などで使える。<br>`AI` | 105,138 | <a href="https://www.star-history.com/#thedotmack/claude-mem&Date"><img src="https://api.star-history.com/svg?repos=thedotmack/claude-mem&type=Date" width="260" alt="thedotmack/claude-mem のスター推移グラフ"></a> |
-| 18 | [cheaper-inference/OmniRoute](https://github.com/cheaper-inference/OmniRoute)<br>無料の MIT ライセンス AI ゲートウェイ。一つのエンドポイントで数百のプロバイダーとモデルにつながり、クォータ切れ時は自動で切り替える。Claude Code・Codex・Cursor・OpenCode・Cline・Copilot に対応。<br>`AI` | 82,663 | <a href="https://www.star-history.com/#cheaper-inference/OmniRoute&Date"><img src="https://api.star-history.com/svg?repos=cheaper-inference/OmniRoute&type=Date" width="260" alt="cheaper-inference/OmniRoute のスター推移グラフ"></a> |
-| 19 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)<br>Web ページを書く感覚で動画を書けば、AI がそのままレンダリングする。コーディングエージェントからも使え、編集ソフトを覚える必要はない。<br>`AI` | 75,673 | <a href="https://www.star-history.com/#heygen-com/hyperframes&Date"><img src="https://api.star-history.com/svg?repos=heygen-com/hyperframes&type=Date" width="260" alt="heygen-com/hyperframes のスター推移グラフ"></a> |
-| 20 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill)<br>AI に自分のコードの脆弱性を調べさせ、さらに別の AI に反論させる。コーディングエージェントが書きがちな安全でないコード対策。<br>`AI` | 53,235 | <a href="https://www.star-history.com/#cloudflare/security-audit-skill&Date"><img src="https://api.star-history.com/svg?repos=cloudflare/security-audit-skill&type=Date" width="260" alt="cloudflare/security-audit-skill のスター推移グラフ"></a> |
 
 ## 開発者ツール
 
 > CLI・エディタ・パッケージマネージャ・リンタ・ビルドツール
 
 ### 7 日以内の新着で最も熱いリポジトリ（作成から 7 日以内）
-
-このカテゴリで直近 7 日以内に作成されたリポジトリを GitHub 検索 API（topic で判定：リポジトリ自身がそのカテゴリの topic を持つこと）で探し、作成からの 1 日あたりスター数で並べます。このカテゴリの他のランキング（または収録プロジェクト）に載っているもの、および先のカテゴリ（AI 優先）ですでに載ったものは除外します。説明文は各リポジトリ自身の GitHub 説明；手作業の翻訳は [data/newcomer_i18n.json](data/newcomer_i18n.json)。ルール：[docs/NEW_ARRIVALS.md](docs/NEW_ARRIVALS.md)。
 
 | # | プロジェクト | 作成日（UTC） | 総スター数 | スター/日 | スター推移 |
 |---|---|---|---:|---:|---|
@@ -193,16 +139,6 @@ GitHub API から取得：2026-10-30 08:39:25（UTC）。
 | 8 | [ScorpionHub17/KMS-Pico](https://github.com/ScorpionHub17/KMS-Pico)<br>Kms Pico Free 2026 の完全版スタンドアロンセットアップ。アクティベーション済みのデスクトップ版で、すぐに使え、スムーズにインストールできる。 | 2026-10-29<br><sub>1.0 日</sub> | 197 | 197.0 | <a href="https://www.star-history.com/#ScorpionHub17/KMS-Pico&Date"><img src="https://api.star-history.com/svg?repos=ScorpionHub17/KMS-Pico&type=Date" width="260" alt="ScorpionHub17/KMS-Pico のスター推移グラフ"></a> |
 | 9 | [Sourcecladrag/Windows-Optimizer](https://github.com/Sourcecladrag/Windows-Optimizer)<br>Windows Optimizer 2026——高度なシステムチューニングと機能強化を備えた、すぐに使える完全版インストーラー。 | 2026-10-29<br><sub>1.0 日</sub> | 197 | 197.0 | <a href="https://www.star-history.com/#Sourcecladrag/Windows-Optimizer&Date"><img src="https://api.star-history.com/svg?repos=Sourcecladrag/Windows-Optimizer&type=Date" width="260" alt="Sourcecladrag/Windows-Optimizer のスター推移グラフ"></a> |
 | 10 | [AshReinvigorate/Microsoft-Office](https://github.com/AshReinvigorate/Microsoft-Office)<br>Microsoft Office 2026 の完全版スタンドアロンセットアップ。すぐに使えるデスクトップ版インストールで、全機能がアクティベーション済み。 | 2026-10-30<br><sub>1.0 日</sub> | 126 | 126.0 | <a href="https://www.star-history.com/#AshReinvigorate/Microsoft-Office&Date"><img src="https://api.star-history.com/svg?repos=AshReinvigorate/Microsoft-Office&type=Date" width="260" alt="AshReinvigorate/Microsoft-Office のスター推移グラフ"></a> |
-| 11 | [Fangludisclose/SystemCare-Pro](https://github.com/Fangludisclose/SystemCare-Pro)<br>Systemcare Pro 2026 のすぐに使える完全版インストーラー。全機能がアクティベーション済みの完全なスタンドアロンセットアップで、そのまま実行できる。 | 2026-10-30<br><sub>1.0 日</sub> | 126 | 126.0 | <a href="https://www.star-history.com/#Fangludisclose/SystemCare-Pro&Date"><img src="https://api.star-history.com/svg?repos=Fangludisclose/SystemCare-Pro&type=Date" width="260" alt="Fangludisclose/SystemCare-Pro のスター推移グラフ"></a> |
-| 12 | [FormHalberdierSouk/SoundPad](https://github.com/FormHalberdierSouk/SoundPad)<br>Soundpad 2026：プロ向けのオーディオ制作に必要なプラグインとエフェクトをひととおり揃えた、すぐに使える完全版インストーラー。 | 2026-10-30<br><sub>1.0 日</sub> | 126 | 126.0 | <a href="https://www.star-history.com/#FormHalberdierSouk/SoundPad&Date"><img src="https://api.star-history.com/svg?repos=FormHalberdierSouk/SoundPad&type=Date" width="260" alt="FormHalberdierSouk/SoundPad のスター推移グラフ"></a> |
-| 13 | [Lostbrocreate/Adobe-InDesign](https://github.com/Lostbrocreate/Adobe-InDesign)<br>セキュアなデジタルアセット配備パイプライン 2026 のすぐに使える完全版インストーラー。オンラインとオフラインの出版を効率化する、すぐ使えるソリューション。 | 2026-10-30<br><sub>1.0 日</sub> | 126 | 126.0 | <a href="https://www.star-history.com/#Lostbrocreate/Adobe-InDesign&Date"><img src="https://api.star-history.com/svg?repos=Lostbrocreate/Adobe-InDesign&type=Date" width="260" alt="Lostbrocreate/Adobe-InDesign のスター推移グラフ"></a> |
-| 14 | [nodedevelopersack/Cubase](https://github.com/nodedevelopersack/Cubase)<br>プロ向け Cubase 13 の完全版スタンドアロンインストールビルド。アクティベーション済みで、デスクトップでのオーディオ制作をスムーズに行える。 | 2026-10-30<br><sub>1.0 日</sub> | 126 | 126.0 | <a href="https://www.star-history.com/#nodedevelopersack/Cubase&Date"><img src="https://api.star-history.com/svg?repos=nodedevelopersack/Cubase&type=Date" width="260" alt="nodedevelopersack/Cubase のスター推移グラフ"></a> |
-| 15 | [Phantomeidemonstrate/AnyDesk](https://github.com/Phantomeidemonstrate/AnyDesk)<br>Anydesk 2026：すぐに使える完全版インストーラー。完全なスタンドアロンセットアップで、リモートデスクトップ接続をスムーズにする。 | 2026-10-30<br><sub>1.0 日</sub> | 125 | 125.0 | <a href="https://www.star-history.com/#Phantomeidemonstrate/AnyDesk&Date"><img src="https://api.star-history.com/svg?repos=Phantomeidemonstrate/AnyDesk&type=Date" width="260" alt="Phantomeidemonstrate/AnyDesk のスター推移グラフ"></a> |
-| 16 | [PhoenixRetreat/Wondshare-Recoverit](https://github.com/PhoenixRetreat/Wondshare-Recoverit)<br>Wondshare Recoverit 2026 の完全版スタンドアロンセットアップ。すぐに実行できる完全版インストーラーで、全機能がアクティベーション済み。 | 2026-10-30<br><sub>1.0 日</sub> | 125 | 125.0 | <a href="https://www.star-history.com/#PhoenixRetreat/Wondshare-Recoverit&Date"><img src="https://api.star-history.com/svg?repos=PhoenixRetreat/Wondshare-Recoverit&type=Date" width="260" alt="PhoenixRetreat/Wondshare-Recoverit のスター推移グラフ"></a> |
-| 17 | [scarletscreengrasp/Uttorent](https://github.com/scarletscreengrasp/Uttorent)<br>Uttorent 2026——すぐに使える完全版インストーラー。完全なスタンドアロンセットアップで、そのまま実行できる。 | 2026-10-30<br><sub>1.0 日</sub> | 125 | 125.0 | <a href="https://www.star-history.com/#scarletscreengrasp/Uttorent&Date"><img src="https://api.star-history.com/svg?repos=scarletscreengrasp/Uttorent&type=Date" width="260" alt="scarletscreengrasp/Uttorent のスター推移グラフ"></a> |
-| 18 | [SoapmakerShout44/Cinema-4d](https://github.com/SoapmakerShout44/Cinema-4d)<br>プロ向け Cinema 4D ユーティリティ構成。完全なスタンドアロンインストールセットアップで、2026 年のワークフローを効率化する。 | 2026-10-30<br><sub>1.0 日</sub> | 125 | 125.0 | <a href="https://www.star-history.com/#SoapmakerShout44/Cinema-4d&Date"><img src="https://api.star-history.com/svg?repos=SoapmakerShout44/Cinema-4d&type=Date" width="260" alt="SoapmakerShout44/Cinema-4d のスター推移グラフ"></a> |
-| 19 | [twilightstonerestore/Glary-Utilities-Pro](https://github.com/twilightstonerestore/Glary-Utilities-Pro)<br>Glary Utilities Pro 2026：全ツールがアクティベーション済みの、すぐに使える完全版インストーラー。デスクトップですぐに使い始められる。 | 2026-10-30<br><sub>1.0 日</sub> | 125 | 125.0 | <a href="https://www.star-history.com/#twilightstonerestore/Glary-Utilities-Pro&Date"><img src="https://api.star-history.com/svg?repos=twilightstonerestore/Glary-Utilities-Pro&type=Date" width="260" alt="twilightstonerestore/Glary-Utilities-Pro のスター推移グラフ"></a> |
-| 20 | [ViceFencerManacle/Camtasia](https://github.com/ViceFencerManacle/Camtasia)<br>Camtasia 2026 のすぐに使える完全版インストーラー。全機能を備え、デスクトップでそのまま実行できる。 | 2026-10-30<br><sub>1.0 日</sub> | 125 | 125.0 | <a href="https://www.star-history.com/#ViceFencerManacle/Camtasia&Date"><img src="https://api.star-history.com/svg?repos=ViceFencerManacle/Camtasia&type=Date" width="260" alt="ViceFencerManacle/Camtasia のスター推移グラフ"></a> |
 
 ### 今週もっとも伸びた（直近 7 日）
 
@@ -261,8 +197,6 @@ GitHub API から取得：2026-10-30 08:39:25（UTC）。
 > 脆弱性スキャン・SAST・サプライチェーン・ランタイムセキュリティ
 
 ### 7 日以内の新着で最も熱いリポジトリ（作成から 7 日以内）
-
-このカテゴリで直近 7 日以内に作成されたリポジトリを GitHub 検索 API（topic で判定：リポジトリ自身がそのカテゴリの topic を持つこと）で探し、作成からの 1 日あたりスター数で並べます。このカテゴリの他のランキング（または収録プロジェクト）に載っているもの、および先のカテゴリ（AI 優先）ですでに載ったものは除外します。説明文は各リポジトリ自身の GitHub 説明；手作業の翻訳は [data/newcomer_i18n.json](data/newcomer_i18n.json)。ルール：[docs/NEW_ARRIVALS.md](docs/NEW_ARRIVALS.md)。
 
 | # | プロジェクト | 作成日（UTC） | 総スター数 | スター/日 | スター推移 |
 |---|---|---|---:|---:|---|
@@ -326,8 +260,6 @@ GitHub API から取得：2026-10-30 08:39:25（UTC）。
 > フロントエンド枠組み・UI キット・CSS・ブラウザツール
 
 ### 7 日以内の新着で最も熱いリポジトリ（作成から 7 日以内）
-
-このカテゴリで直近 7 日以内に作成されたリポジトリを GitHub 検索 API（topic で判定：リポジトリ自身がそのカテゴリの topic を持つこと）で探し、作成からの 1 日あたりスター数で並べます。このカテゴリの他のランキング（または収録プロジェクト）に載っているもの、および先のカテゴリ（AI 優先）ですでに載ったものは除外します。説明文は各リポジトリ自身の GitHub 説明；手作業の翻訳は [data/newcomer_i18n.json](data/newcomer_i18n.json)。ルール：[docs/NEW_ARRIVALS.md](docs/NEW_ARRIVALS.md)。
 
 | # | プロジェクト | 作成日（UTC） | 総スター数 | スター/日 | スター推移 |
 |---|---|---|---:|---:|---|
@@ -395,8 +327,6 @@ GitHub API から取得：2026-10-30 08:39:25（UTC）。
 
 ### 7 日以内の新着で最も熱いリポジトリ（作成から 7 日以内）
 
-このカテゴリで直近 7 日以内に作成されたリポジトリを GitHub 検索 API（topic で判定：リポジトリ自身がそのカテゴリの topic を持つこと）で探し、作成からの 1 日あたりスター数で並べます。このカテゴリの他のランキング（または収録プロジェクト）に載っているもの、および先のカテゴリ（AI 優先）ですでに載ったものは除外します。説明文は各リポジトリ自身の GitHub 説明；手作業の翻訳は [data/newcomer_i18n.json](data/newcomer_i18n.json)。ルール：[docs/NEW_ARRIVALS.md](docs/NEW_ARRIVALS.md)。
-
 | # | プロジェクト | 作成日（UTC） | 総スター数 | スター/日 | スター推移 |
 |---|---|---|---:|---:|---|
 | 1 | [zeabur-oss/zeabur](https://github.com/zeabur-oss/zeabur)<br>自分の Kubernetes 上で動かすセルフホスト型 PaaS。 | 2026-10-24<br><sub>6.0 日</sub> | 551 | 91.1 | <a href="https://www.star-history.com/#zeabur-oss/zeabur&Date"><img src="https://api.star-history.com/svg?repos=zeabur-oss/zeabur&type=Date" width="260" alt="zeabur-oss/zeabur のスター推移グラフ"></a> |
@@ -460,8 +390,6 @@ GitHub API から取得：2026-10-30 08:39:25（UTC）。
 
 ### 7 日以内の新着で最も熱いリポジトリ（作成から 7 日以内）
 
-このカテゴリで直近 7 日以内に作成されたリポジトリを GitHub 検索 API（topic で判定：リポジトリ自身がそのカテゴリの topic を持つこと）で探し、作成からの 1 日あたりスター数で並べます。このカテゴリの他のランキング（または収録プロジェクト）に載っているもの、および先のカテゴリ（AI 優先）ですでに載ったものは除外します。説明文は各リポジトリ自身の GitHub 説明；手作業の翻訳は [data/newcomer_i18n.json](data/newcomer_i18n.json)。ルール：[docs/NEW_ARRIVALS.md](docs/NEW_ARRIVALS.md)。
-
 今回の実行で条件を満たす新着リポジトリはありませんでした。
 
 ### 今週もっとも伸びた（直近 7 日）
@@ -522,8 +450,6 @@ GitHub API から取得：2026-10-30 08:39:25（UTC）。
 
 ### 7 日以内の新着で最も熱いリポジトリ（作成から 7 日以内）
 
-このカテゴリで直近 7 日以内に作成されたリポジトリを GitHub 検索 API（topic で判定：リポジトリ自身がそのカテゴリの topic を持つこと）で探し、作成からの 1 日あたりスター数で並べます。このカテゴリの他のランキング（または収録プロジェクト）に載っているもの、および先のカテゴリ（AI 優先）ですでに載ったものは除外します。説明文は各リポジトリ自身の GitHub 説明；手作業の翻訳は [data/newcomer_i18n.json](data/newcomer_i18n.json)。ルール：[docs/NEW_ARRIVALS.md](docs/NEW_ARRIVALS.md)。
-
 | # | プロジェクト | 作成日（UTC） | 総スター数 | スター/日 | スター推移 |
 |---|---|---|---:|---:|---|
 | 1 | [hugues31/duckpad](https://github.com/hugues31/duckpad)<br>オープンソースコミュニティにふさわしい、データ変換ツール。 | 2026-10-25<br><sub>5.0 日</sub> | 269 | 53.5 | <a href="https://www.star-history.com/#hugues31/duckpad&Date"><img src="https://api.star-history.com/svg?repos=hugues31/duckpad&type=Date" width="260" alt="hugues31/duckpad のスター推移グラフ"></a> |
@@ -580,18 +506,10 @@ GitHub API から取得：2026-10-30 08:39:25（UTC）。
 | 7 | [dbt-labs/dbt-core](https://github.com/dbt-labs/dbt-core)<br>ウェアハウスのデータをソフト工学のやり方で変換。<br>`データ` | 14,104 | <a href="https://www.star-history.com/#dbt-labs/dbt-core&Date"><img src="https://api.star-history.com/svg?repos=dbt-labs/dbt-core&type=Date" width="260" alt="dbt-labs/dbt-core のスター推移グラフ"></a> |
 | 8 | [jupyter/notebook](https://github.com/jupyter/notebook)<br>文書を作り共有する Jupyter インタラクティブノートブック。<br>`データ` | 13,461 | <a href="https://www.star-history.com/#jupyter/notebook&Date"><img src="https://api.star-history.com/svg?repos=jupyter/notebook&type=Date" width="260" alt="jupyter/notebook のスター推移グラフ"></a> |
 
-## 欠損データ
+---
 
-今回の実行で欠損したプロジェクトはありません。
+役に立ったら、ほかの人にも見つけてもらえるようリポジトリにスターを付けてください。
 
-## 数値の出どころ
+引用の仕方：[CITATION.cff](CITATION.cff) を見てください。
 
-- 総スター数：`GET /repos/{owner}/{repo}` の `stargazers_count`。
-- 増加数：`GET /repos/{owner}/{repo}/stargazers/history`（GitHub が提供する、ユーザー情報を含まない週次/日次のスター数）。今日より前の N 日分（UTC、今日は含まない）の合計で、スター/日 = 増加数 ÷ N。
-- GitHub は週/日の区切りが UTC と一致する保証はないとしており、後から外されたスターは数えられないため、期間の端では多少の誤差が出ます。
-- スター推移は `star-history.com` の SVG 画像を URL で参照しています。このリポジトリに解析・トラッキング用スクリプトは一切ありません。
-- 生データは [`data/stats.json`](data/stats.json)、日次スナップショットは [`data/stars.json`](data/stars.json) に追記されます。
-
-## コントリビュート
-
-`data/projects.json` に項目を追加し（`category` と 5 言語の `desc`）、`python tools/update_stars.py` を実行。カテゴリ：[docs/CATEGORIES.md](docs/CATEGORIES.md)。毎日の更新：[docs/DAILY_UPDATE.md](docs/DAILY_UPDATE.md)。
+数字の出し方と参加方法：[docs/HOW_IT_WORKS.ja.md](docs/HOW_IT_WORKS.ja.md)。新規リポジトリのルール：[docs/NEW_ARRIVALS.md](docs/NEW_ARRIVALS.md)。カテゴリ：[docs/CATEGORIES.md](docs/CATEGORIES.md)。

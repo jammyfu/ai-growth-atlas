@@ -70,7 +70,7 @@ if [ -z "$(git status --porcelain)" ]; then
   echo "No changes."
   exit 0
 fi
-git add data rankings latest README*.md
+git add data rankings latest README*.md docs/HOW_IT_WORKS*.md
 git commit -m "chore(data): daily star update $(date -u +%F)"
 if [ "$PUSH" = 1 ]; then
   git push origin main
