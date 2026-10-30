@@ -5,7 +5,7 @@
 ## Docs
 - [README](https://github.com/jammyfu/github-risers#readme): English rankings
 - [README.zh-Hans.md](https://github.com/jammyfu/github-risers/blob/main/README.zh-Hans.md): 简体中文榜单
-- [docs/CATEGORIES.md](https://github.com/jammyfu/github-risers/blob/main/docs/CATEGORIES.md): category rules (topics / keywords)
+- [docs/CATEGORIES.md](https://github.com/jammyfu/github-risers/blob/main/docs/CATEGORIES.md): category rules (topic-only discovery; suspected cracked/pirated repos ranked last)
 - [docs/NEW_ARRIVALS.md](https://github.com/jammyfu/github-risers/blob/main/docs/NEW_ARRIVALS.md): 7-day newcomers criteria
 - [docs/DAILY_UPDATE.md](https://github.com/jammyfu/github-risers/blob/main/docs/DAILY_UPDATE.md): daily automation
 - [data/projects.json](https://github.com/jammyfu/github-risers/blob/main/data/projects.json): tracked projects

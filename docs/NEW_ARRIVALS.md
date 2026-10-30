@@ -10,14 +10,16 @@ Category rules: [CATEGORIES.md](CATEGORIES.md).
 For each category in `data/categories.json`, the updater runs:
 
 `GET /search/repositories?q=<query>&sort=stars&order=desc&per_page=100` (paged up to 3 pages), one query per
-topic, keyword and optional language, all with the same filters:
+category topic (topic-only), all with the same filters:
 
 ```
 created:>=<now minus 7 days> stars:>=100 fork:false archived:false
 ```
 
-Topics / keywords / languages are those listed on the category. "Belongs to the category" therefore means
-"tagged or described that way by its owner"; there is no manual curation beyond the topic/keyword lists.
+Topics are those listed on the category, and the repo itself must carry one of them. "Belongs to the category"
+therefore means "tagged that way by its owner"; there is no manual curation beyond the topic list.
+Suspected cracked / pirated / activator repos are listed last and never lead a category; see
+[CATEGORIES.md](CATEGORIES.md#suspected-cracked--pirated--activator-repos).
 
 ## Criteria
 
@@ -25,7 +27,7 @@ Topics / keywords / languages are those listed on the category. "Belongs to the 
 2. At least 100 stars, not a fork, not archived, not private.
 3. The best 30 candidates by search star count (per category) are re-read with `GET /repos/{owner}/{repo}`.
 4. **Hotness = stars ÷ max(age in days, 1).**
-5. Ranked by hotness (ties: more stars, then name), top 20 shown per category.
+5. Ranked by hotness (ties: more stars, then name), top 20 shown per category, with suspected cracked / pirated repos after all normal ones.
 
 If every search query for a category fails, that category's new-repo board is shown as missing. If only some
 queries fail, the README says so. Search is index-based and can lag by minutes.

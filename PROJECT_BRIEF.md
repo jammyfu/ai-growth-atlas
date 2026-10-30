@@ -16,7 +16,7 @@ Total-star lists let old projects stay on top; newly rising projects get buried.
 
 - Stars/day per tracked project for week, month, year, from `stargazers/history`
 - Category boards (AI primary, then developer tools, security, web/frontend, infrastructure, design/creative, data)
-- Per-category 7-day newcomers via GitHub search (topics / keywords / languages)
+- Per-category 7-day newcomers via GitHub search (topic-only; repo must carry a category topic; suspected cracked/pirated repos ranked last, never leaders)
 - English-first README plus zh-Hans, zh-Hant, ja, ko with a switcher on top
 - Star history curve (star-history SVG); zero telemetry
 - Daily update by GitHub Actions, with a local script fallback

@@ -22,7 +22,8 @@ def repo(name, stars, days_old, **kw):
     created = (NOW - dt.timedelta(days=days_old)).strftime("%Y-%m-%dT%H:%M:%SZ")
     r = {"full_name": name, "id": abs(hash(name)) % 10**8, "html_url": f"https://github.com/{name}",
          "description": kw.pop("description", f"{name} desc"), "language": "Python",
-         "stargazers_count": stars, "created_at": created, "fork": False, "archived": False, "private": False}
+         "stargazers_count": stars, "created_at": created, "fork": False, "archived": False, "private": False,
+         "topics": ["ai", "llm", "web"]}
     r.update(kw)
     return r
 
@@ -30,7 +31,7 @@ def repo(name, stars, days_old, **kw):
 class FilterTests(unittest.TestCase):
     def test_queries_use_window_min_stars_and_no_forks(self):
         qs = nc.build_queries(NOW, AI)
-        self.assertEqual(len(qs), len(AI["topics"]) + len(AI["keywords"]) + len(AI.get("languages") or []))
+        self.assertEqual(len(qs), len(AI["topics"]))
         for _label, q in qs:
             self.assertIn("created:>=2026-10-23T00:00:00Z", q)
             self.assertIn("stars:>=100", q)
@@ -104,7 +105,7 @@ class DiscoverTests(unittest.TestCase):
         return api
 
     def test_discover_ranks_dedupes_and_refreshes(self):
-        cat = {"id": "ai", "topics": ["ai", "llm"], "keywords": [], "languages": []}
+        cat = {"id": "ai", "topics": ["ai", "llm"]}
         res = nc.discover(self.fake_api(), NOW, {"tracked/proj"}, sleep=NOSLEEP, category=cat)
         self.assertTrue(res["ok"])
         names = [i["name"] for i in res["items"]]
@@ -114,7 +115,7 @@ class DiscoverTests(unittest.TestCase):
         self.assertEqual(len(set(names)), len(names))
 
     def test_total_search_failure_is_reported_not_estimated(self):
-        cat = {"id": "ai", "topics": ["ai"], "keywords": [], "languages": []}
+        cat = {"id": "ai", "topics": ["ai"]}
         res = nc.discover(self.fake_api(fail_all=True), NOW, set(), sleep=NOSLEEP, category=cat)
         self.assertFalse(res["ok"])
         self.assertEqual(res["items"], [])
@@ -122,7 +123,7 @@ class DiscoverTests(unittest.TestCase):
 
     def test_top_20_cap(self):
         many = [repo(f"n/r{i}", 200 + i, 2) for i in range(30)]
-        cat = {"id": "ai", "topics": ["ai"], "keywords": [], "languages": []}
+        cat = {"id": "ai", "topics": ["ai"]}
         orig = nc.REFRESH_TOP
         nc.REFRESH_TOP = 100
         try:
@@ -137,8 +138,8 @@ class DiscoverTests(unittest.TestCase):
 
     def test_discover_all_ai_first_claims_exclusive(self):
         cats = [
-            {"id": "ai", "primary": True, "order": 1, "topics": ["ai"], "keywords": [], "languages": []},
-            {"id": "web", "primary": False, "order": 2, "topics": ["web"], "keywords": [], "languages": []},
+            {"id": "ai", "primary": True, "order": 1, "topics": ["ai"]},
+            {"id": "web", "primary": False, "order": 2, "topics": ["web"]},
         ]
         shared = repo("both/hit", 900, 1.5)
         pool = {"ai": [shared, repo("ai/only", 400, 2)], "web": [shared, repo("web/only", 500, 2)]}
@@ -190,8 +191,9 @@ class RepoNewcomersTests(unittest.TestCase):
                 age = (gen - nc.parse_ts(it["created_at"])).total_seconds() / 86400
                 self.assertLessEqual(age, 7.01, it["name"])
                 self.assertGreaterEqual(it["stars"], nc.MIN_STARS)
-            per_day = [i["per_day"] for i in items]
-            self.assertEqual(per_day, sorted(per_day, reverse=True))
+            # normal repos first, suspected crack/pirated (flagged) after them; hotness desc inside each group
+            keys = [(bool(i.get("suspicious")), -i["per_day"]) for i in items]
+            self.assertEqual(keys, sorted(keys))
 
     def test_no_project_is_in_two_rankings_within_category(self):
         if "categories" not in (self.stats.get("newcomers") or {}):

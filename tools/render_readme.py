@@ -167,10 +167,9 @@ def leaders(stats: dict, projects: list[dict], cat_id: str, newcomers_block: dic
     """#1 of each board in one category, taken from the run's real data (None = board empty/missing)."""
     cat_stats = [p for p in stats["projects"] if p.get("category") == cat_id]
     out: dict[str, dict | None] = {}
-    if newcomers_block and newcomers_block.get("ok") and newcomers_block.get("items"):
-        out["new"] = newcomers_block["items"][0]
-    else:
-        out["new"] = None
+    # a suspected crack / pirated repo is never a leader, even when it is the only entry
+    normal = [i for i in (newcomers_block or {}).get("items", []) if not i.get("suspicious")]
+    out["new"] = normal[0] if newcomers_block and newcomers_block.get("ok") and normal else None
     for key in ("week", "month", "year", "total"):
         r = core.rank(cat_stats, key)
         out[key] = r[0] if r else None

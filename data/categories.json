@@ -33,15 +33,7 @@
       "deep-learning",
       "rag",
       "vibe-coding"
-    ],
-    "keywords": [
-      "\"AI agent\"",
-      "LLM",
-      "\"Claude Code\"",
-      "\"MCP server\"",
-      "\"agent skills\""
-    ],
-    "languages": []
+    ]
   },
   {
     "id": "devtools",
@@ -69,17 +61,8 @@
       "package-manager",
       "linter",
       "formatter",
-      "build-tool",
-      "editor",
-      "terminal"
-    ],
-    "keywords": [
-      "\"developer tools\"",
-      "devtools",
-      "LSP",
-      "\"package manager\""
-    ],
-    "languages": []
+      "build-tool"
+    ]
   },
   {
     "id": "security",
@@ -100,7 +83,6 @@
       "ko": "취약점 스캐너, SAST, 공급망·런타임 보안"
     },
     "topics": [
-      "security",
       "cybersecurity",
       "vulnerability",
       "sast",
@@ -109,14 +91,7 @@
       "container-security",
       "pentest",
       "infosec"
-    ],
-    "keywords": [
-      "security",
-      "vulnerability",
-      "SAST",
-      "CVE"
-    ],
-    "languages": []
+    ]
   },
   {
     "id": "web",
@@ -138,26 +113,12 @@
     },
     "topics": [
       "frontend",
-      "web",
       "react",
       "vue",
       "svelte",
       "css",
-      "ui",
-      "javascript",
-      "typescript",
       "nextjs",
       "tailwind"
-    ],
-    "keywords": [
-      "frontend",
-      "\"UI library\"",
-      "React",
-      "Next.js"
-    ],
-    "languages": [
-      "TypeScript",
-      "JavaScript"
     ]
   },
   {
@@ -184,19 +145,10 @@
       "devops",
       "infrastructure",
       "terraform",
-      "cloud",
       "observability",
-      "networking",
       "containers",
       "sre"
-    ],
-    "keywords": [
-      "Kubernetes",
-      "Docker",
-      "Terraform",
-      "observability"
-    ],
-    "languages": []
+    ]
   },
   {
     "id": "design",
@@ -217,24 +169,12 @@
       "ko": "디자인 시스템, 드로잉, 애니메이션, 크리에이티브 도구"
     },
     "topics": [
-      "design",
       "design-system",
       "figma",
-      "graphics",
       "animation",
-      "creative",
       "svg",
-      "canvas",
-      "ui-design",
-      "icon"
-    ],
-    "keywords": [
-      "design",
-      "Figma",
-      "animation",
-      "\"design system\""
-    ],
-    "languages": []
+      "ui-design"
+    ]
   },
   {
     "id": "data",
@@ -256,22 +196,12 @@
     },
     "topics": [
       "database",
-      "data",
-      "analytics",
       "etl",
       "data-engineering",
       "sql",
       "olap",
       "dataframe",
-      "streaming",
       "big-data"
-    ],
-    "keywords": [
-      "database",
-      "ETL",
-      "analytics",
-      "dataframe"
-    ],
-    "languages": []
+    ]
   }
 ]

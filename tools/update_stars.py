@@ -181,7 +181,7 @@ def main(argv: list[str] | None = None) -> int:
         "method": (
             "stars = GET /repos/{r}.stargazers_count; gained = sum of daily buckets from "
             "GET /repos/{r}/stargazers/history over the N complete UTC days before today; "
-            "newcomers = per-category GitHub search (topics/keywords/languages in data/categories.json)"
+            "newcomers = per-category GitHub search (topics in data/categories.json; repo must carry a category topic)"
         ),
         "projects": results,
         "newcomers": new,

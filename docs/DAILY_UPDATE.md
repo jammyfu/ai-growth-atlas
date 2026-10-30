@@ -18,6 +18,14 @@ The privacy-safe replacement is `stargazers/history`, which returns daily counts
 ([changelog](https://github.blog/changelog/2026-09-04-new-api-endpoint-provides-privacy-safe-star-history-data/)).
 Cross-check built into the tests: for every repo whose full history was read, the sum of the history equals `stargazers_count`.
 
+### One code path for every scheduled run
+
+The Beijing 00:00 cron (`0 16 * * *`), both Los Angeles crons (`0 7`/`0 8 * * *`, gated by `tools/schedule_guard.py`),
+`workflow_dispatch`, and the local launchd jobs (`docs/launchd/*.plist` -> `tools/local_daily.sh`) all end in the same
+command: `python3 tools/update_stars.py --slot <slot>`. That calls `newcomers.discover_all` -> `newcomers.discover_category`,
+so the topic-only category rules, the suspected-crack/pirated ordering (`tools/spam.py`, `newcomers.rank_items`) and the
+leader exclusion (`render_readme.leaders`) apply to every run. `tests/test_spam.py::ScheduledPathTests` guards this.
+
 ## Where results go: history per time slot
 
 Every run stores its result in its own folder and keeps it (nothing is overwritten except a re-run of the same slot):

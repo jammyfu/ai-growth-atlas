@@ -92,7 +92,7 @@ def _rows(ranked: list[dict], key: str, lang: str = "en") -> list[str]:
 
 
 def _new_rows(items: list[dict]) -> list[str]:
-    return [f"| {i} | [{it['name']}]({it['url']}) | {it['created_at'][:10]} | {it['stars']:,} | "
+    return [f"| {i} | [{it['name']}]({it['url']}){' ⚠' if it.get('suspicious') else ''} | {it['created_at'][:10]} | {it['stars']:,} | "
             f"{it['per_day']:,.1f} |" for i, it in enumerate(items, 1)]
 
 
@@ -156,6 +156,8 @@ def render_rankings_md(stats: dict[str, Any], lang: str = "en",
                     lines += [f"| {s['h_rank']} | {s['h_repo']} | {s['h_created']} | {s['h_stars_short']} | {s['h_perday']} |",
                               "|---|---|---|---:|---:|"]
                     lines += _new_rows(new_block.get("items", [])[:TOP_N]) + [""]
+                    if any(i.get("suspicious") for i in new_block.get("items", [])[:TOP_N]):
+                        lines += [s["susp_note"], ""]
                     bad = [q for q in new_block.get("queries", []) if not q.get("ok")]
                     if bad:
                         lines += [s["new_partial"].format(failed=len(bad), total=len(new_block["queries"])), ""]

@@ -1,5 +1,9 @@
 """Hottest new repos (last 7 days), per category: GitHub search API discovery + ranking.
 
+A repo must carry at least one of the category's topics (topic-only discovery; no keyword / language
+search). Suspected cracked / pirated / activator repos are still listed, but flagged and ranked after
+all normal repos, and they never become a category leader (see tools/spam.py).
+
 Everything comes from the API (search + GET /repos/{r} for top candidates).
 Pure functions take an `api` callable so they are unit-testable offline.
 
@@ -14,6 +18,11 @@ import re
 import time
 import urllib.parse
 from typing import Any, Callable
+
+try:  # works both as `tools.newcomers` and when tools/ is on sys.path
+    from . import spam
+except ImportError:  # pragma: no cover
+    import spam  # type: ignore
 
 WINDOW_DAYS = 7
 MIN_STARS = 100
@@ -30,18 +39,15 @@ def since_iso(now: dt.datetime, days: int = WINDOW_DAYS) -> str:
 
 
 def build_queries(now: dt.datetime, category: dict[str, Any]) -> list[tuple[str, str]]:
-    """Build search queries from one category's topics, keywords and languages."""
-    since = since_iso(now)
-    base = f"created:>={since} stars:>={MIN_STARS} fork:false archived:false"
-    qs: list[tuple[str, str]] = []
-    for t in category.get("topics") or []:
-        qs.append((f"topic:{t}", f"topic:{t} {base}"))
-    for k in category.get("keywords") or []:
-        label = k.strip('"')
-        qs.append((f"keyword:{label}", f"{k} in:name,description {base}"))
-    for lang in category.get("languages") or []:
-        qs.append((f"language:{lang}", f"language:{lang} {base}"))
-    return qs
+    """One search per category topic. Topic-only: keyword / language searches were too noisy."""
+    base = f"created:>={since_iso(now)} stars:>={MIN_STARS} fork:false archived:false"
+    return [(f"topic:{t}", f"topic:{t} {base}") for t in category.get("topics") or []]
+
+
+def has_category_topic(repo: dict, category: dict[str, Any]) -> bool:
+    """The repo itself must carry one of the category's topics (case-insensitive)."""
+    wanted = {t.lower() for t in category.get("topics") or []}
+    return bool(wanted & {str(t).lower() for t in repo.get("topics") or []})
 
 
 def parse_ts(value: str) -> dt.datetime:
@@ -73,7 +79,7 @@ def to_item(repo: dict, now: dt.datetime) -> dict[str, Any]:
     created = parse_ts(repo["created_at"])
     age = max((now - created).total_seconds() / 86400, 1.0)
     stars = int(repo["stargazers_count"])
-    return {
+    item = {
         "name": repo["full_name"],
         "repo_id": repo.get("id"),
         "url": repo["html_url"],
@@ -83,7 +89,12 @@ def to_item(repo: dict, now: dt.datetime) -> dict[str, Any]:
         "created_at": repo["created_at"],
         "age_days": round(age, 2),
         "per_day": round(stars / age, 1),
+        "topics": list(repo.get("topics") or []),
     }
+    reason = spam.suspicious_reason(repo)
+    if reason:
+        item["suspicious"] = reason
+    return item
 
 
 def qualifies(repo: dict, now: dt.datetime) -> bool:
@@ -111,7 +122,8 @@ def exclude_duplicates(items: list[dict], excluded_names: set[str]) -> tuple[lis
 
 
 def rank_items(items: list[dict]) -> list[dict]:
-    return sorted(items, key=lambda i: (-i["per_day"], -i["stars"], i["name"].lower()))
+    """Normal repos first (hotness desc), suspected crack/pirated repos after all of them."""
+    return sorted(items, key=lambda i: (bool(i.get("suspicious")), -i["per_day"], -i["stars"], i["name"].lower()))
 
 
 def discover_category(api: Api, now: dt.datetime, category: dict[str, Any],
@@ -143,18 +155,21 @@ def discover_category(api: Api, now: dt.datetime, category: dict[str, Any],
     if not any(q["ok"] for q in queries):
         result.update(ok=False, error="every search query failed: " + queries[0].get("error", "?"), items=[])
         return result
-    cands = [r for r in found.values() if qualifies(r, now)]
-    cands.sort(key=lambda r: -int(r["stargazers_count"]))
+    cands = [r for r in found.values() if qualifies(r, now) and has_category_topic(r, category)]
+    # normal repos first so a flood of star-farmed spam cannot crowd them out of the refresh budget
+    cands.sort(key=lambda r: (bool(spam.suspicious_reason(r)), -int(r["stargazers_count"])))
     refreshed = []
     for r in cands[:REFRESH_TOP]:
         try:
             fresh = api(f"/repos/{r['full_name']}")
         except Exception:
             fresh = r
-        if qualifies(fresh, now):
+        if qualifies(fresh, now) and has_category_topic(fresh, category):
             refreshed.append(fresh)
     items, dropped = exclude_duplicates([to_item(r, now) for r in refreshed], excluded_names)
-    result.update(ok=True, excluded_duplicates=dropped, items=rank_items(items)[:TOP_N])
+    ranked = rank_items(items)[:TOP_N]
+    result.update(ok=True, excluded_duplicates=dropped, items=ranked,
+                  suspicious_in_board=sum(1 for i in ranked if i.get("suspicious")))
     return result
 
 
@@ -207,8 +222,6 @@ def discover(api: Api, now: dt.datetime, excluded_names: set[str],
     cat = category or {
         "id": "ai",
         "topics": ["ai", "llm", "mcp"],
-        "keywords": ["LLM"],
-        "languages": [],
     }
     return discover_category(api, now, cat, excluded_names, sleep)
 
