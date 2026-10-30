@@ -50,9 +50,9 @@ Beijing, pt if 00:xx in Los Angeles, otherwise manual). The workflow and `tools/
 
 ## New-repo description translations and polish
 
-The new-repos table shows the repo's own GitHub description. `data/newcomer_i18n.json` holds its translation
-into zh-Hans, zh-Hant, ja and ko (plus en when the source is Chinese), keyed by repo full name with the original
-text in `src`; it is shown only while `src` still equals the current description, otherwise the original is shown.
+The new-repos table shows the repo's own GitHub description. `data/translation_library.json` holds its translation
+into zh-Hans, zh-Hant, ja and ko (plus en when the source is Chinese), keyed by repo full name + hash of the original
+text + language; it is shown only on a hit (the text is unchanged), otherwise the original is shown. Hits cost no model call.
 
 Since the i18n pipeline, `tools/update_stars.py` fills this cache itself: after discovering the ranking it
 translates every displayed description that has no current translation (already translated ones are skipped),

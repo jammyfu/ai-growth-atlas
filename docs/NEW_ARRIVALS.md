@@ -51,6 +51,6 @@ A new repo is not added to `data/projects.json` automatically.
 
 ## Descriptions
 
-The table shows the repo's own GitHub description (made safe for a table cell). A hand-written translation in
-`data/newcomer_i18n.json` is shown on a page of that language while its `src` matches; otherwise the original.
+The table shows the repo's own GitHub description (made safe for a table cell). A stored translation in
+`data/translation_library.json` (keyed by repo + source-text hash + language) is shown on a page of that language on a hit; otherwise the original.
 Gaps: `python3 tools/newcomer_i18n.py`.

@@ -1,0 +1,302 @@
+{
+  "_comment": "Fixed terminology for translations. tools/i18n_pipeline.py sends the model only the terms that occur in the texts of the batch. Product, repo, company and model names always stay as written. UI strings are not translated by a model: they live in tools/i18n.py and follow these terms (star = 星标 / 星號).",
+  "keep": [
+    "MCP",
+    "CLI",
+    "API",
+    "Docker",
+    "Kubernetes",
+    "Claude Code",
+    "Codex",
+    "GitHub",
+    "PyTorch",
+    "Ghidra",
+    "LLM",
+    "AI",
+    "WebUI",
+    "APK",
+    "root"
+  ],
+  "terms": [
+    {
+      "en": "star",
+      "zh-Hans": "星标",
+      "zh-Hant": "星號",
+      "ja": "スター",
+      "ko": "스타"
+    },
+    {
+      "en": "stars per day",
+      "zh-Hans": "星标/天",
+      "zh-Hant": "星號/天",
+      "ja": "スター/日",
+      "ko": "스타/일"
+    },
+    {
+      "en": "agent",
+      "zh-Hans": "智能体",
+      "zh-Hant": "代理",
+      "ja": "エージェント",
+      "ko": "에이전트"
+    },
+    {
+      "en": "agentic",
+      "zh-Hans": "智能体式",
+      "zh-Hant": "代理式",
+      "ja": "エージェント型",
+      "ko": "에이전틱"
+    },
+    {
+      "en": "skill",
+      "zh-Hans": "技能",
+      "zh-Hant": "技能",
+      "ja": "スキル",
+      "ko": "스킬"
+    },
+    {
+      "en": "open source",
+      "zh-Hans": "开源",
+      "zh-Hant": "開源",
+      "ja": "オープンソース",
+      "ko": "오픈 소스"
+    },
+    {
+      "en": "open-source",
+      "zh-Hans": "开源",
+      "zh-Hant": "開源",
+      "ja": "オープンソース",
+      "ko": "오픈 소스"
+    },
+    {
+      "en": "self-hosted",
+      "zh-Hans": "自托管",
+      "zh-Hant": "自行架設",
+      "ja": "セルフホスト型",
+      "ko": "셀프 호스팅"
+    },
+    {
+      "en": "repository",
+      "zh-Hans": "仓库",
+      "zh-Hant": "儲存庫",
+      "ja": "リポジトリ",
+      "ko": "저장소"
+    },
+    {
+      "en": "repo",
+      "zh-Hans": "仓库",
+      "zh-Hant": "儲存庫",
+      "ja": "リポジトリ",
+      "ko": "저장소"
+    },
+    {
+      "en": "prompt",
+      "zh-Hans": "提示词",
+      "zh-Hant": "提示詞",
+      "ja": "プロンプト",
+      "ko": "프롬프트"
+    },
+    {
+      "en": "system prompt",
+      "zh-Hans": "系统提示词",
+      "zh-Hant": "系統提示詞",
+      "ja": "システムプロンプト",
+      "ko": "시스템 프롬프트"
+    },
+    {
+      "en": "model",
+      "zh-Hans": "模型",
+      "zh-Hant": "模型",
+      "ja": "モデル",
+      "ko": "모델"
+    },
+    {
+      "en": "large language model",
+      "zh-Hans": "大模型",
+      "zh-Hant": "大型語言模型",
+      "ja": "大規模言語モデル",
+      "ko": "대규모 언어 모델"
+    },
+    {
+      "en": "framework",
+      "zh-Hans": "框架",
+      "zh-Hant": "框架",
+      "ja": "フレームワーク",
+      "ko": "프레임워크"
+    },
+    {
+      "en": "workflow",
+      "zh-Hans": "工作流",
+      "zh-Hant": "工作流程",
+      "ja": "ワークフロー",
+      "ko": "워크플로"
+    },
+    {
+      "en": "dashboard",
+      "zh-Hans": "仪表盘",
+      "zh-Hant": "儀表板",
+      "ja": "ダッシュボード",
+      "ko": "대시보드"
+    },
+    {
+      "en": "dataset",
+      "zh-Hans": "数据集",
+      "zh-Hant": "資料集",
+      "ja": "データセット",
+      "ko": "데이터셋"
+    },
+    {
+      "en": "benchmark",
+      "zh-Hans": "基准测试",
+      "zh-Hant": "基準測試",
+      "ja": "ベンチマーク",
+      "ko": "벤치마크"
+    },
+    {
+      "en": "plugin",
+      "zh-Hans": "插件",
+      "zh-Hant": "外掛",
+      "ja": "プラグイン",
+      "ko": "플러그인"
+    },
+    {
+      "en": "extension",
+      "zh-Hans": "扩展",
+      "zh-Hant": "擴充功能",
+      "ja": "拡張機能",
+      "ko": "확장 프로그램"
+    },
+    {
+      "en": "terminal",
+      "zh-Hans": "终端",
+      "zh-Hant": "終端機",
+      "ja": "ターミナル",
+      "ko": "터미널"
+    },
+    {
+      "en": "command line",
+      "zh-Hans": "命令行",
+      "zh-Hant": "命令列",
+      "ja": "コマンドライン",
+      "ko": "커맨드라인"
+    },
+    {
+      "en": "desktop",
+      "zh-Hans": "桌面",
+      "zh-Hant": "桌面",
+      "ja": "デスクトップ",
+      "ko": "데스크톱"
+    },
+    {
+      "en": "local",
+      "zh-Hans": "本地",
+      "zh-Hant": "本機",
+      "ja": "ローカル",
+      "ko": "로컬"
+    },
+    {
+      "en": "privacy",
+      "zh-Hans": "隐私",
+      "zh-Hant": "隱私",
+      "ja": "プライバシー",
+      "ko": "개인정보"
+    },
+    {
+      "en": "security",
+      "zh-Hans": "安全",
+      "zh-Hant": "資安",
+      "ja": "セキュリティ",
+      "ko": "보안"
+    },
+    {
+      "en": "vulnerability",
+      "zh-Hans": "漏洞",
+      "zh-Hant": "漏洞",
+      "ja": "脆弱性",
+      "ko": "취약점"
+    },
+    {
+      "en": "threat model",
+      "zh-Hans": "威胁模型",
+      "zh-Hant": "威脅模型",
+      "ja": "脅威モデル",
+      "ko": "위협 모델"
+    },
+    {
+      "en": "reverse engineering",
+      "zh-Hans": "逆向工程",
+      "zh-Hant": "逆向工程",
+      "ja": "リバースエンジニアリング",
+      "ko": "리버스 엔지니어링"
+    },
+    {
+      "en": "binary",
+      "zh-Hans": "二进制文件",
+      "zh-Hant": "二進位檔",
+      "ja": "バイナリ",
+      "ko": "바이너리"
+    },
+    {
+      "en": "database",
+      "zh-Hans": "数据库",
+      "zh-Hant": "資料庫",
+      "ja": "データベース",
+      "ko": "데이터베이스"
+    },
+    {
+      "en": "server",
+      "zh-Hans": "服务器",
+      "zh-Hant": "伺服器",
+      "ja": "サーバー",
+      "ko": "서버"
+    },
+    {
+      "en": "browser",
+      "zh-Hans": "浏览器",
+      "zh-Hant": "瀏覽器",
+      "ja": "ブラウザ",
+      "ko": "브라우저"
+    },
+    {
+      "en": "template",
+      "zh-Hans": "模板",
+      "zh-Hant": "範本",
+      "ja": "テンプレート",
+      "ko": "템플릿"
+    },
+    {
+      "en": "starter",
+      "zh-Hans": "启动模板",
+      "zh-Hant": "起始範本",
+      "ja": "スターター",
+      "ko": "스타터"
+    },
+    {
+      "en": "tutorial",
+      "zh-Hans": "教程",
+      "zh-Hant": "教學",
+      "ja": "チュートリアル",
+      "ko": "튜토리얼"
+    },
+    {
+      "en": "real-time",
+      "zh-Hans": "实时",
+      "zh-Hant": "即時",
+      "ja": "リアルタイム",
+      "ko": "실시간"
+    },
+    {
+      "en": "transcript",
+      "zh-Hans": "文字稿",
+      "zh-Hant": "逐字稿",
+      "ja": "文字起こし",
+      "ko": "대본"
+    },
+    {
+      "en": "voice",
+      "zh-Hans": "语音",
+      "zh-Hant": "語音",
+      "ja": "音声",
+      "ko": "음성"
+    }
+  ]
+}

@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 import risers_core as core  # noqa: E402
+import archive  # noqa: E402
 import render_readme  # noqa: E402
 from i18n import LANGS  # noqa: E402
 
@@ -85,9 +86,9 @@ class ReadmeTests(unittest.TestCase):
                 if core.star_history_svg(proj["name"]) not in text:
                     cat_ok = [p for p in stats["projects"]
                               if p.get("ok") and p.get("category") == proj["category"]]
-                    self.assertGreater(len(cat_ok), 20, f"{fname} {proj['name']} missing curve")
+                    self.assertGreater(len(cat_ok), render_readme.README_TOP, f"{fname} {proj['name']} missing curve")
 
-    def test_at_least_20_projects_and_ai_rankings_show_top_20(self):
+    def test_at_least_20_projects_and_ai_rankings_show_top_10_in_readme_and_20_in_latest(self):
         self.assertGreaterEqual(len(projects), 20)
         self.assertGreaterEqual(len(cats), 7)
         ids = {c["id"] for c in cats}
@@ -103,11 +104,16 @@ class ReadmeTests(unittest.TestCase):
             for key in ("week", "month", "year", "total"):
                 section = block.split(f"### {s[key]}\n", 1)[1].split("\n### ", 1)[0]
                 rows = re.findall(r"^\| \d+ \|", section, flags=re.M)
-                self.assertEqual(len(rows), expect, f"{fname} ai/{key}")
+                self.assertEqual(len(rows), render_readme.README_TOP, f"{fname} ai/{key}")
+            full = (ROOT / "latest" / archive.rankings_name(code)).read_text("utf-8")
+            full_block = full.split(f"## {primary['name'][code]}\n", 1)[1].split("\n## ", 1)[0]
+            for key in ("week", "month", "year", "total"):
+                section = full_block.split(f"### {s[key]}\n", 1)[1].split("\n### ", 1)[0]
+                self.assertEqual(len(re.findall(r"^\| \d+ \|", section, flags=re.M)), expect, f"latest {code} ai/{key}")
 
     def test_english_is_default_readme(self):
         self.assertEqual(LANGS["en"][0], "README.md")
-        self.assertIn("Ranked by Star Growth", (ROOT / "README.md").read_text("utf-8"))
+        self.assertIn("star growth", (ROOT / "README.md").read_text("utf-8").lower())
 
     def test_every_language_translates_every_ui_string(self):
         keys = set(render_readme.S["en"])
@@ -142,9 +148,11 @@ class HeadlineTests(unittest.TestCase):
         for code, (fname, _l) in LANGS.items():
             s = render_readme.S[code]
             text = (ROOT / fname).read_text("utf-8")
-            self.assertIn(s["schedule"], text, fname)
-            self.assertIn("UTC+8", s["schedule"])
+            self.assertIn("UTC+8", s["schedule"])  # the full schedule lives on the how-it-works page
             self.assertIn("America/Los_Angeles", s["schedule"])
+            how = (ROOT / "docs" / render_readme.how_name(code)).read_text("utf-8")
+            self.assertIn(s["schedule"], how, code)
+            self.assertIn(f"docs/{render_readme.how_name(code)}", text, fname)  # README links to it
             sec = text.split(f"## {s['tops_title']}\n", 1)[1].split("\n## ", 1)[0]
             rows = [l for l in sec.splitlines() if l.startswith("| **")]
             self.assertEqual(len(rows), len(cats), fname)
@@ -161,10 +169,102 @@ class HeadlineTests(unittest.TestCase):
 
     def test_titles_mention_the_selling_points(self):
         s = render_readme.S
-        self.assertIn("Star Growth", s["en"]["title"])
+        self.assertIn("Stars Gained per Day", s["en"]["title"])
+        for code in LANG_CODES:
+            self.assertTrue(s[code]["title"].startswith("GitHub "), code)
+            self.assertTrue(s[code]["title"].endswith("GitHub Risers") or code == "en", code)
         for code in LANG_CODES:
             blob = s[code]["title"] + s[code]["tagline"]
             self.assertIn("AI", blob, code)
+
+
+class SlimReadmeTests(unittest.TestCase):
+    """The README is a first screen plus the boards; explanations live in docs/HOW_IT_WORKS*.md."""
+
+    def readme(self, code):
+        return (ROOT / LANGS[code][0]).read_text("utf-8")
+
+    def head(self, code):
+        primary = next(c for c in cats if c.get("primary"))
+        return self.readme(code).split(f"## {primary['name'][code]}\n", 1)[0]
+
+    def test_first_screen_order_and_nothing_that_moved_out(self):
+        for code in LANG_CODES:
+            s, text, head = render_readme.S[code], self.readme(code), self.head(code)
+            lines = text.splitlines()
+            self.assertEqual(lines[0], render_readme.switcher(code), code)  # the language switch stays line 1
+            self.assertEqual(lines[2], f"# {s['title']}", code)
+            self.assertEqual(len(s["tagline"].splitlines()), 1)
+            order = [f"# {s['title']}", render_readme.SOCIAL_IMAGE, "img.shields.io", s["tagline"],
+                     render_readme.SITE, f"## {s['tops_title']}", f"## {s['faq_title']}"]
+            positions = [head.index(x) for x in order]
+            self.assertEqual(positions, sorted(positions), code)
+            self.assertLessEqual(len(head.splitlines()), 45, code)
+            for gone in (s["intro"], s["schedule"], s["tops_intro"], s["new_intro"], s["method"][0], s["contrib"], "<details>"):
+                self.assertNotIn(gone, text, f"{code}: {gone[:40]}")
+
+    def test_title_names_and_english_adds_the_ranking_rule(self):
+        S_ = render_readme.S
+        self.assertEqual(S_["zh-Hans"]["title"], "GitHub 涨星榜 / GitHub Risers")
+        self.assertEqual(S_["zh-Hant"]["title"], "GitHub 漲星榜 / GitHub Risers")
+        self.assertIn("ranked by stars gained per day", S_["en"]["title"].lower())
+
+    def test_at_most_three_badges_mit_ci_updated(self):
+        for code in LANG_CODES:
+            head = self.head(code)
+            badges = re.findall(r"!\[[^\]]*\]\(([^)]+)\)", head)
+            self.assertEqual(len(badges), 3, code)
+            self.assertIn("license-MIT", badges[0])
+            self.assertIn("actions/workflows/ci.yml/badge.svg", badges[1])
+            self.assertRegex(badges[2], r"badge/updated-\d{4}--\d\d--\d\d-")
+
+    def test_geo_links_are_present_in_every_language(self):
+        for code in LANG_CODES:
+            text, s = self.readme(code), render_readme.S[code]
+            for needle in ("https://jammyfu.github.io/github-risers/", "docs/FAQ.md#what-is-github-risers",
+                           "docs/FAQ.md#is-it-the-same-as-github-trending", "docs/FAQ.md#how-often-is-it-updated",
+                           "docs/FACTS.md", "CITATION.cff", ".github/social-preview.png", s["website"], s["star_ask"]):
+                self.assertIn(needle, text, f"{code}: {needle}")
+            for key in ("q1", "q2", "q3"):
+                self.assertIn(f"### {s[key]}", text, code)
+
+    def test_faq_links_point_at_real_faq_headings(self):
+        faq = (ROOT / "docs/FAQ.md").read_text("utf-8")
+        headings = {render_readme.anchor(m) for m in re.findall(r"^## (.+)$", faq, flags=re.M)}
+        for code in LANG_CODES:
+            for frag in re.findall(r"docs/FAQ\.md#([\w-]+)", self.readme(code)):
+                self.assertIn(frag, headings, f"{code}: docs/FAQ.md#{frag}")
+
+    def test_everything_moved_is_on_the_docs_page(self):
+        for code in LANG_CODES:
+            s = render_readme.S[code]
+            how = (ROOT / "docs" / render_readme.how_name(code)).read_text("utf-8")
+            for needle in (s["intro"], s["schedule"], s["tops_intro"], s["method"][0], s["contrib"][:30]):
+                self.assertIn(render_readme._docs_links(needle), how, f"{code}: {needle[:40]}")
+
+    def test_leader_rows_link_to_existing_category_headings(self):
+        for code in LANG_CODES:
+            text = self.readme(code)
+            headings = {render_readme.anchor(m) for m in re.findall(r"^## (.+)$", text, flags=re.M)}
+            links = re.findall(r"\]\(#([^)]+)\)", text)
+            self.assertEqual(len(links), len(cats), code)
+            for link in links:
+                self.assertIn(link, headings, f"{code}: #{link}")
+
+    def test_links_resolve(self):
+        pages = [(ROOT / LANGS[c][0], ROOT) for c in LANG_CODES]
+        pages += [(ROOT / "docs" / render_readme.how_name(c), ROOT / "docs") for c in LANG_CODES]
+        for path, base in pages:
+            text = path.read_text("utf-8")
+            targets = re.findall(r"\]\(([^)#]+)\)", text) + re.findall(r'src="([^"]+)"', text)
+            for target in targets:
+                if target.startswith("http"):
+                    continue
+                self.assertTrue((base / target).exists(), f"{path.name} -> {target}")
+
+    def test_readme_is_much_smaller_than_a_top_20_page(self):
+        for code in LANG_CODES:
+            self.assertLess(len(self.readme(code).encode("utf-8")), 140_000, code)
 
 
 class ZeroTelemetryTests(unittest.TestCase):

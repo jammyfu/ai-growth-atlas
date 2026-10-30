@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -20,7 +21,13 @@ import risers_core as core  # noqa: E402
 from i18n import LANGS, S  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
-TOP_N = archive.TOP_N
+TOP_N = archive.TOP_N  # rows in the full lists (latest/, rankings/)
+README_TOP = 10  # rows per board in the README; the full top 20 is in latest/
+REPO = "jammyfu/github-risers"
+SITE = "https://jammyfu.github.io/github-risers/"
+SOCIAL_IMAGE = ".github/social-preview.png"
+# Anchors of docs/FAQ.md (owned by the GEO work, checked by a test); only linked, never generated here.
+FAQ_ANCHORS = ("what-is-github-risers", "is-it-the-same-as-github-trending", "how-often-is-it-updated")
 
 
 def switcher(lang: str) -> str:
@@ -28,6 +35,16 @@ def switcher(lang: str) -> str:
     for code, (fname, label) in LANGS.items():
         parts.append(f"**{label}**" if code == lang else f"[{label}]({fname})")
     return " | ".join(parts)
+
+
+def how_name(lang: str) -> str:
+    """File name (inside docs/) of the generated 'how it works' page for a language."""
+    return "HOW_IT_WORKS.md" if lang == "en" else f"HOW_IT_WORKS.{lang}.md"
+
+
+def anchor(heading: str) -> str:
+    """GitHub's #fragment for a heading: lower-case, punctuation dropped, spaces to hyphens."""
+    return re.sub(r"[^\w\- ]", "", heading.lower()).replace(" ", "-")
 
 
 def fmt_int(n: int) -> str:
@@ -122,19 +139,19 @@ def category_block(cat: dict, st: list[dict], projects: list[dict], cats: dict,
             new_block = newcomers_root  # legacy shape from older snapshots
 
     if new_block is not None:
-        out += [f"### {s['new']}", "", s["new_intro"], ""]
+        out += [f"### {s['new']}", ""]
         if not new_block.get("ok"):
             out += [s["new_failed"].format(error=new_block.get("error", "?")), ""]
         elif not new_block.get("items"):
             out += [s["new_none"], ""]
         else:
-            out += [new_table(new_block["items"][:TOP_N], lang, tr), ""]
+            out += [new_table(new_block["items"][:README_TOP], lang, tr), ""]
         if new_block.get("ok") and any(not q["ok"] for q in new_block.get("queries", [])):
             bad = sum(1 for q in new_block["queries"] if not q["ok"])
             out += [s["new_partial"].format(failed=bad, total=len(new_block["queries"])), ""]
 
     for key in ("week", "month", "year"):
-        ranked = core.rank(cat_projects, key)[:TOP_N]
+        ranked = core.rank(cat_projects, key)[:README_TOP]
         out += [f"### {s[key]}", ""]
         if ranked:
             table, young = growth_table(ranked, key, metas, cats, lang)
@@ -144,7 +161,7 @@ def category_block(cat: dict, st: list[dict], projects: list[dict], cats: dict,
         else:
             out += [s["none"], ""]
 
-    ranked_total = core.rank(cat_projects, "total")[:TOP_N]
+    ranked_total = core.rank(cat_projects, "total")[:README_TOP]
     out += [f"### {s['total']}", ""]
     if ranked_total:
         out += [total_table(ranked_total, metas, cats, lang), ""]
@@ -176,7 +193,7 @@ def leaders(stats: dict, projects: list[dict], cat_id: str, newcomers_block: dic
     return out
 
 
-def tops_table(stats: dict, projects: list[dict], cats: dict, lang: str) -> str:
+def tops_table(stats: dict, projects: list[dict], cats: dict, lang: str, link: bool = False) -> str:
     s = S[lang]
     metas = {p["name"]: p for p in projects}
     root = stats.get("newcomers") or {}
@@ -200,49 +217,92 @@ def tops_table(stats: dict, projects: list[dict], cats: dict, lang: str) -> str:
         p = led["total"]
         cells.append(_leader_cell(p["name"], metas[p["name"]]["url"], f"{fmt_int(p['stars'])} ★", lang) if p else s["none"])
         mark = f" ★ {s['primary_mark']}" if cat.get("primary") else ""
-        lines.append(f"| **{cat['name'][lang]}**{mark} | " + " | ".join(cells) + " |")
+        name = cat["name"][lang]
+        label = f"[{name}](#{anchor(name)})" if link else name  # the row name jumps to that category's boards
+        lines.append(f"| **{label}**{mark} | " + " | ".join(cells) + " |")
     return "\n".join(lines)
 
 
+def badges(stats: dict, lang: str) -> str:
+    """Three badges, no more: licence, CI, last update."""
+    day = stats["generated_at"][:10].replace("-", "--")  # shields.io: "--" is a literal hyphen
+    return " ".join([
+        "[![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)",
+        f"[![CI](https://github.com/{REPO}/actions/workflows/ci.yml/badge.svg)](https://github.com/{REPO}/actions/workflows/ci.yml)",
+        f"[![updated](https://img.shields.io/badge/updated-{day}-brightgreen.svg)](latest/{archive.rankings_name(lang)})",
+    ])
+
+
+def faq_block(lang: str) -> list[str]:
+    s = S[lang]
+    out = [f"## {s['faq_title']}", ""]
+    for i, anchor_ in enumerate(FAQ_ANCHORS, 1):
+        out += [f"### {s[f'q{i}']}", "", f"{s[f'a{i}']} [{s['more']}](docs/FAQ.md#{anchor_})", ""]
+    return out
+
+
 def render(lang: str, projects: list[dict], stats: dict, cats: dict, tr: dict | None = None) -> str:
+    """The README: headline, image, one sentence, this round's #1s, quick answers, then the boards (top 10)."""
     s = S[lang]
     st = stats["projects"]
+    how = f"docs/{how_name(lang)}"
+    latest = f"latest/{archive.rankings_name(lang)}"
     out: list[str] = [switcher(lang), ""]
     out += [
-        f"# {s.get('title', 'GitHub Risers')}", "",
-        f"> {s['tagline']}", "",
-        s["intro"], "",
-        s["updated"].format(ts=stats["generated_at"].replace("T", " ").replace("Z", "")),
-        s["schedule"],
-        s["shown"].format(n=TOP_N, total=len(projects)), "",
-        s["history"].format(index=f"rankings/{archive.index_name(lang)}",
-                            latest=f"latest/{archive.rankings_name(lang)}"), "",
-        f"## {s['tops_title']}", "", s["tops_intro"], "",
-        tops_table(stats, projects, cats, lang), "",
-        f"<details><summary>{s['cat_title']}</summary>", "",
-        "| | |", "|---|---|",
+        f"# {s['title']}", "",
+        f'<img src="{SOCIAL_IMAGE}" alt="{s["title"]}" width="640">', "",
+        badges(stats, lang), "",
+        s["tagline"], "",
+        s["stamp"].format(ts=stats["generated_at"].replace("T", " ").replace("Z", "")[:16]), "",
+        s["links"].format(website=s["website"], site=SITE, how=how, index=f"rankings/{archive.index_name(lang)}",
+                          latest=latest), "",
+        f"## {s['tops_title']}", "",
+        tops_table(stats, projects, cats, lang, link=True), "",
+        s["top_note"].format(latest=latest), "",
     ]
-    for c in ordered_categories(cats):
-        mark = f" ★ {s.get('primary_mark', 'primary')}" if c.get("primary") else ""
-        out.append(f"| {c['name'][lang]}{mark} | {c['desc'][lang]} |")
-    out += ["", "</details>", ""]
-
+    out += faq_block(lang)
     newcomers_root = stats.get("newcomers")
     for cat in ordered_categories(cats):
         out += category_block(cat, st, projects, cats, newcomers_root, lang, tr)
 
     missing = [p for p in st if not p.get("ok")]
-    out += [f"## {s['missing_title']}", ""]
-    if missing:
-        out += [s["missing_intro"], ""]
+    if missing:  # only shown when something is actually missing
+        out += [f"## {s['missing_title']}", "", s["missing_intro"], ""]
         out += [f"- `{p['name']}` — {p['error']}" for p in missing]
         out.append("")
-    else:
-        out += [s["missing_none"], ""]
+    out += ["---", "", s["star_ask"], "", s["cite"], "", s["footer"].format(how=how), ""]
+    return "\n".join(out)
 
+
+def _docs_links(text: str) -> str:
+    """Links written relative to the repo root, rewritten for a page that lives in docs/."""
+    text = re.sub(r"\]\(docs/", "](", text)
+    return re.sub(r"\]\(((?:data|rankings|latest)/)", r"](../\1", text)
+
+
+def render_docs(lang: str, projects: list[dict], cats: dict) -> str:
+    """docs/HOW_IT_WORKS*.md: everything the README no longer carries (intro, schedule, methodology, contributing)."""
+    s = S[lang]
+    sw = " | ".join(f"**{label}**" if code == lang else f"[{label}]({how_name(code)})"
+                    for code, (_f, label) in LANGS.items())
+    out: list[str] = [
+        sw, "", f"# {s['doc_title']}", "",
+        f"[{s['doc_back']}](../{LANGS[lang][0]})", "",
+        s["intro"], "",
+        s["schedule"], "",
+        s["shown"].format(m=README_TOP, n=TOP_N, total=len(projects)), "",
+        s["history"].format(index=f"rankings/{archive.index_name(lang)}", latest=f"latest/{archive.rankings_name(lang)}"), "",
+        s["tops_intro"], "",
+        f"## {s['cat_title']}", "",
+        "| | |", "|---|---|",
+    ]
+    for c in ordered_categories(cats):
+        mark = f" ★ {s.get('primary_mark', 'primary')}" if c.get("primary") else ""
+        out.append(f"| {c['name'][lang]}{mark} | {c['desc'][lang]} |")
+    out += ["", f"## {s['new']}", "", s["new_intro"], ""]
     out += [f"## {s['method_title']}", ""] + [f"- {m}" for m in s["method"]] + [""]
     out += [f"## {s['contrib_title']}", "", s["contrib"], ""]
-    return "\n".join(out)
+    return _docs_links("\n".join(out))
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -252,17 +312,18 @@ def main(argv: list[str] | None = None) -> int:
     projects = json.loads((ROOT / "data/projects.json").read_text("utf-8"))
     cats = {c["id"]: c for c in json.loads((ROOT / "data/categories.json").read_text("utf-8"))}
     stats = json.loads((ROOT / "data/stats.json").read_text("utf-8"))
-    tr = newcomer_i18n.load(ROOT / "data/newcomer_i18n.json")
+    tr = newcomer_i18n.load(ROOT / "data/translation_library.json")
     stale = []
     for lang, (fname, _label) in LANGS.items():
-        text = render(lang, projects, stats, cats, tr)
-        path = ROOT / fname
-        if args.check:
-            if not path.exists() or path.read_text("utf-8") != text:
-                stale.append(fname)
-        else:
-            path.write_text(text, "utf-8")
-            print(f"wrote {fname}")
+        for rel, text in ((fname, render(lang, projects, stats, cats, tr)),
+                          (f"docs/{how_name(lang)}", render_docs(lang, projects, cats))):
+            path = ROOT / rel
+            if args.check:
+                if not path.exists() or path.read_text("utf-8") != text:
+                    stale.append(rel)
+            else:
+                path.write_text(text, "utf-8")
+                print(f"wrote {rel}")
     if args.check:
         stale += archive.stale_latest_and_index(ROOT)
     else:

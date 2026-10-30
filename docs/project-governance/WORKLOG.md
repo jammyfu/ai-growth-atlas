@@ -25,7 +25,7 @@
 
 ## 2026-10-30 (i18n follow-up)
 
-- Hand-written translations of the new-repo descriptions in `data/newcomer_i18n.json` (zh-Hans, zh-Hant, ja, ko; en for CJK sources); used only while `src` matches the current description, otherwise the original shows. `tools/newcomer_i18n.py` lists gaps (`--strict` exits 1); the daily run prints the gap count.
+- Hand-written translations of the new-repo descriptions in `data/translation_library.json` (zh-Hans, zh-Hant, ja, ko; en for CJK sources); used only on a hit (repo + source hash + language), otherwise the original shows. `tools/newcomer_i18n.py` lists gaps (`--strict` exits 1); the daily run prints the gap count.
 - Ranking pages are generated per language: `rankings/README.<lang>.md`, `latest/rankings.<lang>.md`, `rankings/<date>/<slot>/rankings.<lang>.md`; each README links to its own language. English pages are byte-identical to before.
 - Verification: `python3 tools/verify.py` green (76 tests).
 

@@ -144,7 +144,8 @@ class LeaderTests(unittest.TestCase):
     def test_committed_data_spam_is_last_and_not_in_leader_table(self):
         st = json.loads((ROOT / "latest/stats.json").read_text("utf-8"))
         readme = (ROOT / "README.md").read_text("utf-8")
-        tops = readme[readme.index("## Category leaders"):readme.index("<details>")]
+        start = readme.index("## Category leaders")
+        tops = readme[start:readme.index("\n## ", start + 3)]
         for cid, block in st["newcomers"]["categories"].items():
             items = block.get("items", [])
             flags = [bool(spam.suspicious_reason({"full_name": i["name"], "description": i["description"],

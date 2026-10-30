@@ -222,7 +222,7 @@ def main(argv: list[str] | None = None) -> int:
         for block in (new.get("categories") or {}).values():
             if block.get("ok"):
                 items.extend(block.get("items") or [])
-        gaps = newcomer_i18n.problems(newcomer_i18n.load(ROOT / "data/newcomer_i18n.json"), items[:archive.TOP_N * 7])
+        gaps = newcomer_i18n.problems(newcomer_i18n.load(ROOT / "data/translation_library.json"), items[:archive.TOP_N * 7])
         if gaps:
             print(f"{len(gaps)} new-repo descriptions have no up-to-date translation "
                   "(shown in the original language); run: python3 tools/newcomer_i18n.py")

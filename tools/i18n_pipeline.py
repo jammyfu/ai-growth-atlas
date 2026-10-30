@@ -5,8 +5,8 @@ Two stages, both optional and both fail-safe (any problem leaves the existing te
 never fails the update):
 
 1. translate  every description in the new-repos ranking that has no current translation
-              (data/newcomer_i18n.json, keyed by repo; `src` must match the live description, so
-              anything already translated is skipped) -> zh-Hans, zh-Hant, ja, ko (+ en if the source
+              (data/translation_library.json, keyed by repo + hash of the source text + language: a hit costs
+              no model call) -> zh-Hans, zh-Hant, ja, ko (+ en if the source
               contains CJK text).
 2. polish     rewrite the project blurbs (data/projects.json), the translated new-repo descriptions
               and, only on request, the category descriptions in a short, plain, lead-with-the-point
@@ -28,6 +28,7 @@ Usage: python3 tools/i18n_pipeline.py [--translate] [--polish] [--targets newcom
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import hashlib
 import json
 import os
@@ -43,6 +44,8 @@ import newcomer_i18n as nci  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "data/polish_state.json"
+LIB_REL = "data/translation_library.json"
+GLOSSARY_REL = "data/glossary.json"
 LANGS = ("en", "zh-Hans", "zh-Hant", "ja", "ko")
 TOP_N = 20
 POLISH_VERSION = 1          # bump to re-polish everything after changing the style prompt
@@ -59,11 +62,29 @@ LANG_NAMES = {
     "ja": "Japanese (日本語, plain 常体 style: 〜する／〜できる, not です・ます)",
     "ko": "Korean (한국어, plain 해라체 style: ~한다 / ~할 수 있다)",
 }
-GLOSSARY = (
-    "Fixed terms: star = 星标 (zh-Hans) / 星號 (zh-Hant); stars per day = 星标/天; "
-    "agent = 智能体 (zh-Hans) / 代理 (zh-Hant) / エージェント (ja) / 에이전트 (ko). "
-    "Product, repo, company and model names stay exactly as written."
-)
+BASE_RULES = "Product, repo, company and model names stay exactly as written."
+
+
+def load_glossary(root: Path) -> dict[str, Any]:
+    path = root / GLOSSARY_REL
+    return json.loads(path.read_text("utf-8")) if path.exists() else {"terms": [], "keep": []}
+
+
+def glossary_for(texts: list[str], langs: list[str], glossary: dict[str, Any]) -> str:
+    """Only the glossary terms that occur in `texts`, for `langs`: keeps the prompt (and token bill) small."""
+    blob = "\n".join(texts).lower()
+    lines = []
+    for t in glossary.get("terms", []):
+        if re.search(r"(?<![a-z])" + re.escape(t["en"].lower()) + r"s?(?![a-z])", blob):
+            lines.append(t["en"] + " = " + " / ".join(f"{t[l]} ({l})" for l in langs if l != "en" and t.get(l)))
+    keep = [k for k in glossary.get("keep", []) if k.lower() in blob]
+    out = BASE_RULES
+    if lines:
+        out += " Fixed terms: " + "; ".join(lines) + "."
+    if keep:
+        out += " Keep as is: " + ", ".join(keep) + "."
+    return out
+
 
 TRANSLATE_PROMPT = """You translate short GitHub project descriptions. Reply with ONE JSON object and nothing else.
 
@@ -252,16 +273,14 @@ def displayed_newcomers(new: dict[str, Any] | None) -> list[dict[str, Any]]:
     return out
 
 
-def translation_gaps(cache: dict[str, dict[str, str]], items: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """[{id, src, langs}] for descriptions with no current translation, only the languages that lack one."""
+def translation_gaps(lib: dict[str, Any], items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """[{id, src, langs}] for descriptions whose current text (repo + source hash) lacks languages in the library."""
     gaps = []
     for it in items:
         desc = (it.get("description") or "").strip()
         if not desc:
             continue
-        entry = cache.get(it["name"])
-        have = entry if entry and entry.get("src") == it.get("description") else {}
-        langs = [l for l in nci.required_langs(it["description"]) if not have.get(l, "").strip()]
+        langs = nci.missing_langs(lib, it["name"], it["description"])
         if langs:
             gaps.append({"id": it["name"], "src": it["description"], "langs": langs})
     return gaps
@@ -283,23 +302,38 @@ class Budget:
 # ----------------------------------------------------------------------------- stage 1: translate
 
 def translate(root: Path, items: list[dict[str, Any]], runner: Runner, budget: Budget,
-              log: Callable[[str], None] = print, limit: int | None = None, dry_run: bool = False) -> dict[str, int]:
-    path = root / "data/newcomer_i18n.json"
-    cache = nci.load(path)
-    gaps = translation_gaps(cache, items)
+              log: Callable[[str], None] = print, limit: int | None = None, dry_run: bool = False,
+              today: str | None = None) -> dict[str, int]:
+    """Fill the translation library for the ranked descriptions. A hit (same repo + source hash) costs nothing."""
+    path = root / LIB_REL
+    lib = nci.load(path)
+    today = today or dt.date.today().isoformat()
+    hs = nci.hit_stats(lib, items)
+    gaps = translation_gaps(lib, items)
+    _log_library(hs, len(gaps), log)
+    touched = False
+    for it in items:  # entries that were used today stay alive for --prune-days
+        if it.get("description") and not nci.missing_langs(lib, it["name"], it["description"]):
+            touched |= nci.touch(lib, it["name"], it["description"], today)
+    if touched and not dry_run:
+        nci.save(lib, path)
     if limit is not None:
         gaps = gaps[:limit]
-    stat = {"todo": len(gaps), "translated": 0, "rejected": 0, "errors": 0}
+    stat = {"total": hs["total"], "hits": hs["hits"], "partial": hs["partial"], "new": hs["new"],
+            "todo": len(gaps), "translated": 0, "rejected": 0, "errors": 0, "calls": 0}
     if dry_run or not gaps:
         return stat
+    glossary = load_glossary(root)
     streak = 0
     for batch in _chunks(gaps, BATCH):
         if not budget.left():
             log("translate: time budget used up; the rest waits for the next run")
             break
+        glos = glossary_for([g["src"] for g in batch], sorted({l for g in batch for l in g["langs"]}), glossary)
         prompt = TRANSLATE_PROMPT.format(items=json.dumps(batch, ensure_ascii=False),
-                                         langs=", ".join(LANGS), glossary=GLOSSARY)
+                                         langs=", ".join(LANGS), glossary=glos)
         try:
+            stat["calls"] += 1
             reply = llm.extract_json(runner.ask(prompt))
             streak = 0
         except llm.LLMError as e:
@@ -315,54 +349,65 @@ def translate(root: Path, items: list[dict[str, Any]], runner: Runner, budget: B
             if not isinstance(got, dict):
                 stat["rejected"] += 1
                 continue
-            entry = cache.get(g["id"])
-            entry = dict(entry) if entry and entry.get("src") == g["src"] else {"src": g["src"]}
-            ok = True
             for lang in g["langs"]:
                 bad = check_translation(g["src"], got.get(lang))
                 if bad:
                     log(f"translate: {g['id']} [{lang}] rejected: {bad}")
-                    ok = False
                 else:
-                    entry[lang] = got[lang].strip()
-            if all(entry.get(l, "").strip() for l in nci.required_langs(g["src"])):
-                stat["translated"] += 1
-            else:
+                    nci.put(lib, g["id"], g["src"], lang, got[lang].strip(), today)
+            if nci.missing_langs(lib, g["id"], g["src"]):
                 stat["rejected"] += 1
-            if len(entry) > 1:
-                cache[g["id"]] = entry
-        _write_json(path, cache)  # save after every batch so a later failure loses nothing
+            else:
+                stat["translated"] += 1
+        nci.save(lib, path)  # save after every batch so a later failure loses nothing
     return stat
+
+
+def _log_library(hs: dict[str, int], to_send: int, log: Callable[[str], None]) -> None:
+    log(f"translate: library {hs['hits']}/{hs['total']} hits ({_pct(hs['hits'], hs['total'])}), "
+        f"{hs['partial']} partial, {hs['new']} new -> {to_send} to send to the model, 0 calls for the hits")
+
+
+def _pct(a: int, b: int) -> str:
+    return f"{100 * a / b:.0f}%" if b else "n/a"
 
 
 # ----------------------------------------------------------------------------- stage 2: polish
 
 def _polish_jobs(root: Path, items: list[dict[str, Any]], targets: tuple[str, ...],
-                 state: dict[str, Any]) -> list[dict[str, Any]]:
-    """Texts that still need polishing: {key, kind, name, lang, text}."""
+                 state: dict[str, Any], counts: dict[str, int] | None = None) -> list[dict[str, Any]]:
+    """Texts that still need polishing: {key, kind, name, lang, text}. `counts` gets candidates/skipped."""
     jobs: list[dict[str, Any]] = []
+    counts = counts if counts is not None else {}
+    counts.update(candidates=0, skipped=0)
     done = state["items"]
 
-    def add(kind: str, name: str, lang: str, text: str) -> None:
+    def add(kind: str, name: str, lang: str, text: str, extra: dict[str, Any] | None = None) -> None:
         key = f"{kind}|{name}|{lang}"
+        if not text.strip():
+            return
+        counts["candidates"] += 1
         rec = done.get(key)
         if rec and rec.get("sha") == sha(text) and rec.get("v") == POLISH_VERSION:
             if rec.get("ok") or rec.get("fails", 0) >= MAX_FAILS:
+                counts["skipped"] += 1
                 return
         if text.strip():
-            jobs.append({"key": key, "kind": kind, "name": name, "lang": lang, "text": text})
+            jobs.append({"key": key, "kind": kind, "name": name, "lang": lang, "text": text, **(extra or {})})
 
     if "newcomers" in targets:
-        cache = nci.load(root / "data/newcomer_i18n.json")
+        lib = nci.load(root / LIB_REL)
         for it in items:
-            if it.get("suspicious"):
+            if it.get("suspicious") or not it.get("description"):
                 continue  # suspected cracked/pirated repos stay literal; polish must not make them sound better
-            entry = cache.get(it["name"])
-            if not entry or entry.get("src") != it.get("description"):
+            entry = nci.lookup(lib, it["name"], it["description"])
+            if not entry:
                 continue
             for lang in LANGS:
                 if entry.get(lang, "").strip():
-                    add("newcomer", it["name"], lang, entry[lang])
+                    # keyed by repo + source hash + language: a changed source is a new, unpolished entry
+                    add("newcomer", f"{it['name']}@{nci.src_hash(it['description'])}", lang, entry[lang],
+                        {"repo": it["name"], "src": it["description"]})
     if "projects" in targets:
         for p in json.loads((root / "data/projects.json").read_text("utf-8")):
             for lang in LANGS:
@@ -380,11 +425,11 @@ def _apply(root: Path, accepted: list[dict[str, Any]]) -> None:
     for a in accepted:
         by_kind.setdefault(a["kind"], []).append(a)
     if "newcomer" in by_kind:
-        path = root / "data/newcomer_i18n.json"
-        cache = nci.load(path)
+        path = root / LIB_REL
+        lib = nci.load(path)
         for a in by_kind["newcomer"]:
-            cache[a["name"]][a["lang"]] = a["new"]
-        _write_json(path, cache)
+            nci.put(lib, a["repo"], a["src"], a["lang"], a["new"])
+        nci.save(lib, path)
     for kind, fname, key in (("project", "data/projects.json", "name"), ("category", "data/categories.json", "id")):
         if kind in by_kind:
             path = root / fname
@@ -399,10 +444,15 @@ def polish(root: Path, items: list[dict[str, Any]], runner: Runner, budget: Budg
            targets: tuple[str, ...] = DEFAULT_TARGETS, log: Callable[[str], None] = print,
            limit: int | None = None, dry_run: bool = False) -> dict[str, int]:
     state = load_state(root / "data/polish_state.json")
-    jobs = _polish_jobs(root, items, targets, state)
+    glossary = load_glossary(root)
+    counts: dict[str, int] = {}
+    jobs = _polish_jobs(root, items, targets, state, counts)
+    log(f"polish: {counts['skipped']}/{counts['candidates']} texts already polished or given up on (skipped), "
+        f"{len(jobs)} to send to the model")
     if limit is not None:
         jobs = jobs[:limit]
-    stat = {"todo": len(jobs), "polished": 0, "unchanged": 0, "rejected": 0, "errors": 0}
+    stat = {"todo": len(jobs), "polished": 0, "unchanged": 0, "rejected": 0, "errors": 0,
+            "skipped": counts["skipped"], "candidates": counts["candidates"]}
     if dry_run or not jobs:
         return stat
     # group by language so each prompt is one language; small batches keep replies reliable
@@ -418,7 +468,8 @@ def polish(root: Path, items: list[dict[str, Any]], runner: Runner, budget: Budg
                 stop = True
                 break
             payload = [{"id": str(i), "lang": LANG_NAMES[lang], "text": j["text"]} for i, j in enumerate(batch)]
-            prompt = POLISH_PROMPT.format(items=json.dumps(payload, ensure_ascii=False), glossary=GLOSSARY)
+            prompt = POLISH_PROMPT.format(items=json.dumps(payload, ensure_ascii=False),
+                                          glossary=glossary_for([j["text"] for j in batch], [lang], glossary))
             try:
                 reply = llm.extract_json(runner.ask(prompt))
                 streak = 0
@@ -483,14 +534,19 @@ def run(root: Path, new: dict[str, Any] | None, *, do_translate: bool = True, do
         return runners[(backend, model)]
 
     if do_translate:
-        gaps = translation_gaps(nci.load(root / "data/newcomer_i18n.json"), items)
+        lib = nci.load(root / LIB_REL)
+        gaps = translation_gaps(lib, items)
         if not gaps:
-            result["translate"] = {"todo": 0}
-            log("translate: nothing to do, every displayed description already has a current translation")
+            hs = nci.hit_stats(lib, items)
+            result["translate"] = {"todo": 0, **hs, "calls": 0}
+            log(f"translate: library {hs['hits']}/{hs['total']} hits ({_pct(hs['hits'], hs['total'])}), "
+                "nothing new, 0 model calls")
         elif dry_run:
             result["translate"] = {"todo": len(gaps)}
+            _log_library(nci.hit_stats(lib, items), len(gaps), log)
         elif (r := ready(translate_backend, translate_model)) is None:
             result["translate"] = {"todo": len(gaps), "skipped": True}
+            _log_library(nci.hit_stats(lib, items), len(gaps), log)
         else:
             result["translate"] = translate(root, items, r, budget, log, limit)
             log(f"translate: {result['translate']}")
