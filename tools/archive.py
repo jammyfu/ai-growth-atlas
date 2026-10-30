@@ -22,7 +22,7 @@ from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
 
-import atlas_core as core
+import risers_core as core
 from i18n import LANGS, S
 
 TOP_N = 20
@@ -96,7 +96,8 @@ def _new_rows(items: list[dict]) -> list[str]:
             f"{it['per_day']:,.1f} |" for i, it in enumerate(items, 1)]
 
 
-def render_rankings_md(stats: dict[str, Any], lang: str = "en") -> str:
+def render_rankings_md(stats: dict[str, Any], lang: str = "en",
+                        categories: list[dict] | None = None) -> str:
     s = S[lang]
     slot = stats.get("slot") or {"label": s["snap_unlabelled"], "date": stats["today_utc"], "id": "n/a"}
     lines = [
@@ -105,25 +106,67 @@ def render_rankings_md(stats: dict[str, Any], lang: str = "en") -> str:
         s["snap_meta"].format(id=slot["id"], ts=stats["generated_at"], end=stats["today_utc"], n=TOP_N), "",
     ]
     projects = stats["projects"]
-    new = stats.get("newcomers")
-    if new is not None:  # snapshots written before this ranking existed have no such key
-        lines += [f"## {s['new']}", ""]
-        if not new["ok"]:
-            lines += [s["new_failed"].format(error=new["error"]), ""]
-        else:
-            lines += [f"| {s['h_rank']} | {s['h_repo']} | {s['h_created']} | {s['h_stars_short']} | {s['h_perday']} |",
-                      "|---|---|---|---:|---:|"]
-            lines += _new_rows(new["items"][:TOP_N]) + [""]
-            bad = [q for q in new["queries"] if not q["ok"]]
-            if bad:
-                lines += [s["new_partial"].format(failed=len(bad), total=len(new["queries"])), ""]
-    for key in ("week", "month", "year"):
-        lines += [f"## {s[key]}", "",
-                  f"| {s['h_rank']} | {s['h_project']} | {s['h_gain']} | {s['h_perday']} | {s['h_stars']} |",
-                  "|---|---|---:|---:|---:|"]
-        lines += _rows(core.rank(projects, key)[:TOP_N], key, lang) + [""]
-    lines += [f"## {s['total']}", "", f"| {s['h_rank']} | {s['h_project']} | {s['h_stars']} |", "|---|---|---:|"]
-    lines += _rows(core.rank(projects, "total")[:TOP_N], "total", lang) + [""]
+    newcomers_root = stats.get("newcomers")
+    multi = bool(stats.get("category_ids")) or (
+        isinstance(newcomers_root, dict) and "categories" in newcomers_root
+    ) or any(p.get("category") for p in projects)
+
+    if not multi:
+        # Legacy flat snapshot (pre github-risers categories): keep ## headings so history pages stay bit-stable.
+        if newcomers_root is not None:
+            lines += [f"## {s['new']}", ""]
+            if not newcomers_root.get("ok"):
+                lines += [s["new_failed"].format(error=newcomers_root.get("error", "?")), ""]
+            else:
+                lines += [f"| {s['h_rank']} | {s['h_repo']} | {s['h_created']} | {s['h_stars_short']} | {s['h_perday']} |",
+                          "|---|---|---|---:|---:|"]
+                lines += _new_rows(newcomers_root.get("items", [])[:TOP_N]) + [""]
+                bad = [q for q in newcomers_root.get("queries", []) if not q.get("ok")]
+                if bad:
+                    lines += [s["new_partial"].format(failed=len(bad), total=len(newcomers_root["queries"])), ""]
+        for key in ("week", "month", "year"):
+            lines += [f"## {s[key]}", "",
+                      f"| {s['h_rank']} | {s['h_project']} | {s['h_gain']} | {s['h_perday']} | {s['h_stars']} |",
+                      "|---|---|---:|---:|---:|"]
+            lines += _rows(core.rank(projects, key)[:TOP_N], key, lang) + [""]
+        lines += [f"## {s['total']}", "", f"| {s['h_rank']} | {s['h_project']} | {s['h_stars']} |", "|---|---|---:|"]
+        lines += _rows(core.rank(projects, "total")[:TOP_N], "total", lang) + [""]
+    else:
+        cats_meta = categories or []
+        if not cats_meta and stats.get("category_ids"):
+            cats_meta = [{"id": cid, "name": {lang: cid}, "primary": cid == "ai", "order": i}
+                         for i, cid in enumerate(stats["category_ids"], 1)]
+        ordered = sorted(cats_meta, key=lambda c: (0 if c.get("primary") else 1, c.get("order", 99), c["id"]))
+        for cat in ordered:
+            cid = cat["id"]
+            cname = (cat.get("name") or {}).get(lang) or cid
+            lines += [f"## {cname}", ""]
+            cat_projects = [p for p in projects if p.get("category") == cid]
+            new_block = None
+            if newcomers_root is not None:
+                if "categories" in newcomers_root:
+                    new_block = (newcomers_root.get("categories") or {}).get(cid)
+                elif cat.get("primary"):
+                    new_block = newcomers_root
+            if new_block is not None:
+                lines += [f"### {s['new']}", ""]
+                if not new_block.get("ok"):
+                    lines += [s["new_failed"].format(error=new_block.get("error", "?")), ""]
+                else:
+                    lines += [f"| {s['h_rank']} | {s['h_repo']} | {s['h_created']} | {s['h_stars_short']} | {s['h_perday']} |",
+                              "|---|---|---|---:|---:|"]
+                    lines += _new_rows(new_block.get("items", [])[:TOP_N]) + [""]
+                    bad = [q for q in new_block.get("queries", []) if not q.get("ok")]
+                    if bad:
+                        lines += [s["new_partial"].format(failed=len(bad), total=len(new_block["queries"])), ""]
+            for key in ("week", "month", "year"):
+                lines += [f"### {s[key]}", "",
+                          f"| {s['h_rank']} | {s['h_project']} | {s['h_gain']} | {s['h_perday']} | {s['h_stars']} |",
+                          "|---|---|---:|---:|---:|"]
+                lines += _rows(core.rank(cat_projects, key)[:TOP_N], key, lang) + [""]
+            lines += [f"### {s['total']}", "", f"| {s['h_rank']} | {s['h_project']} | {s['h_stars']} |", "|---|---|---:|"]
+            lines += _rows(core.rank(cat_projects, "total")[:TOP_N], "total", lang) + [""]
+
     missing = [p for p in projects if not p.get("ok")]
     lines += [f"## {s['missing_title']}", ""]
     lines += [f"- `{p['name']}`: {p['error']}" for p in missing] if missing else [s["missing_none"]]
@@ -131,17 +174,26 @@ def render_rankings_md(stats: dict[str, Any], lang: str = "en") -> str:
     return "\n".join(lines)
 
 
+
 def write_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", "utf-8")
+
+
+def load_categories(root: Path) -> list[dict]:
+    path = root / "data/categories.json"
+    if not path.exists():
+        return []
+    return json.loads(path.read_text("utf-8"))
 
 
 def write_snapshot(root: Path, stats: dict[str, Any]) -> Path:
     slot = stats["slot"]
     d = root / "rankings" / slot["date"] / slot["id"]
     write_json(d / "stats.json", stats)
+    cats = load_categories(root)
     for lang in LANGS:
-        (d / rankings_name(lang)).write_text(render_rankings_md(stats, lang), "utf-8")
+        (d / rankings_name(lang)).write_text(render_rankings_md(stats, lang, cats), "utf-8")
     return d
 
 
@@ -175,8 +227,18 @@ def render_index(root: Path, lang: str = "en") -> str:
             tops.append(f"{r[0]['name']} ({s['idx_perday'].format(n=per_day)})" if r else s["none"])
         new = st.get("newcomers")
         top_new = s["none"]
-        if new and new.get("ok") and new["items"]:
-            first = new["items"][0]
+        first = None
+        if new and new.get("ok"):
+            if "categories" in new:
+                # Prefer primary (ai) category's #1
+                for cid in st.get("category_ids") or ["ai"]:
+                    block = (new.get("categories") or {}).get(cid) or {}
+                    if block.get("ok") and block.get("items"):
+                        first = block["items"][0]
+                        break
+            elif new.get("items"):
+                first = new["items"][0]
+        if first:
             top_new = f"{first['name']} ({s['idx_perday'].format(n=format(first['per_day'], ',.0f'))})"
         rel = d.relative_to(root / "rankings").as_posix()
         lines.append(f"| {slot['date']} | {slot_label(slot, lang)} (`{slot['id']}`) | {st['generated_at']} | "
@@ -193,17 +255,18 @@ def render_latest_and_index(root: Path) -> dict[Path, str]:
     Derived from the committed stats.json files. The English snapshot page (rankings.md) is not
     listed: it is written once when the snapshot is created and then left alone.
     """
+    cats = load_categories(root)
     out: dict[Path, str] = {root / "rankings" / index_name(lang): render_index(root, lang) for lang in LANGS}
     snaps = scan_snapshots(root)
     if snaps:
         newest = snaps[0][1]
         out[root / "latest/stats.json"] = json.dumps(newest, ensure_ascii=False, indent=2) + "\n"
         for lang in LANGS:
-            out[root / "latest" / rankings_name(lang)] = render_rankings_md(newest, lang)
+            out[root / "latest" / rankings_name(lang)] = render_rankings_md(newest, lang, cats)
     for d, st in snaps:
         for lang in LANGS:
             if lang != "en":
-                out[d / rankings_name(lang)] = render_rankings_md(st, lang)
+                out[d / rankings_name(lang)] = render_rankings_md(st, lang, cats)
     return out
 
 

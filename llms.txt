@@ -1,10 +1,12 @@
-# AI 增长图谱（AI Growth Atlas）
+# GitHub Risers（GitHub 飙升榜）
 
-> 按星标增长的速度，而不是总星标数，为 AI 项目排名。每天自动从 GitHub API 获取真实数据，计算近 7 天、30 天和 365 天的日均新增星标数，帮助你发现正在快速崛起的 AI 项目。遵循 MIT 开源协议。
+> Open-source projects ranked by how fast they gain stars, grouped by category (AI first). Real numbers from the GitHub API every day at Beijing and Los Angeles midnight. MIT license.
 
-## 核心文档索引
-- [README.zh-Hans.md](README.zh-Hans.md): 简体中文完整榜单
-- [README.md](README.md): English Overview & Rankings
-- [data/projects.json](data/projects.json): 收录的所有开源项目元数据
-- [data/stats.json](data/stats.json): 最新涨赞速度与统计原始数据
-- [docs/DAILY_UPDATE.md](docs/DAILY_UPDATE.md): 每日自动化更新规范
+## Docs
+- [README](https://github.com/jammyfu/github-risers#readme): English rankings
+- [README.zh-Hans.md](https://github.com/jammyfu/github-risers/blob/main/README.zh-Hans.md): 简体中文榜单
+- [docs/CATEGORIES.md](https://github.com/jammyfu/github-risers/blob/main/docs/CATEGORIES.md): category rules (topics / keywords)
+- [docs/NEW_ARRIVALS.md](https://github.com/jammyfu/github-risers/blob/main/docs/NEW_ARRIVALS.md): 7-day newcomers criteria
+- [docs/DAILY_UPDATE.md](https://github.com/jammyfu/github-risers/blob/main/docs/DAILY_UPDATE.md): daily automation
+- [data/projects.json](https://github.com/jammyfu/github-risers/blob/main/data/projects.json): tracked projects
+- [data/stats.json](https://github.com/jammyfu/github-risers/blob/main/data/stats.json): latest growth stats

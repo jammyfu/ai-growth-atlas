@@ -1,172 +1,277 @@
 [
   {
-    "id": "coding-agents",
+    "id": "ai",
+    "primary": true,
+    "order": 1,
     "name": {
-      "en": "Coding Agents",
-      "zh-Hans": "编程智能体",
-      "zh-Hant": "程式設計代理",
-      "ja": "コーディングエージェント",
-      "ko": "코딩 에이전트"
+      "en": "AI",
+      "zh-Hans": "人工智能",
+      "zh-Hant": "人工智慧",
+      "ja": "AI",
+      "ko": "AI"
     },
     "desc": {
-      "en": "Let AI write, edit and run code for you",
-      "zh-Hans": "让 AI 为你编写、修改并运行代码",
-      "zh-Hant": "讓 AI 為你撰寫、修改並執行程式碼",
-      "ja": "AI にコードを書かせ、直させ、コマンドまで実行させる",
-      "ko": "AI가 코드를 쓰고, 고치고, 명령까지 실행하게 한다"
-    }
+      "en": "LLMs, agents, MCP, coding copilots and generative AI",
+      "zh-Hans": "大模型、智能体、MCP、编程助手与生成式 AI",
+      "zh-Hant": "大型語言模型、代理、MCP、程式設計助手與生成式 AI",
+      "ja": "LLM・エージェント・MCP・コーディング助手・生成 AI",
+      "ko": "LLM, 에이전트, MCP, 코딩 어시스턴트, 생성형 AI"
+    },
+    "topics": [
+      "ai",
+      "artificial-intelligence",
+      "llm",
+      "large-language-models",
+      "llm-agent",
+      "ai-agents",
+      "ai-agent",
+      "mcp",
+      "mcp-server",
+      "claude-code",
+      "generative-ai",
+      "machine-learning",
+      "deep-learning",
+      "rag",
+      "vibe-coding"
+    ],
+    "keywords": [
+      "\"AI agent\"",
+      "LLM",
+      "\"Claude Code\"",
+      "\"MCP server\"",
+      "\"agent skills\""
+    ],
+    "languages": []
   },
   {
-    "id": "skills-harness",
+    "id": "devtools",
+    "primary": false,
+    "order": 2,
     "name": {
-      "en": "Skills & Harness",
-      "zh-Hans": "技能与 Harness",
-      "zh-Hant": "技能與 Harness",
-      "ja": "スキルとハーネス",
-      "ko": "스킬 & 하네스"
+      "en": "Developer Tools",
+      "zh-Hans": "开发者工具",
+      "zh-Hant": "開發者工具",
+      "ja": "開発者ツール",
+      "ko": "개발자 도구"
     },
     "desc": {
-      "en": "Skill packs, memory, audit and safety for coding agents",
-      "zh-Hans": "为编程智能体提供技能包、记忆、审计和安全保障",
-      "zh-Hant": "為程式設計代理提供技能包、記憶、稽核與安全防護",
-      "ja": "コーディングエージェントにスキル・記憶・監査・安全性を足す",
-      "ko": "코딩 에이전트에 스킬·메모리·감사·안전 기능을 더한다"
-    }
+      "en": "CLIs, editors, package managers, linters and build tooling",
+      "zh-Hans": "命令行、编辑器、包管理、代码检查与构建工具",
+      "zh-Hant": "命令列、編輯器、套件管理、程式碼檢查與建置工具",
+      "ja": "CLI・エディタ・パッケージマネージャ・リンタ・ビルドツール",
+      "ko": "CLI, 에디터, 패키지 관리자, 린터, 빌드 도구"
+    },
+    "topics": [
+      "cli",
+      "developer-tools",
+      "devtools",
+      "lsp",
+      "package-manager",
+      "linter",
+      "formatter",
+      "build-tool",
+      "editor",
+      "terminal"
+    ],
+    "keywords": [
+      "\"developer tools\"",
+      "devtools",
+      "LSP",
+      "\"package manager\""
+    ],
+    "languages": []
   },
   {
-    "id": "memory-knowledge",
+    "id": "security",
+    "primary": false,
+    "order": 3,
     "name": {
-      "en": "Memory & Knowledge",
-      "zh-Hans": "记忆与知识",
-      "zh-Hant": "記憶與知識",
-      "ja": "記憶とナレッジ",
-      "ko": "메모리 & 지식"
+      "en": "Security",
+      "zh-Hans": "安全",
+      "zh-Hant": "資安",
+      "ja": "セキュリティ",
+      "ko": "보안"
     },
     "desc": {
-      "en": "Help agents remember context, codebases and docs",
-      "zh-Hans": "帮助智能体记住上下文、代码库和文档",
-      "zh-Hant": "協助代理記住上下文、程式碼庫與文件",
-      "ja": "エージェントに文脈・コードベース・ドキュメントを覚えさせる",
-      "ko": "에이전트가 맥락·코드베이스·문서를 기억하게 한다"
-    }
+      "en": "Vulnerability scanners, SAST, supply-chain and runtime security",
+      "zh-Hans": "漏洞扫描、静态分析、供应链与运行时安全",
+      "zh-Hant": "弱點掃描、靜態分析、供應鏈與執行時資安",
+      "ja": "脆弱性スキャン・SAST・サプライチェーン・ランタイムセキュリティ",
+      "ko": "취약점 스캐너, SAST, 공급망·런타임 보안"
+    },
+    "topics": [
+      "security",
+      "cybersecurity",
+      "vulnerability",
+      "sast",
+      "devops-security",
+      "supply-chain-security",
+      "container-security",
+      "pentest",
+      "infosec"
+    ],
+    "keywords": [
+      "security",
+      "vulnerability",
+      "SAST",
+      "CVE"
+    ],
+    "languages": []
   },
   {
-    "id": "browser-computer",
+    "id": "web",
+    "primary": false,
+    "order": 4,
     "name": {
-      "en": "Browser & Computer Use",
-      "zh-Hans": "浏览器与电脑操作",
-      "zh-Hant": "瀏覽器與電腦操作",
-      "ja": "ブラウザ・PC 操作",
-      "ko": "브라우저 & 컴퓨터 제어"
+      "en": "Web / Frontend",
+      "zh-Hans": "Web / 前端",
+      "zh-Hant": "Web / 前端",
+      "ja": "Web / フロントエンド",
+      "ko": "Web / 프론트엔드"
     },
     "desc": {
-      "en": "Let agents operate a browser or a desktop",
-      "zh-Hans": "让智能体操作浏览器或桌面",
-      "zh-Hant": "讓代理操作瀏覽器或桌面",
-      "ja": "エージェントにブラウザやデスクトップを操作させる",
-      "ko": "에이전트가 브라우저나 데스크톱을 조작하게 한다"
-    }
+      "en": "Frontend frameworks, UI kits, CSS and browser tooling",
+      "zh-Hans": "前端框架、UI 组件库、CSS 与浏览器工具",
+      "zh-Hant": "前端框架、UI 元件庫、CSS 與瀏覽器工具",
+      "ja": "フロントエンド枠組み・UI キット・CSS・ブラウザツール",
+      "ko": "프론트엔드 프레임워크, UI 키트, CSS, 브라우저 도구"
+    },
+    "topics": [
+      "frontend",
+      "web",
+      "react",
+      "vue",
+      "svelte",
+      "css",
+      "ui",
+      "javascript",
+      "typescript",
+      "nextjs",
+      "tailwind"
+    ],
+    "keywords": [
+      "frontend",
+      "\"UI library\"",
+      "React",
+      "Next.js"
+    ],
+    "languages": [
+      "TypeScript",
+      "JavaScript"
+    ]
   },
   {
-    "id": "document-content",
+    "id": "infra",
+    "primary": false,
+    "order": 5,
     "name": {
-      "en": "Document & Content",
-      "zh-Hans": "文档与内容",
-      "zh-Hant": "文件與內容",
-      "ja": "ドキュメントとコンテンツ",
-      "ko": "문서 & 콘텐츠"
+      "en": "Infrastructure",
+      "zh-Hans": "基础设施",
+      "zh-Hant": "基礎建設",
+      "ja": "インフラ",
+      "ko": "인프라"
     },
     "desc": {
-      "en": "Turn PDFs, slides and videos into LLM-ready formats",
-      "zh-Hans": "把 PDF、幻灯片和视频转换成适合大模型使用的格式",
-      "zh-Hant": "將 PDF、簡報和影片轉換成適合大型語言模型使用的格式",
-      "ja": "PDF・スライド・動画を LLM が使える形式に変換する",
-      "ko": "PDF·슬라이드·영상을 LLM이 쓸 수 있는 형식으로 변환한다"
-    }
+      "en": "Containers, Kubernetes, cloud, networking and observability",
+      "zh-Hans": "容器、Kubernetes、云、网络与可观测性",
+      "zh-Hant": "容器、Kubernetes、雲端、網路與可觀測性",
+      "ja": "コンテナ・Kubernetes・クラウド・ネットワーク・可観測性",
+      "ko": "컨테이너, Kubernetes, 클라우드, 네트워킹, 관측성"
+    },
+    "topics": [
+      "kubernetes",
+      "docker",
+      "devops",
+      "infrastructure",
+      "terraform",
+      "cloud",
+      "observability",
+      "networking",
+      "containers",
+      "sre"
+    ],
+    "keywords": [
+      "Kubernetes",
+      "Docker",
+      "Terraform",
+      "observability"
+    ],
+    "languages": []
   },
   {
-    "id": "video-media",
+    "id": "design",
+    "primary": false,
+    "order": 6,
     "name": {
-      "en": "Video & Media",
-      "zh-Hans": "视频与媒体",
-      "zh-Hant": "影片與媒體",
-      "ja": "動画・メディア",
-      "ko": "영상 & 미디어"
+      "en": "Design / Creative",
+      "zh-Hans": "设计 / 创意",
+      "zh-Hant": "設計 / 創意",
+      "ja": "デザイン / クリエイティブ",
+      "ko": "디자인 / 크리에이티브"
     },
     "desc": {
-      "en": "AI that generates or processes video",
-      "zh-Hans": "生成或处理视频的 AI",
-      "zh-Hant": "生成或處理影片的 AI",
-      "ja": "AI で動画を生成・処理する",
-      "ko": "AI로 영상을 생성하거나 처리한다"
-    }
+      "en": "Design systems, drawing, animation and creative tooling",
+      "zh-Hans": "设计系统、绘图、动画与创意工具",
+      "zh-Hant": "設計系統、繪圖、動畫與創意工具",
+      "ja": "デザインシステム・描画・アニメーション・制作ツール",
+      "ko": "디자인 시스템, 드로잉, 애니메이션, 크리에이티브 도구"
+    },
+    "topics": [
+      "design",
+      "design-system",
+      "figma",
+      "graphics",
+      "animation",
+      "creative",
+      "svg",
+      "canvas",
+      "ui-design",
+      "icon"
+    ],
+    "keywords": [
+      "design",
+      "Figma",
+      "animation",
+      "\"design system\""
+    ],
+    "languages": []
   },
   {
-    "id": "security-audit",
+    "id": "data",
+    "primary": false,
+    "order": 7,
     "name": {
-      "en": "Security & Audit",
-      "zh-Hans": "安全与审计",
-      "zh-Hant": "資安與稽核",
-      "ja": "セキュリティと監査",
-      "ko": "보안 & 감사"
+      "en": "Data",
+      "zh-Hans": "数据",
+      "zh-Hant": "資料",
+      "ja": "データ",
+      "ko": "데이터"
     },
     "desc": {
-      "en": "Check code or agent behavior for risks",
-      "zh-Hans": "检查代码或智能体行为中的风险",
-      "zh-Hant": "檢查程式碼或代理行為中的風險",
-      "ja": "コードやエージェントの挙動のリスクを検査する",
-      "ko": "코드나 에이전트 동작의 위험을 점검한다"
-    }
-  },
-  {
-    "id": "local-inference",
-    "name": {
-      "en": "Local Models & Inference",
-      "zh-Hans": "本地模型与推理",
-      "zh-Hant": "本機模型與推論",
-      "ja": "ローカルモデルと推論",
-      "ko": "로컬 모델 & 추론"
+      "en": "Databases, analytics, ETL and data engineering",
+      "zh-Hans": "数据库、分析、ETL 与数据工程",
+      "zh-Hant": "資料庫、分析、ETL 與資料工程",
+      "ja": "データベース・分析・ETL・データエンジニアリング",
+      "ko": "데이터베이스, 분석, ETL, 데이터 엔지니어링"
     },
-    "desc": {
-      "en": "Run models on your own machine",
-      "zh-Hans": "在自己的机器上运行模型",
-      "zh-Hant": "在自己的機器上執行模型",
-      "ja": "自分のマシンでモデルを動かす",
-      "ko": "내 기기에서 모델을 실행한다"
-    }
-  },
-  {
-    "id": "workflow",
-    "name": {
-      "en": "Workflow & Automation",
-      "zh-Hans": "工作流与自动化",
-      "zh-Hant": "工作流程與自動化",
-      "ja": "ワークフロー自動化",
-      "ko": "워크플로 자동화"
-    },
-    "desc": {
-      "en": "Chain several tools into one flow",
-      "zh-Hans": "把多个工具串成一个流程",
-      "zh-Hant": "把多個工具串成一個流程",
-      "ja": "複数のツールをつないで一つの流れにする",
-      "ko": "여러 도구를 하나의 흐름으로 잇는다"
-    }
-  },
-  {
-    "id": "other",
-    "name": {
-      "en": "Other AI Tools",
-      "zh-Hans": "其他 AI 工具",
-      "zh-Hant": "其他 AI 工具",
-      "ja": "その他の AI ツール",
-      "ko": "기타 AI 도구"
-    },
-    "desc": {
-      "en": "Rising AI projects that fit none of the above",
-      "zh-Hans": "不属于以上任何类别的新兴 AI 项目",
-      "zh-Hant": "不屬於以上任何類別的新興 AI 專案",
-      "ja": "上のどれにも当てはまらないが伸びている AI プロジェクト",
-      "ko": "위 분류에 속하지 않지만 뜨고 있는 AI 프로젝트"
-    }
+    "topics": [
+      "database",
+      "data",
+      "analytics",
+      "etl",
+      "data-engineering",
+      "sql",
+      "olap",
+      "dataframe",
+      "streaming",
+      "big-data"
+    ],
+    "keywords": [
+      "database",
+      "ETL",
+      "analytics",
+      "dataframe"
+    ],
+    "languages": []
   }
 ]

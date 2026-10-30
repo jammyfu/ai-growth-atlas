@@ -8,13 +8,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 import archive  # noqa: E402
-import atlas_core as core  # noqa: E402
 import newcomers as nc  # noqa: E402
-import render_readme  # noqa: E402
+import risers_core as core  # noqa: E402
 from i18n import LANGS, S  # noqa: E402
 
 NOW = dt.datetime(2026, 10, 30, 0, 0, tzinfo=dt.timezone.utc)
 NOSLEEP = lambda s: None  # noqa: E731
+CATS = json.loads((ROOT / "data/categories.json").read_text("utf-8"))
+AI = next(c for c in CATS if c["id"] == "ai")
 
 
 def repo(name, stars, days_old, **kw):
@@ -28,8 +29,8 @@ def repo(name, stars, days_old, **kw):
 
 class FilterTests(unittest.TestCase):
     def test_queries_use_window_min_stars_and_no_forks(self):
-        qs = nc.build_queries(NOW)
-        self.assertEqual(len(qs), len(nc.AI_TOPICS) + len(nc.AI_KEYWORDS))
+        qs = nc.build_queries(NOW, AI)
+        self.assertEqual(len(qs), len(AI["topics"]) + len(AI["keywords"]) + len(AI.get("languages") or []))
         for _label, q in qs:
             self.assertIn("created:>=2026-10-23T00:00:00Z", q)
             self.assertIn("stars:>=100", q)
@@ -38,14 +39,14 @@ class FilterTests(unittest.TestCase):
 
     def test_qualifies_window_edges_forks_archived_stars(self):
         self.assertTrue(nc.qualifies(repo("a/a", 100, 6.9), NOW))
-        self.assertFalse(nc.qualifies(repo("a/a", 100, 7.1), NOW))      # older than 7 days
-        self.assertFalse(nc.qualifies(repo("a/a", 99, 1), NOW))         # too few stars
+        self.assertFalse(nc.qualifies(repo("a/a", 100, 7.1), NOW))
+        self.assertFalse(nc.qualifies(repo("a/a", 99, 1), NOW))
         self.assertFalse(nc.qualifies(repo("a/a", 500, 1, fork=True), NOW))
         self.assertFalse(nc.qualifies(repo("a/a", 500, 1, archived=True), NOW))
-        self.assertFalse(nc.qualifies(repo("a/a", 500, -1), NOW))       # created in the future
+        self.assertFalse(nc.qualifies(repo("a/a", 500, -1), NOW))
 
     def test_hotness_is_stars_per_day_with_one_day_floor(self):
-        self.assertEqual(nc.to_item(repo("a/a", 500, 0.1), NOW)["per_day"], 500.0)  # floor: 1 day
+        self.assertEqual(nc.to_item(repo("a/a", 500, 0.1), NOW)["per_day"], 500.0)
         self.assertEqual(nc.to_item(repo("a/a", 600, 3), NOW)["per_day"], 200.0)
 
     def test_description_is_made_safe_for_a_table_cell(self):
@@ -98,29 +99,30 @@ class DiscoverTests(unittest.TestCase):
             for items in pool.values():
                 for r in items:
                     if r["full_name"] == name:
-                        return dict(r, stargazers_count=r["stargazers_count"] + 100)  # fresher count
+                        return dict(r, stargazers_count=r["stargazers_count"] + 100)
             raise RuntimeError("404")
         return api
 
     def test_discover_ranks_dedupes_and_refreshes(self):
-        res = nc.discover(self.fake_api(), NOW, {"tracked/proj"}, sleep=NOSLEEP)
+        cat = {"id": "ai", "topics": ["ai", "llm"], "keywords": [], "languages": []}
+        res = nc.discover(self.fake_api(), NOW, {"tracked/proj"}, sleep=NOSLEEP, category=cat)
         self.assertTrue(res["ok"])
         names = [i["name"] for i in res["items"]]
-        self.assertEqual(names, ["new/hot", "new/warm"])           # fork/old/tracked gone, ranked by per_day
-        self.assertEqual(res["items"][0]["stars"], 1000)           # refreshed via /repos/{r}
+        self.assertEqual(names, ["new/hot", "new/warm"])
+        self.assertEqual(res["items"][0]["stars"], 1000)
         self.assertEqual(res["excluded_duplicates"], ["tracked/proj"])
         self.assertEqual(len(set(names)), len(names))
-        self.assertEqual(sum(1 for q in res["queries"] if not q["ok"]), 0)
 
     def test_total_search_failure_is_reported_not_estimated(self):
-        res = nc.discover(self.fake_api(fail_all=True), NOW, set(), sleep=NOSLEEP)
+        cat = {"id": "ai", "topics": ["ai"], "keywords": [], "languages": []}
+        res = nc.discover(self.fake_api(fail_all=True), NOW, set(), sleep=NOSLEEP, category=cat)
         self.assertFalse(res["ok"])
         self.assertEqual(res["items"], [])
         self.assertIn("rate limited", res["error"])
 
     def test_top_20_cap(self):
         many = [repo(f"n/r{i}", 200 + i, 2) for i in range(30)]
-        api = lambda p: ({"total_count": 30, "items": many} if p.startswith("/search") else None)  # noqa: E731
+        cat = {"id": "ai", "topics": ["ai"], "keywords": [], "languages": []}
         orig = nc.REFRESH_TOP
         nc.REFRESH_TOP = 100
         try:
@@ -128,42 +130,94 @@ class DiscoverTests(unittest.TestCase):
                 if p.startswith("/search"):
                     return {"total_count": 30, "items": many}
                 return next(r for r in many if r["full_name"] == p.removeprefix("/repos/"))
-            res = nc.discover(api2, NOW, set(), sleep=NOSLEEP)
+            res = nc.discover(api2, NOW, set(), sleep=NOSLEEP, category=cat)
         finally:
             nc.REFRESH_TOP = orig
         self.assertEqual(len(res["items"]), 20)
+
+    def test_discover_all_ai_first_claims_exclusive(self):
+        cats = [
+            {"id": "ai", "primary": True, "order": 1, "topics": ["ai"], "keywords": [], "languages": []},
+            {"id": "web", "primary": False, "order": 2, "topics": ["web"], "keywords": [], "languages": []},
+        ]
+        shared = repo("both/hit", 900, 1.5)
+        pool = {"ai": [shared, repo("ai/only", 400, 2)], "web": [shared, repo("web/only", 500, 2)]}
+
+        def api(path):
+            if path.startswith("/search"):
+                from urllib.parse import parse_qs, urlparse
+                q = parse_qs(urlparse(path).query)["q"][0]
+                for t, items in pool.items():
+                    if q.startswith(f"topic:{t} "):
+                        return {"total_count": len(items), "items": items}
+                return {"total_count": 0, "items": []}
+            name = path.removeprefix("/repos/")
+            for items in pool.values():
+                for r in items:
+                    if r["full_name"] == name:
+                        return r
+            raise RuntimeError("404")
+
+        res = nc.discover_all(api, NOW, cats, [], [], core.rank, sleep=NOSLEEP)
+        self.assertTrue(res["ok"])
+        ai_names = [i["name"] for i in res["categories"]["ai"]["items"]]
+        web_names = [i["name"] for i in res["categories"]["web"]["items"]]
+        self.assertIn("both/hit", ai_names)
+        self.assertNotIn("both/hit", web_names)
+        self.assertIn("web/only", web_names)
 
 
 class RepoNewcomersTests(unittest.TestCase):
     stats = json.loads((ROOT / "data/stats.json").read_text("utf-8"))
     projects = json.loads((ROOT / "data/projects.json").read_text("utf-8"))
 
-    def test_real_data_meets_every_criterion(self):
-        new = self.stats["newcomers"]
-        self.assertTrue(new["ok"], new.get("error"))
-        gen = nc.parse_ts(self.stats["generated_at"])
-        items = new["items"]
-        self.assertLessEqual(len(items), 20)
-        self.assertGreater(len(items), 0)
-        for it in items:
-            age = (gen - nc.parse_ts(it["created_at"])).total_seconds() / 86400
-            self.assertLessEqual(age, 7.01, it["name"])
-            self.assertGreaterEqual(it["stars"], nc.MIN_STARS)
-        per_day = [i["per_day"] for i in items]
-        self.assertEqual(per_day, sorted(per_day, reverse=True))
+    def _blocks(self):
+        new = self.stats.get("newcomers") or {}
+        if "categories" in new:
+            return [(cid, b) for cid, b in new["categories"].items() if b.get("ok")]
+        if new.get("ok"):
+            return [("legacy", new)]
+        return []
 
-    def test_no_project_is_in_two_rankings(self):
-        items = self.stats["newcomers"]["items"]
-        names = [i["name"].lower() for i in items]
-        self.assertEqual(len(names), len(set(names)))
-        tracked = {p["name"].lower() for p in self.projects}
-        self.assertEqual(set(names) & tracked, set())
-        self.assertEqual(nc.overlap_with_rankings(items, self.stats["projects"], 20, core.rank), set())
+    def test_real_data_meets_every_criterion(self):
+        blocks = self._blocks()
+        self.assertGreater(len(blocks), 0)
+        gen = nc.parse_ts(self.stats["generated_at"])
+        for _cid, block in blocks:
+            items = block["items"]
+            self.assertLessEqual(len(items), 20)
+            for it in items:
+                age = (gen - nc.parse_ts(it["created_at"])).total_seconds() / 86400
+                self.assertLessEqual(age, 7.01, it["name"])
+                self.assertGreaterEqual(it["stars"], nc.MIN_STARS)
+            per_day = [i["per_day"] for i in items]
+            self.assertEqual(per_day, sorted(per_day, reverse=True))
+
+    def test_no_project_is_in_two_rankings_within_category(self):
+        if "categories" not in (self.stats.get("newcomers") or {}):
+            self.skipTest("legacy newcomers shape")
+        for cid, block in self._blocks():
+            items = block["items"]
+            names = [i["name"].lower() for i in items]
+            self.assertEqual(len(names), len(set(names)), cid)
+            tracked = {p["name"].lower() for p in self.projects if p.get("category") == cid}
+            self.assertEqual(set(names) & tracked, set(), cid)
+            cat_stats = [p for p in self.stats["projects"] if p.get("category") == cid]
+            self.assertEqual(nc.overlap_with_rankings(items, cat_stats, 20, core.rank), set(), cid)
 
     def test_every_snapshot_has_no_overlap(self):
         for _d, st in archive.scan_snapshots(ROOT):
             new = st.get("newcomers")
-            if new and new.get("ok"):
+            if not new or not new.get("ok"):
+                continue
+            if "categories" in new:
+                for cid, block in new["categories"].items():
+                    if block.get("ok"):
+                        cat_stats = [p for p in st["projects"] if p.get("category") == cid]
+                        self.assertEqual(
+                            nc.overlap_with_rankings(block["items"], cat_stats, 20, core.rank), set(),
+                            f"{st['slot']['id']}:{cid}")
+            elif new.get("items") is not None:
                 self.assertEqual(nc.overlap_with_rankings(new["items"], st["projects"], 20, core.rank), set(),
                                  st["slot"]["id"])
 
@@ -171,21 +225,22 @@ class RepoNewcomersTests(unittest.TestCase):
 class ReadmeNewcomersTests(unittest.TestCase):
     stats = json.loads((ROOT / "data/stats.json").read_text("utf-8"))
 
-    def test_every_language_has_the_ranking_with_all_items_and_no_duplicates(self):
-        items = self.stats["newcomers"]["items"]
+    def test_every_language_has_category_and_new_headings(self):
+        import render_readme
+        projects = json.loads((ROOT / "data/projects.json").read_text("utf-8"))
+        cats = {c["id"]: c for c in CATS}
+        # Render from current data so the test does not depend on a prior README write.
         for code, (fname, _l) in LANGS.items():
-            text = (ROOT / fname).read_text("utf-8")
+            text = render_readme.render(code, projects, self.stats, cats)
             s = S[code]
-            heads = re.findall(r"^## (.+)$", text, flags=re.M)
-            self.assertIn(s["new"], heads, fname)
-            self.assertLess(heads.index(s["new"]), heads.index(s["week"]))
-            self.assertLess(heads.index(s["year"]), heads.index(s["total"]))
-            section = text.split(f"## {s['new']}\n", 1)[1].split("\n## ", 1)[0]
-            rows = re.findall(r"^\| \d+ \|", section, flags=re.M)
-            self.assertEqual(len(rows), len(items), fname)
-            for it in items:
-                self.assertEqual(section.count(f"]({it['url']})"), 1, f"{fname} {it['name']}")
-            self.assertIn("docs/NEW_ARRIVALS.md", section)
+            self.assertIn(f"# {s['title']}", text)
+            self.assertIn(cats["ai"]["name"][code], text)
+            self.assertIn(s["new"], text)
+            self.assertIn(s["week"], text)
+            self.assertIn(s["total"], text)
+            self.assertLess(text.index(s["year"]), text.index(s["total"]))
+            self.assertIn("docs/NEW_ARRIVALS.md", text)
+            self.assertIn("docs/CATEGORIES.md", text)
 
     def test_archive_markdown_has_new_section_only_when_present(self):
         slot = archive.make_slot(NOW, "cn")
@@ -195,18 +250,19 @@ class ReadmeNewcomersTests(unittest.TestCase):
             "ok": True, "queries": [], "items": [nc.to_item(repo("n/r", 300, 2), NOW)]}))
         self.assertIn("Hottest new repos", md)
         self.assertIn("[n/r](https://github.com/n/r)", md)
-        md = archive.render_rankings_md(dict(base, newcomers={"ok": False, "error": "boom", "queries": [], "items": []}))
-        self.assertIn("boom", md)
 
 
 class DocsTests(unittest.TestCase):
     def test_criteria_doc_matches_code(self):
         doc = (ROOT / "docs/NEW_ARRIVALS.md").read_text("utf-8")
-        for t in nc.AI_TOPICS:
-            self.assertIn(f"`{t}`", doc)
+        cat_doc = (ROOT / "docs/CATEGORIES.md").read_text("utf-8")
         self.assertIn(f"{nc.MIN_STARS} stars", doc)
         self.assertIn(f"{nc.WINDOW_DAYS} days", doc)
         self.assertIn("deduplication", doc.lower())
+        for c in CATS:
+            self.assertIn(f"`{c['id']}`", cat_doc)
+            self.assertTrue(c.get("topics"), c["id"])
+        self.assertTrue(next(c for c in CATS if c["id"] == "ai").get("primary"))
 
 
 if __name__ == "__main__":

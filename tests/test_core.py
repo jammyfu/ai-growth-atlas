@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
-import atlas_core as core  # noqa: E402
+import risers_core as core  # noqa: E402
 
 D = dt.date
 

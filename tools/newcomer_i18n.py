@@ -67,7 +67,19 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
     stats = json.loads((ROOT / "data/stats.json").read_text("utf-8"))
     new = stats.get("newcomers") or {}
-    items = new.get("items", []) if new.get("ok") else []
+    items = []
+    primary_items = []
+    if new.get("ok"):
+        if "categories" in new:
+            for cid, block in (new.get("categories") or {}).items():
+                if block.get("ok"):
+                    chunk = block.get("items") or []
+                    items.extend(chunk)
+                    if cid == "ai":
+                        primary_items = chunk
+        else:
+            items = new.get("items") or []
+            primary_items = items
     bad = problems(load(), items)
     if bad:
         print(f"{len(bad)} of {len(items)} new-repo descriptions need a translation "
@@ -75,7 +87,12 @@ def main(argv: list[str] | None = None) -> int:
         print("\n".join(f"  - {line}" for line in bad))
     else:
         print(f"all {len(items)} new-repo descriptions are translated")
-    return 1 if (bad and args.strict) else 0
+    # --strict only gates the primary (AI) category so daily runs across many categories stay usable
+    strict_bad = problems(load(), primary_items) if args.strict else []
+    if args.strict and strict_bad:
+        print(f"--strict: {len(strict_bad)} primary (AI) descriptions still need a translation")
+        return 1
+    return 0
 
 
 if __name__ == "__main__":

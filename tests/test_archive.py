@@ -91,8 +91,11 @@ class SnapshotTests(unittest.TestCase):
 
     def test_update_stars_writes_slot_folder(self):
         (self.tmp / "data").mkdir()
-        (self.tmp / "data/projects.json").write_text(json.dumps([{"name": "o/r"}]), "utf-8")
+        (self.tmp / "data/projects.json").write_text(
+            json.dumps([{"name": "o/r", "category": "ai", "url": "https://github.com/o/r",
+                         "desc": {c: "d" for c in ("en", "zh-Hans", "zh-Hant", "ja", "ko")}}]), "utf-8")
         (self.tmp / "data/stars.json").write_text("{}", "utf-8")
+        shutil.copy(ROOT / "data/categories.json", self.tmp / "data/categories.json")
         epoch = int(dt.datetime(2026, 10, 25, tzinfo=dt.timezone.utc).timestamp())
 
         def fake(path, token, retries=3):
@@ -101,19 +104,21 @@ class SnapshotTests(unittest.TestCase):
                         "description": "d"}
             return [{"week": epoch, "days": [10] * 7, "total": 70}]
 
-        stub = {"ok": True, "queries": [], "candidates_seen": 0, "items": [], "excluded_duplicates": []}
+        stub = {"ok": True, "categories": {"ai": {"ok": True, "queries": [], "candidates_seen": 0,
+                                                  "items": [], "excluded_duplicates": []}}}
         with mock.patch.object(up, "ROOT", self.tmp), mock.patch.object(up, "api_get", fake), \
-                mock.patch.object(up.newcomers, "discover", return_value=stub) as disc, \
+                mock.patch.object(up.newcomers, "discover_all", return_value=stub) as disc, \
                 mock.patch.dict("os.environ", {"GITHUB_TOKEN": "t"}):
             rc = up.main(["--slot", "pt", "--now", "2026-10-30T07:05:00Z", "--no-render"])
         self.assertEqual(rc, 0)
-        self.assertEqual(disc.call_count, 1)  # new repos are re-discovered on every run
+        self.assertEqual(disc.call_count, 1)
         st = json.loads((self.tmp / "rankings/2026-10-30/pt-0000/stats.json").read_text("utf-8"))
         self.assertEqual(st["slot"]["id"], "pt-0000")
         self.assertEqual(st["projects"][0]["stars"], 70)
+        self.assertEqual(st["projects"][0]["category"], "ai")
         self.assertEqual(st["newcomers"], stub)
-        # tracked projects are passed to discovery as the exclusion set
-        self.assertIn("o/r", disc.call_args.args[2])
+        # projects_meta is the 4th positional arg to discover_all
+        self.assertEqual(disc.call_args.args[3][0]["name"], "o/r")
         self.assertEqual(json.loads((self.tmp / "latest/stats.json").read_text("utf-8")), st)
         self.assertEqual(json.loads((self.tmp / "data/stats.json").read_text("utf-8")), st)
         self.assertEqual(archive.stale_latest_and_index(self.tmp), [])
@@ -127,11 +132,12 @@ class RepoHistoryTests(unittest.TestCase):
         for d, st in snaps:
             self.assertEqual(d.name, st["slot"]["id"])
             self.assertEqual(d.parent.name, st["slot"]["date"])
-            self.assertEqual((d / "rankings.md").read_text("utf-8"), archive.render_rankings_md(st))
+            cats = archive.load_categories(ROOT)
+            self.assertEqual((d / "rankings.md").read_text("utf-8"), archive.render_rankings_md(st, "en", cats))
             self.assertIn(f"{d.parent.name}/{d.name}/rankings.md", index)
             for code in LANGS:  # one page per language, same data
                 self.assertEqual((d / archive.rankings_name(code)).read_text("utf-8"),
-                                 archive.render_rankings_md(st, code), f"{d} {code}")
+                                 archive.render_rankings_md(st, code, cats), f"{d} {code}")
                 idx = (ROOT / "rankings" / archive.index_name(code)).read_text("utf-8")
                 self.assertIn(f"{d.parent.name}/{d.name}/{archive.rankings_name(code)}", idx, code)
             self.assertTrue(all(p["ok"] or "error" in p for p in st["projects"]))

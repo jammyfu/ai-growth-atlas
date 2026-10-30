@@ -2,21 +2,23 @@
 
 ## Project
 
-`ai-growth-atlas`
+`github-risers`
 
 ## One-line definition
 
-AI projects ranked by star growth speed (stars/day over 7, 30 and 365 days), with the all-time star ranking last.
+Open-source projects ranked by star growth speed (stars/day), grouped by category — AI first — with 7-day newcomers and week / month / year / total boards.
 
 ## Why
 
-Total-star lists let old projects stay on top; newly rising projects get buried. All numbers are pulled from the GitHub API daily.
+Total-star lists let old projects stay on top; newly rising projects get buried. All numbers are pulled from the GitHub API daily at Beijing and Los Angeles midnight.
 
 ## First goals
 
-- Stars/day per project for week, month, year, from `stargazers/history`
+- Stars/day per tracked project for week, month, year, from `stargazers/history`
+- Category boards (AI primary, then developer tools, security, web/frontend, infrastructure, design/creative, data)
+- Per-category 7-day newcomers via GitHub search (topics / keywords / languages)
 - English-first README plus zh-Hans, zh-Hant, ja, ko with a switcher on top
-- Star history curve (star-history SVG) for every project; zero telemetry
+- Star history curve (star-history SVG); zero telemetry
 - Daily update by GitHub Actions, with a local script fallback
 
 ## Non-goals
@@ -39,6 +41,6 @@ python3 -m compileall -q tools tests
 
 python3 -m unittest discover -s tests
 
-### build
+### verify
 
-python3 tools/render_readme.py --check
+python3 tools/verify.py

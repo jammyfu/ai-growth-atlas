@@ -2,7 +2,7 @@
   {
     "name": "morluto/rea",
     "url": "https://github.com/morluto/rea",
-    "category": "coding-agents",
+    "category": "ai",
     "desc": {
       "en": "Reverse engineers stare at assembly for days; this lets AI just tell you what a program does. Hooks into Ghidra so an unreadable binary gets explained in one sentence.",
       "zh-Hans": "逆向工程师往往要盯着汇编看上好几天，这个工具让 AI 直接告诉你程序做了什么。它接入 Ghidra，让原本读不懂的二进制文件一句话就能讲清楚。",
@@ -14,7 +14,7 @@
   {
     "name": "anomalyco/opencode",
     "url": "https://github.com/anomalyco/opencode",
-    "category": "coding-agents",
+    "category": "ai",
     "desc": {
       "en": "Write code with AI right in your terminal, no browser tab needed. Supports many models, rivals Claude Code and Codex, free and open source.",
       "zh-Hans": "直接在终端里用 AI 写代码，无需打开浏览器标签页。支持多种模型，可与 Claude Code 和 Codex 相媲美，免费开源。",
@@ -26,7 +26,7 @@
   {
     "name": "stablyai/orca",
     "url": "https://github.com/stablyai/orca",
-    "category": "coding-agents",
+    "category": "ai",
     "desc": {
       "en": "Run several AI coding agents on one desktop and compare who writes better. Each agent gets its own workspace, so they never step on each other.",
       "zh-Hans": "在同一台桌面电脑上同时运行多个 AI 编程智能体，比较谁写得更好。每个智能体都有自己的工作区，互不干扰。",
@@ -38,7 +38,7 @@
   {
     "name": "cloudflare/security-audit-skill",
     "url": "https://github.com/cloudflare/security-audit-skill",
-    "category": "security-audit",
+    "category": "ai",
     "desc": {
       "en": "Have AI audit its own code for vulnerabilities, then call in a second AI to challenge the findings. Built for the insecure code coding agents tend to write.",
       "zh-Hans": "让 AI 审查自己写的代码是否有漏洞，再请第二个 AI 来质疑审查结论。专门针对编程智能体容易写出的不安全代码。",
@@ -50,7 +50,7 @@
   {
     "name": "heygen-com/hyperframes",
     "url": "https://github.com/heygen-com/hyperframes",
-    "category": "video-media",
+    "category": "ai",
     "desc": {
       "en": "Write video the way you write a web page and let AI render it. Coding agents can use it too, no editing software to learn.",
       "zh-Hans": "像写网页一样写视频，再交给 AI 渲染成片。编程智能体也能使用，无需学习任何剪辑软件。",
@@ -62,7 +62,7 @@
   {
     "name": "DietrichGebert/ponytail",
     "url": "https://github.com/DietrichGebert/ponytail",
-    "category": "skills-harness",
+    "category": "ai",
     "desc": {
       "en": "A cure for AI padding its code with filler. Teaches it to act like a lazy veteran: skip what you can, get right what you must write.",
       "zh-Hans": "专治 AI 写代码时灌水凑数。教它像一位偷懒的老手那样做事：能省则省，必须写的部分一定写对。",
@@ -74,7 +74,7 @@
   {
     "name": "Graphify-Labs/graphify",
     "url": "https://github.com/Graphify-Labs/graphify",
-    "category": "memory-knowledge",
+    "category": "ai",
     "desc": {
       "en": "Turns a whole codebase into a map so AI sees at a glance which files call which. Big projects no longer need reading top to bottom.",
       "zh-Hans": "把整个代码库变成一张地图，让 AI 一眼看出哪些文件调用了哪些文件。大型项目不必再从头读到尾。",
@@ -86,7 +86,7 @@
   {
     "name": "openclaw/openclaw",
     "url": "https://github.com/openclaw/openclaw",
-    "category": "coding-agents",
+    "category": "ai",
     "desc": {
       "en": "Not a chatbot, an AI that actually gets work done. Runs across systems, deploys locally, and your data never leaves your computer.",
       "zh-Hans": "它不是聊天机器人，而是真正能把事情做完的 AI。可跨系统运行、本地部署，你的数据不会离开你的电脑。",
@@ -98,7 +98,7 @@
   {
     "name": "deepseek-ai/deepseek-harness",
     "url": "https://github.com/deepseek-ai/deepseek-harness",
-    "category": "skills-harness",
+    "category": "ai",
     "desc": {
       "en": "DeepSeek's open-source agent harness (`dsh`). Everything is a plugin, so you assemble the agent you want. Developer preview: expect breaking changes.",
       "zh-Hans": "DeepSeek 开源的智能体 Harness（`dsh`）。一切皆插件，你可以自行组装想要的智能体。目前为开发者预览版，可能出现破坏性变更。",
@@ -110,7 +110,7 @@
   {
     "name": "affaan-m/ECC",
     "url": "https://github.com/affaan-m/ECC",
-    "category": "skills-harness",
+    "category": "ai",
     "desc": {
       "en": "A performance-tuning kit for agent harnesses: skills, learned instincts, memory, security checks and research-first development for Claude Code, Codex, OpenCode, Cursor and more.",
       "zh-Hans": "面向智能体 Harness 的性能优化套件：为 Claude Code、Codex、OpenCode、Cursor 等提供技能、习得的直觉、记忆、安全检查，以及先调研后开发的工作方式。",
@@ -122,7 +122,7 @@
   {
     "name": "yetone/magpie",
     "url": "https://github.com/yetone/magpie",
-    "category": "workflow",
+    "category": "ai",
     "desc": {
       "en": "One menu-bar app and local gateway that lets any coding agent use any model: Claude Code on Kimi, Codex on DeepSeek. When one quota runs out it moves to your next account.",
       "zh-Hans": "一个菜单栏应用加本地网关，让任意编程智能体都能使用任意模型：Claude Code 跑 Kimi，Codex 跑 DeepSeek。一个额度用完后，会自动切换到你的下一个账号。",
@@ -134,7 +134,7 @@
   {
     "name": "Panniantong/Agent-Reach",
     "url": "https://github.com/Panniantong/Agent-Reach",
-    "category": "browser-computer",
+    "category": "ai",
     "desc": {
       "en": "Gives your AI agent eyes on the whole internet. One command-line tool to read and search Twitter, Reddit, YouTube, GitHub, Bilibili and XiaoHongShu, with zero API fees.",
       "zh-Hans": "让你的 AI 智能体看到整个互联网。一个命令行工具即可读取和搜索 Twitter、Reddit、YouTube、GitHub、哔哩哔哩和小红书，零 API 费用。",
@@ -146,7 +146,7 @@
   {
     "name": "Leonxlnx/taste-skill",
     "url": "https://github.com/Leonxlnx/taste-skill",
-    "category": "skills-harness",
+    "category": "ai",
     "desc": {
       "en": "Agent skills that give coding agents taste: art direction, real reference images and a browser check, so they stop producing the generic average AI landing page.",
       "zh-Hans": "赋予编程智能体审美的技能：确定美术风格、使用真实参考图，并在浏览器中检查成果，让它们不再产出千篇一律的 AI 落地页。",
@@ -158,7 +158,7 @@
   {
     "name": "nextlevelbuilder/ui-ux-pro-max-skill",
     "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-    "category": "skills-harness",
+    "category": "ai",
     "desc": {
       "en": "An AI skill that brings design intelligence to coding agents, so the UI/UX they build looks professional across multiple platforms and frameworks.",
       "zh-Hans": "一项为编程智能体带来设计智慧的 AI 技能，让它们构建的 UI/UX 在多个平台和框架上都显得专业。",
@@ -170,7 +170,7 @@
   {
     "name": "cheaper-inference/OmniRoute",
     "url": "https://github.com/cheaper-inference/OmniRoute",
-    "category": "workflow",
+    "category": "ai",
     "desc": {
       "en": "A free MIT-licensed AI gateway: one endpoint for hundreds of providers and models, with quota-aware automatic fallback. Works with Claude Code, Codex, Cursor, OpenCode, Cline and Copilot.",
       "zh-Hans": "免费的 MIT 许可 AI 网关：一个端点对接数百家服务商和模型，并可根据额度自动回退切换。支持 Claude Code、Codex、Cursor、OpenCode、Cline 和 Copilot。",
@@ -182,7 +182,7 @@
   {
     "name": "paperclipai/paperclip",
     "url": "https://github.com/paperclipai/paperclip",
-    "category": "workflow",
+    "category": "ai",
     "desc": {
       "en": "Open-source app for running a team of AI agents like a company: assign goals, set budgets, and track work and costs from one dashboard. If OpenClaw is an employee, Paperclip is the company.",
       "zh-Hans": "像管理公司一样管理一队 AI 智能体的开源应用：分配目标、设定预算，并在同一个仪表板中跟踪工作和成本。如果说 OpenClaw 是一名员工，Paperclip 就是整家公司。",
@@ -194,7 +194,7 @@
   {
     "name": "farion1231/cc-switch",
     "url": "https://github.com/farion1231/cc-switch",
-    "category": "coding-agents",
+    "category": "ai",
     "desc": {
       "en": "Desktop all-in-one manager for Claude Code, Codex, Gemini CLI, OpenCode, OpenClaw and more: switch API providers in one click and manage MCP, Skills and Prompts without hand-editing config files.",
       "zh-Hans": "面向 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw 等的桌面端一体化管理器：一键切换 API 服务商，无需手动编辑配置文件即可管理 MCP、技能和提示词。",
@@ -206,7 +206,7 @@
   {
     "name": "NousResearch/hermes-agent",
     "url": "https://github.com/NousResearch/hermes-agent",
-    "category": "coding-agents",
+    "category": "ai",
     "desc": {
       "en": "A self-improving AI agent from Nous Research with a built-in learning loop: it builds skills from experience, improves them as it works, and reaches you on Telegram, Discord, Slack and more.",
       "zh-Hans": "Nous Research 出品的可自我改进的 AI 智能体，内置学习循环：从经验中构建技能，并在工作中不断改进，还能通过 Telegram、Discord、Slack 等渠道联系你。",
@@ -218,7 +218,7 @@
   {
     "name": "NVIDIA/SkillSpector",
     "url": "https://github.com/NVIDIA/SkillSpector",
-    "category": "security-audit",
+    "category": "ai",
     "desc": {
       "en": "NVIDIA's security scanner for AI agent skills: checks vulnerabilities, prompt injection, data exfiltration and supply-chain risks in Claude Code, Codex and MCP skills before you install them.",
       "zh-Hans": "NVIDIA 出品的 AI 智能体技能安全扫描器：在安装前检查 Claude Code、Codex 和 MCP 技能中的漏洞、提示词注入、数据外泄和供应链风险。",
@@ -230,7 +230,7 @@
   {
     "name": "addyosmani/agent-skills",
     "url": "https://github.com/addyosmani/agent-skills",
-    "category": "skills-harness",
+    "category": "ai",
     "desc": {
       "en": "Production-grade engineering skills for AI coding agents: the workflows and quality gates senior engineers use, from spec to ship, packaged so agents follow them every time.",
       "zh-Hans": "面向 AI 编程智能体的生产级工程技能：把资深工程师从需求规格到发布所用的工作流和质量关卡打包起来，让智能体每次都照做。",
@@ -242,7 +242,7 @@
   {
     "name": "thedotmack/claude-mem",
     "url": "https://github.com/thedotmack/claude-mem",
-    "category": "memory-knowledge",
+    "category": "ai",
     "desc": {
       "en": "Gives agents memory across sessions: it records what your agent does, compresses it with AI and feeds the relevant parts back into later sessions. Works with Claude Code, Codex, Gemini, OpenCode and more.",
       "zh-Hans": "为智能体提供跨会话记忆：记录智能体做过的事，用 AI 压缩，并把相关部分回填到之后的会话中。支持 Claude Code、Codex、Gemini、OpenCode 等。",
@@ -254,13 +254,589 @@
   {
     "name": "anthropics/skills",
     "url": "https://github.com/anthropics/skills",
-    "category": "skills-harness",
+    "category": "ai",
     "desc": {
       "en": "Anthropic's public repository of Agent Skills: folders of instructions, scripts and resources that Claude loads on demand, from creative work to testing web apps. Examples and inspiration for your own skills.",
       "zh-Hans": "Anthropic 公开的 Agent Skills 仓库：由说明、脚本和资源组成的文件夹，Claude 会按需加载，涵盖从创意工作到网页应用测试等场景。可作为你编写自己技能的示例和灵感。",
       "zh-Hant": "Anthropic 公開的 Agent Skills 儲存庫：由說明、指令碼和資源組成的資料夾，Claude 會依需求載入，涵蓋從創意工作到網頁應用程式測試等場景。可作為你撰寫自己技能的範例與靈感。",
       "ja": "Anthropic 公式の Agent Skills 公開リポジトリ。指示・スクリプト・リソースをまとめたフォルダを Claude が必要なときに読み込む。クリエイティブ制作から Web アプリのテストまで、自作スキルの手本になる。",
       "ko": "Anthropic이 공개한 Agent Skills 저장소. 지침·스크립트·리소스를 담은 폴더를 Claude가 필요할 때 불러온다. 창작부터 웹 앱 테스트까지 다양해 직접 스킬을 만들 때 참고하기 좋다."
+    }
+  },
+  {
+    "name": "astral-sh/uv",
+    "url": "https://github.com/astral-sh/uv",
+    "category": "devtools",
+    "desc": {
+      "en": "Extremely fast Python package and project manager, written in Rust.",
+      "zh-Hans": "用 Rust 写的极速 Python 包与项目管理器。",
+      "zh-Hant": "用 Rust 寫的極速 Python 套件與專案管理器。",
+      "ja": "Rust 製の超高速 Python パッケージ／プロジェクトマネージャ。",
+      "ko": "Rust로 만든 초고속 Python 패키지·프로젝트 관리자."
+    }
+  },
+  {
+    "name": "oven-sh/bun",
+    "url": "https://github.com/oven-sh/bun",
+    "category": "devtools",
+    "desc": {
+      "en": "All-in-one JavaScript runtime and toolkit: runtime, bundler, test runner, package manager.",
+      "zh-Hans": "一体化 JavaScript 运行时与工具箱：运行时、打包、测试、包管理。",
+      "zh-Hant": "一體化 JavaScript 執行環境與工具箱：執行環境、打包、測試、套件管理。",
+      "ja": "ランタイム・バンドラ・テスト・パッケージマネージャを一体にした JavaScript ツールキット。",
+      "ko": "런타임·번들러·테스트·패키지 관리자를 한데 모은 JavaScript 툴킷."
+    }
+  },
+  {
+    "name": "biomejs/biome",
+    "url": "https://github.com/biomejs/biome",
+    "category": "devtools",
+    "desc": {
+      "en": "Fast formatter and linter for web projects; toolchain for JS/TS/JSON/CSS.",
+      "zh-Hans": "面向 Web 项目的高速格式化与检查工具，覆盖 JS/TS/JSON/CSS。",
+      "zh-Hant": "面向 Web 專案的高速格式化與檢查工具，涵蓋 JS/TS/JSON/CSS。",
+      "ja": "Web 向けの高速フォーマッタ／リンタ。JS/TS/JSON/CSS に対応。",
+      "ko": "웹 프로젝트를 위한 고속 포맷터·린터. JS/TS/JSON/CSS 지원."
+    }
+  },
+  {
+    "name": "zed-industries/zed",
+    "url": "https://github.com/zed-industries/zed",
+    "category": "devtools",
+    "desc": {
+      "en": "High-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
+      "zh-Hans": "Atom 与 Tree-sitter 作者打造的高性能多人协作代码编辑器。",
+      "zh-Hant": "Atom 與 Tree-sitter 作者打造的高效能多人協作程式碼編輯器。",
+      "ja": "Atom / Tree-sitter 作者による高性能マルチプレイヤーコードエディタ。",
+      "ko": "Atom·Tree-sitter 제작진의 고성능 멀티플레이어 코드 에디터."
+    }
+  },
+  {
+    "name": "helix-editor/helix",
+    "url": "https://github.com/helix-editor/helix",
+    "category": "devtools",
+    "desc": {
+      "en": "Modal text editor with built-in LSP, tree-sitter and multiple selections.",
+      "zh-Hans": "内置 LSP、tree-sitter 与多重选区的模态文本编辑器。",
+      "zh-Hant": "內建 LSP、tree-sitter 與多重選取的模態文字編輯器。",
+      "ja": "LSP・tree-sitter・複数選択を内蔵したモーダルテキストエディタ。",
+      "ko": "LSP·tree-sitter·다중 선택을 내장한 모달 텍스트 에디터."
+    }
+  },
+  {
+    "name": "jdx/mise",
+    "url": "https://github.com/jdx/mise",
+    "category": "devtools",
+    "desc": {
+      "en": "Dev tools version manager: polyglot runtime and env management in one.",
+      "zh-Hans": "开发工具版本管理器：多语言运行时与环境管理合一。",
+      "zh-Hant": "開發工具版本管理器：多語言執行環境與環境管理合一。",
+      "ja": "多言語ランタイムと環境管理を一つにまとめた開発ツール版マネージャ。",
+      "ko": "다언어 런타임과 환경 관리를 한데 모은 개발 도구 버전 관리자."
+    }
+  },
+  {
+    "name": "cli/cli",
+    "url": "https://github.com/cli/cli",
+    "category": "devtools",
+    "desc": {
+      "en": "GitHub’s official command-line tool for issues, PRs, Actions and more.",
+      "zh-Hans": "GitHub 官方命令行工具，用于议题、PR、Actions 等。",
+      "zh-Hant": "GitHub 官方命令列工具，用於議題、PR、Actions 等。",
+      "ja": "Issue・PR・Actions などを扱う GitHub 公式 CLI。",
+      "ko": "이슈·PR·Actions 등을 다루는 GitHub 공식 CLI."
+    }
+  },
+  {
+    "name": "BurntSushi/ripgrep",
+    "url": "https://github.com/BurntSushi/ripgrep",
+    "category": "devtools",
+    "desc": {
+      "en": "Recursively search directories for a regex pattern, faster than grep.",
+      "zh-Hans": "用正则递归搜索目录，比 grep 更快。",
+      "zh-Hant": "用正規表達式遞迴搜尋目錄，比 grep 更快。",
+      "ja": "正規表現でディレクトリを再帰検索。grep より速い。",
+      "ko": "정규식으로 디렉터리를 재귀 검색. grep보다 빠름."
+    }
+  },
+  {
+    "name": "aquasecurity/trivy",
+    "url": "https://github.com/aquasecurity/trivy",
+    "category": "security",
+    "desc": {
+      "en": "All-in-one security scanner for containers, filesystems, git repos and more.",
+      "zh-Hans": "面向容器、文件系统、Git 仓库等的一体化安全扫描器。",
+      "zh-Hant": "面向容器、檔案系統、Git 儲存庫等的一體化資安掃描器。",
+      "ja": "コンテナ・ファイルシステム・Git などを対象にした総合セキュリティスキャナ。",
+      "ko": "컨테이너·파일시스템·Git 등을 위한 올인원 보안 스캐너."
+    }
+  },
+  {
+    "name": "anchore/grype",
+    "url": "https://github.com/anchore/grype",
+    "category": "security",
+    "desc": {
+      "en": "Vulnerability scanner for container images and filesystems.",
+      "zh-Hans": "面向容器镜像与文件系统的漏洞扫描器。",
+      "zh-Hant": "面向容器映像與檔案系統的弱點掃描器。",
+      "ja": "コンテナイメージとファイルシステム向け脆弱性スキャナ。",
+      "ko": "컨테이너 이미지·파일시스템용 취약점 스캐너."
+    }
+  },
+  {
+    "name": "semgrep/semgrep",
+    "url": "https://github.com/semgrep/semgrep",
+    "category": "security",
+    "desc": {
+      "en": "Fast, lightweight static analysis for many languages; find bugs and enforce guards.",
+      "zh-Hans": "面向多语言的轻量快速静态分析，找漏洞并执行规则。",
+      "zh-Hant": "面向多語言的輕量快速靜態分析，找弱點並執行規則。",
+      "ja": "多言語対応の軽量静的解析。バグ検出とガードを強制。",
+      "ko": "다언어 경량 정적 분석. 버그를 찾고 가드를 강제."
+    }
+  },
+  {
+    "name": "projectdiscovery/nuclei",
+    "url": "https://github.com/projectdiscovery/nuclei",
+    "category": "security",
+    "desc": {
+      "en": "Fast vulnerability scanner powered by simple YAML-based templates.",
+      "zh-Hans": "基于简洁 YAML 模板的高速漏洞扫描器。",
+      "zh-Hant": "基於簡潔 YAML 範本的高速弱點掃描器。",
+      "ja": "シンプルな YAML テンプレで動く高速脆弱性スキャナ。",
+      "ko": "간단한 YAML 템플릿으로 동작하는 고속 취약점 스캐너."
+    }
+  },
+  {
+    "name": "falcosecurity/falco",
+    "url": "https://github.com/falcosecurity/falco",
+    "category": "security",
+    "desc": {
+      "en": "Cloud-native runtime security tool to detect anomalous activity.",
+      "zh-Hans": "云原生运行时安全工具，检测异常行为。",
+      "zh-Hant": "雲原生執行時資安工具，偵測異常行為。",
+      "ja": "異常な挙動を検知するクラウドネイティブ・ランタイムセキュリティ。",
+      "ko": "이상 활동을 감지하는 클라우드 네이티브 런타임 보안 도구."
+    }
+  },
+  {
+    "name": "google/osv-scanner",
+    "url": "https://github.com/google/osv-scanner",
+    "category": "security",
+    "desc": {
+      "en": "Scan your dependencies against the OSV database for known vulnerabilities.",
+      "zh-Hans": "对照 OSV 数据库扫描依赖中的已知漏洞。",
+      "zh-Hant": "對照 OSV 資料庫掃描相依套件中的已知弱點。",
+      "ja": "OSV データベースと照合して依存関係の既知脆弱性を検査。",
+      "ko": "OSV 데이터베이스와 대조해 의존성의 알려진 취약점을 검사."
+    }
+  },
+  {
+    "name": "securego/gosec",
+    "url": "https://github.com/securego/gosec",
+    "category": "security",
+    "desc": {
+      "en": "Go security checker that inspects source for common insecure patterns.",
+      "zh-Hans": "检查 Go 源码中常见不安全模式的安全检查器。",
+      "zh-Hant": "檢查 Go 原始碼中常見不安全模式的資安檢查器。",
+      "ja": "Go ソースのよくある不安全パターンを検査するツール。",
+      "ko": "Go 소스의 흔한 불안전 패턴을 검사하는 도구."
+    }
+  },
+  {
+    "name": "OWASP/CheatSheetSeries",
+    "url": "https://github.com/OWASP/CheatSheetSeries",
+    "category": "security",
+    "desc": {
+      "en": "OWASP cheat sheet series: concise security best practices.",
+      "zh-Hans": "OWASP 速查表系列：精炼的安全最佳实践。",
+      "zh-Hant": "OWASP 速查表系列：精煉的資安最佳實務。",
+      "ja": "OWASP チートシート集。簡潔なセキュリティベストプラクティス。",
+      "ko": "OWASP 치트시트 모음. 간결한 보안 모범 사례."
+    }
+  },
+  {
+    "name": "vercel/next.js",
+    "url": "https://github.com/vercel/next.js",
+    "category": "web",
+    "desc": {
+      "en": "The React framework for the web: SSR, routing, and full-stack features.",
+      "zh-Hans": "面向 Web 的 React 框架：SSR、路由与全栈能力。",
+      "zh-Hant": "面向 Web 的 React 框架：SSR、路由與全端能力。",
+      "ja": "Web 向け React フレームワーク。SSR・ルーティング・フルスタック。",
+      "ko": "웹용 React 프레임워크. SSR·라우팅·풀스택."
+    }
+  },
+  {
+    "name": "facebook/react",
+    "url": "https://github.com/facebook/react",
+    "category": "web",
+    "desc": {
+      "en": "Library for building web and native user interfaces.",
+      "zh-Hans": "用于构建 Web 与原生用户界面的库。",
+      "zh-Hant": "用於建置 Web 與原生使用者介面的函式庫。",
+      "ja": "Web / ネイティブ UI を作るためのライブラリ。",
+      "ko": "웹·네이티브 UI를 만들기 위한 라이브러리."
+    }
+  },
+  {
+    "name": "vuejs/core",
+    "url": "https://github.com/vuejs/core",
+    "category": "web",
+    "desc": {
+      "en": "The progressive JavaScript framework’s core runtime and compiler.",
+      "zh-Hans": "渐进式 JavaScript 框架的核心运行时与编译器。",
+      "zh-Hant": "漸進式 JavaScript 框架的核心執行環境與編譯器。",
+      "ja": "プログレッシブ JS フレームワークのコアランタイムとコンパイラ。",
+      "ko": "점진적 JS 프레임워크의 코어 런타임과 컴파일러."
+    }
+  },
+  {
+    "name": "sveltejs/svelte",
+    "url": "https://github.com/sveltejs/svelte",
+    "category": "web",
+    "desc": {
+      "en": "Cybernetically enhanced web apps: compile away the framework.",
+      "zh-Hans": "编译掉框架本身的增强型 Web 应用方案。",
+      "zh-Hant": "編譯掉框架本身的增強型 Web 應用方案。",
+      "ja": "フレームワークをコンパイルで消す Web アプリの作り方。",
+      "ko": "프레임워크를 컴파일로 없애는 웹 앱 방식."
+    }
+  },
+  {
+    "name": "withastro/astro",
+    "url": "https://github.com/withastro/astro",
+    "category": "web",
+    "desc": {
+      "en": "Web framework for content-driven sites; ship less JavaScript by default.",
+      "zh-Hans": "面向内容站点的 Web 框架，默认少发 JavaScript。",
+      "zh-Hant": "面向內容網站的 Web 框架，預設少送 JavaScript。",
+      "ja": "コンテンツ重視サイト向け。デフォルトで JS を少なく届ける。",
+      "ko": "콘텐츠 사이트용 웹 프레임워크. 기본적으로 JS를 적게 보냄."
+    }
+  },
+  {
+    "name": "tailwindlabs/tailwindcss",
+    "url": "https://github.com/tailwindlabs/tailwindcss",
+    "category": "web",
+    "desc": {
+      "en": "Utility-first CSS framework for rapidly building custom designs.",
+      "zh-Hans": "实用优先的 CSS 框架，快速搭建自定义设计。",
+      "zh-Hant": "實用優先的 CSS 框架，快速搭建自訂設計。",
+      "ja": "ユーティリティファーストの CSS。素早く独自デザインを組む。",
+      "ko": "유틸리티 우선 CSS 프레임워크. 맞춤 디자인을 빠르게."
+    }
+  },
+  {
+    "name": "shadcn-ui/ui",
+    "url": "https://github.com/shadcn-ui/ui",
+    "category": "web",
+    "desc": {
+      "en": "Beautifully designed components you copy into your apps.",
+      "zh-Hans": "设计精美、可直接复制进项目的组件集合。",
+      "zh-Hant": "設計精美、可直接複製進專案的元件集合。",
+      "ja": "アプリにコピーして使う、美しいコンポーネント集。",
+      "ko": "앱에 복사해 쓰는 아름다운 컴포넌트 모음."
+    }
+  },
+  {
+    "name": "tanstack/query",
+    "url": "https://github.com/tanstack/query",
+    "category": "web",
+    "desc": {
+      "en": "Powerful async state management for TS/JS, React, Vue, Solid and more.",
+      "zh-Hans": "面向 TS/JS、React、Vue、Solid 等的强力异步状态管理。",
+      "zh-Hant": "面向 TS/JS、React、Vue、Solid 等的強力非同步狀態管理。",
+      "ja": "TS/JS・React・Vue・Solid 向けの強力な非同期状態管理。",
+      "ko": "TS/JS·React·Vue·Solid용 강력한 비동기 상태 관리."
+    }
+  },
+  {
+    "name": "kubernetes/kubernetes",
+    "url": "https://github.com/kubernetes/kubernetes",
+    "category": "infra",
+    "desc": {
+      "en": "Production-grade container orchestration.",
+      "zh-Hans": "生产级容器编排系统。",
+      "zh-Hant": "產品級容器編排系統。",
+      "ja": "プロダクション級のコンテナオーケストレーション。",
+      "ko": "프로덕션급 컨테이너 오케스트레이션."
+    }
+  },
+  {
+    "name": "docker/compose",
+    "url": "https://github.com/docker/compose",
+    "category": "infra",
+    "desc": {
+      "en": "Define and run multi-container applications with Docker.",
+      "zh-Hans": "用 Docker 定义并运行多容器应用。",
+      "zh-Hant": "用 Docker 定義並執行多容器應用。",
+      "ja": "Docker で複数コンテナアプリを定義・実行。",
+      "ko": "Docker로 다중 컨테이너 앱을 정의·실행."
+    }
+  },
+  {
+    "name": "hashicorp/terraform",
+    "url": "https://github.com/hashicorp/terraform",
+    "category": "infra",
+    "desc": {
+      "en": "Infrastructure as code for building and changing cloud resources.",
+      "zh-Hans": "用代码构建与变更云资源的基础设施即代码工具。",
+      "zh-Hant": "用程式碼建置與變更雲端資源的基礎建設即程式碼工具。",
+      "ja": "クラウド資源をコードで構築・変更する IaC ツール。",
+      "ko": "클라우드 자원을 코드로 구축·변경하는 IaC 도구."
+    }
+  },
+  {
+    "name": "pulumi/pulumi",
+    "url": "https://github.com/pulumi/pulumi",
+    "category": "infra",
+    "desc": {
+      "en": "Infrastructure as code in general-purpose languages.",
+      "zh-Hans": "用通用编程语言写基础设施即代码。",
+      "zh-Hant": "用通用程式語言寫基礎建設即程式碼。",
+      "ja": "汎用言語で書くインフラ as コード。",
+      "ko": "범용 언어로 쓰는 인프라 as 코드."
+    }
+  },
+  {
+    "name": "caddyserver/caddy",
+    "url": "https://github.com/caddyserver/caddy",
+    "category": "infra",
+    "desc": {
+      "en": "Fast, multi-platform web server with automatic HTTPS.",
+      "zh-Hans": "快速、跨平台的 Web 服务器，自动 HTTPS。",
+      "zh-Hant": "快速、跨平台的 Web 伺服器，自動 HTTPS。",
+      "ja": "自動 HTTPS 付きの高速マルチプラットフォーム Web サーバ。",
+      "ko": "자동 HTTPS를 갖춘 고속 멀티플랫폼 웹 서버."
+    }
+  },
+  {
+    "name": "traefik/traefik",
+    "url": "https://github.com/traefik/traefik",
+    "category": "infra",
+    "desc": {
+      "en": "Cloud-native application proxy / reverse proxy and load balancer.",
+      "zh-Hans": "云原生应用代理 / 反向代理与负载均衡。",
+      "zh-Hant": "雲原生應用代理 / 反向代理與負載平衡。",
+      "ja": "クラウドネイティブなリバースプロキシ／ロードバランサ。",
+      "ko": "클라우드 네이티브 리버스 프록시·로드 밸런서."
+    }
+  },
+  {
+    "name": "prometheus/prometheus",
+    "url": "https://github.com/prometheus/prometheus",
+    "category": "infra",
+    "desc": {
+      "en": "Systems monitoring and alerting toolkit.",
+      "zh-Hans": "系统监控与告警工具包。",
+      "zh-Hant": "系統監控與告警工具包。",
+      "ja": "システム監視とアラートのツールキット。",
+      "ko": "시스템 모니터링·알림 툴킷."
+    }
+  },
+  {
+    "name": "grafana/grafana",
+    "url": "https://github.com/grafana/grafana",
+    "category": "infra",
+    "desc": {
+      "en": "Open observability platform for metrics, logs and traces.",
+      "zh-Hans": "面向指标、日志与链路的开源可观测性平台。",
+      "zh-Hant": "面向指標、日誌與追蹤的開源可觀測性平台。",
+      "ja": "メトリクス・ログ・トレース向けオープン可観測性プラットフォーム。",
+      "ko": "메트릭·로그·트레이스용 오픈 관측성 플랫폼."
+    }
+  },
+  {
+    "name": "excalidraw/excalidraw",
+    "url": "https://github.com/excalidraw/excalidraw",
+    "category": "design",
+    "desc": {
+      "en": "Virtual whiteboard for sketching hand-drawn like diagrams.",
+      "zh-Hans": "手绘风格的在线白板，用来画示意图。",
+      "zh-Hant": "手繪風格的線上白板，用來畫示意圖。",
+      "ja": "手描き風ダイアグラム用の仮想ホワイトボード。",
+      "ko": "손그림 풍 다이어그램용 가상 화이트보드."
+    }
+  },
+  {
+    "name": "penpot/penpot",
+    "url": "https://github.com/penpot/penpot",
+    "category": "design",
+    "desc": {
+      "en": "Open-source design and prototyping platform for product teams.",
+      "zh-Hans": "面向产品团队的开源设计与原型平台。",
+      "zh-Hant": "面向產品團隊的開源設計與原型平台。",
+      "ja": "プロダクトチーム向けオープンソースのデザイン／プロトタイプ基盤。",
+      "ko": "제품 팀을 위한 오픈소스 디자인·프로토타입 플랫폼."
+    }
+  },
+  {
+    "name": "jgraph/drawio",
+    "url": "https://github.com/jgraph/drawio",
+    "category": "design",
+    "desc": {
+      "en": "Diagramming and whiteboard app; the core of diagrams.net.",
+      "zh-Hans": "绘图与白板应用，diagrams.net 的核心。",
+      "zh-Hant": "繪圖與白板應用，diagrams.net 的核心。",
+      "ja": "ダイアグラム／ホワイトボード。diagrams.net のコア。",
+      "ko": "다이어그램·화이트보드 앱. diagrams.net의 코어."
+    }
+  },
+  {
+    "name": "lottiefiles/lottie-ios",
+    "url": "https://github.com/lottiefiles/lottie-ios",
+    "category": "design",
+    "desc": {
+      "en": "iOS library for rendering After Effects animations via Lottie.",
+      "zh-Hans": "通过 Lottie 在 iOS 上渲染 After Effects 动画的库。",
+      "zh-Hant": "透過 Lottie 在 iOS 上算繪 After Effects 動畫的函式庫。",
+      "ja": "Lottie 経由で After Effects アニメを iOS に描画するライブラリ。",
+      "ko": "Lottie로 After Effects 애니메이션을 iOS에 그리는 라이브러리."
+    }
+  },
+  {
+    "name": "airbnb/lottie-web",
+    "url": "https://github.com/airbnb/lottie-web",
+    "category": "design",
+    "desc": {
+      "en": "Render After Effects animations natively on the web with Lottie.",
+      "zh-Hans": "用 Lottie 在网页上原生渲染 After Effects 动画。",
+      "zh-Hant": "用 Lottie 在網頁上原生算繪 After Effects 動畫。",
+      "ja": "Lottie で Web に After Effects アニメをネイティブ描画。",
+      "ko": "Lottie로 웹에 After Effects 애니메이션을 네이티브 렌더."
+    }
+  },
+  {
+    "name": "saadeghi/daisyui",
+    "url": "https://github.com/saadeghi/daisyui",
+    "category": "design",
+    "desc": {
+      "en": "The most popular component library for Tailwind CSS.",
+      "zh-Hans": "最受欢迎的 Tailwind CSS 组件库。",
+      "zh-Hant": "最受歡迎的 Tailwind CSS 元件庫。",
+      "ja": "Tailwind CSS 向けで人気のコンポーネントライブラリ。",
+      "ko": "Tailwind CSS용 인기 컴포넌트 라이브러리."
+    }
+  },
+  {
+    "name": "lucide-icons/lucide",
+    "url": "https://github.com/lucide-icons/lucide",
+    "category": "design",
+    "desc": {
+      "en": "Beautiful and consistent icon toolkit made by the community.",
+      "zh-Hans": "社区维护的美观一致图标工具包。",
+      "zh-Hant": "社群維護的美觀一致圖示工具包。",
+      "ja": "コミュニティ製の美しく一貫したアイコンキット。",
+      "ko": "커뮤니티가 만든 아름답고 일관된 아이콘 키트."
+    }
+  },
+  {
+    "name": "phosphor-icons/homepage",
+    "url": "https://github.com/phosphor-icons/homepage",
+    "category": "design",
+    "desc": {
+      "en": "Flexible icon family for interfaces, diagrams and presentations.",
+      "zh-Hans": "面向界面、示意图与演示的灵活图标家族。",
+      "zh-Hant": "面向介面、示意圖與簡報的靈活圖示家族。",
+      "ja": "UI・図・プレゼン向けの柔軟なアイコンファミリー。",
+      "ko": "UI·도식·프레젠테이션용 유연한 아이콘 패밀리."
+    }
+  },
+  {
+    "name": "duckdb/duckdb",
+    "url": "https://github.com/duckdb/duckdb",
+    "category": "data",
+    "desc": {
+      "en": "In-process SQL OLAP database management system.",
+      "zh-Hans": "进程内 SQL OLAP 数据库管理系统。",
+      "zh-Hant": "行程內 SQL OLAP 資料庫管理系統。",
+      "ja": "プロセス内で動く SQL OLAP データベース。",
+      "ko": "프로세스 내 SQL OLAP 데이터베이스."
+    }
+  },
+  {
+    "name": "pola-rs/polars",
+    "url": "https://github.com/pola-rs/polars",
+    "category": "data",
+    "desc": {
+      "en": "Lightning-fast DataFrame library for Rust and Python.",
+      "zh-Hans": "面向 Rust 与 Python 的极速 DataFrame 库。",
+      "zh-Hant": "面向 Rust 與 Python 的極速 DataFrame 函式庫。",
+      "ja": "Rust / Python 向けの超高速 DataFrame ライブラリ。",
+      "ko": "Rust·Python용 초고속 DataFrame 라이브러리."
+    }
+  },
+  {
+    "name": "apache/arrow",
+    "url": "https://github.com/apache/arrow",
+    "category": "data",
+    "desc": {
+      "en": "Cross-language development platform for in-memory analytics.",
+      "zh-Hans": "面向内存分析的跨语言开发平台。",
+      "zh-Hant": "面向記憶體分析的跨語言開發平台。",
+      "ja": "インメモリ分析向けの言語横断プラットフォーム。",
+      "ko": "인메모리 분석용 언어 간 플랫폼."
+    }
+  },
+  {
+    "name": "dbt-labs/dbt-core",
+    "url": "https://github.com/dbt-labs/dbt-core",
+    "category": "data",
+    "desc": {
+      "en": "Transform data in your warehouse with software engineering practices.",
+      "zh-Hans": "用软件工程方式在数仓中转换数据。",
+      "zh-Hant": "用軟體工程方式在資料倉中轉換資料。",
+      "ja": "ウェアハウスのデータをソフト工学のやり方で変換。",
+      "ko": "웨어하우스 데이터를 소프트웨어 공학 방식으로 변환."
+    }
+  },
+  {
+    "name": "apache/superset",
+    "url": "https://github.com/apache/superset",
+    "category": "data",
+    "desc": {
+      "en": "Modern data exploration and visualization platform.",
+      "zh-Hans": "现代数据探索与可视化平台。",
+      "zh-Hant": "現代資料探索與視覺化平台。",
+      "ja": "モダンなデータ探索・可視化プラットフォーム。",
+      "ko": "현대적 데이터 탐색·시각화 플랫폼."
+    }
+  },
+  {
+    "name": "ClickHouse/ClickHouse",
+    "url": "https://github.com/ClickHouse/ClickHouse",
+    "category": "data",
+    "desc": {
+      "en": "Open-source column-oriented database for real-time analytics.",
+      "zh-Hans": "面向实时分析的开源列式数据库。",
+      "zh-Hant": "面向即時分析的開源欄式資料庫。",
+      "ja": "リアルタイム分析向けオープンソース列指向 DB。",
+      "ko": "실시간 분석용 오픈소스 컬럼형 DB."
+    }
+  },
+  {
+    "name": "apache/kafka",
+    "url": "https://github.com/apache/kafka",
+    "category": "data",
+    "desc": {
+      "en": "Distributed event streaming platform.",
+      "zh-Hans": "分布式事件流平台。",
+      "zh-Hant": "分散式事件串流平台。",
+      "ja": "分散イベントストリーミング基盤。",
+      "ko": "분산 이벤트 스트리밍 플랫폼."
+    }
+  },
+  {
+    "name": "jupyter/notebook",
+    "url": "https://github.com/jupyter/notebook",
+    "category": "data",
+    "desc": {
+      "en": "Jupyter Interactive Notebook for creating and sharing documents.",
+      "zh-Hans": "用于创建与分享文档的 Jupyter 交互式笔记本。",
+      "zh-Hant": "用於建立與分享文件的 Jupyter 互動式筆記本。",
+      "ja": "文書を作り共有する Jupyter インタラクティブノートブック。",
+      "ko": "문서를 만들고 공유하는 Jupyter 인터랙티브 노트북."
     }
   }
 ]

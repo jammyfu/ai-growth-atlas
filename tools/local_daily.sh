@@ -3,7 +3,7 @@
 # Slots (match the Actions schedule): --slot beijing runs only at 00:xx Asia/Shanghai,
 # --slot la runs only at 00:xx America/Los_Angeles (DST-aware), no --slot runs always.
 # Each run is also archived under rankings/<date>/<cn-0000|pt-0000|manual-HHMM>/ and copied to latest/.
-# Every run also re-discovers the 7-day new-repo ranking via the search API (~2 min).
+# Every run also re-discovers per-category 7-day new-repo rankings via the search API (several minutes).
 # Use this when GitHub Actions cannot run (billing, quota, outage). Reads GITHUB_TOKEN;
 # if unset it falls back to `gh auth token`. Safe for cron/launchd (sets its own PATH).
 #

@@ -1,14 +1,10 @@
-"""'Hottest new repos in the last 7 days': discovery via the GitHub search API and ranking.
+"""Hottest new repos (last 7 days), per category: GitHub search API discovery + ranking.
 
-Everything comes from the API (search results + a fresh GET /repos/{r} for the top candidates).
-Pure functions take an `api` callable (path -> parsed JSON) so they are unit-testable offline.
+Everything comes from the API (search + GET /repos/{r} for top candidates).
+Pure functions take an `api` callable so they are unit-testable offline.
 
-Criteria (also documented in docs/NEW_ARRIVALS.md):
-  * created within the last WINDOW_DAYS (7) days (exact timestamp)
-  * "AI repo" = carries one of AI_TOPICS, or AI_KEYWORDS appear in its name/description
-  * not a fork, not archived, at least MIN_STARS stars
-  * ranked by hotness = stars / max(age in days, 1)  (a new repo's stars are all gained since creation)
-  * duplicates removed (see exclude_duplicates): tracked projects and anything shown in the other rankings
+Category rules (topics / keywords / optional languages) live in data/categories.json
+and are documented in docs/CATEGORIES.md and docs/NEW_ARRIVALS.md.
 """
 from __future__ import annotations
 
@@ -22,17 +18,9 @@ from typing import Any, Callable
 WINDOW_DAYS = 7
 MIN_STARS = 100
 TOP_N = 20
-REFRESH_TOP = 40  # candidates re-read via GET /repos/{r} before the final ranking
-MAX_PAGES = 5     # search returns at most 100 per page
+REFRESH_TOP = 30  # per category: candidates re-read via GET /repos/{r}
+MAX_PAGES = 3     # search pages per query (rate-limit budget across categories)
 DESC_MAX = 160
-
-AI_TOPICS = [
-    "ai", "artificial-intelligence", "llm", "large-language-models", "llm-agent", "ai-agents",
-    "ai-agent", "mcp", "mcp-server", "claude-code", "claude", "codex", "agent-skills",
-    "generative-ai", "chatgpt", "openai", "anthropic", "gemini", "rag", "machine-learning",
-    "deep-learning", "vibe-coding", "ai-coding", "cursor",
-]
-AI_KEYWORDS = ['"AI agent"', "LLM", '"Claude Code"', "Codex", '"MCP server"', '"agent skills"']
 
 Api = Callable[[str], Any]
 
@@ -41,11 +29,18 @@ def since_iso(now: dt.datetime, days: int = WINDOW_DAYS) -> str:
     return (now - dt.timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def build_queries(now: dt.datetime) -> list[tuple[str, str]]:
+def build_queries(now: dt.datetime, category: dict[str, Any]) -> list[tuple[str, str]]:
+    """Build search queries from one category's topics, keywords and languages."""
     since = since_iso(now)
     base = f"created:>={since} stars:>={MIN_STARS} fork:false archived:false"
-    qs = [(f"topic:{t}", f"topic:{t} {base}") for t in AI_TOPICS]
-    qs += [(f"keyword:{k.strip(chr(34))}", f"{k} in:name,description {base}") for k in AI_KEYWORDS]
+    qs: list[tuple[str, str]] = []
+    for t in category.get("topics") or []:
+        qs.append((f"topic:{t}", f"topic:{t} {base}"))
+    for k in category.get("keywords") or []:
+        label = k.strip('"')
+        qs.append((f"keyword:{label}", f"{k} in:name,description {base}"))
+    for lang in category.get("languages") or []:
+        qs.append((f"language:{lang}", f"language:{lang} {base}"))
     return qs
 
 
@@ -54,7 +49,6 @@ def parse_ts(value: str) -> dt.datetime:
 
 
 def clean_description(text: str | None) -> str:
-    """Untrusted API text -> one safe markdown table cell."""
     t = re.sub(r"\s+", " ", text or "").strip()
     t = html.escape(t, quote=False).replace("|", "/")
     return t if len(t) <= DESC_MAX else t[: DESC_MAX - 1].rstrip() + "…"
@@ -100,13 +94,7 @@ def qualifies(repo: dict, now: dt.datetime) -> bool:
 
 
 def exclude_duplicates(items: list[dict], excluded_names: set[str]) -> tuple[list[dict], list[str]]:
-    """Dedup rule. Returns (kept, dropped_names).
-
-    1. Repos whose full name (case-insensitive) is in `excluded_names` are dropped: that set holds every
-       tracked project and every repo shown in the week/month/year/total rankings, so the new-arrivals
-       ranking never repeats a project from another ranking.
-    2. The same repo found by several search queries is kept once (by repo id, else lower-cased name).
-    """
+    """Drop names in excluded_names (case-insensitive); collapse multi-query hits by repo id."""
     excluded = {n.lower() for n in excluded_names}
     seen: set[Any] = set()
     kept, dropped = [], []
@@ -126,13 +114,14 @@ def rank_items(items: list[dict]) -> list[dict]:
     return sorted(items, key=lambda i: (-i["per_day"], -i["stars"], i["name"].lower()))
 
 
-def discover(api: Api, now: dt.datetime, excluded_names: set[str],
-             sleep: Callable[[float], None] = time.sleep) -> dict[str, Any]:
-    """Run all searches, refresh the best candidates, apply criteria and dedup, rank top N."""
+def discover_category(api: Api, now: dt.datetime, category: dict[str, Any],
+                      excluded_names: set[str],
+                      sleep: Callable[[float], None] = time.sleep) -> dict[str, Any]:
+    """Run searches for one category, refresh candidates, dedup, rank top N."""
     queries, found = [], {}
-    for label, q in build_queries(now):
+    for label, q in build_queries(now, category):
         entry: dict[str, Any] = {"label": label, "q": q}
-        for attempt in (1, 2):  # one retry, e.g. after a secondary rate limit
+        for attempt in (1, 2):
             try:
                 items, total = search_all(api, q, sleep)
                 entry.update(ok=True, total=total)
@@ -140,13 +129,14 @@ def discover(api: Api, now: dt.datetime, excluded_names: set[str],
                 for r in items:
                     found.setdefault(r["full_name"].lower(), r)
                 break
-            except Exception as e:  # recorded, never hidden
+            except Exception as e:
                 entry.update(ok=False, error=str(e)[:200])
                 if attempt == 1:
                     sleep(15)
         queries.append(entry)
-        sleep(2.2)  # search API: 30 requests/min
+        sleep(2.2)
     result: dict[str, Any] = {
+        "category": category["id"],
         "window_days": WINDOW_DAYS, "since": since_iso(now), "min_stars": MIN_STARS, "top_n": TOP_N,
         "queries": queries, "candidates_seen": len(found),
     }
@@ -160,7 +150,7 @@ def discover(api: Api, now: dt.datetime, excluded_names: set[str],
         try:
             fresh = api(f"/repos/{r['full_name']}")
         except Exception:
-            fresh = r  # search data is still API data; keep it
+            fresh = r
         if qualifies(fresh, now):
             refreshed.append(fresh)
     items, dropped = exclude_duplicates([to_item(r, now) for r in refreshed], excluded_names)
@@ -168,8 +158,62 @@ def discover(api: Api, now: dt.datetime, excluded_names: set[str],
     return result
 
 
+def discover_all(api: Api, now: dt.datetime, categories: list[dict[str, Any]],
+                 projects_meta: list[dict[str, Any]], stats_projects: list[dict],
+                 rank: Callable[[list[dict], str], list[dict]],
+                 sleep: Callable[[float], None] = time.sleep) -> dict[str, Any]:
+    """Discover newcomers for every category (AI first). Exclusive across categories by order.
+
+    Within a category, newcomers never repeat that category's tracked projects or its
+    week/month/year/total top N. A repo already shown in an earlier category's newcomers
+    is also excluded (AI is primary, so it claims first).
+    """
+    by_cat: dict[str, dict[str, Any]] = {}
+    claimed: set[str] = set()  # lower-cased names already shown in an earlier category
+    ordered = sorted(categories, key=lambda c: (0 if c.get("primary") else 1, c.get("order", 99), c["id"]))
+    for cat in ordered:
+        cid = cat["id"]
+        tracked = {p["name"] for p in projects_meta if p.get("category") == cid}
+        cat_stats = [p for p in stats_projects if p.get("name") in tracked]
+        excluded = tracked | displayed_names(cat_stats, TOP_N, rank) | claimed
+        result = discover_category(api, now, cat, excluded, sleep)
+        by_cat[cid] = result
+        if result.get("ok"):
+            claimed |= {i["name"].lower() for i in result.get("items", [])}
+    ok_any = any(r.get("ok") for r in by_cat.values())
+    return {
+        "ok": ok_any,
+        "window_days": WINDOW_DAYS,
+        "since": since_iso(now),
+        "min_stars": MIN_STARS,
+        "top_n": TOP_N,
+        "categories": by_cat,
+        "error": None if ok_any else "every category search failed",
+    }
+
+
+# Back-compat helpers used by tests / older call sites
+def build_queries_ai(now: dt.datetime, categories: list[dict[str, Any]] | None = None) -> list[tuple[str, str]]:
+    if categories:
+        ai = next((c for c in categories if c["id"] == "ai"), categories[0])
+        return build_queries(now, ai)
+    return []
+
+
+def discover(api: Api, now: dt.datetime, excluded_names: set[str],
+             sleep: Callable[[float], None] = time.sleep,
+             category: dict[str, Any] | None = None) -> dict[str, Any]:
+    """Discover for a single category (defaults to a minimal AI topic set for unit tests)."""
+    cat = category or {
+        "id": "ai",
+        "topics": ["ai", "llm", "mcp"],
+        "keywords": ["LLM"],
+        "languages": [],
+    }
+    return discover_category(api, now, cat, excluded_names, sleep)
+
+
 def displayed_names(stats_projects: list[dict], top_n: int, rank: Callable[[list[dict], str], list[dict]]) -> set[str]:
-    """Names shown in the week/month/year/total rankings (top N of each)."""
     names: set[str] = set()
     for key in ("week", "month", "year", "total"):
         names |= {p["name"] for p in rank(stats_projects, key)[:top_n]}
@@ -178,6 +222,10 @@ def displayed_names(stats_projects: list[dict], top_n: int, rank: Callable[[list
 
 def overlap_with_rankings(newcomer_items: list[dict], stats_projects: list[dict], top_n: int,
                           rank: Callable[[list[dict], str], list[dict]]) -> set[str]:
-    """Names that appear both in the new-arrivals list and in another ranking (must be empty)."""
     shown = {n.lower() for n in displayed_names(stats_projects, top_n, rank)}
     return {i["name"] for i in newcomer_items if i["name"].lower() in shown}
+
+
+def projects_in_category(stats_projects: list[dict], projects_meta: list[dict], category_id: str) -> list[dict]:
+    names = {p["name"] for p in projects_meta if p.get("category") == category_id}
+    return [p for p in stats_projects if p.get("name") in names]

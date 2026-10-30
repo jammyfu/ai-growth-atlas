@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>com.jammyfu.ai-growth-atlas.beijing</string>
+  <string>com.jammyfu.github-risers.beijing</string>
   <key>ProgramArguments</key>
   <array>
     <string>/bin/bash</string>
-    <string>/PATH/TO/ai-growth-atlas/tools/local_daily.sh</string>
+    <string>/PATH/TO/github-risers/tools/local_daily.sh</string>
     <string>--slot</string>
     <string>beijing</string>
   </array>
@@ -16,8 +16,8 @@
     <dict><key>Hour</key><integer>0</integer><key>Minute</key><integer>0</integer></dict>
   </array>
   <key>StandardOutPath</key>
-  <string>/tmp/com.jammyfu.ai-growth-atlas.beijing.log</string>
+  <string>/tmp/com.jammyfu.github-risers.beijing.log</string>
   <key>StandardErrorPath</key>
-  <string>/tmp/com.jammyfu.ai-growth-atlas.beijing.err.log</string>
+  <string>/tmp/com.jammyfu.github-risers.beijing.err.log</string>
 </dict>
 </plist>

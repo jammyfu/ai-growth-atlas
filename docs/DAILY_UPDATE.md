@@ -79,8 +79,8 @@ The account has a billing problem, but it only affects private repos:
 
 | Check | Result |
 |---|---|
-| `gh api repos/jammyfu/ai-growth-atlas --jq .private` | `false` (public repo; standard hosted runners are free for public repos) |
-| `gh api repos/jammyfu/ai-growth-atlas/actions/permissions` | `{"enabled":true,"allowed_actions":"all"}` |
+| `gh api repos/jammyfu/github-risers --jq .private` | `false` (public repo; standard hosted runners are free for public repos) |
+| `gh api repos/jammyfu/github-risers/actions/permissions` | `{"enabled":true,"allowed_actions":"all"}` |
 | Latest run of a **private** repo (`jammyfu/Tallyo`, run 40579601597, 2026-10-27) | failed in 3 s: "The job was not started because recent account payments have failed or your spending limit needs to be increased." |
 | Latest run of a **public** repo (`jammyfu/open-game-skills`, run 40870933400, 2026-10-29) | `success`, ran 80 s on a GitHub-hosted runner |
 
@@ -88,9 +88,9 @@ So Actions should work here because the repo is public. If the repo is ever made
 blocking public repos too, the daily job will fail with the same payment message. Re-check with:
 
 ```bash
-gh api repos/jammyfu/ai-growth-atlas/actions/runs --jq '.workflow_runs[:5][]|[.created_at,.name,.conclusion]|@tsv'
+gh api repos/jammyfu/github-risers/actions/runs --jq '.workflow_runs[:5][]|[.created_at,.name,.conclusion]|@tsv'
 # a payment failure shows up in the job annotation:
-gh api repos/jammyfu/ai-growth-atlas/check-runs/<job_id>/annotations --jq '.[].message'
+gh api repos/jammyfu/github-risers/check-runs/<job_id>/annotations --jq '.[].message'
 ```
 
 ## Option B: local script (always works)
@@ -110,8 +110,8 @@ with `skip: ...` without touching anything. `ATLAS_NOW_UTC=2026-10-29T08:30:00Z`
 ### cron (Linux / macOS, machine clock in Beijing time)
 
 ```cron
-0 0 * * *       cd /path/to/ai-growth-atlas && tools/local_daily.sh --slot beijing >> /tmp/atlas-daily.log 2>&1
-0 15,16 * * *   cd /path/to/ai-growth-atlas && tools/local_daily.sh --slot la      >> /tmp/atlas-daily.log 2>&1
+0 0 * * *       cd /path/to/github-risers && tools/local_daily.sh --slot beijing >> /tmp/risers-daily.log 2>&1
+0 15,16 * * *   cd /path/to/github-risers && tools/local_daily.sh --slot la      >> /tmp/risers-daily.log 2>&1
 ```
 
 Los Angeles midnight is 15:00 Beijing time in PDT and 16:00 in PST; the `la` slot fires at both and the guard picks the right one.
@@ -121,14 +121,14 @@ Do not commit a token. Put `GITHUB_TOKEN=...` at the top of the crontab, or leav
 
 ### launchd (macOS, machine clock in Beijing time)
 
-Two agents: `docs/launchd/com.jammyfu.ai-growth-atlas.beijing.plist` (00:00) and
-`docs/launchd/com.jammyfu.ai-growth-atlas.la.plist` (15:00 and 16:00, guarded). Replace `/PATH/TO` with the clone path, then:
+Two agents: `docs/launchd/com.jammyfu.github-risers.beijing.plist` (00:00) and
+`docs/launchd/com.jammyfu.github-risers.la.plist` (15:00 and 16:00, guarded). Replace `/PATH/TO` with the clone path, then:
 
 ```bash
-cp docs/launchd/com.jammyfu.ai-growth-atlas.*.plist ~/Library/LaunchAgents/
-launchctl load ~/Library/LaunchAgents/com.jammyfu.ai-growth-atlas.beijing.plist
-launchctl load ~/Library/LaunchAgents/com.jammyfu.ai-growth-atlas.la.plist
-launchctl start com.jammyfu.ai-growth-atlas.la     # test: prints "skip: ..." unless it is LA midnight
+cp docs/launchd/com.jammyfu.github-risers.*.plist ~/Library/LaunchAgents/
+launchctl load ~/Library/LaunchAgents/com.jammyfu.github-risers.beijing.plist
+launchctl load ~/Library/LaunchAgents/com.jammyfu.github-risers.la.plist
+launchctl start com.jammyfu.github-risers.la     # test: prints "skip: ..." unless it is LA midnight
 ```
 
 They rely on `gh auth login` for the token (launchd has no shell profile).

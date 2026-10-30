@@ -14,8 +14,9 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import archive  # noqa: E402
-import atlas_core as core  # noqa: E402
+import newcomers as nc  # noqa: E402
 import newcomer_i18n  # noqa: E402
+import risers_core as core  # noqa: E402
 from i18n import LANGS, S  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -96,17 +97,70 @@ def new_table(items: list[dict], lang: str, tr: dict | None = None) -> str:
     return "\n".join(lines)
 
 
+def ordered_categories(cats: dict[str, dict]) -> list[dict]:
+    return sorted(cats.values(), key=lambda c: (0 if c.get("primary") else 1, c.get("order", 99), c["id"]))
+
+
+def category_block(cat: dict, st: list[dict], projects: list[dict], cats: dict,
+                   newcomers_root: dict | None, lang: str, tr: dict | None) -> list[str]:
+    """One category: newcomers, week, month, year, total."""
+    s = S[lang]
+    cid = cat["id"]
+    out: list[str] = [
+        f"## {cat['name'][lang]}", "",
+        f"> {cat['desc'][lang]}", "",
+    ]
+    cat_projects = nc.projects_in_category(st, projects, cid)
+    metas = {p["name"]: p for p in projects}
+
+    # Newcomers for this category (new multi-cat shape, or legacy single list only under AI)
+    new_block = None
+    if newcomers_root is not None:
+        if "categories" in newcomers_root:
+            new_block = (newcomers_root.get("categories") or {}).get(cid)
+        elif cid == "ai" or cat.get("primary"):
+            new_block = newcomers_root  # legacy shape from older snapshots
+
+    if new_block is not None:
+        out += [f"### {s['new']}", "", s["new_intro"], ""]
+        if not new_block.get("ok"):
+            out += [s["new_failed"].format(error=new_block.get("error", "?")), ""]
+        elif not new_block.get("items"):
+            out += [s["new_none"], ""]
+        else:
+            out += [new_table(new_block["items"][:TOP_N], lang, tr), ""]
+        if new_block.get("ok") and any(not q["ok"] for q in new_block.get("queries", [])):
+            bad = sum(1 for q in new_block["queries"] if not q["ok"])
+            out += [s["new_partial"].format(failed=bad, total=len(new_block["queries"])), ""]
+
+    for key in ("week", "month", "year"):
+        ranked = core.rank(cat_projects, key)[:TOP_N]
+        out += [f"### {s[key]}", ""]
+        if ranked:
+            table, young = growth_table(ranked, key, metas, cats, lang)
+            out += [table, ""]
+            if young:
+                out += [s["young"], ""]
+        else:
+            out += [s["none"], ""]
+
+    ranked_total = core.rank(cat_projects, "total")[:TOP_N]
+    out += [f"### {s['total']}", ""]
+    if ranked_total:
+        out += [total_table(ranked_total, metas, cats, lang), ""]
+    else:
+        out += [s["none"], ""]
+    return out
+
+
 def render(lang: str, projects: list[dict], stats: dict, cats: dict, tr: dict | None = None) -> str:
     s = S[lang]
-    metas = {p["name"]: p for p in projects}
     st = stats["projects"]
-    out: list[str] = [
-        switcher(lang), "",
-    ]
+    out: list[str] = [switcher(lang), ""]
     if lang == "en":
         out += ["> 💡 **中文读者请看**：[简体中文版 👉](README.zh-Hans.md)", ""]
     out += [
-        f"# {s.get('title', 'AI Growth Atlas')}", "",
+        f"# {s.get('title', 'GitHub Risers')}", "",
         f"> {s['tagline']}", "",
         s["intro"], "",
         s["updated"].format(ts=stats["generated_at"].replace("T", " ").replace("Z", "")),
@@ -116,35 +170,14 @@ def render(lang: str, projects: list[dict], stats: dict, cats: dict, tr: dict | 
         f"<details><summary>{s['cat_title']}</summary>", "",
         "| | |", "|---|---|",
     ]
-    for c in cats.values():
-        out.append(f"| {c['name'][lang]} | {c['desc'][lang]} |")
+    for c in ordered_categories(cats):
+        mark = f" ★ {s.get('primary_mark', 'primary')}" if c.get("primary") else ""
+        out.append(f"| {c['name'][lang]}{mark} | {c['desc'][lang]} |")
     out += ["", "</details>", ""]
 
-    new = stats.get("newcomers")
-    if new is not None:
-        out += [f"## {s['new']}", "", s["new_intro"], ""]
-        if not new["ok"]:
-            out += [s["new_failed"].format(error=new["error"]), ""]
-        elif not new["items"]:
-            out += [s["new_none"], ""]
-        else:
-            out += [new_table(new["items"][:TOP_N], lang, tr), ""]
-        if new["ok"] and any(not q["ok"] for q in new["queries"]):
-            bad = sum(1 for q in new["queries"] if not q["ok"])
-            out += [s["new_partial"].format(failed=bad, total=len(new["queries"])), ""]
-
-    for key in ("week", "month", "year"):
-        ranked = core.rank(st, key)[:TOP_N]
-        out += [f"## {s[key]}", ""]
-        if ranked:
-            table, young = growth_table(ranked, key, metas, cats, lang)
-            out += [table, ""]
-            if young:
-                out += [s["young"], ""]
-        else:
-            out += [s["none"], ""]
-
-    out += [f"## {s['total']}", "", total_table(core.rank(st, "total")[:TOP_N], metas, cats, lang), ""]
+    newcomers_root = stats.get("newcomers")
+    for cat in ordered_categories(cats):
+        out += category_block(cat, st, projects, cats, newcomers_root, lang, tr)
 
     missing = [p for p in st if not p.get("ok")]
     out += [f"## {s['missing_title']}", ""]

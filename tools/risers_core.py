@@ -1,4 +1,4 @@
-"""Pure helpers for AI Growth Atlas: star-history parsing, growth windows, ranking.
+"""Pure helpers for GitHub Risers: star-history parsing, growth windows, ranking.
 
 No network access and no third-party dependencies here, so everything is unit-testable.
 All star numbers come from the GitHub REST API:
