@@ -38,3 +38,25 @@
 
 - Hotness = stars / max(age days, 1); descriptions are the repo's own GitHub text (not translated).
 - Dedup excludes tracked projects and all displayed top-20 repos, so no project is in two rankings; a repo must be added to `data/projects.json` by the owner to be tracked.
+
+## 2026-10-30 (categories)
+
+### Newcomers are found by topic only
+
+- Keyword and language searches pulled in unrelated and star-farmed repos. A repo must carry one of the category's topics; generic topics are not used.
+
+### Suspected cracked / pirated repos: keep, flag, rank last
+
+- Owner decision: do not exclude them. They are marked ⚠, always rank after every normal repo and never lead a category or the leaders table. Rules in `tools/spam.py`, documented in `docs/CATEGORIES.md`.
+
+### One code path for every scheduled run
+
+- Beijing cron, both Los Angeles crons, `workflow_dispatch` and the local launchd jobs all end in `tools/update_stars.py --slot <slot>`, so the rules above apply to every run.
+
+## 2026-10-30 (CoderSkills harness)
+
+### Follow `continuous-project-loop` and `multi-project-program-management`; other CoderSkills skills do not apply
+
+- Applied: standard file set, one plan entry, record order, verify hardening rule, dirty-worktree rule written into repo files, planning rules (one Goal, 3-7 tasks, Out of Scope, Next Candidates).
+- Not adopted: `sync_or_queue.py` / LaunchAgent safe-sync tooling (this repo changes through pull requests; the only automated writer is the daily job), `docs/architecture/*ROADMAP*.md` (not a platform-core project), `git-autosync-signal` (supports only `dramaforge` and `clippipeline`).
+- `readme-tech-visualizer`: audit only. The README stays the slim first screen; the header image belongs to the GEO work, so no hero or tech-badge block is generated.
