@@ -39,8 +39,8 @@
 
 | 專案 | 表裡的一句話 | 完整介紹 |
 |---|---|---|
-| [astral-sh/uv](https://github.com/astral-sh/uv) | 裝 Python 包，不用再幹等 | 用 Rust 寫的極速 Python 套件與專案管理器。 |
-| [oven-sh/bun](https://github.com/oven-sh/bun) | 執行打包測試裝包，一個工具全包 | 一體化 JavaScript 執行環境與工具箱：執行環境、打包、測試、套件管理。 |
+| [astral-sh/uv](https://github.com/astral-sh/uv) | 裝 Python 套件，不用再乾等 | 用 Rust 寫的極速 Python 套件與專案管理器。 |
+| [oven-sh/bun](https://github.com/oven-sh/bun) | 執行打包測試裝套件，一個工具全包 | 一體化 JavaScript 執行環境與工具箱：執行環境、打包、測試、套件管理。 |
 | [biomejs/biome](https://github.com/biomejs/biome) | 網頁程式碼格式和檢查，一個工具搞定 | 面向 Web 專案的高速格式化與檢查工具，涵蓋 JS/TS/JSON/CSS。 |
 | [zed-industries/zed](https://github.com/zed-industries/zed) | 開啟就快，還能多人一起寫程式碼 | Atom 與 Tree-sitter 作者打造的高效能多人協作程式碼編輯器。 |
 | [helix-editor/helix](https://github.com/helix-editor/helix) | 不裝一堆外掛，補全高亮都現成 | 內建 LSP、tree-sitter 與多重選取的模態文字編輯器。 |
@@ -105,7 +105,7 @@
 | 專案 | 表裡的一句話 | 完整介紹 |
 |---|---|---|
 | [duckdb/duckdb](https://github.com/duckdb/duckdb) | 不搭資料庫服務，也能跑 SQL 分析 | 行程內 SQL OLAP 資料庫管理系統。 |
-| [pola-rs/polars](https://github.com/pola-rs/polars) | 表格資料處理快，不用幹等 | 面向 Rust 與 Python 的極速 DataFrame 函式庫。 |
+| [pola-rs/polars](https://github.com/pola-rs/polars) | 表格資料處理快，不用乾等 | 面向 Rust 與 Python 的極速 DataFrame 函式庫。 |
 | [apache/arrow](https://github.com/apache/arrow) | 不同語言之間，資料直接通用 | 面向記憶體分析的跨語言開發平台。 |
 | [dbt-labs/dbt-core](https://github.com/dbt-labs/dbt-core) | 數倉 SQL 也能版本管理和測試 | 用軟體工程方式在資料倉中轉換資料。 |
 | [apache/superset](https://github.com/apache/superset) | 資料看不懂，做成圖就明白 | 現代資料探索與視覺化平台。 |
@@ -128,7 +128,7 @@
 | [patch-gg/anymove](https://github.com/patch-gg/anymove) | 一段 AI 影片，給任何生物做動作捕捉 | 只用一段 AI 影片，為任何生物做動作捕捉：一個畫面裡兩個機位、DINOv2 關節辨識、在兩個視角中擬合骨架，輸出 GLB。 |
 | [daveebbelaar/bama](https://github.com/daveebbelaar/bama) | 想做 Mac 應用，讓代理技能來幫你 | BAMA：Build Any Mac App（打造任何 Mac 應用程式）。用 Swift 和 SwiftUI 研究、仿製、設計、建置、最佳化和測試原生 macOS 應用程式的代理技能。 |
 | [shipwords-dev/shipwords](https://github.com/shipwords-dev/shipwords) | 追到新詞，一下午上線一個 AI 站 | 為每個新關鍵字上線一個賺錢的 AI 網站。基於 Cloudflare 的起始範本，含登入驗證、點數、付款和 AI 生成。/ 新詞站群框架：一個新詞一個站，一個下午上線。起量的繼續迭代，沒起… |
-| [jmanico/grim-prompter](https://github.com/jmanico/grim-prompter) | 讓 AI 把倉庫面臨的威脅理清楚 | 針對 AI 程式設計代理的威脅建模：讓 Claude Code、Codex 或任何代理讀取你的儲存庫，產生有證據可追溯的威脅模型。36 種架構，29 種方法，… |
+| [jmanico/grim-prompter](https://github.com/jmanico/grim-prompter) | 讓 AI 把儲存庫面臨的威脅理清楚 | 針對 AI 程式設計代理的威脅建模：讓 Claude Code、Codex 或任何代理讀取你的儲存庫，產生有證據可追溯的威脅模型。36 種架構，29 種方法，… |
 | [andyhuo520/vibe-knowledge](https://github.com/andyhuo520/vibe-knowledge) | 一個知識點，做成帶出處的短片 | Vibe 知識大賞：一個知識點 → 一支有旁白、每句有出處的精品知識短片（Claude Code skill · 44 套風格 · 程式碼逐格成片） |
 | [hevnsnt/CVEngine](https://github.com/hevnsnt/CVEngine) | 從外面看你的系統哪裡有洞，並有證據 | 以 AI 為先的外部攻擊面評估：持續探索資產、以證據為基礎驗證漏洞，並整合開發者代理 MCP。 |
 | [davemessew/AgentFlux](https://github.com/davemessew/AgentFlux) | 畫出 AI 工作流程，在自己電腦上跑 | 適用於視覺化工作流程與自主代理的代理式 AI 平台。可用 Docker 在你自己的電腦或伺服器上執行。 |

@@ -911,7 +911,7 @@
         "hook": {
           "en": "Have AI map out the threats facing your repo",
           "zh-Hans": "让 AI 把仓库面临的威胁理清楚",
-          "zh-Hant": "讓 AI 把倉庫面臨的威脅理清楚",
+          "zh-Hant": "讓 AI 把儲存庫面臨的威脅理清楚",
           "ja": "リポジトリの脅威を、AI に整理させる",
           "ko": "저장소의 위협을 AI가 정리해 준다"
         },

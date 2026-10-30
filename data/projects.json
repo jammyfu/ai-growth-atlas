@@ -585,7 +585,7 @@
     "hook": {
       "en": "Install Python packages without the wait",
       "zh-Hans": "装 Python 包，不用再干等",
-      "zh-Hant": "裝 Python 包，不用再幹等",
+      "zh-Hant": "裝 Python 套件，不用再乾等",
       "ja": "Python パッケージの導入で待たされない",
       "ko": "Python 패키지 설치, 더 이상 기다리지 않는다"
     },
@@ -611,7 +611,7 @@
     "hook": {
       "en": "Run, bundle, test, install: one tool does it all",
       "zh-Hans": "运行打包测试装包，一个工具全包",
-      "zh-Hant": "執行打包測試裝包，一個工具全包",
+      "zh-Hant": "執行打包測試裝套件，一個工具全包",
       "ja": "実行・バンドル・テスト・導入を 1 つで",
       "ko": "실행·번들·테스트·설치를 도구 하나로"
     },
@@ -1651,7 +1651,7 @@
     "hook": {
       "en": "Table data handled fast, no more waiting",
       "zh-Hans": "表格数据处理快，不用干等",
-      "zh-Hant": "表格資料處理快，不用幹等",
+      "zh-Hant": "表格資料處理快，不用乾等",
       "ja": "表データの処理が速く、待たされない",
       "ko": "표 데이터 처리가 빨라 기다릴 일 없다"
     },
