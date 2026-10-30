@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jammyfu.github.io/github-risers/sitemap.xml

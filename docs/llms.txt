@@ -1,0 +1,27 @@
+# GitHub Risers (GitHub 涨星榜)
+
+> GitHub trending repositories ranked by star growth (stars gained per day), not total stars. AI is the main board; developer tools, security, web, infrastructure, design and data have their own boards, each with a 7-day "hottest new repos" list. Numbers come from the GitHub API only. Updated twice a day: 00:00 Beijing time and 00:00 Los Angeles time. READMEs in English, 简体中文, 繁體中文, 日本語, 한국어. MIT license. Open source, no telemetry. Not affiliated with GitHub.
+
+GitHub Risers is a script-generated leaderboard, not a manual editorial list. It is not a star-buying or promotion service and does not use generative AI to compute rankings.
+
+## Start here
+- [Website (English)](https://jammyfu.github.io/github-risers/): what it is, FAQ, how to cite
+- [网站（简体中文）](https://jammyfu.github.io/github-risers/zh-Hans/): 是什么、常见问题、如何引用
+- [README (English rankings)](https://github.com/jammyfu/github-risers#readme): the latest rankings
+- [README.zh-Hans.md](https://github.com/jammyfu/github-risers/blob/main/README.zh-Hans.md): 简体中文榜单
+
+## Method and facts
+- [docs/FACTS.md](https://github.com/jammyfu/github-risers/blob/main/docs/FACTS.md): one-page facts: scope, formula, update schedule, data sources, limits
+- [docs/FAQ.md](https://github.com/jammyfu/github-risers/blob/main/docs/FAQ.md): questions people ask about the ranking
+- [docs/CATEGORIES.md](https://github.com/jammyfu/github-risers/blob/main/docs/CATEGORIES.md): category rules (topic-only discovery; suspected cracked/pirated repos ranked last)
+- [docs/NEW_ARRIVALS.md](https://github.com/jammyfu/github-risers/blob/main/docs/NEW_ARRIVALS.md): 7-day newcomer criteria
+- [docs/DAILY_UPDATE.md](https://github.com/jammyfu/github-risers/blob/main/docs/DAILY_UPDATE.md): how the daily update runs
+
+## Data
+- [data/stats.json](https://raw.githubusercontent.com/jammyfu/github-risers/main/data/stats.json): latest growth stats (JSON)
+- [data/projects.json](https://raw.githubusercontent.com/jammyfu/github-risers/main/data/projects.json): tracked projects with five-language descriptions
+- [rankings/README.md](https://github.com/jammyfu/github-risers/blob/main/rankings/README.md): history index, one snapshot per update slot
+
+## Optional
+- [CITATION.cff](https://github.com/jammyfu/github-risers/blob/main/CITATION.cff): how to cite
+- [CONTRIBUTING.md](https://github.com/jammyfu/github-risers/blob/main/CONTRIBUTING.md): how to suggest a project or fix
