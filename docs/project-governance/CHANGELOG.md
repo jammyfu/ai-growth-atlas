@@ -26,6 +26,11 @@
 - READMEs in all five languages are now a first screen: headline, one sentence, update stamp, the category leaders table (rows link to the category boards), then the category boards. Intro, schedule, "how it is produced", categories table and contributing moved to generated `docs/HOW_IT_WORKS*.md`; the long new-repo explanation moved there too.
 - README first screen reworked (generator only): first line `GitHub 涨星榜 / GitHub Risers` (English: `GitHub Risers: Ranked by Stars Gained per Day`), header image `.github/social-preview.png`, three badges (MIT, CI, last updated), website link, three Q&A subheads linking `docs/FAQ.md`, a star prompt, a "how to cite" line (`CITATION.cff`) and a link to `docs/FACTS.md`. Each board shows the top 10 in the README; the full top 20 stays in `latest/`. Those linked files come from the GEO pull request (#9); the generator only links them, and a test checks the FAQ anchors.
 
+## 2026-10-30 (one-line hooks)
+
+- Ranking tables show ONE short hook per project (`tools/hooks.py`: zh <= ~15 characters, en <= 60, ja/ko equally short) instead of the full description. Hooks are a separate field (`hook` in `data/projects.json` and inside each `data/translation_library.json` entry); every long description and translation is kept unchanged and listed on the new generated `docs/DETAILS*.md`.
+- `tools/i18n_pipeline.py --hooks` stage (rule embedded in the prompt, length/hype/number guards); `tests/test_hooks.py` checks the limits per language and that every old entry survives (`tests/fixtures/pre_hook_baseline.json`).
+
 ## 2026-10-30 (categories)
 
 - Rebranded to GitHub Risers with categories (AI first, then developer tools, security, web, infrastructure, design, data), each with new-repo, week, month, year and total boards.

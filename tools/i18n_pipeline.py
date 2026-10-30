@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
-"""Translate new-repo descriptions and polish all copy, as part of the scheduled update.
+"""Translate new-repo descriptions, write one-line hooks and polish all copy, as part of the scheduled update.
 
-Two stages, both optional and both fail-safe (any problem leaves the existing text in place and
+Three stages, all optional and all fail-safe (any problem leaves the existing text in place and
 never fails the update):
 
 1. translate  every description in the new-repos ranking that has no current translation
               (data/translation_library.json, keyed by repo + hash of the source text + language: a hit costs
               no model call) -> zh-Hans, zh-Hant, ja, ko (+ en if the source
               contains CJK text).
-2. polish     rewrite the project blurbs (data/projects.json), the translated new-repo descriptions
+2. hooks      the ranking tables show ONE short catchy line per repo (tools/hooks.py: zh <= ~15 characters,
+              en <= 60, ja/ko equally short). Every repo whose current text has no hook yet (or whose stored hook
+              breaks the length rule) gets one, in all five languages, in the same call style as translate. A hook
+              is stored NEXT TO the translations (never in place of them): the long description and every translation
+              stay exactly as they are and are listed on docs/DETAILS*.md.
+3. polish     rewrite the project blurbs (data/projects.json), the translated new-repo descriptions
               and, only on request, the category descriptions in a short, plain, lead-with-the-point
               voice. Each text is polished once: data/polish_state.json remembers the hash of the text
               that was polished, so unchanged text is never sent again. A polished text is accepted
@@ -17,13 +22,14 @@ never fails the update):
 Both stages call an agent CLI through tools/llm.py, model gemini-3.8-flash-medium by default
 (POLISH_MODEL / I18N_TRANSLATE_MODEL):
   translate  backend I18N_TRANSLATE_BACKEND, default "cursor" (Cursor CLI, key CURSOR_API_KEY: the CI step)
+  hooks      backend I18N_HOOK_BACKEND,      default = the translate backend (so new repos get a hook in CI too)
   polish     backend I18N_POLISH_BACKEND,    default "agy"    (Antigravity CLI on the owner's machine)
 Without the CLI / sign-in / key, or when the model is not offered, the stage is skipped with a message.
 CI runs translate only; polish is run locally (tools/polish_local.sh, or tools/local_daily.sh).
 
-Usage: python3 tools/i18n_pipeline.py [--translate] [--polish] [--targets newcomers,projects,categories]
+Usage: python3 tools/i18n_pipeline.py [--translate] [--hooks] [--polish] [--targets newcomers,projects,categories]
                                       [--limit N] [--dry-run]
-       (no stage flag = both stages)
+       (no stage flag = all stages)
 """
 from __future__ import annotations
 
@@ -39,6 +45,7 @@ from pathlib import Path
 from typing import Any, Callable, Protocol
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import hooks  # noqa: E402
 import llm  # noqa: E402
 import newcomer_i18n as nci  # noqa: E402
 
@@ -100,6 +107,20 @@ Rules:
 - {glossary}
 """
 
+HOOK_PROMPT = """You write the ONE-LINE hook shown in the rows of a GitHub trending table. Reply with ONE JSON object and nothing else.
+
+Input items: {items}
+For each item write a hook in every language listed in its "langs" and reply as
+{{"<id>": {{"<lang>": "<hook>", ...}}, ...}}.
+The facts come only from "src". The long text stays elsewhere, so leave details out of the hook instead of squeezing them in.
+
+Language codes: {langs}
+{rule}
+- Items with "literal": true look cracked / pirated / pre-activated: write a flat, literal label, nothing that sells it.
+- Keep names and numbers exactly as in the source when you use them. Traditional Chinese uses Taiwan/Hong Kong wording.
+- {glossary}
+"""
+
 POLISH_PROMPT = """You are a copy editor for a GitHub trending list. Rewrite each text below in the language named by its "lang".
 Reply with ONE JSON object {{"<id>": "<rewritten text>", ...}} and nothing else.
 
@@ -109,6 +130,7 @@ Hard rules:
 - Keep project names, product names, links, code, @handles, numbers, versions and emoji exactly as written. Keep a trailing "…" or "：" if the text has one.
 - Stay in the same language (and for Traditional Chinese use Taiwan/Hong Kong wording). No exclamation marks, no hype words (e.g. 炸裂, 颠覆, 震惊, game-changer, revolutionary, insane).
 - Not longer than the original plus a few characters. One line, no markdown, no quotes around it.
+- These texts are the detailed intro of a project. The ranking tables show a separate one-line hook (stage "hooks"), so keep the details here; never cut a text down to a hook.
 - {glossary}
 
 Items: {items}
@@ -372,7 +394,113 @@ def _pct(a: int, b: int) -> str:
     return f"{100 * a / b:.0f}%" if b else "n/a"
 
 
-# ----------------------------------------------------------------------------- stage 2: polish
+# ----------------------------------------------------------------------------- stage 2: hooks
+
+def _hook_langs_missing(stored: dict[str, str] | None, detail: str) -> list[str]:
+    """Languages whose hook is absent or breaks the length/hype rules (so it is written again)."""
+    stored = stored or {}
+    return [l for l in LANGS if hooks.check_hook(stored.get(l), l, detail)]
+
+
+def _detail_blob(entry: dict[str, Any] | None, src: str) -> str:
+    """Every text a hook may take a number from: the source and all stored translations."""
+    entry = entry or {}
+    return " ".join([src] + [str(entry.get(l, "")) for l in LANGS])
+
+
+def hook_gaps(root: Path, items: list[dict[str, Any]], targets: tuple[str, ...] = ("newcomers", "projects")
+              ) -> list[dict[str, Any]]:
+    """[{id, src, langs, kind, ...}]: texts that still need a hook, newcomers first (the ranking order)."""
+    gaps: list[dict[str, Any]] = []
+    if "newcomers" in targets:
+        lib = nci.load(root / LIB_REL)
+        for it in items:
+            desc = (it.get("description") or "").strip()
+            if not desc:
+                continue
+            entry = nci.lookup(lib, it["name"], it["description"])
+            langs = _hook_langs_missing((entry or {}).get("hook"), _detail_blob(entry, it["description"]))
+            if langs:
+                gap = {"id": it["name"], "src": it["description"], "langs": langs, "kind": "newcomer"}
+                if it.get("suspicious"):
+                    gap["literal"] = True
+                gaps.append(gap)
+    if "projects" in targets:
+        for p in json.loads((root / "data/projects.json").read_text("utf-8")):
+            detail = " ".join((p.get("desc") or {}).values())
+            langs = _hook_langs_missing(p.get("hook"), detail)
+            if langs:
+                gaps.append({"id": p["name"], "src": (p.get("desc") or {}).get("en", ""), "langs": langs,
+                             "kind": "project"})
+    return gaps
+
+
+def write_hooks(root: Path, items: list[dict[str, Any]], runner: Runner, budget: Budget,
+                log: Callable[[str], None] = print, limit: int | None = None, dry_run: bool = False,
+                targets: tuple[str, ...] = ("newcomers", "projects"), today: str | None = None) -> dict[str, int]:
+    """Write the one-line hooks that are missing. Only the `hook` field is touched: descriptions and
+    translations (also those already in the library) are never changed or sent to the model again."""
+    today = today or dt.date.today().isoformat()
+    gaps = hook_gaps(root, items, targets)
+    if limit is not None:
+        gaps = gaps[:limit]
+    stat = {"todo": len(gaps), "written": 0, "rejected": 0, "errors": 0, "calls": 0}
+    log(f"hooks: {len(gaps)} text(s) without a valid one-line hook")
+    if dry_run or not gaps:
+        return stat
+    glossary = load_glossary(root)
+    streak = 0
+    for batch in _chunks(gaps, BATCH):
+        if not budget.left():
+            log("hooks: time budget used up; the rest waits for the next run")
+            break
+        payload = [{k: v for k, v in g.items() if k != "kind"} for g in batch]
+        glos = glossary_for([g["src"] for g in batch], sorted({l for g in batch for l in g["langs"]}), glossary)
+        prompt = HOOK_PROMPT.format(items=json.dumps(payload, ensure_ascii=False), langs=", ".join(LANGS),
+                                    rule=hooks.HOOK_RULE, glossary=glos)
+        try:
+            stat["calls"] += 1
+            reply = llm.extract_json(runner.ask(prompt))
+            streak = 0
+        except llm.LLMError as e:
+            stat["errors"] += 1
+            streak += 1
+            log(f"hooks: call failed ({e}); keeping what exists for {len(batch)} text(s)")
+            if streak >= MAX_CONSECUTIVE_ERRORS:
+                log("hooks: too many failures in a row; stopping this stage")
+                break
+            continue
+        lib = nci.load(root / LIB_REL)
+        projects_path = root / "data/projects.json"
+        projects = json.loads(projects_path.read_text("utf-8"))
+        by_name = {p["name"]: p for p in projects}
+        for g in batch:
+            got = reply.get(g["id"])
+            if not isinstance(got, dict):
+                stat["rejected"] += 1
+                continue
+            if g["kind"] == "newcomer":
+                detail = _detail_blob(nci.lookup(lib, g["id"], g["src"]), g["src"])
+            else:
+                detail = " ".join((by_name[g["id"]].get("desc") or {}).values())
+            for lang in g["langs"]:
+                text = got.get(lang)
+                bad = hooks.check_hook(text, lang, detail)
+                if bad:
+                    log(f"hooks: {g['id']} [{lang}] rejected: {bad}")
+                    stat["rejected"] += 1
+                    continue
+                if g["kind"] == "newcomer":
+                    nci.put_hook(lib, g["id"], g["src"], lang, text.strip(), today)
+                else:
+                    by_name[g["id"]].setdefault("hook", {})[lang] = text.strip()
+                stat["written"] += 1
+        nci.save(lib, root / LIB_REL)  # saved after every batch so a later failure loses nothing
+        _write_json(projects_path, projects)
+    return stat
+
+
+# ----------------------------------------------------------------------------- stage 3: polish
 
 def _polish_jobs(root: Path, items: list[dict[str, Any]], targets: tuple[str, ...],
                  state: dict[str, Any], counts: dict[str, int] | None = None) -> list[dict[str, Any]]:
@@ -508,7 +636,7 @@ def polish(root: Path, items: list[dict[str, Any]], runner: Runner, budget: Budg
 
 # ----------------------------------------------------------------------------- orchestration
 
-def run(root: Path, new: dict[str, Any] | None, *, do_translate: bool = True, do_polish: bool = True,
+def run(root: Path, new: dict[str, Any] | None, *, do_translate: bool = True, do_hooks: bool = True, do_polish: bool = True,
         targets: tuple[str, ...] = DEFAULT_TARGETS, env: dict[str, str] | None = None,
         make_runner: Callable[[str, str], Any] | None = None, budget_sec: float | None = None,
         log: Callable[[str], None] = print, limit: int | None = None, dry_run: bool = False) -> dict[str, Any]:
@@ -522,6 +650,7 @@ def run(root: Path, new: dict[str, Any] | None, *, do_translate: bool = True, do
     translate_model = env.get("I18N_TRANSLATE_MODEL") or polish_model
     translate_backend = env.get("I18N_TRANSLATE_BACKEND") or "cursor"   # CI: Cursor CLI + CURSOR_API_KEY
     polish_backend = env.get("I18N_POLISH_BACKEND") or "agy"            # owner's machine: Antigravity CLI
+    hook_backend = env.get("I18N_HOOK_BACKEND") or translate_backend
     runners: dict[tuple[str, str], Any] = {}
 
     def ready(backend: str, model: str) -> Any | None:
@@ -550,6 +679,19 @@ def run(root: Path, new: dict[str, Any] | None, *, do_translate: bool = True, do
         else:
             result["translate"] = translate(root, items, r, budget, log, limit)
             log(f"translate: {result['translate']}")
+    if do_hooks:
+        gaps = hook_gaps(root, items)
+        if not gaps:
+            result["hooks"] = {"todo": 0}
+            log("hooks: every text already has a valid one-line hook, 0 model calls")
+        elif dry_run:
+            result["hooks"] = {"todo": len(gaps)}
+            log(f"hooks: {len(gaps)} text(s) without a valid one-line hook (dry run)")
+        elif (r := ready(hook_backend, translate_model)) is None:
+            result["hooks"] = {"todo": len(gaps), "skipped": True}
+        else:
+            result["hooks"] = write_hooks(root, items, r, budget, log, limit)
+            log(f"hooks: {result['hooks']}")
     if do_polish:
         jobs = _polish_jobs(root, items, targets, load_state(root / "data/polish_state.json"))
         if not jobs:
@@ -578,16 +720,17 @@ def run_safe(root: Path, new: dict[str, Any] | None, **kw: Any) -> dict[str, Any
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--translate", action="store_true", help="only the translate stage")
+    ap.add_argument("--hooks", action="store_true", help="only the one-line hook stage")
     ap.add_argument("--polish", action="store_true", help="only the polish stage")
     ap.add_argument("--targets", default=",".join(DEFAULT_TARGETS),
                     help="what to polish: newcomers,projects,categories (default: newcomers,projects)")
     ap.add_argument("--limit", type=int, help="process at most N texts per stage")
     ap.add_argument("--dry-run", action="store_true", help="count the work, change nothing, call nothing")
     args = ap.parse_args(argv)
-    both = not (args.translate or args.polish)
+    both = not (args.translate or args.hooks or args.polish)
     stats = json.loads((ROOT / "data/stats.json").read_text("utf-8"))
     res = run_safe(ROOT, stats.get("newcomers"), do_translate=both or args.translate,
-                   do_polish=both or args.polish, targets=tuple(t for t in args.targets.split(",") if t),
+                   do_hooks=both or args.hooks, do_polish=both or args.polish, targets=tuple(t for t in args.targets.split(",") if t),
                    limit=args.limit, dry_run=args.dry_run)
     print(json.dumps(res, ensure_ascii=False))
     return 0

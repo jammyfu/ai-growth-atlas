@@ -4,7 +4,7 @@ Runs inside `python3 tools/update_stars.py --slot ...` (the daily workflow and `
 discovered and before the READMEs are rendered. Skip it with `--no-i18n`. Polish can also be run on its own: `tools/polish_local.sh`.
 
 ```
-discover new repos ─▶ 1 translate (only what is missing) ─▶ [2 polish, local only] ─▶ render
+discover new repos ─▶ 1 translate (only what is missing) ─▶ 2 hooks (only what is missing) ─▶ [3 polish, local only] ─▶ render
 ```
 
 Everything here is **fail-safe**: no key / sign-in, no CLI, model not offered, a failed call, a reply that breaks a guard — the
@@ -48,7 +48,26 @@ every identifier-like name (`TinyPNG`, `gpt-2`, `Node.js`...). Rules sent to the
 keep names/links/code/emoji/`…`, star = 星标 (zh-Hans) / 星號 (zh-Hant), agent = 智能体 / 代理 / エージェント / 에이전트,
 Traditional Chinese in Taiwan/Hong Kong wording.
 
-## 2. Polish
+## 2. One-line hooks (`tools/hooks.py`)
+
+The ranking tables show ONE short, plain, catchy line per repo, not the full description: for example
+`morluto/rea` is "Let AI reverse-engineer and clone any software" / 「让 AI 帮你逆向、复刻任何软件」. The long text stays,
+unchanged, as the detailed intro, and every translation stays too: both are listed on `docs/DETAILS*.md`
+(one page per language, linked from the README).
+
+- **Where**: `hook` ({lang: text}) next to `desc` in `data/projects.json`, and `hook` inside the translation-library entry
+  of the same repo + source hash. A hook is a separate field: adding it never changes or re-translates an existing entry,
+  and the old entries keep matching for reuse (`tests/test_hooks.py` checks that they survive byte for byte).
+- **Limits** (display width, CJK characters count double; enforced by `check_hook` and by the tests for every stored hook):
+  zh-Hans / zh-Hant <= 18 characters (aim for ~15), ja <= 28, ko <= 30, en <= 60. No `!`, no hype words, no trailing `…`,
+  no number that is not in the source. Suspected cracked / pirated repos get a flat literal label.
+- **Stage**: `python3 tools/i18n_pipeline.py --hooks` (also part of the default run). Only repos whose current text has no
+  valid hook, in only the missing languages, go to the model (`HOOK_PROMPT`, which embeds `HOOK_RULE`). Backend:
+  `I18N_HOOK_BACKEND`, default = the translate backend, so scheduled new repos get a hook in CI too; `tools/polish_local.sh`
+  uses `agy`. A hook that fails the guard is rejected and the row falls back to the translation until the next run.
+- Hooks are not polished; the polish stage only rewrites the detailed texts.
+
+## 3. Polish
 
 Voice: plain spoken words, short-video host style, lead with the point, one sentence for what it does and why it is
 worth a look, condensed, never clickbait, never exaggerated, nothing invented.
