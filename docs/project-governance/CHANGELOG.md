@@ -45,3 +45,4 @@
 ## 2026-10-30 (harness)
 
 - Plan, backlog and governance files brought up to date; `python3 tools/next_plan.py --check`; harness regression tests. No change to rankings or generated pages.
+- Fix: the scheduled daily-update failed at Beijing 2026-10-31 04:22 because a test required every ranked new repo to already have a hook (CI has no model key). It is now informational; the tables fall back to the translation or original text, and a regression test covers it.

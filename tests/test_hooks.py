@@ -77,13 +77,34 @@ class LengthRuleTests(unittest.TestCase):
         for p in PROJECTS:
             self.assertEqual(set(p.get("hook") or {}), set(LANG5), p["name"])
 
-    def test_every_ranked_new_repo_has_a_hook_or_is_listed_as_pending(self):
-        """Informational like the translation gaps: a repo that arrived after the last hook run shows its translation."""
+    def test_a_ranked_new_repo_without_a_hook_never_breaks_the_daily_update(self):
+        """Regression (daily-update 2026-10-31 04:22 Beijing): CI has no model key, so repos that arrive after the
+        last hook run have no hook yet. That is a gap to report, never a failure: the tables fall back to the
+        translation or the original text, and verify must stay green so the data update can be committed."""
         stats = json.loads((ROOT / "data/stats.json").read_text("utf-8"))
-        items = pipe.displayed_newcomers(stats.get("newcomers"))
-        missing = [it["name"] for it in items if it.get("description")
-                   and not all(nci.get_hook(LIB, it["name"], it["description"], l) for l in LANG5)]
-        self.assertEqual(missing, [], "run: python3 tools/i18n_pipeline.py --hooks")
+        block = stats["newcomers"]["categories"]["ai"]
+        fresh = dict(block["items"][0], name="brand-new/never-seen", repo_id=987654321,
+                     description="A brand new repo that no hook or translation has seen yet.")
+        block["items"] = [fresh] + block["items"][1:]
+        projects = json.loads((ROOT / "data/projects.json").read_text("utf-8"))
+        cats = {c["id"]: c for c in json.loads((ROOT / "data/categories.json").read_text("utf-8"))}
+        for lang in LANG5:
+            md = render_readme.render(lang, projects, stats, cats, LIB)
+            self.assertIn("brand-new/never-seen", md, lang)
+            row = next(ln for ln in md.splitlines() if ln.startswith("| 1 |") and "brand-new/never-seen" in ln)
+            self.assertIn("A brand new repo that no hook or translation has seen yet.", row, lang)  # the original shows
+        gaps = [g["id"] for g in pipe.hook_gaps(ROOT, pipe.displayed_newcomers(stats["newcomers"]), ("newcomers",))]
+        self.assertIn("brand-new/never-seen", gaps)  # reported as pending, for the optional hook stage
+
+    def test_no_test_makes_the_data_update_depend_on_hook_completeness_of_live_data(self):
+        """The scheduled run verifies right after discovering new repos. Any assertion that every ranked new repo
+        already has a hook would fail whenever one arrives; only the committed projects must be complete."""
+        src = Path(__file__).read_text("utf-8")
+        self.assertNotIn("missing, [], \"run: python3 tools/i18n_pipeline.py --hooks\"", src)
+        live = json.loads((ROOT / "data/stats.json").read_text("utf-8"))
+        gaps = pipe.hook_gaps(ROOT, pipe.displayed_newcomers(live.get("newcomers")), ("newcomers",))
+        if gaps:  # informational, like tools/newcomer_i18n.py
+            print(f"note: {len(gaps)} ranked new repo(s) have no hook yet (python3 tools/i18n_pipeline.py --hooks)")
 
 
 class SloganTests(unittest.TestCase):
