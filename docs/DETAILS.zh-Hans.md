@@ -117,53 +117,59 @@
 
 | 项目 | 表里的一句话 | 完整介绍 |
 |---|---|---|
-| [rddmwmddr/android-ad-cleaner](https://github.com/rddmwmddr/android-ad-cleaner) | 关掉国产安卓手机里的广告，可还原 | 关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。 |
 | [wangzan101/Mika](https://github.com/wangzan101/Mika) | 手机上的 AI 助理，替你点 App、上网 | Mika —— 你手机上的私人 AI 助理，替你操作 App、上网、把事办成。一个运行在 Android 本机上的 AI 智能体，替你操作 App 和网页，把事情办好。 |
-| [DenisSergeevitch/ex-ussr-kinship-research](https://github.com/DenisSergeevitch/ex-ussr-kinship-research) | 查前苏联地区的家谱，让 AI 帮你翻档案 | 面向 AI 智能体（Codex、Claude Code）的证据优先家谱研究技能：涵盖前苏联地区的教会簿册、民事、军事、流放和政治迫害档案… |
-| [ccch1mneyyy/dsh-go](https://github.com/ccch1mneyyy/dsh-go) | DeepSeek Harness 装进手机，遥控电脑 | dsh-go —— DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。 |
+| [rddmwmddr/android-ad-cleaner](https://github.com/rddmwmddr/android-ad-cleaner) | 关掉国产安卓手机里的广告，可还原 | 关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。 |
+| [ccch1mneyyy/dsh-Go](https://github.com/ccch1mneyyy/dsh-Go) |  | dsh-go — DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。 |
+| [alchaincyf/huashu-bird-sticker](https://github.com/alchaincyf/huashu-bird-sticker) |  | 花叔开源的全球鸟类贴纸库 · Stickers for all 11,064 living bird species, with names in 43 languages and structured data |
+| [boardshogunfluctuate/Capri-AI](https://github.com/boardshogunfluctuate/Capri-AI) |  | ⚡ Tell your PC what to do. Capri is a cyberpunk AI agent that works with your files, projects and code through Claude Code, Codex or Antigravity. Windows insta… |
 | [qybaihe/bla](https://github.com/qybaihe/bla) | 不想被 AI 逆向，给程序加层防护 | 🛡️ BLA（Blind LLM Agents）—— 对抗式防御盾，保护二进制文件、Electron 应用、JS 包、Python 和 WebAssembly 免受 AI 逆向工程… |
+| [Pluviobyte/douyin-comments](https://github.com/Pluviobyte/douyin-comments) |  | 抓取抖音单条视频完整评论区（一级 + 楼中楼）的 Agent Skill：在已登录的 Chrome 里照抄页面真实请求，签名交给页面 SDK |
+| [DenisSergeevitch/ex-ussr-kinship-research](https://github.com/DenisSergeevitch/ex-ussr-kinship-research) | 查前苏联地区的家谱，让 AI 帮你翻档案 | 面向 AI 智能体（Codex、Claude Code）的证据优先家谱研究技能：涵盖前苏联地区的教会簿册、民事、军事、流放和政治迫害档案… |
+| [N1nEmAn/sapper-v2](https://github.com/N1nEmAn/sapper-v2) |  | Autonomous pentest legion — AI commander + worker swarm + layered fact-intent graph. 3rd Tencent Intelligent Attack-Defense online champion (634 teams · 8h una… |
+| [jackwener/DSH-Android](https://github.com/jackwener/DSH-Android) |  | 免 ROOT 免 Termux，一个 APK 在安卓手机上跑 DeepSeek Harness。引擎内嵌 App 进程 · 读屏操作 App · 改系统设置 · 定时/条件自动化 · 可选 Shizuku |
 | [ZiChuanLan/agent-purge](https://github.com/ZiChuanLan/agent-purge) | 一个人设，所有编程智能体通用 | 一个人设，适配多个编程智能体。可在 codex、claude、opencode、grok、omp、hermes、pi、zcode 之间替换或注入系统提示词，并提供本地 Web 控制台。 |
-| [jackwener/DeepseekHarness-Android](https://github.com/jackwener/DeepseekHarness-Android) | 手机直接跑 DeepSeek Harness，免 ROOT | 免 ROOT 免 Termux，一个 APK 在安卓手机上跑 DeepSeek Harness。引擎内嵌 App 进程 · 读屏操作 App · 改系统设置 · 定时/条件自动化 · 可选 Shizuku |
+| [daveebbelaar/bama](https://github.com/daveebbelaar/bama) | 想做 Mac 应用，让智能体技能来帮你 | BAMA：Build Any Mac App（构建任意 Mac 应用）。用 Swift 和 SwiftUI 调研、仿制、设计、构建、优化和测试原生 macOS 应用的智能体技能。 |
 | [haydenschmitty/floorplan](https://github.com/haydenschmitty/floorplan) | 代码库怎么拼起来的，看这张图 | 看清你的应用究竟是如何拼装在一起的。一张可交互、用通俗英语讲解的代码库地图，由 Claude 或 Codex 绘制。 |
 | [patch-gg/anymove](https://github.com/patch-gg/anymove) | 一段 AI 视频，给任何生物做动作捕捉 | 只用一段 AI 视频，为任何生物做动作捕捉：一个画面里两个机位、DINOv2 关节识别、在两个视角中拟合骨架，输出 GLB。 |
-| [daveebbelaar/bama](https://github.com/daveebbelaar/bama) | 想做 Mac 应用，让智能体技能来帮你 | BAMA：Build Any Mac App（构建任意 Mac 应用）。用 Swift 和 SwiftUI 调研、仿制、设计、构建、优化和测试原生 macOS 应用的智能体技能。 |
 | [shipwords-dev/shipwords](https://github.com/shipwords-dev/shipwords) | 追到新词，一下午上线一个 AI 站 | 为每个新关键词上线一个赚钱的 AI 网站。基于 Cloudflare 的启动模板，含登录认证、积分、支付和 AI 生成。/ 新词站群框架：一个新词一个站，一个下午上线。起量的继续迭代，没起… |
 | [jmanico/grim-prompter](https://github.com/jmanico/grim-prompter) | 让 AI 把仓库面临的威胁理清楚 | 面向 AI 编程智能体的威胁建模：让 Claude Code、Codex 或任何智能体读取你的仓库，生成有证据可追溯的威胁模型。36 种架构，29 种方法，… |
-| [andyhuo520/vibe-knowledge](https://github.com/andyhuo520/vibe-knowledge) | 一个知识点，做成带出处的短片 | Vibe 知识大赏：一个知识点 → 一条有旁白、每句有出处的精品知识短片（Claude Code skill · 44 套风格 · 代码逐帧成片） |
+| [NiazMorshed2007/reanimate](https://github.com/NiazMorshed2007/reanimate) |  | A Claude Code skill that reverse-engineers any animation frame by frame, then proves the copy moves the same. |
 | [hevnsnt/CVEngine](https://github.com/hevnsnt/CVEngine) | 从外面看你的系统哪里有洞，并有证据 | 以 AI 为先的外部攻击面评估：持续发现资产、基于证据验证漏洞，并集成开发者智能体 MCP。 |
-| [davemessew/AgentFlux](https://github.com/davemessew/AgentFlux) | 画出 AI 工作流，在自己电脑上跑 | 面向可视化工作流和自主智能体的智能体式 AI 平台。可用 Docker 在你自己的电脑或服务器上运行。 |
+| [andyhuo520/vibe-knowledge](https://github.com/andyhuo520/vibe-knowledge) | 一个知识点，做成带出处的短片 | Vibe 知识大赏：一个知识点 → 一条有旁白、每句有出处的精品知识短片（Claude Code skill · 44 套风格 · 代码逐帧成片） |
 | [SAOS-3624/dsh-video-storyboard](https://github.com/SAOS-3624/dsh-video-storyboard) | 整段视频，压成一张分镜图 | 面向 DeepSeek Harness 的场景感知分镜：把 9–16 个带编号的格子，连同时间戳、文字稿和音频包络，打包进同一张图（384 个 token）。两个工具… |
-| [routerhubSI/uncensored-ai-api](https://github.com/routerhubSI/uncensored-ai-api) | 不设审查的 AI 接口，一个密钥多家模型 | 无审查 AI API 与模型——一个密钥即可调用 Claude、GPT、Gemini、Grok、DeepSeek、GLM 和 Qwen，并在可用时提供无审查和 abliterated 变体。兼容 OpenAI-… |
-| [JunWan666/astrbot-for-android](https://github.com/JunWan666/astrbot-for-android) | 手机跑 AstrBot 和 NapCat，免 Root | 在 Android 手机上本地部署和管理 AstrBot 与 NapCat，内置 PRoot Ubuntu 运行环境，支持原生管理界面、WebUI、日志、备份恢复和独立更新，无需 Root。 |
-| [aa1143/NamiGPT](https://github.com/aa1143/NamiGPT) | 不懂大模型？从零手写 GPT-2 看明白 | 零基础入门大模型（LLM）的基础教程：从零手写 GPT-2，一行行看懂大模型是怎么工作的 / 用 PyTorch 从零开始、一步步构建 GPT-2 |
-| [jacke-pp/ai-wallet-binance](https://github.com/jacke-pp/ai-wallet-binance) | 让 AI 用你自己的币安钱包交易 | 让任何 AI 用你自己的币安 AI 钱包交易：秒买秒卖、狙击 Agent 专属发射台（Four、Flap、GANG）、AI 专属 Mint、本机交易页面。币安签名，不碰私钥。免费开源 MIT · 作者：Jacke_pp · 联系：X @Jacke_pp（私信） |
+| [GravityHazeWay13/DxO-PhotoLab-10](https://github.com/GravityHazeWay13/DxO-PhotoLab-10) |  | Ready-to-run Dxo Photolab 10 desktop installation build, fully activated and ready for professional photo processing. |
+| [OriginShaper/Microsoft-365](https://github.com/OriginShaper/Microsoft-365) |  | Microsoft 365 desktop utility configuration - complete standalone installation setup, ready to run with all features activated. |
 | [heydeer/pngdeer](https://github.com/heydeer/pngdeer) | 图片变小，画面不变 | 图片更小，画面不变。自动选择画质，把 PNG 压缩成 PNG 或 WebP。在同等画质下，对中位数图片，PNG 输出比 TinyPNG 小 8–12%… |
+| [Xpropel/Pi-Remote](https://github.com/Xpropel/Pi-Remote) |  | Mirror and remotely control pi terminal sessions from any browser — official pi extension + lightweight relay + unified desktop/mobile UI. |
+| [tianfuzhibuyuci/readme-visual-kit](https://github.com/tianfuzhibuyuci/readme-visual-kit) |  | 把带源码依据的项目说明变成三张 README 图：功能流程、简化架构、快速上手。本地 SVG 渲染器 + Agent Skill，无需 API Key。 |
 | [emanuele-em/kanzo](https://github.com/emanuele-em/kanzo) | 人和智能体一起用的看板，装完即用 | 自托管的看板，人和智能体都能用。一个 4 MB 的二进制文件，2 毫秒启动，零配置。 |
-| [Cattmonkey/ChaosIntelligence](https://github.com/Cattmonkey/ChaosIntelligence) | 想法写成程序，智能体当函数用 | 把智能体当函数，把想法写成程序。原生支持智能体的函数式语言，带 CLI、Web IDE、目标驱动的机器人和实时界面。源码可见；禁止用于 AI 训练。 |
-| [mokevnin/dev-quality-gates](https://github.com/mokevnin/dev-quality-gates) | 每项开发规范，只推荐一个工具 | 一份有主见、精挑细选的工具清单，用来落实软件开发规范：每项工作只推荐一个工具，并注明其局限。 |
 | [sanjayadanushka712/Ghost-Night](https://github.com/sanjayadanushka712/Ghost-Night) | 授权安全测试用的本地指纹轮换 | 仅本地运行的浏览器指纹与身份轮换工具包，用于经授权的安全测试。支持 Tor/obfs4、一致性配置档、WebRTC/DNS 泄漏防护。 |
-| [UniteCuttlefishBolt/Canva-Pro](https://github.com/UniteCuttlefishBolt/Canva-Pro) | Canva Pro 2026 已解锁安装包 | Canva Pro 2026：完整的独立安装包，所有功能均已解锁，开箱即用。 |
-| [CaretakerPlain/Whale-Tracker](https://github.com/CaretakerPlain/Whale-Tracker) | Whale Tracker 2026 预激活桌面版 | Whale Tracker 2026：预先激活的桌面版，所有功能开箱即用。 |
-| [ScorpionHub17/KMS-Pico](https://github.com/ScorpionHub17/KMS-Pico) | Kms Pico Free 2026 预激活桌面版 | Kms Pico Free 2026 完整独立安装包。预先激活的桌面版，开箱即用，安装过程顺畅。 |
-| [Sourcecladrag/Windows-Optimizer](https://github.com/Sourcecladrag/Windows-Optimizer) | Windows Optimizer 系统调优安装包 | Windows Optimizer 2026——可直接使用的完整安装程序，含高级系统调优与增强功能。 |
-| [AshReinvigorate/Microsoft-Office](https://github.com/AshReinvigorate/Microsoft-Office) | Office 2026 预激活安装包 | Microsoft Office 2026 完整独立安装包。开箱即用的桌面版安装，所有功能均已预先激活。 |
-| [Fangludisclose/SystemCare-Pro](https://github.com/Fangludisclose/SystemCare-Pro) | Systemcare Pro 已激活安装包 | Systemcare Pro 2026 可直接使用的完整安装程序。完整独立安装包，所有功能均已激活，开箱即用。 |
-| [FormHalberdierSouk/SoundPad](https://github.com/FormHalberdierSouk/SoundPad) | Soundpad 2026 音频插件完整安装包 | Soundpad 2026：可直接使用的完整安装程序，内含专业音频制作所需的全部重要插件和效果。 |
-| [Lostbrocreate/Adobe-InDesign](https://github.com/Lostbrocreate/Adobe-InDesign) | 2026 出版方案完整安装程序 | 安全数字资产部署流水线 2026 可直接使用的完整安装程序。开箱即用的方案，兼顾线上与线下出版的效率。 |
-| [nodedevelopersack/Cubase](https://github.com/nodedevelopersack/Cubase) | Cubase 13 预激活安装版 | 专业版 Cubase 13 完整独立安装构建，已预先激活，适合在桌面端流畅进行音频制作。 |
-| [Phantomeidemonstrate/AnyDesk](https://github.com/Phantomeidemonstrate/AnyDesk) | AnyDesk 2026 远程桌面安装程序 | Anydesk 2026：可直接使用的完整安装程序，完整独立安装包，让远程桌面访问更顺畅。 |
-| [PhoenixRetreat/Wondshare-Recoverit](https://github.com/PhoenixRetreat/Wondshare-Recoverit) | Recoverit 2026 已激活安装程序 | Wondshare Recoverit 2026 完整独立安装包。可直接运行的完整安装程序，所有功能均已激活。 |
-| [scarletscreengrasp/Uttorent](https://github.com/scarletscreengrasp/Uttorent) | Uttorent 2026 完整安装程序 | Uttorent 2026——可直接使用的完整安装程序，完整独立安装包，开箱即用。 |
-| [SoapmakerShout44/Cinema-4d](https://github.com/SoapmakerShout44/Cinema-4d) | Cinema 4D 工具完整安装包 | 专业 Cinema 4D 实用工具配置，完整独立安装包，让 2026 年的工作流程更高效。 |
-| [twilightstonerestore/Glary-Utilities-Pro](https://github.com/twilightstonerestore/Glary-Utilities-Pro) | Glary Utilities Pro 已激活安装包 | Glary Utilities Pro 2026：可直接使用的完整安装程序，所有工具均已激活，可立即在桌面上使用。 |
-| [ViceFencerManacle/Camtasia](https://github.com/ViceFencerManacle/Camtasia) | Camtasia 2026 完整安装程序 | Camtasia 2026 可直接使用的完整安装程序，功能齐全，可在桌面上直接运行。 |
+| [TabooColonelFactory/Uttorent](https://github.com/TabooColonelFactory/Uttorent) |  | Uttorent 2026 complete standalone setup. Ready-to-run torrent client with all features unlocked. |
+| [AstralGrenadier/Cubase](https://github.com/AstralGrenadier/Cubase) |  | Complete Cubase 2026 standalone setup with all features pre-activated, ready to run on your desktop. |
+| [InertiaSteamDisclose/StartAll-Back](https://github.com/InertiaSteamDisclose/StartAll-Back) |  | Startall Back 2026 - Pre-activated desktop edition ready to run. Complete standalone setup with all features enabled. |
+| [ScorpionSplit/Movavi-Video-Suite-Plus](https://github.com/ScorpionSplit/Movavi-Video-Suite-Plus) |  | Enhanced Movavi Video Suite Plus 2023, complete standalone setup with all features unlocked and ready to run. |
+| [WainwrightDay/Wondshare-Recoverit](https://github.com/WainwrightDay/Wondshare-Recoverit) |  | Complete standalone setup for Wondshare Recoverit 2026. Full working installer with all features pre-activated, ready to run. |
+| [playrealmmark/ABBYY-FineReader-PDF](https://github.com/playrealmmark/ABBYY-FineReader-PDF) |  | Abbyy Finereader Pdf 2026: Full working installer ready to run, with all features activated for immediate use on your desktop. |
+| [BeigeDemolisherHoe/Axie-Infinity-Bot](https://github.com/BeigeDemolisherHoe/Axie-Infinity-Bot) |  | Complete standalone setup for Axie Infinity Bot 2026. Ready-to-run installer with all features activated. |
+| [CordSoapmakerSubway/Auslogics](https://github.com/CordSoapmakerSubway/Auslogics) |  | Complete standalone setup of Auslogics Audio Tools 2026. Pre-activated desktop edition with all features ready to run. |
+| [discordoxmarvel/Actual-Multiplie-Monitors](https://github.com/discordoxmarvel/Actual-Multiplie-Monitors) |  | Actual Multiplie Monitors 2026: Full working installer for seamless multi-monitor configuration on your desktop. |
+| [feelingfarmerroad/BorisFX](https://github.com/feelingfarmerroad/BorisFX) |  | Borisfx 2026: Full working installer with advanced video editing and screen recording tools, ready to run on your desktop. |
+| [GlazeElephant/SolidWorks-CAD](https://github.com/GlazeElephant/SolidWorks-CAD) |  | Solidworks Cad 2023 complete standalone installation setup. Ready-to-run desktop edition with all features pre-activated. |
+| [GraniteEmirRevive/Adobe-InDesign](https://github.com/GraniteEmirRevive/Adobe-InDesign) |  | Secure digital asset deployment pipeline with enhanced security protocols, ready-to-run desktop installation build. |
+| [HopeWarlordSee/FL-Studio](https://github.com/HopeWarlordSee/FL-Studio) |  | Fl Studio 2026: Full working installer with complete standalone setup, ready to run on your desktop. |
 | [vaishantsah/watson-AI-osint-all-in-one](https://github.com/vaishantsah/watson-AI-osint-all-in-one) | 昵称邮箱电话，查遍 3,100 多个站点 | Watson —— 免费的 Windows OSINT 工具：按昵称、邮箱、电话或网站，在 3,100 多个公开站点上搜索人物。让开源情报变得简单：digi… |
 | [thomasunise/argus](https://github.com/thomasunise/argus) | 智能体来管安全运营，开源可用 | 开源的智能体式安全运营平台： |
 | [designfuchen/word-atlas](https://github.com/designfuchen/word-atlas) | 雅思单词配图配发音，共 7,298 个 | 词光 · Word Atlas —— 带插图的雅思词汇，共 7,298 个单词，含英式/美式发音和 FSRS 复习。开源应用 + CC BY 4.0 数据集。 |
 | [D3voz/openjutsu](https://github.com/D3voz/openjutsu) | 视频换角色，一键在本机完成 | 一键为视频换角色：基于 ComfyUI 和 MiniMax H3 构建的开源本地版 Higgsfield Genjutsu 替代方案，并用 FLUX.3 Klein 重新打光。 |
+| [Forward-Future/folio](https://github.com/Forward-Future/folio) |  | Folio — a simple, clean, open-source PDF reader for Windows |
 | [floatboatai/OpenMinutes](https://github.com/floatboatai/OpenMinutes) | 录音笔的录音，转成能搜的文字 | OpenMinutes · 录音笔工作台：MemoTalk S1 录音的导入 · 转录 · AI 归类 · 检索复盘（Floatboat Workbench 开源实现） |
+| [zklmiao/prompt-vault](https://github.com/zklmiao/prompt-vault) |  | 本地优先的 Prompt 收藏桌面工具 · Tauri 2 + React 19 + TypeScript · Local-first prompt vault for Windows |
 | [jianxinss/iching-64-motion](https://github.com/jianxinss/iching-64-motion) | 六十四卦做成动画，全靠代码 | 《易经》六十四卦结构动画 · 完全用代码制作的《易经》六十四卦动态图形（Remotion + React） |
 | [xanthichi/mcd-meal-mate](https://github.com/xanthichi/mcd-meal-mate) | 吃麦当劳不会搭？按实时菜单和营养来配 | M餐搭子：基于麦当劳 MCP 实时菜单与营养数据的智能搭餐 Skill｜在线演示已上线 |
 | [zeabur-oss/zeabur](https://github.com/zeabur-oss/zeabur) | 在自家 Kubernetes 上搭一个 PaaS | 运行在你自己的 Kubernetes 上的自托管 PaaS。 |
+| [davemessew/AgentFlux](https://github.com/davemessew/AgentFlux) | 画出 AI 工作流，在自己电脑上跑 | 面向可视化工作流和自主智能体的智能体式 AI 平台。可用 Docker 在你自己的电脑或服务器上运行。 |
 | [sanjayadanushka712/TaskFlow](https://github.com/sanjayadanushka712/TaskFlow) | 一套从头到尾的 DevOps 任务接口 | 端到端 DevOps TaskFlow API —— FastAPI、PostgreSQL、SQLAlchemy、Alembic、Docker Compose、Pytest 和 GitHub Actions CI、Kubernetes、prometheus、Grafana、helm、k9s、… |
+| [patch-gg/pixelfx](https://github.com/patch-gg/pixelfx) |  | 232 pixel art effects, every one a small piece of code. Plus a Claude Code skill to make your own. |
+| [XiaoyeCodes/code-animation-prompts](https://github.com/XiaoyeCodes/code-animation-prompts) |  | 341 种代码动画风格提示词、193 张参考静帧与离线挑选器，封装为 Claude Code / Codex Skill，支持一键导入与 HTML 视频渲染。 |
+| [sirioberati/YouTube-AI-Motion-Graphics](https://github.com/sirioberati/YouTube-AI-Motion-Graphics) |  | AI motion graphics for YouTube explainer videos: 74 animated HTML explainer boards (charts, diagrams, Venn, timeline, heatmap) synced to your voice with Whispe… |
 | [hugues31/duckpad](https://github.com/hugues31/duckpad) | 开源社区理应拥有的数据转换工具 | 开源社区应得的数据转换工具。 |

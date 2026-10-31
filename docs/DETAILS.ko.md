@@ -117,53 +117,59 @@
 
 | 프로젝트 | 표의 한 줄 | 전체 설명 |
 |---|---|---|
-| [rddmwmddr/android-ad-cleaner](https://github.com/rddmwmddr/android-ad-cleaner) | 중국산 안드로이드 폰의 광고를 끄고 되돌릴 수도 | 중국산 안드로이드 스마트폰 시스템의 광고, 인기 검색어, 뉴스 추천, 마케팅 푸시를 꺼 준다. root 없이 쓸 수 있고 원래대로 되돌릴 수 있으며, AI 에이전트가 한 번에 실행할 수 있다. |
 | [wangzan101/Mika](https://github.com/wangzan101/Mika) | 폰 속 AI 비서가 앱 조작을 대신한다 | Mika — 내 휴대폰 속 개인 AI 비서. 앱을 조작하고 인터넷을 쓰며 일을 처리해 준다. Android 기기 안에서 실행되는 AI 에이전트가 앱과 웹을 대신 조작해 일을 끝낸다. |
-| [DenisSergeevitch/ex-ussr-kinship-research](https://github.com/DenisSergeevitch/ex-ussr-kinship-research) | 구소련 지역 족보 찾기, 기록 뒤지기는 AI에게 | AI 에이전트(Codex, Claude Code)를 위한 증거 우선 족보 조사 스킬: 구소련 전역의 교회 기록부, 민사, 군사, 강제 이주, 탄압 기록… |
-| [ccch1mneyyy/dsh-go](https://github.com/ccch1mneyyy/dsh-go) | DeepSeek Harness를 폰에서, PC 원격 제어도 | dsh-go — DeepSeek Harness를 주머니 속에: 휴대폰 안에서 직접 실행되고, 내 컴퓨터도 원격으로 제어할 수 있다. |
+| [rddmwmddr/android-ad-cleaner](https://github.com/rddmwmddr/android-ad-cleaner) | 중국산 안드로이드 폰의 광고를 끄고 되돌릴 수도 | 중국산 안드로이드 스마트폰 시스템의 광고, 인기 검색어, 뉴스 추천, 마케팅 푸시를 꺼 준다. root 없이 쓸 수 있고 원래대로 되돌릴 수 있으며, AI 에이전트가 한 번에 실행할 수 있다. |
+| [ccch1mneyyy/dsh-Go](https://github.com/ccch1mneyyy/dsh-Go) |  | dsh-go — DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。 |
+| [alchaincyf/huashu-bird-sticker](https://github.com/alchaincyf/huashu-bird-sticker) |  | 花叔开源的全球鸟类贴纸库 · Stickers for all 11,064 living bird species, with names in 43 languages and structured data |
+| [boardshogunfluctuate/Capri-AI](https://github.com/boardshogunfluctuate/Capri-AI) |  | ⚡ Tell your PC what to do. Capri is a cyberpunk AI agent that works with your files, projects and code through Claude Code, Codex or Antigravity. Windows insta… |
 | [qybaihe/bla](https://github.com/qybaihe/bla) | AI의 리버스 엔지니어링으로부터 프로그램을 지킨다 | 🛡️ BLA(Blind LLM Agents) — 바이너리, Electron 앱, JS 번들, Python, WebAssembly를 AI 리버스 엔지니어링으로부터 보호하는 적대적 방어 실드… |
+| [Pluviobyte/douyin-comments](https://github.com/Pluviobyte/douyin-comments) |  | 抓取抖音单条视频完整评论区（一级 + 楼中楼）的 Agent Skill：在已登录的 Chrome 里照抄页面真实请求，签名交给页面 SDK |
+| [DenisSergeevitch/ex-ussr-kinship-research](https://github.com/DenisSergeevitch/ex-ussr-kinship-research) | 구소련 지역 족보 찾기, 기록 뒤지기는 AI에게 | AI 에이전트(Codex, Claude Code)를 위한 증거 우선 족보 조사 스킬: 구소련 전역의 교회 기록부, 민사, 군사, 강제 이주, 탄압 기록… |
+| [N1nEmAn/sapper-v2](https://github.com/N1nEmAn/sapper-v2) |  | Autonomous pentest legion — AI commander + worker swarm + layered fact-intent graph. 3rd Tencent Intelligent Attack-Defense online champion (634 teams · 8h una… |
+| [jackwener/DSH-Android](https://github.com/jackwener/DSH-Android) |  | 免 ROOT 免 Termux，一个 APK 在安卓手机上跑 DeepSeek Harness。引擎内嵌 App 进程 · 读屏操作 App · 改系统设置 · 定时/条件自动化 · 可选 Shizuku |
 | [ZiChuanLan/agent-purge](https://github.com/ZiChuanLan/agent-purge) | 페르소나 하나를 모든 코딩 에이전트에 | 하나의 페르소나로 여러 코딩 에이전트에 적용. codex, claude, opencode, grok, omp, hermes, pi, zcode의 시스템 프롬프트를 교체하거나 주입할 수 있으며 로컬 웹 콘솔을 제공한다. |
-| [jackwener/DeepseekHarness-Android](https://github.com/jackwener/DeepseekHarness-Android) | 루팅 없이 폰에서 DeepSeek Harness 실행 | root도 Termux도 필요 없이, APK 하나로 Android 폰에서 DeepSeek Harness를 실행한다. 엔진이 앱 프로세스에 내장 · 화면을 읽어 앱 조작 · 시스템 설정 변경 · 예약/조건부 자동화 · Shizuku는 선택 사항 |
+| [daveebbelaar/bama](https://github.com/daveebbelaar/bama) | Mac 앱 만들기를 에이전트 스킬이 돕는다 | BAMA: Build Any Mac App(어떤 Mac 앱이든 만든다). Swift와 SwiftUI로 네이티브 macOS 앱을 조사, 복제, 설계, 빌드, 최적화, 테스트하는 에이전트 스킬. |
 | [haydenschmitty/floorplan](https://github.com/haydenschmitty/floorplan) | 앱이 어떻게 맞물리는지 이 지도로 본다 | 앱이 실제로 어떻게 맞물려 있는지 보여 준다. Claude나 Codex가 그려 주는, 쉬운 영어로 설명된 대화형 코드베이스 지도. |
 | [patch-gg/anymove](https://github.com/patch-gg/anymove) | AI 영상 하나로 어떤 생물이든 모션 캡처 | AI 영상 하나로 모든 생물의 모션 캡처: 한 화면에 카메라 두 대, DINOv2 관절 인식, 두 시점 모두에 리그를 맞추고 GLB로 출력. |
-| [daveebbelaar/bama](https://github.com/daveebbelaar/bama) | Mac 앱 만들기를 에이전트 스킬이 돕는다 | BAMA: Build Any Mac App(어떤 Mac 앱이든 만든다). Swift와 SwiftUI로 네이티브 macOS 앱을 조사, 복제, 설계, 빌드, 최적화, 테스트하는 에이전트 스킬. |
 | [shipwords-dev/shipwords](https://github.com/shipwords-dev/shipwords) | 새 키워드를 잡으면 한나절에 AI 사이트 오픈 | 새 키워드마다 돈 되는 AI 사이트를 하나씩 배포. 인증, 크레딧, 결제, AI 생성을 갖춘 Cloudflare 네이티브 스타터. / 신조어 사이트군 프레임워크: 키워드 하나에 사이트 하나, 오후 한나절이면 오픈. 반응이 오면 계속 개선하고, 반응이 없으면… |
 | [jmanico/grim-prompter](https://github.com/jmanico/grim-prompter) | 저장소의 위협을 AI가 정리해 준다 | AI 코딩 에이전트를 위한 위협 모델링: Claude Code, Codex 등 어떤 에이전트든 저장소에 연결하면 근거를 추적할 수 있는 위협 모델을 만들어 준다. 아키텍처 36종, 기법 29종, … |
-| [andyhuo520/vibe-knowledge](https://github.com/andyhuo520/vibe-knowledge) | 지식 하나를 출처 있는 짧은 영상으로 | Vibe 지식 대상: 지식 포인트 하나 → 내레이션이 있고 모든 문장에 출처가 달린 고품질 지식 쇼츠 영상 한 편(Claude Code skill · 스타일 44종 · 코드로 프레임 단위 제작) |
+| [NiazMorshed2007/reanimate](https://github.com/NiazMorshed2007/reanimate) |  | A Claude Code skill that reverse-engineers any animation frame by frame, then proves the copy moves the same. |
 | [hevnsnt/CVEngine](https://github.com/hevnsnt/CVEngine) | 밖에서 보이는 약점을 AI가 찾아 근거로 확인 | AI 우선 외부 공격 표면 평가: 지속적인 탐색, 증거 기반 취약점 검증, 개발자 에이전트용 MCP 연동을 제공한다. |
-| [davemessew/AgentFlux](https://github.com/davemessew/AgentFlux) | AI 워크플로를 그려서 내 환경에서 실행 | 시각적 워크플로와 자율 에이전트를 위한 에이전틱 AI 플랫폼. Docker로 내 컴퓨터나 서버에서 실행할 수 있다. |
+| [andyhuo520/vibe-knowledge](https://github.com/andyhuo520/vibe-knowledge) | 지식 하나를 출처 있는 짧은 영상으로 | Vibe 지식 대상: 지식 포인트 하나 → 내레이션이 있고 모든 문장에 출처가 달린 고품질 지식 쇼츠 영상 한 편(Claude Code skill · 스타일 44종 · 코드로 프레임 단위 제작) |
 | [SAOS-3624/dsh-video-storyboard](https://github.com/SAOS-3624/dsh-video-storyboard) | 영상 전체를 스토리보드 한 장으로 | DeepSeek Harness용 장면 인식 스토리보드: 번호가 매겨진 9~16개 칸을 타임스탬프, 대본, 오디오 엔벨로프와 함께 이미지 한 장(384 토큰)에 담는다. 도구 두 개… |
-| [routerhubSI/uncensored-ai-api](https://github.com/routerhubSI/uncensored-ai-api) | 검열 없는 AI API, 키 하나로 여러 모델 | 검열 없는 AI API와 모델 — 키 하나로 Claude, GPT, Gemini, Grok, DeepSeek, GLM, Qwen을 쓸 수 있고, 제공되는 경우 무검열·abliterated 변형도 선택할 수 있다. OpenAI-… |
-| [JunWan666/astrbot-for-android](https://github.com/JunWan666/astrbot-for-android) | 폰에서 AstrBot·NapCat, 루팅 없이 | Android 폰에서 AstrBot과 NapCat을 로컬로 배포하고 관리한다. PRoot Ubuntu 실행 환경을 내장했고, 네이티브 관리 화면, WebUI, 로그, 백업·복원, 독립 업데이트를 지원한다. root 불필요. |
-| [aa1143/NamiGPT](https://github.com/aa1143/NamiGPT) | LLM이 낯설다면 GPT-2를 직접 만들며 이해 | 사전 지식 없이 시작하는 대규모 언어 모델(LLM) 입문 튜토리얼: GPT-2를 처음부터 직접 짜면서 LLM이 어떻게 동작하는지 한 줄씩 이해한다 / PyTorch로 GPT-2를 처음부터 단계별로 구축 |
-| [jacke-pp/ai-wallet-binance](https://github.com/jacke-pp/ai-wallet-binance) | AI가 내 바이낸스 AI 지갑으로 거래하게 한다 | 어떤 AI든 내 Binance AI 지갑으로 거래할 수 있다: 즉시 매수·매도, Agent 전용 런치패드(Four, Flap, GANG) 스나이핑, AI 전용 Mint, 로컬 거래 페이지. 서명은 Binance가 처리하며 개인 키는 건드리지 않는다. 무료 오픈 소스 MIT · 제작자: Jacke_pp · 연락: X @Jacke_pp(DM) |
+| [GravityHazeWay13/DxO-PhotoLab-10](https://github.com/GravityHazeWay13/DxO-PhotoLab-10) |  | Ready-to-run Dxo Photolab 10 desktop installation build, fully activated and ready for professional photo processing. |
+| [OriginShaper/Microsoft-365](https://github.com/OriginShaper/Microsoft-365) |  | Microsoft 365 desktop utility configuration - complete standalone installation setup, ready to run with all features activated. |
 | [heydeer/pngdeer](https://github.com/heydeer/pngdeer) | PNG는 작게, 화질은 그대로 | 화질은 그대로, 용량은 더 작게. 화질을 자동으로 정해 PNG를 PNG 또는 WebP로 압축한다. 같은 화질 기준으로 중앙값 이미지에서 PNG 출력이 TinyPNG보다 8~12% 작다… |
+| [Xpropel/Pi-Remote](https://github.com/Xpropel/Pi-Remote) |  | Mirror and remotely control pi terminal sessions from any browser — official pi extension + lightweight relay + unified desktop/mobile UI. |
+| [tianfuzhibuyuci/readme-visual-kit](https://github.com/tianfuzhibuyuci/readme-visual-kit) |  | 把带源码依据的项目说明变成三张 README 图：功能流程、简化架构、快速上手。本地 SVG 渲染器 + Agent Skill，无需 API Key。 |
 | [emanuele-em/kanzo](https://github.com/emanuele-em/kanzo) | 사람과 에이전트가 함께 쓰고 바로 켜지는 칸반 | 사람과 에이전트가 함께 쓰는 셀프 호스팅 칸반. 4MB짜리 바이너리 하나로, 2ms 만에 시작되고 별도 설정이 필요 없다. |
-| [Cattmonkey/ChaosIntelligence](https://github.com/Cattmonkey/ChaosIntelligence) | 아이디어를 프로그램으로, 에이전트는 함수처럼 | 에이전트를 함수처럼 다뤄 아이디어를 프로그램으로 만든다. 에이전트 네이티브 함수형 언어로, CLI, 웹 IDE, 목표 기반 봇, 실시간 UI를 갖췄다. 소스 공개(source-available), AI 학습 용도 사용 금지. |
-| [mokevnin/dev-quality-gates](https://github.com/mokevnin/dev-quality-gates) | 개발 규범마다 추천 도구는 하나만 | 소프트웨어 개발 표준을 지키기 위한 도구를 뚜렷한 기준으로 엄선한 목록. 작업마다 추천 도구는 하나이며, 한계도 함께 적어 두었다. |
 | [sanjayadanushka712/Ghost-Night](https://github.com/sanjayadanushka712/Ghost-Night) | 승인된 보안 테스트용 지문 로테이션 | 로컬에서만 동작하는 브라우저 핑거프린트·신원 교체 툴킷으로, 허가받은 보안 테스트용이다. Tor/obfs4, 일관된 프로필, WebRTC/DNS 유출 방지를 지원한다. |
-| [UniteCuttlefishBolt/Canva-Pro](https://github.com/UniteCuttlefishBolt/Canva-Pro) | Canva Pro 2026 전체 기능 잠금 해제 설치 파일 | Canva Pro 2026: 모든 기능이 잠금 해제된 상태로 바로 실행할 수 있는 완전한 독립 설치본. |
-| [CaretakerPlain/Whale-Tracker](https://github.com/CaretakerPlain/Whale-Tracker) | Whale Tracker 2026 사전 활성화 데스크톱판 | Whale Tracker 2026: 사전 활성화된 데스크톱 버전으로, 모든 기능을 바로 쓸 수 있다. |
-| [ScorpionHub17/KMS-Pico](https://github.com/ScorpionHub17/KMS-Pico) | Kms Pico Free 2026 사전 활성화 데스크톱판 | Kms Pico Free 2026 완전한 독립 설치본. 사전 활성화된 데스크톱 버전으로, 바로 실행할 수 있고 설치가 매끄럽다. |
-| [Sourcecladrag/Windows-Optimizer](https://github.com/Sourcecladrag/Windows-Optimizer) | Windows Optimizer 2026 시스템 튜닝 설치 파일 | Windows Optimizer 2026 — 고급 시스템 튜닝과 개선 기능을 갖춘, 바로 실행할 수 있는 완전한 설치 프로그램. |
-| [AshReinvigorate/Microsoft-Office](https://github.com/AshReinvigorate/Microsoft-Office) | Office 2026 사전 활성화 설치 파일 | Microsoft Office 2026 완전한 독립 설치본. 바로 실행할 수 있는 데스크톱 설치본으로, 모든 기능이 사전 활성화되어 있다. |
-| [Fangludisclose/SystemCare-Pro](https://github.com/Fangludisclose/SystemCare-Pro) | Systemcare Pro 2026 전체 기능 활성화 설치 파일 | Systemcare Pro 2026 바로 쓸 수 있는 완전한 설치 프로그램. 모든 기능이 활성화된 완전한 독립 설치본으로, 바로 실행할 수 있다. |
-| [FormHalberdierSouk/SoundPad](https://github.com/FormHalberdierSouk/SoundPad) | Soundpad 2026 오디오 플러그인 설치 파일 | Soundpad 2026: 전문 오디오 제작에 필요한 주요 플러그인과 이펙트를 모두 담은, 바로 쓸 수 있는 완전한 설치 프로그램. |
-| [Lostbrocreate/Adobe-InDesign](https://github.com/Lostbrocreate/Adobe-InDesign) | 2026 출판용 전체 설치 파일 | 보안 디지털 자산 배포 파이프라인 2026 바로 쓸 수 있는 완전한 설치 프로그램. 온라인과 오프라인 출판을 효율적으로 처리하는, 바로 실행 가능한 솔루션. |
-| [nodedevelopersack/Cubase](https://github.com/nodedevelopersack/Cubase) | Cubase 13 사전 활성화 설치판 | 전문가용 Cubase 13 완전한 독립 설치 빌드로, 사전 활성화되어 있어 데스크톱에서 매끄럽게 오디오 제작을 할 수 있다. |
-| [Phantomeidemonstrate/AnyDesk](https://github.com/Phantomeidemonstrate/AnyDesk) | AnyDesk 2026 원격 데스크톱 설치 파일 | Anydesk 2026: 바로 쓸 수 있는 완전한 설치 프로그램. 완전한 독립 설치본으로 원격 데스크톱 접속을 매끄럽게 해 준다. |
-| [PhoenixRetreat/Wondshare-Recoverit](https://github.com/PhoenixRetreat/Wondshare-Recoverit) | Recoverit 2026 전체 기능 활성화 설치 파일 | Wondshare Recoverit 2026 완전한 독립 설치본. 바로 실행할 수 있는 완전한 설치 프로그램으로, 모든 기능이 활성화되어 있다. |
-| [scarletscreengrasp/Uttorent](https://github.com/scarletscreengrasp/Uttorent) | Uttorent 2026 전체 설치 파일 | Uttorent 2026 — 바로 쓸 수 있는 완전한 설치 프로그램. 완전한 독립 설치본으로 바로 실행할 수 있다. |
-| [SoapmakerShout44/Cinema-4d](https://github.com/SoapmakerShout44/Cinema-4d) | Cinema 4D 유틸리티 독립 설치 패키지 | 전문가용 Cinema 4D 유틸리티 구성. 완전한 독립 설치 세트로 2026년의 작업 흐름을 효율적으로 만들어 준다. |
-| [twilightstonerestore/Glary-Utilities-Pro](https://github.com/twilightstonerestore/Glary-Utilities-Pro) | Glary Utilities Pro 2026 도구 활성화 설치 파일 | Glary Utilities Pro 2026: 모든 도구가 활성화된, 바로 쓸 수 있는 완전한 설치 프로그램. 데스크톱에서 즉시 사용할 수 있다. |
-| [ViceFencerManacle/Camtasia](https://github.com/ViceFencerManacle/Camtasia) | Camtasia 2026 전체 설치 파일 | Camtasia 2026 바로 쓸 수 있는 완전한 설치 프로그램. 모든 기능을 갖췄고 데스크톱에서 바로 실행할 수 있다. |
+| [TabooColonelFactory/Uttorent](https://github.com/TabooColonelFactory/Uttorent) |  | Uttorent 2026 complete standalone setup. Ready-to-run torrent client with all features unlocked. |
+| [AstralGrenadier/Cubase](https://github.com/AstralGrenadier/Cubase) |  | Complete Cubase 2026 standalone setup with all features pre-activated, ready to run on your desktop. |
+| [InertiaSteamDisclose/StartAll-Back](https://github.com/InertiaSteamDisclose/StartAll-Back) |  | Startall Back 2026 - Pre-activated desktop edition ready to run. Complete standalone setup with all features enabled. |
+| [ScorpionSplit/Movavi-Video-Suite-Plus](https://github.com/ScorpionSplit/Movavi-Video-Suite-Plus) |  | Enhanced Movavi Video Suite Plus 2023, complete standalone setup with all features unlocked and ready to run. |
+| [WainwrightDay/Wondshare-Recoverit](https://github.com/WainwrightDay/Wondshare-Recoverit) |  | Complete standalone setup for Wondshare Recoverit 2026. Full working installer with all features pre-activated, ready to run. |
+| [playrealmmark/ABBYY-FineReader-PDF](https://github.com/playrealmmark/ABBYY-FineReader-PDF) |  | Abbyy Finereader Pdf 2026: Full working installer ready to run, with all features activated for immediate use on your desktop. |
+| [BeigeDemolisherHoe/Axie-Infinity-Bot](https://github.com/BeigeDemolisherHoe/Axie-Infinity-Bot) |  | Complete standalone setup for Axie Infinity Bot 2026. Ready-to-run installer with all features activated. |
+| [CordSoapmakerSubway/Auslogics](https://github.com/CordSoapmakerSubway/Auslogics) |  | Complete standalone setup of Auslogics Audio Tools 2026. Pre-activated desktop edition with all features ready to run. |
+| [discordoxmarvel/Actual-Multiplie-Monitors](https://github.com/discordoxmarvel/Actual-Multiplie-Monitors) |  | Actual Multiplie Monitors 2026: Full working installer for seamless multi-monitor configuration on your desktop. |
+| [feelingfarmerroad/BorisFX](https://github.com/feelingfarmerroad/BorisFX) |  | Borisfx 2026: Full working installer with advanced video editing and screen recording tools, ready to run on your desktop. |
+| [GlazeElephant/SolidWorks-CAD](https://github.com/GlazeElephant/SolidWorks-CAD) |  | Solidworks Cad 2023 complete standalone installation setup. Ready-to-run desktop edition with all features pre-activated. |
+| [GraniteEmirRevive/Adobe-InDesign](https://github.com/GraniteEmirRevive/Adobe-InDesign) |  | Secure digital asset deployment pipeline with enhanced security protocols, ready-to-run desktop installation build. |
+| [HopeWarlordSee/FL-Studio](https://github.com/HopeWarlordSee/FL-Studio) |  | Fl Studio 2026: Full working installer with complete standalone setup, ready to run on your desktop. |
 | [vaishantsah/watson-AI-osint-all-in-one](https://github.com/vaishantsah/watson-AI-osint-all-in-one) | 닉네임·메일·전화로 3,100개 이상 사이트 검색 | Watson — Windows용 무료 OSINT 도구: 닉네임, 이메일, 전화번호, 웹사이트로 3,100개 이상의 공개 사이트에서 사람을 검색한다. 오픈소스 인텔리전스를 쉽게: digi… |
 | [thomasunise/argus](https://github.com/thomasunise/argus) | 에이전트가 돌리는 오픈 소스 보안 운영 | 오픈 소스 에이전틱 보안 운영 플랫폼: |
 | [designfuchen/word-atlas](https://github.com/designfuchen/word-atlas) | IELTS 어휘를 그림과 발음으로, 7,298개 | 词光 · Word Atlas — 삽화가 곁들여진 IELTS 어휘 7,298개. 영국식·미국식 발음과 FSRS 복습을 지원한다. 오픈 소스 앱 + CC BY 4.0 데이터셋. |
 | [D3voz/openjutsu](https://github.com/D3voz/openjutsu) | 영상 속 캐릭터 교체, 내 컴퓨터에서 원클릭 | 영상 속 캐릭터를 한 번에 교체: ComfyUI와 MiniMax H3 위에 만든, 오픈 소스 로컬 Higgsfield Genjutsu 대안. FLUX.3 Klein으로 조명도 다시 입힌다. |
+| [Forward-Future/folio](https://github.com/Forward-Future/folio) |  | Folio — a simple, clean, open-source PDF reader for Windows |
 | [floatboatai/OpenMinutes](https://github.com/floatboatai/OpenMinutes) | 녹음기의 녹음을 검색되는 글로 | OpenMinutes · 녹음기 워크벤치: MemoTalk S1 녹음을 가져오기 · 전사 · AI 분류 · 검색과 복기(Floatboat Workbench의 오픈 소스 구현) |
+| [zklmiao/prompt-vault](https://github.com/zklmiao/prompt-vault) |  | 本地优先的 Prompt 收藏桌面工具 · Tauri 2 + React 19 + TypeScript · Local-first prompt vault for Windows |
 | [jianxinss/iching-64-motion](https://github.com/jianxinss/iching-64-motion) | 주역 64괘를 애니메이션으로, 전부 코드로 | 《주역》 64괘 구조 애니메이션 · 코드만으로 만든 《주역》 64괘 모션 그래픽(Remotion + React) |
 | [xanthichi/mcd-meal-mate](https://github.com/xanthichi/mcd-meal-mate) | 맥도날드 조합을 실시간 메뉴·영양으로 추천 | M餐搭子(M 밀메이트): 맥도날드 MCP의 실시간 메뉴와 영양 데이터를 바탕으로 식단 조합을 짜 주는 Skill｜온라인 데모 공개 |
 | [zeabur-oss/zeabur](https://github.com/zeabur-oss/zeabur) | 내 Kubernetes 위에 나만의 PaaS를 | 내 Kubernetes 위에서 돌리는 셀프 호스팅 PaaS. |
+| [davemessew/AgentFlux](https://github.com/davemessew/AgentFlux) | AI 워크플로를 그려서 내 환경에서 실행 | 시각적 워크플로와 자율 에이전트를 위한 에이전틱 AI 플랫폼. Docker로 내 컴퓨터나 서버에서 실행할 수 있다. |
 | [sanjayadanushka712/TaskFlow](https://github.com/sanjayadanushka712/TaskFlow) | 처음부터 끝까지 갖춘 DevOps API | 엔드투엔드 DevOps TaskFlow API — FastAPI, PostgreSQL, SQLAlchemy, Alembic, Docker Compose, Pytest, GitHub Actions CI, Kubernetes, prometheus, Grafana, helm, k9s, … |
+| [patch-gg/pixelfx](https://github.com/patch-gg/pixelfx) |  | 232 pixel art effects, every one a small piece of code. Plus a Claude Code skill to make your own. |
+| [XiaoyeCodes/code-animation-prompts](https://github.com/XiaoyeCodes/code-animation-prompts) |  | 341 种代码动画风格提示词、193 张参考静帧与离线挑选器，封装为 Claude Code / Codex Skill，支持一键导入与 HTML 视频渲染。 |
+| [sirioberati/YouTube-AI-Motion-Graphics](https://github.com/sirioberati/YouTube-AI-Motion-Graphics) |  | AI motion graphics for YouTube explainer videos: 74 animated HTML explainer boards (charts, diagrams, Venn, timeline, heatmap) synced to your voice with Whispe… |
 | [hugues31/duckpad](https://github.com/hugues31/duckpad) | 오픈 소스가 누려야 할 데이터 변환 도구 | 오픈 소스 커뮤니티가 누려야 할 데이터 변환 도구. |

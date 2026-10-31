@@ -6,6 +6,7 @@
 
 | 日期 | 時段 | 取得時間（UTC） | 新儲存庫第 1 名（7 天） | 本週第 1 名 | 本月第 1 名 | 今年第 1 名 | 快照 |
 |---|---|---|---|---|---|---|---|
+| 2026-10-31 | 手動執行 04:53 UTC (`manual-0453`) | 2026-10-31T04:53:23Z | wangzan101/Mika (1,045/天) | morluto/rea (5,589/天) | morluto/rea (13,748/天) | deepseek-ai/deepseek-harness (3,378/天) | [2026-10-31/manual-0453](2026-10-31/manual-0453/rankings.zh-Hant.md) · [json](2026-10-31/manual-0453/stats.json) |
 | 2026-10-30 | 手動執行 08:39 UTC (`manual-0839`) | 2026-10-30T08:39:25Z | rddmwmddr/android-ad-cleaner (798/天) | morluto/rea (5,942/天) | morluto/rea (13,623/天) | deepseek-ai/deepseek-harness (3,412/天) | [2026-10-30/manual-0839](2026-10-30/manual-0839/rankings.zh-Hant.md) · [json](2026-10-30/manual-0839/stats.json) |
 | 2026-10-30 | 手動執行 08:26 UTC (`manual-0826`) | 2026-10-30T08:26:39Z | rddmwmddr/android-ad-cleaner (799/天) | morluto/rea (5,942/天) | morluto/rea (13,623/天) | deepseek-ai/deepseek-harness (3,412/天) | [2026-10-30/manual-0826](2026-10-30/manual-0826/rankings.zh-Hant.md) · [json](2026-10-30/manual-0826/stats.json) |
 | 2026-10-30 | 手動執行 07:50 UTC (`manual-0750`) | 2026-10-30T07:50:31Z | rddmwmddr/android-ad-cleaner (800/天) | morluto/rea (5,942/天) | morluto/rea (13,623/天) | deepseek-ai/deepseek-harness (3,412/天) | [2026-10-30/manual-0750](2026-10-30/manual-0750/rankings.zh-Hant.md) · [json](2026-10-30/manual-0750/stats.json) |

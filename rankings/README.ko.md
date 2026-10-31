@@ -6,6 +6,7 @@
 
 | 날짜 | 슬롯 | 가져온 시각(UTC) | 신규 1위(7일) | 이번 주 1위 | 이번 달 1위 | 올해 1위 | 스냅샷 |
 |---|---|---|---|---|---|---|---|
+| 2026-10-31 | 수동 실행 04:53 UTC (`manual-0453`) | 2026-10-31T04:53:23Z | wangzan101/Mika (1,045/일) | morluto/rea (5,589/일) | morluto/rea (13,748/일) | deepseek-ai/deepseek-harness (3,378/일) | [2026-10-31/manual-0453](2026-10-31/manual-0453/rankings.ko.md) · [json](2026-10-31/manual-0453/stats.json) |
 | 2026-10-30 | 수동 실행 08:39 UTC (`manual-0839`) | 2026-10-30T08:39:25Z | rddmwmddr/android-ad-cleaner (798/일) | morluto/rea (5,942/일) | morluto/rea (13,623/일) | deepseek-ai/deepseek-harness (3,412/일) | [2026-10-30/manual-0839](2026-10-30/manual-0839/rankings.ko.md) · [json](2026-10-30/manual-0839/stats.json) |
 | 2026-10-30 | 수동 실행 08:26 UTC (`manual-0826`) | 2026-10-30T08:26:39Z | rddmwmddr/android-ad-cleaner (799/일) | morluto/rea (5,942/일) | morluto/rea (13,623/일) | deepseek-ai/deepseek-harness (3,412/일) | [2026-10-30/manual-0826](2026-10-30/manual-0826/rankings.ko.md) · [json](2026-10-30/manual-0826/stats.json) |
 | 2026-10-30 | 수동 실행 07:50 UTC (`manual-0750`) | 2026-10-30T07:50:31Z | rddmwmddr/android-ad-cleaner (800/일) | morluto/rea (5,942/일) | morluto/rea (13,623/일) | deepseek-ai/deepseek-harness (3,412/일) | [2026-10-30/manual-0750](2026-10-30/manual-0750/rankings.ko.md) · [json](2026-10-30/manual-0750/stats.json) |
